@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_document_inherited" inherit_id="account.report_invoice_document">
+
+        <xpath expr="//table[hasclass('o_main_table')]//th[@name='th_priceunit']//span"
+               position="replace">
+            <span>Rate</span>
+        </xpath>
+
+        <xpath expr="//table[hasclass('o_main_table')]//th[@name='th_subtotal']//span"
+               position="replace">
+            <span class = "text-start">Gross Amount</span>
+        </xpath>
+
+        <xpath expr="//table[hasclass('o_main_table')]//th[@name='th_discount']"
+               position="after">
+            <th name="th_total" class="text-start">
+                <span>Vatable Amount</span>
+            </th>
+        </xpath>
+
+        <xpath expr="//table[hasclass('o_main_table')]//td[@name='td_subtotal']//span"
+               position="replace">
+            <span class="text-nowrap text-start" t-field="line.price_total">27.00</span>
+        </xpath>
+
+        <xpath expr="//table[hasclass('o_main_table')]//td[@name='td_discount']"
+               position="after">
+            <td name="td_subtotal" class="text-start o_price_subtotal">
+                <span class="text-nowrap" t-field="line.price_subtotal">27.00</span>
+            </td>
+        </xpath>
+    </template>
+
+</odoo>
+
+
+

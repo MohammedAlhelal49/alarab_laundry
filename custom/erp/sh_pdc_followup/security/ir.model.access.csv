@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pdc_followup_line_readonly,pdc.followup.line readonly,model_pdc_followup_line,account.group_account_readonly,1,0,0,0
+access_pdc_followup_line,pdc.followup.line,model_pdc_followup_line,account.group_account_invoice,1,0,0,0
+access_pdc_followup_line_manager,pdc.followup.line manager,model_pdc_followup_line,account.group_account_manager,1,1,1,1
+access_sms_template_pdc_account_manager,access.sms.template.pdc.account.manager,sms.model_sms_template,account.group_account_manager,1,1,1,1
+access_pdc_followup_manual_reminder_account_manager,pdc.followup.manual_reminder.account.manager,model_pdc_followup_manual_reminder,account.group_account_manager,1,1,1,0
+access_pdc_followup_missing_information,access_pdc_followup_missing_information,model_pdc_followup_missing_information_wizard,account.group_account_manager,1,1,1,0

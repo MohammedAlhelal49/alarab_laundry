@@ -1,0 +1,926 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sh_pdc
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-27 11:09+0000\n"
+"PO-Revision-Date: 2025-11-27 11:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sh_pdc
+#: model:mail.template,body_html:sh_pdc.sh_pdc_company_to_customer_notification_1
+msgid ""
+"<div style=\"line-height: 28px;\">\n"
+"            Dear <b><t t-out=\"object.partner_id.name\"/></b>,<br/>\n"
+"            This is a gentle remainder that your cheque reference no.<b><t t-out=\"object.reference\"/></b> due on <b><t t-out=\"object.due_date\"/></b>.<br/>\n"
+"\t        <div>Thank you...</div>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"line-height: 28px;\">\n"
+"            عزيزي <b><t t-out=\"object.partner_id.name\"/></b>,<br/>\n"
+"            هذه تذكير لطيف بأن الشيك رقم <b><t t-out=\"object.reference\"/></b> مستحق في <b><t t-out=\"object.due_date\"/></b>.<br/>\n"
+"\t        <div>شكراً لك...</div>\n"
+"            </div>\n"
+"        "
+
+#. module: sh_pdc
+#: model:mail.template,body_html:sh_pdc.sh_pdc_company_to_int_user_notification_1
+msgid ""
+"<div style=\"line-height: 28px;\">\n"
+"            Hello,<br/>\n"
+"            <b><t t-out=\"object.partner_id.name\"/></b><b>'s</b> cheuqe reference no.<b><t t-out=\"object.reference\"/></b> due on <b><t t-out=\"object.due_date\"/></b>.<br/>\n"
+"            <a class=\"btn btn-primary\" role=\"button\" t-att-href=\"'%s'%object.env.context.get('customer_url')\">View Cheque</a><br/>\n"
+"            <div>Thank you...</div>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"line-height: 28px;\">\n"
+"            مرحباً,<br/>\n"
+"            الشيك رقم <b><t t-out=\"object.reference\"/></b> الخاص بـ <b><t t-out=\"object.partner_id.name\"/></b> مستحق في <b><t t-out=\"object.due_date\"/></b>.<br/>\n"
+"            <a class=\"btn btn-primary\" role=\"button\" t-att-href=\"'%s'%object.env.context.get('customer_url')\">عرض الشيك</a><br/>\n"
+"            <div>شكراً لك...</div>\n"
+"            </div>\n"
+"        "
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.report_pdc_payment_document
+msgid ""
+"<strong>Agent</strong>\n"
+"                        :"
+msgstr ""
+"<strong>ألعميل</strong>\n"
+"                        :"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.report_pdc_payment_document
+msgid ""
+"<strong>Bank</strong>\n"
+"                        :"
+msgstr ""
+"<strong>البنك</strong>\n"
+"                        :"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.report_pdc_payment_document
+msgid ""
+"<strong>Done Date</strong>\n"
+"                        :"
+msgstr ""
+"<strong>تاريخ الإنجاز</strong>\n"
+"                        :"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.report_pdc_payment_document
+msgid ""
+"<strong>Due Date</strong>\n"
+"                        :"
+msgstr ""
+"<strong>تاريخ الاستحقاق</strong>\n"
+"                        :"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.report_pdc_payment_document
+msgid ""
+"<strong>Memo</strong>\n"
+"                        :"
+msgstr ""
+"<strong>الوصف</strong>\n"
+"                        :"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.report_pdc_payment_document
+msgid ""
+"<strong>Payment Amount</strong>\n"
+"                        :"
+msgstr ""
+"<strong>مبلغ الدفع</strong>\n"
+"                        :"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.report_pdc_payment_document
+msgid ""
+"<strong>Payment Date</strong>\n"
+"                        :"
+msgstr ""
+"<strong>تاريخ الدفع</strong>\n"
+"                        :"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.report_pdc_payment_document
+msgid ""
+"<strong>Payment type</strong>\n"
+"                        :"
+msgstr ""
+"<strong>نوع الدفع</strong>\n"
+"                        :"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.report_pdc_payment_document
+msgid ""
+"<strong>Reference</strong>\n"
+"                        :"
+msgstr ""
+"<strong>المرجع</strong>\n"
+"                        :"
+
+#. module: sh_pdc
+#: model_terms:ir.actions.act_window,help:sh_pdc.sh_pdc_action_move_journal_line
+msgid ""
+"A journal entry consists of several journal items, each of which is either a debit or a credit\n"
+"                transaction."
+msgstr "يتكون قيد اليومية من عدة عناصر يومية، كل منها إما معاملة مدين أو دائن."
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__access_warning
+msgid "Access warning"
+msgstr "تحذير الوصول"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__account_move_ids
+msgid "Account Move"
+msgstr "حركة الحساب"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تزيين استثناء النشاط"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__agent
+msgid "Agent"
+msgstr "العميل"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_wizard_form_wizard
+msgid "Attach Cheque Image"
+msgstr "إرفاق صورة الشيك"
+
+#. module: sh_pdc
+#: model:ir.model,name:sh_pdc.model_ir_attachment
+msgid "Attachment"
+msgstr "مرفق"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_move_form_inherit
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_payment_form_view
+msgid "Attachments"
+msgstr "المرفقات"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_res_config_settings__auto_fill_open_invoice
+msgid "Auto Fill open Invoice in PDC on Customer Selection"
+msgstr "ملء الفواتير المفتوحة تلقائياً في PDC عند اختيار العميل"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_res_company__auto_fill_open_invoice
+msgid "Auto Fill open Invoice in PDC on Customer Selection "
+msgstr "ملء الفواتير المفتوحة تلقائياً في PDC عند اختيار العميل"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__bank_id
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Bank"
+msgstr "البنك"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_payment_form_view
+msgid "Bounce"
+msgstr "ارتداد"
+
+#. module: sh_pdc
+#: model:ir.model.fields.selection,name:sh_pdc.selection__account_move__sh_pdc_status__bounced
+#: model:ir.model.fields.selection,name:sh_pdc.selection__pdc_wizard__state__bounced
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Bounced"
+msgstr "مرتجع"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_payment_form_view
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_wizard_form_wizard
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: sh_pdc
+#: model:ir.actions.server,name:sh_pdc.sh_cancel_pdc_delete_multi_action
+msgid "Cancel Cheque"
+msgstr "إلغاء الشيك"
+
+#. module: sh_pdc
+#: model:ir.model.fields.selection,name:sh_pdc.selection__res_company__pdc_operation_type__cancel
+msgid "Cancel Only"
+msgstr "إلغاء فقط"
+
+#. module: sh_pdc
+#: model:ir.model.fields.selection,name:sh_pdc.selection__res_company__pdc_operation_type__cancel_delete
+msgid "Cancel and Delete"
+msgstr "إلغاء وحذف"
+
+#. module: sh_pdc
+#: model:ir.model.fields.selection,name:sh_pdc.selection__res_company__pdc_operation_type__cancel_draft
+msgid "Cancel and Reset to Draft"
+msgstr "إلغاء وإعادة التعيين إلى مسودة"
+
+#. module: sh_pdc
+#: model:ir.model.fields.selection,name:sh_pdc.selection__account_move__sh_pdc_status__cancel
+#: model:ir.model.fields.selection,name:sh_pdc.selection__pdc_wizard__state__cancel
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Cancelled"
+msgstr "ملغى"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__attachment_ids
+msgid "Cheque Attachments"
+msgstr "مرفقات الشيك"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__reference
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_list_view
+msgid "Cheque Reference"
+msgstr "رقم الشيك"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__cheque_status
+msgid "Cheque Status"
+msgstr "حالة الشيك"
+
+#. module: sh_pdc
+#: model:ir.model,name:sh_pdc.model_res_company
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Company"
+msgstr "الشركة"
+
+#. module: sh_pdc
+#: model:ir.model,name:sh_pdc.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات"
+
+#. module: sh_pdc
+#: model_terms:ir.actions.act_window,help:sh_pdc.sh_pdc_action_move_journal_line
+msgid "Create a journal entry"
+msgstr "إنشاء قيد يومية"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__create_uid
+msgid "Created by"
+msgstr "تم الإنشاء بواسطة"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__create_date
+msgid "Created on"
+msgstr "تم الإنشاء في"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.report_pdc_payment_document
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_account_setting_inherit
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Customer"
+msgstr "العميل"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_res_company__is_cust_due_notify
+#: model:ir.model.fields,field_description:sh_pdc.field_res_config_settings__is_cust_due_notify
+msgid "Customer Due Notification"
+msgstr "إشعار استحقاق العميل"
+
+#. module: sh_pdc
+#: model:ir.model.fields,help:sh_pdc.field_pdc_wizard__access_url
+msgid "Customer Portal URL"
+msgstr "رابط بوابة العميل"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Deposited"
+msgstr "مودع"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__deposited_credit
+msgid "Deposited Credit"
+msgstr "الائتمان المودع"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__deposited_debit
+msgid "Deposited Debit"
+msgstr "الديون المودعة"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: sh_pdc
+#: model:ir.model.fields.selection,name:sh_pdc.selection__account_move__sh_pdc_status__done
+#: model:ir.model.fields.selection,name:sh_pdc.selection__pdc_wizard__state__done
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_payment_form_view
+msgid "Done"
+msgstr "مكتمل"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__done_date
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Done Date"
+msgstr "تاريخ الإنجاز"
+
+#. module: sh_pdc
+#: model:ir.model.fields.selection,name:sh_pdc.selection__account_move__sh_pdc_status__draft
+#: model:ir.model.fields.selection,name:sh_pdc.selection__pdc_wizard__cheque_status__draft
+#: model:ir.model.fields.selection,name:sh_pdc.selection__pdc_wizard__state__draft
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__due_date
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+#. module: sh_pdc
+#: model:mail.template,name:sh_pdc.sh_pdc_company_to_customer_notification_1
+msgid "Due Notification From Company To Customer"
+msgstr "إشعار الاستحقاق من الشركة إلى العميل"
+
+#. module: sh_pdc
+#: model:mail.template,name:sh_pdc.sh_pdc_company_to_int_user_notification_1
+msgid "Due Notification From Company To Internal User Customer"
+msgstr "إشعار الاستحقاق من الشركة إلى المستخدم الداخلي"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: sh_pdc
+#: model:ir.model.fields,help:sh_pdc.field_pdc_wizard__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثال: fa-tasks"
+
+#. module: sh_pdc
+#: model:mail.template,subject:sh_pdc.sh_pdc_company_to_customer_notification_1
+#: model:mail.template,subject:sh_pdc.sh_pdc_company_to_int_user_notification_1
+msgid "Gentle Remainder"
+msgstr "تذكير لطيف"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: sh_pdc
+#: model:ir.model.fields,help:sh_pdc.field_pdc_wizard__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: sh_pdc
+#: model:ir.model.fields,help:sh_pdc.field_pdc_wizard__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، تتطلب الرسائل الجديدة انتباهك."
+
+#. module: sh_pdc
+#: model:ir.model.fields,help:sh_pdc.field_pdc_wizard__message_has_error
+#: model:ir.model.fields,help:sh_pdc.field_pdc_wizard__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، بعض الرسائل بها خطأ في التسليم."
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__invoice_ids
+msgid "Invoice"
+msgstr "الفاتورة"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__invoice_id
+msgid "Invoice/Bill"
+msgstr "فاتورة/فاتورة شراء"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_payment_form_view
+msgid "Invoices/Bills"
+msgstr "فواتير/فواتير شراء"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_account_bank_statement_line__is_boolean
+#: model:ir.model.fields,field_description:sh_pdc.field_account_move__is_boolean
+msgid "Is Boolean"
+msgstr "هل هو منطقي"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__message_is_follower
+msgid "Is Follower"
+msgstr "هل هو متابع"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Journal"
+msgstr "اليومية"
+
+#. module: sh_pdc
+#: model:ir.actions.act_window,name:sh_pdc.sh_pdc_action_move_journal_line
+msgid "Journal Entries"
+msgstr "قيود اليومية"
+
+#. module: sh_pdc
+#: model:ir.model,name:sh_pdc.model_account_move
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_move_form_inherit
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_payment_form_view
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: sh_pdc
+#: model:ir.model,name:sh_pdc.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_move_form_inherit
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_payment_form_view
+msgid "Journal Items"
+msgstr "عناصر اليومية"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__memo
+msgid "Memo"
+msgstr "مذكرة"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "موعد النشاط الخاص بي"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "My Company"
+msgstr "شركتي"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__name
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Name"
+msgstr "الاسم"
+
+#. module: sh_pdc
+#: model:ir.model.fields.selection,name:sh_pdc.selection__account_move__sh_pdc_status__registered
+#: model:ir.model.fields.selection,name:sh_pdc.selection__pdc_wizard__state__registered
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_payment_form_view
+msgid "New"
+msgstr "جديد"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "حدث التقويم للنشاط التالي"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "موعد النشاط التالي"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_res_company__notify_on_1
+#: model:ir.model.fields,field_description:sh_pdc.field_res_config_settings__notify_on_1
+msgid "Notify On 1"
+msgstr "الإشعار في 1"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_res_company__notify_on_2
+#: model:ir.model.fields,field_description:sh_pdc.field_res_config_settings__notify_on_2
+msgid "Notify On 2"
+msgstr "الإشعار في 2"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_res_company__notify_on_3
+#: model:ir.model.fields,field_description:sh_pdc.field_res_config_settings__notify_on_3
+msgid "Notify On 3"
+msgstr "الإشعار في 3"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_res_company__notify_on_4
+#: model:ir.model.fields,field_description:sh_pdc.field_res_config_settings__notify_on_4
+msgid "Notify On 4"
+msgstr "الإشعار في 4"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_res_company__notify_on_5
+#: model:ir.model.fields,field_description:sh_pdc.field_res_config_settings__notify_on_5
+msgid "Notify On 5"
+msgstr "الإشعار في 5"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_res_company__is_notify_to_customer
+#: model:ir.model.fields,field_description:sh_pdc.field_res_config_settings__is_notify_to_customer
+msgid "Notify to Customer"
+msgstr "الإشعار للعميل"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_res_config_settings__is_notify_to_user
+msgid "Notify to Internal User"
+msgstr "الإشعار للمستخدم الداخلي"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_res_company__is_notify_to_user
+msgid "Notify to Internal User "
+msgstr "الإشعار للمستخدم الداخلي"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: sh_pdc
+#: model:ir.model.fields,help:sh_pdc.field_pdc_wizard__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: sh_pdc
+#: model:ir.model.fields,help:sh_pdc.field_pdc_wizard__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل ذات خطأ التسليم"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_res_company__pdc_operation_type
+#: model:ir.model.fields,field_description:sh_pdc.field_res_config_settings__pdc_operation_type
+msgid "Operation Type"
+msgstr "نوع العملية"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_res_company__pdc_vendor
+#: model:ir.model.fields,field_description:sh_pdc.field_res_config_settings__pdc_vendor
+msgid "PDC Account for Vendor"
+msgstr "حساب المورد"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_res_company__pdc_customer
+#: model:ir.model.fields,field_description:sh_pdc.field_res_config_settings__pdc_customer
+msgid "PDC Account for customer"
+msgstr "حساب العميل"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_account_setting_inherit
+msgid "PDC Cancel Configuration"
+msgstr " PDC تهيئة إلغاء "
+
+#. module: sh_pdc
+#: model:ir.actions.server,name:sh_pdc.pdc_cheque_due_date_notify_customer_ir_actions_server
+msgid "PDC Cheque Due Date Notification Customer"
+msgstr "إشعار استحقاق شيك PDC للعميل"
+
+#. module: sh_pdc
+#: model:ir.actions.act_window,name:sh_pdc.sh_pdc_payment_menu_action
+msgid "PDC Cheque Payment"
+msgstr "دفع شيك PDC"
+
+#. module: sh_pdc
+#: model:ir.actions.act_window,name:sh_pdc.sh_pdc_wizard_action
+#: model:ir.actions.report,name:sh_pdc.action_report_pdc_payment
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_move_form_inherit
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_account_setting_inherit
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_payment_form_view
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_wizard_form_wizard
+msgid "PDC Payment"
+msgstr "الشيكات"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_move_form_inherit
+msgid "PDC Payments"
+msgstr "مدفوعات الشيكات"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_account_bank_statement_line__sh_pdc_status
+#: model:ir.model.fields,field_description:sh_pdc.field_account_move__sh_pdc_status
+msgid "PDC Status"
+msgstr "حالة PDC"
+
+#. module: sh_pdc
+#: model:ir.model,name:sh_pdc.model_pdc_wizard
+msgid "PDC Wizard"
+msgstr "معالج PDC"
+
+#. module: sh_pdc
+#: model:ir.ui.menu,name:sh_pdc.menu_pdc_payment
+msgid "PDC payment"
+msgstr "دفع PDC"
+
+#. module: sh_pdc
+#: model:ir.model.fields.selection,name:sh_pdc.selection__pdc_wizard__cheque_status__paid
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__partner_id
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__payment_amount
+msgid "Payment Amount"
+msgstr "مبلغ الدفع"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__payment_date
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Payment Date"
+msgstr "تاريخ الدفع"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__journal_id
+msgid "Payment Journal"
+msgstr "يومية الدفع"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__payment_type
+msgid "Payment Type"
+msgstr "نوع الدفع"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_account_bank_statement_line__pdc_id
+#: model:ir.model.fields,field_description:sh_pdc.field_account_move__pdc_id
+#: model:ir.model.fields,field_description:sh_pdc.field_account_move_line__pdc_id
+#: model:ir.model.fields,field_description:sh_pdc.field_ir_attachment__pdc_id
+#: model:ir.model.fields,field_description:sh_pdc.field_product_document__pdc_id
+msgid "Pdc"
+msgstr "PDC"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_account_bank_statement_line__pdc_payment_ids
+#: model:ir.model.fields,field_description:sh_pdc.field_account_move__pdc_payment_ids
+msgid "Pdc Payment"
+msgstr "دفع PDC"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_account_bank_statement_line__pdc_payment_count
+#: model:ir.model.fields,field_description:sh_pdc.field_account_move__pdc_payment_count
+msgid "Pdc payment count"
+msgstr "عدد مدفوعات PDC"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__access_url
+msgid "Portal Access URL"
+msgstr "رابط الوصول للبوابة"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__rating_ids
+msgid "Ratings"
+msgstr "التقييمات"
+
+#. module: sh_pdc
+#: model:ir.model.fields.selection,name:sh_pdc.selection__pdc_wizard__payment_type__receive_money
+msgid "Receive Money"
+msgstr "استلام الأموال"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.report_pdc_payment_document
+msgid "Receive money"
+msgstr "استلام الأموال"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__customer_account
+msgid "Receive money account"
+msgstr "حساب استلام الأموال"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_payment_form_view
+msgid "Register"
+msgstr "تسجيل"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_move_form_inherit
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_wizard_form_wizard
+msgid "Register PDC Cheque"
+msgstr "تسجيل شيك PDC"
+
+#. module: sh_pdc
+#: model:ir.model.fields.selection,name:sh_pdc.selection__account_move__sh_pdc_status__deposited
+#: model:ir.model.fields.selection,name:sh_pdc.selection__pdc_wizard__cheque_status__deposit
+#: model:ir.model.fields.selection,name:sh_pdc.selection__pdc_wizard__state__deposited
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Registered"
+msgstr "مسجل"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_payment_form_view
+msgid "Reset to Draft"
+msgstr "إعادة التعيين إلى مسودة"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__activity_user_id
+#: model:ir.model.fields,field_description:sh_pdc.field_res_company__sh_user_ids
+#: model:ir.model.fields,field_description:sh_pdc.field_res_config_settings__sh_user_ids
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_payment_form_view
+msgid "Return"
+msgstr "إرجاع"
+
+#. module: sh_pdc
+#: model:ir.model.fields.selection,name:sh_pdc.selection__account_move__sh_pdc_status__returned
+#: model:ir.model.fields.selection,name:sh_pdc.selection__pdc_wizard__state__returned
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Returned"
+msgstr "مرتجع"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Search PDC Payment"
+msgstr "بحث في مدفوعات PDC"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__access_token
+msgid "Security Token"
+msgstr "رمز الأمان"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_account_setting_inherit
+msgid "Select user to receive email notification."
+msgstr "اختر المستخدم لتلقي إشعار البريد الإلكتروني."
+
+#. module: sh_pdc
+#: model:ir.model.fields.selection,name:sh_pdc.selection__pdc_wizard__payment_type__send_money
+#: model_terms:ir.ui.view,arch_db:sh_pdc.report_pdc_payment_document
+msgid "Send Money"
+msgstr "إرسال الأموال"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__vendor_account
+msgid "Send money account"
+msgstr "حساب إرسال الأموال"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.view_sh_pdc_filter
+msgid "Status"
+msgstr "الحالة"
+
+#. module: sh_pdc
+#: model:ir.model.fields,help:sh_pdc.field_pdc_wizard__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق قد انقضى\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.sh_pdc_list_view
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_account_bank_statement_line__total_pdc_payment
+#: model:ir.model.fields,field_description:sh_pdc.field_account_move__total_pdc_payment
+msgid "Total "
+msgstr "الإجمالي"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_account_bank_statement_line__total_pdc_cancel
+#: model:ir.model.fields,field_description:sh_pdc.field_account_move__total_pdc_cancel
+msgid "Total Cancel"
+msgstr "إجمالي الإلغاءات"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_account_bank_statement_line__total_pdc_pending
+#: model:ir.model.fields,field_description:sh_pdc.field_account_move__total_pdc_pending
+msgid "Total Pending"
+msgstr "إجمالي المعلقة"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_account_bank_statement_line__total_pdc_received
+#: model:ir.model.fields,field_description:sh_pdc.field_account_move__total_pdc_received
+msgid "Total Received"
+msgstr "إجمالي المستلمة"
+
+#. module: sh_pdc
+#: model:ir.model.fields,help:sh_pdc.field_pdc_wizard__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي في السجل."
+
+#. module: sh_pdc
+#: model_terms:ir.ui.view,arch_db:sh_pdc.report_pdc_payment_document
+msgid "Vendor"
+msgstr "المورد"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: sh_pdc
+#: model:ir.model.fields,help:sh_pdc.field_pdc_wizard__website_message_ids
+msgid "Website communication history"
+msgstr "سجل التواصل عبر الموقع"
+
+#. module: sh_pdc
+#: model:ir.model.fields,field_description:sh_pdc.field_pdc_wizard__company_id
+msgid "company"
+msgstr "الشركة"

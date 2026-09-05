@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_rental_cancel_wizard_form" model="ir.ui.view">
+        <field name="name">rental.cancel.wizard.form</field>
+        <field name="model">rental.cancel.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Cancel Options" version="7.0">
+                <sheet>
+                    <group>
+                        <field name="reason" placeholder="Write the reason for cancellation..." nolabel="1"/>
+                        <field name="checkout_date"
+                               invisible="not show_checkout_date"
+                               required="1"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <!-- Default Buttons (visible only if not early_checkout) -->
+                    <button name="action_cancel_paid"
+                            type="object"
+                            string="Cancel &amp; Refund"
+                            class="btn-primary"
+                            invisible="show_checkout_date"/>
+
+                    <button name="action_no_show_cancel"
+                            type="object"
+                            string="Cancel without Refund"
+                            class="btn-secondary"
+                            invisible="show_checkout_date"/>
+
+                    <button name="open_checkout_date_wizard"
+                            type="object"
+                            string="Early Checkout"
+                            class="btn-secondary"
+                            context="{'cancel_type': 'early_checkout'}"
+                            invisible="show_checkout_date"/>
+
+                    <button name="action_free_cancel"
+                            type="object"
+                            string="No Response"
+                            class="btn-secondary"
+                            invisible="show_checkout_date"/>
+
+                    <!-- Confirm Early Checkout -->
+                    <button name="action_early_checkout"
+                            type="object"
+                            string="Confirm Early Checkout"
+                            class="btn-primary"
+                            invisible="not show_checkout_date"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+
+    <t t-name="alomran_implementation.ListConfirmationDialog"
+       t-inherit="web.ListView.ConfirmationModal"
+       t-inherit-mode="extension">
+
+        <xpath expr="//Field" position="attributes">
+            <attribute name="options">
+                {'no_open': true}
+            </attribute>
+        </xpath>
+
+    </t>
+
+</templates>

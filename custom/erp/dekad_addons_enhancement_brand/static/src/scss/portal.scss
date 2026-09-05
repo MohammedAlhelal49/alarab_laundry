@@ -1,0 +1,90 @@
+  // change the main designing
+  #wrapwrap > main {
+    background: #f0f0f0 !important;
+  }
+
+
+// handle the login page designing
+.oe_login_form,.oe_signup_form {
+    max-width: 350px;
+    position: relative;
+    margin: 50px auto;
+    background: white !important;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #e4e4e4;
+  }
+
+  // handle the change password page
+  .oe_reset_password_form {
+    max-width: 300px;
+    position: relative;
+    margin: 50px auto;
+    background: white !important;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #e4e4e4;
+    .form-control {
+      min-height: calc(1.5em + 0.5rem + 10px) !important;
+    }
+  }
+
+//   // handle the change profile information page
+  .o_portal_details {
+    margin-right: 15px;
+    .col-lg-8 {
+      margin: 15px;
+      background: white !important;
+      border-radius: 5px;
+      border: 1px solid #e4e4e4;
+
+      button {
+        float: none !important;
+        margin-top: 20px !important;
+      }
+    }
+  }
+
+  // handle the password field designing
+    form .password-toggle-icon-holder {
+    position: relative;
+    .password-toggle-icon {
+      position: absolute;
+right: 10px;
+  bottom: 13px;
+      cursor: pointer;
+    }
+  }
+  // hide the powered by odoo from the sidebar
+  .o_portal_sidebar {
+      .o_portal_sidebar_content {
+          div.small {
+              display : none !important;
+              }
+          }
+      }
+
+  #auth_totp_portal_enable {
+      margin-bottom : 40px;
+      }
+
+  a[href="https://www.odoo.com?utm_source=db&amp;utm_medium=auth"] {
+   display : none !important;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

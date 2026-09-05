@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="group_de_attendance" model="res.groups">
+            <field name="name">Attendance</field>
+            <field name="category_id" ref="dekad_core.module_category_student"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user'))]"/>
+            <field name="sequence">40</field>
+        </record>
+
+        <record id="dekad_core.group_de_back_office_admin" model="res.groups">
+            <field name="implied_ids"
+                   eval="[(4, ref('group_de_attendance'))]"/>
+        </record>
+
+
+        <record model="ir.rule" id="teacher_de_attendance_sheet_rule">
+            <field name="name">Teacher Attendance sheet rule</field>
+            <field name="model_id" ref="model_de_attendance_sheet"/>
+            <field name="groups"
+                   eval="[(4, ref('dekad_core.group_de_teacher'))]"/>
+            <field name="domain_force">[('attendance_line_ids.student_id.id','in',user.student_ids.ids)]
+            </field>
+        </record>
+
+
+        <record model="ir.rule" id="teacher_de_attendance_line_rule">
+            <field name="name">Teacher Attendance line rule</field>
+            <field name="model_id" ref="model_de_attendance_line"/>
+            <field name="groups"
+                   eval="[(4, ref('dekad_core.group_de_teacher'))]"/>
+            <field name="domain_force">[('student_id.id','in',user.student_ids.ids)]
+            </field>
+        </record>
+
+
+        <record model="ir.rule" id="portal_de_attendance_line_rule">
+            <field name="name">portal Attendance line rule</field>
+            <field name="model_id" ref="model_de_attendance_line"/>
+            <field name="groups"
+                   eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">['|',('student_id.user_id','=',user.id) , ('student_id.user_id', 'in'
+                ,user.child_ids.ids) ]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="portal_attendance_sheet_rule">
+            <field name="name">portal Attendance sheet rule</field>
+            <field name="model_id" ref="model_de_attendance_sheet"/>
+            <field name="groups"
+                   eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">['|',('attendance_line_ids.student_id.user_id','=',user.id) ,
+                ('attendance_line_ids.student_id.user_id', 'in'
+                ,user.child_ids.ids)]
+            </field>
+        </record>
+
+    </data>
+</odoo>

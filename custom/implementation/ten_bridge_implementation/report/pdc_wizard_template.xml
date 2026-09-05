@@ -1,0 +1,86 @@
+<odoo>
+
+    <template id="report_pdc_payment_inherit"
+              inherit_id="sh_pdc.report_pdc_payment_document">
+
+
+        <xpath expr="//t[@t-set='layout_document_title']" position="replace">
+
+            <t t-set="layout_document_title">
+                <div style="text-align:center; font-size:28px;margin-bottom:70px;">
+                    Cheque Payment Receipt
+                </div>
+
+                <span t-field="doc.name"/>
+            </t>
+
+        </xpath>
+
+        <!-- Remove Agent -->
+        <xpath expr="//strong[text()='Agent']/.." position="replace"/>
+
+        <!-- Change Reference label -->
+        <xpath expr="//strong[text()='Reference']" position="replace">
+            <strong>Cheque No:</strong>
+        </xpath>
+
+        <!-- Remove Done Date row -->
+        <xpath expr="//strong[text()='Done Date']/ancestor::div[contains(@class,'row')]"
+               position="replace"/>
+
+        <xpath expr="//div[contains(@class,'page')]" position="inside">
+
+            <!-- Row 1: Company | Customer -->
+            <table style="width:100%; border-collapse:collapse; margin-bottom:20px; margin-top:80px;">
+                <tr>
+                    <td style="width:50%; vertical-align:top; padding-right:20px;border-top:2px solid #fff;border-bottom:2px solid #fff; background-color:#fff !important;">
+                        <div style="font-size:10pt; font-weight:bold; border-bottom:1px solid #333; padding-bottom:4px; margin-bottom:10px;">
+                            <span t-esc="doc.company_id.name"/>
+                        </div>
+                        <div style="font-size:8pt; color:#555; line-height:2.0;">
+                            <br/>
+                            Authorized Signature<br/>
+                            Company Stamp<br/>
+                            Approved By:<span style="display:inline-block; border-bottom:1px solid #555; width:120px; margin-bottom:-2px;"></span>
+                        </div>
+                    </td>
+                    <td style="width:50%; vertical-align:top; padding-left:20px; border-top:2px solid #fff;border-bottom:2px solid #fff; background-color:#fff !important;">
+                        <div style="font-size:10pt; font-weight:bold; border-bottom:1px solid #333; padding-bottom:4px; margin-bottom:10px;">
+                            <t t-if="doc.partner_id and doc.partner_id.name">
+                                <span t-esc="doc.partner_id.name"/>
+                            </t>
+                            <t t-else="">
+                                Customer Signature
+                            </t>
+                        </div>
+                        <div style="font-size:8pt; color:#555; line-height:2.0;">
+                            <br/>
+                            Authorized Signature<br/>
+                            Company Stamp<br/>
+                            Approved By: <span style="display:inline-block; border-bottom:1px solid #555; width:120px; margin-bottom:-2px;"></span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Row 2: Finance Manager (left only) -->
+            <table style="width:50%;  background-color:#fff !important; border-collapse:collapse; margin-bottom:24px;">
+                <tr>
+                    <td style="width:50%; vertical-align:top; border-top:2px solid #fff;border-bottom:2px solid #fff; background-color:#fff !important; padding-right:20px;">
+                        <br/>
+                        <div style="font-size:10pt; font-weight:bold; border-bottom:1px solid #333; padding-bottom:4px; margin-bottom:10px;">
+                            Finance Manager
+                        </div>
+                        <div style="font-size:8pt; color:#555; line-height:2.0;">
+                            Authorized Signature<br/>
+                            Company Stamp<br/>
+                            Approved By: <span style="display:inline-block; border-bottom:1px solid #555; width:120px; margin-bottom:-2px;"></span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </xpath>
+
+    </template>
+
+</odoo>

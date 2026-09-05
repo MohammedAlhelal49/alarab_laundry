@@ -1,0 +1,61 @@
+// static/src/scss/primary_variables.scss
+// Al Omran Center Primary Colors - English LTR Version
+
+// Color Palettes
+$o-color-palettes: map-merge($o-color-palettes, (
+    'alomran': (
+        'o-color-1': #1a5490,  // Primary Blue
+        'o-color-2': #ffffff,  // White
+        'o-color-3': #f8f9fa,  // Light Gray
+        'o-color-4': #212529,  // Dark
+        'o-color-5': #ffc107,  // Accent Yellow
+    ),
+));
+
+// Apply palette
+$o-website-values-palettes: (
+    (
+        'alomran',
+    ),
+);
+
+// Fonts
+$o-theme-font-configs: (
+    'Cairo': (
+        'family': ('Cairo', sans-serif),
+        'url': 'Cairo:300,400,600,700,900',
+    ),
+);
+
+$o-theme-font: 'Cairo';
+
+// Bootstrap Variables Override
+$primary: #1a5490;
+$secondary: #6c757d;
+$success: #25d366;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #212529;
+
+// Font Sizes
+$font-size-base: 1rem;
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+
+// Spacing
+$spacer: 1rem;
+
+// Border Radius
+$border-radius: 0.5rem;
+$border-radius-lg: 1rem;
+$border-radius-sm: 0.25rem;
+
+// Shadows
+$box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+$box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+$box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);

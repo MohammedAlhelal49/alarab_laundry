@@ -1,0 +1,489 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_web_theme
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-05 18:56+0000\n"
+"PO-Revision-Date: 2025-11-05 18:56+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "% Success Rate"
+msgstr "% معدل النجاح"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "15"
+msgstr "15"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "50"
+msgstr "50"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "500"
+msgstr "500"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "98"
+msgstr "98"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "<b class=\"me-2\"/>Excellence in Education"
+msgstr "<b class=\"me-2\"/>التميز في التعليم"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "<i class=\"fa fa-check-circle-o\"/> Thank you for subscribing!"
+msgstr "<i class=\"fa fa-check-circle-o\"/> شكرًا لك على الاشتراك!"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "<i class=\"fa fa-phone me-2\"/>Contact Us"
+msgstr "<i class=\"fa fa-phone me-2\"/>اتصل بنا"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"<span class=\"bg-primary-opacity subtitle\">\n"
+"                                            About Us\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"bg-primary-opacity subtitle\">\n"
+"                                            من نحن\n"
+"                                        </span>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"<span class=\"bg-primary-opacity subtitle\">\n"
+"                                            Educational Programs\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"bg-primary-opacity subtitle\">\n"
+"                                            البرامج التعليمية\n"
+"                                        </span>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"<span class=\"bg-primary-opacity subtitle\">\n"
+"                                            Facilities\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"bg-primary-opacity subtitle\">\n"
+"                                            المرافق\n"
+"                                        </span>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"<span class=\"bg-primary-opacity subtitle\">\n"
+"                                            News &amp; Events\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"bg-primary-opacity subtitle\">\n"
+"                                            الأخبار والفعاليات\n"
+"                                        </span>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"<span class=\"bg-primary-opacity subtitle\">\n"
+"                                            Our Advantages\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"bg-primary-opacity subtitle\">\n"
+"                                            مزايانا\n"
+"                                        </span>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"<span class=\"o_animated_text o_animate o_anim_fade_in o_visible\">\n"
+"                                                Comprehensive Education for All Levels\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"o_animated_text o_animate o_anim_fade_in o_visible\">\n"
+"                                                تعليم شامل لجميع المستويات\n"
+"                                            </span>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"<span class=\"o_animated_text o_animate o_anim_fade_in o_visible\">\n"
+"                                                Latest Updates\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"o_animated_text o_animate o_anim_fade_in o_visible\">\n"
+"                                                آخر التحديثات\n"
+"                                            </span>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"<span class=\"o_animated_text o_animate o_anim_fade_in o_visible\">\n"
+"                                                Leading School in Quality Education\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"o_animated_text o_animate o_anim_fade_in o_visible\">\n"
+"                                                المدرسة الرائدة في التعليم الجيد\n"
+"                                            </span>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"<span class=\"o_animated_text o_animate o_anim_fade_in o_visible\">\n"
+"                                                Tour Our Campus\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"o_animated_text o_animate o_anim_fade_in o_visible\">\n"
+"                                                جولة في حرمنا المدرسي\n"
+"                                            </span>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"<span class=\"o_animated_text o_animate o_anim_fade_in o_visible\">\n"
+"                                                Why Choose Our School?\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"o_animated_text o_animate o_anim_fade_in o_visible\">\n"
+"                                                لماذا تختار مدرستنا؟\n"
+"                                            </span>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"<span class=\"o_animated_text o_animate o_anim_zoom_in o_visible text-300\">\n"
+"                                                A distinguished private school providing modern educational environment and advanced curriculum to build an aware and excellent generation\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"o_animated_text o_animate o_anim_zoom_in o_visible text-300\">\n"
+"                                                مدرسة خاصة متميزة توفر بيئة تعليمية حديثة ومنهجًا متقدمًا لبناء جيل واعٍ ومتميز\n"
+"                                            </span>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"<span class=\"o_animated_text o_animate o_anim_zoom_in o_visible text-white\">\n"
+"                                                Building Bright Futures Through Quality Education\n"
+"                                            </span>"
+msgstr ""
+"<span class=\"o_animated_text o_animate o_anim_zoom_in o_visible text-white\">\n"
+"                                                بناء مستقبل مشرق من خلال التعليم الجيد\n"
+"                                            </span>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"<span class=\"subtitle\" style=\"background: #ffffff21;color: #ffffff;\">\n"
+"                                            Stay Connected\n"
+"                                        </span>"
+msgstr ""
+"<span class=\"subtitle\" style=\"background: #ffffff21;color: #ffffff;\">\n"
+"                                            ابق على اتصال\n"
+"                                        </span>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "<span class=\"text-primary small\">October 10, 2025</span>"
+msgstr "<span class=\"text-primary small\">10 أكتوبر 2025</span>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "<span class=\"text-primary small\">October 15, 2025</span>"
+msgstr "<span class=\"text-primary small\">15 أكتوبر 2025</span>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "<span class=\"text-primary small\">October 5, 2025</span>"
+msgstr "<span class=\"text-primary small\">5 أكتوبر 2025</span>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Advanced science and computer laboratories"
+msgstr "مختبرات علوم وحاسوب متطورة"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Advanced security system and continuous monitoring"
+msgstr "نظام أمني متطور ومراقبة مستمرة"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"Ages 3-5 years - Developing basic skills, language, and social abilities in "
+"a stimulating and safe environment"
+msgstr "الأعمار 3-5 سنوات - تطوير المهارات الأساسية واللغة والقدرات الاجتماعية في بيئة محفزة وآمنة"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Classrooms"
+msgstr "الفصول الدراسية"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Comfortable and reliable school bus service"
+msgstr "خدمة حافلة مدرسية مريحة وموثوقة"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Comprehensive sports, arts, and cultural programs"
+msgstr "برامج شاملة للرياضة والفنون والثقافة"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Diverse Activities"
+msgstr "أنشطة متنوعة"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Elementary School"
+msgstr "المدرسة الابتدائية"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Enroll Now"
+msgstr "سجل الآن"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Equipped clinic and regular health monitoring"
+msgstr "عيادة مجهزة ومراقبة صحية منتظمة"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Focus on English and additional languages"
+msgstr "التركيز على اللغة الإنجليزية ولغات إضافية"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Get the latest news, events, and updates from our school"
+msgstr "احصل على آخر الأخبار والفعاليات والتحديثات من مدرستنا"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"Grades 1-6 - Building strong academic foundation and developing critical "
+"thinking skills"
+msgstr "الصفوف 1-6 - بناء أساس أكاديمي قوي وتطوير مهارات التفكير النقدي"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"Grades 7-9 - Developing academic skills and preparing for high school "
+"education"
+msgstr "الصفوف 7-9 - تطوير المهارات الأكاديمية والتحضير لمرحلة التعليم الثانوي"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Have Questions?"
+msgstr "هل لديك أسئلة؟"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Healthcare"
+msgstr "الرعاية الصحية"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Healthy Nutrition"
+msgstr "التغذية الصحية"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Indoor and outdoor sports fields and activities"
+msgstr "ملاعب وأنشطة رياضية داخلية وخارجية"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Kindergarten"
+msgstr "رياض الأطفال"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Laboratories"
+msgstr "المختبرات"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Learn More"
+msgstr "اعرف المزيد"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Middle School"
+msgstr "المدرسة المتوسطة"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Modern Classrooms"
+msgstr "فصول دراسية حديثة"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Modern Technology"
+msgstr "التقنية الحديثة"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Multiple Languages"
+msgstr "لغات متعددة"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "New Science Lab Opening"
+msgstr "افتتاح مختبر العلوم الجديد"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "News"
+msgstr "الأخبار"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Nutritious and balanced meals prepared with care"
+msgstr "وجبات مغذية ومتوازنة محضرة بعناية"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"Our students achieved first place in the national science competition..."
+msgstr "حقق طلابنا المركز الأول في المسابقة الوطنية للعلوم..."
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Our team is ready to answer all your questions and inquiries"
+msgstr "فريقنا جاهز للإجابة على جميع أسئلتك واستفساراتك"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Qualified Teachers"
+msgstr "معلمون مؤهلون"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Read More <i class=\"fa fa-arrow-right\"/>"
+msgstr "اقرأ المزيد <i class=\"fa fa-arrow-right\"/>"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Registration Open for New Year"
+msgstr "فتح التسجيل للعام الجديد"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"Registration is now open for all grade levels for the upcoming academic "
+"year..."
+msgstr "التسجيل مفتوح الآن لجميع الصفوف الدراسية للعام الأكاديمي القادم..."
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Safe Environment"
+msgstr "بيئة آمنة"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Safe Transportation"
+msgstr "مواصلات آمنة"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "School Students"
+msgstr "طلاب المدرسة"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Science Labs"
+msgstr "مختبرات العلوم"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Smart classrooms equipped with latest educational tools"
+msgstr "فصول ذكية مجهزة بأحدث الأدوات التعليمية"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Spacious classrooms equipped with latest technology"
+msgstr "فصول دراسية واسعة مجهزة بأحدث التقنيات"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Specialized and highly experienced teaching staff"
+msgstr "هيئة تدريس متخصصة وذات خبرة عالية"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Sports Facilities"
+msgstr "المرافق الرياضية"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Students"
+msgstr "الطلاب"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Students Win National Competition"
+msgstr "فوز الطلاب في المسابقة الوطنية"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Subscribe"
+msgstr "اشترك"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Subscribe to Our Newsletter"
+msgstr "اشترك في نشرتنا الإخبارية"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Teachers"
+msgstr "المعلمون"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"We are a specialized private school providing excellent education from kindergarten through high school,\n"
+"                                            combining modern curricula with core values to build well-rounded students"
+msgstr ""
+"نحن مدرسة خاصة متخصصة تقدم تعليمًا متميزًا من مرحلة رياض الأطفال حتى المرحلة الثانوية،\n"
+"                                            بدمج المناهج الحديثة مع القيم الأساسية لبناء طلاب متكاملين"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "We are committed to your privacy"
+msgstr "نحن ملتزمون بخصوصيتك"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid ""
+"We opened our new science lab equipped with the latest equipment and "
+"devices..."
+msgstr "لقد افتتحنا مختبر العلوم الجديد المجهز بأحدث المعدات والأجهزة..."
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "Years of Excellence"
+msgstr "سنوات من التميز"
+
+#. module: dekad_web_theme
+#: model_terms:ir.ui.view,arch_db:dekad_web_theme.homepage
+msgid "your.email@example.com"
+msgstr "بريدك.الإلكتروني@example.com"

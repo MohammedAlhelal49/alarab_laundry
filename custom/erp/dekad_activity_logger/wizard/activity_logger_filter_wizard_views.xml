@@ -1,0 +1,61 @@
+<odoo>
+
+    <record id="view_activity_logger_filter_wizard" model="ir.ui.view">
+        <field name="name">activity.logger.filter.wizard.form</field>
+        <field name="model">activity.logger.filter.wizard</field>
+        <field name="arch" type="xml">
+
+            <form string="Activity Log Report">
+
+                <group>
+
+                    <field name="user_ids"
+                           widget="many2many_tags"/>
+                    <field name="company_ids" widget="many2many_tags"/>
+
+                    <field name="action_type_ids"
+                           widget="many2many_tags"/>
+
+                    <field name="document_type_ids"
+                           widget="many2many_tags"
+                            />
+
+                    <field name="date_from"
+                               widget="daterange"
+                               options="{'end_date_field': 'date_to'}"
+                               />
+                    <field name="date_to" invisible="1"/>
+                    
+
+                </group>
+
+                <footer>
+
+                    <button
+                        name="action_show_logs"
+                        type="object"
+                        string="Show Logs"
+                        class="btn-primary"/>
+
+                    <button
+                        string="Cancel"
+                        special="cancel"/>
+
+                </footer>
+
+            </form>
+
+        </field>
+
+    </record>
+
+    <record id="action_activity_logger_report" model="ir.actions.act_window">
+        <field name="name">Activity Log Report</field>
+        <field name="res_model">activity.logger.filter.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+
+    </record>
+
+
+</odoo>

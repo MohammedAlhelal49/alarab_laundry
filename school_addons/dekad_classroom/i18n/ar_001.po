@@ -1,0 +1,271 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_classroom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-28 16:49+0000\n"
+"PO-Revision-Date: 2025-09-28 16:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_form
+msgid ""
+"<i class=\"fa fa-close\"/>\n"
+"                                Clear all"
+msgstr "<i class=\"fa fa-close\"/>\n                                مسح الكل"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_form
+msgid "Add students to the Classroom"
+msgstr "إضافة طلاب إلى الشعبة"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__all_selected_student_ids
+msgid "All Selected students"
+msgstr "جميع الطلاب المحددين"
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_form
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_form
+msgid "Are you sure you want to unlink all students from this classroom?"
+msgstr "هل أنت متأكد أنك تريد إلغاء ربط جميع الطلاب من هذه الشعبة؟"
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_asset_form
+msgid "Asset"
+msgstr "أصل"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__asset_ids
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_form
+msgid "Assets"
+msgstr "الأصول"
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_search
+msgid "Capacity"
+msgstr "السعة"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__product_category
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__category_id
+msgid "Category"
+msgstr "الفئة"
+
+#. module: dekad_classroom
+#: model:ir.actions.act_window,name:dekad_classroom.act_open_de_classroom_view
+msgid "ClassRooms"
+msgstr "الشعب"
+
+#. module: dekad_classroom
+#: model:ir.model,name:dekad_classroom.model_de_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__classroom_id
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_student__classroom_id
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_student_grade__classroom_id
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_form
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_list
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_search
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_grade_form_classroom_inherited
+msgid "Classroom"
+msgstr "الشعبة"
+
+#. module: dekad_classroom
+#: model:ir.model,name:dekad_classroom.model_de_asset
+msgid "Classroom Assets"
+msgstr "أصول الشعبة"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_grade__classroom_count
+msgid "Classroom Count"
+msgstr "عدد الشعب"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__filtered_students
+msgid "Classroom filtered students"
+msgstr "طلاب الشعبة المفلترين"
+
+#. module: dekad_classroom
+#: model:ir.model,name:dekad_classroom.model_de_product
+msgid "Classroom products"
+msgstr "منتجات الشعبة"
+
+#. module: dekad_classroom
+#: model:ir.model,name:dekad_classroom.model_de_product_category
+msgid "Classroom products categories"
+msgstr "فئات منتجات الشعبة"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_grade__classroom_ids
+msgid "Classroom(s)"
+msgstr "الشعب"
+
+#. module: dekad_classroom
+#: model:ir.ui.menu,name:dekad_classroom.menu_de_classroom
+#: model:res.groups,name:dekad_classroom.group_de_classroom
+msgid "Classrooms"
+msgstr "الشعب"
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_graph
+msgid "Classrooms per grade"
+msgstr "الشعب حسب الصف"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__create_uid
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__create_uid
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__create_uid
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product_category__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__create_date
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__create_date
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__create_date
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product_category__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__display_name
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__display_name
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__display_name
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product_category__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__filtered_student_count
+msgid "Filtered student"
+msgstr "الطلاب المفلترين"
+
+#. module: dekad_classroom
+#: model:ir.model,name:dekad_classroom.model_de_grade
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__grade_id
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_search
+msgid "Grade"
+msgstr "الصف"
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_search
+msgid "Group By..."
+msgstr "تجميع حسب..."
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__id
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__id
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__id
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product_category__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__product_image
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__image
+msgid "Image"
+msgstr "صورة"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__write_uid
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__write_uid
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__write_uid
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product_category__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__write_date
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__write_date
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__write_date
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product_category__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__product_name
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__product_id
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_product_form
+msgid "Product"
+msgstr "المنتج"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__qty
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__all_classroom_student
+msgid "Selected students ids stored as string"
+msgstr "معرفات الطلاب المحددين مخزنة كسلسلة"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: dekad_classroom
+#: model:ir.model,name:dekad_classroom.model_de_student
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__student_count
+msgid "Student"
+msgstr "الطالب"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__capacity
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_grade__max_student_count
+msgid "Student capacity"
+msgstr "سعة الطلاب"
+
+#. module: dekad_classroom
+#: model:ir.model,name:dekad_classroom.model_de_student_grade
+msgid "Student grade Details"
+msgstr "تفاصيل صف الطالب"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__student_ids
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_form
+msgid "Students"
+msgstr "الطلاب"
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_list
+msgid "Students capacity"
+msgstr "سعة الطلاب"
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_list
+msgid "Students count"
+msgstr "عدد الطلاب"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,help:dekad_classroom.field_de_classroom__sequence
+msgid "Used for sorting classrooms"
+msgstr "يستخدم لترتيب الشعب"
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__name
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product_category__name
+msgid "name"
+msgstr "الاسم"

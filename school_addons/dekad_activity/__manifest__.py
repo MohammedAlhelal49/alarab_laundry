@@ -1,0 +1,30 @@
+{
+    'name': 'Dekad Activity',
+    'version': '18.0',
+    'license': 'LGPL-3',
+    'category': 'Education',
+    "sequence": 3,
+    'summary': 'Manage Activities',
+    'author': "Dekad software solutions",
+    'depends': ['dekad_core', 'mail', 'dekad_classroom'],
+    'data': [
+        'security/ir_rule_data.xml',
+        'security/ir.model.access.csv',
+        'views/activity_view.xml',
+        'views/activity_type_view.xml',
+        'views/student_view.xml',
+        'wizard/multi_activity_wizard.xml',
+        'menus/menu.xml',
+        # website',
+        'website/main.xml',
+        # demo',
+        # 'demo/de_activity.xml',
+
+    ],
+    'images': [
+        # 'static/description/dekad_activity_banner.jpg',
+    ],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="de_specialist_1" model="de.specialist">
+            <field name="name">Mathmatics</field>
+        </record>
+        <record id="de_specialist_2" model="de.specialist">
+            <field name="name">English</field>
+        </record>
+        <record id="de_specialist_3" model="de.specialist">
+            <field name="name">Sport</field>
+        </record>
+
+    </data>
+</odoo>

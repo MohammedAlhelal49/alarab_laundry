@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Category -->
+        <record id="module_category_contact_permissions"
+                model="ir.module.category">
+            <field name="name">Contact Additional Permissions</field>
+            <field name="sequence">12</field>
+        </record>
+
+        <!-- Update Contact -->
+        <record id="group_contact_update" model="res.groups">
+            <field name="name">Allow Update Contact</field>
+            <field name="category_id"
+                   ref="dekad_erp_additional_permissions.module_category_contact_permissions"/>
+        </record>
+
+        <!-- Create Contact -->
+        <record id="group_contact_create" model="res.groups">
+            <field name="name">Allow Creating Contacts</field>
+            <field name="category_id"
+                   ref="dekad_erp_additional_permissions.module_category_contact_permissions"/>
+        </record>
+
+        <!-- Delete Contact -->
+        <record id="group_contact_delete" model="res.groups">
+            <field name="name">Allow Deleting Contacts</field>
+            <field name="category_id"
+                   ref="dekad_erp_additional_permissions.module_category_contact_permissions"/>
+        </record>
+
+        <!-- Give all Contact permissions to all Internal Users -->
+        <record id="base.group_user" model="res.groups">
+            <field name="implied_ids" eval="[
+                (4, ref('dekad_erp_additional_permissions.group_contact_update')),
+                (4, ref('dekad_erp_additional_permissions.group_contact_create')),
+                (4, ref('dekad_erp_additional_permissions.group_contact_delete'))
+            ]"/>
+        </record>
+
+    </data>
+</odoo>

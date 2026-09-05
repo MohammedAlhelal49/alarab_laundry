@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_teacher_de_health_checkup_tree" model="ir.ui.view">
+            <field name="name">teacher.de.health.checkup.list</field>
+            <field name="model">de.health.checkup</field>
+            <field name="arch" type="xml">
+                <list string="Health checkup">
+                    <field name="name"/>
+                    <field name="teacher_id"/>
+                    <field name="create_date"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_teacher_de_health_checkup_form" model="ir.ui.view">
+            <field name="name">teacher.de.health.checkup.form</field>
+            <field name="model">de.health.checkup</field>
+            <field name="arch" type="xml">
+                <form string="Health checkup">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="teacher_id" required="1" options="{'no_create': True , 'no_open': True}"/>
+                                <field name="file" filename="file_name" />
+                                <field name="file_name" invisible="1"/>
+                                <field name="recommendation"/>
+                                <field name="create_date"
+                                       invisible="create_date == False"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_teacher_de_health_checkup_search" model="ir.ui.view">
+            <field name="name">teacher.de.health.checkup</field>
+            <field name="model">de.health.checkup</field>
+            <field name="arch" type="xml">
+                <search string="Health checkup">
+                    <field name="name"/>
+                    <field name="teacher_id"/>
+                    <field name="recommendation"/>
+                    <group string="Group By...">
+                        <filter name="group_by_teacher"
+                                string="teacher" domain="[]"
+                                context="{'group_by':'teacher_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_teacher_de_health_checkup_view">
+            <field name="name">Teacher Health Checkups</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.health.checkup</field>
+            <field name="view_mode">list,form</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="search_view_id" ref="view_teacher_de_health_checkup_search"/>
+            <field name="domain">[('type' , '=' , 'teacher')]</field>
+            <field name="context">{'default_type' : 'teacher'}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_teacher_de_health_checkup_view_tree">
+            <field name="act_window_id" ref="act_open_teacher_de_health_checkup_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_teacher_de_health_checkup_tree"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_teacher_de_health_checkup_view_form">
+            <field name="act_window_id" ref="act_open_teacher_de_health_checkup_view"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="20"/>
+            <field name="view_id" ref="view_teacher_de_health_checkup_form"/>
+        </record>
+
+    </data>
+</odoo>

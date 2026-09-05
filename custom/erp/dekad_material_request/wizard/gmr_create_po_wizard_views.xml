@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_gmr_create_po_wizard_form" model="ir.ui.view">
+        <field name="name">gmr.create.po.wizard.form</field>
+        <field name="model">gmr.create.po.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Create Purchase Document">
+                <sheet>
+                    <group>
+                        <group string="Document">
+                            <field name="doc_type_policy" invisible="1"/>
+                            <field name="can_choose_doc_type" invisible="1"/>
+                            <field name="doc_type" widget="radio"/>
+                            <span class="text-muted" invisible="can_choose_doc_type">
+                                <i class="fa fa-info-circle"/> <field name="doc_type_policy_message" nolabel="1" readonly="1"/>
+                            </span>
+                            <field name="request_count" string="Requests Selected"/>
+                        </group>
+                        <group string="Requests">
+                            <field name="request_ids" widget="many2many_tags" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <field name="line_ids" nolabel="1">
+                        <list editable="bottom" create="false" delete="false">
+                            <field name="product_id" readonly="1" force_save="1"/>
+                            <field name="quantity" readonly="1" force_save="1" string="Total Qty"/>
+                            <field name="product_uom_id" readonly="1" force_save="1" string="Unit"/>
+                            <field name="analytic_account_id" readonly="1" force_save="1"/>
+                            <field name="task_id" readonly="1" force_save="1"/>
+                            <field name="vendor_id" options="{'no_create': True}"/>
+                            <field name="price_unit"/>
+                            <field name="request_ids" column_invisible="1" force_save="1"/>
+                        </list>
+                    </field>
+
+                    <group>
+                        <field name="document_summary" nolabel="1" readonly="1"
+                               class="text-muted"
+                               widget="text"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_create_document"
+                            string="Create"
+                            type="object"
+                            class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action binding for list view — allows selecting multiple requests -->
+    <record id="action_gmr_create_document_wizard" model="ir.actions.act_window">
+        <field name="name">Create PO / Bill</field>
+        <field name="res_model">gmr.create.po.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_gmr_request"/>
+        <field name="binding_view_types">list</field>
+        <field name="groups_id" eval="[(4, ref('dekad_material_request.group_gmr_admin'))]"/>
+    </record>
+
+</odoo>

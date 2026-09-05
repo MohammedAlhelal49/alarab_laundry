@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_construction_project" model="ir.sequence">
+            <field name="name">Construction Project Sequence</field>
+            <field name="code">construction.project.sequence</field>
+            <field name="prefix">PRJ</field>
+            <field name="padding">4</field>
+            <field name="implementation">no_gap</field>
+            <field name="number_next">1</field>
+        </record>
+    </data>
+</odoo>

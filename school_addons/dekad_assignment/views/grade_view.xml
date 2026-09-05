@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_de_grade_form_assignment_inherited" model="ir.ui.view">
+            <field name="name">de.grade.form.assignment.inherited</field>
+            <field name="model">de.grade</field>
+            <field name="inherit_id" ref="dekad_core.view_de_grade_form"/>
+            <field name="priority" eval="12"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_show_assignment" type="object" class="oe_stat_button"
+                            groups="dekad_assignment.group_de_assignment"
+                            icon="fa-pencil-square-o">
+                        <field string="Assignment" name="assignment_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_de_grade_kanban_assignment_inherited" model="ir.ui.view">
+            <field name="name">de.grade.kanban.assignment.inherited</field>
+            <field name="model">de.grade</field>
+            <field name="inherit_id" ref="dekad_core.view_de_grade_kanban"/>
+            <field name="priority" eval="12"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='forth_column']" position="after">
+                    <div name="six_column" class="col-12 col-sm-6 mb-2"
+                         groups="dekad_assignment.group_de_assignment">
+                        <a name="action_show_assignment" type="object">
+                            <field name="assignment_count"/>
+                            Assignments
+                        </a>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="view_de_grade_kanban" model="ir.ui.view">
+            <field name="name">de.grade.kanban</field>
+            <field name="model">de.grade</field>
+            <field name="arch" type="xml">
+                <kanban string="Grade"
+                        group_edit="false" group_delete="false" quick_create="false"
+                        records_draggable="false" groups_draggable="false"
+                >
+                    <field name="color" modifiers="{}"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{kanban_color(record.color.raw_value)} p-2 pb-4">
+                                <!-- Dropdown Menu -->
+                                <div class="o_dropdown_kanban dropdown" groups="dekad_core.group_de_grade">
+                                    <a class="dropdown-toggle btn" role="button" data-bs-toggle="dropdown"
+                                       title="Dropdown menu" href="#">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <!-- Edit menu option -->
+                                        <t t-if="widget.editable">
+                                            <a type="edit" class="dropdown-item">Edit</a>
+                                        </t>
+
+                                        <!-- Delete menu option -->
+                                        <t t-if="widget.editable">
+                                            <a type="delete" class="dropdown-item">Delete</a>
+                                        </t>
+
+                                        <!-- Separator line -->
+                                        <div role="separator" class="dropdown-divider"></div>
+
+                                        <!-- Color Picker -->
+                                        <ul class="oe_kanban_colorpicker" data-field="color" role="menu"></ul>
+                                    </div>
+                                </div>
+
+                                <!-- Kanban Card Header -->
+                                <div class="o_kanban_card_header container">
+                                    <div class="o_kanban_card_header_title">
+                                        <div class="o_primary">
+                                            <a type="edit" class="me-auto">
+                                                <field name="name"/>
+                                            </a>
+                                        </div>
+                                        <div class="o_secondary mt-1">
+                                            <field name="section"/>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Kanban Card Content -->
+                                <div class="container o_kanban_card_content mt-4">
+                                    <div class="row" style="padding: 0px; overflow: visible">
+                                        <div name="first_column" class="col-12 col-sm-6 mb-2"
+                                             groups="dekad_core.group_de_student">
+                                            <a name="action_show_student" type="object" style="overflow: visible;">
+                                                <field name="student_count"/>
+                                                Students
+                                            </a>
+                                        </div>
+                                        <div name="third_column" class="col-12 col-sm-6 mb-2">
+                                            <a name="action_show_subject" type="object">
+                                                <field name="subject_count"/>
+                                                Subjects
+                                            </a>
+                                        </div>
+                                        <div name="second_column" class="col-12 col-sm-6 mb-2"
+                                             groups="dekad_core.group_de_teacher_manage">
+                                            <a name="action_show_teacher" type="object">
+                                                <field name="teacher_count"/>
+                                                Teachers
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_de_grade_list" model="ir.ui.view">
+            <field name="name">de.grade.list</field>
+            <field name="model">de.grade</field>
+            <field name="arch" type="xml">
+                <list string="Grade">
+                    <field name="name"/>
+                    <field name="section"/>
+                    <field name="subject_ids" widget="many2many_tags"/>
+                    <field name="student_count" string="Students"/>
+                    <field name="teacher_count" string="Teachers"/>
+                </list>
+            </field>
+        </record>
+        <record id="view_de_grade_form" model="ir.ui.view">
+            <field name="name">de.grade.form</field>
+            <field name="model">de.grade</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Grade">
+                    <field name="id" invisible="1"/>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box"
+                             invisible="id == False">
+
+                              <!-- Students -->
+                                <button name="action_show_student" type="object" class="oe_stat_button"
+                                        icon="fa-users" groups="dekad_core.group_de_student">
+                                    <field name="student_count" string="Students" widget="statinfo"/>
+                                </button>
+
+                                <!-- Teachers -->
+                                <button name="action_show_teacher" type="object" class="oe_stat_button"
+                                        icon="fa-user" groups="dekad_core.group_de_teacher_manage">
+                                    <field name="teacher_count" string="Teachers" widget="statinfo"/>
+                                </button>
+                        </div>
+                        <field name="active" invisible="1"/>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                                invisible="active == True"/>
+
+                        <notebook>
+                            <page name="general" string="General">
+                                <group>
+                                    <field name="section"/>
+                                    <field name="name"/>
+
+                                </group>
+                                <separator string="Subjects"/>
+                                <field name="subject_ids"
+                                       context="{
+                                'form_view_ref' : 'dekad_core.view_de_subject_grade_form_quick_create'
+                                }"
+                                       mode="list,form"
+                                >
+                                    <list editable="bottom">
+                                        <field name="name"/>
+
+                                    </list>
+                                </field>
+
+
+                            </page>
+                            <page name="admission" string="Admission" groups="dekad_core.group_de_grade">
+                                <group>
+                                </group>
+                            </page>
+                        </notebook>
+
+
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_de_grade_search" model="ir.ui.view">
+            <field name="name">de.grade.search</field>
+            <field name="model">de.grade</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Grade">
+                    <field name="name"/>
+                    <field name="section"/>
+                    <group string="Group BY...">
+                        <!-- Corrected domain syntax below -->
+                        <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+                        <filter name="group_by_section"
+                                string="Section" domain="[]"
+                                context="{'group_by':'section'}"
+                        />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="act_open_de_grade_view" model="ir.actions.act_window">
+            <field name="name">Grades</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.grade</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="search_view_id" ref="view_de_grade_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record id="act_open_de_grade_view_list" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="act_open_de_grade_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_de_grade_list"/>
+        </record>
+
+        <record id="act_open_de_grade_view_form" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="act_open_de_grade_view"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="20"/>
+            <field name="view_id" ref="view_de_grade_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_grade_view_kanban">
+            <field name="act_window_id" ref="act_open_de_grade_view"/>
+            <field name="view_mode">kanban</field>
+            <field name="sequence" eval="5"/>
+            <field name="view_id" ref="view_de_grade_kanban"/>
+        </record>
+
+    </data>
+</odoo>

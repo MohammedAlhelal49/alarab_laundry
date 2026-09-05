@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_de_multi_admission_wizard_form" model="ir.ui.view">
+            <field name="name">de.multi.admission.wizard.form</field>
+            <field name="model">de.multi.admission.wizard</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Multi admission">
+                    <sheet>
+                        <notebook>
+                            <page name="admission_detail" string="Admission Details">
+                                <group>
+                                    <group string="Admission info">
+                                        <field name="academic_year_id"
+                                               options="{'no_create': True, 'no_open' : True}"
+                                        />
+                                        <field name="student_ids"
+                                               options="{'no_create': True, 'no_open' : True}" widget="many2many_tags"
+                                               string="Students"
+                                               domain="['|' , ('student_grade_ids', '=', False),('student_grade_ids.state', '!=', 'running')]"
+                                        />
+
+                                    </group>
+
+                                    <group string="Grade info">
+                                        <field name="grade_id" required="1"
+                                               options="{'no_create': True, 'no_open' : True}"
+
+                                        />
+                                        <field name="max_student_count"
+                                               invisible="grade_id == False"
+                                        />
+                                        <field name="student_count" invisible="grade_id == False"
+                                        />
+
+                                        <field name="to_enroll_students_count"
+                                               invisible="grade_id == False"
+                                        />
+
+
+                                        <field name="student_capacity"
+                                               invisible="grade_id == False"
+                                        />
+                                    </group>
+
+                                    <group string="Fee info">
+                                        <field name="fee_term_id" options="{'no_create': True, 'no_open' : True}"
+                                        />
+                                        <field name="fee"
+                                        />
+                                        <field name="discount"/>
+
+                                        <field name="fee_after_discount"
+                                        />
+                                        <field name="fee_start_date"
+                                        />
+
+                                        <field invisible="1" name="fee_term_type"/>
+
+                                    </group>
+                                </group>
+                            </page>
+
+
+                            <page name="educational_detail" string="Student Details"
+                            >
+                                <group>
+                                    <group>
+                                        <field name="prev_institute_id"
+                                        />
+                                        <field name="prev_grade_id"/>
+                                        <field name="prev_result"/>
+                                    </group>
+                                    <group>
+                                        <field name="family_business"/>
+                                        <field name="family_income"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <footer groups="base.group_user">
+                        <button string="Proceed" type="object" name="do_action" class="oe_highlight"/>
+                        <button special="cancel" string="Close" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="act_open_de_multi_admission_wizard_view">
+            <field name="name">Multi students admission</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.multi.admission.wizard</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+
+        <record model="ir.actions.act_window.view" id="act_open_de_multi_admission_wizard_view_form">
+            <field name="act_window_id" ref="act_open_de_multi_admission_wizard_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_de_multi_admission_wizard_form"/>
+        </record>
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

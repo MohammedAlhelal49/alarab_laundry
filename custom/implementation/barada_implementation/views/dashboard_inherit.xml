@@ -1,0 +1,11 @@
+<odoo>
+
+    <record id="dekad_analytic_report.spreadsheet_dashboard_group_medical" model="spreadsheet.dashboard.group">
+        <field name="name">Medical</field>
+    </record>
+
+    <record id="dekad_analytic_report.spreadsheet_dashboard_dr_revenue" model="spreadsheet.dashboard">
+        <field name="name">Doctor Revenue</field>
+    </record>
+
+</odoo>

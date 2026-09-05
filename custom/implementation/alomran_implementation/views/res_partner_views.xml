@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Adds a warning if a contact with the same phone or mobile number already exists -->
+    <record id="view_partner_form_inherit_mobile_warning" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.contact.warning</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+                        <!-- Hide VAT -->
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!-- Hide Website -->
+            <xpath expr="//field[@name='website']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!-- Hide Title -->
+            <xpath expr="//field[@name='title']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <!-- Hide Contacts & Addresses tab -->
+            <xpath expr="//page[@name='contact_addresses']" position="attributes">
+                <attribute name="groups">sales_team.group_sale_manager</attribute>
+            </xpath>
+
+            <!-- Hide Sales & Purchase tab -->
+            <xpath expr="//page[@name='sales_purchases']" position="attributes">
+                    <attribute name="groups">sales_team.group_sale_manager,sales_team.group_sale_salesman_all_leads</attribute>
+            </xpath>
+
+            <!-- Hide Accounting tab (if exists) -->
+            <xpath expr="//page[@name='accounting_disabled']" position="attributes">
+                <attribute name="groups">sales_team.group_sale_manager</attribute>
+
+            </xpath>
+            <xpath expr="//page[@name='accounting']" position="attributes">
+                <attribute name="groups">sales_team.group_sale_manager</attribute>
+            </xpath>
+
+            <xpath expr="//div[@name='warning_tax']" position="after">
+                <div class="alert alert-warning oe_edit_only" name="warning_contact"
+                     invisible="not same_contact_partner_id">
+                    A partner with the same
+                    <span>
+                        <field name="contact_conflict_label"/>
+                    </span>
+                    already exists:
+                    <!-- Non clickable only for pure salesman users -->
+                     <span groups="sales_team.group_sale_salesman,!sales_team.group_sale_salesman_all_leads">
+                        <field name="same_contact_partner_id"
+                               context="{'show_address': False, 'show_vat': False}"
+                               options="{'no_open': True}"/>
+                     </span>,are you sure you want to create a new one?
+
+                    <!-- Clickable for all_leads + managers -->
+                    <span groups="sales_team.group_sale_salesman_all_leads,sales_team.group_sale_manager">
+                        <field name="same_contact_partner_id"
+                               context="{'show_address': False, 'show_vat': False}"/>
+                    </span>
+
+                    ,are you sure you want to create a new one?
+
+                    <field name="same_contact_partner_inactive" invisible="1"/>
+                    <field name="same_contact_partner_id" invisible="1"/>
+                    <widget name="partner_takeover_button"
+                            duplicate_field="same_contact_partner_id"
+                            inactive_field="same_contact_partner_inactive"/>
+
+                </div>
+
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Adds a warning if a contact with the same name already exists -->
+    <record id="view_partner_form_inherit_name_warning" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.name.warning</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='warning_tax']" position="after">
+                <div class="alert alert-warning oe_edit_only" name="warning_name" invisible="not same_name_partner_id">
+                    A contact with the same <strong>Name</strong> already exists:
+                    <span groups="sales_team.group_sale_salesman,!sales_team.group_sale_salesman_all_leads">
+                        <field name="same_name_partner_id"
+                               context="{'show_address': False, 'show_vat': False}"
+                               options="{'no_open': True}"/>
+                    </span>,are you sure you want to create a new one?
+
+                    <!-- Clickable for all_leads + managers -->
+                    <span groups="sales_team.group_sale_salesman_all_leads,sales_team.group_sale_manager">
+                        <field name="same_name_partner_id"
+                               context="{'show_address': False, 'show_vat': False}"/>
+                    </span>,
+                    are you sure you want to create a new one?
+
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+
+    <!-- Adds personal information fields to the Partner form view -->
+    <record id="view_partner_form_inherit_custom" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.custom</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="nationality"/>
+                <field name="nationality_state_id"/>
+                <field name="date_of_birth"/>
+                <field name="gender" widget="radio" options="{&quot;horizontal&quot;:true}"/>
+                <field name="marital_status"/>
+                <field name="school_university"/>
+                <field name="major_degree"/>
+                <field name="curriculum"/>
+
+            </xpath>
+
+            <xpath expr="//field[@name='user_id']" position="replace">
+                <field name="user_id" widget="many2one_avatar_user" domain="[('share', '=', False)]"
+                       groups="!sales_team.group_sale_salesman_all_leads" readonly="True"/>
+                <field name="user_id" widget="many2one_avatar_user" domain="[('share', '=', False)]"
+                       groups="sales_team.group_sale_salesman_all_leads"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_partner_tree_inherit_company_editable" model="ir.ui.view">
+        <field name="name">res.partner.tree.company.editable</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="replace">
+
+                <!-- Editable version: only for sales groups -->
+                <field name="company_id"
+                       groups="sales_team.group_sale_manager,sales_team.group_sale_salesman_all_leads"
+                       readonly="0"
+                       optional="show"/>
+
+                <!-- Readonly version: for everyone else -->
+                <field name="company_id"
+                       groups="!sales_team.group_sale_manager,!sales_team.group_sale_salesman_all_leads"
+                       readonly="1"
+                       optional="show"/>
+
+            </xpath>
+
+
+        </field>
+    </record>
+
+    <function model="res.partner" name="restrict_contacts_menu_visibility_records" eval="[[]]"/>
+</odoo>

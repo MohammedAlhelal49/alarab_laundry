@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="custom_contact_template" name="Contact">
+        <t t-call="website.layout">
+            <div id="wrap">
+
+                <!-- Hero Header -->
+                <section class="hero-premium contact-hero">
+                    <!-- Background with overlay -->
+                    <div class="hero-bg-overlay">
+                        <div class="hero-bg-image" style="background-image: url('/alomran_theme/static/src/img/hero-bg.jpg');"></div>
+                        <div class="hero-gradient-overlay"></div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row align-items-center min-vh-100 py-5">
+                            <div class="col-lg-10 mx-auto text-center" data-aos="fade-up" data-aos-delay="100">
+                                <!-- Trust Badge -->
+                                <div class="trust-badge mb-4">
+                                    <span class="badge-icon">
+                                        <i class="fa fa-headset"></i>
+                                    </span>
+                                    <span class="badge-text">
+                                        Available <strong>24/7</strong> For Your Support
+                                    </span>
+                                </div>
+
+                                <!-- Main Headline -->
+                                <h1 class="display-1 fw-black mb-4 text-white">
+                                    <span class="text-gradient">Contact</span>
+                                    <span>Us</span>
+                                </h1>
+
+                                <!-- Subheading -->
+                                <p class="lead text-light mb-5">
+                                    We are here to answer all your questions and help you start your training journey
+                                </p>
+
+                                <!-- Contact Buttons -->
+                                <div class="hero-actions justify-content-center">
+                                    <a href="tel:+971505829697" class="btn btn-outline-light btn-lg">
+                                        <i class="fa fa-phone me-2"></i>
+                                        <span dir="ltr">+971505829697</span>
+                                    </a>
+                                    <a href="https://wa.me/971505829697" class="btn btn-success btn-lg" target="_blank">
+                                        <i class="fab fa-whatsapp me-2"></i>
+                                        <span>WhatsApp</span>
+                                    </a>
+                                    <a href="mailto:alomran.td@gmail.com" class="btn btn-outline-light btn-lg">
+                                        <i class="fa fa-envelope me-2"></i>
+                                        <span>Email Us</span>
+                                    </a>
+                                </div>
+
+                                <!-- Response Time -->
+                                <div class="quick-stats mt-5">
+                                    <div class="glass-badge px-4 py-3">
+                                        <i class="fa fa-clock me-2 text-warning"></i>
+                                        <span>We respond within 24 hours</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scroll Indicator -->
+                    <div class="scroll-indicator">
+                        <a href="#contact-form" class="scroll-link">
+                            <i class="fa fa-chevron-down"></i>
+                        </a>
+                    </div>
+                </section>
+                <!-- Contact Section -->
+                <section class="py-5">
+                    <div class="container">
+                        <div class="row g-5">
+                            <!-- Contact Info -->
+                            <div class="col-lg-5">
+                                <div class="mb-5">
+                                    <span class="badge mb-3">Contact Information</span>
+                                    <h2 class="display-6 fw-bold mb-4">How to Reach Us?</h2>
+                                    <p class="lead text-muted">
+                                        We are happy to hear from you through any of the following methods
+                                    </p>
+                                </div>
+
+                                <div class="modern-card mb-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="me-3">
+                                            <i class="fa fa-phone fa-2x text-primary"/>
+                                        </div>
+                                        <div>
+                                            <h5 class="fw-bold mb-2">Phone</h5>
+                                            <p class="mb-2">
+                                                <a href="tel:+971505829697" class="text-decoration-none text-primary" style="font-size: 1.1rem;" dir="ltr">
+                                                    +971505829697
+                                                </a>
+                                            </p>
+                                            <small class="text-muted">Saturday to Thursday: 10:00 AM - 08:00 PM</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modern-card mb-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="me-3">
+                                            <i class="fa fa-envelope fa-2x text-primary"/>
+                                        </div>
+                                        <div>
+                                            <h5 class="fw-bold mb-2">Email</h5>
+                                            <p class="mb-2">
+                                                <a href="mailto:alomran.td@gmail.com" class="text-decoration-none text-primary">
+                                                    alomran.td@gmail.com
+                                                </a>
+                                            </p>
+                                            <small class="text-muted">We respond within 24 hours</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modern-card mb-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="me-3">
+                                            <i class="fab fa-whatsapp fa-2x text-success"/>
+                                        </div>
+                                        <div>
+                                            <h5 class="fw-bold mb-2">WhatsApp</h5>
+                                            <p class="mb-2">
+                                                <a href="https://wa.me/971505829697" class="text-decoration-none text-success" target="_blank" dir="ltr">
+                                                    +971505829697
+                                                </a>
+                                            </p>
+                                            <small class="text-muted">Instant communication</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modern-card">
+                                    <div class="d-flex align-items-start">
+                                        <div class="me-3">
+                                            <i class="fa fa-map-marker-alt fa-2x text-primary"/>
+                                        </div>
+                                        <div>
+                                            <h5 class="fw-bold mb-2">Our Locations</h5>
+                                            <p class="mb-2">Al Ain - Dubai - Abu Dhabi - Ras Al Khaimah</p>
+                                            <a href="/branches" class="text-primary text-decoration-none">
+                                                <small>View all branches <i class="fa fa-arrow-right ms-1"/></small>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Social Media -->
+<!--                                <div class="mt-5">-->
+<!--                                    <h5 class="fw-bold mb-3">Follow Us</h5>-->
+<!--                                    <div class="d-flex gap-3">-->
+<!--                                        <a href="#" class="btn btn-outline-primary btn-lg" style="width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">-->
+<!--                                            <i class="fab fa-facebook-f fa-lg"/>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="btn btn-outline-danger btn-lg" style="width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">-->
+<!--                                            <i class="fab fa-instagram fa-lg"/>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="btn btn-outline-info btn-lg" style="width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">-->
+<!--                                            <i class="fab fa-twitter fa-lg"/>-->
+<!--                                        </a>-->
+<!--                                        <a href="#" class="btn btn-outline-primary btn-lg" style="width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">-->
+<!--                                            <i class="fab fa-linkedin-in fa-lg"/>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+                            </div>
+
+                            <!-- Contact Form -->
+                            <div class="col-lg-7">
+                                <div class="modern-card p-5">
+                                    <span class="badge mb-3">Contact Form</span>
+                                    <h3 class="fw-bold mb-4">Send Us a Message</h3>
+                                    <p class="text-muted mb-4">
+                                        Fill out the form below and we will contact you as soon as possible
+                                    </p>
+
+                                    <form id="contact_form_custom" action="/contact/submit" method="post" data-no-loading="true">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-bold" for="contact_name">
+                                                    Full Name *
+                                                </label>
+                                                <input type="text" class="form-control form-control-lg" id="contact_name" name="name" required="required" placeholder="Enter your full name"/>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-bold" for="contact_email">
+                                                    Email *
+                                                </label>
+                                                <input type="email" class="form-control form-control-lg" id="contact_email" name="email_from" required="required" placeholder="example@email.com"/>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-bold" for="contact_phone">
+                                                    Phone Number *
+                                                </label>
+                                                <input type="tel" class="form-control form-control-lg" id="contact_phone" name="phone" required="required" placeholder="+971 XX XXX XXXX"/>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-bold" for="contact_subject">
+                                                    Subject *
+                                                </label>
+                                                <select class="form-select form-select-lg" id="contact_subject" name="subject" required="required">
+                                                    <option value="">Select Subject</option>
+                                                    <option value="Course Inquiry">Course Inquiry</option>
+                                                    <option value="Course Registration">Course Registration</option>
+                                                    <option value="Certificate Inquiry">Certificate Inquiry</option>
+                                                    <option value="Pricing Inquiry">Pricing Inquiry</option>
+                                                    <option value="Complaint">Complaint</option>
+                                                    <option value="Suggestion">Suggestion</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-bold" for="contact_branch">
+                                                    Branch *
+                                                </label>
+                                                <select class="form-select form-select-lg" id="contact_branch" name="branch" required="required">
+                                                    <option value="">Select Branch</option>
+                                                    <option value="Al Murabba">Al Murabba</option>
+                                                    <option value="Mazyad Mall Branch">Mazyad Mall Branch</option>
+                                                    <option value="Al Barari Mall Branch">Al Barari Mall Branch</option>
+                                                    <option value="Al Foaa Branch">Al Foaa Branch</option>
+                                                    <option value="Al Yahr Branch">Al Yahr Branch</option>
+                                                    <option value="Al Garhoud Branch (Dubai)">Al Garhoud Branch (Dubai)</option>
+                                                    <option value="Zakhir Branch">Zakhir Branch</option>
+                                                    <option value="Al Meroor Branch (Abu Dhabi)">Al Meroor Branch (Abu Dhabi)</option>
+                                                    <option value="Ras Al Khaimah Branch">Ras Al Khaimah Branch</option>
+                                                    <option value="Sharjah">Sharjah</option>
+                                                    <option value="Fujairah">Fujairah</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <label class="form-label fw-bold" for="contact_message">
+                                                    Message *
+                                                </label>
+                                                <textarea class="form-control form-control-lg" id="contact_message" name="body_html" rows="5" required="required" placeholder="Write your message here..."></textarea>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary btn-lg w-100" data-loading="false">
+                                                    <i class="fa fa-paper-plane me-2"></i>
+                                                    Send Message
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section class="py-5 bg-light">
+                    <div class="container">
+                        <div class="text-center mb-5">
+                            <span class="badge mb-3">FAQ</span>
+                            <h2 class="display-5 fw-bold mb-3">Answers to Most Common Questions</h2>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="accordion" id="faqAccordion">
+                                    <!-- FAQ 1 -->
+                                    <div class="modern-card mb-3">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button fw-bold bg-transparent border-0 w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                                <i class="fa fa-question-circle text-primary me-3"/>
+                                                How can I register for a training course?
+                                            </button>
+                                        </h2>
+                                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                            <div class="accordion-body pt-0">
+                                                You can register by visiting any of our 11 branches, contacting us via phone or WhatsApp, or filling out the contact form on this page and our team will contact you to complete the registration.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- FAQ 2 -->
+                                    <div class="modern-card mb-3">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed fw-bold bg-transparent border-0 w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                                <i class="fa fa-question-circle text-primary me-3"/>
+                                                Are the certificates accredited?
+                                            </button>
+                                        </h2>
+                                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                            <div class="accordion-body pt-0">
+                                                Yes, all our certificates are accredited by relevant authorities in the UAE and recognized locally and internationally.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- FAQ 3 -->
+                                    <div class="modern-card mb-3">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed fw-bold bg-transparent border-0 w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                                <i class="fa fa-question-circle text-primary me-3"/>
+                                                What is the duration of training courses?
+                                            </button>
+                                        </h2>
+                                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                            <div class="accordion-body pt-0">
+                                                Course duration varies depending on specialization and level, ranging from one week to several months. You can inquire about specific course duration when contacting us.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- FAQ 4 -->
+<!--                                    <div class="modern-card mb-3">-->
+<!--                                        <h2 class="accordion-header">-->
+<!--                                            <button class="accordion-button collapsed fw-bold bg-transparent border-0 w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">-->
+<!--                                                <i class="fa fa-question-circle text-primary me-3"/>-->
+<!--                                                Do you offer online courses?-->
+<!--                                            </button>-->
+<!--                                        </h2>-->
+<!--                                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">-->
+<!--                                            <div class="accordion-body pt-0">-->
+<!--                                                Yes, we offer some courses online alongside in-person courses. You can inquire about available online courses when contacting us.-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+
+                                    <!-- FAQ 5 -->
+                                    <div class="modern-card">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed fw-bold bg-transparent border-0 w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                                <i class="fa fa-question-circle text-primary me-3"/>
+                                                Do you provide corporate training?
+                                            </button>
+                                        </h2>
+                                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                            <div class="accordion-body pt-0">
+                                                Yes, we offer customized training programs for companies and government entities according to their needs. Contact us for more details.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA -->
+                <section class="hero-section py-5">
+                    <div class="container text-center hero-content">
+                        <h2 class="display-4 fw-bold mb-4" style="color: white;">Still Have Questions?</h2>
+                        <p class="lead mb-5" style="color: white; opacity: 0.95;">
+                            Our team is ready to help you around the clock
+                        </p>
+                        <a href="https://wa.me/971505829697" class="btn btn-light btn-lg px-5 py-3 animate-glow" target="_blank">
+                            <i class="fab fa-whatsapp me-2"/>
+                            Chat with Us on WhatsApp
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+<!-- Contact Success Page -->
+    <template id="contact_success" name="Contact Success">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <section class="py-5 text-center">
+                    <div class="container">
+                        <div class="animate-scale">
+                            <i class="fa fa-check-circle fa-5x text-success mb-4"/>
+                            <h1 class="display-4 fw-bold mb-4">Thank You <t t-esc="name"/>!</h1>
+                            <p class="lead mb-4">Your message has been received successfully. We will contact you as soon as possible.</p>
+                            <a href="/" class="btn btn-primary btn-lg px-5">Back to Home</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+    <!-- Contact Error Page -->
+    <template id="contact_error" name="Contact Error">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <section class="py-5 text-center">
+                    <div class="container">
+                        <i class="fa fa-exclamation-triangle fa-5x text-danger mb-4"/>
+                        <h1 class="display-4 fw-bold mb-4">Sorry, An Error Occurred!</h1>
+                        <p class="lead mb-4">We could not send your message. Please try again.</p>
+                        <p class="text-muted"><t t-esc="error"/></p>
+                        <a href="/contact" class="btn btn-primary btn-lg px-5">Try Again</a>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

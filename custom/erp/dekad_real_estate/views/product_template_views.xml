@@ -1,0 +1,37 @@
+<odoo>
+
+    <record id="view_product_template_form_price_limit" model="ir.ui.view">
+        <field name="name">product.template.form.inherit.price.limit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='list_price_uom']" position="after">
+                <field name="min_sale_price"
+                       widget="monetary"
+                       options="{'currency_field': 'currency_id', 'field_digits': True}"
+                       class="oe_inline"
+                       invisible="not show_price_limit_fields"/>
+                <field name="max_sale_price"
+                       widget="monetary"
+                       options="{'currency_field': 'currency_id', 'field_digits': True}"
+                       class="oe_inline"
+                       invisible="not show_price_limit_fields"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_sale_config_settings_inherit_price_limits" model="ir.ui.view">
+        <field name="name">res.config.settings.inherit.sale.price.limits</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//setting[@id='show_margins']" position="after">
+                <setting id="price_limit_setting" string="Enforce Product Price Limits"
+                         help="When enabled, the system will block sale order line prices outside the min/max defined on the product.">
+                    <field name="enforce_product_price_limits"/>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

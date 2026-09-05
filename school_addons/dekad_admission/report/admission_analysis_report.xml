@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <template id="de_admission_analysis_report">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="font">
+                        <div class="page">
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div class="=text-center">
+                                <h3>
+                                    <strong>Admission Analysis</strong>
+                                </h3>
+                            </div>
+                            <div class="row mt-5">
+                                <div style="width:50%; margin-left:15px;">
+                                    <b>Grade:</b>
+                                    <span t-esc="data['grade_id'] and data['grade_id'][1] or ''"/>
+                                </div>
+                                <div style="width:50%; margin-left:15px;">
+                                    <b>From Date:</b>
+                                    <span t-esc="data['start_date']" t-options="{'widget':'date'}"/>
+                                    <span style="visibility:hidden;">--</span>
+                                    <b>To Date:</b>
+                                    <span t-esc="data['end_date']" t-options="{'widget':'date'}"/>
+                                </div>
+                            </div>
+                            <br/>
+                            <table t-if="get_total_student" class="table table-bordered">
+                                <thead class="text-center"
+                                       style="background-color:#eeeeee; font-size:14px; font-weight:600;">
+                                    <th>Student Name</th>
+                                    <th>Admission code</th>
+                                    <th>Admitted at</th>
+                                </thead>
+                                <tbody class=""
+                                       style="font-size:12px;border-top: 1px solid #dbdbdb !important;">
+                                    <tr t-foreach="get_data" t-as="r">
+                                        <td>
+                                            <span t-esc="r['name']"/>
+                                        </td>
+                                        <td>
+                                            <span
+                                                    t-esc="'%s' %r['sequence'] if r['sequence'] else '' "/>
+                                        </td>
+                                        <td>
+                                            <span
+                                                    t-esc="'%s' % r['admission_date'] if r['admission_date'] else ''"
+                                                    t-options="{'widget':'datetime'}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="">
+                                            <b>Total admission</b>
+                                        </td>
+                                        <td>
+                                            <b>
+                                                <span t-esc="get_total_student"/>
+                                            </b>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div t-else="" class="alert alert-secondary" role="alert">
+                                There is no admission to display
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+        <record id="act_open_de_admission_analysis_report_view" model="ir.actions.report">
+            <field name="name">Admission Analysis report</field>
+            <field name="model">de.admission.analysis.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">dekad_admission.de_admission_analysis_report</field>
+            <field name="report_file">dekad_admission.de_admission_analysis_report</field>
+        </record>
+    </data>
+</odoo>

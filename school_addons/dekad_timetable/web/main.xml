@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Student Timetable Portal Page -->
+    <template id="student_timetable_portal" name="Student Timetable Portal">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Timetable</t>
+            </t>
+
+            <!-- Back to Home Button -->
+            <div class="mb-3">
+                <a t-att-href="home_url" class="btn btn-secondary">
+                    <i class="fa fa-arrow-left"/> Back to Dashboard
+                </a>
+
+                <!-- Download PDF Button -->
+                <t t-if="timetable">
+                    <a t-att-href="'/my/timetable/%s/pdf' % timetable.id"
+                       class="btn btn-primary ml-2"
+                       target="_blank">
+                        <i class="fa fa-download"/> Download PDF
+                    </a>
+                </t>
+            </div>
+
+            <div class="container mt-4">
+                <!-- Header Section -->
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="mb-0">
+                            <i class="fa fa-calendar"/>
+                            <t t-if="student">
+                                <t t-esc="student.name"/>'s Timetable
+                            </t>
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <t t-if="timetable">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <strong>Academic Year:</strong>
+                                    <span t-esc="timetable.academic_year_id.name"/>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Term:</strong>
+                                    <span t-esc="timetable.academic_term_id.name"/>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Grade:</strong>
+                                    <span t-esc="timetable.grade_id.name"/>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Classroom:</strong>
+                                    <span t-esc="timetable.classroom_id.name"/>
+                                </div>
+                            </div>
+                        </t>
+                        <t t-else="">
+                            <div class="alert alert-info">
+                                <i class="fa fa-info-circle"/> No active timetable available for your class.
+                            </div>
+                        </t>
+                    </div>
+                </div>
+
+                <!-- Timetable Grid -->
+                <t t-if="timetable">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover timetable-grid">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th class="text-center" style="width: 120px;">Time / Day</th>
+                                            <t t-foreach="days" t-as="day">
+                                                <th class="text-center">
+                                                    <t t-esc="day[1]"/>
+                                                </th>
+                                            </t>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="periods" t-as="period">
+                                            <tr>
+                                                <!-- Period Time Column -->
+                                                <td class="text-center font-weight-bold bg-light">
+                                                    <div t-esc="period.name"/>
+                                                    <small class="text-muted d-block">
+                                                        <!-- Format float time to HH:MM -->
+                                                        <t t-set="start_hour" t-value="int(period.start_time)"/>
+                                                        <t t-set="start_min" t-value="int((period.start_time % 1) * 60)"/>
+                                                        <t t-set="end_hour" t-value="int(period.end_time)"/>
+                                                        <t t-set="end_min" t-value="int((period.end_time % 1) * 60)"/>
+
+                                                        <t t-esc="'%02d:%02d' % (start_hour, start_min)"/> -
+                                                        <t t-esc="'%02d:%02d' % (end_hour, end_min)"/>
+                                                    </small>
+                                                </td>
+
+                                                <!-- Days Columns -->
+                                                <t t-foreach="days" t-as="day">
+                                                    <t t-set="cell_data" t-value="timetable_grid.get(day[0], {}).get(period.id, {})"/>
+
+                                                    <td t-att-class="'text-center ' + ('bg-warning' if cell_data.get('is_break') else '')">
+                                                        <t t-if="cell_data.get('is_break')">
+                                                            <div class="font-weight-bold">
+                                                                <i class="fa fa-coffee"/> BREAK
+                                                            </div>
+                                                        </t>
+                                                        <t t-elif="cell_data.get('subject')">
+                                                            <div class="font-weight-bold text-primary">
+                                                                <i class="fa fa-book"/> <t t-esc="cell_data.get('subject')"/>
+                                                            </div>
+                                                            <small class="text-muted">
+                                                                <i class="fa fa-user"/> <t t-esc="cell_data.get('teacher')"/>
+                                                            </small>
+                                                        </t>
+                                                        <t t-else="">
+                                                            <span class="text-muted">-</span>
+                                                        </t>
+                                                    </td>
+                                                </t>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Legend -->
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <h5>Legend:</h5>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <span class="badge badge-primary">
+                                        <i class="fa fa-book"/> Subject
+                                    </span> - Regular class
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="badge badge-warning">
+                                        <i class="fa fa-coffee"/> Break
+                                    </span> - Break/Lunch period
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="badge badge-secondary">-</span> - Free period
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </div>
+
+            <!-- Custom CSS for Timetable -->
+            <style>
+                .timetable-grid {
+                    font-size: 14px;
+                }
+                .timetable-grid th {
+                    background-color: #f8f9fa;
+                    font-weight: 600;
+                    vertical-align: middle;
+                }
+                .timetable-grid td {
+                    vertical-align: middle;
+                    padding: 15px 10px;
+                    min-height: 80px;
+                }
+                .timetable-grid td.bg-warning {
+                    background-color: #fff3cd !important;
+                }
+
+                /* RTL Support */
+                [dir="rtl"] .timetable-grid {
+                    direction: rtl;
+                }
+            </style>
+        </t>
+    </template>
+</odoo>

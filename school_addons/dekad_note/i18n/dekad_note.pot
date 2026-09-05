@@ -1,0 +1,484 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_note
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-28 17:05+0000\n"
+"PO-Revision-Date: 2025-09-28 17:05+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.student_note_breadcrumbs
+msgid "<span>/</span>"
+msgstr ""
+
+#. module: dekad_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.student_note_show
+msgid "<strong class=\"\">Attachment :</strong>"
+msgstr ""
+
+#. module: dekad_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.student_note_show
+msgid "<strong class=\"\">Created at :</strong>"
+msgstr ""
+
+#. module: dekad_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.student_note_show
+msgid "<strong class=\"\">Name :</strong>"
+msgstr ""
+
+#. module: dekad_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.student_note_show
+msgid "<strong class=\"\">Priority :</strong>"
+msgstr ""
+
+#. module: dekad_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.student_note_show
+msgid "<strong class=\"\">Sequence :</strong>"
+msgstr ""
+
+#. module: dekad_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.student_note_show
+msgid "<strong>Description :</strong>"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: dekad_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.student_note
+msgid "Actions"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__all_parents
+msgid "All parents"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__all_students
+msgid "All students"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__all_teachers
+msgid "All teachers"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__file
+msgid "Attachment"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: dekad_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_form
+msgid "Confirm"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields.selection,name:dekad_note.selection__de_note__state__confirm
+msgid "Confirmed"
+msgstr ""
+
+#. module: dekad_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.student_note
+msgid "Created at"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__create_uid
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__create_date
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__description
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_form
+msgid "Description"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__display_name
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields.selection,name:dekad_note.selection__de_note__state__draft
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_form
+msgid "Draft"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,help:dekad_note.field_de_note__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__grade_ids
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_group_form
+msgid "Grades"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__group_id
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_search
+msgid "Group"
+msgstr ""
+
+#. module: dekad_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_search
+msgid "Group By..."
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.actions.act_window,name:dekad_note.act_open_de_note_group_view
+#: model:ir.ui.menu,name:dekad_note.menu_de_note_group
+msgid "Groups"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields.selection,name:dekad_note.selection__de_note__priority__2
+msgid "High"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__id
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__id
+msgid "ID"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,help:dekad_note.field_de_note__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,help:dekad_note.field_de_note__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,help:dekad_note.field_de_note__message_has_error
+#: model:ir.model.fields,help:dekad_note.field_de_note__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__write_uid
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__write_date
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields.selection,name:dekad_note.selection__de_note__priority__1
+msgid "Low"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: dekad_note
+#. odoo-python
+#: code:addons/dekad_note/controllers/main.py:0
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__name
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__name
+#: model_terms:ir.ui.view,arch_db:dekad_note.student_note
+msgid "Name"
+msgstr ""
+
+#. module: dekad_note
+#. odoo-python
+#: code:addons/dekad_note/controllers/main.py:0
+msgid "Newest"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model,name:dekad_note.model_de_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_form
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_search
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_tree
+msgid "Note"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model,name:dekad_note.model_de_note_group
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_group_form
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_group_search
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_group_tree
+msgid "Note Group"
+msgstr ""
+
+#. module: dekad_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.student_note_show
+msgid "Note full information"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.actions.act_window,name:dekad_note.act_open_de_note_view
+#: model:ir.ui.menu,name:dekad_note.menu_de_note
+#: model:ir.ui.menu,name:dekad_note.menu_de_note_root
+#: model:res.groups,name:dekad_note.group_de_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.student_note_breadcrumbs
+msgid "Notes"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,help:dekad_note.field_de_note__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,help:dekad_note.field_de_note__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: dekad_note
+#. odoo-python
+#: code:addons/dekad_note/controllers/main.py:0
+msgid "Oldest"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__parent_ids
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_group_form
+msgid "Parents"
+msgstr ""
+
+#. module: dekad_note
+#. odoo-python
+#: code:addons/dekad_note/controllers/main.py:0
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__priority
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_search
+msgid "Priority"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__selected_students
+msgid "Selected Students"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__selected_parents
+msgid "Selected parents"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__selected_teachers
+msgid "Selected teachers"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__sequence
+#: model_terms:ir.ui.view,arch_db:dekad_note.student_note
+msgid "Sequence"
+msgstr ""
+
+#. module: dekad_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.student_note
+msgid "Show"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__state
+msgid "State"
+msgstr ""
+
+#. module: dekad_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_search
+msgid "Status"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,help:dekad_note.field_de_note__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__student_ids
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_group_form
+msgid "Students"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__by_grade
+msgid "Students, parents, teachers inside Grade"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note_group__teacher_ids
+#: model_terms:ir.ui.view,arch_db:dekad_note.view_de_note_group_form
+msgid "Teachers"
+msgstr ""
+
+#. module: dekad_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.student_note
+msgid "There are no Notes to display."
+msgstr ""
+
+#. module: dekad_note
+#. odoo-python
+#: code:addons/dekad_note/controllers/main.py:0
+msgid ""
+"This note is not accessible for the specified student or not confirmed."
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,help:dekad_note.field_de_note__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields.selection,name:dekad_note.selection__de_note__priority__0
+msgid "Very Low"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,field_description:dekad_note.field_de_note__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: dekad_note
+#: model:ir.model.fields,help:dekad_note.field_de_note__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: dekad_note
+#. odoo-python
+#: code:addons/dekad_note/controllers/main.py:0
+msgid "You don't have access to this note."
+msgstr ""
+
+#. module: dekad_note
+#. odoo-python
+#: code:addons/dekad_note/controllers/main.py:0
+msgid "You don't have permission to access this student's information."
+msgstr ""
+
+#. module: dekad_note
+#: model_terms:ir.ui.view,arch_db:dekad_note.student_note
+msgid "priority"
+msgstr ""

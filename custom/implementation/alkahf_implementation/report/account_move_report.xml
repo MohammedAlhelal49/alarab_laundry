@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="paperformat_commitment_no_margin" model="report.paperformat">
+        <field name="name">No Margin</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">4</field>
+        <field name="margin_bottom">2</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="alkahf_implementation" model="ir.actions.report">
+        <field name="name">Customized rental tax invoice</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">alkahf_implementation.report_tax_invoice_document</field>
+        <field name="report_file">alkahf_implementation.report_tax_invoice_document</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="alkahf_implementation.paperformat_commitment_no_margin"/>
+    </record>
+</odoo>

@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- LIST VIEW -->
+    <record id="crm_reservation_view_list" model="ir.ui.view">
+        <field name="name">crm.reservation.list</field>
+        <field name="model">crm.reservation</field>
+        <field name="arch" type="xml">
+            <list js_class="reservation_dashboard_list" string="Reservations" decoration-danger="state == 'cancelled'"
+                  decoration-warning="state == 'delayed'" decoration-success="state == 'arrived'">
+                <field name="name"/>
+                <field name="patient_id"/>
+                <field name="lead_id" optional="hide"/>
+                <field name="mobile"/>
+                <field name="phone"/>
+                <field name="doctor_id"/>
+                <field name="salesperson_id" optional="hide"/>
+                <field name="reservation_datetime"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+                <field name="state" widget="badge"
+                       decoration-danger="state == 'cancelled'"
+                       decoration-warning="state == 'delayed'"
+                       decoration-success="state == 'arrived'"
+                       decoration-info="state == 'scheduled'"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- CALENDAR VIEW -->
+    <record id="crm_reservation_view_calendar" model="ir.ui.view">
+        <field name="name">crm.reservation.calendar</field>
+        <field name="model">crm.reservation</field>
+        <field name="arch" type="xml">
+            <calendar string="Reservations" date_start="reservation_datetime"
+                      color="state" mode="week" event_limit="5">
+                <field name="patient_id"/>
+                <field name="doctor_id" filters="1"/>
+                <field name="state"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="crm_reservation_view_form" model="ir.ui.view">
+        <field name="name">crm.reservation.form</field>
+        <field name="model">crm.reservation</field>
+        <field name="arch" type="xml">
+            <form string="Reservation">
+                <header>
+                    <button name="action_cancel" string="Cancel" type="object"
+                            invisible="state == 'cancelled'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="scheduled,arrived,delayed,cancelled"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+
+                        <button name="action_view_related_reservations"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-calendar"
+                                invisible="related_reservation_count == 0">
+
+                            <field name="related_reservation_count"
+                                   widget="statinfo"
+                                   string="Reservations"/>
+
+                        </button>
+
+                    </div>
+
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="lead_id"/>
+                            <field name="patient_id"/>
+                            <field name="phone"/>
+                            <field name="mobile"/>
+                            <field name="function"/>
+                            <field name="lang"/>
+                            <field name="location"/>
+                            <field name="salesperson_id"/>
+                        </group>
+                        <group>
+                            <field name="doctor_id" options="{'no_create': True}"/>
+                            <field name="reservation_datetime"/>
+                            <field name="is_arrived"/>
+                            <field name="arrival_datetime"
+                                   invisible="not is_arrived"
+                                   required="is_arrived"/>
+
+                            <field name="is_delayed"/>
+                            <field name="delay_reason_id"
+                                   invisible="not is_delayed"
+                                   required="is_delayed"
+                                   options="{'no_open': False}"/>
+                            <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+
+
+                        </group>
+                    </group>
+                    <group invisible="state != 'cancelled'">
+                        <field name="cancel_reason_id" required="state == 'cancelled'" nolabel="0"
+                               placeholder="Reason for cancellation..."/>
+                    </group>
+                    <notebook>
+                        <page string="Sales Man Note" name="saleman_note">
+                            <field name="saleman_note" placeholder="Notes from sales man..."/>
+                        </page>
+                        <page string="Reception Note" name="reception_note">
+                            <field name="reception_note" placeholder="Notes from reception..."/>
+                        </page>
+                        <page string="Doctor Note" name="doctor_note">
+                            <field name="doctor_note" placeholder="Notes from doctor..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- SEARCH VIEW -->
+    <record id="crm_reservation_view_search" model="ir.ui.view">
+        <field name="name">crm.reservation.search</field>
+        <field name="model">crm.reservation</field>
+        <field name="arch" type="xml">
+            <search string="Search Reservations">
+                <field name="name" string="Reservation"/>
+                <field name="patient_id"/>
+                <field name="mobile"/>
+                <field name="doctor_id"/>
+                <field name="reservation_datetime"/>
+                <field name="state"/>
+                <separator/>
+                <filter string="Scheduled" name="filter_scheduled" domain="[('state', '=', 'scheduled')]"/>
+                <filter string="Arrived" name="filter_arrived" domain="[('state', '=', 'arrived')]"/>
+                <filter string="Delayed" name="filter_delayed" domain="[('state', '=', 'delayed')]"/>
+                <filter string="Cancelled" name="filter_cancelled" domain="[('state', '=', 'cancelled')]"/>
+                <separator/>
+                <filter string="Today" name="filter_today"
+                        domain="[('reservation_datetime', '&gt;=', context_today().strftime('%Y-%m-%d 00:00:00')),
+                                 ('reservation_datetime', '&lt;=', context_today().strftime('%Y-%m-%d 23:59:59'))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Status" name="group_state" context="{'group_by': 'state'}"/>
+                    <filter string="Doctor" name="group_doctor" context="{'group_by': 'doctor_id'}"/>
+                    <filter string="Patient" name="group_patient" context="{'group_by': 'patient_id'}"/>
+                    <filter string="Reservation Date" name="group_date" context="{'group_by': 'reservation_datetime:day'}"/>
+                    <filter string="Company" name="group_company" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- ACTION -->
+    <record id="crm_reservation_action" model="ir.actions.act_window">
+        <field name="name">Reservations</field>
+        <field name="res_model">crm.reservation</field>
+        <field name="view_mode">list,calendar,form</field>
+        <field name="search_view_id" ref="crm_reservation_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new reservation
+            </p>
+        </field>
+    </record>
+
+    <!-- MENU (under the CRM app) -->
+    <menuitem id="crm_reservation_menu"
+              name="Reservations"
+              action="crm_reservation_action"
+              parent="crm.crm_menu_root"
+              sequence="15"/>
+
+    <!-- SMART BUTTON on the CRM lead/patient form -->
+    <record id="crm_lead_view_form_reservations" model="ir.ui.view">
+        <field name="name">crm.lead.form.reservations</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_reservations" type="object"
+                        class="oe_stat_button" icon="fa-calendar-check-o"
+                        invisible="not id or reservation_count == 0">
+                    <field name="reservation_count" widget="statinfo" string="Reservations"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- HEADER BUTTON, next to Won / Lost / Convert to Opportunity -->
+    <record id="crm_lead_view_form_reservation_header_button" model="ir.ui.view">
+        <field name="name">crm.lead.form.reservation.header.button</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='%(crm.action_crm_lead2opportunity_partner)d']" position="after">
+                <button name="action_open_reservation_popup" string="Reservation"
+                        type="object" invisible="not id" data-hotkey="r"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="crm_reservation_cancel_wizard_view_form" model="ir.ui.view">
+        <field name="name">crm.reservation.cancel.wizard.form</field>
+        <field name="model">crm.reservation.cancel.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Cancel Reservation">
+                <field name="reservation_id" invisible="1"/>
+                <group>
+                    <field name="cancel_reason_id"
+                           options="{'no_create': False, 'no_open': False}"/>
+                </group>
+                <footer>
+                    <button string="Confirm Cancellation" type="object"
+                            name="action_confirm_cancel" class="btn-primary"/>
+                    <button string="Discard" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

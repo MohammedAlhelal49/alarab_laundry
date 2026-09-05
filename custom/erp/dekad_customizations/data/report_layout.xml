@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="report_layout_bilingual" model="report.layout">
+        <field name="name">Arabic / English</field>
+        <field name="sequence">50</field>
+        <field name="view_id"
+               ref="dekad_customizations.external_layout_bilingual"/>
+    </record>
+
+</odoo>

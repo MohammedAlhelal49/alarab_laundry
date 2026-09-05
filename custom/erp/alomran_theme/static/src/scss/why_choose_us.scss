@@ -1,0 +1,1532 @@
+// ============================================================
+// MODERN HOMEPAGE STYLES - PREMIUM VERSION
+// ============================================================
+
+// Brand Colors with updated palette
+$primary: #1a5490;
+$primary-light: #2d6cb3;
+$primary-dark: #0d3a6d;
+$secondary: #4ade80;
+$accent: #fb923c;
+$success: #10b981;
+$warning: #f59e0b;
+$danger: #ef4444;
+$dark: #1f2937;
+$light: #f9fafb;
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, $primary 0%, $primary-light 100%);
+$gradient-secondary: linear-gradient(135deg, $secondary 0%, #86efac 100%);
+$gradient-accent: linear-gradient(135deg, $accent 0%, #fbbf24 100%);
+$gradient-dark: linear-gradient(135deg, $primary-dark 0%, $dark 100%);
+
+// Spacing
+$spacer-1: 1rem;
+$spacer-2: 2rem;
+$spacer-3: 3rem;
+$spacer-4: 4rem;
+$spacer-5: 5rem;
+$spacer-6: 6rem;
+
+// ============================================================
+// GLOBAL STYLES
+// ============================================================
+.text-gradient {
+    background: $gradient-accent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bg-gradient-primary {
+    background: $gradient-primary;
+}
+
+.bg-blue-gradient {
+    background: $gradient-primary;
+}
+
+.bg-green-gradient {
+    background: $gradient-secondary;
+}
+
+.bg-orange-gradient {
+    background: $gradient-accent;
+}
+
+// ============================================================
+// HERO SECTION - PREMIUM
+// ============================================================
+.hero-premium {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+
+    .hero-bg-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .hero-bg-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: brightness(0.8);
+        animation: zoom-effect 20s ease-in-out infinite alternate;
+    }
+
+    .hero-gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            rgba($primary-dark, 0.9) 0%,
+            rgba($primary-dark, 0.7) 50%,
+            rgba($primary-dark, 0.4) 100%
+        );
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+@keyframes zoom-effect {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+// Trust Badge
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    .badge-icon {
+        background: $gradient-accent;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.75rem;
+        color: white;
+    }
+
+    .badge-text {
+        color: white;
+        font-weight: 500;
+
+        strong {
+            color: $secondary;
+        }
+    }
+}
+
+// Hero Actions
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    .btn {
+        padding: 1rem 2rem;
+        font-weight: 600;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+
+        i {
+            font-size: 1.2rem;
+        }
+    }
+
+    .btn-primary-glow {
+        background: $gradient-accent;
+        border: none;
+        color: white;
+        box-shadow: 0 10px 30px rgba($accent, 0.4);
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba($accent, 0.6);
+        }
+    }
+
+    .btn-outline-light {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: white;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+    }
+}
+
+// Quick Stats
+.quick-stats {
+    .stat-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 1.5rem;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+    }
+}
+
+// Hero Card
+.hero-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+    animation: float-card 6s ease-in-out infinite;
+
+    .card-header {
+        background: $gradient-primary;
+        color: white;
+        padding: 2rem;
+        text-align: center;
+
+        h4 {
+            color: white;
+        }
+
+        .text-muted {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+    }
+
+    .card-body {
+        padding: 2rem;
+
+        .form-control,
+        .form-select {
+            border-radius: 12px;
+            border: 2px solid #e5e7eb;
+            padding: 0.75rem 1rem;
+            transition: all 0.3s;
+
+            &:focus {
+                border-color: $primary;
+                box-shadow: 0 0 0 3px rgba($primary, 0.1);
+            }
+        }
+
+        .btn {
+            border-radius: 12px;
+            padding: 1rem;
+            font-weight: 600;
+            background: $gradient-accent;
+            border: none;
+        }
+    }
+}
+
+@keyframes float-card {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+// Scroll Indicator
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    .scroll-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        text-decoration: none;
+        animation: bounce 2s infinite;
+
+        i {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+// ============================================================
+// SECTION STYLES
+// ============================================================
+.py-6 {
+    padding-top: $spacer-6;
+    padding-bottom: $spacer-6;
+}
+
+.section-header {
+    margin-bottom: $spacer-6;
+
+    .section-badge {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: $gradient-primary;
+        color: white;
+        border-radius: 50px;
+        font-weight: 600;
+        margin-bottom: 1rem;
+
+        &.bg-white {
+            background: white;
+            color: $primary;
+        }
+    }
+
+    .section-subtitle {
+        color: #6b7280;
+        font-size: 1.25rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+// ============================================================
+// PROGRAM CARDS - ENHANCED
+// ============================================================
+.program-card-hover {
+    background: white;
+    border-radius: 24px;
+    padding: 2.5rem;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid #f3f4f6;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $gradient-primary;
+        opacity: 0;
+        transition: opacity 0.4s;
+        z-index: 0;
+    }
+
+    &:hover {
+        transform: translateY(-20px);
+        border-color: $primary;
+        box-shadow: 0 30px 60px rgba($primary, 0.15);
+
+        &::before {
+            opacity: 0.03;
+        }
+
+        .program-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .program-link {
+            transform: translateX(-10px);
+            opacity: 1;
+        }
+    }
+
+    > *:not(.program-badge) {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.program-icon-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.program-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s;
+}
+
+.program-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: $gradient-accent;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.program-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: $dark;
+}
+
+.program-description {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.program-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid #f3f4f6;
+    border-bottom: 1px solid #f3f4f6;
+
+    span {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #6b7280;
+        font-size: 0.9rem;
+
+        i {
+            color: $primary;
+        }
+    }
+}
+
+.program-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $primary;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0.8;
+    transition: all 0.3s;
+
+    &:hover {
+        color: $primary-dark;
+        gap: 1rem;
+    }
+}
+
+// ============================================================
+// FEATURES SECTION
+// ============================================================
+.section-features {
+    .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+
+            i {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .feature-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        height: 100%;
+        transition: all 0.3s;
+        border: 2px solid #f3f4f6;
+
+        &:hover {
+            transform: translateY(-10px);
+            border-color: $primary;
+            box-shadow: 0 20px 40px rgba($primary, 0.1);
+        }
+
+        .feature-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            background: $gradient-primary;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        h5 {
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: $dark;
+        }
+
+        p {
+            color: #6b7280;
+            margin: 0;
+        }
+    }
+}
+
+// ============================================================
+// TESTIMONIALS
+// ============================================================
+.testimonials-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .testimonial-rating {
+        color: #fbbf24;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+
+        i {
+            margin-right: 0.25rem;
+        }
+    }
+
+    .testimonial-text {
+        color: #4b5563;
+        font-style: italic;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info {
+            h6 {
+                margin: 0;
+                color: $dark;
+                font-weight: 600;
+            }
+
+            span {
+                color: #6b7280;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+
+// ============================================================
+// BRANCHES SECTION
+// ============================================================
+.branches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.branch-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: all 0.3s;
+
+    &:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .branch-icon {
+        width: 70px;
+        height: 70px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 2rem;
+    }
+
+    h5 {
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    .branch-address {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+
+        i {
+            color: $secondary;
+        }
+    }
+
+    .branch-info {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+
+        span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            i {
+                color: $secondary;
+            }
+        }
+    }
+}
+
+// ============================================================
+// FINAL CTA
+// ============================================================
+.section-cta {
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        @media (min-width: 768px) {
+            justify-content: flex-end;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            font-weight: 600;
+            border-radius: 12px;
+            flex: 1;
+            min-width: 200px;
+
+            @media (min-width: 768px) {
+                flex: 0 1 auto;
+            }
+
+            i {
+                font-size: 1.2rem;
+            }
+        }
+
+        .btn-primary {
+            background: $gradient-accent;
+            border: none;
+        }
+
+        .btn-outline-light {
+            &:hover {
+                background: white;
+                color: $primary;
+            }
+        }
+    }
+}
+
+// ============================================================
+// RESPONSIVE ADJUSTMENTS
+// ============================================================
+@media (max-width: 992px) {
+    .hero-premium {
+        min-height: auto;
+        padding: 4rem 0;
+
+        .hero-bg-image {
+            animation: none;
+        }
+    }
+
+    .display-1 {
+        font-size: 3rem !important;
+    }
+
+    .display-4 {
+        font-size: 2.5rem !important;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .quick-stats .stat-card .stat-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .py-6 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+
+        .btn {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .hero-card {
+        margin-top: 2rem;
+    }
+
+    .program-card-hover,
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+
+        .btn {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .display-1 {
+        font-size: 2.5rem !important;
+    }
+
+    .display-4 {
+        font-size: 2rem !important;
+    }
+
+    .hero-premium {
+        text-align: center;
+    }
+
+    .trust-badge {
+        justify-content: center;
+    }
+
+    .quick-stats .stat-card {
+        padding: 1rem;
+
+        .stat-number {
+            font-size: 1.75rem;
+        }
+    }
+}
+
+// ============================================================
+// UTILITY CLASSES
+// ============================================================
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+.text-light {
+    color: #f9fafb !important;
+}
+
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.bg-dark {
+    background-color: $dark !important;
+}
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+.mb-6 {
+    margin-bottom: $spacer-6 !important;
+}
+
+.mt-6 {
+    margin-top: $spacer-6 !important;
+}
+
+// Animation delays
+[data-aos-delay="100"] {
+    animation-delay: 100ms;
+}
+
+[data-aos-delay="200"] {
+    animation-delay: 200ms;
+}
+
+[data-aos-delay="300"] {
+    animation-delay: 300ms;
+}
+// ============================================================
+// WHY CHOOSE US SECTION - LUXURY DESIGN
+// ============================================================
+
+// ألوان فاخرة
+$gold-color: #FFD700;
+$silver-color: #C0C0C0;
+$bronze-color: #CD7F32;
+$dark-navy: #0A1F44;
+$light-gold: #FFF8DC;
+
+.section-why-choose {
+    position: relative;
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    overflow: hidden;
+
+    // خلفية فاخرة
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+            radial-gradient(circle at 20% 80%, rgba($gold-color, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba($primary-color, 0.05) 0%, transparent 50%);
+        z-index: 0;
+    }
+
+    // تأثير زخرفة ذهبية
+    .gold-decoration {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        width: 100px;
+        height: 100px;
+        border: 2px dashed $gold-color;
+        border-radius: 50%;
+        opacity: 0.3;
+        animation: rotate-slow 30s linear infinite;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border: 1px dashed $gold-color;
+            border-radius: 50%;
+        }
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@keyframes rotate-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+// شعار في الأعلى
+.logo-display {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+
+    .alomran-logo {
+        max-width: 350px;
+        height: auto;
+        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+        transition: all 0.4s ease;
+        border-radius: 20px;
+        padding: 1rem;
+        background: linear-gradient(145deg, #ffffff, #f0f0f0);
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+        &:hover {
+            transform: scale(1.05) rotate(2deg);
+            filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.25));
+        }
+    }
+
+    // تأثير بريق حول الشعار
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba($gold-color, 0.1) 0%, transparent 70%);
+        z-index: -1;
+        animation: pulse 4s ease-in-out infinite;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+// عنوان القسم
+.section-header {
+    h2 {
+        background: linear-gradient(135deg, $primary-color, darken($primary-color, 15%));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+        display: inline-block;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, $primary-color, $gold-color, $primary-color);
+            border-radius: 2px;
+        }
+    }
+
+    p.lead {
+        color: $dark-navy;
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-top: 1.5rem;
+    }
+}
+
+// عرض الصورة المميز
+.logo-featured {
+    position: relative;
+
+    .logo-frame {
+        position: relative;
+        padding: 2.5rem;
+        background: white;
+        border-radius: 25px;
+        box-shadow:
+            0 25px 60px rgba(0, 0, 0, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        border: 2px solid rgba($gold-color, 0.3);
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        overflow: hidden;
+
+        // زوايا مزخرفة
+        &::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border: 2px solid rgba($primary-color, 0.1);
+            border-radius: 15px;
+            z-index: 1;
+        }
+
+        // تأثير بريق
+        &::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba($gold-color, 0.1) 50%,
+                transparent 70%
+            );
+            animation: shine-flow 6s infinite linear;
+            z-index: 2;
+        }
+
+        img {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            transition: transform 0.8s ease;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+        }
+
+        &:hover {
+            transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+            box-shadow:
+                0 35px 80px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba($gold-color, 0.5);
+
+            img {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .logo-text {
+        margin-top: 2rem;
+        text-align: center;
+        position: relative;
+
+        h3 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, $primary-color, $gold-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h4 {
+            font-size: 1.6rem;
+            color: $dark-navy;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba($primary-color, 0.05);
+            border-radius: 50px;
+            border: 1px solid rgba($primary-color, 0.1);
+        }
+    }
+}
+
+@keyframes shine-flow {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+// الميزات الفاخرة
+.feature-box-with-logo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.75rem;
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: 18px;
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba($primary-color, 0.1);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+
+    // خط ذهبي جانبي
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(to bottom, $gold-color, $primary-color);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    // تأثير خلفي
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba($primary-color, 0.03) 0%, transparent 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow:
+            0 25px 50px rgba(0, 0, 0, 0.15),
+            0 0 0 1px rgba($gold-color, 0.3);
+
+        &::before {
+            opacity: 1;
+        }
+
+        &::after {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            transform: scale(1.15) rotate(10deg);
+            background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%));
+            color: white;
+            box-shadow: 0 10px 25px rgba($primary-color, 0.3);
+        }
+
+        .feature-content h5 {
+            color: $primary-color;
+        }
+    }
+
+    .feature-icon {
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+        background: linear-gradient(135deg, rgba($primary-color, 0.1), rgba($gold-color, 0.1));
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $primary-color;
+        font-size: 1.75rem;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        z-index: 1;
+
+        // تأثير دائري حول الأيقونة
+        &::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 2px solid rgba($gold-color, 0.3);
+            border-radius: 18px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    }
+
+    .feature-content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+
+        h5 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: $dark-navy;
+            transition: color 0.3s ease;
+        }
+
+        p {
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+    }
+}
+
+// ختم الشهادة الذهبي
+.certificate-seal {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba($gold-color, 0.05), rgba($primary-color, 0.05));
+    border-radius: 20px;
+    border: 2px dashed rgba($gold-color, 0.3);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba($gold-color, 0.1) 0%, transparent 70%);
+        animation: seal-pulse 3s ease-in-out infinite;
+    }
+
+    .seal-icon {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        background: linear-gradient(135deg, #ffffff, #f8f9fa);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+        box-shadow:
+            0 15px 35px rgba(0, 0, 0, 0.1),
+            inset 0 -5px 15px rgba(0, 0, 0, 0.05);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 3px solid rgba($gold-color, 0.5);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+
+        &::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: $gold-color;
+            font-weight: bold;
+            opacity: 0.3;
+        }
+
+        i {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, $gold-color, $silver-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    p {
+        margin-top: 1.5rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: $primary-color;
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@keyframes seal-pulse {
+    0%, 100% { opacity: 0.1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(1.1); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+// شريط الإحصائيات المميز
+.stats-bar {
+    margin-top: 4rem;
+
+    .stat-box {
+        padding: 2.5rem 1.5rem;
+        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+        border-radius: 20px;
+        box-shadow:
+            0 20px 40px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+
+        // تأثير خلفي متدرج
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba($primary-color, 0.03));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        // زاوية ذهبية
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, $gold-color, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        &:hover {
+            transform: translateY(-15px) scale(1.05);
+            border-color: rgba($gold-color, 0.5);
+            box-shadow:
+                0 30px 60px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba($gold-color, 0.2);
+
+            &::before {
+                opacity: 1;
+            }
+
+            &::after {
+                opacity: 0.5;
+            }
+
+            .stat-number {
+                background: linear-gradient(135deg, $primary-color, $gold-color);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                transform: scale(1.1);
+            }
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            color: $primary-color;
+            transition: all 0.4s ease;
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: #666;
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+        }
+    }
+}
+
+// تصميم متجاوب فاخر
+@media (max-width: 1200px) {
+    .feature-box-with-logo {
+        padding: 1.5rem;
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .section-why-choose {
+        padding: 4rem 0;
+    }
+
+    .logo-featured {
+        margin-bottom: 3rem;
+
+        .logo-frame {
+            max-width: 450px;
+            margin: 0 auto;
+        }
+    }
+
+    .feature-box-with-logo {
+        margin-bottom: 1.5rem;
+    }
+
+    .stats-bar .stat-box {
+        padding: 2rem 1rem;
+
+        .stat-number {
+            font-size: 3rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-display .alomran-logo {
+        max-width: 280px;
+    }
+
+    .gold-decoration {
+        display: none;
+    }
+
+    .feature-box-with-logo {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.2rem;
+
+        .feature-icon {
+            margin: 0 auto;
+        }
+    }
+
+    .logo-text {
+        h3 {
+            font-size: 1.8rem !important;
+        }
+
+        h4 {
+            font-size: 1.4rem !important;
+        }
+    }
+
+    .certificate-seal {
+        padding: 1.5rem;
+
+        .seal-icon {
+            width: 100px;
+            height: 100px;
+
+            i {
+                font-size: 3rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .section-header h2 {
+        font-size: 2rem !important;
+    }
+
+    .stats-bar .stat-box {
+        padding: 1.5rem 0.5rem;
+
+        .stat-number {
+            font-size: 2.5rem !important;
+        }
+    }
+
+    .feature-box-with-logo {
+        padding: 1.25rem;
+    }
+}
+
+// تأثيرات إضافية للفخامة
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.glow-effect {
+    filter: drop-shadow(0 0 10px rgba($gold-color, 0.3));
+    transition: filter 0.3s ease;
+
+    &:hover {
+        filter: drop-shadow(0 0 20px rgba($gold-color, 0.6));
+    }
+}

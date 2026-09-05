@@ -1,0 +1,651 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* alomran_implementation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-03 12:12+0000\n"
+"PO-Revision-Date: 2026-02-03 12:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_partner_form_inherit_mobile_warning
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_partner_form_inherit_name_warning
+msgid ""
+",\n"
+"                    are you sure you want to create a new one?"
+msgstr "هل أنت متأكد من أنك تريد إنشاء واحد جديد؟"
+
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.custom_sale_report_signature_block
+msgid "<span style=\"font-weight: bold;\">No signature</span>"
+msgstr "<span style=\"font-weight: bold;\">لا يوجد توقيع</span>"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.res_config_settings_view_form_inherit_opportunity_transfer
+msgid "<span>day(s)</span>"
+msgstr "<span>يوم / أيام</span>"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.report_saleorder_document_inherited
+msgid "<strong>Contract Date</strong>"
+msgstr "<strong>تاريخ العقد</strong>"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_partner_form_inherit_name_warning
+msgid "A contact with the same <strong>Name</strong> already exists:"
+msgstr "يوجد جهة اتصال بنفس <strong>الاسم</strong> بالفعل:"
+
+#. module: alomran_implementation
+#. odoo-python
+#: code:addons/alomran_implementation/models/crm_lead.py:0
+msgid ""
+"A duplicate opportunity already exists for the same customer with the same "
+"title: %s"
+msgstr "توجد فرصة مكررة بالفعل لنفس العميل وبنفس العنوان: %s"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_partner_form_inherit_mobile_warning
+msgid "A partner with the same"
+msgstr "شريك بنفس"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__admin_approval
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_quotations
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_sales_orders
+msgid "Admin Approval"
+msgstr "موافقة الإدارة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__admin_signature
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_admin_signature_tab
+msgid "Admin Signature"
+msgstr "توقيع الإدارة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__admin_signed_by
+msgid "Admin Signed By"
+msgstr "تم التوقيع بواسطة الإدارة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__admin_signed_on
+msgid "Admin Signed On"
+msgstr "تاريخ توقيع الإدارة"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_order_form_inherit_custom_fields
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_order_tree_inherit_add_amounts
+msgid "Already Invoiced Amount"
+msgstr "المبلغ المفوتر مسبقًا"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.custom_sale_report_signature_block
+msgid "Applicant's Name &amp; Date"
+msgstr "اسم مقدم الطلب والتاريخ"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.custom_sale_report_signature_block
+msgid "Applicant's Signature"
+msgstr "توقيع مقدم الطلب"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_quotations
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_sales_orders
+msgid "Approval Status"
+msgstr "حالة الموافقة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__admin_approval__approved
+msgid "Approved"
+msgstr "معتمد"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_quotations
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_sales_orders
+msgid "Approved Orders"
+msgstr "الطلبات المعتمدة"
+
+#. module: alomran_implementation
+#: model:ir.actions.server,name:alomran_implementation.cron_auto_transfer_crm_leads_ir_actions_server
+msgid "Auto Transfer Inactive CRM Opportunities"
+msgstr "نقل تلقائي لفرص CRM غير النشطة"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.res_config_settings_view_form_inherit_opportunity_transfer
+msgid "Auto Transfer Inactive Opportunities"
+msgstr "نقل الفرص غير النشطة تلقائيًا"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.res_config_settings_view_form_inherit_opportunity_transfer
+msgid ""
+"Automatically reassign inactive opportunities to another salesperson after a"
+" predefined duration."
+msgstr "إعادة تعيين الفرص غير النشطة تلقائيًا إلى مندوب مبيعات آخر بعد مدة محددة."
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__balance
+msgid "Balance"
+msgstr "الرصيد"
+
+#. module: alomran_implementation
+#: model:ir.actions.act_window,name:alomran_implementation.res_partner_action_customer_self_branch
+msgid "Branch Customers"
+msgstr "عملاء الفرع"
+
+#. module: alomran_implementation
+#: model:ir.ui.menu,name:alomran_implementation.res_partner_menu_self_branch
+msgid "Branch customers"
+msgstr "عملاء الفرع"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__payment_method__cash
+msgid "Cash"
+msgstr "نقدًا"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_partner__nationality_state_id
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_users__nationality_state_id
+msgid "City"
+msgstr "المدينة"
+
+#. module: alomran_implementation
+#: model:ir.model,name:alomran_implementation.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_order_form_inherit_custom_fields
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_partner__contact_conflict_label
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_users__contact_conflict_label
+msgid "Conflict Label"
+msgstr "تنبيه تعارض"
+
+#. module: alomran_implementation
+#: model:ir.model,name:alomran_implementation.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_partner__contract_date
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_users__contract_date
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__contract_date
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_quotations
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_sales_orders
+msgid "Contract Date"
+msgstr "تاريخ العقد"
+
+#. module: alomran_implementation
+#: model:ir.model,name:alomran_implementation.model_course_duration_units
+msgid "Course Duration Unit"
+msgstr "وحدة مدة الدورة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__course_duration_units
+msgid "Course Duration Units"
+msgstr "وحدات مدة الدورة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__course_duration_value
+msgid "Course Duration Value"
+msgstr "قيمة مدة الدورة"
+
+#. module: alomran_implementation
+#: model_terms:ir.actions.act_window,help:alomran_implementation.res_partner_action_customer_self
+#: model_terms:ir.actions.act_window,help:alomran_implementation.res_partner_action_customer_self_branch
+msgid "Create a new customer in your address book"
+msgstr "إنشاء عميل جديد في دفتر العناوين"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_course_duration_units__create_uid
+#: model:ir.model.fields,field_description:alomran_implementation.field_schedule_day__create_uid
+msgid "Created by"
+msgstr "تم الإنشاء بواسطة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_course_duration_units__create_date
+#: model:ir.model.fields,field_description:alomran_implementation.field_schedule_day__create_date
+msgid "Created on"
+msgstr "تاريخ الإنشاء"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_partner__curriculum
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_users__curriculum
+msgid "Curriculum"
+msgstr "المنهج"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,help:alomran_implementation.field_crm_lead__referred_by_id
+msgid ""
+"Customer who referred this lead (must be a customer assigned to a "
+"salesperson)."
+msgstr "العميل الذي أحال هذه الفرصة (يجب أن يكون عميلاً مخصصاً لمندوب مبيعات)."
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_partner__date_of_birth
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_users__date_of_birth
+msgid "Date of Birth"
+msgstr "تاريخ الميلاد"
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_course_duration_units__display_name
+#: model:ir.model.fields,field_description:alomran_implementation.field_schedule_day__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__res_partner__marital_status__divorced
+msgid "Divorced"
+msgstr "مطلّق"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_config_settings__enable_auto_transfer
+msgid "Enable Opportunity Transfer after Inactivity"
+msgstr "تمكين نقل الفرص بعد عدم النشاط"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__enrollment_type
+msgid "Enrollment Type"
+msgstr "نوع التسجيل"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__res_partner__gender__female
+msgid "Female"
+msgstr "أنثى"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_quotations
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_sales_orders
+msgid "Fully Paid"
+msgstr "مدفوع بالكامل"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__study_method__group
+msgid "GROUP"
+msgstr "مجموعة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_partner__gender
+msgid "Gender"
+msgstr "الجنس"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__source__hot_call
+msgid "Hot Call"
+msgstr "مكالمة مباشرة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_course_duration_units__id
+#: model:ir.model.fields,field_description:alomran_implementation.field_schedule_day__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__registration_type__in_person
+msgid "In person"
+msgstr "حضوري"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__initial_payment
+msgid "Initial Payment"
+msgstr "الدفعة الأولى"
+
+#. module: alomran_implementation
+#. odoo-python
+#: code:addons/alomran_implementation/models/crm_lead.py:0
+#: code:addons/alomran_implementation/models/res_partner.py:0
+msgid "Internal Notes must be at least 50 characters."
+msgstr "يجب ألا تقل الملاحظات الداخلية عن 50 حرفًا."
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_course_duration_units__write_uid
+#: model:ir.model.fields,field_description:alomran_implementation.field_schedule_day__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_course_duration_units__write_date
+#: model:ir.model.fields,field_description:alomran_implementation.field_schedule_day__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: alomran_implementation
+#: model:ir.model,name:alomran_implementation.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "عميل مهتم / فرصة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__source__legacy_data
+msgid "Legacy Data"
+msgstr "بيانات قديمة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_partner__major_degree
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_users__major_degree
+msgid "Major / Degree"
+msgstr "التخصص / الدرجة العلمية"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__res_partner__gender__male
+msgid "Male"
+msgstr "ذكر"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.custom_sale_report_signature_block
+msgid "Management Signature"
+msgstr "توقيع الإدارة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_partner__marital_status
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_users__marital_status
+msgid "Marital Status"
+msgstr "الحالة الاجتماعية"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__res_partner__marital_status__married
+msgid "Married"
+msgstr "متزوج"
+
+#. module: alomran_implementation
+#: model:ir.actions.act_window,name:alomran_implementation.res_partner_action_customer_self
+msgid "My Customers"
+msgstr "عملائي"
+
+#. module: alomran_implementation
+#: model:ir.ui.menu,name:alomran_implementation.res_partner_menu_self
+msgid "My customers"
+msgstr "عملائي"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_course_duration_units__name
+#: model:ir.model.fields,field_description:alomran_implementation.field_schedule_day__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_partner__nationality
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_users__nationality
+msgid "Nationality"
+msgstr "الجنسية"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__enrollment_type__new
+msgid "New"
+msgstr "جديد"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__quotation_note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: alomran_implementation
+#: model_terms:ir.actions.act_window,help:alomran_implementation.res_partner_action_customer_self
+#: model_terms:ir.actions.act_window,help:alomran_implementation.res_partner_action_customer_self_branch
+msgid "Odoo helps you easily track all activities related to a customer."
+msgstr "يساعدك أودو في تتبع جميع الأنشطة المتعلقة بالعميل بسهولة."
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__registration_type__online
+msgid "Online"
+msgstr "عن بُعد"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_sale_report_form_custom
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.your_custom_sale_report_tree_view
+msgid "Paid Amount"
+msgstr "المبلغ المدفوع"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_partner__same_name_partner_id
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_users__same_name_partner_id
+msgid "Partner with Same Name"
+msgstr "شريك بنفس الاسم"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_partner__same_contact_partner_id
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_users__same_contact_partner_id
+msgid "Partner with Same Phone/Mobile"
+msgstr "شريك بنفس رقم الهاتف/الجوال"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_order_form_inherit_custom_fields
+msgid "Payment Info"
+msgstr "معلومات الدفع"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__payment_method
+msgid "Payment Method"
+msgstr "طريقة الدفع"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_quotations
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_sales_orders
+msgid "Payment Status"
+msgstr "حالة الدفع"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__admin_approval__pending
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_quotations
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_sales_orders
+msgid "Pending Approval"
+msgstr "بانتظار الموافقة"
+
+#. module: alomran_implementation
+#. odoo-python
+#: code:addons/alomran_implementation/models/res_partner.py:0
+msgid "Phone/Mobile"
+msgstr "هاتف / جوال"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__enrollment_type__re_enrollment
+msgid "Re-enrollment"
+msgstr "إعادة تسجيل"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__source__referral
+msgid "Referral"
+msgstr "إحالة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_crm_lead__referred_by_id
+msgid "Referred By"
+msgstr "أُحيل بواسطة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__registration_type
+msgid "Registration type"
+msgstr "نوع التسجيل"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__admin_approval__rejected
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_quotations
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_sales_orders
+msgid "Rejected Orders"
+msgstr "الطلبات المرفوضة"
+
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_quotations
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.sale_order_filter_inherit_for_sales_orders
+msgid "Remaining > 0"
+msgstr "المتبقي أكبر من 0"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__remaining_amount
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_sale_report_form_custom
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.your_custom_sale_report_tree_view
+msgid "Remaining Amount"
+msgstr "المبلغ المتبقي"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_order_form_inherit_custom_fields
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_order_tree_inherit_add_amounts
+msgid "Remaining Invoiced Amount"
+msgstr "المبلغ المفوتر المتبقي"
+
+#. module: alomran_implementation
+#: model:ir.model,name:alomran_implementation.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: alomran_implementation
+#. odoo-python
+#: code:addons/alomran_implementation/models/crm_lead.py:0
+msgid "Salesperson automatically changed from %s to %s due to inactivity."
+msgstr "تم تغيير مندوب المبيعات تلقائيًا من %s إلى %s بسبب عدم النشاط."
+
+#. module: alomran_implementation
+#: model:ir.model,name:alomran_implementation.model_schedule_day
+msgid "Schedule Day"
+msgstr "يوم الجدولة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__schedule_day
+msgid "Schedule Days"
+msgstr "أيام الجدولة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_partner__school_university
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_users__school_university
+msgid "School / University"
+msgstr "المدرسة / الجامعة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__second_payment_amount
+msgid "Second Payment Amount"
+msgstr "قيمة الدفعة الثانية"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__second_payment_date
+msgid "Second Payment Date"
+msgstr "تاريخ الدفعة الثانية"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_order_form_inherit_custom_fields
+msgid "Select a customer ..."
+msgstr "اختر عميلًا ..."
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_crm_lead__show_referred_field
+msgid "Show Referred By"
+msgstr "تمت الإشارة إلى البرنامج بواسطة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__res_partner__marital_status__single
+msgid "Single"
+msgstr "أعزب"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__source__social_media
+msgid "Social Media"
+msgstr "وسائل التواصل الاجتماعي"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__source
+msgid "Source"
+msgstr "المصدر"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__starting_course_date
+msgid "Starting Course Date"
+msgstr "تاريخ بدء الدورة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__study_method
+msgid "Study method"
+msgstr "طريقة الدراسة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__payment_method__tabby
+msgid "Tabby"
+msgstr "تابي"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__payment_method__tamara
+msgid "Tamara"
+msgstr "تمارا"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,help:alomran_implementation.field_sale_order__remaining_amount
+msgid "The remaining amount to be invoiced (Total Amount - Invoiced Amount)."
+msgstr "المبلغ المتبقي للفوترة (إجمالي المبلغ - المبلغ المفوتر)."
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_sale_order__time
+msgid "Time"
+msgstr "الوقت"
+
+#. module: alomran_implementation
+#: model:ir.model.fields,field_description:alomran_implementation.field_res_config_settings__auto_transfer_duration_days
+msgid "Transfer Duration (Days)"
+msgstr "مدة النقل (بالأيام)"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_order_form_inherit_custom_fields
+msgid "Type to find a customer..."
+msgstr "اكتب للبحث عن عميل..."
+
+#. module: alomran_implementation
+#: model:ir.model,name:alomran_implementation.model_utm_source
+msgid "UTM Source"
+msgstr "مصدر UTM "
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_sale_report_form_custom
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.your_custom_sale_report_tree_view
+msgid "Untaxed Paid Amount"
+msgstr "المبلغ المدفوع بدون ضريبة"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_sale_report_form_custom
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.your_custom_sale_report_tree_view
+msgid "Untaxed Remaining Amount"
+msgstr "المبلغ المتبقي بدون ضريبة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__study_method__vip
+msgid "VIP"
+msgstr "كبار الشخصيات"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__payment_method__visa
+msgid "Visa"
+msgstr "فيزا"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__sale_order__source__walk_in
+msgid "Walk-in"
+msgstr "زيارة مباشرة"
+
+#. module: alomran_implementation
+#: model:ir.model.fields.selection,name:alomran_implementation.selection__res_partner__marital_status__widowed
+msgid "Widowed"
+msgstr "أرمل"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.view_partner_form_inherit_mobile_warning
+msgid "already exists:"
+msgstr "موجود بالفعل:"
+
+#. module: alomran_implementation
+#: model_terms:ir.ui.view,arch_db:alomran_implementation.res_config_settings_view_form_inherit_opportunity_transfer
+msgid "e.g. 10"
+msgstr "مثال: 10"

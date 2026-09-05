@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <template id="teacher_idcard_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div style=" width: 400px;
+                                border: 1px solid #a59e9e;
+                                overflow: hidden;
+                                border-radius: 10px;">
+                                <table>
+                                    <table width="100%" style="background:whitesmoke;">
+                                        <tbody>
+                                            <tr style="background :#263544">
+                                                <td style="padding-top:7px; padding-bottom:7px;" class="row">
+                                                    <div class="col-12"
+                                                         style="color:white; text-transform:uppercase;padding-left:25px; padding-top:10px;padding-bottom:10px;letter-space:1px;font-weight:600">
+                                                        Teacher id card
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr style="float:left; margin:10px 0; padding:10px">
+                                                <td style="border:none !important;">
+                                                    <img t-if="o.image_1920"
+                                                         t-attf-src="data:image/png;base64,{{o.image_1920}}"
+                                                         alt="teacher image"
+                                                         style="max-height:2.5cm;max-width:4cm; margin-left:10px; margin-right:10px; margin-bottom:3px; border:1px solid #ccc;"/>
+                                                    <t t-else="">
+                                                        <img t-if="o.gender == 'male'"
+                                                             src="/dekad_core/static/img/male.jpg"
+                                                             class="image"
+                                                             alt="teacher image"
+                                                             style="max-height:2.5cm;max-width:4cm; margin-left:10px; margin-right:10px; margin-bottom:3px; border: 1px solid #ccc;"/>
+                                                        <img t-else=""
+                                                             src="/dekad_core/static/img/female.jpg"
+                                                             class="image"
+                                                             alt="student image"
+                                                             style="max-height:2.5cm;max-width:4cm; margin-left:10px; margin-right:10px; margin-bottom:3px; border:1px solid #ccc;"/>
+                                                    </t>
+                                                    <br></br>
+                                                    <span style="margin-left:10px;
+                                                  padding-top:5px;
+                                                  display:inline-block;"/>
+                                                </td>
+                                                <td style="vertical-align: top; border:none !important;">
+                                                    <div style="margin-left:10px; margin-right:10px; margin-bottom:3px; font-size:14px;  font-family: 'Lato-Reg'; letter-spacing:.5px; letter-spacing:.5px;">
+                                                        <div class="holder" style="margin-bottom:5px">
+                                                            <span style="font-weight:600">
+                                                                Name :
+                                                            </span>
+                                                            <span t-field="o.name"/>
+                                                        </div>
+                                                        <div class="holder" style="margin-bottom : 5px"
+                                                             t-if="o.specialist_id">
+                                                            <span style="font-weight:600">
+                                                                Specialist :
+                                                            </span>
+                                                            <span t-field="o.specialist_id.name"/>
+                                                        </div>
+
+                                                        <div class="holder" style="margin-bottom: 5px"
+                                                             t-if="o.birth_date">
+                                                            <span style="font-weight:600">
+                                                                BirthDate :
+                                                            </span>
+                                                            <span t-field="o.birth_date"
+                                                                  t-options="{'widget':'date'}"/>
+                                                        </div>
+
+                                                        <div class="holder" style="margin-bottom:5px">
+                                                            <span style="font-weight:600">
+                                                                Email:
+                                                            </span>
+                                                            <span t-field="o.email"/>
+                                                        </div>
+
+                                                        <div class="holder">
+                                                            <span style="font-weight:600">
+                                                                Mobile :
+                                                            </span>
+                                                            <span t-field='o.mobile'
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </table>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

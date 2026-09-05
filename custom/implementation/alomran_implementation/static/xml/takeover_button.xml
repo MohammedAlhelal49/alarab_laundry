@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="alomran_implementation.PartnerTakeoverButton">
+        <button t-if="isInactive and duplicatePartnerId"
+                class="btn btn-link p-0"
+                type="button"
+                t-on-click="onClick">
+                Take Over Existing Contact
+        </button>
+    </t>
+</templates>

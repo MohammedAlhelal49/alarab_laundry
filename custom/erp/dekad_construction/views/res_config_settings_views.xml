@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_construction" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.construction</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='account_vendor_bills']" position="inside">
+                <setting string="Subcontractor Billing"
+                         help="A Subcontracting Service product is auto-created for each task's first bill, using this account, and reused for later bills on the same task. The Retention product's own Expense Account should point to your Retention Payable liability account.">
+                    <div class="content-group">
+                        <div class="row mt8">
+                            <label for="subcontractor_service_account_id" class="col-lg-5 o_light_label"/>
+                            <field name="subcontractor_service_account_id"/>
+                        </div>
+                        <div class="row mt8">
+                            <label for="retention_product_id" class="col-lg-5 o_light_label"/>
+                            <field name="retention_product_id"/>
+                        </div>
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

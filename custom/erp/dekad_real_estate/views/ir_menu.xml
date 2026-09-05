@@ -1,0 +1,194 @@
+<odoo>
+
+    <!-- ===================================================== -->
+    <!-- Actions -->
+    <!-- ===================================================== -->
+
+    <record id="action_product_template_custom" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new product</p>
+        </field>
+    </record>
+
+    <!-- ===================================================== -->
+    <!-- Main Menu -->
+    <!-- ===================================================== -->
+
+    <menuitem
+        id="properties_main_menu"
+        name="Properties"
+        web_icon="dekad_real_estate,static/description/icon.png"
+        sequence="10"
+        groups="dekad_real_estate.group_real_estate_user"
+    />
+
+    <!-- ===================================================== -->
+    <!-- Properties -->
+    <!-- ===================================================== -->
+
+    <menuitem
+        id="properties_sub_menu"
+        name="Properties"
+        parent="properties_main_menu"
+        sequence="30"
+        groups="dekad_real_estate.group_real_estate_user"
+    />
+
+    <menuitem
+        id="menu_analytic_account_custom"
+        name="Properties"
+        parent="properties_sub_menu"
+        action="action_analytic_account_custom"
+        sequence="10"
+        groups="dekad_real_estate.group_real_estate_user"
+    />
+
+    <menuitem
+        id="real_estate_menu"
+        name="Buildings"
+        parent="properties_sub_menu"
+        action="action_real_estate"
+        sequence="15"
+        groups="dekad_real_estate.group_real_estate_user"
+    />
+
+    <menuitem
+        id="menu_product_template_custom"
+        name="Products"
+        parent="properties_sub_menu"
+        action="action_product_template_custom"
+        sequence="20"
+        groups="dekad_real_estate.group_real_estate_user"
+    />
+
+    <!-- ===================================================== -->
+    <!-- Rental Calendar -->
+    <!-- ===================================================== -->
+
+    <menuitem
+        id="menu_property_rental_event_root"
+        name="Rental Calendar"
+        parent="properties_main_menu"
+        action="action_property_rental_event"
+        sequence="35"
+        groups="dekad_real_estate.group_enable_rental_properties"
+    />
+
+    <!-- ===================================================== -->
+    <!-- Contracts -->
+    <!-- ===================================================== -->
+
+    <menuitem
+        id="menu_contracts_root"
+        name="Contracts"
+        parent="properties_main_menu"
+        sequence="15"
+        groups="dekad_real_estate.group_real_estate_user"
+    />
+
+    <menuitem
+        id="menu_rental_contracts"
+        name="Rental Contracts"
+        parent="menu_contracts_root"
+        action="action_rental_contracts"
+        sequence="10"
+        groups="dekad_real_estate.group_enable_rental_properties"
+    />
+
+    <menuitem
+        id="menu_sales_contracts"
+        name="Sales Contracts"
+        parent="menu_contracts_root"
+        action="action_property_sale_orders"
+        sequence="20"
+        groups="dekad_real_estate.group_enable_sale_properties"
+    />
+
+
+    <!-- ===================================================== -->
+    <!-- Reports -->
+    <!-- ===================================================== -->
+
+    <menuitem
+        id="menu_reports_root"
+        name="Reporting"
+        parent="properties_main_menu"
+        sequence="35"
+        groups="dekad_real_estate.group_real_estate_user"
+    />
+    <menuitem
+        id="menu_availability"
+        name="Property Contract availability"
+        parent="menu_reports_root"
+        action="action_availability"
+        sequence="10"
+        groups="dekad_real_estate.group_enable_rental_properties"
+    />
+
+    <menuitem
+        id="menu_property_availability_report"
+        name="Property availability"
+        parent="menu_reports_root"
+        action="action_property_availability_report"
+        sequence="20"
+        groups="dekad_real_estate.group_real_estate_user"
+    />
+
+    <menuitem
+        id="menu_building_statement_line"
+        name="Building Statement"
+        parent="menu_reports_root"
+        action="action_building_statement_wizard"
+        sequence="25"
+        groups="dekad_real_estate.group_real_estate_user"
+    />
+
+    <menuitem
+        id="menu_contract_report_wizard"
+        name="بيان إيجار"
+        parent="menu_reports_root"
+        action="action_contract_report_wizard"
+        sequence="24"
+        groups="dekad_real_estate.group_real_estate_user"
+    />
+    <menuitem id="menu_property_availability_wizard"
+              name="Building Summary"
+              parent="menu_reports_root"
+              action="action_property_availability_wizard"
+              sequence="40"/>
+
+    <!-- ===================================================== -->
+    <!-- Configuration -->
+    <!-- ===================================================== -->
+
+    <menuitem
+        id="menu_real_estate_config"
+        name="Configuration"
+        parent="properties_main_menu"
+        sequence="40"
+        groups="dekad_real_estate.group_real_estate_user"
+    />
+
+    <menuitem
+        id="menu_real_estate_meters"
+        name="Meters"
+        parent="menu_real_estate_config"
+        action="action_real_estate_meters"
+        sequence="10"
+        groups="dekad_real_estate.group_real_estate_user"
+    />
+
+    <menuitem
+        id="menu_real_estate_settings"
+        name="Settings"
+        parent="menu_real_estate_config"
+        action="action_real_estate_config_settings"
+        sequence="100"
+        groups="dekad_real_estate.group_real_estate_user"
+    />
+
+</odoo>

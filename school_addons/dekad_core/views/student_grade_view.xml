@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_de_student_grade_list" model="ir.ui.view">
+            <field name="name">de.student.grade.list</field>
+            <field name="model">de.student.grade</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <list string="Student Grade" create="0" delete="0">
+                    <field name="academic_year_id"/>
+                    <field name="grade_id"/>
+                    <field name="student_id"/>
+                    <field name="subject_ids" widget="many2many_tags"/>
+                    <field name="state"/>
+                    <field name="sequence" optional="hide"/>
+                    <field name="create_date" optional="hide" widget="datetime"/>
+                    <field name="finish_grade_date" optional="hide" widget="date"/>
+
+                </list>
+            </field>
+        </record>
+
+        <record id="view_de_student_grade_form" model="ir.ui.view">
+            <field name="name">de.student.grade.form</field>
+            <field name="model">de.student.grade</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+
+                <form string="Student Grade" delete="0" create="0" edit="0" duplicate="0">
+                    <field name="state" invisible="1"/>
+                    <header groups="dekad_core.group_de_student">
+                        <button name="set_running" type="object" string="Running" class="oe_highlight"
+                                invisible="state in ('finish' , 'fail')"/>
+
+                        <button name="set_finish" type="object" string="Finish" class="oe_highlight"
+                                invisible="state in ('running' , 'fail')"/>
+
+                        <button name="set_fail" type="object" string="Fail" class="oe_highlight"
+                                invisible="state in ('running' , 'finish')"/>
+
+                        <field name="state" widget="statusbar"/>
+                    </header>
+
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="academic_year_id"/>
+                                <field name="grade_id"/>
+                                <field name="student_id"/>
+
+                            </group>
+                            <group>
+                                <field name="sequence"/>
+                                <field name="subject_ids" widget="many2many_tags"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_de_student_grade_search" model="ir.ui.view">
+            <field name="name">de.student.grade.search</field>
+            <field name="model">de.student.grade</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Student Grade">
+                    <field name="student_id"/>
+                    <field name="grade_id"/>
+                    <filter string="Today" name="filter_today"
+                            domain="[('create_date','=',context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter string="Last Week" name="filter_week"
+                            domain="[('create_date', '&gt;=', (context_today()-relativedelta(days=6)).strftime('%Y-%m-%d')),
+                    (   'create_date', '&lt;=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter string="Last Month" name="filter_month"
+                            domain="[('create_date', '&gt;=', (context_today()-relativedelta(days=29)).strftime('%Y-%m-%d')),
+                    (   'create_date', '&lt;=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter string="Failed" name="filter_fail"
+                            domain="[('state','=','fail')]"/>
+                    <filter string="Running" name="filter_running"
+                            domain="[('state','=','running')]"/>
+                    <filter string="Finished" name="filter_finished"
+                            domain="[('state','=','finish')]"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Academic Year" name="group_by_academic_year"
+                                domain="[]" context="{'group_by':'academic_year_id'}"/>
+                        <filter string="Grade" name="group_by_grade"
+                                domain="[]" context="{'group_by':'grade_id'}"/>
+                        <filter string="Student" name="group_by_student"
+                                domain="[]" context="{'group_by':'student_id'}"/>
+                        <filter string="Status" name="group_by_state"
+                                domain="[]" context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_de_student_grade_graph">
+            <field name="name">de.student.grade.graph</field>
+            <field name="model">de.student.grade</field>
+            <field name="arch" type="xml">
+                <graph string="Students by grade" type="bar" stacked="False">
+                    <field name="grade_id"/>
+                    <field name="state"/>
+                    <field name="student_id" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_de_student_grade_view">
+            <field name="name">Student grades</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.student.grade</field>
+            <field name="view_mode">list,form</field>
+            <field name="binding_view_types">list,form,graph</field>
+            <field name="search_view_id" ref="view_de_student_grade_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record id="act_open_de_student_grade_view_list" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="act_open_de_student_grade_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_de_student_grade_list"/>
+        </record>
+
+        <record id="act_open_de_student_grade_view_form" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="act_open_de_student_grade_view"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="20"/>
+            <field name="view_id" ref="view_de_student_grade_form"/>
+        </record>
+
+        <record id="act_open_de_student_grade_view_graph" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="act_open_de_student_grade_view"/>
+            <field name="view_mode">graph</field>
+            <field name="sequence" eval="30"/>
+            <field name="view_id" ref="view_de_student_grade_graph"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,392 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_achievement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-28 13:59+0000\n"
+"PO-Revision-Date: 2025-09-28 13:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: dekad_achievement
+#: model:ir.model,name:dekad_achievement.model_de_teacher
+msgid " Teacher"
+msgstr "المعلم"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.student_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_assign_kanban
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_inherited
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_assign_kanban
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_form_achievement_inherited
+msgid "<strong>Given by :</strong>"
+msgstr "<strong>مُنح من قبل :</strong>"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.student_achievement
+msgid "<strong>Given on :</strong>"
+msgstr "<strong>مُنح في :</strong>"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_assign_kanban
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_inherited
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_assign_kanban
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_form_achievement_inherited
+msgid "<strong>Given to :</strong>"
+msgstr "<strong>مُنح إلى :</strong>"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.student_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_assign_kanban
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_inherited
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_assign_kanban
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_form_achievement_inherited
+msgid "<strong>Reason :</strong>"
+msgstr "<strong>السبب :</strong>"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_student_achievement_wizard__achievement_id
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_teacher_achievement_wizard__achievement_id
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement_assign__achievement_id
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement_assign__achievement_id
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_assign_search
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_form
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_kanban
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_list
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_assign_search
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_form
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_kanban
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_list
+msgid "Achievement"
+msgstr "الإنجاز"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_student_achievement_wizard__achievement_type
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_teacher_achievement_wizard__achievement_type
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement_assign__achievement_type
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement_assign__achievement_type
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_achievement_type_list
+msgid "Achievement Type"
+msgstr "نوع الإنجاز"
+
+#. module: dekad_achievement
+#: model:ir.actions.act_window,name:dekad_achievement.action_de_achievement_type_view
+msgid "Achievement Types"
+msgstr "أنواع الإنجازات"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher__achievement_count
+msgid "Achievement count"
+msgstr "عدد الإنجازات"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student__achievement_count
+msgid "Achievement.count"
+msgstr "عدد الإنجازات"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student__achievement_ids
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher__achievement_ids
+#: model:ir.ui.menu,name:dekad_achievement.menu_de_student_achievement
+#: model:ir.ui.menu,name:dekad_achievement.menu_de_student_achievement_general
+#: model:ir.ui.menu,name:dekad_achievement.menu_de_teacher_achievement
+#: model:ir.ui.menu,name:dekad_achievement.menu_de_teacher_achievement_general
+#: model:res.groups,name:dekad_achievement.group_de_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.portal_student_achievement_breadcrumbs
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_inherited
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_form_achievement_inherited
+msgid "Achievements"
+msgstr "الإنجازات"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_assign_search
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_assign_search
+msgid "Activity"
+msgstr "النشاط"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.student_achievement
+msgid "Avatar"
+msgstr "الصورة الشخصية"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_multi_student_achievement_wizard_form
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_multi_teacher_achievement_wizard_form
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_achievement_type__create_uid
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_student_achievement_wizard__create_uid
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_teacher_achievement_wizard__create_uid
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement__create_uid
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement_assign__create_uid
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement__create_uid
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement_assign__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_achievement_type__create_date
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_student_achievement_wizard__create_date
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_teacher_achievement_wizard__create_date
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement__create_date
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement_assign__create_date
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement__create_date
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement_assign__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement__description
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_achievement_type__display_name
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_student_achievement_wizard__display_name
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_teacher_achievement_wizard__display_name
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement__display_name
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement_assign__display_name
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement__display_name
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement_assign__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_assign_form
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_assign_list
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_assign_form
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_assign_list
+msgid "Given at"
+msgstr "مُمنح في"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_student_achievement_wizard__user_id
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_teacher_achievement_wizard__user_id
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement_assign__user_id
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement_assign__user_id
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_assign_search
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_assign_search
+msgid "Given by"
+msgstr "مُنح من قبل"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_assign_search
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_assign_search
+msgid "Group By..."
+msgstr "تجميع حسب..."
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_achievement_type__id
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_student_achievement_wizard__id
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_teacher_achievement_wizard__id
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement__id
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement_assign__id
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement__id
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement_assign__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement__image
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement__image
+msgid "Image"
+msgstr "الصورة"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_achievement_type__write_uid
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_student_achievement_wizard__write_uid
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_teacher_achievement_wizard__write_uid
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement__write_uid
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement_assign__write_uid
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement__write_uid
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement_assign__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_achievement_type__write_date
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_student_achievement_wizard__write_date
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_teacher_achievement_wizard__write_date
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement__write_date
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement_assign__write_date
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement__write_date
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement_assign__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: dekad_achievement
+#: model:ir.model,name:dekad_achievement.model_de_multi_student_achievement_wizard
+msgid "Multi student Achievement Wizard"
+msgstr "معالج إنجازات متعدد الطلاب"
+
+#. module: dekad_achievement
+#: model:ir.actions.act_window,name:dekad_achievement.act_open_de_multi_student_achievement_wizard_view
+#: model:ir.ui.menu,name:dekad_achievement.menu_de_multi_student_achievement_wizard
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_multi_student_achievement_wizard_form
+msgid "Multi students achievement"
+msgstr "إنجازات متعددة للطلاب"
+
+#. module: dekad_achievement
+#: model:ir.model,name:dekad_achievement.model_de_multi_teacher_achievement_wizard
+msgid "Multi teacher Achievement Wizard"
+msgstr "معالج إنجازات متعدد المعلمين"
+
+#. module: dekad_achievement
+#: model:ir.actions.act_window,name:dekad_achievement.act_open_de_multi_teacher_achievement_wizard_view
+#: model:ir.ui.menu,name:dekad_achievement.menu_de_multi_teacher_achievement_wizard
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_multi_teacher_achievement_wizard_form
+msgid "Multi teachers achievement"
+msgstr "إنجازات متعددة للمعلمين"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_achievement_type__name
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement__name
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_multi_student_achievement_wizard_form
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_multi_teacher_achievement_wizard_form
+msgid "Proceed"
+msgstr "متابعة"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_student_achievement_wizard__reason
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_teacher_achievement_wizard__reason
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement_assign__reason
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement_assign__reason
+msgid "Reason"
+msgstr "السبب"
+
+#. module: dekad_achievement
+#: model:ir.model,name:dekad_achievement.model_de_student
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement_assign__student_id
+msgid "Student"
+msgstr "الطالب"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_assign_kanban
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_inherited
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_assign_kanban
+msgid "Student Achievement"
+msgstr "إنجاز الطالب"
+
+#. module: dekad_achievement
+#: model:ir.model,name:dekad_achievement.model_de_student_achievement_assign
+msgid "Student Achievement assign"
+msgstr "تعيين إنجاز الطالب"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_student_achievement_wizard__student_ids
+msgid "Students"
+msgstr "الطلاب"
+
+#. module: dekad_achievement
+#: model:ir.actions.act_window,name:dekad_achievement.act_open_de_student_achievement_view
+#: model:ir.model,name:dekad_achievement.model_de_student_achievement
+#: model:ir.ui.menu,name:dekad_achievement.menu_de_student_achievement_assign
+msgid "Students Achievements"
+msgstr "إنجازات الطلاب"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement_assign__teacher_id
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_assign_search
+msgid "Teacher"
+msgstr "المعلم"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_assign_kanban
+msgid "Teacher Achievement"
+msgstr "إنجاز المعلم"
+
+#. module: dekad_achievement
+#: model:ir.model,name:dekad_achievement.model_de_teacher_achievement_assign
+msgid "Teacher Achievement assign"
+msgstr "تعيين إنجاز المعلم"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_teacher_achievement_wizard__teacher_ids
+msgid "Teachers"
+msgstr "المعلمون"
+
+#. module: dekad_achievement
+#: model:ir.actions.act_window,name:dekad_achievement.act_open_de_teacher_achievement_view
+#: model:ir.model,name:dekad_achievement.model_de_teacher_achievement
+#: model:ir.ui.menu,name:dekad_achievement.menu_de_teacher_achievement_assign
+msgid "Teachers Achievements"
+msgstr "إنجازات المعلمين"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.student_achievement
+msgid "There are no achievement to display."
+msgstr "لا توجد إنجازات لعرضها."
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement__type_id
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement__type_id
+msgid "Type"
+msgstr "النوع"
+
+#. module: dekad_achievement
+#: model:ir.model,name:dekad_achievement.model_de_achievement_type
+msgid "achievement type"
+msgstr "نوع الإنجاز"
+
+#. module: dekad_achievement
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_student_achievement_wizard__achievement_image
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_multi_teacher_achievement_wizard__achievement_image
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_student_achievement_assign__achievement_image
+#: model:ir.model.fields,field_description:dekad_achievement.field_de_teacher_achievement_assign__achievement_image
+msgid "image"
+msgstr "الصورة"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_assign_search
+msgid "student"
+msgstr "طالب"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_assign_list
+msgid "student achievement"
+msgstr "إنجاز الطالب"
+
+#. module: dekad_achievement
+#: model:ir.actions.act_window,name:dekad_achievement.act_open_de_student_achievement_assign_view
+msgid "student achievements assign"
+msgstr "تعيين إنجازات الطلاب"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_student_achievement_assign_form
+msgid "student_achievement"
+msgstr "إنجاز_الطالب"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_form_achievement_inherited
+msgid "teacher Achievement"
+msgstr "إنجاز المعلم"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_assign_list
+msgid "teacher achievement"
+msgstr "إنجاز المعلم"
+
+#. module: dekad_achievement
+#: model:ir.actions.act_window,name:dekad_achievement.act_open_de_teacher_achievement_assign_view
+msgid "teacher achievements assign"
+msgstr "تعيين إنجازات المعلمين"
+
+#. module: dekad_achievement
+#: model_terms:ir.ui.view,arch_db:dekad_achievement.view_de_teacher_achievement_assign_form
+msgid "teacher_achievement"
+msgstr "إنجاز_المعلم"

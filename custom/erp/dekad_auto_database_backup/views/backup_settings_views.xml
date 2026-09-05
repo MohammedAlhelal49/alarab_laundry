@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Standalone wizard so it does not replace General Settings -->
+        <record id="view_res_config_settings_dekad_backup" model="ir.ui.view">
+            <field name="name">dekad.backup.settings.form</field>
+            <field name="model">dekad.backup.settings</field>
+            <field name="arch" type="xml">
+                <form string="Database Backup Settings">
+                    <sheet>
+                        <group string="Database Backup">
+                            <group string="Configuration">
+                                <field name="dekad_backup_enabled"/>
+                                <field name="dekad_include_filestore" invisible="not dekad_backup_enabled"/>
+                                <field name="dekad_backup_path" placeholder="/var/backups/odoo"
+                                       invisible="not dekad_backup_enabled"/>
+                                <field name="dekad_backup_keep_count" invisible="not dekad_backup_enabled"/>
+                            </group>
+                            <group string="Schedule" invisible="not dekad_backup_enabled">
+                                <field name="dekad_backup_daily"/>
+                                <field name="dekad_backup_time"/>
+                                <field name="dekad_backup_end_time"/>
+                                <field name="dekad_backup_per_day"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="action_run_backup_now"
+                                    string="Run backup now"
+                                    type="object"
+                                    class="btn btn-primary"/>
+                            <button string="Save"
+                                    type="object"
+                                    name="action_save_settings"
+                                    class="btn btn-secondary"/>
+                            <button string="View Logs"
+                                    type="object"
+                                    name="action_view_backup_logs"
+                                    class="btn btn-secondary"/>
+                            <button string="Discard"
+                                    special="cancel"
+                                    class="btn btn-link"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action to open backup settings from the Settings app -->
+        <record id="action_dekad_backup_settings" model="ir.actions.act_window">
+            <field name="name">Database Backup</field>
+            <field name="res_model">dekad.backup.settings</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_res_config_settings_dekad_backup"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Menu entry under Settings → Administration (exists in CE/EE) -->
+        <menuitem id="menu_dekad_backup_settings"
+                  name="Database Backup"
+                  groups="base.group_system"
+                  parent="base.menu_administration"
+                  action="action_dekad_backup_settings"
+                  sequence="50"/>
+    </data>
+</odoo>

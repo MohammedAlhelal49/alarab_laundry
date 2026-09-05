@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="cron_clear_student_unused_contact" model="ir.cron">
+            <field name="name">Clear the students unused contacts</field>
+            <field name="model_id" ref="model_de_student"/>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="code">model.cron_clear_unused_contact()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+        </record>
+
+        <record id="cron_clear_teacher_unused_contact" model="ir.cron">
+            <field name="name">Clear the teachers unused contacts</field>
+            <field name="model_id" ref="model_de_teacher"/>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="code">model.cron_clear_unused_contact()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+
+        </record>
+
+    </data>
+</odoo>

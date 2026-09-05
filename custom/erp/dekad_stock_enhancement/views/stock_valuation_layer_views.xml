@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_stock_valuation_layer_search_inherit_cancel" model="ir.ui.view">
+        <field name="name">stock.valuation.layer.search.inherit.cancel</field>
+        <field name="model">stock.valuation.layer</field>
+        <field name="inherit_id" ref="stock_account.view_inventory_valuation_search"/>
+        <field name="priority" eval="99"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <filter string="Cancel pickings valuations"
+                        name="cancel_reversals"
+                        domain="[('is_cancel_reversal','=',True)]"/>
+                <filter string="Regular Valuations"
+                        name="regular_valuations"
+                        domain="[('is_cancel_reversal','=',False)]"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="stock_account.stock_valuation_layer_action" model="ir.actions.act_window">
+        <field name="domain">[]</field>
+        <field name="context">{'search_default_regular_valuations': 1}</field>
+    </record>
+
+
+    <record model="ir.actions.server" id="stock_valuation_delete_related_journals">
+        <field name="name">Delete Related journal entries</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="stock_account.model_stock_valuation_layer"/>
+        <field name="binding_model_id" ref="stock_account.model_stock_valuation_layer"/>
+        <field name="state">code</field>
+        <field name="binding_view_types">list</field>
+        <field name="code">
+            records.action_delete_related_cancel_journal()
+        </field>
+    </record>
+
+    <function model="stock.valuation.layer" name="action_delete_related_cancel_journal_all" eval="[[]]"/>
+</odoo>

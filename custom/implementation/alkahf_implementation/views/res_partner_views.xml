@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_view_form_license" model="ir.ui.view">
+        <field name="name">res.partner.view.form.license</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="license_type"/>
+                <field
+                    name="trade_license"
+                    invisible="license_type != 'trade_license'"
+                    required="license_type == 'trade_license'"
+                />
+                <field
+                    name="trade_name"
+                    invisible="license_type != 'trade_name'"
+                    required="license_type == 'trade_name'"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>

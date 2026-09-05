@@ -1,0 +1,179 @@
+<odoo>
+  <template id="shared_document_body">
+    <div class="page">
+
+      <div style="background-color:#693c10; color:white; text-align:center; padding:6px; font-size:16px; font-weight:bold; margin-top:8px;">
+        <span t-esc="doc_title"/>
+      </div>
+      
+      <table style="width:100%; margin-top:8px;">
+        <tr>
+          <td style="width:58%; vertical-align:bottom; font-size:11px; padding:3px;">
+            www.wallstreetinv.com | info@wallstreetinv.com
+          </td>
+          <td style="width:42%; vertical-align:top; padding:0;">
+            <table style="width:100%; border-collapse:collapse;">
+              <tr>
+                <td style="background-color:#f5ead5; color:#693c10; font-weight:bold; padding:4px 8px; width:40%;">Ref</td>
+                <td style="background-color:#f5ead5; padding:4px 8px;" t-esc="doc_name"/>
+              </tr>
+              <tr>
+                <td style="background-color:#f5ead5; color:#693c10; font-weight:bold; padding:4px 8px;">Issue Date</td>
+                <td style="background-color:#f5ead5; padding:4px 8px;" t-esc="doc_date"/>
+              </tr>
+              <tr>
+                <td style="background-color:#f5ead5; color:#693c10; font-weight:bold; padding:4px 8px;">Valid Until</td>
+                <td style="background-color:#f5ead5; padding:4px 8px;" t-esc="doc_due_date"/>
+              </tr>
+              <tr>
+                <td style="background-color:#f5ead5; color:#693c10; font-weight:bold; padding:4px 8px;">Currency</td>
+                <td style="background-color:#f5ead5; padding:4px 8px;" t-esc="currency"/>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Customer Details + Engagement Details -->
+      <table style="width:100%; margin-top:8px; border-collapse:collapse;" class="table table-bordered">
+        <tr>
+          <th style="width:58%; background-color:#f5ead5; color:#693c10;">CUSTOMER DETAILS</th>
+          <th style="width:42%; background-color:#f5ead5; color:#693c10;">ENGAGEMENT DETAILS</th>
+        </tr>
+        <tr>
+          <td style="vertical-align:top; padding:0;">
+            <table style="width:100%;">
+              <tr>
+                <td style="width:35%; padding:3px; color:#693c10; font-weight:bold;">Customer Name:</td>
+                <td style="padding:3px;" t-esc="client_name"/>
+              </tr>
+              <tr>
+                <td style="padding:3px; color:#693c10; font-weight:bold;">Attention:</td>
+                <td style="padding:3px;" t-esc="client_attention"/>
+              </tr>
+              <tr>
+                <td style="padding:3px; color:#693c10; font-weight:bold;">Customer TRN:</td>
+                <td style="padding:3px;" t-esc="client_trn"/>
+              </tr>
+              <tr>
+                <td style="padding:3px; color:#693c10; font-weight:bold;">Address:</td>
+                <td style="padding:3px;" t-esc="client_address"/>
+              </tr>
+            </table>
+          </td>
+          <td style="vertical-align:top; padding:0;">
+            <table style="width:100%;">
+              <tr>
+                <td style="width:40%; padding:3px; color:#693c10; font-weight:bold;">Subject:</td>
+                <td style="padding:3px;" t-esc="subject"/>
+              </tr>
+              <tr>
+                <td style="padding:3px; color:#693c10; font-weight:bold;">Engagement Type:</td>
+                <td style="padding:3px;" t-esc="engagement_type"/>
+              </tr>
+              <tr>
+                <td style="padding:3px; color:#693c10; font-weight:bold;">Payment Terms:</td>
+                <td style="padding:3px;" t-esc="payment_terms"/>
+              </tr>
+              <tr>
+                <td style="padding:3px; color:#693c10; font-weight:bold;">Expected Timeline:</td>
+                <td style="padding:3px;" t-esc="expected_timeline"/>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <div style="background-color:#693c10; color:white; text-align:center; padding:5px; font-weight:bold; margin-top:8px;">
+        Scope / Line Items
+      </div>
+
+      <table class="table table-bordered" style="width:100%; border-collapse:collapse;">
+        <thead>
+          <tr>
+            <th style="width:5%; background-color:#f5ead5; color:#693c10;">No.</th>
+            <th style="width:35%; background-color:#f5ead5; color:#693c10;">Description</th>
+            <th style="width:12%; background-color:#f5ead5; color:#693c10;">Unit</th>
+            <th style="width:10%; background-color:#f5ead5; color:#693c10;">Qty</th>
+            <th style="width:15%; background-color:#f5ead5; color:#693c10;">Rate/Day</th>
+            <th style="width:8%; background-color:#f5ead5; color:#693c10;">VAT</th>
+            <th style="width:15%; background-color:#f5ead5; color:#693c10;">Line Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr t-foreach="lines" t-as="line">
+            <td style="background-color:#ffffff;" t-esc="line_index + 1"/>
+            <td style="background-color:#ffffff;" t-esc="line['description']"/>
+            <td style="background-color:#ffffff;" t-esc="line['uom']"/>
+            <td style="background-color:#ffffff;" t-esc="line['qty']"/>
+            <td style="background-color:#ffffff;" t-esc="line['price_unit']"/>
+            <td style="background-color:#ffffff;" t-esc="line['tax']"/>
+            <td style="background-color:#ffffff;" t-esc="line['total']"/>
+          </tr>
+        </tbody>
+      </table>
+
+      <table style="width:40%; margin-left:60%; margin-top:6px;">
+        <tr>
+          <td style="padding:3px;">Subtotal before VAT</td>
+          <td style="padding:3px; text-align:right;" t-esc="'%.2f' % amount_untaxed"/>
+        </tr>
+        <tr>
+          <td style="padding:3px;">VAT Amount</td>
+          <td style="padding:3px; text-align:right;" t-esc="'%.2f' % amount_tax"/>
+        </tr>
+        <tr style="background-color:#4a2f23; color:white; font-weight:bold;">
+          <td style="padding:3px;">Grand Total</td>
+          <td style="padding:3px; text-align:right;" t-esc="'%.2f' % amount_total"/>
+        </tr>
+      </table>
+
+      <div style="margin-top:4px; font-style:italic; text-align:right;">
+        <span t-esc="total_in_words"/>
+      </div>
+
+      <!-- Terms & Conditions -->
+      <div style="margin-top:8px;">
+        <div style="background-color:#693c10; color:white; padding:4px; font-weight:bold;">
+          Terms &amp; Conditions
+        </div>
+        <ol style="padding-left:20px; margin-top:6px; margin-bottom:6px; font-size:12px; line-height:1.5;">
+          <li>Fees exclude out-of-pocket expenses, government fees, translation, attestation, and courier costs unless expressly stated.</li>
+          <li>Work starts after written approval, receipt of agreed advance payment and receipt of required documents.</li>
+          <li>Deliverables are based on documents and explanations made available to us. Additional scope is subject to separate approval.</li>
+          <li>Payment is due as per the stated payment terms. Late payment may pause further work.</li>
+          <li>This document is confidential and prepared for the named client only.</li>
+        </ol>
+      </div>
+
+      <!-- Bank Details + Authorized Signature -->
+      <div style="margin-top:8px; page-break-inside:avoid;">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <td style="width:50%; background-color:#f5ead5; padding:4px; color:#693c10; font-weight:bold;">Bank Details</td>
+            <td style="width:50%; background-color:#f5ead5; padding:4px; color:#693c10; font-weight:bold;">Authorized Signature / Acceptance</td>
+          </tr>
+        </table>
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <td style="width:50%; vertical-align:top; padding:6px; font-size:12px; line-height:1.5;">
+              <span style="color:#693c10; font-weight:bold;">Bank Name:</span> Abu Dhabi Commercial Bank - ADCB<br/>
+              <span style="color:#693c10; font-weight:bold;">Account Name:</span> WALL STREET CONSULTING AND AUDITING<br/>
+              <span style="color:#693c10; font-weight:bold;">Acc. No.:</span> 1062 1418 291 001<br/>
+              <span style="color:#693c10; font-weight:bold;">IBAN:</span> AE400300 1062 1418 291 001<br/>
+              <span style="color:#693c10; font-weight:bold;">SWIFT:</span> ADCBAEAA
+            </td>
+            <td style="width:50%; vertical-align:top; padding:6px; font-size:12px; line-height:1.5;">
+              For Wall Street Consulting &amp; Auditing<br/>
+              <span style="font-weight:bold;">Name:</span> Muaiad M. Al-Hariri<br/>
+              <span style="font-weight:bold;">Title:</span> CEO<br/>
+              Signature: ___________________<br/><br/>
+              Client Acceptance: ___________________
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </template>
+</odoo>

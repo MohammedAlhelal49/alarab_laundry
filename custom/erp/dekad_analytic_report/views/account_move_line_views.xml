@@ -1,0 +1,42 @@
+<odoo>
+
+    <record id="view_move_line_tree_inherit_payment_method" model="ir.ui.view">
+        <field name="name">account.move.line.tree.payment.method</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_tree"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='journal_id']" position="after">
+                <field name="payment_method_line_id"/>
+            </xpath>
+
+        </field>
+    </record>
+    <record id="view_account_move_line_filter_payment_method" model="ir.ui.view">
+        <field name="name">account.move.line.search.payment.method</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+        <field name="arch" type="xml">
+
+            <!-- FILTER -->
+            <xpath expr="//search" position="inside">
+                <filter
+                    name="payment_method"
+                    string="Payment Method"
+                    domain="[('payment_method_line_id','!=',False)]"
+                />
+            </xpath>
+
+            <!-- GROUP BY -->
+            <xpath expr="//group" position="inside">
+                <filter
+                    name="group_by_payment_method"
+                    string="Payment Method"
+                    context="{'group_by':'payment_method_line_id'}"
+                />
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

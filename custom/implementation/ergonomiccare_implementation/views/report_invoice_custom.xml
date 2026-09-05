@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <template id="report_invoice_document_billto_fix" inherit_id="account.report_invoice_document">
+
+    <xpath expr="//div[@name='address_not_same_as_shipping']" position="replace">
+        <div class="col-6" name="address_not_same_as_shipping">
+
+            <strong class="d-block mb-1">Bill To:</strong>
+
+            <address class="mb-0"
+                     t-field="o.partner_id"
+                     t-options='{"widget": "contact", "fields": ["name", "address"], "no_marker": True}'/>
+
+            <div t-if="o.partner_id.vat" class="mt-1">
+                <t t-if="o.company_id.account_fiscal_country_id.vat_label"
+                   t-out="o.company_id.account_fiscal_country_id.vat_label"/>
+                <t t-else="">Tax ID</t>:
+                <span t-field="o.partner_id.vat"/>
+            </div>
+
+        </div>
+    </xpath>
+
+
+    <!-- When shipping == billing -->
+    <xpath expr="//div[@name='address_same_as_shipping']" position="replace">
+        <div class="offset-col-6 col-6" name="address_same_as_shipping">
+
+            <strong class="d-block mb-1">Bill To:</strong>
+
+            <address class="mb-0"
+                     t-field="o.partner_id"
+                     t-options='{"widget": "contact", "fields": ["name", "address"], "no_marker": True}'/>
+
+            <div t-if="o.partner_id.vat" class="mt-1">
+                <t t-if="o.company_id.account_fiscal_country_id.vat_label"
+                   t-out="o.company_id.account_fiscal_country_id.vat_label"/>
+                <t t-else="">Tax ID</t>:
+                <span t-field="o.partner_id.vat"/>
+            </div>
+
+        </div>
+    </xpath>
+
+    <xpath expr="//div[@name='no_shipping']" position="replace">
+        <div class="offset-col-6 col-6" name="no_shipping">
+
+            <strong class="d-block mb-1">Bill To:</strong>
+
+            <address class="mb-0"
+                     t-field="o.partner_id"
+                     t-options='{"widget": "contact", "fields": ["name", "address"], "no_marker": True}'/>
+
+            <div t-if="o.partner_id.vat" class="mt-1">
+                <t t-if="o.company_id.account_fiscal_country_id.vat_label"
+                   t-out="o.company_id.account_fiscal_country_id.vat_label"/>
+                <t t-else="">Tax ID</t>:
+                <span t-field="o.partner_id.vat"/>
+            </div>
+
+        </div>
+    </xpath>
+
+
+    <!-- Insert BEFORE first address row -->
+    <xpath expr="//t[@t-call='web.external_layout']/div[@class='row'][1]"
+            position="before">
+
+        <div class="row" t-if="o.invoice_origin">
+
+            <div class="col-6"/>
+
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-end"
+                         t-if="o.invoice_origin">
+
+                        <t t-set="sale_order"
+                           t-value="o.env['sale.order'].sudo().search([('name','=',o.invoice_origin)], limit=1)"/>
+
+                        <div class="fs-8 text-start"
+                             style="line-height:1.8;"
+                             t-if="sale_order and (sale_order.patient_id or sale_order.patient_code or sale_order.theqa_no or sale_order.mrn or o.claim_number or o.authorization_number)">
+                            <br/>
+
+                            <div t-if="sale_order.patient_id" class="mb-2">
+                                <strong>Patient Name:</strong>
+                                <span t-field="sale_order.patient_id"/>
+                            </div>
+
+                            <div t-if="sale_order.patient_code" class="mb-2">
+                                <strong>Code:</strong>
+                                <span t-field="sale_order.patient_code"/>
+                            </div>
+
+                            <div t-if="sale_order.theqa_no" class="mb-2">
+                                <strong>Card No. :</strong>
+                                <span t-field="sale_order.theqa_no"/>
+                            </div>
+
+                            <div t-if="sale_order.mrn" class="mb-2">
+                                <strong>MR No. :</strong>
+                                <span t-field="sale_order.mrn"/>
+                            </div>
+
+                            <div t-if="o.claim_number" class="mb-2">
+                                <strong>Claim No. :</strong>
+                                <span t-field="o.claim_number"/>
+                            </div>
+
+                            <div t-if="o.lpo_authorization_type == 'lpo' and o.lpo_number"
+                                 style="margin-bottom: 15px;">
+                                <strong>LPO No. :</strong>
+                                <t t-esc="o.lpo_number"/>
+                            </div>
+
+                            <div t-if="o.lpo_authorization_type == 'authorization' and o.authorization_number"
+                                 style="margin-bottom: 15px;">
+                                <strong>Authorization No. :</strong>
+                                <t t-esc="o.authorization_number"/>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </xpath>
+        <!-- Insert patient fields BELOW the layout_document_title -->
+    <xpath expr="//t[@t-set='layout_document_title']" position="after">
+
+        <!-- Compute and store the related sale order -->
+        <t t-set="sale_order"
+           t-value="o.invoice_origin and o.env['sale.order'].sudo().search([('name', '=', o.invoice_origin)], limit=1)"/>
+
+        <!-- Show patient details if available -->
+        <div class="row mt-2 mb-3" t-if="sale_order and (sale_order.patient_id or sale_order.patient_code or sale_order.theqa_no or sale_order.mrn)">
+            <div class="col-12 text-start small text-muted">
+                <!-- Product list -->
+                <div t-if="sale_order.product_ids">
+                    <strong>Subject:</strong>
+                    <div>
+                        <t t-foreach="sale_order.product_ids" t-as="product" t-join=" | ">
+                            <span t-field="product.name"/>
+                        </t>
+                    </div>
+                </div>
+                <!-- Product description -->
+                <div t-if="sale_order.product_description">
+                    <span t-field="sale_order.product_description" style="color: #888888;"/>
+                </div>
+
+            </div>
+        </div>
+    </xpath>
+  </template>
+
+</odoo>

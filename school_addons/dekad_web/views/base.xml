@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+<!--
+      <template id="portal_profile_dropdown_student" inherit_id="portal.user_dropdown">
+
+        <xpath expr="//a[@id='o_logout']" position="before">
+            <a class="dropdown-item ps-3" t-attf-href="/my/students" groups="base.group_portal">
+                <i class="fa fa-graduation-cap me-1 small text-primary text-primary-emphasis"/> My Student/s
+            </a>
+            <div class="dropdown-divider"/>
+        </xpath>
+    </template> -->
+
+        <template id="dekad_portal_my_home" name="Portal My Home " inherit_id="portal.portal_my_home">
+
+            <!-- Method 2: Aggressive xpath replacement - Try these one by one -->
+
+            <!-- Option 1: Replace portal category section -->
+            <xpath expr="//div[@id='portal_common_category']" position="replace">
+                <div id="portal_common_category" class="d-none">
+                    <!-- Hidden default categories -->
+                </div>
+            </xpath>
+
+
+
+            <xpath expr="//div[hasclass('o_portal_my_home')]" position="inside">
+
+                <!-- STUDENT SECTION -->
+                <div class="card mb-4" t-if="request.env.user.is_student">
+                    <div class="card-body">
+                        <div class="text-center mb-4">
+                              <!-- Display student image if available -->
+                                <t t-if="request.env.user.image_1920">
+                                    <img t-attf-src="data:image/png;base64,{{request.env.user.image_1920.decode('utf-8')}}"
+                                         alt="Student Avatar"
+                                         class="rounded-circle"
+                                         style="width: 40%; height: 40%; object-fit: cover;"/>
+                                </t>
+                                <t t-else="">
+                                     <div class="rounded-circle bg-success d-inline-flex align-items-center justify-content-center text-white mb-3"
+                                 style="width: 80px; height: 80px; font-size: 2rem;">
+                                <i class="fa fa-graduation-cap"/>
+                            </div>
+                                </t>
+                            <h4 class="mb-1" t-esc="request.env.user.name"/>
+                            <p class="text-muted">Student Portal</p>
+                        </div>
+
+                        <hr class="mb-4"/>
+
+                        <!-- Student Info -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3" t-if="request.env.user.email">
+                                <h6 class="text-uppercase small text-muted fw-bold">Email</h6>
+                                <p class="mb-0">
+                                    <a t-attf-href="mailto:{{request.env.user.email}}" class="text-decoration-none">
+                                        <t t-esc="request.env.user.email"/>
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="col-md-6 mb-3" t-if="request.env.user.phone">
+                                <h6 class="text-uppercase small text-muted fw-bold">Phone</h6>
+                                <p class="mb-0">
+                                    <a t-attf-href="tel:{{request.env.user.phone}}" class="text-decoration-none">
+                                        <t t-esc="request.env.user.phone"/>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Student Quick Navigation -->
+                        <div class="mt-4">
+                            <h5 class="mb-3">Quick Access</h5>
+                            <div class="list-group">
+                                <!-- Profile -->
+                                <a t-if="student_profile_document and student_profile_document.get('show')"
+                                   t-att-href="student_profile_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-user text-primary me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Profile</div>
+                                        <small class="text-muted">View your profile information</small>
+                                    </div>
+                                </a>
+
+                                <!-- Fees -->
+                                <a t-if="student_fee_document and student_fee_document.get('show')"
+                                   t-att-href="student_fee_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-money text-success me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Fees</div>
+                                        <small class="text-muted">View fee information</small>
+                                        <span t-if="student_fee_document.get('count')"
+                                              class="badge bg-primary rounded-pill ms-2"
+                                              t-esc="student_fee_document.get('count')"/>
+                                    </div>
+                                </a>
+
+                                <!-- Attendance -->
+                                <a t-if="student_attendance_document and student_attendance_document.get('show')"
+                                   t-att-href="student_attendance_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-calendar-check-o text-info me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Attendance</div>
+                                        <small class="text-muted">View attendance records</small>
+                                        <span t-if="student_attendance_document.get('count')"
+                                              class="badge bg-info rounded-pill ms-2"
+                                              t-esc="student_attendance_document.get('count')"/>
+                                    </div>
+                                </a>
+
+                                <!-- Assignments -->
+                                <a t-if="student_assignment_document and student_assignment_document.get('show')"
+                                   t-att-href="student_assignment_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-tasks text-warning me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Assignments</div>
+                                        <small class="text-muted">View your assignments</small>
+                                        <span t-if="student_assignment_document.get('count')"
+                                              class="badge bg-warning rounded-pill ms-2"
+                                              t-esc="student_assignment_document.get('count')"/>
+                                    </div>
+                                </a>
+
+                                <!-- Notes -->
+                                <a t-if="student_note_document and student_note_document.get('show')"
+                                   t-att-href="student_note_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-sticky-note text-info me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Notes</div>
+                                        <small class="text-muted">View notes and communications</small>
+                                        <span t-if="student_note_document.get('count')"
+                                              class="badge bg-info rounded-pill ms-2"
+                                              t-esc="student_note_document.get('count')"/>
+                                    </div>
+                                </a>
+
+                                <!-- Achievements -->
+                                <a t-if="student_achievement_document and student_achievement_document.get('show')"
+                                   t-att-href="student_achievement_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-trophy text-warning me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Achievements</div>
+                                        <small class="text-muted">View your achievements</small>
+                                        <span t-if="student_achievement_document.get('count')"
+                                              class="badge bg-warning rounded-pill ms-2"
+                                              t-esc="student_achievement_document.get('count')"/>
+                                    </div>
+                                </a>
+<!--                                Activity-->
+                                <a t-if="student_activity_document and student_activity_document.get('show')"
+                                   t-att-href="student_activity_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-calendar text-success me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Activities</div>
+                                        <small class="text-muted">View your activities</small>
+                                        <span t-if="student_activity_document.get('count') and student_activity_document.get('count') > 0"
+                                              class="badge bg-success rounded-pill ms-2"
+                                              t-esc="student_activity_document.get('count')"/>
+                                    </div>
+                                </a>
+                                <!-- Complaint -->
+                                <a t-if="student_complaint_document and student_complaint_document.get('show')"
+                                   t-att-href="student_complaint_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-exclamation-triangle text-warning me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Complaints</div>
+                                        <small class="text-muted">View and submit complaints</small>
+                                        <span t-if="student_complaint_document.get('count') and student_complaint_document.get('count') > 0"
+                                              class="badge bg-warning rounded-pill ms-2"
+                                              t-esc="student_complaint_document.get('count')"/>
+                                    </div>
+                                </a>
+                                 <!-- Health -->
+                                <a t-if="student_health_document or student_health_document.get('show')"
+                                   t-att-href="student_health_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-heartbeat text-danger me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Health Records</div>
+                                        <small class="text-muted">View health checkups</small>
+                                        <span t-if="student_health_document.get('count') and student_health_document.get('count') > 0"
+                                              class="badge bg-danger rounded-pill ms-2"
+                                              t-esc="student_health_document.get('count')"/>
+                                    </div>
+                                </a>
+                                <!-- Leaves -->
+                                <a t-if="student_leave_document and student_leave_document.get('show')"
+                                   t-att-href="student_leave_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-calendar-times-o text-secondary me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Leave Requests</div>
+                                        <small class="text-muted">View leave applications</small>
+                                        <span t-if="student_leave_document.get('count') and student_leave_document.get('count') > 0"
+                                              class="badge bg-secondary rounded-pill ms-2"
+                                              t-esc="student_leave_document.get('count')"/>
+                                    </div>
+                                </a>
+
+                                <!-- Quizzes -->
+                                <a t-if="student_quiz_document and student_quiz_document.get('show')"
+                                   t-att-href="student_quiz_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-question-circle text-primary me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Quizzes</div>
+                                        <small class="text-muted">View your quizzes</small>
+                                        <span t-if="student_quiz_document.get('count') and student_quiz_document.get('count') > 0"
+                                              class="badge bg-primary rounded-pill ms-2"
+                                              t-esc="student_quiz_document.get('count')"/>
+                                    </div>
+                                </a>
+                                       <!-- Timetable -->
+                                <a t-if="student_timetable_document and student_timetable_document.get('show')"
+                                   t-att-href="student_timetable_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-calendar text-success me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Timetable</div>
+                                        <small class="text-muted">View your class schedule</small>
+                                        <span t-if="student_timetable_document.get('count') and student_timetable_document.get('count') > 0"
+                                              class="badge bg-success rounded-pill ms-2"
+                                              t-esc="student_timetable_document.get('count')"/>
+                                    </div>
+                                </a>
+
+                                <!-- Contraventions -->
+                                <a t-if="student_contravention_document and student_contravention_document.get('show')"
+                                   t-att-href="student_contravention_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-ban text-danger me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Contraventions</div>
+                                        <small class="text-muted">View disciplinary records</small>
+                                        <span t-if="student_contravention_document.get('count') and student_contravention_document.get('count') > 0"
+                                              class="badge bg-danger rounded-pill ms-2"
+                                              t-esc="student_contravention_document.get('count')"/>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- PARENT SECTION -->
+
+<div class="card mb-4" t-if="request.env.user.is_parent">
+    <div class="card-body">
+        <div class="text-center mb-4">
+             <!-- Display student image when viewing specific student, otherwise parent image -->
+                                <t t-if="parent_student_param and student and student.image_1920">
+                                    <img t-attf-src="data:image/png;base64,{{student.image_1920.decode('utf-8')}}"
+                                         alt="Student Avatar"
+                                         class="rounded-circle"
+                                         style="width: 40%; height: 40%; object-fit: cover;"/>
+                                </t>
+                                <t t-elif="not parent_student_param and request.env.user.image_1920">
+                                    <img t-attf-src="data:image/png;base64,{{request.env.user.image_1920.decode('utf-8')}}"
+                                         alt="Parent Avatar"
+                                         class="rounded-circle"
+                                         style="width: 40%; height: 40%; object-fit: cover;"/>
+                                </t>
+                                <t t-else="">
+                                    <i class="fa fa-user"/>
+                                </t>
+            <h4 class="mb-1" t-esc="request.env.user.name"/>
+            <p class="text-muted" t-if="parent_student_param">Viewing Student Information</p>
+            <p class="text-muted" t-else="">Parent Portal</p>
+        </div>
+
+        <hr class="mb-4"/>
+
+        <!-- Show student info when viewing specific student -->
+        <div class="row" t-if="parent_student_param and student">
+            <div class="col-12 mb-3">
+                <h6 class="text-uppercase small text-muted fw-bold">Student Information</h6>
+                <h5 t-esc="student_name"/>
+                <p class="text-muted">Grade: <span t-esc="student_grade"/></p>
+            </div>
+        </div>
+
+        <!-- Parent contact info -->
+        <div class="row">
+            <div class="col-md-6 mb-3" t-if="request.env.user.email">
+                <h6 class="text-uppercase small text-muted fw-bold">Email</h6>
+                <p class="mb-0">
+                    <a t-attf-href="mailto:{{request.env.user.email}}" class="text-decoration-none">
+                        <t t-esc="request.env.user.email"/>
+                    </a>
+                </p>
+            </div>
+
+            <div class="col-md-6 mb-3" t-if="request.env.user.phone">
+                <h6 class="text-uppercase small text-muted fw-bold">Phone</h6>
+                <p class="mb-0">
+                    <a t-attf-href="tel:{{request.env.user.phone}}" class="text-decoration-none">
+                        <t t-esc="request.env.user.phone"/>
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="mt-4">
+            <h5 class="mb-3">Quick Access</h5>
+            <div class="list-group">
+
+                <!-- Show student-specific links when viewing a student -->
+                <t t-if="parent_student_param">
+                    <!-- Profile -->
+                    <a t-if="student_profile_document and student_profile_document.get('show')"
+                       t-att-href="student_profile_document.get('url')"
+                       class="list-group-item list-group-item-action d-flex align-items-center">
+                        <i class="fa fa-user text-primary me-3" style="width: 20px;"></i>
+                        <div>
+                            <div class="fw-medium">Student Profile</div>
+                            <small class="text-muted">View student profile information</small>
+                        </div>
+                    </a>
+
+                    <!-- Fees -->
+                                <a t-if="student_fee_document and student_fee_document.get('show')"
+                                   t-att-href="student_fee_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-money text-success me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Fees</div>
+                                        <small class="text-muted">View fee information</small>
+                                        <span t-if="student_fee_document.get('count')"
+                                              class="badge bg-primary rounded-pill ms-2"
+                                              t-esc="student_fee_document.get('count')"/>
+                                    </div>
+                                </a>
+
+                                <!-- Attendance -->
+                                <a t-if="student_attendance_document and student_attendance_document.get('show')"
+                                   t-att-href="student_attendance_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-calendar-check-o text-info me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Attendance</div>
+                                        <small class="text-muted">View attendance records</small>
+                                        <span t-if="student_attendance_document.get('count')"
+                                              class="badge bg-info rounded-pill ms-2"
+                                              t-esc="student_attendance_document.get('count')"/>
+                                    </div>
+                                </a>
+
+                                <!-- Assignments -->
+                                <a t-if="student_assignment_document and student_assignment_document.get('show')"
+                                   t-att-href="student_assignment_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-tasks text-warning me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Assignments</div>
+                                        <small class="text-muted">View your assignments</small>
+                                        <span t-if="student_assignment_document.get('count')"
+                                              class="badge bg-warning rounded-pill ms-2"
+                                              t-esc="student_assignment_document.get('count')"/>
+                                    </div>
+                                </a>
+
+                                <!-- Notes -->
+                                <a t-if="student_note_document and student_note_document.get('show')"
+                                   t-att-href="student_note_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-sticky-note text-info me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Notes</div>
+                                        <small class="text-muted">View notes and communications</small>
+                                        <span t-if="student_note_document.get('count')"
+                                              class="badge bg-info rounded-pill ms-2"
+                                              t-esc="student_note_document.get('count')"/>
+                                    </div>
+                                </a>
+
+                                <!-- Achievements -->
+                                <a t-if="student_achievement_document and student_achievement_document.get('show')"
+                                   t-att-href="student_achievement_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-trophy text-warning me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Achievements</div>
+                                        <small class="text-muted">View your achievements</small>
+                                        <span t-if="student_achievement_document.get('count')"
+                                              class="badge bg-warning rounded-pill ms-2"
+                                              t-esc="student_achievement_document.get('count')"/>
+                                    </div>
+                                </a>
+<!--                                Activity-->
+                                <a t-if="student_activity_document and student_activity_document.get('show')"
+                                   t-att-href="student_activity_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-calendar text-success me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Activities</div>
+                                        <small class="text-muted">View your activities</small>
+                                        <span t-if="student_activity_document.get('count') and student_activity_document.get('count') > 0"
+                                              class="badge bg-success rounded-pill ms-2"
+                                              t-esc="student_activity_document.get('count')"/>
+                                    </div>
+                                </a>
+                                <!-- Complaint -->
+                                <a t-if="student_complaint_document and student_complaint_document.get('show')"
+                                   t-att-href="student_complaint_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-exclamation-triangle text-warning me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Complaints</div>
+                                        <small class="text-muted">View and submit complaints</small>
+                                        <span t-if="student_complaint_document.get('count') and student_complaint_document.get('count') > 0"
+                                              class="badge bg-warning rounded-pill ms-2"
+                                              t-esc="student_complaint_document.get('count')"/>
+                                    </div>
+                                </a>
+                                 <!-- Health -->
+                                <a t-if="student_health_document or student_health_document.get('show')"
+                                   t-att-href="student_health_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-heartbeat text-danger me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Health Records</div>
+                                        <small class="text-muted">View health checkups</small>
+                                        <span t-if="student_health_document.get('count') and student_health_document.get('count') > 0"
+                                              class="badge bg-danger rounded-pill ms-2"
+                                              t-esc="student_health_document.get('count')"/>
+                                    </div>
+                                </a>
+                                <!-- Leaves -->
+                                <a t-if="student_leave_document and student_leave_document.get('show')"
+                                   t-att-href="student_leave_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-calendar-times-o text-secondary me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Leave Requests</div>
+                                        <small class="text-muted">View leave applications</small>
+                                        <span t-if="student_leave_document.get('count') and student_leave_document.get('count') > 0"
+                                              class="badge bg-secondary rounded-pill ms-2"
+                                              t-esc="student_leave_document.get('count')"/>
+                                    </div>
+                                </a>
+
+                                <!-- Quizzes -->
+                                <a t-if="student_quiz_document and student_quiz_document.get('show')"
+                                   t-att-href="student_quiz_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-question-circle text-primary me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Quizzes</div>
+                                        <small class="text-muted">View your quizzes</small>
+                                        <span t-if="student_quiz_document.get('count') and student_quiz_document.get('count') > 0"
+                                              class="badge bg-primary rounded-pill ms-2"
+                                              t-esc="student_quiz_document.get('count')"/>
+                                    </div>
+                                </a>
+                                <!-- Timetable -->
+                                <a t-if="student_timetable_document and student_timetable_document.get('show')"
+                                   t-att-href="student_timetable_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-calendar text-success me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Timetable</div>
+                                        <small class="text-muted">View class schedule</small>
+                                        <span t-if="student_timetable_document.get('count') and student_timetable_document.get('count') > 0"
+                                              class="badge bg-success rounded-pill ms-2"
+                                              t-esc="student_timetable_document.get('count')"/>
+                                    </div>
+                                </a>
+                                <!-- Contraventions -->
+                                <a t-if="student_contravention_document and student_contravention_document.get('show')"
+                                   t-att-href="student_contravention_document.get('url')"
+                                   class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fa fa-ban text-danger me-3" style="width: 20px;"></i>
+                                    <div>
+                                        <div class="fw-medium">Contraventions</div>
+                                        <small class="text-muted">View disciplinary records</small>
+                                        <span t-if="student_contravention_document.get('count') and student_contravention_document.get('count') > 0"
+                                              class="badge bg-danger rounded-pill ms-2"
+                                              t-esc="student_contravention_document.get('count')"/>
+                                    </div>
+                                </a>
+
+                    <!-- Back to Students List -->
+                    <a href="/my/students"
+                       class="list-group-item list-group-item-action d-flex align-items-center">
+                        <i class="fa fa-arrow-left text-info me-3" style="width: 20px;"></i>
+                        <div>
+                            <div class="fw-medium">Back to Students List</div>
+                            <small class="text-muted">View all your children</small>
+                        </div>
+                    </a>
+                </t>
+
+                <!-- Show general parent links when not viewing specific student -->
+                <t t-else="">
+                      <!-- PARENT PROFILE - Add this as the first item -->
+                    <a t-if="parent_profile_document and parent_profile_document.get('show')"
+                       t-att-href="parent_profile_document.get('url')"
+                       class="list-group-item list-group-item-action d-flex align-items-center">
+                        <i class="fa fa-user text-primary me-3" style="width: 20px;"></i>
+                        <div>
+                            <div class="fw-medium">My Profile</div>
+                            <small class="text-muted">View and edit your profile information</small>
+                        </div>
+                    </a>
+                    <a href="/my/students"
+                       class="list-group-item list-group-item-action d-flex align-items-center">
+                        <i class="fa fa-users text-primary me-3" style="width: 20px;"></i>
+                        <div>
+                            <div class="fw-medium">Students</div>
+                            <small class="text-muted">View and manage student information</small>
+                        </div>
+                    </a>
+
+                    <a href="/student/notes"
+                       class="list-group-item list-group-item-action d-flex align-items-center">
+                        <i class="fa fa-sticky-note text-info me-3" style="width: 20px;"></i>
+                        <div>
+                            <div class="fw-medium">Notes</div>
+                            <small class="text-muted">View student notes and communications</small>
+                        </div>
+                    </a>
+
+                    <a href="/student/complaints"
+                       class="list-group-item list-group-item-action d-flex align-items-center">
+                        <i class="fa fa-exclamation-triangle text-warning me-3" style="width: 20px;"></i>
+                        <div>
+                            <div class="fw-medium">Complaints</div>
+                            <small class="text-muted">Submit and track complaints</small>
+                        </div>
+                    </a>
+                </t>
+            </div>
+        </div>
+    </div>
+</div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

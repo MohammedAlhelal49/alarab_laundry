@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_teacher_weekly_planner_user,teacher.weekly.planner.user,model_teacher_weekly_planner,group_weekly_planner_user,1,1,1,1
+access_teacher_weekly_planner_manager,teacher.weekly.planner.manager,model_teacher_weekly_planner,group_weekly_planner_manager,1,1,1,1
+access_teacher_weekly_planner_line_user,teacher.weekly.planner.line.user,model_teacher_weekly_planner_line,group_weekly_planner_user,1,1,1,1
+access_teacher_weekly_planner_line_manager,teacher.weekly.planner.line.manager,model_teacher_weekly_planner_line,group_weekly_planner_manager,1,1,1,1
+access_teacher_weekly_planner_portal,teacher.weekly.planner.portal,model_teacher_weekly_planner,base.group_portal,1,0,0,0
+access_teacher_weekly_planner_line_portal,teacher.weekly.planner.line.portal,model_teacher_weekly_planner_line,base.group_portal,1,0,0,0
+access_teacher_weekly_planner_teacher,teacher.weekly.planner.teacher,model_teacher_weekly_planner,dekad_core.group_de_teacher,1,1,1,1
+access_teacher_weekly_planner_line_teacher,teacher.weekly.planner.line.teacher,model_teacher_weekly_planner_line,dekad_core.group_de_teacher,1,1,1,1
+access_teacher_weekly_planner_teacher_manage,teacher.weekly.planner.teacher.manage,model_teacher_weekly_planner,dekad_core.group_de_teacher_manage,1,1,1,1

@@ -1,0 +1,42 @@
+<odoo>
+    <record id="fleet_vehicle_form_inherit_van_sale" model="ir.ui.view">
+        <field name="name">fleet.vehicle.form.van.sale</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Add the is_van_sale checkbox above driver_id -->
+            <xpath expr="//field[@name='driver_id']" position="before">
+                <field name="is_van_sale"/>
+            </xpath>
+
+            <!-- Replace driver_id with two versions -->
+            <xpath expr="//field[@name='driver_id']" position="replace">
+
+                <!-- Normal driver (visible when is_van_sale is False) -->
+                <field name="driver_id"
+                       widget="many2one_avatar"
+                       invisible="is_van_sale"/>
+
+                <!-- Restricted driver (visible when is_van_sale is True) -->
+                <field name="driver_id"
+                       widget="many2one_avatar"
+                       domain="['|', ('company_id', '=', False), ('company_id', '=', company_id), ('related_user_id', '!=', False)]"
+                       invisible="not is_van_sale"/>
+
+            </xpath>
+            <xpath expr="//field[@name='future_driver_id']" position="replace">
+                <field name="future_driver_id"
+                       widget="many2one_avatar"
+                       invisible="is_van_sale"/>
+
+                <field name="future_driver_id"
+                       widget="many2one_avatar"
+                       domain="['|', ('company_id', '=', False), ('company_id', '=', company_id), ('related_user_id', '!=', False)]"
+                       invisible="not is_van_sale"/>
+            </xpath>
+
+
+        </field>
+    </record>
+</odoo>

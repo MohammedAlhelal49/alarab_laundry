@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="de_attendance_analysis_wizard_form">
+            <field name="name">de.attendance.analysis.wizard.form</field>
+            <field name="model">de.attendance.analysis.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Student Attendance wizard form">
+                    <field name="all_time" invisible="1"/>
+                    <group>
+                        <field name="all_time"/>
+                        <field name="from_date" required="all_time == False" invisible="all_time == True"
+                        />
+                        <field name="to_date" required="all_time == False" invisible="all_time == True"
+                        />
+                    </group>
+                    <footer>
+                        <span groups="base.group_user">
+                            <button string="Print" type="object" name="print_report" class="oe_highlight"/>
+                            <button special="cancel" string="Close" type="object"/>
+                        </span>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="act_open_de_attendance_analysis_wizard_view" model="ir.actions.act_window">
+            <field name="name">Student Absence</field>
+            <field name="res_model">de.attendance.analysis.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="dekad_core.model_de_student"/>
+            <field name="view_id" ref="de_attendance_analysis_wizard_form"/>
+            <field name="binding_type">report</field>
+            <field name="binding_view_types">form</field>
+        </record>
+
+    </data>
+</odoo>

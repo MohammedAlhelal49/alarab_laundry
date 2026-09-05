@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ============================================================ -->
+    <!-- FLOATING ACTION BUTTONS (CALL + WHATSAPP) -->
+    <!-- LTR: Call=Right(30px)  / WhatsApp=Left(30px) -->
+    <!-- RTL: Call=Left(30px)   / WhatsApp=Right(30px) -->
+    <!-- ============================================================ -->
+    <template id="floating_call_button" inherit_id="website.layout" name="Floating Call Button">
+        <xpath expr="//body" position="inside">
+
+            <!-- Call Button: RIGHT in LTR / LEFT in RTL -->
+            <div class="o_floating_actions_call"
+                 t-attf-style="position:fixed; bottom:30px; z-index:1000; #{request.env.lang and request.env.lang.startswith('ar') and 'left:30px; right:auto;' or 'right:30px; left:auto;'}">
+                <a href="tel:+971505829697"
+                   class="o_floating_btn o_call_btn"
+                   title="اتصل بنا الآن"
+                   style="direction:ltr;">
+                    <i class="fa fa-phone"
+                       t-attf-style="#{request.env.lang and request.env.lang.startswith('ar') and 'transform:scaleX(-1);' or ''}"></i>
+                    <span class="o_btn_tooltip"
+                          t-attf-style="top:50%; transform:translateY(-50%); #{request.env.lang and request.env.lang.startswith('ar') and 'left:70px; right:auto;' or 'right:70px; left:auto;'}">اتصل بنا</span>
+                </a>
+            </div>
+
+            <!-- WhatsApp Button: LEFT in LTR / RIGHT in RTL (عكس الاتصال) -->
+            <div class="o_floating_actions_whatsapp"
+                 t-attf-style="position:fixed; bottom:30px; z-index:1000; #{request.env.lang and request.env.lang.startswith('ar') and 'right:30px; left:auto;' or 'left:30px; right:auto;'}">
+                <a href="https://wa.me/971505829697?text=مرحباً، أود الاستفسار عن الدورات التدريبية"
+                   class="o_floating_btn o_whatsapp_btn"
+                   target="_blank"
+                   title="تواصل عبر واتساب"
+                   style="direction:ltr;">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="o_btn_tooltip"
+                          t-attf-style="top:50%; transform:translateY(-50%); #{request.env.lang and request.env.lang.startswith('ar') and 'right:70px; left:auto;' or 'left:70px; right:auto;'}">واتساب</span>
+                </a>
+            </div>
+
+        </xpath>
+    </template>
+</odoo>

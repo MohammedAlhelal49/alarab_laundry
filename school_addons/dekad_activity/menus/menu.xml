@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem id="menu_de_activity_general"
+                  name="Activities"
+                  parent="dekad_core.menu_de_student_root"
+                  sequence="20"
+        />
+        <menuitem id="menu_de_activity_type"
+                  name="Activities"
+                  parent="menu_de_activity_general"
+                  sequence="10"
+                  action="act_open_de_activity_type_view"
+                  groups="dekad_activity.group_de_activity,dekad_core.group_de_teacher"
+        />
+        <menuitem id="menu_de_activity_type"
+                  name="Activities"
+                  parent="menu_de_activity_general"
+                  sequence="10"
+                  action="act_open_de_activity_type_view"
+                  groups="dekad_activity.group_de_activity,dekad_core.group_de_teacher"
+        />
+        <menuitem id="menu_de_activity"
+                  name="Student activities"
+                  parent="menu_de_activity_general"
+                  sequence="20"
+                  action="act_open_de_activity_view"
+                  groups="dekad_activity.group_de_activity,dekad_core.group_de_teacher"/>
+
+
+        <menuitem id="menu_de_multi_activity_wizard" name="Multi students activity"
+                  sequence="30"
+                  parent="menu_de_activity_general"
+                  action="act_open_de_multi_activity_wizard_view"/>
+    </data>
+</odoo>

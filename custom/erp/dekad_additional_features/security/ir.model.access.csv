@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_whatsapp_template,access_whatsapp_template,model_whatsapp_template,base.group_user,1,1,1,1
+access_send_whatsapp_wizard,access_send_whatsapp_wizard,model_send_whatsapp_wizard,base.group_user,1,1,1,1
+access_apply_modules_wizard,name_apply_modules_wizard,model_apply_modules_wizard,base.group_system,1,1,1,1
+access_company_attachment_user,company.attachment.user,model_company_attachment,base.group_user,1,1,1,1
+access_required_field_config_manager,required.field.config,model_required_field_config,dekad_additional_features.group_required_field_manager,1,1,1,1

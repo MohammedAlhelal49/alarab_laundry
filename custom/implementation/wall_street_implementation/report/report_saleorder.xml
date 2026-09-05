@@ -1,0 +1,39 @@
+<odoo>
+  <template id="report_saleorder_document_custom"
+            inherit_id="sale.report_saleorder_document">
+    <xpath expr="//div[@class='page']" position="replace">
+      <t t-call="wall_street_implementation.shared_document_body">
+        <t t-set="doc_title" t-value="'Quotation'"/>
+
+        <t t-set="doc_name" t-value="doc.name"/>
+        <t t-set="doc_date" t-value="doc.date_order"/>
+        <t t-set="doc_due_date" t-value="doc.validity_date"/>
+        <t t-set="currency" t-value="doc.currency_id.name"/>
+
+        <t t-set="client_name" t-value="doc.partner_id.name"/>
+        <t t-set="client_attention" t-value="doc.partner_id.function or '-'"/>
+        <t t-set="client_trn" t-value="doc.partner_id.vat or '-'"/>
+        <t t-set="client_address" t-value="doc.partner_id.contact_address or '-'"/>
+
+        <t t-set="subject" t-value="doc.client_order_ref or '-'"/>
+        <t t-set="engagement_type" t-value="'-'"/>
+        <t t-set="payment_terms" t-value="doc.payment_term_id.name or '-'"/>
+        <t t-set="expected_timeline" t-value="'-'"/>
+
+        <t t-set="amount_untaxed" t-value="doc.amount_untaxed"/>
+        <t t-set="amount_tax" t-value="doc.amount_tax"/>
+        <t t-set="amount_total" t-value="doc.amount_total"/>
+        <t t-set="total_in_words" t-value="doc.currency_id.amount_to_text(doc.amount_total)"/>
+
+        <t t-set="lines" t-value="[{
+            'description': l.name,
+            'uom': l.product_uom.name,
+            'qty': l.product_uom_qty,
+            'price_unit': l.price_unit,
+            'tax': ', '.join([t.name for t in l.tax_id]) or '-',
+            'total': l.price_total,
+        } for l in doc.order_line if l.display_type == False]"/>
+      </t>
+    </xpath>
+  </template>
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_transfer_company" model="ir.actions.server">
+        <field name="name">Transfer Leads &amp; Contacts</field>
+        <field name="model_id" ref="base.model_res_users"/>
+        <field name="binding_model_id" ref="base.model_res_users"/>
+        <field name="binding_view_types">form</field>
+        <field name="state">code</field>
+        <field name="code">action=records.ensure_one().action_open_transfer_company_wizard()</field>
+    </record>
+
+    <record id="view_users_form_sale_access" model="ir.ui.view">
+        <field name="name">res.users.form.sale.access</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+
+        <field name="arch" type="xml">
+
+            <xpath expr="//notebook" position="inside">
+
+                <page string="Sales Access"
+                      invisible="not show_sales_access_tab">
+
+                    <group>
+                        <field name="allowed_sales_user_ids"
+                               widget="many2many_tags"
+                               string="Allowed Sales Users"
+                               options="{'no_create': True}"/>
+                    </group>
+
+                </page>
+
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

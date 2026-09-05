@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <record id="your_custom_sale_report_tree_view" model="ir.ui.view">
+            <field name="name">sale.report.tree.inherit.label</field>
+            <field name="model">sale.report</field>
+            <field name="inherit_id" ref="dekad_sale_enhancement.sale_report_list"/>
+            <field name="arch" type="xml">
+                <field name="amount_to_invoice" position="attributes">
+                    <attribute name="string">Remaining Amount</attribute>
+                </field>
+
+                <field name="amount_invoiced" position="attributes">
+                    <attribute name="string">Paid Amount</attribute>
+                </field>
+
+                <field name="untaxed_amount_to_invoice" position="attributes">
+                    <attribute name="string">Untaxed Remaining Amount</attribute>
+                </field>
+
+                <field name="untaxed_amount_invoiced" position="attributes">
+                    <attribute name="string">Untaxed Paid Amount</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_sale_report_form_custom" model="ir.ui.view">
+            <field name="name">sale.report.form.custom.label</field>
+            <field name="model">sale.report</field>
+            <field name="inherit_id" ref="dekad_sale_enhancement.sale_report_form"/>
+            <field name="arch" type="xml">
+
+                <field name="amount_to_invoice" position="attributes">
+                    <attribute name="string">Remaining Amount</attribute>
+                </field>
+
+                <field name="amount_invoiced" position="attributes">
+                    <attribute name="string">Paid Amount</attribute>
+                </field>
+
+                <field name="untaxed_amount_to_invoice" position="attributes">
+                    <attribute name="string">Untaxed Remaining Amount</attribute>
+                </field>
+
+                <field name="untaxed_amount_invoiced" position="attributes">
+                    <attribute name="string">Untaxed Paid Amount</attribute>
+                </field>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

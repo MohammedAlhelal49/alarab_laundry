@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_de_student_kanban" model="ir.ui.view">
+            <field name="name">de.student.kanban</field>
+            <field name="model">de.student</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban" group_edit="false" group_delete="false" quick_create="false"
+                        record_draggable="false" group_draggable="false">
+                    <field name="id"/>
+                    <field name="image_1920"/>
+                    <field name="gender"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click_o_res_partner_kanban">
+                                <div class="o_kanban_image">
+                                    <t t-if="record.image_1920.value">
+                                        <img t-att-src="kanban_image('de.student','image_1920',record.id.raw_value)"
+                                             alt="Student"/>
+                                    </t>
+                                    <t t-if="!record.image_1920.value">
+                                        <img t-if="record.gender.value == 'Male'"
+                                             src="/dekad_core/static/img/male.jpg"
+                                             alt="Student"/>
+                                        <img t-else=""
+                                             src="/dekad_core/static/img/female.jpg"
+                                             alt="Student"/>
+                                    </t>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <h5>
+                                        <field name="name"/>
+                                    </h5>
+                                    <ul class="mt-2">
+                                        <li t-if="record.grade.raw_value">
+                                            <h6>
+                                                <field name="grade"/>
+                                            </h6>
+                                        </li>
+
+                                        <li t-if="record.mobile.raw_value">
+                                            <field name="mobile"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record id="view_de_student_list" model="ir.ui.view">
+            <field name="name">de.student.list</field>
+            <field name="model">de.student</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <list string="Student">
+                    <field name="grade"/>
+                    <field name="name"/>
+                    <field name="gender"/>
+                    <field name="mobile"/>
+                    <!--                    <field name="religion_id"/>-->
+                    <field name="phone" optional="hide"/>
+                    <field name="email" optional="hide"/>
+                    <field name="sequence" optional="hide"/>
+                    <field name="birth_date" optional="hide"/>
+                    <!--                    <field name="country_group_id" optional="hide"/>-->
+                    <!--                    <field name="country_id" optional="hide"/>-->
+                    <!--                    <field name="nationality_id" optional="hide"/>-->
+                    <field name="visa_info" optional="hide"/>
+                    <field name="student_no" optional="hide"/>
+                    <field name="family_book_no" optional="hide"/>
+                    <field name="esis_no" optional="hide"/>
+                </list>
+            </field>
+        </record>
+        <record id="view_de_student_form" model="ir.ui.view">
+            <field name="name">de.student.form</field>
+            <field name="model">de.student</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Student">
+                    <field name="id" invisible="1"/>
+                    <field name="active" invisible="1"/>
+                    <field name="name" invisible="1"/>
+                    <field name="is_blocked" invisible="1"/>
+                    <field name="is_suspended" invisible="1"/>
+                    <field name="user_id" invisible="1"/>
+                    <header groups="base.group_erp_manager" invisible="id == False">
+                        <button name="create_user" class="oe_highlight" string="Create user" type="object"
+                                invisible="user_id != False"
+
+                        />
+                        <!--                        <button type="object" name="send_message" string="Send sms message"/>-->
+                    </header>
+                    <sheet>
+                        <div name="button_box" class="oe_button_box" invisible="id == False">
+                        </div>
+
+
+                        <div invisible="is_blocked == False" class="alert alert-warning">this
+                            student is blocked and he cant login to his account
+                        </div>
+
+                        <div invisible="is_suspended == False or is_blocked == False"
+                             class="alert alert-warning">this
+                            student is suspended depending on contravention and he cant login to his account
+                        </div>
+
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                                invisible="active == True"/>
+                        <div style="width:100%;" class="row align-items-center">
+                            <div class="col-4 col-lg-2">
+
+                                <field name="image_1920" widget="image" class=" oe_avatar role_image"
+
+                                />
+                                <strong>
+                                    <field class="role_sequence" name="sequence" invisible="sequence == '/'"
+                                    />
+                                </strong>
+                            </div>
+                            <div class="mb16 col-8 col-lg-10 px-0">
+                                <div class="row">
+                                    <h2 class="col-12 col-lg-8">
+                                        <div class="detailed-name-holder">
+                                            <field name="detailed_name"/>
+                                            <span>Detailed name</span>
+                                        </div>
+                                        <field name="name" placeholder="Full name"
+                                               invisible="detailed_name == True"
+                                               required="detailed_name == False"
+                                        />
+
+
+                                        <tr invisible="detailed_name == False">
+                                            <td style="padding-right:10px;">
+                                                <field name="first_name" placeholder="First Name"
+                                                       required="detailed_name == True"
+                                                />
+                                            </td>
+                                            <td style="padding-right:10px;">
+                                                <field name="middle_name" placeholder="Middle Name"
+                                                       required="detailed_name == True"/>
+                                            </td>
+                                            <td style="padding-right:10px;">
+                                                <field name="last_name" placeholder="Last Name"
+                                                       required="detailed_name == True"/>
+                                            </td>
+                                        </tr>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <notebook>
+                            <page name="personal_information" string="Personal Information"
+                                  groups="dekad_core.group_de_student,dekad_core.group_de_teacher">
+                                <group>
+                                    <group string="Personal info">
+                                        <field name="gender"/>
+                                        <field name="birth_date" required="1"/>
+                                        <field name="religion_id"/>
+                                        <field name="country_group_id"
+                                               options="{ 'no_create': True , 'no_open' : True}"/>
+                                        <field name="nationality_id"
+                                               domain="[('country_group_ids' , 'in' , country_group_id )]"
+                                               options="{ 'no_create': True , 'no_open' : True}"/>
+                                        <field name="country_id" string="Country of birth"
+                                               domain="[('country_group_ids' , 'in' , country_group_id )]"
+                                               options="{ 'no_create': True , 'no_open' : True}"/>
+                                        <field name="city"/>
+                                    </group>
+
+                                    <group string="Contact info"
+                                    >
+                                        <field name="email"/>
+                                        <field name="mobile" required="1"/>
+                                        <field name="phone"/>
+                                        <field name="address"/>
+                                    </group>
+                                    <group string="User info" groups="base.group_erp_manager"
+                                           invisible="id  == False or user_id == False"
+                                    >
+                                        <field name="user_id" readonly="1"/>
+                                        <button invisible="is_blocked  == True"
+                                                class="btn btn-outline-secondary" name="block_user" type="object">
+                                            Block
+                                        </button>
+                                        <button invisible="is_blocked  == False"
+                                                class="btn btn-outline-secondary " name="unblock_user"
+                                                type="object">Unblock
+                                        </button>
+                                    </group>
+                                    <group string="Additional info">
+                                        <field name="family_book_no"/>
+                                        <field name="student_no"/>
+                                        <!--                                        <field name="emirate_id"/>-->
+                                        <!--                                        <field name="emirate_id_expiry_date"/>-->
+                                        <field name="visa_info"/>
+                                        <field name="esis_no"/>
+
+                                    </group>
+
+
+                                </group>
+                            </page>
+
+                            <page name="grades" string="Grade"
+                                  groups="dekad_core.group_de_student,dekad_core.group_de_teacher"
+                                  invisible="student_grade_ids  == []"
+
+                            >
+                                <field name="student_grade_ids" readonly="1">
+                                    <list string="Student Grade">
+                                        <field name="grade_id" string="Grade"/>
+                                        <field name="sequence"/>
+                                        <field name="subject_ids" widget="many2many_tags"/>
+                                        <field name="state"/>
+                                        <field name="create_date" optional="hide"/>
+                                        <field name="academic_year_id" optional="hide"/>
+                                    </list>
+                                </field>
+                            </page>
+
+
+                        </notebook>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+        <record id="view_de_student_search" model="ir.ui.view">
+            <field name="name">de.student.search</field>
+            <field name="model">de.student</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Student">
+                    <field name="name"/>
+                    <field name="grade"/>
+                    <field name="mobile"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="birth_date"/>
+                    <newline/>
+                    <group string="Group by...">
+                        <filter name="grade" string="Grade"
+                                domain="[]" context="{'group_by':'grade'}"/>
+                        <filter name="gender" string="Gender"
+                                domain="[]" context="{'group_by':'gender'}"/>
+                        <filter name="religion" string="Religion"
+                                domain="[]" context="{'group_by':'religion_id'}"/>
+                        <filter name="nationality" string="Nationality"
+                                domain="[]" context="{'group_by':'nationality_id'}"/>
+                        <filter name="nationality_group" string="Nationality Group"
+                                domain="[]" context="{'group_by':'country_group_id'}"/>
+                        <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="view_de_student_graph" model="ir.ui.view">
+            <field name="name">de.student.graph</field>
+            <field name="model">de.student</field>
+            <field name="arch" type="xml">
+                <graph string="Students Charts" type="bar" stacked="False">
+                    <field name="gender"/>
+                    <field name="nationality_id"/>
+                    <field name="nationality_id"/>
+                </graph>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_de_student_view">
+            <field name="name">Students</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.student</field>
+            <field name="view_mode">kanban,list,form,graph</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="search_view_id" ref="view_de_student_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record id="act_open_de_student_view_list" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="act_open_de_student_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_de_student_list"/>
+        </record>
+
+        <record id="act_open_de_student_view_form" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="act_open_de_student_view"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="20"/>
+            <field name="view_id" ref="view_de_student_form"/>
+        </record>
+        <record id="act_open_de_student_graph" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="act_open_de_student_view"/>
+            <field name="view_mode">graph</field>
+            <field name="sequence" eval="30"/>
+            <field name="view_id" ref="view_de_student_graph"/>
+        </record>
+
+        <record id="act_open_de_student_view_kanban" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="act_open_de_student_view"/>
+            <field name="view_mode">kanban</field>
+            <field name="sequence" eval="5"/>
+            <field name="view_id" ref="view_de_student_kanban"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_real_estate_building_user,Real Estate Building User,model_real_estate_building,base.group_user,1,1,1,0
+access_real_estate_building_manager,Real Estate Building Manager,model_real_estate_building,base.group_system,1,1,1,1
+
+access_real_estate_meters_user,Real Estate Meters User,model_real_estate_meters,base.group_user,1,1,1,1
+access_real_estate_meters_manager,Real Estate Meters Manager,model_real_estate_meters,base.group_system,1,1,1,1
+
+access_meter_reading_user,Meter Reading User,model_meter_reading,base.group_user,1,1,1,1
+access_meter_reading_manager,Meter Reading Manager,model_meter_reading,base.group_system,1,1,1,1
+
+access_property_rent_history_user,property_rent_history_user,model_property_rent_history,base.group_user,1,1,1,1
+access_property_rent_history_manager,property_rent_history_manager,model_property_rent_history,base.group_system,1,1,1,1

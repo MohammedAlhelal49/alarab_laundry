@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+
+    <t t-name="oh_employee_documents_expiry.EmployeeDocumentListView"
+       t-inherit="web.ListView"
+       t-inherit-mode="primary">
+
+        <xpath expr="//t[@t-component='props.Renderer']"
+               position="before">
+
+            <!--
+                Show dashboard only when there is at least one document.
+                If dashboard.total = 0, all three KPI cards are hidden.
+            -->
+            <t t-if="dashboard.total > 0">
+
+                <div class="employee_document_dashboard">
+
+                    <!-- ================================================== -->
+                    <!-- All Documents                                      -->
+                    <!-- ================================================== -->
+                    <div class="employee_document_kpi total"
+                         t-on-click="() => this.filterDocuments('all')">
+
+                        <div class="employee_document_kpi_count">
+                            <t t-esc="dashboard.total"/>
+                        </div>
+
+                        <div class="employee_document_kpi_label">
+                            Documents
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================================================== -->
+                    <!-- Near Expiration                                    -->
+                    <!-- ================================================== -->
+                    <div class="employee_document_kpi near_expiration"
+                         t-on-click="() => this.filterDocuments('near_expiration')">
+
+                        <div class="employee_document_kpi_count">
+                            <t t-esc="dashboard.nearExpiration"/>
+                        </div>
+
+                        <div class="employee_document_kpi_label">
+                            Near Expiration
+                        </div>
+
+                        <div class="employee_document_kpi_subtitle">
+                            Within 15 Days
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================================================== -->
+                    <!-- Expired                                            -->
+                    <!-- ================================================== -->
+                    <div class="employee_document_kpi expired"
+                         t-on-click="() => this.filterDocuments('expired')">
+
+                        <div class="employee_document_kpi_count">
+                            <t t-esc="dashboard.expired"/>
+                        </div>
+
+                        <div class="employee_document_kpi_label">
+                            Expired
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </t>
+
+        </xpath>
+
+    </t>
+
+</templates>

@@ -1,0 +1,43 @@
+<odoo>
+    <record id="view_construction_log_list" model="ir.ui.view">
+        <field name="name">construction.log.list</field>
+        <field name="model">construction.log</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="timestamp"/>
+                <field name="name"/>
+                <field name="log_type"/>
+                <field name="model_name"/>
+                <field name="user_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_construction_log_form" model="ir.ui.view">
+        <field name="name">construction.log.form</field>
+        <field name="model">construction.log</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="timestamp"/>
+                        <field name="name"/>
+                        <field name="log_type"/>
+                        <field name="model_name"/>
+                        <field name="record_ref"/>
+                        <field name="user_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_construction_logs" model="ir.actions.act_window">
+        <field name="name">Construction Logs</field>
+        <field name="res_model">construction.log</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p>All construction-related system events are tracked here.</p>
+        </field>
+    </record>
+</odoo>

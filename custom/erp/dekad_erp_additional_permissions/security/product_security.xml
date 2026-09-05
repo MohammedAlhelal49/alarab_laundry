@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="ir.module.category" id="module_category_product_additional_permissions">
+            <field name="name">Products Additional Permissions</field>
+            <field name="sequence">13</field>
+        </record>
+
+
+        <!-- Group: Allow create products -->
+        <record id="group_product_product_create" model="res.groups">
+            <field name="name">Allow Creating Products</field>
+            <field name="category_id"
+                   ref="dekad_erp_additional_permissions.module_category_product_additional_permissions"/>
+        </record>
+
+
+        <!-- Group: Allow delete accounts -->
+        <record id="group_product_product_delete" model="res.groups">
+            <field name="name">Allow Deleting products</field>
+            <field name="category_id"
+                   ref="dekad_erp_additional_permissions.module_category_product_additional_permissions"/>
+        </record>
+
+        <!-- Assign both groups to system admins by default -->
+        <record id="base.group_user" model="res.groups">
+            <field name="implied_ids"
+                   eval="[ (4, ref('dekad_erp_additional_permissions.group_product_product_delete')),(4, ref('dekad_erp_additional_permissions.group_product_product_create')) ]"/>
+        </record>
+
+    </data>
+</odoo>

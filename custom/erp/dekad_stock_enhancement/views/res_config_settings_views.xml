@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit_stock_intercompany" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.stock.intercompany</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="stock.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='stock']" position="inside">
+                <block title="Inter Company Inventory Transfer" id="inter_company_sync_block">
+                    <setting string="Automatic Receipt"
+                             help="Generate a draft receipt when another company (branch) delivers to this company.">
+                        <field name="auto_inv_receipt"/>
+                    </setting>
+                    <setting string="Automatic Delivery"
+                             help="Generate a draft delivery when another company (branch) receives from this company.">
+                        <field name="auto_inv_delivery"/>
+                    </setting>
+                </block>
+            </xpath>
+            <xpath expr="//setting[@id='signature_delivery_orders']"
+                   position="after">
+
+                <setting id="require_picking_signature_validation"
+                         string="Require Signature Before Validation"
+                         help="Prevent validating delivery and internal transfers until the recipient signature is provided."
+                         company_dependent="1"
+                         invisible="not group_stock_sign_delivery">
+
+                    <field name="require_picking_signature"/>
+
+                </setting>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>

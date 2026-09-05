@@ -1,0 +1,692 @@
+<odoo>
+    <record id="view_activity_logger_search" model="ir.ui.view">
+        <field name="name">activity.logger.search</field>
+        <field name="model">activity.logger</field>
+        <field name="arch" type="xml">
+            <search string="Search Activity Logs">
+                <field name="document_type"/>
+                <field name="user_id"/>
+                <field name="record_name"/>
+                <filter string="My Actions" name="my_actions" domain="[('user_id', '=', uid)]"/>
+                <filter string="User Changes"
+                        name="user_changes"
+                        domain="[('log_source', '=', 'user')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="User"
+                            name="group_by_user"
+                            context="{'group_by':'user_id'}"/>
+
+                    <filter string="Company"
+                            name="group_by_company"
+                            context="{'group_by':'company_id'}"/>
+
+                    <filter string="Document Type"
+                            name="group_by_document"
+                            context="{'group_by':'document_type'}"/>
+
+                    <filter string="Record"
+                            name="group_by_record"
+                            context="{'group_by':'record_name'}"/>
+
+                    <filter string="Action"
+                            name="group_by_operation"
+                            context="{'group_by':'operation_type'}"/>
+
+                    <filter string="Source"
+                            name="group_by_source"
+                            context="{'group_by':'log_source'}"/>
+
+                    <filter string="Date"
+                            name="group_by_date"
+                            context="{'group_by':'create_date:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_activity_logger_list" model="ir.ui.view">
+        <field name="name">activity.logger.list</field>
+        <field name="model">activity.logger</field>
+        <field name="arch" type="xml">
+            <list string="Activity Logs" create="0" edit="0">
+                <field name="create_date" string="Date"/>
+                <field name="user_id" widget="many2one_avatar"/>
+                <field name="operation_type" widget="badge"
+                       decoration-success="operation_type == 'create'"
+                       decoration-warning="operation_type == 'write'"
+                       decoration-danger="operation_type == 'unlink'"/>
+<!--                <field name="model_id"/>-->
+                <field name="document_type"/>
+                <field name="company_id"/>
+                <field name="log_source" widget="badge"/>
+                <field name="record_name" string="Record"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_activity_logger_form" model="ir.ui.view">
+        <field name="name">activity.logger.form</field>
+        <field name="model">activity.logger</field>
+        <field name="arch" type="xml">
+            <form string="Log Details" create="0" edit="0">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="document_type"/>
+                            <field name="record_id"/>
+                            <field name="record_name" invisible="record_ref"/>
+                            <field name="record_ref" readonly="1" invisible="not record_ref"/>
+                        </group>
+                        <group>
+                            <field name="user_id" widget="many2one_avatar"/>
+                            <field name="company_id"/>
+                            <field name="operation_type" widget="badge"
+                                   decoration-success="operation_type == 'create'"
+                                   decoration-warning="operation_type == 'write'"
+                                   decoration-danger="operation_type == 'unlink'"/>
+                            <field name="create_date" string="Date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Change Details">
+                            <field name="formatted_changes" widget="html" nolabel="1"/>
+                        </page>
+                        <page string="Invoice Lines"
+                              invisible="document_type not in ('Customer Invoice','Vendor Bill','Customer Credit Note','Vendor Credit Note','Sales Receipt','Purchase Receipt') or not has_invoice_lines">
+
+                            <group invisible="operation_type != 'unlink'">
+                                <field name="invoice_lines_html"
+                                       widget="html"
+                                       nolabel="1"/>
+                            </group>
+
+                            <group invisible="operation_type != 'create'">
+
+                                <separator string="Invoice Lines"/>
+
+                                <field name="invoice_line_ids" readonly="1">
+                                    <list create="0" edit="0" delete="0">
+                                        <field name="product"/>
+                                        <field name="account"/>
+                                        <field name="analytic"/>
+                                        <field name="quantity"/>
+                                        <field name="uom"/>
+                                        <field name="price"/>
+                                        <field name="taxes"/>
+                                        <field name="amount"/>
+                                    </list>
+                                </field>
+
+                            </group>
+
+                            <group invisible="operation_type != 'write'">
+
+                                <separator string="Old Invoice Lines"/>
+
+                                <field name="old_invoice_line_ids" readonly="1" nolabel="1">
+                                    <list create="0" edit="0" delete="0">
+                                        <field name="product" decoration-danger="is_changed_product"/>
+                                        <field name="account" decoration-danger="is_changed_account"/>
+                                        <field name="analytic" decoration-danger="is_changed_analytic"/>
+                                        <field name="quantity" decoration-danger="is_changed_quantity"/>
+                                        <field name="uom" decoration-danger="is_changed_uom"/>
+                                        <field name="price" decoration-danger="is_changed_price"/>
+                                        <field name="taxes" decoration-danger="is_changed_taxes"/>
+                                        <field name="amount" decoration-danger="is_changed_amount"/>
+                                    </list>
+                                </field>
+
+                                <separator string="New Invoice Lines"/>
+
+                                <field name="new_invoice_line_ids" readonly="1" nolabel="1">
+                                    <list create="0" edit="0" delete="0">
+                                        <field name="product" decoration-success="is_changed_product"/>
+                                        <field name="account" decoration-success="is_changed_account"/>
+                                        <field name="analytic" decoration-success="is_changed_analytic"/>
+                                        <field name="quantity" decoration-success="is_changed_quantity"/>
+                                        <field name="uom" decoration-success="is_changed_uom"/>
+                                        <field name="price" decoration-success="is_changed_price"/>
+                                        <field name="taxes" decoration-success="is_changed_taxes"/>
+                                        <field name="amount" decoration-success="is_changed_amount"/>
+                                    </list>
+                                </field>
+
+                            </group>
+
+                        </page>
+                        <page string="Journal Items"  invisible="document_type != 'Journal Entry' or not has_invoice_lines">
+>
+                            <group invisible="operation_type != 'unlink'">
+                                <field name="invoice_lines_html"
+                                       widget="html"
+                                       nolabel="1"/>
+                            </group>
+
+                            <group invisible="operation_type != 'create'">
+
+                                <separator string="Journal Items"/>
+
+                                <field name="invoice_line_ids" readonly="1" nolabel="1">
+                                    <list create="0" edit="0" delete="0">
+                                        <field name="account"/>
+                                        <field name="partner"/>
+                                        <field name="label"/>
+                                        <field name="analytic"/>
+                                        <field name="taxes"/>
+                                        <field name="debit"/>
+                                        <field name="credit"/>
+                                    </list>
+                                </field>
+
+                            </group>
+
+                            <group invisible="operation_type != 'write'">
+
+                                <separator string="Old Journal Items"/>
+
+                                <field name="old_invoice_line_ids" readonly="1" nolabel="1">
+                                    <list create="0" edit="0" delete="0">
+
+                                        <field name="account"
+                                               decoration-danger="is_changed_account"/>
+
+                                        <field name="partner"
+                                               decoration-danger="is_changed_partner"/>
+
+                                        <field name="label"
+                                               decoration-danger="is_changed_label"/>
+
+                                        <field name="analytic"
+                                               decoration-danger="is_changed_analytic"/>
+
+                                        <field name="taxes"
+                                               decoration-danger="is_changed_taxes"/>
+
+                                        <field name="debit"
+                                               decoration-danger="is_changed_debit"/>
+
+                                        <field name="credit"
+                                               decoration-danger="is_changed_credit"/>
+
+                                    </list>
+                                </field>
+
+                                <separator string="New Journal Items"/>
+
+                                <field name="new_invoice_line_ids" readonly="1" nolabel="1">
+                                    <list create="0" edit="0" delete="0">
+
+                                        <field name="account"
+                                               decoration-success="is_changed_account"/>
+
+                                        <field name="partner"
+                                               decoration-success="is_changed_partner"/>
+
+                                        <field name="label"
+                                               decoration-success="is_changed_label"/>
+
+                                        <field name="analytic"
+                                               decoration-success="is_changed_analytic"/>
+
+                                        <field name="taxes"
+                                               decoration-success="is_changed_taxes"/>
+
+                                        <field name="debit"
+                                               decoration-success="is_changed_debit"/>
+
+                                        <field name="credit"
+                                               decoration-success="is_changed_credit"/>
+
+                                    </list>
+                                </field>
+
+                            </group>
+
+                        </page>
+                        <page string="Sales Order Lines"
+                              invisible="document_type != 'Sales Order' or not has_invoice_lines">
+
+                            <group invisible="operation_type != 'unlink'">
+                                <field name="invoice_lines_html"
+                                       widget="html"
+                                       nolabel="1"/>
+                            </group>
+
+                            <group invisible="operation_type != 'create'">
+
+                                <separator string="Sales Order Lines"/>
+
+                                <field name="invoice_line_ids" readonly="1" nolabel="1">
+                                    <list create="0" edit="0" delete="0">
+                                        <field name="product"/>
+                                        <field name="analytic_distribution"/>
+                                        <field name="quantity"/>
+                                        <field name="uom"/>
+                                        <field name="price"/>
+                                        <field name="taxes"/>
+                                        <field name="discount"/>
+                                        <field name="amount"/>
+                                    </list>
+                                </field>
+
+                            </group>
+
+                            <group invisible="operation_type != 'write'">
+
+                                <separator string="Old Sales Order Lines"/>
+
+                                <field name="old_invoice_line_ids"
+                                       readonly="1"
+                                       nolabel="1">
+
+                                    <list create="0" edit="0" delete="0">
+                                        <field name="product"
+                                               decoration-danger="is_changed_product"/>
+
+                                        <field name="analytic_distribution"
+                                               decoration-danger="is_changed_analytic_distribution"/>
+
+                                        <field name="quantity"
+                                               decoration-danger="is_changed_quantity"/>
+
+                                        <field name="uom"
+                                               decoration-danger="is_changed_uom"/>
+
+                                        <field name="price"
+                                               decoration-danger="is_changed_price"/>
+
+                                        <field name="taxes"
+                                               decoration-danger="is_changed_taxes"/>
+
+                                        <field name="discount"
+                                               decoration-danger="is_changed_discount"/>
+
+                                        <field name="amount"
+                                               decoration-danger="is_changed_amount"/>
+                                    </list>
+
+                                </field>
+
+                                <separator string="New Sales Order Lines"/>
+
+                                <field name="new_invoice_line_ids"
+                                       readonly="1"
+                                       nolabel="1">
+
+                                    <list create="0" edit="0" delete="0">
+                                        <field name="product"
+                                               decoration-success="is_changed_product"/>
+
+                                        <field name="analytic_distribution"
+                                               decoration-success="is_changed_analytic_distribution"/>
+
+                                        <field name="quantity"
+                                               decoration-success="is_changed_quantity"/>
+
+                                        <field name="uom"
+                                               decoration-success="is_changed_uom"/>
+
+                                        <field name="price"
+                                               decoration-success="is_changed_price"/>
+
+                                        <field name="taxes"
+                                               decoration-success="is_changed_taxes"/>
+
+                                        <field name="discount"
+                                               decoration-success="is_changed_discount"/>
+
+                                        <field name="amount"
+                                               decoration-success="is_changed_amount"/>
+                                    </list>
+
+                                </field>
+
+                            </group>
+
+                        </page>
+                        <page string="Purchase Order Lines"
+                              invisible="document_type != 'Purchase Order' or not has_invoice_lines">
+
+                            <group invisible="operation_type != 'unlink'">
+                                <field name="invoice_lines_html"
+                                       widget="html"
+                                       nolabel="1"/>
+                            </group>
+
+                            <group invisible="operation_type != 'create'">
+
+                                <separator string="Purchase Order Lines"/>
+
+                                <field name="invoice_line_ids" readonly="1" nolabel="1">
+                                    <list create="0" edit="0" delete="0">
+                                        <field name="product"/>
+                                        <field name="analytic_distribution"/>
+                                        <field name="quantity"/>
+                                        <field name="uom"/>
+                                        <field name="price"/>
+                                        <field name="taxes"/>
+                                        <field name="discount"/>
+                                        <field name="amount"/>
+                                    </list>
+                                </field>
+
+                            </group>
+
+                            <group invisible="operation_type != 'write'">
+
+                                <separator string="Old Purchase Order Lines"/>
+
+                                <field name="old_invoice_line_ids"
+                                       readonly="1"
+                                       nolabel="1">
+
+                                    <list create="0" edit="0" delete="0">
+                                        <field name="product"
+                                               decoration-danger="is_changed_product"/>
+
+                                        <field name="analytic_distribution"
+                                               decoration-danger="is_changed_analytic_distribution"/>
+
+                                        <field name="quantity"
+                                               decoration-danger="is_changed_quantity"/>
+
+                                        <field name="uom"
+                                               decoration-danger="is_changed_uom"/>
+
+                                        <field name="price"
+                                               decoration-danger="is_changed_price"/>
+
+                                        <field name="taxes"
+                                               decoration-danger="is_changed_taxes"/>
+
+                                        <field name="discount"
+                                               decoration-danger="is_changed_discount"/>
+
+                                        <field name="amount"
+                                               decoration-danger="is_changed_amount"/>
+                                    </list>
+
+                                </field>
+
+                                <separator string="New Purchase Order Lines"/>
+
+                                <field name="new_invoice_line_ids"
+                                       readonly="1"
+                                       nolabel="1">
+
+                                    <list create="0" edit="0" delete="0">
+                                        <field name="product"
+                                               decoration-success="is_changed_product"/>
+
+                                        <field name="analytic_distribution"
+                                               decoration-success="is_changed_analytic_distribution"/>
+
+                                        <field name="quantity"
+                                               decoration-success="is_changed_quantity"/>
+
+                                        <field name="uom"
+                                               decoration-success="is_changed_uom"/>
+
+                                        <field name="price"
+                                               decoration-success="is_changed_price"/>
+
+                                        <field name="taxes"
+                                               decoration-success="is_changed_taxes"/>
+
+                                        <field name="discount"
+                                               decoration-success="is_changed_discount"/>
+
+                                        <field name="amount"
+                                               decoration-success="is_changed_amount"/>
+                                    </list>
+
+                                </field>
+
+                            </group>
+
+                        </page>
+                        <page string="Deliveries"
+                              invisible="document_type != 'Deliveries' or not has_invoice_lines">
+
+                            <group invisible="operation_type != 'unlink'">
+                                <field name="invoice_lines_html"
+                                       widget="html"
+                                       nolabel="1"/>
+                            </group>
+
+                            <group invisible="operation_type != 'create'">
+
+                                <separator string="Delivery Lines"/>
+
+                                <field name="invoice_line_ids"
+                                       readonly="1"
+                                       nolabel="1">
+
+                                    <list create="0" edit="0" delete="0">
+                                        <field name="location"/>
+                                        <field name="product"/>
+                                        <field name="location_dest"/>
+                                        <field name="date"/>
+                                        <field name="date_deadline"/>
+                                        <field name="packaging"/>
+                                        <field name="quantity"/>
+                                        <field name="analytic"/>
+                                        <field name="unit_cost"/>
+                                        <field name="amount"/>
+                                        <field name="uom"/>
+                                    </list>
+
+                                </field>
+
+                            </group>
+
+                            <group invisible="operation_type != 'write'">
+
+                                <separator string="Old Delivery Lines"/>
+
+                                <field name="old_invoice_line_ids"
+                                       readonly="1"
+                                       nolabel="1">
+
+                                    <list create="0" edit="0" delete="0">
+
+                                        <field name="location"
+                                               decoration-danger="is_changed_location"/>
+
+                                        <field name="product"
+                                               decoration-danger="is_changed_product"/>
+
+                                        <field name="location_dest"
+                                               decoration-danger="is_changed_location_dest"/>
+
+                                        <field name="date"
+                                               decoration-danger="is_changed_date"/>
+
+                                        <field name="date_deadline"
+                                               decoration-danger="is_changed_date_deadline"/>
+
+                                        <field name="packaging"
+                                               decoration-danger="is_changed_packaging"/>
+
+                                        <field name="quantity"
+                                               decoration-danger="is_changed_quantity"/>
+
+                                        <field name="analytic"
+                                               decoration-danger="is_changed_analytic"/>
+
+                                        <field name="unit_cost"
+                                               decoration-danger="is_changed_unit_cost"/>
+
+                                        <field name="amount"
+                                               decoration-danger="is_changed_amount"/>
+
+                                        <field name="uom"
+                                               decoration-danger="is_changed_uom"/>
+
+                                    </list>
+
+                                </field>
+
+                                <separator string="New Delivery Lines"/>
+
+                                <field name="new_invoice_line_ids"
+                                       readonly="1"
+                                       nolabel="1">
+
+                                    <list create="0" edit="0" delete="0">
+
+                                        <field name="location"
+                                               decoration-success="is_changed_location"/>
+
+                                        <field name="product"
+                                               decoration-success="is_changed_product"/>
+
+                                        <field name="location_dest"
+                                               decoration-success="is_changed_location_dest"/>
+
+                                        <field name="date"
+                                               decoration-success="is_changed_date"/>
+
+                                        <field name="date_deadline"
+                                               decoration-success="is_changed_date_deadline"/>
+
+                                        <field name="packaging"
+                                               decoration-success="is_changed_packaging"/>
+
+                                        <field name="quantity"
+                                               decoration-success="is_changed_quantity"/>
+
+                                        <field name="analytic"
+                                               decoration-success="is_changed_analytic"/>
+
+                                        <field name="unit_cost"
+                                               decoration-success="is_changed_unit_cost"/>
+
+                                        <field name="amount"
+                                               decoration-success="is_changed_amount"/>
+
+                                        <field name="uom"
+                                               decoration-success="is_changed_uom"/>
+
+                                    </list>
+
+                                </field>
+
+                            </group>
+
+                        </page>
+                        <page string="Raw JSON (Debug)" groups="base.group_no_one">
+                            <field name="changes_json"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_activity_logger" model="ir.actions.act_window">
+        <field name="name">System Logs</field>
+        <field name="res_model">activity.logger</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_user_changes': 1,'search_default_group_by_document': 1}</field>
+    </record>
+
+    <record id="action_track_models" model="ir.actions.act_window">
+        <field name="name">Tracked Sections</field>
+        <field name="res_model">ir.model</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('transient', '=', False)]</field>
+        <field name="context">{'search_default_tracked_models': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Select models to track.
+            </p>
+        </field>
+    </record>
+
+    <record id="view_model_list_inherit_logger_header" model="ir.ui.view">
+        <field name="name">ir.model.list.inherit.logger.header</field>
+        <field name="model">ir.model</field>
+        <field name="inherit_id" ref="base.view_model_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='model']/.." position="inside">
+                <header>
+                    <button name="action_sync_logger_defaults"
+                            type="object"
+                            string="Sync Essential Defaults"
+                            class="btn-secondary"
+                            confirm="This will enable tracking for all essential modules. Proceed?"/>
+                </header>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_model_list_inherit_logger" model="ir.ui.view">
+        <field name="name">ir.model.list.inherit.logger</field>
+        <field name="model">ir.model</field>
+        <field name="inherit_id" ref="base.view_model_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='model']" position="after">
+                <field name="is_activity_tracked" widget="boolean_toggle"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_model_form_inherit_logger" model="ir.ui.view">
+        <field name="name">ir.model.form.inherit.logger</field>
+        <field name="model">ir.model</field>
+        <field name="inherit_id" ref="base.view_model_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='model']" position="after">
+                <field name="is_activity_tracked"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_model_search_inherit_logger" model="ir.ui.view">
+        <field name="name">ir.model.search.inherit.logger</field>
+        <field name="model">ir.model</field>
+        <field name="inherit_id" ref="base.view_model_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='transient']" position="after">
+                <filter string="Tracked Models" name="tracked_models" domain="[('is_activity_tracked', '=', True)]"/>
+            </xpath>
+
+            <xpath expr="//search" position="inside">
+                <group expand="0" string="Group By">
+                    <filter string="Is Tracked?" name="group_by_is_tracked"
+                            context="{'group_by': 'is_activity_tracked'}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <menuitem id="menu_activity_logger_root" name="System Logs" sequence="100"
+              web_icon="dekad_activity_logger,static/description/icon.png"
+              groups="dekad_activity_logger.group_activity_logger_user"/>
+    <menuitem id="menu_activity_logger_logs" name="Activity Logs" parent="menu_activity_logger_root"
+              action="action_activity_logger" groups="dekad_activity_logger.group_activity_logger_user" sequence="10"/>
+    <menuitem
+        id="menu_activity_logger_report"
+        name="Activity Report"
+        parent="menu_activity_logger_root"
+        action="action_activity_logger_report"
+        groups="dekad_activity_logger.group_activity_logger_user"
+        sequence="30"/>
+    <menuitem
+        id="menu_activity_logger_kpi"
+        name="User KPI Report"
+        parent="menu_activity_logger_root"
+        action="action_activity_logger_kpi_wizard"
+        groups="dekad_activity_logger.group_activity_logger_manager"
+        sequence="40"/>
+    <menuitem id="menu_activity_logger_config" name="Configuration" parent="menu_activity_logger_root" groups="dekad_activity_logger.group_activity_logger_manager" sequence="100"/>
+    <menuitem id="menu_activity_logger_models" name="Tracked Sections" parent="menu_activity_logger_config"
+              action="action_track_models" groups="dekad_activity_logger.group_activity_logger_manager" sequence="10"/>
+
+</odoo>

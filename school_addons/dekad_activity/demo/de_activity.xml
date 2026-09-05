@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="de_activity_type_1" model="de.activity.type">
+            <field name="name">Trips</field>
+        </record>
+
+        <record id="de_activity_type_2" model="de.activity.type">
+            <field name="name">Events</field>
+        </record>
+
+
+        <record id="de_activity_1" model="de.activity">
+            <field name="type_id" ref="de_activity_type_1"/>
+            <field name="student_id" ref="dekad_core.de_student_1"/>
+            <field name="classroom_id" ref="dekad_classroom.de_classroom_1"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+            <field name="activity_time" eval="(DateTime.now() + relativedelta(days=10)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        </record>
+
+        <record id="de_activity_2" model="de.activity">
+            <field name="type_id" ref="de_activity_type_2"/>
+            <field name="student_id" ref="dekad_core.de_student_1"/>
+            <field name="classroom_id" ref="dekad_classroom.de_classroom_1"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+            <field name="activity_time" eval="(DateTime.now() + relativedelta(days=10)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        </record>
+        <record id="de_activity_3" model="de.activity">
+            <field name="type_id" ref="de_activity_type_1"/>
+            <field name="student_id" ref="dekad_core.de_student_2"/>
+            <field name="classroom_id" ref="dekad_classroom.de_classroom_1"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+            <field name="activity_time" eval="(DateTime.now() + relativedelta(days=10)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        </record>
+
+        <record id="de_activity_4" model="de.activity">
+            <field name="type_id" ref="de_activity_type_2"/>
+            <field name="student_id" ref="dekad_core.de_student_2"/>
+            <field name="classroom_id" ref="dekad_classroom.de_classroom_1"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+            <field name="activity_time" eval="(DateTime.now() + relativedelta(days=10)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        </record>
+        <function model="de.activity" name="set_accept" eval="[(ref('de_activity_1'), ref('de_activity_3'))]"/>
+        <function model="de.activity" name="set_reject" eval="[(ref('de_activity_2'), ref('de_activity_4'))]"/>
+    </data>
+</odoo>

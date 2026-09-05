@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="base.group_system" model="res.groups">
+            <field name="category_id" ref="base.module_category_administration_administration"/>
+        </record>
+
+        <record id="group_de_support" model="res.groups">
+            <field name="name">Dekad support</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_system'))]"/>
+            <field name="category_id" eval="False"/>
+        </record>
+        <record id="view_de_company_form" model="ir.ui.view">
+            <field name="name">res.company.form</field>
+            <field name="model">res.company</field>
+            <field name="arch" type="xml">
+                <form string="Company" duplicate="0" create="0" delete="0">
+                    <field name="all_child_ids" invisible="1"/>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button"
+                                    name="action_all_company_branches"
+                                    type="object"
+                                    invisible="not all_child_ids"
+                                    icon="fa-sitemap"
+                                    string="Branches"/>
+                        </div>
+                        <field name="logo" widget="image" class="oe_avatar"/>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="e.g. My Company"/>
+                            </h1>
+                        </div>
+                        <notebook colspan="4">
+                            <page string="General Information" name="general_info">
+                                <group>
+                                    <group>
+                                        <field name="partner_id" string="Contact" readonly="1" required="0"
+                                               groups="base.group_no_one"/>
+                                        <label for="street" string="Address"/>
+                                        <div class="o_address_format">
+                                            <field name="street" placeholder="Street..." class="o_address_street"/>
+                                            <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                            <field name="city" placeholder="City" class="o_address_city"/>
+                                            <field name="state_id" class="o_address_state" placeholder="State"
+                                                   options='{"no_open": True}'/>
+                                            <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                            <field name="country_id" placeholder="Country" class="o_address_country"
+                                                   options='{"no_open": True, "no_create": True}'/>
+                                        </div>
+                                        <field name="vat"/>
+                                        <field name="company_registry"/>
+                                        <field name="currency_id" options="{'no_create': True, 'no_open': True}"
+                                               id="company_currency" context="{'active_test': False}"/>
+                                    </group>
+                                    <group>
+                                        <field name="phone" class="o_force_ltr"/>
+                                        <field name="mobile" class="o_force_ltr"/>
+                                        <field name="email"/>
+                                        <field name="website" string="Website" widget="url"
+                                               placeholder="e.g. https://www.odoo.com"/>
+                                        <field name="parent_id" groups="base.group_no_one"/>
+                                        <field name="parent_id" invisible="1"/>
+                                        <field name="sequence" invisible="1"/>
+                                        <field name="color" widget="color_picker"/>
+                                    </group>
+                                    <group name="social_media"/>
+                                </group>
+                            </page>
+                            <page string="Branches" name="branches">
+                                <field name="child_ids" nolabel="1" context="{'default_parent_id': id}"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_res_users_client" model="ir.actions.act_window">
+            <field name="name">Client Users</field>
+            <field name="res_model">res.users</field>
+            <field name="view_mode">list,kanban,form</field>
+            <field name="view_id" ref="base.view_users_tree"/>
+            <field name="search_view_id" ref="base.view_users_search"/>
+            <field name="context">{'search_default_filter_no_share': 1, 'show_user_group_warning': True}</field>
+            <field name="help">Create and manage users that will connect to the system. Users can be deactivated should
+                there be a period of time during which they will/should not connect to the system. You can assign them
+                groups in order to give them specific access to the applications they need to use in the system.
+            </field>
+        </record>
+
+        <record id="action_res_users_view1_client" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="base.view_users_tree"/>
+            <field name="act_window_id" ref="action_res_users_client"/>
+        </record>
+
+        <record id="action_res_users_view2_client" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="base.view_users_form"/>
+            <field name="act_window_id" ref="action_res_users_client"/>
+        </record>
+
+
+        <record id="action_de_open_default_company" model="ir.actions.act_window">
+            <field name="name">Default company</field>
+            <field name="res_model">res.company</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="dekad_super_user.view_de_company_form"/>
+            <field name="res_id">1</field>
+            <field name="target">current</field>
+        </record>
+
+        <menuitem id="menu_de_res_company_root"
+                  name="Company data"
+                  sequence="10000"
+                  web_icon="base,static/description/settings.png"
+                  groups="base.group_system"
+
+        />
+
+        <menuitem id="menu_de_res_company"
+                  name="Company info"
+                  parent="dekad_super_user.menu_de_res_company_root"
+                  sequence="10"
+                  action="dekad_super_user.action_de_open_default_company"
+
+
+        />
+
+        <menuitem id="menu_de_res_users"
+                  name="Users"
+                  parent="dekad_super_user.menu_de_res_company_root"
+                  sequence="20"
+                  action="action_res_users_client"
+
+
+        />
+
+        <function model="res.users" name="handle_client_company_data" eval="[[]]"/>
+    </data>
+</odoo>

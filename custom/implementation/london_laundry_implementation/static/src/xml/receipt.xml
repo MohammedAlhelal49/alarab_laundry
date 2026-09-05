@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="london_laundry_implementation.OrderReceipt">
+        <div class="pos-receipt laundry-receipt">
+
+            <!-- ====== HEADER ====== -->
+            <div class="lry-header">
+                <img t-attf-src="/web/image?model=res.company&amp;id={{props.data.headerData.company.id}}&amp;field=logo"
+                     class="lry-logo" alt="Logo"/>
+                <div class="lry-company-name">
+                    <t t-esc="props.data.headerData.company.name"/>
+                </div>
+                <t t-if="props.data.headerData.company.phone">
+                    <div class="lry-phone">
+                        &#128222; <t t-esc="props.data.headerData.company.phone"/>
+                    </div>
+                </t>
+            </div>
+
+            <!-- ====== TRN + TAX INVOICE ====== -->
+            <t t-if="props.data.headerData.company.vat">
+                <div class="lry-trn">
+                    TRN: <t t-esc="props.data.headerData.company.vat"/>
+                </div>
+            </t>
+            <div class="lry-tax-invoice">TAX INVOICE &#160;&#160; فاتورة ضريبية</div>
+            <div class="lry-fold">FOLD</div>
+
+            <!-- ====== DATE ====== -->
+            <div class="lry-datetime">
+                <span class="lry-ar-inline">التاريخ والوقت</span>
+                &#160; Date &amp; Time &#160;
+                <t t-esc="props.data.date"/>
+            </div>
+
+            <!-- ====== ORDER NUMBER ====== -->
+            <div class="lry-order-number">
+                <t t-esc="props.data.headerData.trackingNumber"/>
+            </div>
+
+            <!-- ====== CUSTOMER ====== -->
+            <t t-if="props.data.partner_name">
+                <div class="lry-customer-name">NAME: <t t-esc="props.data.partner_name"/></div>
+            </t>
+            <t t-if="props.data.partner_mobile">
+                <div class="lry-customer-mobile">MOBILE: <t t-esc="props.data.partner_mobile"/></div>
+            </t>
+
+            <!-- ====== ITEMS TABLE ====== -->
+            <div class="lry-table-header">
+                <span class="lry-col-desc">DESCRIPTION<br/><span class="lry-ar-block">وصف</span></span>
+                <span class="lry-col-price">PRICE<br/><span class="lry-ar-block">السعر</span></span>
+                <span class="lry-col-qty">QTY<br/><span class="lry-ar-block">الكمية</span></span>
+                <span class="lry-col-amt">NET AMT<br/><span class="lry-ar-block">الاجمالي</span></span>
+            </div>
+            <div class="lry-divider"/>
+
+            <t t-foreach="props.data.orderlines" t-as="line" t-key="line_index">
+                <div class="lry-line">
+                    <span class="lry-col-desc">* <t t-esc="line.productName"/></span>
+                    <span class="lry-col-price"><t t-esc="line.unitPrice"/></span>
+                    <span class="lry-col-qty"><t t-esc="line.qty"/></span>
+                    <span class="lry-col-amt"><t t-esc="line.price"/></span>
+                </div>
+            </t>
+
+            <div class="lry-divider"/>
+
+            <!-- ====== SUBTOTALS ====== -->
+            <div class="lry-totals-row">
+                <span>Total Qty: <t t-esc="props.data.orderlines.length"/></span>
+                <span>Sub Total: <t t-esc="props.formatCurrency(props.data.total_without_tax)"/></span>
+            </div>
+            <div class="lry-totals-row lry-ar-row">
+                <span>الكمية الإجمالية</span>
+                <span>المجموع الفرعي</span>
+            </div>
+
+            <div class="lry-divider"/>
+
+            <!-- ====== VAT ====== -->
+            <t t-set="taxTotals" t-value="props.data.taxTotals"/>
+            <div class="lry-tax-row">
+                <span>Before VAT &#160; <span class="lry-ar-inline">قبل الضريبة</span></span>
+                <span><t t-esc="props.formatCurrency(props.data.total_without_tax)"/></span>
+            </div>
+            <t t-if="taxTotals and taxTotals.has_tax_groups">
+                <t t-foreach="taxTotals.subtotals" t-as="subtotal" t-key="subtotal.name">
+                    <t t-foreach="subtotal.tax_groups" t-as="tax_group" t-key="tax_group.id">
+                        <div class="lry-tax-row">
+                            <span>VAT &#160; <span class="lry-ar-inline">ضريبة القيمة المضافة</span></span>
+                            <span><t t-esc="props.formatCurrency(tax_group.tax_amount_currency)"/></span>
+                        </div>
+                    </t>
+                </t>
+            </t>
+            <div class="lry-tax-row lry-net-amount">
+                <span>Net Amount &#160; <span class="lry-ar-inline">المبلغ الاجمالي</span></span>
+                <span><t t-esc="props.formatCurrency(taxTotals.order_total)"/></span>
+            </div>
+            <div class="lry-tax-row">
+                <span>Paid Amount &#160; <span class="lry-ar-inline">المبلغ المدفوع</span></span>
+                <span><t t-esc="props.formatCurrency(props.data.total_paid)"/></span>
+            </div>
+
+            <div class="lry-divider"/>
+
+            <!-- ====== EMPLOYEE + PAYMENT ====== -->
+            <div class="lry-employee-line">Employee: <t t-esc="props.data.cashier"/></div>
+            <div class="lry-employee-line">
+                Payment Type:
+                <t t-foreach="props.data.paymentlines" t-as="pm" t-key="pm_index">
+                    <t t-esc="pm.name"/>
+                </t>
+            </div>
+
+            <div class="lry-divider"/>
+
+            <!-- ====== TERMS ====== -->
+            <div class="lry-terms">
+                The management is not responsible for any change in color for shrink.
+                In case of damage or loss of article the compensation is limited to 5 times of cleaning charges.
+                The Laundry will not be responsible for clothes &amp; Carpets after 60 days.
+            </div>
+            <div class="lry-terms lry-terms-ar">
+                الادارة غير مسئولة عن اي تغيير في اللون او تكماش.
+                في حال تلف او فقدان اي قطعة والتعويض محدد بـ 5 مرات قيمة تنظيفها
+                مع اقصى مدة لاستلام الملابس 60 يوم فقط.
+            </div>
+
+            <div class="lry-divider"/>
+
+            <!-- ====== FOOTER ====== -->
+            <div class="lry-bottom-info"><t t-esc="props.data.date"/> | PRINTER1</div>
+            <div class="lry-thank-you lry-thank-ar"> يشرفنا زيارتكم</div>
+            <div class="lry-thank-you">Thank You &amp; Come Again</div>
+            <br/>
+
+        </div>
+    </t>
+
+</templates>

@@ -1,0 +1,81 @@
+<odoo>
+
+     <record id="view_holiday_status_form_inherit" model="ir.ui.view">
+        <field name="name">hr.leave.type.form.inherit</field>
+        <field name="model">hr.leave.type</field>
+        <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+        <field name="arch" type="xml">
+             <!-- Add the warning message after the name field -->
+            <xpath expr="//div[@class='oe_title']" position="after">
+                <div class="o_row">
+                    <label for="linked_to_paid_leave_allowance" string="Linked to Paid Leave Allowance"/>
+                    <div class="o_row">
+                        <field name="linked_to_paid_leave_allowance" widget="boolean"/>
+                    </div>
+                </div>
+                <div class="alert alert-warning oe_edit_only" name="warning_multiple_linked_leave_types"
+                     invisible="not multiple_linked_leave_types">
+                    <strong>Warning:</strong> You have more than one leave type linked to Paid Leave Allowance.
+                </div>
+
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_paid_leave_allowance_log_tree" model="ir.ui.view">
+        <field name="name">paid.leave.allowance.log.tree</field>
+        <field name="model">paid.leave.allowance.log</field>
+        <field name="arch" type="xml">
+            <list string="Paid Leave Allowance History">
+                <field name="employee_id"/>
+                <field name="user_id"/>
+                <field name="remaining_before"/>
+                <field name="days_requested"/>
+                <field name="remaining_after"/>
+                <field name="request_date"/>
+                <field name="ae_total_salary" optional="show"/>
+                <field name="leave_allowance_amount" optional="show"/>
+
+                <field name="state" widget="badge"
+                       decoration-success="state == 'approved'"
+                       decoration-danger="state == 'refused'"
+                       decoration-muted="state == 'draft'"/>
+
+                <button name="action_approve"
+                        string="Approve"
+                        type="object"
+                        icon="fa-check"
+                        invisible="state != 'draft'"/>
+
+                <button name="action_refuse"
+                        string="Refuse"
+                        type="object"
+                        icon="fa-times"
+                        invisible="state != 'draft'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_paid_leave_allowance_log" model="ir.actions.act_window">
+        <field name="name">Paid Leave Allowance Logs</field>
+        <field name="res_model">paid.leave.allowance.log</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p>No paid leave logs found.</p>
+        </field>
+        <field name="context">{'create': False}</field>
+    </record>
+
+    <record id="inherit_hr_leave_report_tree_add_status" model="ir.ui.view">
+        <field name="name">report.hr.holidays.report.leave_all.list.inherit.status</field>
+        <field name="model">hr.leave.report</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_report_tree"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="holiday_status_id"/>
+            </field>
+        </field>
+    </record>
+
+
+</odoo>

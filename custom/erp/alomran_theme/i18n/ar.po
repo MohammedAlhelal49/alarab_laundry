@@ -1,0 +1,4208 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* alomran_theme
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-28 12:15+0000\n"
+"PO-Revision-Date: 2026-08-28 12:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "+971 XX XXX XXXX"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "+971505829697"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_modal
+msgid "00"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "05XXXXXXXX"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "1 branch"
+msgstr "فرع واحد"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "11"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "11 branches equipped with latest technologies"
+msgstr "11 فرعًا مجهزة بأحدث التقنيات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "12"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "12 languages available"
+msgstr "12 لغة متاحة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "12 world languages with professional trainers"
+msgstr "12 لغة عالمية مع مدربين محترفين"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "14+"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "160"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "1750+"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "2 branches"
+msgstr "فرعين"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "25"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "250+"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "5 branches"
+msgstr "5 فروع"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "50K+"
+msgstr "50 ألف+"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "50k+"
+msgstr "50 ألف+"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "6 specialized professional programs with accredited certificates"
+msgstr "6 برامج مهنية متخصصة مع شهادات معتمدة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"6 specialized programs in developing modern teaching and education skills"
+msgstr "6 برامج متخصصة في تطوير مهارات التدريس والتعليم الحديثة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"9 advanced technical programs including Cybersecurity and Artificial "
+"Intelligence"
+msgstr "9 برامج تقنية متقدمة تشمل الأمن السيبراني والذكاء الاصطناعي"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "9 training programs in the most important tech fields"
+msgstr "9 برامج تدريبية في أهم المجالات التقنية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid ""
+"<i class=\"fa fa-arrow-right me-2\"/>\n"
+"                                    Back to Branches"
+msgstr "الرجوع للافرع"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"<i class=\"fa fa-award me-2 text-warning\"/>\n"
+"                                            <span>Accredited Center</span>"
+msgstr ""
+"<i class=\"fa fa-award me-2 text-warning\"/>\n"
+"                                            <span>مركز معتمد</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid ""
+"<i class=\"fa fa-book-open me-2 text-warning\"/>\n"
+"                            <span>12 Specialized Fields</span>"
+msgstr ""
+"<i class=\"fa fa-book-open me-2 text-warning\"/>\n"
+"                            <span>12 مجالاً متخصصاً</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"<i class=\"fa fa-book-open me-2\"/>\n"
+"                                        Explore Courses"
+msgstr ""
+"<i class=\"fa fa-book-open me-2\"/>\n"
+"                                        استكشاف الدورات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_modal
+msgid ""
+"<i class=\"fa fa-book-open me-2\"/>\n"
+"                                    <span id=\"browseCoursesBtnText\">Browse Our Courses</span>"
+msgstr ""
+"<i class=\"fa fa-book-open me-2\"/>\n"
+"                                    <span id=\"browseCoursesBtnText\">تصفح دوراتنا</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.add_custom_links
+msgid ""
+"<i class=\"fa fa-book-open me-2\"/>\n"
+"                    Courses"
+msgstr ""
+"<i class=\"fa fa-book-open me-2\"/>\n"
+"                    الدورات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"<i class=\"fa fa-building me-2 text-warning\"/>\n"
+"                                            <span>25 Government Entities</span>"
+msgstr ""
+"<i class=\"fa fa-building me-2 text-warning\"/>\n"
+"                                            <span>25 جهة حكومية</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid ""
+"<i class=\"fa fa-building me-2 text-warning\"/>\n"
+"                                            <span>Abu Dhabi - 2 Branches</span>"
+msgstr ""
+"<i class=\"fa fa-building me-2 text-warning\"/>\n"
+"                                            <span>أبوظبي - فرعين</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid ""
+"<i class=\"fa fa-building me-2 text-warning\"/>\n"
+"                                            <span>Al Ain - 5 Branches</span>"
+msgstr ""
+"<i class=\"fa fa-building me-2 text-warning\"/>\n"
+"                                            <span>العين - 5 فروع</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid ""
+"<i class=\"fa fa-building me-2 text-warning\"/>\n"
+"                                            <span>Dubai - 2 Branches</span>"
+msgstr ""
+"<i class=\"fa fa-building me-2 text-warning\"/>\n"
+"                                            <span>دبي - فرعين</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid ""
+"<i class=\"fa fa-building me-2 text-warning\"/>\n"
+"                                            <span>RAK - 1 Branch</span>"
+msgstr ""
+"<i class=\"fa fa-building me-2 text-warning\"/>\n"
+"                                            <span>رأس الخيمة - فرع واحد</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid ""
+"<i class=\"fa fa-building me-2 text-warning\"/>\n"
+"                                            <span>Sharjah - 1 Branch</span>"
+msgstr ""
+"<i class=\"fa fa-building me-2 text-warning\"/>\n"
+"                                            <span>الشارقة - فرع واحد</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid ""
+"<i class=\"fa fa-certificate me-2 text-warning\"/>\n"
+"                            <span>Accredited Certificates</span>"
+msgstr ""
+"<i class=\"fa fa-certificate me-2 text-warning\"/>\n"
+"                            <span>شهادات معتمدة</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid ""
+"<i class=\"fa fa-chalkboard-teacher me-2 text-warning\"/>\n"
+"                            <span>250+ Expert Trainers</span>"
+msgstr ""
+"<i class=\"fa fa-chalkboard-teacher me-2 text-warning\"/>\n"
+"                            <span>250+ مدرب خبير</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "<i class=\"fa fa-check me-2 text-primary\"/>Business Administration"
+msgstr "<i class=\"fa fa-check me-2 text-primary\"/>إدارة الأعمال"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "<i class=\"fa fa-check me-2 text-primary\"/>Digital Marketing"
+msgstr "<i class=\"fa fa-check me-2 text-primary\"/>التسويق الرقمي"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "<i class=\"fa fa-check me-2 text-primary\"/>Information Technology"
+msgstr "<i class=\"fa fa-check me-2 text-primary\"/>تقنية المعلومات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "<i class=\"fa fa-check me-2 text-primary\"/>Language Learning"
+msgstr "<i class=\"fa fa-check me-2 text-primary\"/>تعلم اللغات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "<i class=\"fa fa-check me-2 text-primary\"/>Professional Training"
+msgstr "<i class=\"fa fa-check me-2 text-primary\"/>التدريب المهني"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "<i class=\"fa fa-check ms-2 text-primary\"/>إدارة الأعمال"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "<i class=\"fa fa-check ms-2 text-primary\"/>التدريب المهني"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "<i class=\"fa fa-check ms-2 text-primary\"/>التسويق الرقمي"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "<i class=\"fa fa-check ms-2 text-primary\"/>تعلم اللغات"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "<i class=\"fa fa-check ms-2 text-primary\"/>تقنية المعلومات"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid ""
+"<i class=\"fa fa-check text-primary me-2\"/>\n"
+"                                            <strong>Continuous support</strong> after graduation"
+msgstr ""
+"<i class=\"fa fa-check text-primary me-2\"/>\n"
+"                                            <strong>دعم مستمر</strong> بعد التخرج"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid ""
+"<i class=\"fa fa-check text-primary me-2\"/>\n"
+"                                            <strong>Equipped labs</strong> with latest technologies"
+msgstr ""
+"<i class=\"fa fa-check text-primary me-2\"/>\n"
+"                                            <strong>مختبرات مجهزة</strong> بأحدث التقنيات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid ""
+"<i class=\"fa fa-check text-primary me-2\"/>\n"
+"                                            <strong>Practical application</strong> on real projects"
+msgstr ""
+"<i class=\"fa fa-check text-primary me-2\"/>\n"
+"                                            <strong>تطبيق عملي</strong> على مشاريع حقيقية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid ""
+"<i class=\"fa fa-check text-primary me-2\"/>\n"
+"                                            <strong>Professional trainers</strong> with practical experience"
+msgstr ""
+"<i class=\"fa fa-check text-primary me-2\"/>\n"
+"                                            <strong>مدربون محترفون</strong> ذوو خبرة عملية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid ""
+"<i class=\"fa fa-check text-primary me-2\"/>\n"
+"                                            <strong>Recognized certificates</strong> in the job market"
+msgstr ""
+"<i class=\"fa fa-check text-primary me-2\"/>\n"
+"                                            <strong>شهادات معترف بها</strong> في سوق العمل"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>Accredited certificates</strong> after passing the exam"
+msgstr ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>شهادات معتمدة</strong> بعد اجتياز الامتحان"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>Continuous follow-up</strong> after graduation"
+msgstr ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>متابعة مستمرة</strong> بعد التخرج"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>Expert trainers</strong> in the educational field"
+msgstr ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>مدربون خبراء</strong> في المجال التعليمي"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>Internationally accredited certificates</strong> from prestigious institutions"
+msgstr ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>شهادات معتمدة دولياً</strong> من مؤسسات مرموقة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>Modern training materials</strong> constantly updated"
+msgstr ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>مواد تدريبية حديثة</strong> محدثة باستمرار"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>Multiple levels</strong> from beginner to advanced"
+msgstr ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>مستويات متعددة</strong> من المبتدئ إلى المتقدم"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>Practical application</strong> on real cases"
+msgstr ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>تطبيق عملي</strong> على حالات حقيقية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>Practical application</strong> with real conversations"
+msgstr ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>تطبيق عملي</strong> مع محادثات حقيقية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>Specialized trainers</strong> native speakers or internationally certified"
+msgstr ""
+"<i class=\"fa fa-check text-success me-2\"/>\n"
+"                                            <strong>مدربون متخصصون</strong> متحدثون أصليون أو معتمدون دولياً"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid ""
+"<i class=\"fa fa-check-circle text-primary me-2\"/>\n"
+"                                        IT Program Features"
+msgstr ""
+"<i class=\"fa fa-check-circle text-primary me-2\"/>\n"
+"                                        ميزات برنامج تقنية المعلومات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"<i class=\"fa fa-check-circle text-success me-2\"/>\n"
+"                                        Language Program Features"
+msgstr ""
+"<i class=\"fa fa-check-circle text-success me-2\"/>\n"
+"                                        ميزات برنامج اللغات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"<i class=\"fa fa-check-circle text-success me-2\"/>\n"
+"                                        Program Features"
+msgstr ""
+"<i class=\"fa fa-check-circle text-success me-2\"/>\n"
+"                                        ميزات البرنامج"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "<i class=\"fa fa-chevron-left ms-2\"/>الدورات"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "<i class=\"fa fa-chevron-left ms-2\"/>الرئيسية"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "<i class=\"fa fa-chevron-left ms-2\"/>الفروع"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "<i class=\"fa fa-chevron-left ms-2\"/>تواصل معنا"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "<i class=\"fa fa-chevron-left ms-2\"/>من نحن"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "<i class=\"fa fa-chevron-right me-2\"/>About Us"
+msgstr "<i class=\"fa fa-chevron-right me-2\"/>من نحن"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "<i class=\"fa fa-chevron-right me-2\"/>Branches"
+msgstr "<i class=\"fa fa-chevron-right me-2\"/>الفروع"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "<i class=\"fa fa-chevron-right me-2\"/>Contact Us"
+msgstr "<i class=\"fa fa-chevron-right me-2\"/>تواصل معنا"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "<i class=\"fa fa-chevron-right me-2\"/>Courses"
+msgstr "<i class=\"fa fa-chevron-right me-2\"/>الدورات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "<i class=\"fa fa-chevron-right me-2\"/>Home"
+msgstr "<i class=\"fa fa-chevron-right me-2\"/>الرئيسية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "<i class=\"fa fa-chevron-right me-2\"/>Woman Initiative"
+msgstr "مبادرة المراة الاماراتية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "<i class=\"fa fa-chevron-right me-2\"/>مبادرة المراة الاماراتية"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid ""
+"<i class=\"fa fa-clock me-2 text-primary\"/>\n"
+"                                            Sat - Thu: 8:00 AM - 8:00 PM"
+msgstr ""
+"<i class=\"fa fa-clock me-2 text-primary\"/>\n"
+"                                            السبت - الخميس: 8:00 ص - 8:00 م"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid ""
+"<i class=\"fa fa-clock me-2 text-primary\"/>\n"
+"                                Sat - Thu: 8:00 AM - 8:00 PM"
+msgstr ""
+"<i class=\"fa fa-clock me-2 text-primary\"/>\n"
+"                                السبت - الخميس: 8:00 ص - 8:00 م"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"<i class=\"fa fa-clock me-2 text-warning\"/>\n"
+"                                        <span>We respond within 24 hours</span>"
+msgstr ""
+"<i class=\"fa fa-clock me-2 text-warning\"/>\n"
+"                                        <span>نرد خلال 24 ساعة</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid ""
+"<i class=\"fa fa-clock ms-2 text-primary\"/>\n"
+"                                            السبت - الخميس: 8:00 ص - 8:00 م"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid ""
+"<i class=\"fa fa-code me-2\"/>\n"
+"                                    9 Specialized Technical Programs"
+msgstr ""
+"<i class=\"fa fa-code me-2\"/>\n"
+"                                    9 برامج تقنية متخصصة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"<i class=\"fa fa-envelope me-2\"/>\n"
+"                                        <span>Email Us</span>"
+msgstr ""
+"<i class=\"fa fa-envelope me-2\"/>\n"
+"                                        <span>راسلنا عبر البريد</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid ""
+"<i class=\"fa fa-envelope me-2\"/>\n"
+"                                Contact Us"
+msgstr "تواصل معنا"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid ""
+"<i class=\"fa fa-envelope me-2\"/>\n"
+"                            Send Your Inquiry"
+msgstr ""
+"<i class=\"fa fa-envelope me-2\"/>\n"
+"                            أرسل استفسارك"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.add_custom_links
+msgid ""
+"<i class=\"fa fa-envelope me-2\"/>\n"
+"                    Contact Us"
+msgstr ""
+"<i class=\"fa fa-envelope me-2\"/>\n"
+"                    تواصل معنا"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"<i class=\"fa fa-envelope text-primary me-2\"/>\n"
+"                                                Email (Optional)"
+msgstr ""
+"<i class=\"fa fa-envelope text-primary me-2\"/>\n"
+"                                                البريد الإلكتروني (اختياري)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid ""
+"<i class=\"fa fa-envelope text-primary me-2\"/>\n"
+"                                            Email (Optional)"
+msgstr ""
+"<i class=\"fa fa-envelope text-primary me-2\"/>\n"
+"                                            البريد الإلكتروني (اختياري)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"<i class=\"fa fa-envelope text-success me-2\"/>\n"
+"                                                Email (Optional)"
+msgstr ""
+"<i class=\"fa fa-envelope text-success me-2\"/>\n"
+"                                                البريد الإلكتروني (اختياري)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"<i class=\"fa fa-globe me-2\"/>\n"
+"                                    12 Languages Available"
+msgstr ""
+"<i class=\"fa fa-globe me-2\"/>\n"
+"                                    12 لغة متاحة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"<i class=\"fa fa-graduation-cap me-2\"/>\n"
+"                                    6 Accredited Professional Programs"
+msgstr ""
+"<i class=\"fa fa-graduation-cap me-2\"/>\n"
+"                                    6 برامج مهنية معتمدة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"<i class=\"fa fa-graduation-cap me-2\"/>\n"
+"                                    Program Registration"
+msgstr ""
+"<i class=\"fa fa-graduation-cap me-2\"/>\n"
+"                                    تسجيل البرنامج"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid ""
+"<i class=\"fa fa-graduation-cap me-2\"/>\n"
+"                                Course Registration"
+msgstr ""
+"<i class=\"fa fa-graduation-cap me-2\"/>\n"
+"                                تسجيل الدورة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.add_custom_links
+msgid ""
+"<i class=\"fa fa-home me-2\"/>\n"
+"                    Home"
+msgstr ""
+"<i class=\"fa fa-home me-2\"/>\n"
+"                    الرئيسية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.add_custom_links
+msgid ""
+"<i class=\"fa fa-info-circle me-2\"/>\n"
+"                    About Us"
+msgstr ""
+"<i class=\"fa fa-info-circle me-2\"/>\n"
+"                    من نحن"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"<i class=\"fa fa-language me-2\"/>\n"
+"                                    Language Course Registration"
+msgstr ""
+"<i class=\"fa fa-language me-2\"/>\n"
+"                                    تسجيل دورة اللغة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid ""
+"<i class=\"fa fa-laptop-code me-2\"/>\n"
+"                                    Technical Program Registration"
+msgstr ""
+"<i class=\"fa fa-laptop-code me-2\"/>\n"
+"                                    تسجيل البرنامج التقني"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"<i class=\"fa fa-list me-2\"/>\n"
+"                                View All Programs (1750+ programs)"
+msgstr ""
+"<i class=\"fa fa-list me-2\"/>\n"
+"                                عرض جميع البرامج (1750+ برنامج)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"<i class=\"fa fa-map-marked-alt me-2\"/>\n"
+"                                View All Branches &amp; Directions"
+msgstr ""
+"<i class=\"fa fa-map-marked-alt me-2\"/>\n"
+"                                عرض جميع الفروع والاتجاهات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid ""
+"<i class=\"fa fa-map-marker-alt me-2 text-primary\"/>\n"
+"                                            11 branches across UAE"
+msgstr ""
+"<i class=\"fa fa-map-marker-alt me-2 text-primary\"/>\n"
+"                                            11 فرعاً في الإمارات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid ""
+"<i class=\"fa fa-map-marker-alt me-2 text-primary\"/>\n"
+"                                11 branches across UAE"
+msgstr ""
+"<i class=\"fa fa-map-marker-alt me-2 text-primary\"/>\n"
+"                                11 فرعاً في الإمارات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"<i class=\"fa fa-map-marker-alt me-2 text-warning\"/>\n"
+"                                            <span>11 Branches in UAE</span>"
+msgstr ""
+"<i class=\"fa fa-map-marker-alt me-2 text-warning\"/>\n"
+"                                            <span>11 فرعاً في الإمارات</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid ""
+"<i class=\"fa fa-map-marker-alt me-2\"/>\n"
+"                                                        Open in Maps"
+msgstr "افتح في الخرائط"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid ""
+"<i class=\"fa fa-map-marker-alt me-2\"/>\n"
+"                                            Open in Google Maps"
+msgstr "افتح في خرائط غوغل"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid ""
+"<i class=\"fa fa-map-marker-alt me-2\"/>\n"
+"                                View All Branches"
+msgstr "عرض كل الافرع"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.add_custom_links
+msgid ""
+"<i class=\"fa fa-map-marker-alt me-2\"/>\n"
+"                    Branches"
+msgstr ""
+"<i class=\"fa fa-map-marker-alt me-2\"/>\n"
+"                    الفروع"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.add_custom_links
+msgid ""
+"<i class=\"fa fa-map-marker-alt me-2\"/>\n"
+"                    Woman Initiative"
+msgstr "مبادرة المراة الاماراتية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid ""
+"<i class=\"fa fa-map-marker-alt ms-2 text-primary\"/>\n"
+"                                            11 فرعاً في الإمارات"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"<i class=\"fa fa-map-pin me-2\"/>\n"
+"                                     Central Mall"
+msgstr ""
+"<i class=\"fa fa-map-pin me-2\"/>\n"
+"                                     المركز مول"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"<i class=\"fa fa-map-pin me-2\"/>\n"
+"                                    City Center"
+msgstr ""
+"<i class=\"fa fa-map-pin me-2\"/>\n"
+"                                    سيتي سنتر"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"<i class=\"fa fa-map-pin me-2\"/>\n"
+"                                    Makani Mall"
+msgstr ""
+"<i class=\"fa fa-map-pin me-2\"/>\n"
+"                                    مول مكاني"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"<i class=\"fa fa-paper-plane me-2\"/>\n"
+"                                                    Send Message"
+msgstr ""
+"<i class=\"fa fa-paper-plane me-2\"/>\n"
+"                                                    إرسال الرسالة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"<i class=\"fa fa-paper-plane me-2\"/>\n"
+"                                            Register Now"
+msgstr ""
+"<i class=\"fa fa-paper-plane me-2\"/>\n"
+"                                            سجل الآن"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"<i class=\"fa fa-paper-plane me-2\"/>\n"
+"                                            Submit Request"
+msgstr ""
+"<i class=\"fa fa-paper-plane me-2\"/>\n"
+"                                            تقديم الطلب"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid ""
+"<i class=\"fa fa-paper-plane me-2\"/>\n"
+"                                        Submit Request"
+msgstr ""
+"<i class=\"fa fa-paper-plane me-2\"/>\n"
+"                                        تقديم الطلب"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid ""
+"<i class=\"fa fa-phone me-2\"/>\n"
+"                                                    Call Now"
+msgstr "اتصل الان"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"<i class=\"fa fa-phone me-2\"/>\n"
+"                                        <span dir=\"ltr\">+971505829697</span>"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"<i class=\"fa fa-phone me-2\"/>\n"
+"                                        Contact Us"
+msgstr ""
+"<i class=\"fa fa-phone me-2\"/>\n"
+"                                        تواصل معنا"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"<i class=\"fa fa-phone me-2\"/>\n"
+"                                Call Us"
+msgstr ""
+"<i class=\"fa fa-phone me-2\"/>\n"
+"                                اتصل بنا"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"<i class=\"fa fa-phone text-primary me-2\"/>\n"
+"                                                Phone Number <span class=\"text-danger\">*</span>"
+msgstr ""
+"<i class=\"fa fa-phone text-primary me-2\"/>\n"
+"                                                رقم الهاتف <span class=\"text-danger\">*</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid ""
+"<i class=\"fa fa-phone text-primary me-2\"/>\n"
+"                                            Phone Number <span class=\"text-danger\">*</span>"
+msgstr ""
+"<i class=\"fa fa-phone text-primary me-2\"/>\n"
+"                                            رقم الهاتف <span class=\"text-danger\">*</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"<i class=\"fa fa-phone text-success me-2\"/>\n"
+"                                                Phone Number <span class=\"text-danger\">*</span>"
+msgstr ""
+"<i class=\"fa fa-phone text-success me-2\"/>\n"
+"                                                رقم الهاتف <span class=\"text-danger\">*</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"<i class=\"fa fa-play-circle me-2\"/>\n"
+"                                        <span>Start Your Journey Now</span>"
+msgstr ""
+"<i class=\"fa fa-play-circle me-2\"/>\n"
+"                                        <span>ابدأ رحلتك الآن</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"<i class=\"fa fa-question-circle text-primary me-3\"/>\n"
+"                                                Are the certificates accredited?"
+msgstr ""
+"<i class=\"fa fa-question-circle text-primary me-3\"/>\n"
+"                                                هل الشهادات معتمدة؟"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"<i class=\"fa fa-question-circle text-primary me-3\"/>\n"
+"                                                Do you provide corporate training?"
+msgstr ""
+"<i class=\"fa fa-question-circle text-primary me-3\"/>\n"
+"                                                هل تقدمون تدريباً للشركات؟"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"<i class=\"fa fa-question-circle text-primary me-3\"/>\n"
+"                                                How can I register for a training course?"
+msgstr ""
+"<i class=\"fa fa-question-circle text-primary me-3\"/>\n"
+"                                                كيف يمكنني التسجيل في دورة تدريبية؟"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"<i class=\"fa fa-question-circle text-primary me-3\"/>\n"
+"                                                What is the duration of training courses?"
+msgstr ""
+"<i class=\"fa fa-question-circle text-primary me-3\"/>\n"
+"                                                ما هي مدة الدورات التدريبية؟"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid ""
+"<i class=\"fa fa-search me-2\"/>\n"
+"                        <span>Explore All Courses</span>"
+msgstr ""
+"<i class=\"fa fa-search me-2\"/>\n"
+"                        <span>استكشف جميع الدورات</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"<i class=\"fa fa-user text-primary me-2\"/>\n"
+"                                                Full Name <span class=\"text-danger\">*</span>"
+msgstr ""
+"<i class=\"fa fa-user text-primary me-2\"/>\n"
+"                                                الاسم الكامل <span class=\"text-danger\">*</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid ""
+"<i class=\"fa fa-user text-primary me-2\"/>\n"
+"                                            Full Name <span class=\"text-danger\">*</span>"
+msgstr ""
+"<i class=\"fa fa-user text-primary me-2\"/>\n"
+"                                            الاسم الكامل <span class=\"text-danger\">*</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"<i class=\"fa fa-user text-success me-2\"/>\n"
+"                                                Full Name <span class=\"text-danger\">*</span>"
+msgstr ""
+"<i class=\"fa fa-user text-success me-2\"/>\n"
+"                                                الاسم الكامل <span class=\"text-danger\">*</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"<i class=\"fa fa-users me-2 text-warning\"/>\n"
+"                                            <span>50,000+ Trainees</span>"
+msgstr ""
+"<i class=\"fa fa-users me-2 text-warning\"/>\n"
+"                                            <span>50,000+ متدرب</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid ""
+"<i class=\"fa fa-users me-2 text-warning\"/>\n"
+"                            <span>50,000+ Graduates</span>"
+msgstr ""
+"<i class=\"fa fa-users me-2 text-warning\"/>\n"
+"                            <span>50,000+ خريج</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"<i class=\"fa fa-whatsapp me-2\"/>\n"
+"                                        WhatsApp Direct"
+msgstr ""
+"<i class=\"fa fa-whatsapp me-2\"/>\n"
+"                                        واتساب مباشر"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid ""
+"<i class=\"fab fa-whatsapp me-2\"/>\n"
+"                                                    Contact via WhatsApp"
+msgstr "تواصل عبر واتساب"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"<i class=\"fab fa-whatsapp me-2\"/>\n"
+"                                        <span>WhatsApp</span>"
+msgstr ""
+"<i class=\"fab fa-whatsapp me-2\"/>\n"
+"                                        <span>واتساب</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"<i class=\"fab fa-whatsapp me-2\"/>\n"
+"                                WhatsApp"
+msgstr ""
+"<i class=\"fab fa-whatsapp me-2\"/>\n"
+"                                واتساب"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"<i class=\"fab fa-whatsapp me-2\"/>\n"
+"                            Chat with Us on WhatsApp"
+msgstr ""
+"<i class=\"fab fa-whatsapp me-2\"/>\n"
+"                            دردش معنا على واتساب"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"<select class=\"form-select form-select-lg\" id=\"contact_branch\" name=\"branch\" required=\"required\">\n"
+"                                                    <option value=\"\">Select Branch</option>\n"
+"                                                    <option value=\"Al Murabba\">Al Murabba</option>\n"
+"                                                    <option value=\"Mazyad Mall Branch\">Mazyad Mall Branch</option>\n"
+"                                                    <option value=\"Al Barari Mall Branch\">Al Barari Mall Branch</option>\n"
+"                                                    <option value=\"Al Foaa Branch\">Al Foaa Branch</option>\n"
+"                                                    <option value=\"Al Yahr Branch\">Al Yahr Branch</option>\n"
+"                                                    <option value=\"Al Garhoud Branch (Dubai)\">Al Garhoud Branch (Dubai)</option>\n"
+"                                                    <option value=\"Zakhir Branch\">Zakhir Branch</option>\n"
+"                                                    <option value=\"Al Meroor Branch (Abu Dhabi)\">Al Meroor Branch (Abu Dhabi)</option>\n"
+"                                                    <option value=\"Ras Al Khaimah Branch\">Ras Al Khaimah Branch</option>\n"
+"                                                    <option value=\"Sharjah\">Sharjah</option>\n"
+"                                                    <option value=\"Fujairah\">Fujairah</option>\n"
+"                                                </select>"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"<select class=\"form-select form-select-lg\" id=\"contact_subject\" name=\"subject\" required=\"required\">\n"
+"                                                    <option value=\"\">Select Subject</option>\n"
+"                                                    <option value=\"Course Inquiry\">Course Inquiry</option>\n"
+"                                                    <option value=\"Course Registration\">Course Registration</option>\n"
+"                                                    <option value=\"Certificate Inquiry\">Certificate Inquiry</option>\n"
+"                                                    <option value=\"Pricing Inquiry\">Pricing Inquiry</option>\n"
+"                                                    <option value=\"Complaint\">Complaint</option>\n"
+"                                                    <option value=\"Suggestion\">Suggestion</option>\n"
+"                                                    <option value=\"Other\">Other</option>\n"
+"                                                </select>"
+msgstr ""
+"<select class=\"form-select form-select-lg\" id=\"contact_subject\" name=\"subject\" required=\"required\">\n"
+"                                                    <option value=\"\">اختر الموضوع</option>\n"
+"                                                    <option value=\"Course Inquiry\">استفسار عن دورة</option>\n"
+"                                                    <option value=\"Course Registration\">تسجيل دورة</option>\n"
+"                                                    <option value=\"Certificate Inquiry\">استفسار عن شهادة</option>\n"
+"                                                    <option value=\"Pricing Inquiry\">استفسار عن الأسعار</option>\n"
+"                                                    <option value=\"Complaint\">شكوى</option>\n"
+"                                                    <option value=\"Suggestion\">اقتراح</option>\n"
+"                                                    <option value=\"Other\">أخرى</option>\n"
+"                                                </select>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "<small class=\"text-muted\">Instant communication</small>"
+msgstr "<small class=\"text-muted\">تواصل فوري</small>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "<small class=\"text-muted\">Internationally &amp; Locally</small>"
+msgstr "<small class=\"text-muted\">دولياً ومحلياً</small>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "<small class=\"text-muted\">Languages Available</small>"
+msgstr "<small class=\"text-muted\">اللغات المتاحة</small>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"<small class=\"text-muted\">Saturday to Thursday: 10:00 AM - 08:00 "
+"PM</small>"
+msgstr "<small class=\"text-muted\">السبت إلى الخميس: 10:00 ص - 08:00 م</small>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "<small class=\"text-muted\">Specialized Programs</small>"
+msgstr "<small class=\"text-muted\">برامج متخصصة</small>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "<small class=\"text-muted\">Training Hours</small>"
+msgstr "<small class=\"text-muted\">ساعات التدريب</small>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "<small class=\"text-muted\">We respond within 24 hours</small>"
+msgstr "<small class=\"text-muted\">نرد خلال 24 ساعة</small>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid ""
+"<small>For pricing and schedule details, our team will contact you</small>"
+msgstr ""
+"<small>للحصول على تفاصيل الأسعار والجدول الزمني، سيتصل بك فريقنا</small>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "<small>View all branches <i class=\"fa fa-arrow-right ms-1\"/></small>"
+msgstr "<small>عرض جميع الفروع <i class=\"fa fa-arrow-right ms-1\"/></small>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid ""
+"<span class=\"badge bg-danger mb-3\">\n"
+"                                    <i class=\"fa fa-map-marker-alt me-1\"/>\n"
+"                                    Our Location\n"
+"                                </span>"
+msgstr "موقعنا"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "<span class=\"badge bg-danger mb-3\">Academic</span>"
+msgstr "<span class=\"badge bg-danger mb-3\">أكاديمي</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "<span class=\"badge bg-danger mb-3\">Critical</span>"
+msgstr "<span class=\"badge bg-danger mb-3\">حرج</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "<span class=\"badge bg-danger mb-3\">In Demand</span>"
+msgstr "<span class=\"badge bg-danger mb-3\">مطلوب</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "<span class=\"badge bg-danger mb-3\">K-Pop</span>"
+msgstr "<span class=\"badge bg-danger mb-3\">كي-بوب</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "<span class=\"badge bg-danger mb-3\">Leadership</span>"
+msgstr "<span class=\"badge bg-danger mb-3\">قيادة</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "<span class=\"badge bg-danger mb-3\">Romance</span>"
+msgstr "<span class=\"badge bg-danger mb-3\">رومانسي</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "<span class=\"badge bg-info mb-3\">Early Childhood</span>"
+msgstr "<span class=\"badge bg-info mb-3\">الطفولة المبكرة</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "<span class=\"badge bg-info mb-3\">For Everyone</span>"
+msgstr "<span class=\"badge bg-info mb-3\">للجميع</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "<span class=\"badge bg-info mb-3\">Internationally Accredited</span>"
+msgstr "<span class=\"badge bg-info mb-3\">معتمد دولياً</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "<span class=\"badge bg-info mb-3\">Regional</span>"
+msgstr "<span class=\"badge bg-info mb-3\">إقليمي</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "<span class=\"badge bg-primary mb-3\">About the Program</span>"
+msgstr "<span class=\"badge bg-primary mb-3\">حول البرنامج</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "<span class=\"badge bg-primary mb-3\">Available Programs</span>"
+msgstr "<span class=\"badge bg-primary mb-3\">البرامج المتاحة</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "<span class=\"badge bg-primary mb-3\">Child Care</span>"
+msgstr "<span class=\"badge bg-primary mb-3\">رعاية الأطفال</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "<span class=\"badge bg-primary mb-3\">E-Learning</span>"
+msgstr "<span class=\"badge bg-primary mb-3\">التعليم الإلكتروني</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "<span class=\"badge bg-primary mb-3\">European</span>"
+msgstr "<span class=\"badge bg-primary mb-3\">أوروبي</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "<span class=\"badge bg-primary mb-3\">Innovative</span>"
+msgstr "<span class=\"badge bg-primary mb-3\">مبتكر</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "<span class=\"badge bg-primary mb-3\">International Test</span>"
+msgstr "<span class=\"badge bg-primary mb-3\">اختبار دولي</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "<span class=\"badge bg-primary mb-3\">Most Requested</span>"
+msgstr "<span class=\"badge bg-primary mb-3\">الأكثر طلباً</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid ""
+"<span class=\"badge bg-primary text-white mb-3\" style=\"font-size: 1rem; padding: 0.75rem 1.5rem;\">\n"
+"                                <i class=\"fa fa-laptop-code me-2\"/>\n"
+"                                Information Technology\n"
+"                            </span>"
+msgstr ""
+"<span class=\"badge bg-primary text-white mb-3\" style=\"font-size: 1rem; padding: 0.75rem 1.5rem;\">\n"
+"                                <i class=\"fa fa-laptop-code me-2\"/>\n"
+"                                تقنية المعلومات\n"
+"                            </span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "<span class=\"badge bg-success mb-3\">About the Program</span>"
+msgstr "<span class=\"badge bg-success mb-3\">حول البرنامج</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "<span class=\"badge bg-success mb-3\">Available Languages</span>"
+msgstr "<span class=\"badge bg-success mb-3\">اللغات المتاحة</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "<span class=\"badge bg-success mb-3\">Cultural</span>"
+msgstr "<span class=\"badge bg-success mb-3\">ثقافي</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "<span class=\"badge bg-success mb-3\">Essential</span>"
+msgstr "<span class=\"badge bg-success mb-3\">أساسي</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "<span class=\"badge bg-success mb-3\">People of Determination</span>"
+msgstr "<span class=\"badge bg-success mb-3\">أصحاب الهمم</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "<span class=\"badge bg-success mb-3\">Professional</span>"
+msgstr "<span class=\"badge bg-success mb-3\">مهني</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"<span class=\"badge bg-success text-white mb-3\" style=\"font-size: 1rem; padding: 0.75rem 1.5rem;\">\n"
+"                                <i class=\"fa fa-language me-2\"/>\n"
+"                                Language Programs\n"
+"                            </span>"
+msgstr ""
+"<span class=\"badge bg-success text-white mb-3\" style=\"font-size: 1rem; padding: 0.75rem 1.5rem;\">\n"
+"                                <i class=\"fa fa-language me-2\"/>\n"
+"                                برامج اللغات\n"
+"                            </span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"<span class=\"badge bg-warning text-dark mb-3\" style=\"font-size: 1rem; padding: 0.75rem 1.5rem;\">\n"
+"                                <i class=\"fa fa-star me-2\"/>\n"
+"                                Most Requested Program\n"
+"                            </span>"
+msgstr ""
+"<span class=\"badge bg-warning text-dark mb-3\" style=\"font-size: 1rem; padding: 0.75rem 1.5rem;\">\n"
+"                                <i class=\"fa fa-star me-2\"/>\n"
+"                                البرنامج الأكثر طلباً\n"
+"                            </span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "<span class=\"badge bg-warning text-dark mb-3\">Future</span>"
+msgstr "<span class=\"badge bg-warning text-dark mb-3\">مستقبلي</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "<span class=\"badge bg-warning text-dark mb-3\">Modern</span>"
+msgstr "<span class=\"badge bg-warning text-dark mb-3\">حديث</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "<span class=\"badge bg-warning text-dark mb-3\">Popular</span>"
+msgstr "<span class=\"badge bg-warning text-dark mb-3\">شائع</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "<span class=\"badge bg-warning text-dark mb-3\">Professional</span>"
+msgstr "<span class=\"badge bg-warning text-dark mb-3\">مهني</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid "<span class=\"badge mb-3\">All Courses</span>"
+msgstr "<span class=\"badge mb-3\">جميع الدورات</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "<span class=\"badge mb-3\">Contact Form</span>"
+msgstr "<span class=\"badge mb-3\">نموذج الاتصال</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "<span class=\"badge mb-3\">Contact Information</span>"
+msgstr "<span class=\"badge mb-3\">معلومات الاتصال</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid "<span class=\"badge mb-3\">Course Features</span>"
+msgstr "<span class=\"badge mb-3\">مميزات الدورة</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "<span class=\"badge mb-3\">Emirates We Serve</span>"
+msgstr "<span class=\"badge mb-3\">الإمارات التي نخدمها</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "<span class=\"badge mb-3\">FAQ</span>"
+msgstr "<span class=\"badge mb-3\">الأسئلة الشائعة</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "<span class=\"badge mb-3\">Our Locations</span>"
+msgstr "<span class=\"badge mb-3\">مواقعنا</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"<span class=\"badge-icon\">\n"
+"                                        <i class=\"fa fa-award\"/>\n"
+"                                    </span>\n"
+"                                    <span class=\"badge-text\">\n"
+"                                        Certified Training Center Since <strong>2010</strong>\n"
+"                                    </span>"
+msgstr ""
+"<span class=\"badge-icon\">\n"
+"                                        <i class=\"fa fa-award\"/>\n"
+"                                    </span>\n"
+"                                    <span class=\"badge-text\">\n"
+"                                        مركز تدريب معتمد منذ <strong>2010</strong>\n"
+"                                    </span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"<span class=\"badge-icon\">\n"
+"                                        <i class=\"fa fa-headset\"/>\n"
+"                                    </span>\n"
+"                                    <span class=\"badge-text\">\n"
+"                                        Available <strong>24/7</strong> For Your Support\n"
+"                                    </span>"
+msgstr ""
+"<span class=\"badge-icon\">\n"
+"                                        <i class=\"fa fa-headset\"/>\n"
+"                                    </span>\n"
+"                                    <span class=\"badge-text\">\n"
+"                                        متاح <strong>24/7</strong> لدعمك\n"
+"                                    </span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid ""
+"<span class=\"badge-icon\">\n"
+"                                        <i class=\"fa fa-map-marker-alt\"/>\n"
+"                                    </span>\n"
+"                                    <span class=\"badge-text\">\n"
+"                                        <strong>11</strong> Branches Across UAE\n"
+"                                    </span>"
+msgstr ""
+"<span class=\"badge-icon\">\n"
+"                                        <i class=\"fa fa-map-marker-alt\"/>\n"
+"                                    </span>\n"
+"                                    <span class=\"badge-text\">\n"
+"                                        <strong>11</strong> فرعاً في الإمارات\n"
+"                                    </span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid ""
+"<span class=\"badge-icon\">\n"
+"                        <i class=\"fa fa-graduation-cap\"/>\n"
+"                    </span>\n"
+"                    <span class=\"badge-text\">\n"
+"                        <strong>1750+</strong> Training Programs Available\n"
+"                    </span>"
+msgstr ""
+"<span class=\"badge-icon\">\n"
+"                        <i class=\"fa fa-graduation-cap\"/>\n"
+"                    </span>\n"
+"                    <span class=\"badge-text\">\n"
+"                        <strong>1750+</strong> برنامج تدريبي متاح\n"
+"                    </span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "<span class=\"program-badge\">Exclusive</span>"
+msgstr "<span class=\"program-badge\">حصري</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "<span class=\"program-badge\">In Demand</span>"
+msgstr "<span class=\"program-badge\">مطلوب</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "<span class=\"program-badge\">New</span>"
+msgstr "<span class=\"program-badge\">جديد</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"<span class=\"section-badge bg-white text-primary\">\n"
+"                                <i class=\"fa fa-map-marker-alt me-2\"/>\n"
+"                                Our Branches\n"
+"                            </span>"
+msgstr ""
+"<span class=\"section-badge bg-white text-primary\">\n"
+"                                <i class=\"fa fa-map-marker-alt me-2\"/>\n"
+"                                فروعنا\n"
+"                            </span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"<span class=\"section-badge\">\n"
+"                                <i class=\"fa fa-star me-2\"/>\n"
+"                                Most Requested\n"
+"                            </span>"
+msgstr ""
+"<span class=\"section-badge\">\n"
+"                                <i class=\"fa fa-star me-2\"/>\n"
+"                                الأكثر طلباً\n"
+"                            </span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"<span class=\"section-label\">\n"
+"                                        <i class=\"fa fa-history me-2\"/>Our Story\n"
+"                                    </span>"
+msgstr ""
+"<span class=\"section-label\">\n"
+"                                        <i class=\"fa fa-history me-2\"/>قصتنا\n"
+"                                    </span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"<span class=\"section-label\">\n"
+"                                <i class=\"fa fa-bullseye me-2\"/>Vision &amp; Mission\n"
+"                            </span>"
+msgstr ""
+"<span class=\"section-label\">\n"
+"                                <i class=\"fa fa-bullseye me-2\"/>الرؤية والرسالة\n"
+"                            </span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"<span class=\"section-label\">\n"
+"                                <i class=\"fa fa-flag me-2\"/>Our Goal\n"
+"                            </span>"
+msgstr ""
+"<span class=\"section-label\">\n"
+"                                <i class=\"fa fa-flag me-2\"/>هدفنا\n"
+"                            </span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"<span class=\"section-label\">\n"
+"                                <i class=\"fa fa-star me-2\"/>Our Values\n"
+"                            </span>"
+msgstr ""
+"<span class=\"section-label\">\n"
+"                                <i class=\"fa fa-star me-2\"/>قيمنا\n"
+"                            </span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "<span class=\"tag-text\">Mission</span>"
+msgstr "<span class=\"tag-text\">الرسالة</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "<span class=\"tag-text\">Vision</span>"
+msgstr "<span class=\"tag-text\">الرؤية</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "<span class=\"text-gradient\"> Our Branches</span>"
+msgstr "<span class=\"text-gradient\"> فروعنا</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"<span class=\"text-gradient\">Al Omran</span>\n"
+"                                    <br/>\n"
+"                                    Training &amp; Development Center"
+msgstr ""
+"<span class=\"text-gradient\">العمران</span>\n"
+"                                    <br/>\n"
+"                                    مركز التدريب والتطوير"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"<span class=\"text-gradient\">Contact</span>\n"
+"                                    <span>Us</span>"
+msgstr ""
+"<span class=\"text-gradient\">تواصل</span>\n"
+"                                    <span>معنا</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "<span class=\"text-gradient\">فروعنا في العين والإمارات</span>"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"<span class=\"text-gradient\">مركز العمران</span>\n"
+"                                    <br/>\n"
+"                                    للتدريب والتطوير"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"<span class=\"years\">14+</span>\n"
+"                                            <span class=\"text\">Years of Experience</span>"
+msgstr ""
+"<span class=\"years\">14+</span>\n"
+"                                            <span class=\"text\">سنة من الخبرة</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_modal
+msgid "<span id=\"closeSuccessBtnText\">Close</span>"
+msgstr "<span id=\"closeSuccessBtnText\">إغلاق</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_modal
+msgid "<span style=\"color: #ff6b6b;\">*</span>"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"<span><i class=\"fa fa-phone\"/> <bdi dir=\"ltr\">+971 56 414 "
+"1409</bdi></span>"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"<span><i class=\"fa fa-phone\"/> <bdi dir=\"ltr\">+971 56 434 "
+"2889</bdi></span>"
+msgstr ""
+"<span><i class=\"fa fa-phone\"/> <bdi dir=\"ltr\">++971 56 434 "
+"2889</bdi></span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "<span><i class=\"fa fa-phone\"/> <bdi dir=\"ltr\">+971 56 434 288</bdi></span>"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"<span>Explore Program</span>\n"
+"                                        <i class=\"fa fa-arrow-right\"/>"
+msgstr ""
+"<span>استكشف البرنامج</span>\n"
+"                                        <i class=\"fa fa-arrow-right\"/>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid ""
+"<span>Training</span>\n"
+"                    <span class=\"text-gradient\">Courses</span>"
+msgstr ""
+"<span>دورات</span>\n"
+"                    <span class=\"text-gradient\">التدريبية</span>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "<strong>At Al Omran Center, we offer you:</strong>"
+msgstr "<strong>في مركز العمران، نقدم لك:</strong>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid ""
+"<strong>Conversion Rate:</strong> Measures offer effectiveness in converting"
+" views to registrations."
+msgstr ""
+"<strong>معدل التحويل:</strong> يقيس فعالية العرض في تحويل المشاهدات إلى "
+"تسجيلات."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid ""
+"<strong>Cookie Duration:</strong> Number of days before showing Pop-up again"
+" to the same visitor"
+msgstr ""
+"<strong>مدة الكوكيز:</strong> عدد الأيام قبل إظهار النافذة المنبثقة مرة أخرى"
+" لنفس الزائر"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid ""
+"<strong>Delay:</strong> Number of seconds before showing Pop-up when "
+"entering the page"
+msgstr ""
+"<strong>التأخير:</strong> عدد الثواني قبل إظهار النافذة المنبثقة عند الدخول "
+"إلى الصفحة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid ""
+"<strong>Exit Intent:</strong> Show Pop-up when visitor tries to leave the "
+"page"
+msgstr ""
+"<strong>نية الخروج:</strong> إظهار النافذة المنبثقة عندما يحاول الزائر "
+"مغادرة الصفحة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "<strong>Note:</strong>"
+msgstr "<strong>ملاحظة:</strong>"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "Abu Dhabi"
+msgstr "أبوظبي"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "Accredited"
+msgstr "معتمد"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Accredited Certificates"
+msgstr "شهادات معتمد"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__active
+#: model:ir.model.fields.selection,name:alomran_theme.selection__popup_offer__state__active
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_search
+msgid "Active"
+msgstr "نشط"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Additional Information"
+msgstr "معلومات إضافية"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__subtitle_ar
+msgid "Additional text below the title"
+msgstr "نص إضافي تحت العنوان"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid "Address"
+msgstr "العنوان"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "Advanced Excel Training Program"
+msgstr "برنامج تدريب إكسيل المتقدم"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"Advanced program combining pedagogical skills and leadership skills in "
+"managing kindergarten institutions."
+msgstr ""
+"برنامج متقدم يجمع بين المهارات التربوية ومهارات القيادة في إدارة مؤسسات رياض"
+" الأطفال."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"Advanced program for developing leadership and administrative skills for "
+"educational institution managers."
+msgstr ""
+"برنامج متقدم لتطوير مهارات القيادة والإدارة لمديري المؤسسات التعليمية."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Advanced programs meeting market requirements"
+msgstr "برامج متقدمة تلبي متطلبات السوق"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "Al Ain"
+msgstr "العين"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "Al Ain - Dubai - Abu Dhabi - Ras Al Khaimah"
+msgstr "العين - دبي - أبوظبي - رأس الخيمة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Al Ain Branch"
+msgstr "فرع العين"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Al Omran Center"
+msgstr "مركز العمران"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "Al Omran Training &amp; Development Center"
+msgstr "مركز العمران للتدريب والتطوير"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "Al Omran Training and Development Center"
+msgstr "مركز العمران للتدريب والتطوير"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"Al Omran Training and Development Center aims to enable individuals and "
+"institutions to achieve their full potential, through comprehensive training"
+" programs that contribute to skill development, efficiency enhancement, and "
+"strengthening competitive ability in the local and regional job market."
+msgstr ""
+"يهدف مركز العمران للتدريب والتطوير إلى تمكين الأفراد والمؤسسات من تحقيق أقصى"
+" إمكاناتهم، من خلال برامج تدريبية شاملة تساهم في تطوير المهارات وتعزيز "
+"الكفاءة، وتقوية القدرة التنافسية في سوق العمل المحلي والإقليمي."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"Al Omran Training and Development Center is one of the leading centers in "
+"the United Arab Emirates in providing specialized and diverse training "
+"programs. The center aims to develop human competencies through high-quality"
+" professional courses in management, technology, languages, human "
+"development, and professional courses."
+msgstr ""
+"مركز العمران للتدريب والتطوير هو أحد المراكز الرائدة في دولة الإمارات "
+"العربية المتحدة في تقديم برامج تدريبية متخصصة ومتنوعة. يهدف المركز إلى تطوير"
+" الكفاءات البشرية من خلال دورات مهنية عالية الجودة في الإدارة والتقنية "
+"واللغات والتنمية البشرية والدورات المهنية."
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__lead_ids
+msgid "All Leads from this offer"
+msgstr "جميع العملاء المهتمين من هذا العرض"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Analysis"
+msgstr "التحليل"
+
+#. module: alomran_theme
+#: model:ir.ui.menu,name:alomran_theme.menu_popup_analytics
+msgid "Analytics"
+msgstr "التحليلات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Analytics & Performance"
+msgstr "التحليلات والأداء"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "And More..."
+msgstr "والمزيد..."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "Answers to Most Common Questions"
+msgstr "إجابات على الأسئلة الأكثر شيوعاً"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Arabic"
+msgstr "العربية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Arabic Text"
+msgstr "النص العربي"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "Artificial Intelligence Training Program"
+msgstr "برنامج تدريب الذكاء الاصطناعي"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"At Al Omran Training and Development Center, we are committed to providing "
+"high-quality training solutions that meet the aspirations of individuals, "
+"government and private entities, through elite certified experts and "
+"trainers, using the latest educational methods and techniques, enhancing "
+"trainees' competencies and helping achieve their professional and "
+"developmental goals."
+msgstr ""
+"في مركز العمران للتدريب والتطوير، نلتزم بتقديم حلول تدريبية عالية الجودة "
+"تلبي تطلعات الأفراد والجهات الحكومية والخاصة، من خلال نخبة من الخبراء "
+"والمدربين المعتمدين، باستخدام أحدث الأساليب والتقنيات التعليمية، وتعزيز "
+"كفاءات المتدربين والمساعدة في تحقيق أهدافهم المهنية والتنموية."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"At Al Omran Training and Development Center, we aspire to be a beacon of "
+"excellence in developing human competencies in the UAE, through innovative "
+"and accredited training programs that meet the needs of individuals and "
+"institutions, contributing to building a knowledge-based society capable of "
+"meeting future challenges."
+msgstr ""
+"في مركز العمران للتدريب والتطوير، نطمح بأن نكون منارة للتميز في تطوير "
+"الكفاءات البشرية في الإمارات، من خلال برامج تدريبية مبتكرة ومعتمدة تلبي "
+"احتياجات الأفراد والمؤسسات، وتساهم في بناء مجتمع معرفي قادر على مواجهة "
+"التحديات المستقبلية."
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.contact_success
+msgid "Back to Home"
+msgstr "العودة إلى الرئيسية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Badge (Arabic)"
+msgstr "الشارة (عربي)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Badge (English)"
+msgstr "الشارة (إنجليزي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__badge_color
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Badge Color"
+msgstr "لون الشارة"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__badge_text
+msgid "Badge Text"
+msgstr "نص الشارة"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__badge_text_ar
+msgid "Badge Text (Arabic)"
+msgstr "نص الشارة (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__badge_text_en
+msgid "Badge Text (English)"
+msgstr "نص الشارة (إنجليزي)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Basic Settings"
+msgstr "الإعدادات الأساسية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"Beautiful and easy to learn language - ideal for travel and work in Turkey."
+msgstr "لغة جميلة وسهلة التعلم - مثالية للسفر والعمل في تركيا."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Book 2 courses and get the 3rd FREE!"
+msgstr "احجز دورتين واحصل على الثالثة مجاناً!"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "Branch *"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Branches in UAE"
+msgstr "فروع في الإمارات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Building competencies capable of competition"
+msgstr "بناء كفاءات قادرة على المنافسة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Buttons"
+msgstr "الأزرار"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Buy 2 Get 1 FREE!"
+msgstr "اشترِ 2 واحصل على 1 مجاناً!"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_search
+msgid "Buy X Get Y"
+msgstr "اشترِ X واحصل على Y"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__popup_offer__offer_type__buy_x_get_y
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Buy X Get Y Free"
+msgstr "اشترِ X واحصل على Y مجاناً"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Center Accredited by Official UAE Authorities"
+msgstr "مركز معتمد من الجهات الرسمية في الإمارات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "Certified E-Trainer"
+msgstr "مدرب إلكتروني معتمد"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "Certified Management Director in Modern Leadership"
+msgstr "مدير إدارة معتمد في القيادة الحديثة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Certified Trainers"
+msgstr "مدربون معتمدون"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "Chinese Language"
+msgstr "اللغة الصينية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "Choose Your Tech Field"
+msgstr "اختر مجالك التقني"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid "Choose Your Training Field"
+msgstr "اختر مجالك التدريبي"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Choose from 12 internationally accredited specialized training fields"
+msgstr "اختر من بين 12 مجال تدريبي متخصص معتمد دولياً"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "Choose the Language You Want to Learn"
+msgstr "اختر اللغة التي تريد تعلمها"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "Choose the Nearest Branch"
+msgstr "اختر الفرع الأقرب"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "Choose the Right Program for You"
+msgstr "اختر البرنامج المناسب لك"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid "City"
+msgstr "المدينة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "Click on a branch to view details"
+msgstr "اضغط على الفرع لؤوية التفاصيل"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_modal
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__close_btn_ar
+msgid "Close Btn Ar"
+msgstr "زر الإغلاق (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__close_btn_en
+msgid "Close Btn En"
+msgstr "زر الإغلاق (إنجليزي)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "Comprehensive Teacher Development Program"
+msgstr "برنامج تطوير المعلم الشامل"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"Comprehensive courses from beginner to advanced focusing on conversation and"
+" writing."
+msgstr "دورات شاملة من المبتدئ إلى المتقدم تركز على المحادثة والكتابة."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "Comprehensive preparation to achieve a high score in IELTS exam."
+msgstr "تحضير شامل لتحقيق درجة عالية في امتحان IELTS."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"Comprehensive program for preparing and qualifying new teachers with "
+"essential pedagogical and administrative skills."
+msgstr ""
+"برنامج شامل لإعداد وتأهيل المعلمين الجدد بالمهارات التربوية والإدارية "
+"الأساسية."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid "Comprehensive training programs with accredited certificates"
+msgstr "برامج تدريبية شاملة مع شهادات معتمدة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "Computer Applications Training Program"
+msgstr "برنامج تدريب تطبيقات الحاسوب"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "Computer Networking Training Program"
+msgstr "برنامج تدريب شبكات الحاسوب"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__crm_lead__x_source_type__contact
+msgid "Contact Form"
+msgstr "نموذج الاتصال"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "Contact Information"
+msgstr "معلومات الاتصال"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Content"
+msgstr "المحتوى"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Continuous Development"
+msgstr "التطوير المستمر"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid "Continuous Support"
+msgstr "دعم مستمر"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Conversion"
+msgstr "التحويل"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__conversion_rate
+msgid "Conversion Rate %"
+msgstr "معدل التحويل %"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__cookie_duration
+msgid "Cookie Duration (Days)"
+msgstr "مدة الكوكيز (أيام)"
+
+#. module: alomran_theme
+#. odoo-python
+#: code:addons/alomran_theme/models/popup_offer.py:0
+msgid "Cookie duration must be at least 1 day!"
+msgstr "يجب أن تكون مدة الكوكيز يومًا واحدًا على الأقل!"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__countdown_days
+msgid "Countdown Days"
+msgstr "أيام العد التنازلي"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Countdown Labels"
+msgstr "تسميات العد التنازلي"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Countdown Timer"
+msgstr "عداد التنازلي"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__countdown_title_ar
+msgid "Countdown Title Ar"
+msgstr "عنوان العد التنازلي (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__countdown_title_en
+msgid "Countdown Title En"
+msgstr "عنوان العد التنازلي (إنجليزي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_crm_lead__x_course_interest
+msgid "Course Interest"
+msgstr "الدورة المهتم بها"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__crm_lead__x_source_type__course
+#: model_terms:ir.ui.view,arch_db:alomran_theme.crm_lead_view_search_alomran
+msgid "Course Registration"
+msgstr "تسجيل الدورة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"Course duration varies depending on specialization and level, ranging from "
+"one week to several months. You can inquire about specific course duration "
+"when contacting us."
+msgstr ""
+"تختلف مدة الدورة حسب التخصص والمستوى، وتتراوح من أسبوع واحد إلى عدة أشهر. "
+"يمكنك الاستفسار عن مدة دورة محددة عند الاتصال بنا."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Courses in All Languages"
+msgstr "دورات في جميع اللغات"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__buy_quantity
+msgid "Courses to Buy"
+msgstr "الدورات المطلوب شراؤها"
+
+#. module: alomran_theme
+#: model_terms:ir.actions.act_window,help:alomran_theme.popup_offer_action
+msgid "Create a new Pop-up offer"
+msgstr "إنشاء عرض نافذة منبثقة جديدة"
+
+#. module: alomran_theme
+#: model_terms:ir.actions.act_window,help:alomran_theme.popup_offer_action
+msgid ""
+"Create dynamic offers with automatic scheduling and performance tracking.<br>\n"
+"                Active offers will be automatically displayed to visitors based on the schedule.<br>\n"
+"                <strong>Multi-language support:</strong> Content will be displayed based on website language."
+msgstr ""
+"أنشئ عروضًا ديناميكية مع جدولة تلقائية وتتبع الأداء.<br>\n"
+"                سيتم عرض العروض النشطة تلقائيًا للزوار بناءً على الجدول الزمني.<br>\n"
+"                <strong>دعم متعدد اللغات:</strong> سيتم عرض المحتوى بناءً على لغة الموقع."
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__popup_offer__offer_type__custom
+msgid "Custom Offer"
+msgstr "عرض مخصص"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_crm_lead__x_preferred_branch
+msgid "Customer preferred branch"
+msgstr "الفرع المفضل للعميل"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "Cybersecurity Training Program"
+msgstr "برنامج تدريب الأمن السيبراني"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__days_label_ar
+msgid "Days Label Ar"
+msgstr "تسمية الأيام (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__days_label_en
+msgid "Days Label En"
+msgstr "تسمية الأيام (إنجليزي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__cookie_duration
+msgid "Days before showing Pop-up again to same visitor"
+msgstr "الأيام قبل إظهار النافذة المنبثقة مرة أخرى لنفس الزائر"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__countdown_days
+msgid "Days remaining (calculated automatically)"
+msgstr "الأيام المتبقية (محسوبة تلقائياً)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__active
+msgid "Deactivating stops the offer immediately"
+msgstr "إلغاء التفعيل يوقف العرض فوراً"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__delay_seconds
+msgid "Delay (Seconds)"
+msgstr "التأخير (ثواني)"
+
+#. module: alomran_theme
+#. odoo-python
+#: code:addons/alomran_theme/models/popup_offer.py:0
+msgid "Delay cannot be negative!"
+msgstr "لا يمكن أن يكون التأخير سالباً!"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__description_ar
+msgid "Description (Arabic)"
+msgstr "الوصف (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__description_en
+msgid "Description (English)"
+msgstr "الوصف (إنجليزي)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Design & Appearance"
+msgstr "التصميم والمظهر"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__description_ar
+msgid "Detailed offer description"
+msgstr "وصف مفصل للعرض"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid ""
+"Develop your skills with our accredited training programs and certified "
+"trainers"
+msgstr "طور مهاراتك مع برامجنا التدريبية المعتمدة ومدربينا المعتمدين"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "Digital Transformation &amp; File Management"
+msgstr "التحول الرقمي وإدارة الملفات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_search
+msgid "Discount %"
+msgstr "الخصم %"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Discount Settings"
+msgstr "إعدادات الخصم"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__discount_type
+msgid "Discount Type"
+msgstr "نوع الخصم"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__discount_value
+msgid "Discount Value"
+msgstr "قيمة الخصم"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Discover more features"
+msgstr "اكتشف المزيد من المميزات"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__show_countdown
+msgid "Display countdown timer in Pop-up"
+msgstr "عرض عداد التنازلي في النافذة المنبثقة"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__popup_offer__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "Dubai"
+msgstr "دبي"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "Email *"
+msgstr "البريد الإلكتروني *"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__end_date
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: alomran_theme
+#. odoo-python
+#: code:addons/alomran_theme/models/popup_offer.py:0
+msgid "End date must be after start date!"
+msgstr "يجب أن يكون تاريخ الانتهاء بعد تاريخ البداية!"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "English"
+msgstr "الإنجليزية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "English Language"
+msgstr "اللغة الإنجليزية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "English Text"
+msgstr "النص الإنجليزي"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "Enter your full name"
+msgstr "أدخل اسمك الكامل"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__popup_offer__state__expired
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_search
+msgid "Expired"
+msgstr "منتهي الصلاحية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "Facebook"
+msgstr "فيسبوك"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Field Labels"
+msgstr "تسميات الحقول"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "Fill out the form below and we will contact you as soon as possible"
+msgstr "املأ النموذج أدناه وسنتصل بك في أقرب وقت ممكن"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid "Find Us on the Map"
+msgstr "اعثر علينا على الخريطة"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__popup_offer__discount_type__fixed
+msgid "Fixed Amount"
+msgstr "مبلغ ثابت"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__popup_offer__offer_type__discount_fixed
+msgid "Fixed Amount Discount"
+msgstr "خصم مبلغ ثابت"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid "Follow-up after graduation"
+msgstr "متابعة بعد التخرج"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثال fa-tasks"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "For Training &amp; Development"
+msgstr "للتدريب والتطوير"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Form Section"
+msgstr "قسم النموذج"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__form_subtitle_ar
+msgid "Form Subtitle (Arabic)"
+msgstr "العنوان الفرعي للنموذج (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__form_subtitle_en
+msgid "Form Subtitle (English)"
+msgstr "العنوان الفرعي للنموذج (إنجليزي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__form_title_ar
+msgid "Form Title (Arabic)"
+msgstr "عنوان النموذج (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__form_title_en
+msgid "Form Title (English)"
+msgstr "عنوان النموذج (إنجليزي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__popup_offer__offer_type__free_consultation
+msgid "Free Consultation"
+msgstr "استشارة مجانية"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__get_quantity
+msgid "Free Courses"
+msgstr "الدورات المجانية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "French Language"
+msgstr "اللغة الفرنسية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.crm_lead_view_search_alomran
+msgid "From Pop-up"
+msgstr "من النافذة المنبثقة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.crm_lead_view_search_alomran
+msgid "From Website"
+msgstr "من الموقع الإلكتروني"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "Full Name *"
+msgstr "الاسم الكامل *"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "General English"
+msgstr "الإنجليزية العامة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "General English for daily use in travel, work and life."
+msgstr "الإنجليزية العامة للاستخدام اليومي في السفر والعمل والحياة."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "Geographic Distribution"
+msgstr "التوزيع الجغرافي"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid "Get in Touch"
+msgstr "تواصل معنا"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Government Entities Trained"
+msgstr "جهات حكومية تم تدريبها"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "Have a Question?"
+msgstr "هل لديك سؤال؟"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__badge_color
+msgid "Hex color code (e.g., #ff6b6b)"
+msgstr "كود اللون الست عشري (مثال: #ff6b6b)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "High Quality"
+msgstr "جودة عالية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Highly qualified specialized trainers"
+msgstr "مدربون متخصصون مؤهلون تأهيلاً عالياً"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__hours_label_ar
+msgid "Hours Label Ar"
+msgstr "تسمية الساعات (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__hours_label_en
+msgid "Hours Label En"
+msgstr "تسمية الساعات (إنجليزي)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "How to Reach Us?"
+msgstr "كيف تصل إلينا؟"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "ICDL - International Computer Driving License"
+msgstr "ICDL - الرخصة الدولية لقيادة الحاسوب"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "IELTS Preparation"
+msgstr "تحضير IELTS"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "IT &amp; Programming"
+msgstr "تقنية المعلومات والبرمجة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "IT Training Programs"
+msgstr "برامج تدريب تقنية المعلومات"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__message_has_error
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فإن بعض الرسائل لديها خطأ في التسليم."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Innovation &amp; Development"
+msgstr "الابتكار والتطوير"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "Instagram"
+msgstr "انستغرام"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Integrity &amp; Transparency"
+msgstr "النزاهة والشفافية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"Intensive preparation for TOEFL exam for studying in American universities."
+msgstr "تحضير مكثف لامتحان TOEFL للدراسة في الجامعات الأمريكية."
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__name
+msgid "Internal offer name (e.g., Ramadan Offer 2026)"
+msgstr "اسم العرض الداخلي (مثال: عرض رمضان 2026)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__name_en
+msgid "Internal offer name in English"
+msgstr "اسم العرض الداخلي بالإنجليزية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "International training standards"
+msgstr "معايير تدريب دولية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid "Internationally certified experts"
+msgstr "خبراء معتمدون دولياً"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "Italian Language"
+msgstr "اللغة الإيطالية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Join thousands of successful trainees and unleash your potential"
+msgstr "انضم إلى آلاف المتدربين الناجحين وأطلق العنان لإمكانياتك"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"Join thousands of successful trainees who chose Al Omran Center to achieve "
+"their professional dreams"
+msgstr ""
+"انضم إلى آلاف المتدربين الناجحين الذين اختاروا مركز العمران لتحقيق أحلامهم "
+"المهنية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "Korean Language"
+msgstr "اللغة الكورية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "Language Training Courses"
+msgstr "دورات تدريب اللغات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"Language of K-Drama and K-Pop - enjoy learning it with amazing culture."
+msgstr "لغة الدراما الكورية والكي-بوب - استمتع بتعلمها مع ثقافة مذهلة."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"Language of science and literature - important for business and "
+"international relations."
+msgstr "لغة العلم والأدب - مهمة للأعمال والعلاقات الدولية."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Largest center network in the country"
+msgstr "أكبر شبكة مراكز في الدولة"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__lead_count
+msgid "Lead Count"
+msgstr "عدد العملاء المهتمين"
+
+#. module: alomran_theme
+#: model:ir.model,name:alomran_theme.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "عميل مهتم/فرصة "
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Leaders in Shaping Tomorrow's Leaders"
+msgstr "رواد في تشكيل قادة الغد"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Leads"
+msgstr "العملاء المهتمون"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "Learn a New Language Now"
+msgstr "تعلم لغة جديدة الآن"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"Learn languages with professional trainers | Accredited certificates | "
+"Multiple levels"
+msgstr "تعلم اللغات مع مدربين محترفين | شهادات معتمدة | مستويات متعددة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"Learn the language of Molière with focus on correct pronunciation and French"
+" culture."
+msgstr "تعلم لغة موليير مع التركيز على النطق الصحيح والثقافة الفرنسية."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"Learn the latest strategies for effectively integrating students with "
+"determination in regular educational environments."
+msgstr ""
+"تعلم أحدث استراتيجيات دمج طلاب أصحاب الهمم بشكل فعال في البيئات التعليمية "
+"العادية."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"Learn to design and deliver professional e-learning courses using the latest"
+" technologies."
+msgstr ""
+"تعلم تصميم وتقديم دورات التعليم الإلكتروني المهنية باستخدام أحدث التقنيات."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Limited Time Offer!"
+msgstr "عرض محدود الوقت!"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Localized Texts"
+msgstr "النصوص المترجمة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Locally and internationally accredited certificates"
+msgstr "شهادات معتمدة محلياً ودولياً"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid "Location on Map"
+msgstr "الموقع على خرائط غوغل"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid ""
+"Made with <i class=\"fa fa-heart text-danger\"/> in the United Arab Emirates"
+msgstr "صنع بـ <i class=\"fa fa-heart text-danger\"/> في الإمارات العربية المتحدة"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__title_ar
+msgid "Main offer title in Arabic"
+msgstr "العنوان الرئيسي للعرض بالعربية"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__title_en
+msgid "Main offer title in English"
+msgstr "العنوان الرئيسي للعرض بالإنجليزية"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__crm_lead__x_source_type__manual
+msgid "Manual Entry"
+msgstr "إدخال يدوي"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "Message *"
+msgstr "الرسالة *"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__mins_label_ar
+msgid "Mins Label Ar"
+msgstr "تسمية الدقائق (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__mins_label_en
+msgid "Mins Label En"
+msgstr "تسمية الدقائق (إنجليزي)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "Most spoken language in the world - open new business horizons."
+msgstr "أكثر لغة تحدثاً في العالم - افتح آفاقاً جديدة للأعمال."
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Name Field (Arabic)"
+msgstr "حقل الاسم (عربي)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Name Field (English)"
+msgstr "حقل الاسم (إنجليزي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__name_label_ar
+msgid "Name Label Ar"
+msgstr "تسمية الاسم (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__name_label_en
+msgid "Name Label En"
+msgstr "تسمية الاسم (إنجليزي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__name_placeholder_ar
+msgid "Name Placeholder Ar"
+msgstr "نص توضيحي للاسم (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__name_placeholder_en
+msgid "Name Placeholder En"
+msgstr "نص توضيحي للاسم (إنجليزي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_crm_lead__x_course_interest
+msgid "Name of the course the customer is interested in"
+msgstr "اسم الدورة التي يهتم بها العميل"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "حدث التقويم للنشاط التالي"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__lead_count
+msgid "Number of Leads from this offer"
+msgstr "عدد العملاء المهتمين من هذا العرض"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__buy_quantity
+msgid "Number of courses that must be purchased"
+msgstr "عدد الدورات التي يجب شراؤها"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__get_quantity
+msgid "Number of free courses"
+msgstr "عدد الدورات المجانية"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__view_count
+msgid "Number of times Pop-up was displayed"
+msgstr "عدد مرات عرض النافذة المنبثقة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Numbers"
+msgstr "الأرقام"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Offer Details"
+msgstr "تفاصيل العرض"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__name
+msgid "Offer Name"
+msgstr "اسم العرض"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__name_en
+msgid "Offer Name (English)"
+msgstr "اسم العرض (إنجليزي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__offer_type
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_search
+msgid "Offer Type"
+msgstr "نوع العرض"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Offer Type Settings"
+msgstr "إعدادات نوع العرض"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Offer details..."
+msgstr "تفاصيل العرض..."
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__end_date
+msgid "Offer end date and time (leave empty for unlimited offers)"
+msgstr "تاريخ ووقت انتهاء العرض (اتركه فارغاً للعروض غير المحدودة)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__sequence
+msgid "Offer priority (lower number = higher priority)"
+msgstr "أولوية العرض (رقم أقل = أولوية أعلى)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__start_date
+msgid "Offer start date and time"
+msgstr "تاريخ ووقت بدء العرض"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__state
+msgid "Offer status (calculated automatically)"
+msgstr "حالة العرض (محسوبة تلقائياً)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__terms_ar
+msgid "Offer terms and conditions"
+msgstr "شروط وأحكام العرض"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__offer_type
+msgid "Offer type determines how it is displayed in the Pop-up"
+msgstr "نوع العرض يحدد كيفية عرضه في النافذة المنبثقة"
+
+#. module: alomran_theme
+#: model:ir.ui.menu,name:alomran_theme.menu_popup_offers
+msgid "Offers"
+msgstr "العروض"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid "Open Google Maps"
+msgstr "افتح خرائط غوغل"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__crm_lead__x_source_type__other
+msgid "Other"
+msgstr "أخرى"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "Our Courses"
+msgstr "دوراتنا"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Our Distinguished Training Programs"
+msgstr "برامجنا التدريبية المتميزة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Our Goals"
+msgstr "أهدافنا"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "Our Locations"
+msgstr "مواقعنا"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Our Mission"
+msgstr "رسالتنا"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Our Strategic Goals"
+msgstr "أهدافنا الاستراتيجية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Our Vision"
+msgstr "رؤيتنا"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "Our team is ready to answer all your questions"
+msgstr "فريقنا جاهز للإجابة على جميع أسئلتك"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"Our team is ready to answer all your questions and help you choose the right"
+" program"
+msgstr ""
+"فريقنا جاهز للإجابة على جميع أسئلتك ومساعدتك في اختيار البرنامج المناسب"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "Our team is ready to help you around the clock"
+msgstr "فريقنا جاهز لمساعدتك على مدار الساعة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "Our team is ready to help you choose the right language and level"
+msgstr "فريقنا جاهز لمساعدتك في اختيار اللغة والمستوى المناسبين"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid ""
+"Our team is ready to help you choose the right program for your tech career"
+msgstr "فريقنا جاهز لمساعدتك في اختيار البرنامج المناسب لمستقبلك التقني"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__popup_offer__state__paused
+msgid "Paused"
+msgstr "متوقف مؤقتاً"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__popup_offer__discount_type__percentage
+msgid "Percentage"
+msgstr "النسبة المئوية"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__popup_offer__offer_type__discount_percentage
+msgid "Percentage Discount"
+msgstr "خصم بنسبة مئوية"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__conversion_rate
+msgid "Percentage of views converted to leads"
+msgstr "نسبة المشاهدات المتحولة إلى عملاء مهتمين"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__discount_value
+msgid "Percentage or fixed amount"
+msgstr "نسبة مئوية أو مبلغ ثابت"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "Phone"
+msgstr "الهاتف"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Phone Field (Arabic)"
+msgstr "حقل الهاتف (عربي)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Phone Field (English)"
+msgstr "حقل الهاتف (إنجليزي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__phone_label_ar
+msgid "Phone Label Ar"
+msgstr "تسمية الهاتف (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__phone_label_en
+msgid "Phone Label En"
+msgstr "تسمية الهاتف (إنجليزي)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "Phone Number *"
+msgstr "رقم الهاتف *"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__phone_placeholder_ar
+msgid "Phone Placeholder Ar"
+msgstr "نص توضيحي للهاتف (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__phone_placeholder_en
+msgid "Phone Placeholder En"
+msgstr "نص توضيحي للهاتف (إنجليزي)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Plus specialized professional courses"
+msgstr "بالإضافة إلى دورات مهنية متخصصة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Pop-up Behavior"
+msgstr "سلوك النافذة المنبثقة"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_crm_lead__x_popup_offer_id
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Pop-up Offer"
+msgstr "عرض النافذة المنبثقة"
+
+#. module: alomran_theme
+#: model:ir.actions.act_window,name:alomran_theme.popup_offer_action
+#: model:ir.model,name:alomran_theme.model_popup_offer
+#: model:ir.ui.menu,name:alomran_theme.menu_popup_offers_root
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_list
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_search
+msgid "Pop-up Offers"
+msgstr "عروض النوافذ المنبثقة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Pop-up Settings"
+msgstr "إعدادات النافذة المنبثقة"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__crm_lead__x_source_type__popup
+msgid "Popup Offer"
+msgstr "عرض النافذة المنبثقة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid "Practical Application"
+msgstr "تطبيق عملي"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_crm_lead__x_preferred_branch
+msgid "Preferred Branch"
+msgstr "الفرع المفضل"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Principles We Commit to at Every Step"
+msgstr "المبادئ التي نلتزم بها في كل خطوة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Professional Courses"
+msgstr "دورات مهنية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Professional Empowerment"
+msgstr "التمكين المهني"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "Professional Program in Early Childhood and Leadership"
+msgstr "برنامج مهني في الطفولة المبكرة والقيادة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "Professional Program in Effective Inclusion Strategies"
+msgstr "برنامج مهني في استراتيجيات الدمج الفعال"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "Professional Teacher Preparation Program"
+msgstr "برنامج إعداد المعلم المهني"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "Professional Teacher Training"
+msgstr "تدريب المعلمين المهني"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid "Professional Trainers"
+msgstr "مدربون محترفون"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "Professional Young Children Care Education Program"
+msgstr "برنامج تعليم رعاية الأطفال الصغار المهني"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "Programming Training Program"
+msgstr "برنامج تدريب البرمجة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid ""
+"Programming | Networking | Cybersecurity | AI | Accredited Certificates"
+msgstr "برمجة | شبكات | أمن سيبراني | ذكاء اصطناعي | شهادات معتمدة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Quality &amp; Excellence"
+msgstr "الجودة والتميز"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "Quick Links"
+msgstr "روابط سريعة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "Ras Al Khaimah"
+msgstr "رأس الخيمة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Ready to Start Your Training Journey?"
+msgstr "مستعد لبدء رحلتك التدريبية؟"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid "Ready to Start?"
+msgstr "جاهز لتبدأ؟"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid "Recognized locally and internationally"
+msgstr "معترف بها محلياً ودولياً"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_crm_lead__x_registration_date
+msgid "Registration Date"
+msgstr "تاريخ التسجيل"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.crm_lead_view_search_alomran
+msgid "Registration Source"
+msgstr "مصدر التسجيل"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_crm_lead__x_registration_date
+msgid "Registration date and time"
+msgstr "تاريخ ووقت التسجيل"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__lead_ids
+msgid "Registrations"
+msgstr "التسجيلات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "Request Submitted Successfully! 🎉"
+msgstr "تم تقديم طلبك بنجاح! 🎉"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "Robotics Training Program"
+msgstr "برنامج تدريب الروبوتات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "Russian Language"
+msgstr "اللغة الروسية"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Save 33% on total cost"
+msgstr "وفر 33% من التكلفة الإجمالية"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__popup_offer__state__scheduled
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_search
+msgid "Scheduled"
+msgstr "مجدول"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Scheduling"
+msgstr "الجدولة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"Second most spoken language in the world - learn it easily and enjoyably."
+msgstr "ثاني أكثر لغة تحدثاً في العالم - تعلمها بسهولة ومتعة."
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__delay_seconds
+msgid "Seconds to wait before showing Pop-up"
+msgstr "الثواني للانتظار قبل إظهار النافذة المنبثقة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "Send Us a Message"
+msgstr "أرسل لنا رسالة"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "Shaping Tomorrow's Leaders Since 2010"
+msgstr "نصنع قادة الغد منذ 2010"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Shaping Tomorrow's Leaders Through Excellence in Training"
+msgstr "نصنع قادة الغد من خلال التميز في التدريب"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Sharjah Branch"
+msgstr "فرع الشارقة"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__show_countdown
+msgid "Show Countdown"
+msgstr "عرض العد التنازلي"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__exit_intent
+msgid "Show Pop-up when user tries to leave the page"
+msgstr "إظهار النافذة المنبثقة عندما يحاول المستخدم مغادرة الصفحة"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__exit_intent
+msgid "Show on Exit Intent"
+msgstr "الإظهار عند نية الخروج"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Social Proof & Trust"
+msgstr "إثبات اجتماعي وثقة"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__social_proof_ar
+msgid "Social Proof Ar"
+msgstr "الإثبات الاجتماعي (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__social_proof_en
+msgid "Social Proof En"
+msgstr "الإثبات الاجتماعي (إنجليزي)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.contact_error
+msgid "Sorry, An Error Occurred!"
+msgstr "عذراً، حدث خطأ!"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_crm_lead__x_source_type
+msgid "Source Type"
+msgstr "نوع المصدر"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_crm_lead__x_source_type_display
+msgid "Source Type Display"
+msgstr "عرض نوع المصدر"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "Spanish Language"
+msgstr "اللغة الإسبانية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Specialized Trainers"
+msgstr "مدربون متخصصون"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"Specialized program in caring for and educating children aged 0-3 years, "
+"focusing on psychological and physical development."
+msgstr ""
+"برنامج متخصص في رعاية وتعليم الأطفال من عمر 0-3 سنوات، مع التركيز على النمو "
+"النفسي والجسدي."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"Specialized programs for developing educational competencies and modern "
+"pedagogical skills"
+msgstr "برامج متخصصة لتطوير الكفايات التربوية والمهارات التدريسية الحديثة"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__start_date
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_search
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Start Your Journey With Us Today"
+msgstr "ابدأ رحلتك معنا اليوم"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid "Start Your Tech Career"
+msgstr "ابدأ مسيرتك التقنية"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__state
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق قد مضى\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "Still Have Questions?"
+msgstr "هل لا تزال لديك أسئلة؟"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Strategic Objectives"
+msgstr "الأهداف الاستراتيجية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "Subject *"
+msgstr "الموضوع *"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__submit_btn_ar
+msgid "Submit Btn Ar"
+msgstr "زر الإرسال (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__submit_btn_en
+msgid "Submit Btn En"
+msgstr "زر الإرسال (إنجليزي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__subtitle_ar
+msgid "Subtitle (Arabic)"
+msgstr "العنوان الفرعي (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__subtitle_en
+msgid "Subtitle (English)"
+msgstr "العنوان الفرعي (إنجليزي)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Success Message"
+msgstr "رسالة النجاح"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__success_message_ar
+msgid "Success Message Ar"
+msgstr "رسالة النجاح (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__success_message_en
+msgid "Success Message En"
+msgstr "رسالة النجاح (إنجليزي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__success_title_ar
+msgid "Success Title Ar"
+msgstr "عنوان النجاح (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__success_title_en
+msgid "Success Title En"
+msgstr "عنوان النجاح (إنجليزي)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Successful Trainees"
+msgstr "متدربون ناجحون"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "TOEFL Preparation"
+msgstr "تحضير TOEFL"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Teamwork"
+msgstr "العمل الجماعي"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Terms & Conditions"
+msgstr "الشروط والأحكام"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__terms_ar
+msgid "Terms & Conditions (Arabic)"
+msgstr "الشروط والأحكام (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__terms_en
+msgid "Terms & Conditions (English)"
+msgstr "الشروط والأحكام (إنجليزي)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Terms and Conditions in English..."
+msgstr "الشروط والأحكام باللغة الإنجليزية..."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Terms and conditions in Arabic..."
+msgstr "الشروط والأحكام باللغة العربية..."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Text Content"
+msgstr "المحتوى النصي"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__badge_text_ar
+msgid "Text displayed on the offer badge in Arabic"
+msgstr "النص المعروض على شارة العرض بالعربية"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__badge_text_en
+msgid "Text displayed on the offer badge in English"
+msgstr "النص المعروض على شارة العرض بالإنجليزية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.contact_success
+msgid "Thank You"
+msgstr "شكراً لك"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"Thank you! Our team will contact you within <strong>24 hours</strong> to "
+"confirm registration."
+msgstr ""
+"شكراً لك! سيتصل بك فريقنا خلال <strong>24 ساعة</strong> لتأكيد التسجيل."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid ""
+"Thank you! Our team will contact you within <strong>24 hours</strong> to "
+"provide all details."
+msgstr ""
+"شكراً لك! سيتصل بك فريقنا خلال <strong>24 ساعة</strong> لتقديم جميع "
+"التفاصيل."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "The Foundation Upon Which We Build Our Success"
+msgstr "الأساس الذي نبني عليه نجاحنا"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "The Path to Excellence and Leadership"
+msgstr "الطريق إلى التميز والقيادة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "The Values That Guide Our Work"
+msgstr "القيم التي توجه عملنا"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"The center is distinguished by an experienced training team, locally and "
+"internationally recognized programs, and a modern educational environment "
+"that supports practical and theoretical development, making it an ideal "
+"choice for individuals, government entities, and companies seeking "
+"excellence and sustainable growth."
+msgstr ""
+"يتميز المركز بفريق تدريبي ذي خبرة، وبرامج معترف بها محلياً ودولياً، وبيئة "
+"تعليمية حديثة تدعم التطوير العملي والنظري، مما يجعله الخيار الأمثل للأفراد "
+"والجهات الحكومية والشركات التي تبحث عن التميز والنمو المستدام."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "The language of art, music and food - enjoy learning it."
+msgstr "لغة الفن والموسيقى والطعام - استمتع بتعلمها."
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_crm_lead__x_popup_offer_id
+msgid "The offer through which the customer registered"
+msgstr "العرض الذي سجل من خلاله العميل"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "TikTok"
+msgstr "تيك توك"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__title_ar
+msgid "Title (Arabic)"
+msgstr "العنوان (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__title_en
+msgid "Title (English)"
+msgstr "العنوان (إنجليزي)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Towards a Better Future"
+msgstr "نحو مستقبل أفضل"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Training Programs"
+msgstr "برامج التدريب"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid "Training on real cases"
+msgstr "تدريب على حالات حقيقية"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__trust_text_ar
+msgid "Trust Text Ar"
+msgstr "نص الثقة (عربي)"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__trust_text_en
+msgid "Trust Text En"
+msgstr "نص الثقة (إنجليزي)"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.contact_error
+msgid "Try Again"
+msgstr "حاول مرة أخرى"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "Turkish Language"
+msgstr "اللغة التركية"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي المسجل."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Use {name} as placeholder for customer name"
+msgstr "استخدم {name} كعنصر نائب لاسم العميل"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Using latest educational technologies"
+msgstr "استخدام أحدث التقنيات التعليمية"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__view_count
+msgid "View Count"
+msgstr "عدد المشاهدات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "Views"
+msgstr "المشاهدات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid "Visit us at our branch or contact us for more information"
+msgstr "زرنا في افرعانا او تواصل معنا للمزيد من المعلومات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "We Are Close to You Across the UAE"
+msgstr "نحن قريبون منك في جميع أنحاء الإمارات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "We are always close to you wherever you are in the Emirates"
+msgstr "نحن دائماً قريبون منك أينما كنت في الإمارات"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"We are committed to the highest quality standards in all our training "
+"programs and services"
+msgstr "نحن ملتزمون بأعلى معايير الجودة في جميع برامجنا التدريبية وخدماتنا"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "We are happy to hear from you through any of the following methods"
+msgstr "يسعدنا التواصل معك من خلال أي من الطرق التالية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"We are here to answer all your questions and help you start your training "
+"journey"
+msgstr "نحن هنا للإجابة على جميع أسئلتك ومساعدتك في بدء رحلتك التدريبية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"We believe in continuous learning and development to achieve growth and "
+"innovation"
+msgstr "نؤمن بالتعلم والتطوير المستمر لتحقيق النمو والابتكار"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.contact_error
+msgid "We could not send your message. Please try again."
+msgstr "لم نتمكن من إرسال رسالتك. يرجى المحاولة مرة أخرى."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid ""
+"We offer a comprehensive set of professional training programs specifically "
+"designed to develop the capabilities of teachers and educational institution"
+" managers."
+msgstr ""
+"نقدم مجموعة شاملة من البرامج التدريبية المهنية المصممة خصيصاً لتطوير قدرات "
+"المعلمين ومديري المؤسسات التعليمية."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"We offer comprehensive training courses in more than 12 world languages, "
+"focusing on conversation and practical use."
+msgstr ""
+"نقدم دورات تدريبية شاملة في أكثر من 12 لغة عالمية، مع التركيز على المحادثة "
+"والاستخدام العملي."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+msgid ""
+"We offer comprehensive training programs in the latest technologies and in-"
+"demand fields in the tech job market."
+msgstr ""
+"نقدم برامج تدريبية شاملة في أحدث التقنيات والمجالات المطلوبة في سوق العمل "
+"التقني."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "We offer courses in all world languages"
+msgstr "نقدم دورات في جميع لغات العالم"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"We operate with complete transparency and commit to the highest professional"
+" integrity standards"
+msgstr "نعمل بشفافية كاملة ونتلتزم بأعلى معايير النزاهة المهنية"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"We shape tomorrow's leaders through advanced training programs,\n"
+"                                    internationally accredited certificates, and over 14 years of professional training experience."
+msgstr ""
+"نصنع قادة الغد من خلال برامج تدريبية متقدمة،\n"
+"                                    شهادات معتمدة دولياً، وأكثر من 14 سنة من الخبرة في التدريب المهني."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid ""
+"We work as one team to achieve our shared goals and our trainees' success"
+msgstr "نعمل كفريق واحد لتحقيق أهدافنا المشتركة ونجاح متدربينا"
+
+#. module: alomran_theme
+#: model:ir.model.fields.selection,name:alomran_theme.selection__crm_lead__x_source_type__website
+msgid "Website Form"
+msgstr "نموذج الموقع الإلكتروني"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.crm_lead_view_form_alomran
+msgid "Website Information"
+msgstr "معلومات الموقع الإلكتروني"
+
+#. module: alomran_theme
+#: model:ir.model.fields,field_description:alomran_theme.field_popup_offer__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: alomran_theme
+#: model:ir.actions.act_window,name:alomran_theme.crm_lead_action_website
+#: model:ir.ui.menu,name:alomran_theme.menu_crm_website_leads
+msgid "Website Registrations"
+msgstr "تسجيلات الموقع الإلكتروني"
+
+#. module: alomran_theme
+#: model:ir.model.fields,help:alomran_theme.field_popup_offer__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصالات الموقع الإلكتروني"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "WhatsApp"
+msgstr "واتساب"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.about_template
+msgid "Who We Are"
+msgstr "من نحن"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Why Choose Al Omran Center?"
+msgstr "لماذا تختار مركز العمران؟"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid "Why Choose Our Courses?"
+msgstr "لماذا تختار دوراتنا؟"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Widest Network"
+msgstr "أوسع شبكة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branch_detail_template
+msgid "Working Hours"
+msgstr "ساعات العمل"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "World Languages Courses"
+msgstr "دورات لغات العالم"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid "Write your message here..."
+msgstr "اكتب رسالتك هنا..."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Years of Experience"
+msgstr "سنوات من الخبرة"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"Yes, all our certificates are accredited by relevant authorities in the UAE "
+"and recognized locally and internationally."
+msgstr ""
+"نعم، جميع شهاداتنا معتمدة من الجهات المختصة في الإمارات ومعترف بها محلياً "
+"ودولياً."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"Yes, we offer customized training programs for companies and government "
+"entities according to their needs. Contact us for more details."
+msgstr ""
+"نعم، نقدم برامج تدريبية مخصصة للشركات والجهات الحكومية وفقاً لاحتياجاتهم. "
+"اتصل بنا للحصول على مزيد من التفاصيل."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+msgid ""
+"You can register by visiting any of our 11 branches, contacting us via phone"
+" or WhatsApp, or filling out the contact form on this page and our team will"
+" contact you to complete the registration."
+msgstr ""
+"يمكنك التسجيل بزيارة أي من فروعنا العشرة، أو الاتصال بنا عبر الهاتف أو "
+"واتساب، أو ملء نموذج الاتصال في هذه الصفحة وسيتصل بك فريقنا لإكمال التسجيل."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+msgid "Your Request Was Submitted Successfully! 🎉"
+msgstr "تم تقديم طلبك بنجاح! 🎉"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.contact_success
+msgid ""
+"Your message has been received successfully. We will contact you as soon as "
+"possible."
+msgstr "تم استلام رسالتك بنجاح. سوف نتصل بك في أقرب وقت ممكن."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid "Zakher Branch"
+msgstr "فرع زاخر"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid "alomran.td@gmail.com"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "e.g., Ramadan Offer 2026"
+msgstr "مثال: عرض رمضان 2026"
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.courses_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.custom_contact_template
+#: model_terms:ir.ui.view,arch_db:alomran_theme.it_programs_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+#: model_terms:ir.ui.view,arch_db:alomran_theme.teachers_page
+msgid "example@email.com"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+#: model_terms:ir.ui.view,arch_db:alomran_theme.layout_rtl
+msgid ""
+"© 2026 Al Omran Training &amp; Development Center. All Rights Reserved."
+msgstr "© 2026 مركز العمران للتدريب والتطوير. جميع الحقوق محفوظة."
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "© 2026 مركز العمران للتدريب والتطوير. جميع الحقوق محفوظة."
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.floating_call_button
+msgid "اتصل بنا"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.floating_call_button
+msgid "اتصل بنا الآن"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "اختر دورة لغة انجليزية أو فرنسية أو صينية"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "انستغرام"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.floating_call_button
+msgid "تواصل عبر واتساب"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "تيك توك"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid "دورات تعليم لغات وتحضير ايلتس"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "دوراتنا"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "روابط سريعة"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "صُنع بـ <i class=\"fa fa-heart text-danger\"/> في الإمارات العربية المتحدة"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid "عرض لفترة محدودة!"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "فيسبوك"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "مركز العمران للتدريب والتطوير"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid ""
+"مركز العمران للتدريب والتطوير في العين يضم أفضل معهد لغة انجليزية في العين، "
+"مع دورات انجليزي في العين على يد نخبة من المدربين المعتمدين."
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.homepage
+msgid ""
+"مركز العمران للتدريب والتطوير هو معهد تعليمي رائد ومركز تعليم لغات معتمد، "
+"يقدم أفضل البرامج التدريبية في العين والإمارات منذ عام 2010."
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"مركز العمران معهد لغات معتمد يقدم دورة لغة انجليزية، دورة لغة فرنسية، ودورة "
+"لغة صينية مع مدربين محترفين، بالإضافة إلى تعليم لغات متعددة لكل المستويات."
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "معلومات التواصل"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.branches_template
+msgid "معهد العمران في العين والإمارات"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "نصنع قادة الغد منذ 2010"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.floating_call_button
+#: model_terms:ir.ui.view,arch_db:alomran_theme.footer_rtl
+msgid "واتساب"
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.languages_page
+msgid ""
+"يقدم مركز العمران دورة ايلتس ودورة توفل معتمدتين، مع تحضير لاختبار الايلتس "
+"واختبار ايلتس تجريبي لمساعدتك على تحقيق أعلى الدرجات."
+msgstr ""
+
+#. module: alomran_theme
+#: model_terms:ir.ui.view,arch_db:alomran_theme.popup_offer_view_form
+msgid ""
+"• Excellent rate: More than 5%<br/>\n"
+"                                        • Good rate: 2-5%<br/>\n"
+"                                        • Low rate: Less than 2%"
+msgstr ""
+"• معدل ممتاز: أكثر من 5%<br/>\n"
+"                                        • معدل جيد: 2-5%<br/>\n"
+"                                        • معدل منخفض: أقل من 2%"

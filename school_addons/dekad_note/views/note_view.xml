@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_de_note_tree" model="ir.ui.view">
+        <field name="name">de.note.list</field>
+        <field name="model">de.note</field>
+        <field name="arch" type="xml">
+            <list string="Note">
+                <field name="name"/>
+                <field name="priority"/>
+                <field name="group_id"/>
+                <field name="sequence"/>
+                <field name="create_date"/>
+                <field name="state" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_de_note_form" model="ir.ui.view">
+        <field name="name">de.note.form</field>
+        <field name="model">de.note</field>
+        <field name="arch" type="xml">
+            <form string="Note">
+                <field name="id" invisible="1"/>
+                <field name="state" invisible="1"/>
+                <field name="id" invisible="1"/>
+                <header groups="base.group_user" invisible="id == False">
+                    <field name="state" widget="statusbar"/>
+                    <button name="set_confirm" string="Confirm" type="object"
+                            invisible="state != 'draft'" class="oe_highlight" groups="dekad_note.group_de_note"
+                    />
+                    <button name="set_draft" string="Draft" type="object"
+                            invisible="state != 'confirm'" groups="dekad_note.group_de_note"
+                    />
+                </header>
+
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" readonly="state != 'draft'"/>
+                            <field name="priority" required="1" readonly="state != 'draft'"/>
+                            <field name="file_name" invisible="1"/>
+                            <field name="file" filename="file_name" readonly="state != 'draft'"/>                        </group>
+                        <group>
+                            <field name="group_id" readonly="state != 'draft'"/>
+                            <field name="sequence"/>
+                            <field name="create_date"
+                                   invisible="create_date == False"/>
+                        </group>
+                        <separator string="Description"/>
+                        <field name="description" readonly="state != 'draft'"/>
+                    </group>
+                </sheet>
+
+                    <field name="message_ids" widget="mail_thread"/>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="view_de_note_search" model="ir.ui.view">
+        <field name="name">de.note.search</field>
+        <field name="model">de.note</field>
+        <field name="arch" type="xml">
+            <search string="Note">
+                <field name="name"/>
+                <group expand="0" string="Group By...">
+                    <filter name="group_by_priority"
+                            string="Priority" domain="[]"
+                            context="{'group_by':'priority'}"/>
+                    <filter name="group_by_state"
+                            string="Status" domain="[]"
+                            context="{'group_by':'state'}"/>
+                    <filter name="group_by_group"
+                            string="Group" domain="[]"
+                            context="{'group_by':'group_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="act_open_de_note_view">
+        <field name="name">Notes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">de.note</field>
+        <field name="view_mode">list,form</field>
+        <field name="binding_view_types">list,form</field>
+        <field name="search_view_id" ref="view_de_note_search"/>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="act_open_de_note_view_tree">
+        <field name="act_window_id" ref="act_open_de_note_view"/>
+        <field name="view_mode">list</field>
+        <field name="sequence" eval="10"/>
+        <field name="view_id" ref="view_de_note_tree"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="act_open_de_note_view_form">
+        <field name="act_window_id" ref="act_open_de_note_view"/>
+        <field name="view_mode">form</field>
+        <field name="sequence" eval="20"/>
+        <field name="view_id" ref="view_de_note_form"/>
+    </record>
+
+
+</odoo>

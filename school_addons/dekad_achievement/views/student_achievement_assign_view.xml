@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_de_student_achievement_assign_kanban" model="ir.ui.view">
+            <field name="name">de.student.achievement.assign.kanban</field>
+            <field name="model">de.student.achievement.assign</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban" group_edit="false" group_delete="false" quick_create="false"
+                        records_draggable="false" groups_draggable="false">
+                    <field name="id"/>
+                    <field name="achievement_image"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click o_res_partner_kanban">
+                                <div class="o_kanban_image">
+                                    <t t-if="record.achievement_image.value">
+                                        <img t-att-src="kanban_image('de.student.achievement.assign', 'achievement_image', record.id.raw_value)"
+                                             alt="Student Achievement"/>
+                                    </t>
+                                    <t t-if="!record.achievement_image.value">
+                                        <img
+                                                src="/dekad_achievement/static/img/achievement.jpg"
+                                                alt="Student Achievement"/>
+                                    </t>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <h4>
+                                        <field name="achievement_id"/>
+                                    </h4>
+                                    <ul class="mt-2">
+                                        <li>
+                                            <strong>Given by :</strong>
+                                            <field name="user_id"/>
+                                        </li>
+                                        <li class="mt-1" t-if="record.student_id.raw_value">
+                                            <strong>Given to :</strong>
+                                            <field name="student_id"/>
+                                        </li>
+
+                                        <li class="mt-1" t-if="record.student_id.raw_value">
+                                            <strong>Reason :</strong>
+                                            <field name="reason"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_de_student_achievement_assign_list" model="ir.ui.view">
+            <field name="name">de.student.achievement.assign.list</field>
+            <field name="model">de.student.achievement.assign</field>
+            <field name="arch" type="xml">
+                <list string="student achievement">
+                    <field name="achievement_id"/>
+                    <field name="achievement_type"/>
+                    <field name="user_id"/>
+                    <field name="student_id"/>
+                    <field name="create_date" string="Given at" optional="hide"/>
+                    <field name="reason" optional="hide"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_de_student_achievement_assign_form" model="ir.ui.view">
+            <field name="name">de.student.achievement.assign.form</field>
+            <field name="model">de.student.achievement.assign</field>
+            <field name="arch" type="xml">
+                <form string="student_achievement">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="achievement_id"/>
+                                <field name="achievement_image" widget="image" class=" oe_avatar role_image mb-3"
+                                       invisible="achievement_id == False"/>
+                                <field name="achievement_type"
+                                       invisible="achievement_id == False"/>
+                            </group>
+                            <group>
+                                <field name="user_id"/>
+                                <field name="student_id" domain="[('student_grade_ids.state','=','running')]"
+                                       options="{'no_create': True , 'no_open' : True}"
+
+                                />
+
+                                <field name="reason"/>
+                                <field name="create_date" string="Given at"
+                                       invisible="create_date == False"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_de_student_achievement_assign_search" model="ir.ui.view">
+            <field name="name">de.student.achievement.assign.search</field>
+            <field name="model">de.student.achievement.assign</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Activity">
+                    <group expand="0" string="Group By...">
+                        <filter string="Achievement" name="group_by_achievement"
+                                domain="[]" context="{'group_by':'achievement_id'}"/>
+                        <filter string="student" name="group_by_student"
+                                domain="[]" context="{'group_by':'student_id'}"/>
+                        <filter string="Given by" name="group_by_user_id"
+                                domain="[]" context="{'group_by':'user_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="act_open_de_student_achievement_assign_view" model="ir.actions.act_window">
+            <field name="name">student achievements assign</field>
+            <field name="res_model">de.student.achievement.assign</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="search_view_id" ref="view_de_student_achievement_assign_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_student_achievement_assign_view_kanban">
+            <field name="act_window_id" ref="act_open_de_student_achievement_assign_view"/>
+            <field name="view_mode">kanban</field>
+            <field name="sequence" eval="5"/>
+            <field name="view_id" ref="view_de_student_achievement_assign_kanban"/>
+        </record>
+
+
+        <record model="ir.actions.act_window.view" id="act_open_de_student_achievement_assign_view_list">
+            <field name="act_window_id" ref="act_open_de_student_achievement_assign_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_de_student_achievement_assign_list"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_student_achievement_assign_view_form">
+            <field name="act_window_id" ref="act_open_de_student_achievement_assign_view"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="20"/>
+            <field name="view_id" ref="view_de_student_achievement_assign_form"/>
+        </record>
+
+    </data>
+</odoo>

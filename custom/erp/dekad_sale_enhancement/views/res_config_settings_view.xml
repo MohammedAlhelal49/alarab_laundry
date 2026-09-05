@@ -1,0 +1,56 @@
+<odoo>
+    <record id="res_config_settings_view_form_sale_additional_features" model="ir.ui.view">
+        <field name="name">res.config.settings.sale.additional.features</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Insert after the Quotations & Orders block -->
+            <xpath expr="//app[@name='sale_management']/block[@name='quotation_order_setting_container']"
+                   position="after">
+                <block title="Max unvalidated deliveries" name="max_unvalidated_deliveries">
+                    <setting
+                            help="Limit number of unvalidated outgoing deliveries a salesperson can have.">
+                        <field name="enable_max_unvalidated_deliveries" nolabel="1"/>
+                    </setting>
+
+                    <setting invisible="not enable_max_unvalidated_deliveries"
+                    >
+                        <field name="max_unvalidated_deliveries"/>
+                    </setting>
+                </block>
+
+
+                <block title="Direct sale delivery invoice" name="direct_sale_delivery_invoice">
+                    <setting
+                            help="Create validated delivery and (draft , posted) invoice on the sale order confirmation">
+                        <field name="direct_sale_delivery_invoice" nolabel="1"/>
+                    </setting>
+
+                    <setting invisible="not direct_sale_delivery_invoice"
+                    >
+                        <field name="direct_sale_delivery_delivery_state"
+                               required="direct_sale_delivery_invoice"/>
+
+                    </setting>
+
+                    <setting invisible="not direct_sale_delivery_invoice"
+                    >
+                        <field name="direct_sale_delivery_invoice_state"/>
+                    </setting>
+                </block>
+                <block title="Sale Order Amount" name="sale_order_amount_words">
+
+                    <setting
+                        id="sale_amount_total_words_setting"
+                        string="Total amount of sale order in letters"
+                        help="Display the total amount of a quotation or sale order in letters">
+                        <field name="sale_amount_total_words"/>
+                    </setting>
+
+                </block>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

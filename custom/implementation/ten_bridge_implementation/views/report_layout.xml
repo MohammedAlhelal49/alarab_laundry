@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="custom_external_layout_striped"
+              inherit_id="web.external_layout_striped">
+
+        <!-- ══ HEADER ══ -->
+        <xpath expr="//div[@t-attf-class='o_company_#{company.id}_layout header']"
+               position="replace">
+
+            <div t-attf-class="o_company_#{company.id}_layout header"
+                 style="padding:12px 24px 10px 24px; border-bottom:1px solid #ccc; background:#fff;">
+
+                <table style="width:100%; border-collapse:collapse;">
+                    <tr>
+                        <td style="vertical-align:top; width:60%;">
+                            <t t-if="company.logo">
+                                <img t-att-src="image_data_uri(company.logo)"
+                                     style="max-height:55px; max-width:130px; margin-bottom:6px; display:block;"/>
+                            </t>
+
+                            <div style="font-size:14pt; font-weight:bold; color:#111; line-height:1.25;">
+                                <span t-esc="company.name"/>
+                            </div>
+
+                            <!-- Address via partner_id — works on both res.company and the preview wizard -->
+                            <div t-if="company.partner_id.street or company.partner_id.street2 or company.partner_id.city or company.partner_id.state_id or company.partner_id.country_id"
+                                 style="font-size:9pt; color:#444; margin-top:2px; line-height:1.4;">
+                                <t t-if="company.partner_id.street"><span t-esc="company.partner_id.street"/></t>
+                                <t t-if="company.partner_id.street2">
+                                    <t t-if="company.partner_id.street">, </t>
+                                    <span t-esc="company.partner_id.street2"/>
+                                </t>
+                                <t t-if="company.partner_id.city">
+                                    <t t-if="company.partner_id.street or company.partner_id.street2">, </t>
+                                    <span t-esc="company.partner_id.city"/>
+                                </t>
+                                <t t-if="company.partner_id.state_id">
+                                    <t t-if="company.partner_id.street or company.partner_id.street2 or company.partner_id.city">, </t>
+                                    <span t-esc="company.partner_id.state_id.name"/>
+                                </t>
+                                <t t-if="company.partner_id.country_id">
+                                    <t t-if="company.partner_id.street or company.partner_id.street2 or company.partner_id.city or company.partner_id.state_id">, </t>
+                                    <span t-esc="company.partner_id.country_id.name"/>
+                                </t>
+                            </div>
+
+                            <div style="font-size:9pt; color:#444; margin-top:4px; line-height:1.8;">
+                                <t t-if="company.partner_id.phone or company.partner_id.mobile">
+                                    <span style="direction:ltr; unicode-bidi:embed;">
+                                        <t t-if="company.partner_id.phone"><span t-esc="company.partner_id.phone"/></t>
+                                        <t t-if="company.partner_id.phone and company.partner_id.mobile"> / </t>
+                                        <t t-if="company.partner_id.mobile"><span t-esc="company.partner_id.mobile"/></t>
+                                    </span><br/>
+                                </t>
+                                <t t-if="company.partner_id.email">
+                                    <span t-esc="company.partner_id.email"/><br/>
+                                </t>
+                                <t t-if="company.partner_id.vat">
+                                    TRN: <span t-esc="company.partner_id.vat"/>
+                                </t>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </xpath>
+
+        <!-- ══ FOOTER ══ -->
+        <xpath expr="//div[contains(@t-attf-class, 'footer o_company_')]"
+               position="replace">
+
+            <div t-attf-class="footer o_company_#{company.id}_layout"
+                 style="margin_bottom:10px; padding:8px 24px; border-top:1px solid #ccc; text-align:center; font-size:10pt; color:#777; line-height:1.6; background:#fff;">
+
+                <span t-esc="company.name"/>
+
+                <t t-if="company.partner_id.city or company.partner_id.country_id">
+                    &#160;|&#160;
+                    <t t-if="company.partner_id.city"><span t-esc="company.partner_id.city"/></t>
+                    <t t-if="company.partner_id.country_id">
+                        <t t-if="company.partner_id.city">, </t>
+                        <span t-esc="company.partner_id.country_id.name"/>
+                    </t>
+                </t>
+
+                <t t-if="company.partner_id.phone or company.partner_id.mobile">
+                    &#160;|&#160;
+                    <span style="direction:ltr; unicode-bidi:embed;">
+                        <t t-if="company.partner_id.phone"><span t-esc="company.partner_id.phone"/></t>
+                        <t t-if="company.partner_id.phone and company.partner_id.mobile"> / </t>
+                        <t t-if="company.partner_id.mobile"><span t-esc="company.partner_id.mobile"/></t>
+                    </span>
+                </t>
+
+                <t t-if="company.partner_id.email">
+                    &#160;|&#160;<span t-esc="company.partner_id.email"/>
+                </t>
+
+                <t t-if="company.partner_id.vat">
+                    <span style="white-space: nowrap;">
+                        &#160;|&#160;TRN: <span t-esc="company.partner_id.vat"/>
+                    </span>
+                </t>
+
+                <t t-if="report_type == 'pdf'">
+                    <div style="margin-top:8px;">
+                        Page <span class="page"/> / <span class="topage"/>
+                    </div>
+                </t>
+
+            </div>
+
+        </xpath>
+
+    </template>
+
+</odoo>

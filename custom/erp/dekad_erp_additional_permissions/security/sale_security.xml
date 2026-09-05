@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="module_category_sales_additional_permissions">
+            <field name="name">Sales Additional Permissions</field>
+            <field name="sequence">12</field>
+        </record>
+
+        <!-- Group to allow deleting Sale Orders -->
+        <record id="group_sale_order_deletion" model="res.groups">
+            <field name="name">Allow Sale Order Deletion</field>
+            <field name="category_id" ref="module_category_sales_additional_permissions"/>
+        </record>
+
+        <!-- Group to allow canceling Sale Orders -->
+        <record id="group_sale_order_cancel" model="res.groups">
+            <field name="name">Allow Sale Order Cancel</field>
+            <field name="category_id" ref="module_category_sales_additional_permissions"/>
+        </record>
+
+        <!-- Group to allow confirming Sale Orders -->
+        <record id="group_sale_order_confirm" model="res.groups">
+            <field name="name">Allow Sale Order Confirm</field>
+            <field name="category_id" ref="module_category_sales_additional_permissions"/>
+        </record>
+
+        <record id="base.group_user" model="res.groups">
+            <field name="implied_ids" eval="[(4, ref('dekad_erp_additional_permissions.group_sale_order_deletion')),
+                                              (4, ref('dekad_erp_additional_permissions.group_sale_order_cancel')),
+                                              (4, ref('dekad_erp_additional_permissions.group_sale_order_confirm'))]"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="purchase_order_report_index"
+              inherit_id="purchase.report_purchaseorder_document">
+
+        <!-- Add line index column to header -->
+        <xpath expr="//th[@name='th_description']" position="before">
+            <th class="text-start">
+                <strong>#</strong>
+            </th>
+        </xpath>
+
+
+                <!-- Add line index cell -->
+        <xpath expr="//td[span[@t-field='line.name']]" position="before">
+            <td class="text-start">
+                <span t-out="line.line_index"/>
+            </td>
+        </xpath>
+
+    </template>
+</odoo>

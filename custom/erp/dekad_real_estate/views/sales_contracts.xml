@@ -1,0 +1,67 @@
+<odoo>
+    <record id="view_sale_order_form_inherit_sale_mode" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.sale.mode</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='partner_details']/field[@name='partner_shipping_id']" position="after">
+                <field name="property_building_id" invisible="context.get('sale_mode') != True"/>
+                <field name="account_analytic_account_id"
+                       domain="[('is_property', '=', True), ('property_building_id', '=', property_building_id), ('offer_type', '=', 'sale'),('is_property_sold', '=', False)]"
+                       required="1"
+                       invisible="context.get('sale_mode') != True"/>
+                <field name="is_property_sold" readonly="1" invisible="context.get('sale_mode') != True"/>
+
+            </xpath>
+
+
+        </field>
+    </record>
+    <record id="view_sale_order_filter_inherit_sold_properties" model="ir.ui.view">
+        <field name="name">sale.order.search.inherit.sold.properties</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//search" position="inside">
+
+                <!-- Sold filter -->
+                <filter string="Sold"
+                        name="sold_properties"
+                        invisible="context.get('sale_mode') != True"
+                        domain="[('is_property_sold','=',True)]"/>
+
+                <filter string="Not Sold"
+                        name="not_sold_properties"
+                        invisible="context.get('sale_mode') != True"
+                        domain="[('is_property_sold','=',False)]"/>
+
+                <!-- Group By -->
+                <group expand="1" string="Group By">
+                    <filter string="Sold Status"
+                            name="group_by_is_property_sold"
+                            invisible="context.get('sale_mode') != True"
+                            context="{'group_by': 'is_property_sold'}"/>
+
+                    <filter string="Property"
+                            name="group_by_property"
+                            invisible="context.get('sale_mode') != True"
+                            context="{'group_by': 'account_analytic_account_id'}"/>
+                </group>
+
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="action_property_sale_orders" model="ir.actions.act_window">
+        <field name="name">Sale Contracts</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+        <field name="context">{'sale_mode': True,'default_is_property_sale_contract': True }</field>
+        <field name="domain">[('account_analytic_account_id.offer_type', '=', 'sale'),('is_property_sale_contract', '=', True)]</field>
+        <field name="target">current</field>
+    </record>
+
+</odoo>

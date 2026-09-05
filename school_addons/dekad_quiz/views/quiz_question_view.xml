@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_de_quiz_question_answer_form_quick_create" model="ir.ui.view">
+            <field name="name">de.quiz.question.answer.form.quick.create</field>
+            <field name="model">de.quiz.question.answer</field>
+            <field name="arch" type="xml">
+                <form string="Quiz question answer quick create">
+                    <group>
+                        <field name="name"/>
+                        <field name="is_correct"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_de_quiz_question_tree" model="ir.ui.view">
+            <field name="name">de.quiz.question.list</field>
+            <field name="model">de.quiz.question</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <list string="Question">
+                    <field name="type"/>
+                    <field name="name"/>
+                    <field name="mark"/>
+                </list>
+            </field>
+        </record>
+
+
+        <record id="view_de_quiz_question_form" model="ir.ui.view">
+            <field name="name">de.quiz.question.form</field>
+            <field name="model">de.quiz.question</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Question">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"
+                                />
+                                <field name="type"
+                                />
+
+
+                                <field name="mark"
+                                />
+                                <field name="answer"
+                                       invisible="type != 'descriptive'" required="type == 'descriptive'"
+                                />
+
+                                <field name="answer_ids" invisible="type != 'select_from_multiple'"
+                                       required="type == 'select_from_multiple'"
+
+                                       context="{
+                                'form_view_ref' : 'dekad_quiz.view_de_quiz_question_answer_form_quick_create'
+                                }">
+                                    <list>
+                                        <field name="name"/>
+                                        <field name="is_correct"/>
+                                    </list>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_de_quiz_question_search" model="ir.ui.view">
+            <field name="name">de.quiz.question.question.search</field>
+            <field name="model">de.quiz.question</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Question">
+                    <field name="type"/>
+                    <field name="name"/>
+                    <group string="Group By...">
+                        <filter string="Type" domain="[]" name="group_by_type"
+                                context="{'group_by':'type'}"/>
+                        <filter string="Groups" domain="[]" name="group_by_group_ids"
+                                context="{'group_by':'group_ids'}"/>
+                        <filter string="Quizzes" domain="[]" name="group_by_quiz"
+                                context="{'group_by':'quiz_ids'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="act_open_de_quiz_question_view">
+            <field name="name">Questions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.quiz.question</field>
+            <field name="view_mode">list,form</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="search_view_id" ref="view_de_quiz_question_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_quiz_question_view_tree">
+            <field name="act_window_id" ref="act_open_de_quiz_question_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_de_quiz_question_tree"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_quiz_question_view_form">
+            <field name="act_window_id" ref="act_open_de_quiz_question_view"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="20"/>
+            <field name="view_id" ref="view_de_quiz_question_form"/>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_de_assignment_tree" model="ir.ui.view">
+            <field name="name">de.assignment.list</field>
+            <field name="model">de.assignment</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <list string="Assignment">
+                    <field name="assignment_type" string="Type"/>
+                    <field name="name"/>
+                    <field name="classroom_id"/>
+                    <field name="subject_id"/>
+                    <field name="submission_date"/>
+                    <field name="mark" optional="hide"/>
+                    <field name="teacher_id" optional="hide"/>
+                    <field name="create_date" optional="hide"/>
+                    <field name="state" optional="hide"/>
+                    <field name="student_ids" widget="many2many_tags" optional="hide"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_de_assignment_form" model="ir.ui.view">
+            <field name="name">de.assignment.form</field>
+            <field name="model">de.assignment</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Assignment" duplicate="0">
+                    <field name="id" invisible="1"/>
+                    <field name="state" invisible="1"/>
+                    <field name="classroom_student_ids" invisible="1"/>
+
+                    <header groups="base.group_user" invisible="id == False">
+                        <button name="set_confirm" invisible="state != 'draft'"
+                                type="object" string="Confirm" class="oe_highlight"
+                        />
+                        <button name="set_draft" invisible="state != 'confirm'"
+                                type="object" string="Draft"
+                        />
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <field name="active" invisible="1"/>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                                invisible="active == True"/>
+                        <group>
+                            <field name="assignment_type" readonly="state != 'draft'"/>
+
+                            <field name="name" invisible="name == ''"
+                            />
+                            <field name="grade_id" invisible="1"
+                            />
+
+
+                            <field name="classroom_id"
+                                   readonly="state != 'draft'"
+                                   options="{ 'no_create': True , 'no_open' : True}"/>
+                            <field name="subject_id" readonly="state != 'draft'" invisible="classroom_id == False"
+
+                                   domain="[('grade_id' , '=' , grade_id)]"
+                                   options="{ 'no_create': True , 'no_open' : True}" required="1"/>
+                            <field name="teacher_id" invisible="teacher_id == False"
+                                   options="{ 'no_create': True , 'no_open' : True}"/>
+
+                        </group>
+                        <notebook>
+                            <page name="basic_information" string="Basic Information">
+                                <group>
+                                    <group>
+                                        <field name="create_date" readonly="True" invisible="create_date == False"
+                                        />
+                                        <field name="submission_date"
+                                               readonly="state != 'draft'"
+                                        />
+
+                                    </group>
+                                    <group>
+                                        <field name="mark" readonly="state != 'draft'"/>
+                                        <field name="file" readonly="state != 'draft'" filename="file_name"/>
+                                        <field name="file_name" invisible="1"/>  <!-- Added by Ahmed -->
+
+                                    </group>
+                                    <separator string="Description"/>
+                                    <field name="description" readonly="state != 'draft'"/>
+
+                                </group>
+                            </page>
+                            <page name="students" string="Students" readonly="classroom_id == False">
+                                <group>
+
+                                    <field
+                                            domain="[('id', 'in', classroom_student_ids),
+                                   ('student_grade_ids.grade_id','=',grade_id) , ('student_grade_ids.state','=','running')
+                                   ]"
+                                            options="{ 'no_create': True , 'no_open' : True}"
+                                            name="student_ids" widget="many2many_tags"
+                                            readonly="state != 'draft'"
+                                    />
+
+
+                                </group>
+                            </page>
+                            <page name="submissions" string="Submissions" invisible="id == False">
+                                <field name="assignment_submission_ids"
+                                       context="{
+                                'form_view_ref' : 'dekad_assignment.view_de_assignment_submission_form_quick_create'
+                                }"
+
+                                >
+                                    <list string="Submissions" create="0">
+                                        <field name="student_id"/>
+                                        <field name="mark"/>
+                                        <field name="state"/>
+                                        <field name="create_date"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+
+
+                        <field name="message_ids" widget="mail_thread"/>
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_de_assignment_search" model="ir.ui.view">
+            <field name="name">de.assignment.search</field>
+            <field name="model">de.assignment</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Assignment">
+                    <field name="name"/>
+                    <field name="grade_id"/>
+                    <field name="classroom_id"/>
+                    <field name="subject_id"/>
+                    <field name="teacher_id"/>
+                    <field name="mark"/>
+                    <field name="assignment_type"/>
+                    <field name="state"/>
+                    <filter string="Submission Today" name="filter_submission_today"
+                            domain="[('submission_date', '&gt;=', time.strftime('%%Y-%%m-%%d 00:00:00')),('submission_date', '&lt;=', time.strftime('%%Y-%%m-%%d 23:59:59'))]"/>
+                    <filter string="Submission after Week" name="filter_submission_week"
+                            domain="[('submission_date', '&gt;=', context_today().strftime('%Y-%m-%d 00:00:00')),
+                                    ('submission_date', '&lt;', (context_today()+relativedelta(days=6)).strftime('%Y-%m-%d 23:59:59'))]"/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+
+                    <group string="Group By...">
+                        <filter string="Grade" domain="[]" name="group_by_grade"
+                                context="{'group_by':'grade_id'}"/>
+
+                        <filter string="Classroom" domain="[]" name="group_by_classroom"
+                                context="{'group_by':'classroom_id'}"/>
+
+
+                        <filter string="Subject" domain="[]" name="group_by_subject"
+                                context="{'group_by':'subject_id'}"/>
+                        <filter string="Teacher" domain="[]" name="group_by_teacher"
+                                context="{'group_by':'teacher_id'}"/>
+
+                        <filter string="Assignment Type" domain="[]" name="group_by_assignment_type"
+                                context="{'group_by':'assignment_type'}"/>
+                        <filter string="State" domain="[]" name="group_by_assignment_state"
+                                context="{'group_by':'state'}"/>
+                    </group>
+
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_de_assignment_graph">
+            <field name="name">de.assignment.graph</field>
+            <field name="model">de.assignment</field>
+            <field name="arch" type="xml">
+                <graph string="Assignment Graph View" type="bar">
+                    <field name="classroom_id"/>
+                    <field name="state"/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_de_assignment_view">
+            <field name="name">Assignments</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.assignment</field>
+            <field name="view_mode">list,form,graph</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="search_view_id" ref="view_de_assignment_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_assignment_view_tree">
+            <field name="act_window_id" ref="act_open_de_assignment_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_de_assignment_tree"/>
+        </record>
+
+        <!--        <record model="ir.actions.act_window.view" id="act_open_de_assignment_view_form">-->
+        <!--            <field name="act_window_id" ref="act_open_de_assignment_view"/>-->
+        <!--            <field name="view_mode">form</field>-->
+        <!--            <field name="sequence" eval="20"/>-->
+        <!--            <field name="view_id" ref="view_de_assignment_form"/>-->
+        <!--        </record>-->
+
+        <record model="ir.actions.act_window.view" id="act_open_de_assignment_view_graph">
+            <field name="act_window_id" ref="act_open_de_assignment_view"/>
+            <field name="view_mode">graph</field>
+            <field name="sequence" eval="30"/>
+            <field name="view_id" ref="view_de_assignment_graph"/>
+        </record>
+    </data>
+</odoo>

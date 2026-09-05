@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_de_student_form_contravention_inherited">
+            <field name="name">de.student.form.contravention.inherited</field>
+            <field name="model">de.student</field>
+            <field name="inherit_id" ref="dekad_core.view_de_student_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="btn oe_stat_button" groups="dekad_contravention.group_de_contravention"
+                            type="object"
+                            name="action_show_contravention"
+                            icon="fa-file">
+                        <field string="contravention" name="contravention_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

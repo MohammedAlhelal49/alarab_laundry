@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_teacher_de_health_tree" model="ir.ui.view">
+            <field name="name">teacher.de.health.list</field>
+            <field name="model">de.health</field>
+            <field name="arch" type="xml">
+                <list string="Health checkup" create="0" delete="0">
+                    <field name="teacher_id"/>
+                    <field name="height"/>
+                    <field name="weight"/>
+                    <field name="blood_group"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_teacher_de_health_form" model="ir.ui.view">
+            <field name="name">teacher.de.health.form</field>
+            <field name="model">de.health</field>
+            <field name="arch" type="xml">
+                <form string="Health checkup" delete="0" duplicate="0">
+                    <sheet>
+                        <group>
+                            <div style="width:100%;" class="row align-items-center">
+                                <div class="col-4 col-lg-2">
+                                    <field name="teacher_image" widget="image" class=" oe_avatar role_image"
+                                    />
+                                </div>
+                                <div class="mb16 col-8 col-lg-10 px-0">
+                                    <div class="row">
+                                        <h2 class="col-12 col-lg-10">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <field name="teacher_id" readonly="1"/>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <separator string="Main info"/>
+
+                            <group>
+                                <field name="height"/>
+                                <field name="weight"/>
+                                <field name="blood_group"/>
+                            </group>
+                            <separator string="Other info"/>
+
+                            <group>
+                                <field name="eye_glasses"/>
+                                <field name="eye_glasses_note" invisible="eye_glasses !=  True"/>
+                            </group>
+                            <group>
+                                <field name="physical_challenge"/>
+                                <field name="physical_challenge_note"
+                                       invisible="physical_challenge !=  True"/>
+                            </group>
+                            <group>
+                                <field name="major_disease"/>
+                                <field name="major_disease_note"
+                                       invisible="major_disease !=  True"/>
+                            </group>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_teacher_de_health_search" model="ir.ui.view">
+            <field name="name">teacher.de.health</field>
+            <field name="model">de.health</field>
+            <field name="arch" type="xml">
+                <search string="Health checkup">
+                    <field name="teacher_id"/>
+                    <field name="blood_group"/>
+                    <field name="height"/>
+                    <field name="weight"/>
+                    <group string="Group By...">
+                        <filter name="group_by_teacher"
+                                string="teacher" domain="[]"
+                                context="{'group_by':'teacher_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_teacher_de_health_view">
+            <field name="name">Teacher Health data</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.health</field>
+            <field name="view_mode">list,form</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="search_view_id" ref="view_teacher_de_health_search"/>
+            <field name="domain">[('type' , '=' , 'teacher')]</field>
+            <field name="context">{'default_type' : 'teacher'}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_teacher_de_health_view_tree">
+            <field name="act_window_id" ref="act_open_teacher_de_health_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_teacher_de_health_tree"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_teacher_de_health_view_form">
+            <field name="act_window_id" ref="act_open_teacher_de_health_view"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="20"/>
+            <field name="view_id" ref="view_teacher_de_health_form"/>
+        </record>
+
+    </data>
+</odoo>

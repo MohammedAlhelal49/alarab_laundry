@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="seq_crm_reservation" model="ir.sequence">
+        <field name="name">CRM Reservation</field>
+        <field name="code">crm.reservation</field>
+        <field name="prefix">RS</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>
+    </record>
+</odoo>

@@ -1,0 +1,14 @@
+<odoo>
+    <record id="view_whatsapp_template_form_inherit" model="ir.ui.view">
+        <field name="name">whatsapp.template.form.inherit</field>
+        <field name="model">whatsapp.template</field>
+        <field name="inherit_id" ref="dekad_additional_features.view_whatsapp_template_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='alert alert-info']/ul" position="inside">
+                <li><code>{{invoice_name}}</code>: Invoice name or number</li>
+                <li><code>{{invoice_amount}}</code>: The invoice's total amount including currency symbol</li>
+                <li><code>{{invoice_link}}</code>: The link to the invoice</li>
+            </xpath>
+        </field>
+    </record>
+</odoo>

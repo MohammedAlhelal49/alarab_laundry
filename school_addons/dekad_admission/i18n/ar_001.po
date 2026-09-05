@@ -1,0 +1,672 @@
+# ترجمة خادم Odoo.
+# هذا الملف يحتوي على ترجمة الوحدات التالية:
+# 	* dekad_admission
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-28 11:15+0000\n"
+"PO-Revision-Date: 2025-09-28 11:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__prev_institute_id
+msgid " Previous institute"
+msgstr "المعهد السابق"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.de_admission_analysis_report
+msgid "<b>From Date:</b>"
+msgstr "<b>من تاريخ:</b>"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.de_admission_analysis_report
+msgid "<b>Grade:</b>"
+msgstr "<b>الصف:</b>"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.de_admission_analysis_report
+msgid "<b>Total admission</b>"
+msgstr "<b>إجمالي القبول</b>"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.de_admission_analysis_report
+msgid ""
+"<span style=\"visibility:hidden;\">--</span>\n"
+"                                    <b>To Date:</b>"
+msgstr ""
+"<span style=\"visibility:hidden;\">--</span>\n"
+"                                    <b>إلى تاريخ:</b>"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.de_admission_analysis_report
+msgid "<strong>Admission Analysis</strong>"
+msgstr "<strong>تحليل القبول</strong>"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__academic_year_id
+msgid "Academic Year"
+msgstr "السنة الأكاديمية"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__academic_year_id
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_search
+msgid "Academic year"
+msgstr "السنة الأكاديمية"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تزيين استثناء النشاط"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: dekad_admission
+#: model:ir.actions.act_window,name:dekad_admission.act_open_de_admission_view
+#: model:ir.model,name:dekad_admission.model_de_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_form
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_list
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_search
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_grade_kanban_admission_inherit
+msgid "Admission"
+msgstr "القبول"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.de_admission_analysis_wizard_form
+msgid "Admission Analysis"
+msgstr "تحليل القبول"
+
+#. module: dekad_admission
+#: model:ir.model,name:dekad_admission.model_report_dekad_admission_de_admission_analysis_report
+msgid "Admission Analysis Report"
+msgstr "تقرير تحليل القبول"
+
+#. module: dekad_admission
+#: model:ir.model,name:dekad_admission.model_de_admission_analysis_wizard
+msgid "Admission Analysis Wizard"
+msgstr "معالج تحليل القبول"
+
+#. module: dekad_admission
+#: model:ir.actions.report,name:dekad_admission.act_open_de_admission_analysis_report_view
+msgid "Admission Analysis report"
+msgstr "تقرير تحليل القبول"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__admission_date
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_search
+msgid "Admission Date"
+msgstr "تاريخ القبول"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_form
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_multi_admission_wizard_form
+msgid "Admission Details"
+msgstr "تفاصيل القبول"
+
+#. module: dekad_admission
+#: model:ir.ui.menu,name:dekad_admission.menu_de_admission_analysis_wizard
+msgid "Admission Report"
+msgstr "تقرير القبول"
+
+#. module: dekad_admission
+#: model:ir.actions.act_window,name:dekad_admission.act_open_de_admission_analysis_wizard_view
+msgid "Admission analysis"
+msgstr "تحليل القبول"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.de_admission_analysis_report
+msgid "Admission code"
+msgstr "كود القبول"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_grade__admission_count
+msgid "Admission count"
+msgstr "عدد القبول"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_form
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_multi_admission_wizard_form
+msgid "Admission info"
+msgstr "معلومات القبول"
+
+#. module: dekad_admission
+#: model:ir.ui.menu,name:dekad_admission.menu_de_admission
+#: model:ir.ui.menu,name:dekad_admission.menu_de_admission_root
+msgid "Admissions"
+msgstr "عمليات القبول"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_grade__admission_ids
+msgid "Admissions(s)"
+msgstr "عمليات القبول"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.de_admission_analysis_report
+msgid "Admitted at"
+msgstr "تم القبول في"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__sequence
+msgid "Application Number"
+msgstr "رقم الطلب"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_form
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__birth_date
+msgid "Birth Date"
+msgstr "تاريخ الميلاد"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.de_admission_analysis_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_form
+msgid "Cancel enroll"
+msgstr "إلغاء التسجيل"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_multi_admission_wizard_form
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: dekad_admission
+#: model:ir.model.fields.selection,name:dekad_admission.selection__de_admission__state__confirm
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__create_uid
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission_analysis_wizard__create_uid
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__create_date
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission_analysis_wizard__create_date
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__discount
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__discount
+msgid "Discount (%)"
+msgstr "الخصم (%)"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__display_name
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission_analysis_wizard__display_name
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dekad_admission
+#: model:ir.model.fields.selection,name:dekad_admission.selection__de_admission__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__due_date
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission_analysis_wizard__end_date
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: dekad_admission
+#. odoo-python
+#: code:addons/dekad_admission/wizard/admission_analysis_wizard.py:0
+msgid "End date can not be set before start date."
+msgstr "لا يمكن تعيين تاريخ الانتهاء قبل تاريخ البداية."
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_search
+msgid "Enrolled"
+msgstr "مسجل"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__student_count
+msgid "Enrolled Students number count"
+msgstr "عدد الطلاب المسجلين"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__student_count
+msgid "Enrolled students count"
+msgstr "عدد الطلاب المسجلين"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__family_business
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__family_business
+msgid "Family Business"
+msgstr "عمل العائلة"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__family_income
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__family_income
+msgid "Family Income"
+msgstr "دخل العائلة"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__fee_term_type
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__fee_term_type
+msgid "Fee Term Type"
+msgstr "نوع فترة الرسوم"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__fee_after_discount
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__fee_after_discount
+msgid "Fee after discount"
+msgstr "الرسوم بعد الخصم"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_form
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_multi_admission_wizard_form
+msgid "Fee info"
+msgstr "معلومات الرسوم"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (شركاء)"
+
+#. module: dekad_admission
+#: model:ir.model.fields,help:dekad_admission.field_de_admission__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome، مثال: fa-tasks"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_form
+msgid "Full name"
+msgstr "الاسم الكامل"
+
+#. module: dekad_admission
+#: model:ir.model,name:dekad_admission.model_de_grade
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__grade_id
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission_analysis_wizard__grade_id
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__grade_id
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_search
+msgid "Grade"
+msgstr "الصف"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__max_student_count
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__max_student_count
+msgid "Grade capacity count"
+msgstr "السعة القصوى للصف"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_form
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_multi_admission_wizard_form
+msgid "Grade info"
+msgstr "معلومات الصف"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_search
+msgid "Group BY..."
+msgstr "تجميع حسب..."
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__id
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission_analysis_wizard__id
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: dekad_admission
+#: model:ir.model.fields,help:dekad_admission.field_de_admission__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: dekad_admission
+#: model:ir.model.fields,help:dekad_admission.field_de_admission__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: dekad_admission
+#: model:ir.model.fields,help:dekad_admission.field_de_admission__message_has_error
+#: model:ir.model.fields,help:dekad_admission.field_de_admission__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_search
+msgid "Last Month"
+msgstr "الشهر الماضي"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__write_uid
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission_analysis_wizard__write_uid
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__write_date
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission_analysis_wizard__write_date
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_search
+msgid "Last Week"
+msgstr "الأسبوع الماضي"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: dekad_admission
+#: model:ir.model,name:dekad_admission.model_de_multi_admission_wizard
+msgid "Multi Admission Wizard"
+msgstr "معالج القبول المتعدد"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_multi_admission_wizard_form
+msgid "Multi admission"
+msgstr "قبول متعدد"
+
+#. module: dekad_admission
+#: model:ir.actions.act_window,name:dekad_admission.act_open_de_multi_admission_wizard_view
+#: model:ir.ui.menu,name:dekad_admission.menu_de_multi_admission_wizard
+msgid "Multi students admission"
+msgstr "قبول طلاب متعددين"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__nbr
+msgid "No of Admission"
+msgstr "عدد عمليات القبول"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: dekad_admission
+#: model:ir.model.fields,help:dekad_admission.field_de_admission__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: dekad_admission
+#: model:ir.model.fields,help:dekad_admission.field_de_admission__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل ذات خطأ التسليم"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_form
+msgid "Open Student Profile"
+msgstr "فتح ملف الطالب"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__prev_grade_id
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__prev_grade_id
+msgid "Previous Grade"
+msgstr "الصف السابق"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__prev_institute_id
+msgid "Previous Institute"
+msgstr "المعهد السابق"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__prev_result
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__prev_result
+msgid "Previous Result"
+msgstr "النتيجة السابقة"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.de_admission_analysis_wizard_form
+msgid "Print"
+msgstr "طباعة"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_multi_admission_wizard_form
+msgid "Proceed"
+msgstr "متابعة"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__fee
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__fee
+msgid "Register Fee amount"
+msgstr "مبلغ رسوم التسجيل"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسالة القصيرة"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission_analysis_wizard__start_date
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: dekad_admission
+#: model:ir.model.fields,help:dekad_admission.field_de_admission__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق قد مضى\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__student_id
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__student_ids
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_search
+msgid "Student"
+msgstr "الطالب"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_form
+msgid "Student Detail"
+msgstr "تفاصيل الطالب"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_multi_admission_wizard_form
+msgid "Student Details"
+msgstr "تفاصيل الطلاب"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.de_admission_analysis_report
+msgid "Student Name"
+msgstr "اسم الطالب"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__student_id_sequence
+msgid "Student sequence"
+msgstr "تسلسل الطالب"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_multi_admission_wizard_form
+msgid "Students"
+msgstr "الطلاب"
+
+#. module: dekad_admission
+#: model:res.groups,name:dekad_admission.group_de_admission
+msgid "Students Admission"
+msgstr "قبول الطلاب"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__student_capacity
+msgid "Students capacity"
+msgstr "سعة الطلاب"
+
+#. module: dekad_admission
+#: model:ir.model.fields,help:dekad_admission.field_de_admission__fee
+#: model:ir.model.fields,help:dekad_admission.field_de_multi_admission_wizard__fee
+msgid ""
+"The sale price is managed from the product template. Click on the 'Configure"
+" Variants' button to set the extra attribute prices."
+msgstr ""
+"يتم إدارة سعر البيع من قالب المنتج. انقر على زر 'تكوين المتغيرات' لتعيين "
+"أسعار السمات الإضافية."
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.de_admission_analysis_report
+msgid "There is no admission to display"
+msgstr "لا توجد عمليات قبول لعرضها"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__to_enroll_students_count
+msgid "To enroll students count"
+msgstr "عدد الطلاب المراد تسجيلهم"
+
+#. module: dekad_admission
+#: model_terms:ir.ui.view,arch_db:dekad_admission.view_de_admission_search
+msgid "Today"
+msgstr "اليوم"
+
+#. module: dekad_admission
+#: model:ir.model.fields,help:dekad_admission.field_de_admission__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي المسجل."
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: dekad_admission
+#: model:ir.model.fields,help:dekad_admission.field_de_admission__website_message_ids
+msgid "Website communication history"
+msgstr "سجل التواصل عبر الموقع الإلكتروني"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__fee_start_date
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__fee_start_date
+msgid "fee Start Date"
+msgstr "تاريخ بداية الرسوم"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__fee_term_id
+#: model:ir.model.fields,field_description:dekad_admission.field_de_multi_admission_wizard__fee_term_id
+msgid "fee Term"
+msgstr "فترة الرسوم"
+
+#. module: dekad_admission
+#: model:ir.model.fields,field_description:dekad_admission.field_de_admission__image
+msgid "image"
+msgstr "صورة"

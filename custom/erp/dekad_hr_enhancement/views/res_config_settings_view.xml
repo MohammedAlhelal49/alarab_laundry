@@ -1,0 +1,21 @@
+<odoo>
+    <record id="res_config_settings_view_form_hr_expiry" model="ir.ui.view">
+        <field name="name">res.config.settings.hr.expiry</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="hr.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//app[@name='hr']" position="inside">
+                <block title="Document Expiry">
+                    <setting string="Reminder Days Before Expiry">
+                        <field name="document_expiry_days"/>
+                    </setting>
+                    <setting string="Email Template">
+                        <field name="document_expiry_template_id"/>
+                    </setting>
+                </block>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

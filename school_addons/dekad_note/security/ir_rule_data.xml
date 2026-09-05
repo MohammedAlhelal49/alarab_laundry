@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="group_de_note" model="res.groups">
+            <field name="name">Notes</field>
+             <field name="category_id" ref="dekad_core.module_category_school"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user'))]"/>
+              <field name="sequence">90</field>
+        </record>
+
+        <record id="dekad_core.group_de_back_office_admin" model="res.groups">
+            <field name="implied_ids"
+                   eval="[(4, ref('group_de_note'))]"/>
+        </record>
+
+
+        <record model="ir.rule" id="teacher_de_note_rule">
+            <field name="name">teacher Note rule</field>
+            <field name="model_id" ref="model_de_note"/>
+            <field name="groups" eval="[(4, ref('dekad_core.group_de_teacher'))]"/>
+            <field name="domain_force">['|' , ('group_id.all_teachers','=',True)
+                ,
+                ('group_id.teacher_ids.user_id' ,
+                '=' , user.id)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="teacher_de_note_group_rule">
+            <field name="name">teacher Note group rule</field>
+            <field name="model_id" ref="model_de_note_group"/>
+            <field name="groups" eval="[(4, ref('dekad_core.group_de_teacher'))]"/>
+            <field name="domain_force">['|' ,  ('all_teachers','=',True)
+                ,
+                ('teacher_ids.user_id' ,
+                '=' , user.id)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="portal_de_note_group_rule">
+            <field name="name">Portal Note group rule</field>
+            <field name="model_id" ref="model_de_note_group"/>
+            <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">['|','|','|',('all_parents' , '=' , True), ('parent_ids.user_id' , '=' , user.id),
+                ('all_students' , '=' , True), ('student_ids.user_id' , '=' , user.id)]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="portal_de_note_rule">
+            <field name="name">Portal Note rule</field>
+            <field name="model_id" ref="model_de_note"/>
+            <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+                <field name="domain_force">['|','|','|',('group_id.all_parents' , '=' , True), ('group_id.parent_ids.user_id' , '=' , user.id),
+                ('group_id.all_students' , '=' , True), ('group_id.student_ids.user_id' , '=' , user.id),('state','=','confirm')]
+            </field>
+        </record>
+    </data>
+</odoo>
+
+

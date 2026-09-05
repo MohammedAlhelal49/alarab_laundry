@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fcm_device_admin,fcm.device.admin,model_fcm_device,base.group_system,1,1,1,1
+access_fcm_device_user,fcm.device.user,model_fcm_device,base.group_user,1,1,1,1
+access_fcm_notification_admin,fcm.notification.admin,model_fcm_notification,base.group_system,1,1,1,1
+access_fcm_notification_user,fcm.notification.user,model_fcm_notification,base.group_user,1,1,1,1
+access_fcm_addon_preference_admin,fcm.addon.preference.admin,model_fcm_addon_preference,base.group_system,1,1,1,1
+access_fcm_addon_preference_user,fcm.addon.preference.user,model_fcm_addon_preference,base.group_user,1,1,1,1
+access_fcm_addon_preference_action_admin,fcm.addon.preference.action.admin,model_fcm_addon_preference_action,base.group_system,1,1,1,1
+access_fcm_addon_preference_action_user,fcm.addon.preference.action.user,model_fcm_addon_preference_action,base.group_user,1,1,1,1

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="mail_template_cash_difference" model="mail.template">
+            <field name="name">POS: Cash Difference Alert</field>
+            <field name="model_id" ref="point_of_sale.model_pos_session"/>
+            <field name="subject">Cash Difference Alert - {{ object.name }} - {{ object.config_id.name }}</field>
+            <field name="email_from">{{ (object.company_id.email or user.email) }}</field>
+            <field name="lang">{{ object.user_id.lang }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px; font-family: Arial, sans-serif;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f4f4f4; padding: 20px;">
+                        <tr>
+                            <td align="center">
+                                <table border="0" cellpadding="0" cellspacing="0" width="600" style="background-color: #ffffff; border-radius: 8px;">
+                                    <tr>
+                                        <td style="background-color: #dc3545; padding: 20px; border-radius: 8px 8px 0 0;">
+                                            <h1 style="color: #ffffff; margin: 0; font-size: 24px;">Cash Difference Alert</h1>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 30px;">
+                                            <p style="font-size: 16px; color: #333333; margin-bottom: 20px;">Dear Manager,</p>
+                                            <p style="font-size: 14px; color: #666666; margin-bottom: 20px;">A cash difference has been detected when closing POS session. Please review the details below:</p>
+                                            <table border="0" cellpadding="10" cellspacing="0" width="100%" style="background-color: #f8f9fa; border-radius: 4px; margin-bottom: 20px;">
+                                                <tr>
+                                                    <td style="border-bottom: 1px solid #dee2e6; width: 40%;"><strong>Session:</strong></td>
+                                                    <td style="border-bottom: 1px solid #dee2e6;"><t t-out="object.name"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border-bottom: 1px solid #dee2e6;"><strong>Point of Sale:</strong></td>
+                                                    <td style="border-bottom: 1px solid #dee2e6;"><t t-out="object.config_id.name"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border-bottom: 1px solid #dee2e6;"><strong>Cashier:</strong></td>
+                                                    <td style="border-bottom: 1px solid #dee2e6;"><t t-out="object.user_id.name"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border-bottom: 1px solid #dee2e6;"><strong>Expected Cash:</strong></td>
+                                                    <td style="border-bottom: 1px solid #dee2e6;"><t t-out="'%.2f' % object.cash_register_balance_end"/> <t t-out="object.currency_id.symbol or object.company_id.currency_id.symbol"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border-bottom: 1px solid #dee2e6;"><strong>Actual Cash:</strong></td>
+                                                    <td style="border-bottom: 1px solid #dee2e6;"><t t-out="'%.2f' % object.cash_register_balance_end_real"/> <t t-out="object.currency_id.symbol or object.company_id.currency_id.symbol"/></td>
+                                                </tr>
+                                                <tr style="background-color: #fff3cd;">
+                                                    <td><strong>Difference:</strong></td>
+                                                    <td><strong style="color: #dc3545; font-size: 18px;"><t t-out="'%.2f' % object.cash_register_difference"/> <t t-out="object.currency_id.symbol or object.company_id.currency_id.symbol"/></strong></td>
+                                                </tr>
+                                            </table>
+                                            <p style="text-align: center; margin-top: 30px;">
+                                                <a t-attf-href="{{ object.get_base_url() }}/web#id={{ object.id }}&amp;model=pos.session&amp;view_type=form" style="background-color: #007bff; color: #ffffff; padding: 12px 30px; text-decoration: none; border-radius: 4px; font-weight: bold;">View Session Details</a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-color: #f8f9fa; padding: 20px; border-radius: 0 0 8px 8px; text-align: center; font-size: 12px; color: #6c757d;">
+                                            <p style="margin: 0;">This is an automated notification from <t t-out="object.company_id.name"/>.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </field>
+            <field name="auto_delete" eval="False"/>
+        </record>
+    </data>
+</odoo>

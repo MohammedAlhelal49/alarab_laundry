@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+activity_logger_user,activity.logger.user,model_activity_logger,dekad_activity_logger.group_activity_logger_user,1,0,0,0
+activity_logger_manager,activity.logger.manager,model_activity_logger,dekad_activity_logger.group_activity_logger_manager,1,1,0,1
+activity_logger_ir_model_user,activity.logger.ir.model.user,base.model_ir_model,dekad_activity_logger.group_activity_logger_user,1,0,0,0
+activity_logger_ir_model_manager,activity.logger.ir.model.manager,base.model_ir_model,dekad_activity_logger.group_activity_logger_manager,1,1,0,0
+activity_logger_filter_wizard_user,activity.logger.filter.wizard.user,model_activity_logger_filter_wizard,dekad_activity_logger.group_activity_logger_user,1,1,1,1
+access_activity_logger_action_type,activity.logger.action.type,model_activity_logger_action_type,base.group_system,1,1,1,1
+access_activity_logger_document_type,activity.logger.document.type,model_activity_logger_document_type,base.group_system,1,1,1,1
+access_activity_logger_filter_wizard,activity.logger.filter.wizard,model_activity_logger_filter_wizard,base.group_user,1,1,1,1
+activity_logger_kpi_user,activity.logger.kpi.user,model_activity_logger_kpi,dekad_activity_logger.group_activity_logger_user,1,1,1,1
+activity_logger_kpi_wizard_user,activity.logger.kpi.wizard.user,model_activity_logger_kpi_wizard,dekad_activity_logger.group_activity_logger_user,1,1,1,1
+access_activity_logger_invoice_line_user,activity.logger.invoice.line.user,model_activity_logger_invoice_line,dekad_activity_logger.group_activity_logger_user,1,0,0,0
+access_activity_logger_invoice_line_manager,activity.logger.invoice.line.manager,model_activity_logger_invoice_line,dekad_activity_logger.group_activity_logger_manager,1,1,1,1

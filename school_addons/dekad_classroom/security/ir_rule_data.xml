@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_de_classroom" model="res.groups">
+            <field name="name">Classrooms</field>
+            <field name="category_id" ref="dekad_core.module_category_school"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user'))]"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="dekad_core.group_de_back_office_admin" model="res.groups">
+            <field name="implied_ids"
+                   eval="[(4, ref('group_de_classroom'))]"/>
+        </record>
+        <record model="ir.rule" id="teacher_de_classroom_rule">
+            <field name="name">Teacher classroom rule</field>
+            <field name="model_id" ref="model_de_classroom"/>
+            <field name="groups"
+                   eval="[(4, ref('dekad_core.group_de_teacher'))]"/>
+            <field name="domain_force">[('grade_id.teacher_ids.user_id.id','=',user.id)]
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,653 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- document -->
+    <template id="student_quiz_doc_entry" inherit_id="portal.portal_my_home" priority="60">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-if="student_quiz_document and student_quiz_document['show']"
+               t-call="portal.portal_docs_entry">
+                <t t-set="url" t-value="student_quiz_document['url']"/>
+                <t t-set="title" t-value="'Quizzes'"/>
+                <t t-set="icon">
+                    <i class="fa fa-file"/>
+                </t>
+                <t t-set="count">
+                    <span class="document_item_count" t-esc="student_quiz_document['count']"/>
+                </t>
+                <div class="clearing"/>
+            </t>
+        </xpath>
+    </template>
+    <!-- document -->
+
+    <!-- breadcrumb -->
+    <template id="student_quiz_breadcrumbs" inherit_id="portal.portal_breadcrumbs">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name=='Quizzes'" t-attf-class="breadcrumb-item">
+                <a t-att-href="page_url">Quizzes
+                </a>
+            </li>
+            <li t-if="page_name=='Quiz Show'" t-attf-class="breadcrumb-item">
+                <a t-att-href="list_url">Quizzes
+                </a>
+                <span>/</span>
+                <a t-att-href="page_url">
+                    <t t-esc="record.display_name"/>
+                </a>
+            </li>
+            <li t-if="page_name=='Quiz Submission'" t-attf-class="breadcrumb-item">
+                <a t-att-href="quiz_list_url">Quizzes
+                </a>
+                <span>/</span>
+                <a t-att-href="quiz_show_url">
+                    <t t-esc="quiz.display_name"/>
+                </a>
+                <span>/</span>
+                <a t-att-href="page_url">
+                    Submission
+                </a>
+            </li>
+
+        </xpath>
+    </template>
+    <!-- breadcrumb -->
+
+    <!-- quiz list -->
+    <template id="student_quiz" name="quizs">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+            </t>
+            <div class="card dynamic-website-card-holder">
+                <div class="card-body">
+                    <div class="dynamic-website-card" t-if="quiz_records">
+
+                        <t t-call="portal.portal_table">
+                            <table
+                                    class="table"
+                            >
+                                <thead>
+                                    <tr>
+
+
+                                        <th scope="col">
+                                            Classroom
+                                        </th>
+
+                                        <th scope="col">
+                                            Type
+                                        </th>
+
+                                        <th scope="col">
+                                            Name
+                                        </th>
+
+                                        <th scope="col">
+                                            Submit date
+                                        </th>
+                                        <th scope="col">
+                                            State
+                                        </th>
+                                        <th scope="col">
+                                            Actions
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="quiz_records"
+                                       t-as="quiz">
+                                        <tr>
+                                            <td>
+                                                <span t-esc="quiz.classroom_id.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="quiz.type_id.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="quiz.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="quiz.submission_date" t-options="{'widget':'datetime'}"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-if="quiz.state == 'confirm'">
+                                                    <span class="badge badge-pill bg-info"
+                                                          t-out="'Confirmed'"/>
+                                                </t>
+
+                                                <t t-elif="quiz.state == 'finish'">
+                                                    <span class="badge badge-pill bg-warning"
+                                                          t-out="'Finished'"/>
+                                                </t>
+
+                                            </td>
+                                              <td class="website-actions-td">
+                                            <!-- Show button (always visible) -->
+                                                <t t-if="parent_student_param">
+                                                    <t t-set="show_url" t-value="'/student/quiz/' + str(quiz.id) + '?parent_student_param=' + str(parent_student_param)"/>
+                                                    <t t-set="submission_url" t-value="'/student/quiz/' + str(quiz.id) + '/submission?parent_student_param=' + str(parent_student_param)"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <t t-set="show_url" t-value="'/student/quiz/' + str(quiz.id)"/>
+                                                    <t t-set="submission_url" t-value="'/student/quiz/' + str(quiz.id) + '/submission'"/>
+                                                </t>
+
+                                                <a t-att-href="show_url">
+                                                    <button class="btn btn-outline-secondary btn-sm">Show</button>
+                                                </a>
+
+                                                <!-- PARENT viewing: Only show "Show Result" if submission exists -->
+                                                <t t-if="parent_student_param">
+                                                    <a t-if="quiz.quiz_submission_ids" t-att-href="submission_url">
+                                                        <button class="btn btn-outline-secondary btn-sm">Show Result</button>
+                                                    </a>
+                                                </t>
+
+                                                <!-- STUDENT viewing: Show "Start Quiz" or "Show Result" -->
+                                                <t t-else="">
+                                                    <t t-set="has_submission" t-value="bool(quiz.quiz_submission_ids)"/>
+                                                    <t t-set="submission_date" t-value="quiz.submission_date.strftime('%Y-%m-%d')"/>
+                                                    <t t-set="current_date" t-value="datetime.datetime.now().strftime('%Y-%m-%d')"/>
+                                                    <t t-set="date_passed" t-value="current_date >= submission_date"/>
+
+                                                    <t t-if="not has_submission and date_passed">
+                                                        <t t-set="has_draft" t-value="[obj for obj in quiz_submission_list if obj['id'] == quiz.id][0]"/>
+                                                        <a t-if="not has_draft['has_draft_submission']"
+                                                           onclick="if(!confirm('Are you sure you want to start the quiz?'))return false"
+                                                           t-att-href="submission_url">
+                                                            <button class="btn btn-outline-secondary btn-sm">Start Quiz</button>
+                                                        </a>
+                                                    </t>
+
+                                                    <a t-if="has_submission" t-att-href="submission_url">
+                                                        <button class="btn btn-outline-secondary btn-sm">Show Result</button>
+                                                    </a>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </t>
+
+                    </div>
+                    <t t-else="">
+                        <div class="alert alert-info" role="alert">
+                            There are no quiz to display.
+                        </div>
+                    </t>
+                </div>
+
+            </div>
+        </t>
+    </template>
+    <!-- quiz list -->
+
+    <!-- quiz show -->
+    <template id="student_quiz_show" name="quiz show">
+        <t t-call="portal.portal_layout">
+            <div class="card portal-page-content show-page">
+                <div class="card-body row">
+                    <div class="col-12"
+                    >
+                        <h5>quiz full information
+                        </h5>
+                    </div>
+                    <div class=" col-12 col-md-6">
+                        <strong class="">Classroom :</strong>
+                        <span t-esc="record.classroom_id.name"/>
+                    </div>
+
+                    <div class=" col-12 col-md-6"
+                    >
+
+                        <strong class="">Type :</strong>
+                        <span t-esc="record.type_id.name"/>
+
+
+                    </div>
+
+                    <div class="col-12 col-md-6"
+                    >
+                        <strong>Name :</strong>
+                        <span t-esc="record.name"/>
+                    </div>
+
+                    <div class=" col-12 col-md-6"
+                    >
+
+                        <strong class="">Correction type :</strong>
+                        <t t-esc="'Automatic'" t-if="record.correction_type == 'automatic'"/>
+                        <t t-esc="'Manual'" t-else=""/>
+
+
+                    </div>
+
+
+                    <div class=" col-12 col-md-6"
+                    >
+
+                        <strong class="">Related subject :</strong>
+
+                        <t t-esc="record.subject_id.name"/>
+
+
+                    </div>
+
+                    <div class=" col-12 col-md-6" t-if="record.teacher_id"
+                    >
+                        <strong class="">Teacher :</strong>
+                        <span t-esc="record.teacher_id.name"/>
+                    </div>
+
+                    <div class=" col-12 col-md-6"
+                    >
+
+                        <strong class="">Created at :</strong>
+                        <span t-esc="record.create_date" t-options="{'widget':'datetime'}"/>
+
+
+                    </div>
+
+
+                    <div class=" col-12 col-md-6"
+                    >
+                        <strong class="">State :</strong>
+
+                        <t t-if="record.state == 'confirm'">
+                            <span class="badge badge-pill bg-info"
+                                  t-out="'Confirmed'"/>
+                        </t>
+
+                        <t t-elif="record.state == 'finish'">
+                            <span class="badge badge-pill bg-warning"
+                                  t-out="'Finished'"/>
+                        </t>
+
+
+                    </div>
+
+                    <hr/>
+
+
+                    <div class=" col-12 col-md-6"
+                    >
+
+                        <strong class="">Quiz time :</strong>
+                        <t t-if="record.hour_limit">
+                            <t t-esc="record.hour_limit"/>
+                            <t t-if="record.hour_limit == 1" t-esc="'Hour'"/>
+                            <t t-else="" t-esc="'Hours'"/>
+                        </t>
+
+                        <t t-esc="'And'" t-if="record.hour_limit and record.minute_limit"/>
+                        <t t-if="record.minute_limit">
+                            <t t-esc="record.minute_limit"/>
+                            <t t-if="record.minute_limit == 1" t-esc="'Minute'"/>
+                            <t t-else="" t-esc="'Minutes'"/>
+                        </t>
+
+
+                    </div>
+
+
+                    <div class=" col-12 col-md-6"
+                    >
+                        <strong class="">Mark :</strong>
+                        <span t-esc="record.mark"/>
+                    </div>
+
+                    <div class=" col-12 col-md-6"
+                    >
+
+                        <strong class="">Questions number :</strong>
+                        <span t-esc="len(record.question_ids)"/>
+
+
+                    </div>
+
+
+                    <div class=" col-12 col-md-6"
+                    >
+
+                        <strong class="">Submission before date :</strong>
+                        <span t-esc="record.submission_date" t-options="{'widget':'datetime'}"/>
+
+
+                    </div>
+
+                    <hr/>
+
+
+                    <div class=" col-12" t-if="file_name"
+                    >
+                        <strong class="">Attachment :</strong>
+                        <span t-esc="file_name"/>
+                        <a t-attf-href="/student/quiz/download/#{record.id}">
+                            <i class="fa fa-download form-file-download-icon"
+                            />
+                        </a>
+                    </div>
+
+
+                    <div class=" col-12"
+                    >
+
+                        <strong>Description :</strong>
+                        <span t-esc="record.description"/>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </t>
+
+    </template>
+    <!-- quiz show -->
+
+    <!-- submission -->
+    <template id="student_quiz_submission" name="quiz submission">
+        <t t-call="portal.portal_layout">
+            <!-- show submission if exist -->
+            <div t-if="submission" class="card portal-page-content show-page">
+
+                <div t-if="submission.state == 'finish'" class="card-body row">
+                    <div class="col-12"
+                    >
+                        <h5>
+                            Quiz Submission full information
+
+                        </h5>
+                    </div>
+
+                    <div class=" col-12 col-md-6"
+                    >
+                        <strong class="">Quiz type :</strong>
+
+
+                        <t t-esc="quiz.type_id.name"/>
+
+
+                    </div>
+
+
+                    <div class=" col-12 col-md-6"
+                    >
+                        <strong class="">Quiz name :</strong>
+                        <t t-esc="quiz.name"/>
+                    </div>
+
+
+                    <div class=" col-12 col-md-6"
+                    >
+                        <strong class="">Quiz questions number :</strong>
+                        <t t-esc="len(quiz.question_ids)"/>
+                    </div>
+
+
+                    <div class=" col-12 col-md-6"
+                    >
+                        <strong class="">Quiz mark :</strong>
+
+
+                        <t t-esc="quiz.mark"/>
+
+
+                    </div>
+
+                    <div class=" col-12 col-md-6"
+                    >
+                        <strong class="">Gained Mark :</strong>
+
+
+                        <t t-esc="submission.mark"/>
+
+                    </div>
+                    <div class=" col-12 col-md-6"
+                    >
+                        <strong class="">Submission State :</strong>
+
+
+                        <t t-if="submission.state == 'finish'">
+                            <span class="badge badge-pill bg-info"
+                                  t-out="'Sent'"/>
+                        </t>
+
+                        <t t-elif="submission.state == 'reject'">
+                            <span class="badge badge-pill bg-danger"
+                                  t-out="'Rejected'"/>
+                        </t>
+
+
+                    </div>
+
+                    <div class=" col-12 col-md-6"
+                    >
+                        <strong class="">Submitted at :</strong>
+                        <t t-esc="submitted_date" t-options="{'widget':'datetime'}"/>
+                    </div>
+
+                    <div class="col-12">
+                        <hr/>
+                    </div>
+
+
+                    <div class=" col-12  row"
+                    >
+                        <strong class="mb-3">Answers</strong>
+
+                        <div class=" col-12 col-lg-6" t-foreach="submission.answer_ids" t-as="answer">
+
+                            <div class="card">
+
+                                <div class="card-text">
+                                    <div class="row">
+
+                                        <div class="col-12">
+                                            <strong>Question :</strong>
+                                            <t t-out="answer.question_id.name"/>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <strong>Question Mark :</strong>
+                                            <t t-out="answer.mark"/>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <strong>Correct Answer :</strong>
+                                            <t t-set="correct_answer"
+                                               t-value=" [obj.name for obj in answer.answer_ids if obj.is_correct]"/>
+                                            <span t-out="answer.right_answer"
+                                                  t-if="answer.question_type == 'descriptive'"/>
+                                            <span t-out="correct_answer[0]"
+                                                  t-if="correct_answer and answer.question_type != 'descriptive' "/>
+
+                                        </div>
+
+                                        <hr/>
+
+                                        <div class="col-12" t-if="answer.answer">
+                                            <strong>Student Answer :</strong>
+                                            <t t-out="answer.answer"/>
+                                        </div>
+
+
+                                        <div class="col-12">
+                                            <strong>State :</strong>
+                                            <t t-if=" answer.is_correct or answer.consider_correct" t-esc="Correct"/>
+                                            <t t-else="" t-esc="False"/>
+                                            <t t-set="correct_text" t-value="'Consider correct'"
+                                               t-if="answer.consider_correct"/>
+                                            <t t-set="correct_text" t-value="'Correct'" t-else=""/>
+
+                                            <span class="badge badge-pill bg-warning" t-out="'No answer'"
+                                                  t-if="not answer.answer"/>
+                                            <span class="badge badge-pill bg-success" t-out="correct_text"
+                                                  t-elif="answer.is_correct or answer.consider_correct"/>
+                                            <span class="badge badge-pill bg-warning" t-out="'False'" t-else=""/>
+
+
+                                        </div>
+
+
+                                        <div class="col-12">
+                                            <strong>Gained Mark :</strong>
+
+                                            <t t-out="answer.mark" t-if="answer.is_correct or answer.consider_correct"/>
+                                            <t t-out="'0'" t-else=""/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+                <div t-elif="submission.state == 'correcting'">
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">Quiz submitted successfully!</h4>
+                        <p>Thank you for submitting the quiz , we will show the result after correcting the submission
+                        </p>
+                        <hr/>
+
+                        <p>Submitted at :
+                            <t t-esc="submission.create_date" t-options="{'widget':'datetime'}"
+                               t-if="submission.create_date"/>
+                        </p>
+                    </div>
+
+
+                </div>
+                <div t-elif="submission.state == 'reject'" class="alert alert warning" role="alert">
+
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading">Quiz submission rejected!</h4>
+                        <p>Your submission has been rejected because of cheating in the exam
+
+                        </p>
+                        <hr/>
+
+                        <p>Submitted at :
+                            <t t-esc="submission.create_date" t-options="{'widget':'datetime'}"
+                               t-if="submission.create_date"/>
+                        </p>
+                        <p class="mb-0">Please contact the school administrations for more information
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div t-else="" class="card portal-page-content">
+
+
+                <div t-if="len(attempts) &lt; 2" class="card-body quiz-questions-holder">
+
+                    <div class="row quiz-questions-header">
+                        <div class="col-12 col-md-6">
+                            <section class="quiz-countdown" id="quiz_timer">
+                                <span class="timer-title">Quiz Time</span>
+                                <span id="quiz_hours">00</span>
+                                :  <span id="quiz_minutes">00</span> :
+                                <span id="quiz_seconds">00</span>
+                            </section>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="count">Questions Count :
+                                <t t-esc="len(quiz.question_ids)"/>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="quiz-hr"/>
+                    <form action="/student/quizzes/submission/create" method="POST" id="quiz_create_form"
+                          enctype='multipart/form-data' class="row">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <input type="hidden" name="quiz_id" t-att-value="quiz.id" id="quiz_id"/>
+                        <t t-foreach="quiz.question_ids" t-as="question">
+                            <div class=" mt-3 col-12 col-lg-6" t-if="question.type=='descriptive'"
+                            >
+
+                                <div class="card">
+                                    <div class='card-text'>
+                                        <label class="col-form-label" t-attf-for="question_{{question.id}}"
+                                               t-esc="question.name"/>
+                                        <span class="question-mark">
+                                            <t t-esc="question.mark"/>
+                                            Mark
+                                        </span>
+
+                                        <input class="form-control"
+                                               t-attf-name="question_{{question.id}}"
+                                               t-attf-id="question_{{question.id}}"
+
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" mt-3  col-12 col-lg-6" t-else=""
+                            >
+                                <div class="card">
+                                    <div class='card-text'>
+                                        <div class="options-input-header">
+                                            <t t-esc="question.name"/>
+                                            <span class="question-mark">
+                                                <t t-esc="question.mark"/>
+                                                Mark
+                                            </span>
+                                        </div>
+                                        <div class="form-check form-check-inline" t-foreach="question.answer_ids"
+                                             t-as="answer">
+                                            <input type="radio" class="form-check-input"
+                                                   t-attf-id="question_{{question.id}}_option_{option.id}"
+                                                   t-attf-name="question_{{question.id}}"
+                                                   t-att-value="answer.name"/>
+                                            <label class="form-check-label"
+                                                   for="question_{{question.id}}_option_{option.id}"
+                                                   t-esc="answer.name"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+
+                        <div class="form-buttons-holder">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div t-else="" class="alert alert warning" role="alert">
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading">Quiz submission rejected!</h4>
+                        <p>Your submission has been rejected because of outing the exam
+                        </p>
+                        <hr/>
+                        <p t-foreach="attempts" t-as="attempt">
+                            <t t-if="attempt_index == 0" t-esc="'First Attempt at'"/>
+                            <t t-if="attempt_index == 1" t-esc="'Second Attempt at'"/>
+                            <t t-esc="attempt.create_date" t-options="{'widget':'datetime'}"
+                              />
+                        </p>
+                        <p class="mb-0">Please contact the school administrations for more information
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        </t>
+
+    </template>
+    <!-- submission -->
+
+
+</odoo>

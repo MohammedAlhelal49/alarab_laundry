@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ========================================================= -->
+    <!-- List View -->
+    <!-- ========================================================= -->
+
+    <record id="view_property_list" model="ir.ui.view">
+        <field name="name">account.analytic.account.property.list</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_list"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//list/field[@name='name']" position="after">
+
+                <field name="name" column_invisible="not context.get('property_mode')"/>
+                <field name="rental_contract_id" column_invisible="not context.get('property_mode')"/>
+                <field name="property_building_id" column_invisible="not context.get('property_mode')"/>
+                <field name="property_type" column_invisible="not context.get('property_mode')"/>
+                <field name="invoice_status" column_invisible="not context.get('property_mode')"/>
+                <field name="is_published" column_invisible="not context.get('property_mode')"/>
+
+            </xpath>
+
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="column_invisible">context.get('property_mode')</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='code']" position="attributes">
+                <attribute name="column_invisible">context.get('property_mode')</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='debit']" position="attributes">
+                <attribute name="column_invisible">context.get('property_mode')</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='credit']" position="attributes">
+                <attribute name="column_invisible">context.get('property_mode')</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='balance']" position="attributes">
+                <attribute name="column_invisible">context.get('property_mode')</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <!-- ========================================================= -->
+    <!-- Form View -->
+    <!-- ========================================================= -->
+
+    <record id="view_property_form" model="ir.ui.view">
+        <field name="name">account.analytic.account.property.form</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Hide standard analytic fields -->
+            <xpath expr="//group[@name='main']//field[@name='company_id']" position="attributes">
+                <attribute name="invisible">context.get('property_mode') == True</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="invisible">context.get('property_mode')</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='code']" position="attributes">
+                <attribute name="invisible">context.get('property_mode')</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='currency_id']" position="attributes">
+                <attribute name="invisible">context.get('property_mode')</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='plan_id']" position="attributes">
+                <attribute name="invisible">context.get('property_mode')</attribute>
+            </xpath>
+
+            <xpath expr="//div[@class='oe_title']" position="attributes">
+                <attribute name="invisible">context.get('property_mode')</attribute>
+            </xpath>
+
+            <!-- Property UI -->
+
+            <xpath expr="//sheet" position="inside">
+
+                <field
+                    name="property_image"
+                    widget="image"
+                    class="oe_avatar ms-3 me-3"
+                    invisible="not context.get('property_mode')"
+                    options="{'size':[0,180]}"/>
+
+                <div class="oe_title"
+                     invisible="not context.get('property_mode')">
+
+                    <label for="name" string="Property"/>
+
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+
+                </div>
+
+                <group invisible="not context.get('property_mode')">
+
+                    <group>
+
+                        <field
+                            name="status"
+                            widget="radio"
+                            options="{'horizontal': True}"/>
+
+                        <field name="manual_status" invisible="status == 'occupied'"/>
+
+                        <field name="rental_contract_id"/>
+
+                        <field name="property_building_id"/>
+
+                        <field name="property_address"/>
+
+                    </group>
+
+                    <group>
+
+                        <field name="analytical_account"/>
+
+                        <field name="plan_id"/>
+
+                        <field name="currency_id"/>
+
+                        <field name="property_type"/>
+
+                        <field name="is_published"/>
+
+                        <field name="invoice_status"/>
+
+                        <field name="category"/>
+
+                        <field name="unit_type_id"/>
+
+                        <field name="unit_status_id"/>
+
+                        <field name="bedroom_no"/>
+
+                        <field name="area_size"/>
+
+                    </group>
+
+                </group>
+
+                <notebook invisible="not context.get('property_mode')">
+
+                    <page string="Description">
+                        <field name="website_description"/>
+                    </page>
+
+                    <page string="Gallery">
+                        <field
+                            name="property_attachment_image_ids"
+                            widget="many2many_binary"
+                            options="{'accepted_file_extensions':'image/*'}"/>
+                    </page>
+
+                    <page string="Documents">
+                        <field
+                            name="property_attachment_doc_ids"
+                            widget="many2many_binary"/>
+                    </page>
+
+                    <page string="Meter Readings">
+
+                        <field name="property_meter_reading_ids">
+
+                            <list editable="bottom">
+
+                                <field name="meter_id"/>
+
+                                <field name="date"/>
+
+                                <field name="quantity"/>
+
+                                <field name="usage"/>
+
+                                <field name="description"/>
+
+                                <field name="invoice_id"/>
+
+                            </list>
+
+                        </field>
+
+                    </page>
+
+                    <page string="Rent History">
+
+                        <field name="rent_history_ids">
+
+                            <list editable="bottom">
+
+                                <field name="currency_id" column_invisible="1"/>
+
+                                <field name="year" width="60px"/>
+
+                                <field name="annual_rent"/>
+
+                                <field name="security_deposit"/>
+
+                            </list>
+
+                        </field>
+
+                    </page>
+
+                </notebook>
+
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- ========================================================= -->
+    <!-- Kanban -->
+    <!-- ========================================================= -->
+
+    <record id="view_property_kanban" model="ir.ui.view">
+        <field name="name">account.analytic.account.property.kanban</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_kanban"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//kanban/templates" position="replace">
+
+                <templates>
+
+                    <t t-name="kanban-box">
+
+                        <div class="oe_kanban_global_click">
+
+                            <div class="d-flex align-items-start">
+
+                                <div class="o_kanban_image me-2">
+
+                                    <field
+                                        name="property_image"
+                                        widget="image"
+                                        options="{'size':[94,94]}"/>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        <field name="name"/>
+                                    </strong>
+
+                                    <div>
+                                        <field name="property_building_id"/>
+                                    </div>
+
+                                    <div class="text-muted">
+                                        <field name="property_address"/>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </t>
+
+                </templates>
+
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <!-- ========================================================= -->
+    <!-- Action -->
+    <!-- ========================================================= -->
+
+    <record id="action_real_estate_properties" model="ir.actions.act_window">
+
+        <field name="name">Properties</field>
+
+        <field name="res_model">account.analytic.account</field>
+
+        <field name="view_mode">kanban,list,form</field>
+
+        <field name="domain">[('is_property','=',True)]</field>
+
+        <field name="context">
+            {
+                'property_mode': True,
+                'search_default_group_by_building': 1
+            }
+        </field>
+
+    </record>
+
+    <record id="filter_properties_building" model="ir.filters">
+        <field name="name">Building</field>
+        <field name="model_id">account.analytic.account</field>
+        <field name="user_id" eval="False"/>
+        <field name="is_default">True</field>
+        <field name="action_id" ref="dekad_enterprise_real_estate.action_real_estate_properties"/>
+        <field name="domain">[]</field>
+        <field name="context">{ 'group_by': ['property_building_id'] }</field>
+        <field name="sort">[]</field>
+    </record>
+
+    </odoo>

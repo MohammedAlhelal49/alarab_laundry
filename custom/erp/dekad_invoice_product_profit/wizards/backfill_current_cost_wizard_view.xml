@@ -1,0 +1,69 @@
+<odoo>
+    <!-- ACL for the transient wizard model.
+         Declared here (not in the CSV) so that it is loaded AFTER the
+         wizard model is registered in the Odoo registry, avoiding the
+         "No matching record found for external id
+         model_invoice_profit_backfill_wizard" error during install. -->
+    <record id="access_invoice_profit_backfill_wizard_manager" model="ir.model.access">
+        <field name="name">invoice.profit.backfill.wizard.manager</field>
+        <field name="model_id" ref="model_invoice_profit_backfill_wizard"/>
+        <field name="group_id" ref="account.group_account_manager"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record id="view_backfill_current_cost_wizard_form" model="ir.ui.view">
+        <field name="name">invoice.profit.backfill.wizard.form</field>
+        <field name="model">invoice.profit.backfill.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Backfill Historical Invoice Costs">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>Backfill Historical Invoice Costs</h1>
+                        <p>
+                            This tool populates the <b>frozen unit cost</b> on historic customer-invoice
+                            lines whose <code>current_cost</code> is still empty (typically invoices
+                            posted before the module was installed).
+                        </p>
+                        <p>
+                            For each candidate line, the tool takes the most recent <b>incoming</b>
+                            stock valuation layer for the same product, company and on/before the
+                            invoice date, then writes its <b>unit cost</b> to the line.
+                        </p>
+                    </div>
+
+                    <group>
+                        <field name="candidate_count" readonly="1"/>
+                    </group>
+
+                    <div class="alert alert-info" role="alert" invisible="candidate_count &gt; 0">
+                        Nothing to backfill — no invoice lines currently have an empty cost.
+                    </div>
+
+                    <field name="preview_html" nolabel="1" invisible="not preview_html"/>
+                    <field name="executed" invisible="1"/>
+                </sheet>
+
+                <footer>
+                    <button name="action_preview" type="object" string="Preview"
+                            class="btn-secondary"
+                            invisible="candidate_count == 0"/>
+                    <button name="action_run" type="object" string="Run Backfill"
+                            class="btn-primary"
+                            invisible="candidate_count == 0"
+                            confirm="This will write cost values to invoice lines. Continue?"/>
+                    <button string="Close" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_backfill_current_cost_wizard" model="ir.actions.act_window">
+        <field name="name">Backfill Historical Invoice Costs</field>
+        <field name="res_model">invoice.profit.backfill.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

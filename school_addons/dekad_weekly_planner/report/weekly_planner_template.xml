@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_weekly_planner_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page" style="font-family: Arial, sans-serif;">
+                        
+                        <!-- Header Section -->
+                        <div class="row mb-4">
+                            <div class="col-12 text-center">
+                                <h2 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px;">
+                                    Weekly Timetable
+                                </h2>
+                            </div>
+                        </div>
+
+                        <!-- Teacher Information -->
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <table class="table table-sm table-borderless">
+                                    <tr>
+                                        <td style="width: 40%; font-weight: bold;">Teacher:</td>
+                                        <td><span t-field="o.teacher_id"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: bold;">Reference:</td>
+                                        <td><span t-field="o.name"/></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-6">
+                                <table class="table table-sm table-borderless">
+                                    <tr>
+                                        <td style="width: 40%; font-weight: bold;">Week Period:</td>
+                                        <td>
+                                            <span t-field="o.week_start_date"/> to <span t-field="o.week_end_date"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: bold;">Week Number:</td>
+                                        <td><span t-field="o.week_number"/></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Summary Statistics -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <div style="background-color: #ecf0f1; padding: 15px; border-radius: 5px;">
+                                    <strong>Summary: </strong>
+                                    <span t-field="o.line_count"/> Total Activities | 
+                                    <strong>Teaching Hours: </strong>
+                                    <span t-esc="'{:02.0f}:{:02.0f}'.format(*divmod(o.lesson_hours * 60, 60))"/> | 
+                                    <strong>Total Hours: </strong>
+                                    <span t-esc="'{:02.0f}:{:02.0f}'.format(*divmod(o.total_hours * 60, 60))"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Weekly Timetable Grid -->
+                        <div class="row">
+                            <div class="col-12">
+                                <h4 style="color: #34495e; margin-top: 20px; margin-bottom: 15px;">Weekly Schedule</h4>
+                                
+                                <t t-set="days" t-value="['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']"/>
+                                <t t-set="day_names" t-value="{'monday': 'Monday', 'tuesday': 'Tuesday', 'wednesday': 'Wednesday', 'thursday': 'Thursday', 'friday': 'Friday', 'saturday': 'Saturday', 'sunday': 'Sunday'}"/>
+                                
+                                <table class="table table-bordered table-sm" style="margin-top: 10px;">
+                                    <thead style="background-color: #3498db; color: white;">
+                                        <tr>
+                                            <th style="width: 12%; text-align: center; padding: 10px;">Time</th>
+                                            <t t-foreach="days" t-as="day">
+                                                <th style="width: 12.5%; text-align: center; padding: 10px;">
+                                                    <span t-esc="day_names[day]"/>
+                                                </th>
+                                            </t>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Get all unique time slots -->
+                                        <t t-set="time_slots" t-value="sorted(set([(line.start_time, line.end_time) for line in o.line_ids]))"/>
+                                        
+                                        <t t-foreach="time_slots" t-as="time_slot">
+                                            <tr>
+                                                <!-- Time Column -->
+                                                <td style="text-align: center; vertical-align: middle; font-weight: bold; background-color: #ecf0f1;">
+                                                    <span t-esc="'{:02.0f}:{:02.0f}'.format(*divmod(time_slot[0] * 60, 60))"/> - 
+                                                    <span t-esc="'{:02.0f}:{:02.0f}'.format(*divmod(time_slot[1] * 60, 60))"/>
+                                                </td>
+                                                
+                                                <!-- Day Columns -->
+                                                <t t-foreach="days" t-as="day">
+                                                    <td style="vertical-align: top; padding: 8px;">
+                                                        <t t-set="activities" t-value="o.line_ids.filtered(lambda l: l.day_of_week == day and l.start_time == time_slot[0] and l.end_time == time_slot[1])"/>
+                                                        <t t-foreach="activities" t-as="activity">
+                                                            <div t-attf-style="border-left: 4px solid #{activity.activity_type == 'lesson' and '#27ae60' or activity.activity_type == 'preparation' and '#f39c12' or activity.activity_type == 'meeting' and '#e74c3c' or '#95a5a6'}; padding-left: 5px; margin-bottom: 5px;">
+                                                                <div style="font-weight: bold; font-size: 10pt;">
+                                                                    <t t-if="activity.activity_type == 'lesson'">
+                                                                        📚 <span t-field="activity.subject_id"/>
+                                                                    </t>
+                                                                    <t t-elif="activity.activity_type == 'preparation'">
+                                                                        📝 Preparation
+                                                                    </t>
+                                                                    <t t-elif="activity.activity_type == 'meeting'">
+                                                                        👥 Meeting
+                                                                    </t>
+                                                                    <t t-else="">
+                                                                        📌 Other
+                                                                    </t>
+                                                                </div>
+                                                                <div style="font-size: 9pt; color: #7f8c8d;">
+                                                                    <t t-if="activity.classroom_id">
+                                                                        🏫 <span t-field="activity.classroom_id"/>
+                                                                    </t>
+                                                                </div>
+                                                                <div t-if="activity.notes" style="font-size: 8pt; color: #95a5a6; font-style: italic; margin-top: 3px;">
+                                                                    <span t-field="activity.notes"/>
+                                                                </div>
+                                                            </div>
+                                                        </t>
+                                                    </td>
+                                                </t>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Activity Legend -->
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <h5 style="color: #34495e; margin-bottom: 10px;">Legend</h5>
+                                <table class="table table-sm table-borderless" style="width: auto;">
+                                    <tr>
+                                        <td style="padding: 5px;">
+                                            <span style="display: inline-block; width: 15px; height: 15px; background-color: #27ae60; border-radius: 3px; margin-right: 5px;"></span>
+                                            <strong>Lesson</strong>
+                                        </td>
+                                        <td style="padding: 5px;">
+                                            <span style="display: inline-block; width: 15px; height: 15px; background-color: #f39c12; border-radius: 3px; margin-right: 5px;"></span>
+                                            <strong>Preparation</strong>
+                                        </td>
+                                        <td style="padding: 5px;">
+                                            <span style="display: inline-block; width: 15px; height: 15px; background-color: #e74c3c; border-radius: 3px; margin-right: 5px;"></span>
+                                            <strong>Meeting</strong>
+                                        </td>
+                                        <td style="padding: 5px;">
+                                            <span style="display: inline-block; width: 15px; height: 15px; background-color: #95a5a6; border-radius: 3px; margin-right: 5px;"></span>
+                                            <strong>Other</strong>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Notes Section -->
+                        <div class="row mt-4" t-if="o.notes">
+                            <div class="col-12">
+                                <h5 style="color: #34495e;">Additional Notes</h5>
+                                <div style="background-color: #fffacd; padding: 10px; border-radius: 5px; border-left: 4px solid #f39c12;">
+                                    <span t-field="o.notes"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="row mt-5">
+                            <div class="col-12 text-center" style="font-size: 9pt; color: #95a5a6;">
+                                <p>Generated on <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,13 @@
+<odoo>
+    <record id="whatsapp_default_template" model="whatsapp.template">
+        <field name="name">Default Contact Template</field>
+        <field name="message">
+            Hello {{partner_name}},
+
+            Welcome to our service!
+
+            We're glad to have you on board. If you need any assistance, feel free to contact us anytime.
+
+        </field>
+    </record>
+</odoo>

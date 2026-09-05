@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="request_demo_page" model="website.page">
+        <!-- The URL where the page will be accessible -->
+        <field name="url">/request-demo</field>
+
+        <!-- Whether the page is live (True) or a draft (False) -->
+        <field name="website_published">True</field>
+
+        <!-- Linking to the template we created earlier -->
+        <field name="view_id" ref="theme_dekad_website.request_demo_form_template"/>
+
+        <!-- SEO title for browser tabs and Google -->
+        <field name="website_indexed">True</field>
+    </record>
+</odoo>

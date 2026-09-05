@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_de_multi_activity_wizard_form" model="ir.ui.view">
+            <field name="name">de.multi.activity.wizard.form</field>
+            <field name="model">de.multi.activity.wizard</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Multi activity">
+                    <field name="classroom_student_ids" invisible="1"/>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="type_id"/>
+                                <field name="classroom_id"/>
+                                <field name="student_ids"
+                                       options="{'no_create': True , 'no_open' : True}"
+                                       domain="[('id', 'in', classroom_student_ids)]" widget="many2many_tags"/>
+                            </group>
+
+                            <group>
+                                <field name="activity_time"/>
+                                <field name="responsible_id" options="{'no_create': True , 'no_open' : True}"
+                                />
+
+                                <field name="file"/>
+                            </group>
+
+                        </group>
+                        <separator string="Description"/>
+                        <field name="description"/>
+                    </sheet>
+                    <footer groups="base.group_user">
+                        <button string="Proceed" type="object" name="do_action" class="oe_highlight"/>
+                        <button special="cancel" string="Close" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_de_multi_activity_wizard_view">
+            <field name="name">Multi students activity</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.multi.activity.wizard</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_multi_activity_wizard_view_form">
+            <field name="act_window_id" ref="act_open_de_multi_activity_wizard_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_de_multi_activity_wizard_form"/>
+        </record>
+    </data>
+</odoo>

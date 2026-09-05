@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Root Menu -->
+    <menuitem id="menu_mobile_app_root"
+              name="Mobile Portal"
+              sequence="90"
+              web_icon="mobile_app_portal,static/description/icon.png"/>
+
+    <!-- Configuration Menu -->
+    <menuitem id="menu_mobile_app_config"
+              name="Configurations"
+              parent="menu_mobile_app_root"
+              sequence="10"/>
+
+    <!-- Applications Sub-menu -->
+    <menuitem id="menu_mobile_app_items"
+              name="Mobile Apps"
+              parent="menu_mobile_app_config"
+              action="action_mobile_app_config"
+              sequence="10"/>
+</odoo>

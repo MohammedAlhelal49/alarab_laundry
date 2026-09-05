@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="header_cta_buttons" inherit_id="website.navbar_nav" name="Header Request Demo Button">
+        <!-- Target the end of the navigation list -->
+        <xpath expr="//ul" position="after">
+            <div class="header_dekad_buttons d-flex align-items-center gap-2 ms-lg-3">
+                <a href="/request-demo" class="btn btn-primary">
+                    Request Demo
+                </a>
+            </div>
+
+            <div class="header_dekad_buttons d-flex align-items-center gap-2 ms-lg-3">
+                <a href="/free-consultation" class="btn btn-primary">
+                    Request Free Consultation
+                </a>
+            </div>
+        </xpath>
+    </template>
+</odoo>

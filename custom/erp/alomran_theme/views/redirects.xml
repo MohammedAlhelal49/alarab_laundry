@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Mobile Phone Redirects - Al Omran
+        ==================================
+        يحوّل زوار الجوال لأرقام الفروع المحددة عند فتح الصفحة
+        كل كود مخصص لصفحة + فرع محدد لأهداف إعلانات جوجل
+
+        ملاحظة: هذا السلوك (auto-redirect عند فتح الصفحة) تم تطبيقه
+        بناءً على طلب صريح من مسؤول الموقع لأغراض إعلانات جوجل.
+
+        لتعديل رقم: ابحث عن اسم الفرع واستبدل الرقم
+        فورمات الرقم: tel:+971XXXXXXXXX
+    -->
+    <template id="mobile_phone_redirects" inherit_id="website.layout" name="Mobile Phone Redirects">
+        <xpath expr="//head" position="inside">
+
+            <!-- ============================================================ -->
+            <!-- كود (1): صفحة About - فرع دبي                              -->
+            <!-- https://alomrantd.com/ar/about                              -->
+            <!-- ============================================================ -->
+            <t t-if="request.httprequest.path in ['/about', '/ar/about', '/en/about']">
+                <script type="text/javascript">
+                    (function() {
+                        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                        if (isMobile) {
+                            window.location.href = "tel:+97150414436";
+                        } else {
+                            console.log("Desktop - No redirect (About - Dubai Branch)");
+                        }
+                    })();
+                </script>
+            </t>
+
+            <!-- ============================================================ -->
+            <!-- كود (2): صفحة Courses - فرع أبوظبي                         -->
+            <!-- https://alomrantd.com/ar/courses                            -->
+            <!-- ============================================================ -->
+            <t t-if="request.httprequest.path in ['/courses', '/ar/courses', '/en/courses']">
+                <script type="text/javascript">
+                    (function() {
+                        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                        if (isMobile) {
+                            window.location.href = "tel:+971501720927";
+                        } else {
+                            console.log("Desktop - No redirect (Courses - Abu Dhabi Branch)");
+                        }
+                    })();
+                </script>
+            </t>
+
+            <!-- ============================================================ -->
+            <!-- كود (4): صفحة Branches - فرع الشارقة                       -->
+            <!-- https://alomrantd.com/ar/branches                           -->
+            <!-- ============================================================ -->
+            <t t-if="request.httprequest.path in ['/branches', '/ar/branches', '/en/branches']">
+                <script type="text/javascript">
+                    (function() {
+                        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                        if (isMobile) {
+                            window.location.href = "tel:+971564141408";
+                        } else {
+                            console.log("Desktop - No redirect (Branches - Sharjah Branch)");
+                        }
+                    })();
+                </script>
+            </t>
+
+            <!-- ============================================================ -->
+            <!-- كود (5): الصفحة الرئيسية - فرع رأس الخيمة                 -->
+            <!-- https://alomrantd.com/ar                                    -->
+            <!-- ============================================================ -->
+            <t t-if="request.httprequest.path in ['/', '/ar', '/ar/']">
+                <script type="text/javascript">
+                    (function() {
+                        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                        if (isMobile) {
+                            window.location.href = "tel:+971549969446";
+                        } else {
+                            console.log("Desktop - No redirect (Homepage - RAK Branch)");
+                        }
+                    })();
+                </script>
+            </t>
+
+        </xpath>
+    </template>
+</odoo>

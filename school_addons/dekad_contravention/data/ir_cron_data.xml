@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cron_suspend_student" model="ir.cron">
+        <field name="name">Suspend student</field>
+        <field name="model_id" ref="dekad_contravention.model_de_student_suspend"/>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="code">model.suspend_student()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+    </record>
+</odoo>
+

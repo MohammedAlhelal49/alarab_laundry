@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_move_dates" model="ir.ui.view">
+        <field name="name">sale.order.form.move.dates</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <!-- validity_date -->
+                <xpath expr="//field[@name='validity_date']" position="move"/>
+
+                <!-- "Quotation Date" label div (has groups='base.group_no_one') -->
+                <xpath expr="//div[@class='o_td_label' and @groups='base.group_no_one']"
+                       position="move"/>
+
+                <!-- date_order field tied to Quotation Date (has groups='base.group_no_one') -->
+                <xpath expr="//field[@name='date_order' and @groups='base.group_no_one']"
+                       position="move"/>
+
+                <!-- "Order Date" label div (no groups attribute) -->
+                <xpath expr="//div[@class='o_td_label' and not(@groups)]"
+                       position="move"/>
+
+                <!-- date_order field tied to Order Date (no groups attribute) -->
+                <xpath expr="//field[@name='date_order' and not(@groups)]"
+                       position="move"/>
+
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

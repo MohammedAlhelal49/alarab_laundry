@@ -1,0 +1,26 @@
+<odoo>
+    <record id="view_paid_leave_allowance_wizard" model="ir.ui.view">
+        <field name="name">paid.leave.allowance.wizard.form</field>
+        <field name="model">paid.leave.allowance.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Paid Leave Allowance">
+                <group>
+                    <field name="employee_id"/>
+                    <field name="remaining_days" readonly="1"/>
+                    <field name="days_requested"/>
+                </group>
+                <footer>
+                    <button name="action_submit" type="object" string="Submit" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_paid_leave_allowance_wizard" model="ir.actions.act_window">
+        <field name="name">Paid Leave Allowance</field>
+        <field name="res_model">paid.leave.allowance.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

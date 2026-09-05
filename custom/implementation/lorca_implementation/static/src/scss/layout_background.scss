@@ -1,0 +1,203 @@
+
+.main-content-holder {
+    .additional-info {
+
+    }
+      min-height: 770px;
+
+
+
+
+    }
+.invoice-signs-block {
+     page-break-inside: avoid;
+    break-inside: avoid; /* For compatibility */
+    padding-top : 30px;
+    .approved  {
+            text-align : center ;
+        }
+.company {
+    text-align : right ;
+        }
+
+    .holder {
+        display: inline-block;
+    border-top: 1px solid #dfdfdf;
+    padding: 5px 10px;
+        }
+ }
+
+
+ .lorca-header  {
+         position: relative;
+    top: 90px;
+     .brand-image {
+         text-align : center;
+           .img-logo  {
+         width:40px !important;
+         }
+
+     .img-logo-2 {
+           width:80px !important;
+           margin-left : 10px;
+           display:inline-block !important;
+           position : relative;
+
+         }
+
+     .title {
+position: relative;
+  left: 52px;
+  top: -40px;
+              font-size: .9rem;
+    font-weight: 500;
+    margin-top: 10px;
+      color: #917f5e;
+         }
+         }
+     .arabic-brand {
+         text-align : right;
+         .head {
+             font-weight: bold;
+  font-size: 40px;
+  font-family: initial;
+             }
+
+         .des {
+                 margin-top : -10px;
+                         font-size: 1.2rem;
+    font-weight: 600;
+
+      color: #917f5e;
+             }
+         .line {
+padding-right: 70px;
+  font-size: .7rem;
+  font-weight: 600;
+  color: #917f5e;
+             }
+         }
+
+          .english-brand {
+
+         .head {
+             font-weight: bold;
+  font-size: 40px;
+  font-family: initial;
+             }
+
+         .des {
+             margin-top : -8px;
+                         font-size: 1.1rem;
+    font-weight: 600;
+
+      color: #917f5e;
+             }
+
+         .sub {
+       font-size: .6rem;
+  padding-left: 140px;
+  font-weight: 600;
+             }
+         .line {
+
+  font-size: 1.1rem;
+  font-weight: 600;
+
+             }
+         }
+
+
+     .brand {
+         .yahoo {
+                 font-size: .9rem;
+    font-weight: 500;
+    margin-top: 10px;
+      color: #917f5e;
+             }
+         }
+
+     .info {
+             padding-top: 15px;
+         .line {
+                 text-align: right;
+                             font-size: .8rem;
+    font-weight: 500;
+    margin-top: 5px;
+      color: #917f5e;
+             }
+         }
+     .text {
+         text-align : center;
+         color: #917f5e;
+    font-size: 1.3rem;
+         }
+
+     .building , .location {
+
+    font-size: .9rem;
+    font-weight: 500;
+    margin-top: 5px;
+         }
+
+
+     }
+
+ .header-content {
+     margin-bottom : 30px;
+     text-align : center;
+     font-weight: 600;
+     font-size:14px !important;
+
+     }
+
+
+
+ .o_footer_content  {
+         text-transform: lowercase !important;
+        border-top: 1px solid #d9d9d9 !important;
+       padding-bottom : 20px !important;
+         font-size: .9rem !important;
+    text-align: left .9rem !important;
+    padding-top: 20px !important;
+     }
+
+#informations {
+    display :  none !important;
+    }
+
+.table-holder {
+    font-size:13px !important;
+    border: 1px solid #d7d7d7;
+  margin-bottom: 20px;
+  .table {
+      margin-bottom : 0px !important;
+      }
+    }
+
+.no-border-color {
+    border-bottom-color : white !important;
+    }
+
+.article[data-oe-model="account.move"] {
+     .hide-account-title {
+          display :none !important;
+          }
+    }
+
+
+.o_company_1_layout {
+    padding-top : 0px !important;
+    }
+ .amount-in-words {
+        page-break-inside: avoid;
+    break-inside: avoid; /* For compatibility */
+
+     }
+
+
+
+ .copy-revision {
+     text-align: right;
+  padding-bottom: 10px;
+     }

@@ -1,0 +1,176 @@
+<odoo>
+    <data>
+
+        <!-- 1. Search & Grouping Options for Journal Entries (account.move) -->
+        <record id="view_account_move_filter_inherit_project_task" model="ir.ui.view">
+            <field name="name">account.move.select.inherit.project.task</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_account_move_filter"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//search" position="inside">
+                    <field name="project_id" string="Project"/>
+                    <field name="line_ids" string="Task (Exact Match)"
+                           filter_domain="[('line_ids.task_id', '=', self)]"/>
+                    <field name="line_ids" string="Task (With Subtasks)"
+                           filter_domain="[('line_ids.task_id', 'child_of', self)]"/>
+                </xpath>
+
+                <xpath expr="//group" position="inside">
+                    <filter string="Project" name="group_by_project" context="{'group_by': 'project_id'}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <!-- 2. Search & Grouping Options for Journal Items (account.move.line) -->
+        <record id="view_account_move_line_filter_inherit_project_task" model="ir.ui.view">
+            <field name="name">account.move.line.select.inherit.project.task</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//search" position="inside">
+                    <!-- Search directly using the related field -->
+                    <field name="project_id" string="Project"/>
+                    <field name="task_id" string="Task (Exact Match)"/>
+                    <field name="task_id" string="Task (With Subtasks)" operator="child_of"/>
+                </xpath>
+
+                <xpath expr="//group" position="inside">
+                    <!-- Direct field reference for group_by -->
+                    <filter string="Project" name="group_by_project" context="{'group_by': 'project_id'}"/>
+                    <filter string="Project Task" name="group_by_task" context="{'group_by': 'task_id'}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="view_move_form_inherit_currency" model="ir.ui.view">
+            <field name="name">account.move.form.inherit.currency</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='ref']" position="after">
+                    <field name="currency_id"
+                           options="{'no_create': True}"
+                           readonly="state == 'posted'"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="view_move_form_inherit_project_task" model="ir.ui.view">
+            <field name="name">account.move.form.inherit.project.task</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+
+                <!-- 1. Add Project to Journal Entry Header -->
+                <xpath expr="//field[@name='ref']" position="after">
+                    <field name="project_id"
+                           options="{'no_create': True}"
+                           readonly="state == 'posted'"/>
+                </xpath>
+
+                <!-- 2. Add Task to Invoice / Bill Lines (List View) -->
+                <xpath expr="//field[@name='invoice_line_ids']/list//field[@name='account_id']" position="after">
+                    <field name="task_id"
+                           domain="[('project_id', '=', parent.project_id), ('project_id', '!=', False)]"
+                           options="{'no_create': True}"
+                           readonly="parent.state == 'posted'"/>
+                </xpath>
+
+                <!-- 3. Add Task to Invoice / Bill Lines (Form View Pop-up) -->
+                <xpath expr="//field[@name='invoice_line_ids']/form//field[@name='account_id']" position="after">
+                    <field name="task_id"
+                           domain="[('project_id', '=', parent.project_id), ('project_id', '!=', False)]"
+                           options="{'no_create': True}"
+                           readonly="parent.state == 'posted'"/>
+                </xpath>
+
+                <!-- 4. Add Task to Journal Items (List View) -->
+                <xpath expr="//field[@name='line_ids']/list//field[@name='account_id']" position="after">
+                    <field name="task_id"
+                           domain="[('project_id', '=', parent.project_id), ('project_id', '!=', False)]"
+                           options="{'no_create': True}"
+                           readonly="parent.state == 'posted'"/>
+                </xpath>
+
+                <!-- 5. Add Task to Journal Items (Form View Pop-up) -->
+                <xpath expr="//field[@name='line_ids']/form//field[@name='account_id']" position="after">
+                    <field name="task_id"
+                           domain="[('project_id', '=', parent.project_id), ('project_id', '!=', False)]"
+                           options="{'no_create': True}"
+                           readonly="parent.state == 'posted'"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Add Project column to Journal Entries List View (account.move) -->
+        <record id="view_move_tree_inherit_project" model="ir.ui.view">
+            <field name="name">account.move.list.inherit.project</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='ref']" position="after">
+                    <field name="project_id" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Add Project and Task columns to Journal Items List View (account.move.line) -->
+        <record id="view_move_line_tree_inherit_project_task" model="ir.ui.view">
+            <field name="name">account.move.line.list.inherit.project.task</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_move_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='account_id']" position="after">
+                    <field name="project_id" optional="show"/>
+                    <field name="task_id" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Add Project column to Vendor Bills List View -->
+        <record id="view_in_invoice_bill_tree_inherit_project" model="ir.ui.view">
+            <field name="name">account.out.invoice.tree.inherit.project</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_in_invoice_bill_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_date']" position="after">
+                    <field name="project_id" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_invoice_filter_inherit_project_task" model="ir.ui.view">
+            <field name="name">account.invoice.select.inherit.project.task</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//search" position="inside">
+                    <!-- Search Header Project -->
+                    <field name="project_id" string="Project"/>
+
+                    <!-- Search Line Tasks on the Invoice / Bill -->
+                    <field name="invoice_line_ids" string="Task (Exact Match)"
+                           filter_domain="[('invoice_line_ids.task_id', '=', self)]"/>
+
+                    <field name="invoice_line_ids" string="Task (With Subtasks)"
+                           filter_domain="[('invoice_line_ids.task_id', 'child_of', self)]"/>
+                </xpath>
+
+                <xpath expr="//group" position="inside">
+                    <filter string="Project" name="group_by_project" context="{'group_by': 'project_id'}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

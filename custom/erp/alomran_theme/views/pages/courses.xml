@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="courses_template" name="Courses">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <!-- Header -->
+
+                <section class="hero-premium courses-hero">
+    <!-- Background with overlay -->
+    <div class="hero-bg-overlay">
+        <div class="hero-bg-image" style="background-image: url('/alomran_theme/static/src/img/hero-bg.jpg');"></div>
+        <div class="hero-gradient-overlay"></div>
+    </div>
+
+    <div class="container">
+        <div class="row align-items-center min-vh-100 py-5">
+            <div class="col-lg-10 mx-auto text-center" data-aos="fade-up" data-aos-delay="100">
+                <!-- Trust Badge -->
+                <div class="trust-badge mb-4">
+                    <span class="badge-icon">
+                        <i class="fa fa-graduation-cap"></i>
+                    </span>
+                    <span class="badge-text">
+                        <strong>1750+</strong> Training Programs Available
+                    </span>
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="display-1 fw-black mb-4 text-white">
+                    <span>Training</span>
+                    <span class="text-gradient">Courses</span>
+                </h1>
+
+                <!-- Subheading -->
+                <p class="lead text-light mb-5">
+                    Develop your skills with our accredited training programs and certified trainers
+                </p>
+
+                <!-- CTA Button -->
+                <div class="hero-actions justify-content-center mb-5">
+                    <a href="#courses-list" class="btn btn-primary-glow btn-lg">
+                        <i class="fa fa-search me-2"></i>
+                        <span>Explore All Courses</span>
+                    </a>
+                </div>
+
+                <!-- Features Stats -->
+                <div class="quick-stats mt-5">
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <div class="glass-badge">
+                            <i class="fa fa-book-open me-2 text-warning"></i>
+                            <span>12 Specialized Fields</span>
+                        </div>
+                        <div class="glass-badge">
+                            <i class="fa fa-certificate me-2 text-warning"></i>
+                            <span>Accredited Certificates</span>
+                        </div>
+                        <div class="glass-badge">
+                            <i class="fa fa-chalkboard-teacher me-2 text-warning"></i>
+                            <span>250+ Expert Trainers</span>
+                        </div>
+                        <div class="glass-badge">
+                            <i class="fa fa-users me-2 text-warning"></i>
+                            <span>50,000+ Graduates</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <a href="#courses-list" class="scroll-link">
+            <i class="fa fa-chevron-down"></i>
+        </a>
+    </div>
+</section>
+                <!-- Courses Grid -->
+                <section class="py-5">
+                    <div class="container">
+                        <div class="text-center mb-5">
+                            <span class="badge mb-3">All Courses</span>
+                            <h2 class="display-5 fw-bold mb-3">Choose Your Training Field</h2>
+                            <p class="lead text-muted">Comprehensive training programs with accredited certificates</p>
+                        </div>
+
+                        <div class="row g-4">
+                            <!-- Loop through courses from controller -->
+                            <t t-foreach="courses" t-as="course">
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="course-card">
+                                        <div class="course-header">
+                                            <i t-attf-class="fa {{course['icon']}}"/>
+                                        </div>
+                                        <div class="p-4">
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <span t-attf-class="badge {{course['badge_class']}}" t-esc="course['badge']"/>
+                                                <div class="text-warning">
+                                                    <i class="fa fa-star"/>
+                                                    <i class="fa fa-star"/>
+                                                    <i class="fa fa-star"/>
+                                                    <i class="fa fa-star"/>
+                                                    <i class="fa fa-star"/>
+                                                </div>
+                                            </div>
+                                            <h5 class="fw-bold mb-3" t-esc="course['title']"/>
+                                            <p class="text-muted mb-4" t-esc="course['description']"/>
+                                            <a t-att-href="course['link']" class="btn btn-primary w-100">
+                                                <i class="fa fa-arrow-right me-2"/>
+                                                <t t-esc="course['button_text']"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Features -->
+                <section class="py-5 bg-light">
+                    <div class="container">
+                        <div class="text-center mb-5">
+                            <span class="badge mb-3">Course Features</span>
+                            <h2 class="display-5 fw-bold mb-3">Why Choose Our Courses?</h2>
+                        </div>
+
+                        <div class="row g-4">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="modern-card text-center h-100">
+                                    <i class="fa fa-chalkboard-teacher fa-4x text-primary mb-3 card-icon"/>
+                                    <h5 class="fw-bold mb-3">Professional Trainers</h5>
+                                    <p>Internationally certified experts</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="modern-card text-center h-100">
+                                    <i class="fa fa-certificate fa-4x text-primary mb-3 card-icon"/>
+                                    <h5 class="fw-bold mb-3">Accredited Certificates</h5>
+                                    <p>Recognized locally and internationally</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="modern-card text-center h-100">
+                                    <i class="fa fa-laptop fa-4x text-primary mb-3 card-icon"/>
+                                    <h5 class="fw-bold mb-3">Practical Application</h5>
+                                    <p>Training on real cases</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="modern-card text-center h-100">
+                                    <i class="fa fa-headset fa-4x text-primary mb-3 card-icon"/>
+                                    <h5 class="fw-bold mb-3">Continuous Support</h5>
+                                    <p>Follow-up after graduation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA -->
+<!--                <section class="hero-section py-5">-->
+<!--                    <div class="container text-center hero-content">-->
+<!--                        <h2 class="display-4 fw-bold mb-4" style="color: white;">Didn't Find What You're Looking For?</h2>-->
+<!--                        <p class="lead mb-5" style="color: white; opacity: 0.95;">-->
+<!--                            Contact us to design a customized training program for you-->
+<!--                        </p>-->
+<!--                        <a href="/contact" class="btn btn-light btn-lg px-5 py-3 animate-glow">-->
+<!--                            <i class="fa fa-paper-plane me-2"/>-->
+<!--                            Book a Free Consultation-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </section>-->
+
+                <!-- Registration Modal for General Courses -->
+            <div class="modal fade" id="registrationModalGeneral" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content" style="border-radius: 20px; border: none;">
+                        <div class="modal-header" style="background: linear-gradient(135deg, #1a5490, #2d6cb3); color: white; border-radius: 20px 20px 0 0;">
+                            <h5 class="modal-title">
+                                <i class="fa fa-graduation-cap me-2"></i>
+                                Course Registration
+                            </h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body p-4">
+                            <div id="registrationFormGeneral">
+                                <div class="text-center mb-4">
+                                    <h6 class="fw-bold mb-2" id="modalCourseNameGeneral"></h6>
+                                    <p class="text-muted mb-0">
+                                        <small>For pricing and schedule details, our team will contact you</small>
+                                    </p>
+                                </div>
+
+                                <form id="courseRegistrationFormGeneral">
+                                    <input type="hidden" id="courseNameGeneral" name="course_name"/>
+
+                                    <div class="mb-3">
+                                        <label class="form-label fw-semibold">
+                                            <i class="fa fa-user text-primary me-2"></i>
+                                            Full Name <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="text"
+                                               class="form-control form-control-lg"
+                                               name="name"
+                                               required=""
+                                               placeholder="Enter your full name"
+                                               style="border-radius: 12px;"/>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label fw-semibold">
+                                            <i class="fa fa-phone text-primary me-2"></i>
+                                            Phone Number <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="tel"
+                                               class="form-control form-control-lg"
+                                               name="phone"
+                                               required=""
+                                               placeholder="05XXXXXXXX"
+                                               pattern="[0-9]{10}"
+                                               style="border-radius: 12px;"/>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label class="form-label fw-semibold">
+                                            <i class="fa fa-envelope text-primary me-2"></i>
+                                            Email (Optional)
+                                        </label>
+                                        <input type="email"
+                                               class="form-control form-control-lg"
+                                               name="email"
+                                               placeholder="example@email.com"
+                                               style="border-radius: 12px;"/>
+                                    </div>
+
+                                    <button type="submit"
+                                            class="btn btn-lg w-100"
+                                            style="background: linear-gradient(135deg, #1a5490, #2d6cb3); color: white; border-radius: 12px; border: none;">
+                                        <i class="fa fa-paper-plane me-2"></i>
+                                        Submit Request
+                                    </button>
+                                </form>
+                            </div>
+
+                            <!-- Success Message -->
+                            <div id="registrationSuccessGeneral" style="display: none;" class="text-center">
+                                <div class="mb-4">
+                                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4ade80, #22c55e); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                                        <i class="fa fa-check" style="font-size: 2.5rem; color: white;"></i>
+                                    </div>
+                                </div>
+                                <h4 class="fw-bold mb-3">Your Request Was Submitted Successfully! 🎉</h4>
+                                <p class="mb-4">
+                                    Thank you! Our team will contact you within <strong>24 hours</strong> to provide all details.
+                                </p>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </t>
+    </template>
+</odoo>

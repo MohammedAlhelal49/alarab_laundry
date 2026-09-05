@@ -1,0 +1,417 @@
+<?xml version="1.0"?>
+<odoo>
+<!--    &lt;!&ndash;doc entry &ndash;&gt;-->
+<!--    <template id="portal_student_profile_doc_entry" name="Student profile document" inherit_id="portal.portal_my_home"-->
+<!--              priority="10"-->
+<!--    >-->
+<!--        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">-->
+<!--            <t t-if="student_profile_document and student_profile_document['show']" t-call="portal.portal_docs_entry">-->
+<!--                <t t-set="url" t-value="student_profile_document['url']"/>-->
+<!--                <t t-set="title" t-value="'Profile'"/>-->
+<!--                <t t-set="icon">-->
+<!--                    <i class="fa fa-user"/>-->
+<!--                </t>-->
+<!--            </t>-->
+<!--        </xpath>-->
+<!--    </template>-->
+<!--    &lt;!&ndash; doc entry &ndash;&gt;-->
+
+    <!-- breadcrumb -->
+    <template id="portal_student_profile_breadcrumbs" inherit_id="portal.portal_breadcrumbs" name="Profile">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name=='Profile'" t-attf-class="breadcrumb-item">
+                <a t-att-href="page_url">Profile
+                </a>
+            </li>
+        </xpath>
+    </template>
+    <!-- breadcrumb -->
+
+
+    <!-- profile template -->
+    <template id="student_profile" inherit_id="portal.portal_sidebar" name="Student profile">
+        <t t-call="portal.portal_layout">
+            <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
+                <section t-if="page_name=='Profile'">
+                    <div class="row profile-page">
+                        <div class="col-md-3  mb-2 mb-md-0">
+                            <div class="card">
+                                <div class="nav flex-column nav-pills  student-profile-navs" id="v-pills-tab"
+                                     role="tablist"
+                                     aria-orientation="vertical">
+                                    <a class="nav-link active" id="v-pills-personal-tab" data-bs-toggle="pill"
+                                       data-bs-target="#v-pills-personal" type="button" role="tab"
+                                       aria-controls="v-pills-personal"
+                                       aria-selected="true">personal
+                                    </a>
+                                    <a class="nav-link" id="v-pills-grades-tab" data-bs-toggle="pill"
+                                       data-bs-target="#v-pills-grades" type="button" role="tab"
+                                       aria-controls="v-pills-grades" aria-selected="false">Grade
+                                    </a>
+                                    <a class="nav-link" id="v-pills-parents-tab" data-bs-toggle="pill"
+                                       data-bs-target="#v-pills-parents" type="button" role="tab"
+                                       aria-controls="v-pills-parents" aria-selected="false">parents
+                                    </a>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-9">
+                            <div class="tab-content profile-tab-content" id="v-pills-tabContent">
+                                <div class="tab-pane fade show active" id="v-pills-personal" role="tabpanel"
+                                     aria-labelledby="v-pills-home-tab">
+                                    <div class="card border-radius-non">
+                                        <div class="card-text">
+                                            <div class="student-profile">
+                                                <div class="header-holder">
+                                                    <div class="image-holder ">
+                                                        <t t-if="student.image_1920">
+                                                            <img t-attf-src="data:image/png;base64,{{student.image_1920}}"
+                                                                 alt="Avatar" class=""
+                                                                 style="width: 100px; "/>
+                                                        </t>
+                                                        <t t-else="">
+
+                                                            <img t-if="student.gender=='female'"
+                                                                 src="/dekad_core/static/img/female.jpg"
+
+                                                                 alt="Avatar"
+                                                                 style="width: 100px ;"/>
+
+                                                            <img t-else="" src="/dekad_core/static/img/male.jpg"
+
+                                                                 alt="Avatar"
+                                                                 style="width: 100px; "/>
+
+
+                                                        </t>
+
+                                                        <div t-esc="student.sequence"/>
+                                                    </div>
+                                                    <div class="name-holder">
+                                                        <h6 style="">
+                                                            <t t-esc="student.name"/>
+
+
+                                                        </h6>
+                                                        <p style="color: black;">
+
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="pt-4 ">
+                                                    <hr class="mt-0 mb-4"/>
+                                                    <div class="row pt-1">
+                                                        <div class="col-6 col-lg-4 mb-3">
+                                                            <h6>Gender</h6>
+                                                            <p class="text-muted">
+                                                                <t t-esc="student.gender"/>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-6 col-lg-4 mb-3">
+                                                            <h6>Birth Date</h6>
+                                                            <p class="text-muted">
+                                                                <span t-field="student.birth_date"
+                                                                />
+                                                            </p>
+                                                        </div>
+
+                                                        <div class="col-6 col-lg-4 mb-3" t-if="student.religion_id">
+                                                            <h6>Religion</h6>
+                                                            <p class="text-muted">
+                                                                <span t-field="student.religion_id.name"
+                                                                />
+                                                            </p>
+                                                        </div>
+
+                                                        <div class="col-6 col-lg-4 mb-3"
+                                                             t-if="student.country_group_id">
+                                                            <h6>Nationality Group</h6>
+                                                            <p class="text-muted">
+                                                                <span t-field="student.country_group_id.name"
+                                                                />
+                                                            </p>
+                                                        </div>
+
+                                                        <div class="col-6 col-lg-4 mb-3" t-if="student.nationality_id">
+                                                            <h6>Nationality</h6>
+                                                            <p class="text-muted">
+                                                                <span t-field="student.nationality_id.name"
+                                                                />
+                                                            </p>
+                                                        </div>
+
+
+                                                        <div class="col-6 col-lg-4 mb-3" t-if="student.country_id">
+                                                            <h6>Country of birth</h6>
+                                                            <p class="text-muted">
+                                                                <span t-field="student.country_id.name"
+                                                                />
+                                                            </p>
+                                                        </div>
+
+                                                        <div class="col-6 col-lg-4 mb-3" t-if="student.city">
+                                                            <h6>City of birth</h6>
+                                                            <p class="text-muted">
+                                                                <span t-field="student.city"
+                                                                />
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-6 col-lg-4 mb-3" t-if="student.email">
+                                                            <h6>Email</h6>
+                                                            <p class="text-muted">
+                                                                <t t-esc="student.email"/>
+                                                            </p>
+                                                        </div>
+
+
+                                                        <div class="col-6 col-lg-4 mb-3">
+                                                            <h6>Mobile</h6>
+                                                            <p class="text-muted">
+                                                                <t t-esc="student.mobile"/>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-6 col-lg-4 mb-3" t-if="student.phone">
+                                                            <h6>Phone</h6>
+                                                            <p class="text-muted">
+                                                                <t t-esc="student.phone"/>
+                                                            </p>
+                                                        </div>
+
+
+                                                        <div class="col-6 col-lg-4 mb-3" t-if="student.visa_info">
+                                                            <h6>Visa Info</h6>
+                                                            <p class="text-muted">
+                                                                <t t-esc="student.visa_info"/>
+                                                            </p>
+                                                        </div>
+
+                                                        <div class="col-6 col-lg-4 mb-3" t-if="student.student_no">
+                                                            <h6>Student Number</h6>
+                                                            <p class="text-muted">
+                                                                <t t-esc="student.student_no"/>
+                                                            </p>
+                                                        </div>
+
+                                                        <div class="col-6 col-lg-4 mb-3" t-if="student.esis_no">
+                                                            <h6>Student ESIS number</h6>
+                                                            <p class="text-muted">
+                                                                <t t-esc="student.esis_no"/>
+                                                            </p>
+                                                        </div>
+
+                                                        <div class="col-6 col-lg-4 mb-3" t-if="student.family_book_no">
+                                                            <h6>Family book number</h6>
+                                                            <p class="text-muted">
+                                                                <t t-esc="student.family_book_no"/>
+                                                            </p>
+                                                        </div>
+
+
+<!--                                                        <div class="col-6 col-lg-4 mb-3" t-if="student.emirate_id">-->
+<!--                                                            <h6>Emirate id number</h6>-->
+<!--                                                            <p class="text-muted">-->
+<!--                                                                <t t-esc="student.emirate_id"/>-->
+<!--                                                            </p>-->
+<!--                                                        </div>-->
+
+
+<!--                                                        <div class="col-6 col-lg-4 mb-3"-->
+<!--                                                             t-if="student.emirate_id_expiry_date">-->
+<!--                                                            <h6>Emirate id Expiry date</h6>-->
+<!--                                                            <p class="text-muted">-->
+<!--                                                                <t t-esc="student.emirate_id_expiry_date"/>-->
+<!--                                                            </p>-->
+<!--                                                        </div>-->
+
+
+                                                        <div class="col-12 mb-3" t-if="student.address">
+                                                            <h6>Address</h6>
+                                                            <p class="text-muted">
+                                                                <t t-esc="student.address"/>
+                                                            </p>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                                <div class="tab-pane fade show " id="v-pills-grades" role="tabpanel"
+                                     aria-labelledby="v-pills-grades-tab">
+                                    <div class="row card dynamic-website-card-holder">
+                                        <div class="col-12 card-body dynamic-website-card">
+                                            <t t-if="student.student_grade_ids">
+                                                <table
+                                                        class="table mt-3"
+                                                >
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">
+                                                                Grade
+                                                            </th>
+                                                            <th scope="col">
+                                                                Classroom
+                                                            </th>
+
+
+                                                            <th scope="col">
+                                                                Sequence
+                                                            </th>
+                                                            <th scope="col">
+
+                                                                Subjects
+                                                            </th>
+
+                                                            <th scope="col">
+                                                                Admission date
+                                                            </th>
+                                                            <th scope="col">
+                                                                Status
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <t t-foreach="student.student_grade_ids"
+                                                           t-as="grade">
+
+                                                            <tr>
+                                                                <td>
+                                                                    <span t-esc="grade.grade_id.name "/>
+                                                                </td>
+                                                                <td>
+                                                                    <span t-esc="grade.classroom_id.name"/>
+                                                                </td>
+                                                                <td>
+                                                                    <span t-esc="grade.sequence"/>
+                                                                </td>
+                                                                <td class="badges-holder">
+                                                                    <t t-foreach="grade.subject_ids"
+                                                                       t-as="subject">
+                                                                        <span class="badge badge-pill bg-light draft-badge">
+                                                                            <t t-out="subject.name"/>
+                                                                        </span>
+                                                                    </t>
+                                                                </td>
+                                                                <td>
+                                                                    <span t-esc="grade.create_date"
+                                                                          t-options="{'widget':'datetime'}"/>
+                                                                </td>
+                                                                <td>
+                                                                    <t t-if="grade.state == 'running'">
+                                                                        <span class="badge badge-pill bg-success"
+                                                                              t-out="grade.state"/>
+                                                                    </t>
+
+                                                                    <t t-else="">
+                                                                        <span class="badge badge-pill bg-warning"
+                                                                              t-out="grade.state"/>
+                                                                    </t>
+
+                                                                </td>
+                                                            </tr>
+
+                                                        </t>
+
+                                                    </tbody>
+                                                </table>
+                                            </t>
+                                            <t t-else="">
+                                                <div class="alert alert-info"
+                                                     role="alert">
+                                                    There is no Grades to
+                                                    display!
+                                                </div>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade show " id="v-pills-parents" role="tabpanel"
+                                     aria-labelledby="v-pills-parents-tab">
+                                    <div class="row card dynamic-website-card-holder">
+                                        <div class="col-12 card-body dynamic-website-card">
+                                            <t t-if="student.parent_ids">
+                                                <table
+                                                        class="table mt-3"
+                                                >
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">
+                                                                Image
+                                                            </th>
+                                                            <th scope="col">
+                                                                Relationship
+                                                            </th>
+
+                                                            <th scope="col">
+                                                                Name
+                                                            </th>
+                                                            <th scope="col">
+                                                                Email
+                                                            </th>
+                                                            <th scope="col">
+                                                                Mobile
+                                                            </th>
+
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <t t-foreach="student.parent_ids"
+                                                           t-as="parent">
+                                                            <tr>
+
+                                                                <td>
+                                                                    <img t-if="parent.image_1920"
+                                                                         t-attf-src="data:image/png;base64,{{parent.image_1920}}"
+                                                                         style="padding: 0px; margin: 0px; height: auto; width: 60px;"
+                                                                         t-att-alt="parent.name or ''"/>
+                                                                    <t t-else="" t-esc="'No image'"/>
+                                                                </td>
+
+                                                                <td>
+                                                                    <span t-esc="parent.relationship_id.name "/>
+                                                                </td>
+                                                                <td>
+                                                                    <span t-esc="parent.name "/>
+                                                                </td>
+                                                                <td>
+                                                                    <span t-esc="parent.email"/>
+                                                                </td>
+                                                                <td>
+                                                                    <span t-esc="parent.mobile"/>
+                                                                </td>
+
+                                                            </tr>
+                                                        </t>
+                                                    </tbody>
+                                                </table>
+                                            </t>
+                                            <t t-else="">
+                                                <div class="alert alert-info"
+                                                     role="alert">
+                                                    There is no parents to
+                                                    display!
+                                                </div>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </xpath>
+        </t>
+    </template>
+    <!-- template -->
+
+</odoo>

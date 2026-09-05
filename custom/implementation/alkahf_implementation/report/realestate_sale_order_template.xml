@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="paperformat_realestate" model="report.paperformat">
+        <field name="name">realestate A4</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">25</field>
+        <field name="margin_left">10</field>
+        <field name="margin_right">10</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+
+    <record id="action_report_realestate_sale_order" model="ir.actions.report">
+        <field name="name">Customized rental contract</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">alkahf_implementation.report_realestate_sale_order_document</field>
+        <field name="report_file">alkahf_implementation.report_realestate_sale_order_document</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="alkahf_implementation.paperformat_realestate"/>
+    </record>
+
+
+    <template id="report_realestate_sale_order_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t>
+                    <t t-call="web.basic_layout">
+                        <t t-set="o" t-value="o.with_context(lang='ar_001')"/>
+
+                        <div class="footer">
+                            <div class="o_footer_content border-top pt-2">
+                                <div class="row" style="padding-left: 60px; padding-right: 60px;">
+                                    <div class="col-6" style="text-align: left;">
+                                        Mob.: <span t-esc="o.company_id.partner_id.mobile or o.company_id.partner_id.phone"/>
+                                    </div>
+                                    <div class="col-6" style="text-align: right;">
+                                        P.O. Box: <span t-esc="o.company_id.po_box"/>
+                                    </div>
+                                </div>
+                                <div t-if="report_type == 'pdf'" class="text-center text-muted">
+                                    Page <span class="page"/> / <span class="topage"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="page">
+
+                            <!-- Company address block -->
+                            <div class="w-100 text-center" style="margin-bottom:16px;">
+                                <ul style="list-style:none; padding:0; margin:0; display:inline-block; text-align:center;">
+                                    <li t-if="o.company_id.is_company_details_empty">
+                                        <span t-field="o.company_id.partner_id"
+                                              t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/>
+                                    </li>
+                                    <li t-else="">
+                                        <span t-field="o.company_id.company_details"/>
+                                    </li>
+                                    <li t-if="o.company_id.vat">
+                                        TRN: <span t-esc="o.company_id.vat"/>
+                                    </li>
+                                    <li>
+                                        <strong><span t-field="o.property_building_id.name"/></strong>
+                                    </li>
+                                </ul>
+                            </div>
+                            <br/>
+                            <br/>
+                            <!-- Guest info -->
+                            <div style="direction:rtl; font-size:14px; line-height:1.5; margin-bottom:16px;">
+                                <div dir="rtl" style="text-align:left;">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <strong>حالة الحجز:</strong>
+                                            <span t-field="o.rent_state"/>
+                                        </li>
+                                        <li>
+                                            <strong>العنوان:</strong>
+                                            <span t-field="o.account_analytic_account_id.property_address"/>
+                                        </li>
+                                        <li>
+                                            <strong>رقم الهاتف:</strong>
+                                            <span t-field="o.company_id.phone" style="direction:ltr; unicode-bidi:embed;"/>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <p>
+                                    السيد / السيدة تحية طيبة من
+                                    <span t-field="o.property_building_id.name"/>
+                                    <br/>
+                                    نود أن نستغل هذه الفرصة للترحيب بكم
+                                </p>
+
+                                <ul style="list-style:none; padding:0; margin:0;">
+                                    <li><strong>بيانات الضيف:</strong></li>
+                                    <li>اسم العميل: <span t-field="o.partner_id.name"/></li>
+                                    <li>رقم (هوية / جواز سفر): <span t-field="o.partner_id.id_number"/></li>
+                                    <li>الجنسية: <span t-field="o.partner_id.nationality.name"/></li>
+                                    <li>
+                                        رقم الهاتف:
+                                        <span t-field="o.partner_id.phone" style="direction:ltr; unicode-bidi:embed;"/>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <table style="width:100%; border-collapse:collapse; margin-bottom:14px; font-size:15px; direction:rtl;">
+                                <thead>
+                                    <tr>
+                                        <th style="padding:6px 8px; text-align:right; font-weight:bold;">تسجيل الدخول</th>
+                                        <th style="padding:6px 8px; text-align:right; font-weight:bold;">تسجيل الخروج</th>
+                                        <th style="padding:6px 8px; text-align:right; font-weight:bold;">عدد الليالي</th>
+                                        <th style="padding:6px 8px; text-align:right; font-weight:bold;">رقم الشقة</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding:6px 8px; text-align:right;">
+                                            <span t-field="o.rent_start_date" t-options='{"widget": "date"}'/>
+                                        </td>
+                                        <td style="padding:6px 8px; text-align:right;">
+                                            <span t-field="o.rent_end_date" t-options='{"widget": "date"}'/>
+                                        </td>
+                                        <td style="padding:6px 8px; text-align:right;">
+                                            <span t-field="o.number_of_nights"/>
+                                        </td>
+                                        <td style="padding:6px 8px; text-align:right;">
+                                            <span t-field="o.account_analytic_account_id.name"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                            <table style="width:100%; border-collapse:collapse; margin-bottom:16px; font-size:15px; direction:rtl;">
+                                <thead>
+                                    <tr>
+                                        <th style="border-bottom:1px solid #dee2e6; padding:8px 6px; text-align:right;">الوصف</th>
+                                        <th style="border-bottom:1px solid #dee2e6; padding:8px 6px; text-align:right;">الكمية</th>
+                                        <th style="border-bottom:1px solid #dee2e6; padding:8px 6px; text-align:right;">سعر الوحدة</th>
+                                        <th style="border-bottom:1px solid #dee2e6; padding:8px 6px; text-align:center;">الضرائب</th>
+                                        <th style="border-bottom:1px solid #dee2e6; padding:8px 6px; text-align:right;">المبلغ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-set="lines_to_report" t-value="o._get_order_lines_to_report()"/>
+                                    <t t-foreach="lines_to_report" t-as="line">
+                                        <tr t-attf-style="background-color: #{line_index % 2 == 0 and '#f2f2f2' or 'white'};">
+                                            <t t-if="not line.display_type and line.product_type != 'combo'">
+                                                <td style="padding:8px 6px; text-align:right;">
+                                                    <span t-field="line.name"/>
+                                                </td>
+                                                <td style="padding:8px 6px; text-align:right;">
+                                                    <span t-field="line.product_uom_qty"/>
+                                                    <span t-field="line.product_uom" groups="uom.group_uom"/>
+                                                </td>
+                                                <td style="padding:8px 6px; text-align:right;">
+                                                    <span t-field="line.price_unit"/>
+                                                </td>
+                                                <td style="padding:8px 6px; text-align:center;">
+                                                    <t t-set="taxes" t-value="', '.join([(tax.invoice_label or tax.name) for tax in line.tax_id])"/>
+                                                    <span t-out="taxes"/>
+                                                </td>
+                                                <td style="padding:8px 6px; text-align:right;">
+                                                    <span t-field="line.price_subtotal"/>
+                                                </td>
+                                            </t>
+                                            <t t-elif="line.display_type == 'line_section' or line.product_type == 'combo'">
+                                                <td colspan="5" style="padding:8px 6px; font-weight:bold; text-align:right;">
+                                                    <span t-field="line.name"/>
+                                                </td>
+                                            </t>
+                                            <t t-elif="line.display_type == 'line_note'">
+                                                <td colspan="5" style="padding:8px 6px; font-style:italic; text-align:right;">
+                                                    <span t-field="line.name"/>
+                                                </td>
+                                            </t>
+                                        </tr>
+                                    </t>
+                                    <tr>
+                                        <td colspan="3" style="padding:8px 6px;"></td>
+                                        <td style="padding:8px 6px; text-align:right;background-color:#f2f2f2;">المبلغ دون الضريبة</td>
+                                        <td style="padding:8px 6px; text-align:right;background-color:#f2f2f2;">
+                                            <span t-esc="o.amount_untaxed"/>
+                                            <t t-esc="o.currency_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <t t-if="o.amount_tax">
+                                        <tr>
+                                            <td colspan="3" style="padding:8px 6px;"></td>
+                                            <td style="padding:8px 6px; text-align:right;">الضريبة</td>
+                                            <td style="padding:8px 6px; text-align:right;">
+                                                <span t-esc="o.amount_tax"/>
+                                                <t t-esc="o.currency_id.name"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <tr>
+                                        <td colspan="3" style="padding:8px 6px;"></td>
+                                        <td style="padding:8px 6px; text-align:right;">
+                                            <strong style="color:#875A7B;">الإجمالي</strong>
+                                        </td>
+                                        <td style="padding:8px 6px; text-align:right;">
+                                            <strong style="color:#875A7B;">
+                                                <span t-esc="o.amount_total"/>
+                                                <t t-esc="o.currency_id.name"/>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- Bank Details + Terms -->
+                            <div style="margin-top:24px;">
+                                <div dir="rtl" style="text-align:right; font-size:14px;">
+                                    <strong>تفاصيل البنك</strong><br/>
+                                    اسم المصرف: <span>ADIB</span><br/>
+                                    اسم صاحب الحساب: <span>ABDULLA SAEED SAQER AHMED ALKAABI</span><br/>
+                                    رقم الحساب: <span>28222822</span><br/>
+                                    رقم الآيبان: <span>AE690500000000028222822</span><br/>
+                                    رمز السويفت: <span>ABDIAEADXXX</span>
+                                </div>
+
+                                <br/>
+
+                                <div dir="rtl" style="text-align:right; font-size:14px;">
+                                    <strong>الشروط والأحكام</strong><br/>
+                                    <ul style="list-style-type:disc; padding-right:20px;">
+                                        <li>تسجيل الوصول في الساعة 3 مساء و تسجيل الخروج في الساعة 12 ظهراً، لا يسمح بالتأخير.</li>
+                                        <li>الحجز غير قابل للإلغاء أو التعديل.</li>
+                                        <li>يمنع إقامة الحفلات.</li>
+                                        <li>يتحمل الضيف مسؤولية المرافقين معه طوال فترة الإقامة ويتعهد بالتغطية عن الأضرار أثناء فترة الإقامة.</li>
+                                        <li>مكان الإقامة والعاملين لا يتحملون أي مسؤولية عن فقد أو تلف أي متعلقات شخصية.</li>
+                                        <li>يمنع دخول الحيوانات الأليفة.</li>
+                                        <li><strong>مخالفة التعليمات تعرضك للمسائلة القانونية والغرامة المالية.</strong></li>
+                                    </ul>
+                                </div>
+
+                                <div style="text-align:center; margin-top:16px; direction:rtl;">
+                                    <strong>ايميل خاص بالحجوزات:</strong>
+                                    <span style="direction:ltr; display:inline-block;">
+                                        <a href="mailto:labie95@gmail.com">labie95@gmail.com</a>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

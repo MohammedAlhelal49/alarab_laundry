@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_construction_log,access.construction.log.user,model_construction_log,base.group_user,1,1,1,0
+access_construction_lead_requirement,access.construction.lead.requirement.user,model_construction_lead_requirement,base.group_user,1,1,1,1
+access_job_cost_project,access.job.cost.project,model_job_cost_project,base.group_user,1,1,1,1
+access_job_cost_sheet,access.job.cost.sheet,model_job_cost_sheet,base.group_user,1,1,1,0
+access_labor_tag,access.labor.tag,model_labor_tag,base.group_user,1,1,1,1
+access_job_cost_overhead_tag,job.cost.overhead.tag,model_job_cost_overhead_tag,base.group_user,1,1,1,1
+access_material,access.material,model_material,base.group_user,1,1,1,1
+access_equipment,access.equipment,model_equipment,base.group_user,1,1,1,1
+access_labor_external,access.labor.external,model_labor_external,base.group_user,1,1,1,1
+access_labor_internal,access.labor.internal,model_labor_internal,base.group_user,1,1,1,1
+access_job_cost_overhead,access.job.cost.overhead,model_job_cost_overhead,base.group_user,1,1,1,1
+access_job_cost_subcontractor,access.job.cost.subcontractor,model_job_cost_subcontractor,base.group_user,1,1,1,1
+access_project_milestone,access_project_milestone,model_project_milestone,base.group_user,1,1,1,1
+access_project_task_dependency,access.project.task.dependency,model_project_task_dependency,base.group_user,1,1,1,1
+access_account_move_project_report_wizard,account.move.project.report.wizard,model_account_move_project_report_wizard,base.group_user,1,1,1,1
+access_account_move_line_report,account.move.line.report,model_account_move_line_report,base.group_user,1,1,1,1

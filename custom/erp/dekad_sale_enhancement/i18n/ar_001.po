@@ -1,0 +1,686 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_sale_enhancement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-10 09:17+0000\n"
+"PO-Revision-Date: 2026-01-10 09:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_sale_enhancement
+#: model:ir.actions.report,print_report_name:dekad_sale_enhancement.action_report_sale_report
+msgid "'Sale Report - %s' % (object.product_id.name)"
+msgstr "'تقرير المبيعات - %s' % (object.product_id.name)"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report
+msgid "<strong>Customer</strong>"
+msgstr "<strong>العميل</strong>"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report
+msgid "<strong>Date Order</strong>"
+msgstr "<strong>تاريخ الطلب</strong>"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report
+msgid "<strong>Order</strong>"
+msgstr "<strong>الطلب</strong>"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report
+msgid "<strong>Product</strong>"
+msgstr "<strong>المنتج</strong>"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report
+msgid "<strong>Quantity To deliver</strong>"
+msgstr "<strong>الكمية المراد تسليمها</strong>"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report
+msgid "<strong>Total</strong>"
+msgstr "<strong>الإجمالي</strong>"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report
+msgid "<strong>Unit price</strong>"
+msgstr "<strong>سعر الوحدة</strong>"
+
+#. module: dekad_sale_enhancement
+#: model:ir.ui.menu,name:dekad_sale_enhancement.menu_sale_customer_payments_branch
+msgid "All Payments"
+msgstr "جميع المدفوعات"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report__amount_invoiced
+msgid "Amount Invoiced"
+msgstr "المبلغ المفوتور"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report__amount_to_invoice
+msgid "Amount To Invoice"
+msgstr "المبلغ المراد فوترته"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report_list
+msgid "Average"
+msgstr "المتوسط"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_search
+msgid "Category"
+msgstr "الفئة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model,name:dekad_sale_enhancement.model_res_company
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model,name:dekad_sale_enhancement.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_order__delivery_cost
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__cost
+msgid "Cost"
+msgstr "التكلفة"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+msgid "Count"
+msgstr "العدد"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.res_config_settings_view_form_sale_additional_features
+msgid ""
+"Create validated delivery and (draft , posted) invoice on the sale order "
+"confirmation"
+msgstr "إنشاء تسليم معتمد وفاتورة (مسودة، مرحلة) عند تأكيد أمر البيع"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__partner_id
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_account_payment_form_inherited
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_search
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_list
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_search
+msgid "Customer"
+msgstr "العميل"
+
+#. module: dekad_sale_enhancement
+#: model:ir.actions.act_window,name:dekad_sale_enhancement.action_account_payments_self
+#: model:ir.ui.menu,name:dekad_sale_enhancement.menu_sale_customer_payments
+msgid "Customer Payments"
+msgstr "مدفوعات العملاء"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__delivery_date_done
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_search
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_list
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_order__delivery_date_done
+msgid "Delivery Done Date"
+msgstr "تاريخ إتمام التسليم"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_list
+msgid "Delivery Profit Report"
+msgstr "تقرير ربحية التسليم"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_search
+msgid "Delivery Profit Search"
+msgstr "بحث ربحية التسليم"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_order__delivery_reference_id
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__delivery_reference_id
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_search
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_list
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_search
+msgid "Delivery Ref."
+msgstr "مرجع التسليم"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_res_company__direct_sale_delivery_invoice
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_res_config_settings__direct_sale_delivery_invoice
+msgid "Direct Sale Delivery Invoice"
+msgstr "فاتورة تسليم البيع المباشر"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.res_config_settings_view_form_sale_additional_features
+msgid "Direct sale delivery invoice"
+msgstr "فاتورة تسليم البيع المباشر"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report__is_down_payment
+msgid "Down Payment"
+msgstr "دفعة مقدمة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields.selection,name:dekad_sale_enhancement.selection__res_company__direct_sale_delivery_invoice_state__draft
+msgid "Draft Invoice"
+msgstr "فاتورة مسودة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields.selection,name:dekad_sale_enhancement.selection__res_company__direct_sale_delivery_delivery_state__draft
+msgid "Draft delivery"
+msgstr "تسليم مسودة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_res_company__enable_max_unvalidated_deliveries
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_res_config_settings__enable_max_unvalidated_deliveries
+msgid "Enable Max Unvalidated Deliveries"
+msgstr "تفعيل الحد الأقصى للتسليمات غير المعتمدة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_res_company__direct_sale_delivery_delivery_state
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_res_config_settings__direct_sale_delivery_delivery_state
+msgid "Generated Delivery state"
+msgstr "حالة التسليم المنشأ"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_res_company__direct_sale_delivery_invoice_state
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_res_config_settings__direct_sale_delivery_invoice_state
+msgid "Generated Invoice state"
+msgstr "حالة الفاتورة المنشأة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+#: model:ir.actions.act_window,name:dekad_sale_enhancement.action_product_inactive_report
+#: model:ir.ui.menu,name:dekad_sale_enhancement.menu_dash_product_inactive_report
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_product_search_inactive_sold
+msgid "Inactive Products"
+msgstr "المنتجات غير النشطة"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+msgid "Inactive Products by Category"
+msgstr "المنتجات غير النشطة حسب الفئة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_send_whatsapp_wizard__invoice_id
+msgid "Invoice"
+msgstr "الفاتورة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.actions.act_window,name:dekad_sale_enhancement.action_delivery_profit_list
+#: model:ir.ui.menu,name:dekad_sale_enhancement.menu_sale_delivery_profit
+msgid "Invoice Profit"
+msgstr "ربحية الفاتورة"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+msgid "KPI"
+msgstr "مؤشر الأداء الرئيسي"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.res_config_settings_view_form_sale_additional_features
+msgid ""
+"Limit number of unvalidated outgoing deliveries a salesperson can have."
+msgstr "تحديد عدد التسليمات الصادرة غير المعتمدة التي يمكن أن يكون لدى مندوب المبيعات."
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_search
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_search
+msgid "Loss"
+msgstr "خسارة"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report_form
+msgid "Main info"
+msgstr "المعلومات الرئيسية"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.res_config_settings_view_form_sale_additional_features
+msgid "Max unvalidated deliveries"
+msgstr "الحد الأقصى للتسليمات غير المعتمدة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_res_company__max_unvalidated_deliveries
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_res_config_settings__max_unvalidated_deliveries
+msgid "Max unvalidated deliveries count"
+msgstr "عدد التسليمات غير المعتمدة الأقصى"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_account_payment_form_inherited
+msgid "Memo"
+msgstr "مذكرة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.ui.menu,name:dekad_sale_enhancement.menu_sale_customer_payments_self
+msgid "My Payments"
+msgstr "مدفوعاتي"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+msgid "Name"
+msgstr "الاسم"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__order_id
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_search
+msgid "Order Ref."
+msgstr "مرجع الطلب"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.actions.act_window,help:dekad_sale_enhancement.action_account_payments_self
+msgid ""
+"Payments are used to register liquidity movements. You can process those payments by your own means or\n"
+"                by using installed facilities."
+msgstr ""
+"تُستخدم المدفوعات لتسجيل حركات السيولة. يمكنك معالجة هذه المدفوعات بوسائلك الخاصة أو\n"
+"                باستخدام المرافق المثبتة."
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+msgid "Period"
+msgstr "الفترة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields.selection,name:dekad_sale_enhancement.selection__res_company__direct_sale_delivery_invoice_state__posted
+msgid "Posted Invoice"
+msgstr "فاتورة مرحلة"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__product_id
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report_list
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_search
+msgid "Product"
+msgstr "المنتج"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__product_categ_id
+msgid "Product Category"
+msgstr "فئة المنتج"
+
+#. module: dekad_sale_enhancement
+#: model:ir.actions.act_window,name:dekad_sale_enhancement.action_product_profit_report
+#: model:ir.ui.menu,name:dekad_sale_enhancement.menu_sale_product_profit
+msgid "Product Profit"
+msgstr "ربحية المنتج"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model,name:dekad_sale_enhancement.model_sale_report_product_profit
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_list
+msgid "Product Profit Report"
+msgstr "تقرير ربحية المنتج"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_search
+msgid "Product Profit Report Search"
+msgstr "بحث تقرير ربحية المنتج"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model,name:dekad_sale_enhancement.model_product_product
+msgid "Product Variant"
+msgstr "متغير المنتج"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report_form
+msgid "Products movements"
+msgstr "حركات المنتجات"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_order__delivery_profit
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__profit
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_search
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_search
+msgid "Profit"
+msgstr "الربح"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_order__delivery_profit_percentage
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__profit_percentage
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_search
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_list
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_search
+msgid "Profit %"
+msgstr "نسبة الربح %"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_search
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_search
+msgid "Profit % • High (≥ 30%)"
+msgstr "نسبة الربح % • عالية (≥ 30%)"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_search
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_search
+msgid "Profit % • Low (< 10%)"
+msgstr "نسبة الربح % • منخفضة (< 10%)"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_search
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_search
+msgid "Profit % • Medium (10% - 30%)"
+msgstr "نسبة الربح % • متوسطة (10% - 30%)"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_search
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_search
+msgid "Profitable"
+msgstr "مربح"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__qty_delivered
+msgid "Qty"
+msgstr "الكمية"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_order_line__amount_delivered
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report__amount_delivered
+msgid "Qty Delivered Amount"
+msgstr "مبلغ الكمية المسلمة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_order_line__amount_to_deliver
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report__amount_to_deliver
+msgid "Qty To Deliver Amount"
+msgstr "مبلغ الكمية المراد تسليمها"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_order__delivery_qty
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report_list
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_send_whatsapp_wizard__sale_order_id
+msgid "Quotation"
+msgstr "عرض السعر"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_product_product__default_code_name
+msgid "Reference and Name"
+msgstr "المرجع والاسم"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.actions.act_window,help:dekad_sale_enhancement.action_account_payments_self
+msgid "Register a payment"
+msgstr "تسجيل دفعة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,help:dekad_sale_enhancement.field_sale_report_product_profit__profit_percentage
+msgid ""
+"Represents the percentage of profit relative to the revenue for delivered "
+"items."
+msgstr "تمثل نسبة الربح بالنسبة للإيرادات للعناصر المسلمة."
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+msgid "Revenue"
+msgstr "الإيرادات"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_product_product__sale_order_line_ids
+msgid "Sale Order Lines"
+msgstr "بنود أوامر البيع"
+
+#. module: dekad_sale_enhancement
+#: model:ir.actions.report,name:dekad_sale_enhancement.action_report_sale_report
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report
+msgid "Sale report"
+msgstr "تقرير المبيعات"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report_list
+msgid "Sales Analysis"
+msgstr "تحليل المبيعات"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model,name:dekad_sale_enhancement.model_sale_report
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report_form
+msgid "Sales Analysis Report"
+msgstr "تقرير المبيعات التحليلي"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model,name:dekad_sale_enhancement.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model,name:dekad_sale_enhancement.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "بند أمر المبيعات"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__user_id
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_search
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_search
+msgid "Salesperson"
+msgstr "مندوب المبيعات"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model,name:dekad_sale_enhancement.model_send_whatsapp_wizard
+msgid "Send WhatsApp Wizard"
+msgstr "معالج إرسال واتساب"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+msgid "Slow Seller"
+msgstr "البائع البطيء"
+
+#. module: dekad_sale_enhancement
+#: model:spreadsheet.dashboard,name:dekad_sale_enhancement.dekad_sale_enhancement
+msgid "Slow Sellers"
+msgstr "البائعون البطيئون"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+msgid "Slow Sellers by Revenue"
+msgstr "البائعون البطيئون حسب الإيرادات"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+msgid "Slow Sellers by Units Sold"
+msgstr "البائعون البطيئون حسب الوحدات المباعة"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+msgid "Slowest Categories"
+msgstr "أبطأ الفئات"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+msgid "Slowest Category"
+msgstr "أبطأ فئة"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+msgid "Slowest Selling Products"
+msgstr "أبطأ المنتجات مبيعًا"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report_list
+msgid "Sum of Amount invoiced"
+msgstr "مجموع المبالغ المفوتورة"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report_list
+msgid "Sum of Amount to invoice"
+msgstr "مجموع المبالغ المراد فوترتها"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report_list
+msgid "Sum of Qty delivered amount"
+msgstr "مجموع مبالغ الكميات المسلمة"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report_list
+msgid "Sum of Qty to deliver amount"
+msgstr "مجموع مبالغ الكميات المراد تسليمها"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report_list
+msgid "Sum of Quantity"
+msgstr "مجموع الكمية"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report_list
+msgid "Sum of Total"
+msgstr "مجموع الإجمالي"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.sale_report_list
+msgid "Sum of Untaxed Total"
+msgstr "مجموع الإجمالي قبل الضريبة"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_list
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_list
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_order__delivery_total_price
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__revenue
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_list
+msgid "Total Price"
+msgstr "السعر الإجمالي"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,help:dekad_sale_enhancement.field_sale_report_product_profit__revenue
+msgid "Total revenue for the delivered quantity."
+msgstr "إجمالي الإيرادات للكمية المسلمة."
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__unit_cost
+msgid "Unit Cost"
+msgstr "تكلفة الوحدة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__unit_price
+msgid "Unit Price"
+msgstr "سعر الوحدة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_order_line__price_unit_vat
+msgid "Unit Price (incl. VAT)"
+msgstr "سعر الوحدة (شامل الضريبة)"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__profit_average
+msgid "Unit Profit"
+msgstr "ربح الوحدة"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,help:dekad_sale_enhancement.field_sale_order_line__price_unit_vat
+msgid ""
+"Unit price including VAT. Editing this field updates the Unit Price (excl. "
+"VAT)."
+msgstr "سعر الوحدة شامل الضريبة. تحرير هذا الحقل يقوم بتحديث سعر الوحدة (باستثناء الضريبة)."
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+msgid "Units"
+msgstr "الوحدات"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields.selection,name:dekad_sale_enhancement.selection__res_company__direct_sale_delivery_delivery_state__validated
+msgid "Validated delivery"
+msgstr "تسليم معتمد"
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_account_payment_form_inherited
+msgid "Vendor"
+msgstr "المورد"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_sale_enhancement.field_sale_report_product_profit__warehouse_id
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_search
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_sale_order_profit_search
+msgid "Warehouse"
+msgstr "المستودع"
+
+#. module: dekad_sale_enhancement
+#: model:ir.model.fields,help:dekad_sale_enhancement.field_sale_report_product_profit__profit_average
+msgid ""
+"Weighted average profit per unit for delivered quantities. Calculated as "
+"total profit divided by total quantity delivered."
+msgstr "متوسط الربح الموزون لكل وحدة للكميات المسلمة. يحسب كإجمالي الربح مقسومًا على إجمالي الكمية المسلمة."
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_order_form_enhancement_inherit
+msgid "WhatsApp"
+msgstr "واتساب"
+
+#. module: dekad_sale_enhancement
+#. odoo-python
+#: code:addons/dekad_sale_enhancement/models/sale_order.py:0
+msgid ""
+"You cannot validate a new Sale Order because you have %s unvalidated "
+"deliveries."
+msgstr "لا يمكنك اعتماد أمر بيع جديد لأن لديك %s تسليمات غير معتمدة."
+
+#. module: dekad_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_sale_enhancement.view_product_profit_list
+msgid "false"
+msgstr "خطأ"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+msgid "slowest selling category"
+msgstr "أبطأ فئة مبيعًا"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+msgid "slowest selling product"
+msgstr "أبطأ منتج مبيعًا"
+
+#. module: dekad_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_sale_enhancement/data/files/product_dashboard.json:0
+msgid "sold"
+msgstr "مباع"

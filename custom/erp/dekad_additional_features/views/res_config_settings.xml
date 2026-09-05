@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_apply_modules_wizard" model="ir.actions.act_window">
+        <field name="name">Apply Modules</field>
+        <field name="res_model">apply.modules.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="apply_modules_wizard_view" model="ir.ui.view">
+        <field name="name">apply.modules.wizard.form</field>
+        <field name="model">apply.modules.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Apply Modules">
+
+                <group>
+                    <field name="modules_to_install"
+                           placeholder="dekad_super_user, dekad_stock_enhancement"/>
+                    <field name="modules_to_upgrade"
+                           placeholder="dekad_account_enhancement"/>
+                    <field name="modules_to_uninstall"
+                           placeholder="dekad_installments"/>
+                    <field name="modules_to_remove_from_apps"
+                           placeholder="hr_paid_leave_allowance"/>
+                </group>
+
+
+                <footer>
+                    <button name="action_apply"
+                            type="object"
+                            class="btn btn-primary"
+                            string="Apply"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="res_config_settings_view_form_dekad_additional_features" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.dekad.additional.features</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="0"/>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="///div[@id='companies']" position="after">
+                <block title="Product additional features" name="product_additional_features">
+                    <setting
+                            help="Show product variation attribute name">
+                        <field name="show_product_variation_attribute_name" nolabel="1"/>
+                    </setting>
+                </block>
+
+                <block title="Bulk install,uninstall apps" name="uninstall_module">
+                    <setting
+                    >
+                        <button name="%(action_apply_modules_wizard)d"
+                                type="action"
+                                class="btn btn-light"
+                                string="Apps actions"
+                                groups="base.group_system"/>
+
+                    </setting>
+                </block>
+
+                <block title="Multi company security" id="multi_company_lock_block">
+                    <setting string="Prevent Multi Company Updates"
+                             help="Block (Create , Update) data when multiple companies are selected in the companies list.">
+                        <field name="prevent_multi_company_mod"/>
+                    </setting>
+                </block>
+
+
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
+
+
+
+

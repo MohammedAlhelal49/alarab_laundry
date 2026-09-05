@@ -1,0 +1,184 @@
+/* ===== DEKAD LAUNDRY RECEIPT ===== */
+
+.laundry-receipt {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+    width: 100%;
+    color: #000;
+    background: #fff;
+}
+
+/* HEADER */
+.lry-header {
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.lry-logo {
+    max-width: 80px;
+    max-height: 80px;
+    display: block;
+    margin: 0 auto 4px auto;
+}
+
+.lry-company-name {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.lry-phone {
+    font-size: 11px;
+}
+
+/* TRN + TAX INVOICE */
+.lry-trn {
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.lry-tax-invoice {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 2px 0;
+}
+
+.lry-fold {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin: 2px 0;
+}
+
+/* DATETIME */
+.lry-datetime {
+    font-size: 10px;
+    margin: 3px 0;
+}
+
+/* ORDER NUMBER - Big */
+.lry-order-number {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 4px 0;
+}
+
+/* CUSTOMER */
+.lry-customer-name,
+.lry-customer-mobile {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 1px 0;
+}
+
+/* TABLE HEADER */
+.lry-table-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 4px;
+    align-items: flex-start;
+}
+
+/* COLUMNS */
+.lry-col-desc  { flex: 2.5; text-align: left; }
+.lry-col-price { flex: 1;   text-align: right; }
+.lry-col-qty   { flex: 0.7; text-align: center; }
+.lry-col-amt   { flex: 1;   text-align: right; }
+
+/* ORDER LINES */
+.lry-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 11px;
+    margin: 3px 0;
+}
+
+/* ARABIC TEXT */
+.lry-ar {
+    direction: rtl;
+    font-size: 9px;
+    display: block;
+}
+
+/* DIVIDER */
+.lry-divider {
+    border-top: 1px dashed #000;
+    margin: 5px 0;
+}
+
+/* TOTALS */
+.lry-totals-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    margin: 1px 0;
+}
+
+.lry-totals-row.lry-ar-small {
+    font-size: 9px;
+    direction: rtl;
+}
+
+/* VAT ROWS */
+.lry-tax-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    margin: 2px 0;
+    align-items: center;
+}
+
+.lry-tax-row .lry-ar {
+    display: inline;
+    font-size: 9px;
+}
+
+.lry-net-amount {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* EMPLOYEE */
+.lry-employee-line {
+    font-size: 11px;
+    text-align: center;
+    margin: 1px 0;
+}
+
+/* TERMS */
+.lry-terms {
+    font-size: 9px;
+    margin: 4px 0;
+    line-height: 1.4;
+}
+
+.lry-terms.lry-ar {
+    direction: rtl;
+    text-align: right;
+    display: block;
+}
+
+/* BOTTOM */
+.lry-bottom-info {
+    font-size: 9px;
+    text-align: center;
+    margin: 3px 0;
+}
+
+.lry-thank-you {
+    text-align: center;
+    font-size: 11px;
+    margin: 1px 0;
+}
+
+.lry-thank-you.lry-ar {
+    direction: rtl;
+    display: block;
+}

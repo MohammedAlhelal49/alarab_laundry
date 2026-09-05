@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="module_category_physical_inventory" model="ir.module.category">
+        <field name="name">Physical Inventory</field>
+        <field name="sequence">51</field>
+    </record>
+
+    <record id="group_apply_physical_inventory" model="res.groups">
+        <field name="name">Apply Physical Inventory</field>
+        <field name="category_id" ref="module_category_physical_inventory"/>
+
+        <field name="comment">
+            Users in this group can see and use the "Apply" and "Apply All"
+            buttons on the Physical Inventory (Inventory Adjustments) list view,
+            regardless of their Stock User / Stock Manager access level.
+        </field>
+    </record>
+
+</odoo>

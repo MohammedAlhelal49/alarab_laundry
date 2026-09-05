@@ -1,0 +1,34 @@
+<odoo>
+
+    <record id="purchase_order_form_attachment_preview" model="ir.ui.view">
+        <field name="name">purchase.order.form.attachment.preview</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//button[@id='draft_confirm']" position="before">
+
+                <!-- No attachment -->
+                <widget name="attach_document"
+                        string="Attach Document"
+                        action="attach_document"
+                        invisible="nb_attachment &lt; 1"/>
+
+                <!-- Has attachment -->
+                <widget name="attach_document"
+                        string="Attach Document"
+                        action="attach_document"
+                        highlight="1"
+                        invisible="nb_attachment &gt;= 1"/>
+
+            </xpath>
+
+            <!-- Add preview panel -->
+            <xpath expr="//sheet" position="after">
+                <div class="o_attachment_preview o_center_attachment"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

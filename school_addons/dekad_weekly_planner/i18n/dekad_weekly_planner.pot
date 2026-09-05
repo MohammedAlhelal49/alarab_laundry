@@ -1,0 +1,924 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_weekly_planner
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-06 14:41+0000\n"
+"PO-Revision-Date: 2025-11-06 14:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_kanban
+msgid ""
+"<br/>\n"
+"                                <i class=\"fa fa-calendar\" title=\"Week Period\" aria-label=\"Week Period\"/>"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_kanban
+msgid ""
+"<br/>\n"
+"                                <i class=\"fa fa-list\" title=\"Activities Count\" aria-label=\"Activities\"/>"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_form
+msgid "<span class=\"oe_inline\"> to </span>"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid ""
+"<span style=\"display: inline-block; width: 15px; height: 15px; background-color: #27ae60; border-radius: 3px; margin-right: 5px;\"/>\n"
+"                                            <strong>Lesson</strong>"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid ""
+"<span style=\"display: inline-block; width: 15px; height: 15px; background-color: #95a5a6; border-radius: 3px; margin-right: 5px;\"/>\n"
+"                                            <strong>Other</strong>"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid ""
+"<span style=\"display: inline-block; width: 15px; height: 15px; background-color: #e74c3c; border-radius: 3px; margin-right: 5px;\"/>\n"
+"                                            <strong>Meeting</strong>"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid ""
+"<span style=\"display: inline-block; width: 15px; height: 15px; background-color: #f39c12; border-radius: 3px; margin-right: 5px;\"/>\n"
+"                                            <strong>Preparation</strong>"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid "<strong>Summary: </strong>"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#. odoo-python
+#: code:addons/dekad_weekly_planner/models/teacher_weekly_planner_line.py:0
+#: code:addons/school_addons/dekad_weekly_planner/models/teacher_weekly_planner_line.py:0
+msgid "A single time slot cannot exceed 8 hours!"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.constraint,message:dekad_weekly_planner.constraint_teacher_weekly_planner_unique_teacher_week
+msgid "A teacher can only have one planner per week!"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__active
+msgid "Active"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__activity_ids
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_form
+msgid "Activities"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__line_count
+msgid "Activities Count"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.actions.act_window,help:dekad_weekly_planner.action_teacher_weekly_planner_line
+msgid "Activities are created within weekly planners."
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_kanban
+msgid ""
+"Activities |\n"
+"                                <i class=\"fa fa-clock-o\" title=\"Teaching Hours\" aria-label=\"Teaching Hours\"/>"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__activity_type
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_search
+msgid "Activity Type"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_form
+msgid "Add any additional notes here..."
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid "Additional Notes"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_form
+msgid "Additional notes..."
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.ui.menu,name:dekad_weekly_planner.menu_teacher_weekly_planner_all
+msgid "All Weekly Planners"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_search
+msgid "Archived"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_form
+msgid "Are you sure you want to cancel this planner?"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#. odoo-python
+#: code:addons/dekad_weekly_planner/models/teacher_weekly_planner.py:0
+#: code:addons/school_addons/dekad_weekly_planner/models/teacher_weekly_planner.py:0
+msgid "Auto-generated slot"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_form
+msgid "Cancel"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields.selection,name:dekad_weekly_planner.selection__teacher_weekly_planner__state__cancelled
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_search
+msgid "Cancelled"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#. odoo-python
+#: code:addons/dekad_weekly_planner/models/teacher_weekly_planner.py:0
+#: code:addons/school_addons/dekad_weekly_planner/models/teacher_weekly_planner.py:0
+msgid "Cannot confirm an empty planner! Please add at least one activity."
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__classroom_id
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_search
+msgid "Classroom"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__color
+msgid "Color"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_form
+msgid "Confirm"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields.selection,name:dekad_weekly_planner.selection__teacher_weekly_planner__state__confirmed
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_search
+msgid "Confirmed"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.actions.act_window,help:dekad_weekly_planner.action_teacher_weekly_planner
+msgid "Create your first weekly planner"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.actions.act_window,help:dekad_weekly_planner.action_teacher_weekly_planner_my
+msgid "Create your weekly planner"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__create_uid
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__create_date
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_search
+msgid "Current Week"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_search
+msgid "Day"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__day_of_week_order
+msgid "Day Order"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__day_of_week
+msgid "Day of Week"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#. odoo-python
+#: code:addons/dekad_weekly_planner/models/teacher_weekly_planner.py:0
+#: code:addons/school_addons/dekad_weekly_planner/models/teacher_weekly_planner.py:0
+msgid "Default weekly template generated successfully!"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__display_name
+msgid "Description"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_form
+msgid "Details"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields.selection,name:dekad_weekly_planner.selection__teacher_weekly_planner__state__draft
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_search
+msgid "Draft"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__duration
+msgid "Duration (Hours)"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__end_time_formatted
+msgid "End"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__end_time
+msgid "End Time"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,help:dekad_weekly_planner.field_teacher_weekly_planner_line__end_time
+msgid "End time in 24-hour format (e.g., 17.5 for 5:30 PM)"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#. odoo-python
+#: code:addons/dekad_weekly_planner/models/teacher_weekly_planner_line.py:0
+#: code:addons/school_addons/dekad_weekly_planner/models/teacher_weekly_planner_line.py:0
+msgid "End time must be between 0:00 and 24:00!"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,help:dekad_weekly_planner.field_teacher_weekly_planner__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields.selection,name:dekad_weekly_planner.selection__teacher_weekly_planner_line__day_of_week__friday
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_search
+msgid "Friday"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_form
+msgid "Generate Default Week"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid "Generated on"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__grade_id
+msgid "Grade"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_search
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_search
+msgid "Group By"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__id
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__id
+msgid "ID"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,help:dekad_weekly_planner.field_teacher_weekly_planner__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,help:dekad_weekly_planner.field_teacher_weekly_planner__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,help:dekad_weekly_planner.field_teacher_weekly_planner__message_has_error
+#: model:ir.model.fields,help:dekad_weekly_planner.field_teacher_weekly_planner__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__write_uid
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__write_date
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid "Legend"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields.selection,name:dekad_weekly_planner.selection__teacher_weekly_planner_line__activity_type__lesson
+msgid "Lesson"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_search
+msgid "Lessons"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:res.groups,comment:dekad_weekly_planner.group_weekly_planner_manager
+msgid "Managers can view and manage all weekly planners"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields.selection,name:dekad_weekly_planner.selection__teacher_weekly_planner_line__activity_type__meeting
+msgid "Meeting"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_search
+msgid "Meetings"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields.selection,name:dekad_weekly_planner.selection__teacher_weekly_planner_line__day_of_week__monday
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_search
+msgid "Monday"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.actions.act_window,name:dekad_weekly_planner.action_teacher_weekly_planner_my
+#: model:ir.ui.menu,name:dekad_weekly_planner.menu_teacher_weekly_planner_my
+msgid "My Weekly Planner"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#. odoo-python
+#: code:addons/dekad_weekly_planner/models/teacher_weekly_planner.py:0
+#: code:addons/school_addons/dekad_weekly_planner/models/teacher_weekly_planner.py:0
+msgid "New"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#. odoo-python
+#: code:addons/dekad_weekly_planner/models/teacher_weekly_planner_line.py:0
+#: code:addons/school_addons/dekad_weekly_planner/models/teacher_weekly_planner_line.py:0
+msgid "New Activity"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.actions.act_window,help:dekad_weekly_planner.action_teacher_weekly_planner_line
+msgid "No planning activities found"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__notes
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__notes
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_form
+msgid "Notes"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,help:dekad_weekly_planner.field_teacher_weekly_planner__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,help:dekad_weekly_planner.field_teacher_weekly_planner__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields.selection,name:dekad_weekly_planner.selection__teacher_weekly_planner_line__activity_type__other
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_search
+msgid "Other"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.actions.act_window,help:dekad_weekly_planner.action_teacher_weekly_planner
+msgid ""
+"Plan your weekly activities including lessons, preparation time, meetings, "
+"and more."
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.actions.act_window,help:dekad_weekly_planner.action_teacher_weekly_planner_my
+msgid ""
+"Plan your weekly schedule with lessons, preparation time, and meetings."
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__name
+msgid "Planner Reference"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__state
+msgid "Planner Status"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_form
+msgid "Planning"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.actions.act_window,name:dekad_weekly_planner.action_teacher_weekly_planner_line
+#: model:ir.ui.menu,name:dekad_weekly_planner.menu_teacher_weekly_planner_lines
+msgid "Planning Activities"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_pivot
+msgid "Planning Analysis"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_form
+msgid "Planning Line"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#. odoo-python
+#: code:addons/dekad_weekly_planner/models/teacher_weekly_planner.py:0
+#: code:addons/school_addons/dekad_weekly_planner/models/teacher_weekly_planner.py:0
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__line_ids
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_list
+msgid "Planning Lines"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_graph
+msgid "Planning Statistics"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields.selection,name:dekad_weekly_planner.selection__teacher_weekly_planner_line__activity_type__preparation
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_search
+msgid "Preparation"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_form
+msgid "Print Schedule"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid "Reference:"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields.selection,name:dekad_weekly_planner.selection__teacher_weekly_planner_line__day_of_week__saturday
+msgid "Saturday"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_search
+msgid "Search Planning Lines"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_search
+msgid "Search Weekly Planners"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_form
+msgid "Set to Draft"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__start_time_formatted
+msgid "Start"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__start_time
+msgid "Start Time"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,help:dekad_weekly_planner.field_teacher_weekly_planner_line__start_time
+msgid "Start time in 24-hour format (e.g., 8.5 for 8:30 AM)"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#. odoo-python
+#: code:addons/dekad_weekly_planner/models/teacher_weekly_planner_line.py:0
+#: code:addons/school_addons/dekad_weekly_planner/models/teacher_weekly_planner_line.py:0
+msgid "Start time must be before end time!"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#. odoo-python
+#: code:addons/dekad_weekly_planner/models/teacher_weekly_planner_line.py:0
+#: code:addons/school_addons/dekad_weekly_planner/models/teacher_weekly_planner_line.py:0
+msgid "Start time must be between 0:00 and 23:59!"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_form
+msgid "Statistics"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__state
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_search
+msgid "Status"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,help:dekad_weekly_planner.field_teacher_weekly_planner__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__subject_id
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_search
+msgid "Subject"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#. odoo-python
+#: code:addons/dekad_weekly_planner/models/teacher_weekly_planner.py:0
+#: code:addons/school_addons/dekad_weekly_planner/models/teacher_weekly_planner.py:0
+msgid "Success"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_form
+msgid "Summary"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields.selection,name:dekad_weekly_planner.selection__teacher_weekly_planner_line__day_of_week__sunday
+msgid "Sunday"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__teacher_id
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__teacher_id
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_search
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_search
+msgid "Teacher"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__teacher_name
+msgid "Teacher Name"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.ui.menu,name:dekad_weekly_planner.menu_weekly_planner_section
+msgid "Teacher Planning"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model,name:dekad_weekly_planner.model_teacher_weekly_planner
+msgid "Teacher Weekly Planner"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model,name:dekad_weekly_planner.model_teacher_weekly_planner_line
+msgid "Teacher Weekly Planner Line"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid "Teacher:"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:res.groups,comment:dekad_weekly_planner.group_weekly_planner_user
+msgid "Teachers can view and edit their own weekly planners"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__lesson_hours
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_kanban
+msgid "Teaching Hours"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_search
+msgid "This Month"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields.selection,name:dekad_weekly_planner.selection__teacher_weekly_planner_line__day_of_week__thursday
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_search
+msgid "Thursday"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_form
+msgid "Time"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#. odoo-python
+#: code:addons/dekad_weekly_planner/models/teacher_weekly_planner_line.py:0
+#: code:addons/school_addons/dekad_weekly_planner/models/teacher_weekly_planner_line.py:0
+msgid ""
+"Time slot overlaps with another activity on %s:\n"
+"Existing: %s - %s\n"
+"New: %s - %s"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid ""
+"Total Activities | \n"
+"                                    <strong>Teaching Hours: </strong>"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__total_hours
+msgid "Total Hours"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields.selection,name:dekad_weekly_planner.selection__teacher_weekly_planner_line__day_of_week__tuesday
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_search
+msgid "Tuesday"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,help:dekad_weekly_planner.field_teacher_weekly_planner__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,help:dekad_weekly_planner.field_teacher_weekly_planner__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields.selection,name:dekad_weekly_planner.selection__teacher_weekly_planner_line__day_of_week__wednesday
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_search
+msgid "Wednesday"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_search
+msgid "Week"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__week_end_date
+msgid "Week End Date"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__week_number
+msgid "Week Number"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid "Week Number:"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid "Week Period:"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner__week_start_date
+msgid "Week Start Date"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#. odoo-python
+#: code:addons/dekad_weekly_planner/models/teacher_weekly_planner.py:0
+#: code:addons/school_addons/dekad_weekly_planner/models/teacher_weekly_planner.py:0
+msgid "Week start date must be a Monday!"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_line_calendar
+msgid "Weekly Activities"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.model.fields,field_description:dekad_weekly_planner.field_teacher_weekly_planner_line__planner_id
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_form
+msgid "Weekly Planner"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:res.groups,name:dekad_weekly_planner.group_weekly_planner_manager
+msgid "Weekly Planner Manager"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:res.groups,name:dekad_weekly_planner.group_weekly_planner_user
+msgid "Weekly Planner User"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.actions.act_window,name:dekad_weekly_planner.action_teacher_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_calendar
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.view_teacher_weekly_planner_list
+msgid "Weekly Planners"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid "Weekly Schedule"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model:ir.actions.report,name:dekad_weekly_planner.action_report_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid "Weekly Timetable"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#. odoo-python
+#: code:addons/dekad_weekly_planner/models/teacher_weekly_planner.py:0
+#: code:addons/school_addons/dekad_weekly_planner/models/teacher_weekly_planner.py:0
+msgid "You can only generate template for draft planners!"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid "to"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid ""
+"| \n"
+"                                    <strong>Total Hours: </strong>"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid "👥 Meeting"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid "📌 Other"
+msgstr ""
+
+#. module: dekad_weekly_planner
+#: model_terms:ir.ui.view,arch_db:dekad_weekly_planner.report_weekly_planner_document
+msgid "📝 Preparation"
+msgstr ""

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_de_attachment" model="res.groups">
+            <field name="name">Attachments</field>
+            <field name="category_id" ref="dekad_core.module_category_school"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user'))]"/>
+            <field name="sequence">110</field>
+        </record>
+
+        <record id="dekad_parent.group_de_parent" model="res.groups">
+            <field name="implied_ids"
+                   eval="[(4, ref('group_de_attachment'))]"/>
+        </record>
+
+        <record id="dekad_core.group_de_student" model="res.groups">
+            <field name="implied_ids"
+                   eval="[(4, ref('group_de_attachment'))]"/>
+        </record>
+        <record id="dekad_core.group_de_teacher_manage" model="res.groups">
+            <field name="implied_ids"
+                   eval="[(4, ref('group_de_attachment'))]"/>
+        </record>
+
+    </data>
+</odoo>

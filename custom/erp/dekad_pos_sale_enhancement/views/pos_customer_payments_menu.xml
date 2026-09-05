@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Custom action: My Payments under PoS -->
+    <record id="action_account_payments_self_pos" model="ir.actions.act_window">
+        <field name="name">My Payments</field>
+        <field name="res_model">account.payment</field>
+        <field name="view_mode">list,kanban,form,graph,activity</field>
+        <field name="domain">[('create_uid','=',uid)]</field>
+        <field name="context">{
+            'default_payment_type': 'inbound',
+            'default_partner_type': 'customer',
+            'search_default_inbound_filter': 1,
+            'default_move_journal_types': ('bank', 'cash'),
+            'display_account_trust': True,
+            }
+        </field>
+        <field name="view_id" ref="account.view_account_payment_tree"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Register a payment
+            </p>
+            <p>
+                Payments are used to register liquidity movements. You can process those payments by your own means or
+                by using installed facilities.
+            </p>
+        </field>
+    </record>
+
+    <!-- Add the customer payments menu under PoS -->
+    <menuitem id="menu_pos_customer_payments"
+              name="Customer Payments"
+              parent="point_of_sale.menu_point_root"
+              action="account.action_account_payments"
+              sequence="50"/>
+    <!-- My Payments (under PoS) -->
+    <menuitem id="menu_pos_customer_payments_self"
+              name="My Payments"
+              parent="menu_pos_customer_payments"
+              action="action_account_payments_self_pos"
+              sequence="10"/>
+
+    <!-- All Payments (under PoS) -->
+    <menuitem id="menu_pos_customer_payments_all"
+              name="All Payments"
+              parent="menu_pos_customer_payments"
+              action="account.action_account_payments"
+              sequence="20"
+              groups="point_of_sale.group_pos_manager"/>
+
+    <!-- Restrict "Validate" button visibility to Accounting group -->
+    <record id="view_account_payment_form_inherit_hide_validate_button" model="ir.ui.view">
+        <field name="name">account.payment.form.inherit.hide.validate.button</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_validate']" position="attributes">
+                <attribute name="groups">account.group_account_user</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

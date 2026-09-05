@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_inherit_passport" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.passport</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="custom_salutation" placeholder="Salutation"/>
+            </xpath>
+
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="x_passport_number"/>
+                <field name="x_nationality_id" options="{'no_open': True, 'no_create': True}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_move_list_cost_profit" model="ir.ui.view">
+        <field name="name">account.move.list.cost.profit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_out_invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list//field[@name='amount_total_in_currency_signed']" position="after">
+                <field name="total_cost"
+                       optional="show"
+                       sum="Total Cost"
+                       groups="best_store_implementation.group_show_cost_profit"/>
+                <field name="profit"
+                       optional="show"
+                       sum="Total Profit"
+                       groups="best_store_implementation.group_show_cost_profit"/>
+                <field name="profit_margin"
+                       optional="hide"
+                       groups="best_store_implementation.group_show_cost_profit"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+
+    <!-- Warning: no rate at all for the selected secondary currency -->
+    <t t-name="dekad_accounting_reports_enhanced.warning_no_rate">
+        <b>No exchange rate found</b> for the selected secondary currency.
+        Values are displayed without conversion — please add exchange rates under
+        <b>Accounting → Configuration → Currencies</b>.
+    </t>
+
+    <!-- Warning: some AMLs predate the earliest available rate -->
+    <t t-name="dekad_accounting_reports_enhanced.warning_fallback_rate">
+        Some journal entries are dated before <b><t t-out="warningParams.earliest_rate_date"/></b>,
+        which is the earliest available exchange rate for the selected currency.
+        Please review entries before this date — today's rate was used as a fallback and results may be inaccurate.
+    </t>
+
+</templates>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ========================= -->
+    <!-- REPORT ACTION -->
+    <!-- ========================= -->
+    <record id="action_report_property_availability_summary" model="ir.actions.report">
+        <field name="name">Property Availability Summary</field>
+        <field name="model">real.estate.property.availability.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dekad_real_estate.report_property_availability_summary_document</field>
+        <field name="report_file">dekad_real_estate.report_property_availability_summary_document</field>
+        <field name="binding_model_id" ref="model_real_estate_property_availability_report"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <!-- ========================= -->
+    <!-- QWEB TEMPLATE -->
+    <!-- ========================= -->
+    <template id="report_property_availability_summary_document">
+        <t t-call="web.external_layout">
+
+            <main>
+                <div class="page" style="direction:rtl; text-align:right;">
+
+                    <!-- ================= HEADER ================= -->
+                    <div style="text-align:center; margin-bottom:25px;">
+                        <h2 style="margin-bottom:8px;">
+                            تقرير إشغال العقارات حسب البناية
+                        </h2>
+                    </div>
+
+
+                    <!-- ================= GROUP BY BUILDING ================= -->
+                    <t t-set="buildings" t-value="sorted(set(docs.mapped('building_id')), key=lambda b: b.name or '')"/>
+
+                    <!-- ================= GRAND TOTALS ================= -->
+                    <t t-set="grand_units" t-value="len(docs)"/>
+                    <t t-set="grand_unavailable" t-value="len(docs.filtered(lambda l: not l.is_available))"/>
+                    <t t-set="grand_available" t-value="len(docs.filtered(lambda l: l.is_available))"/>
+
+                    <table class="table table-sm o_main_table" style="width:100%; font-size:13px;">
+
+                        <thead>
+                            <tr>
+                                <th class="text-center">اسم البناية</th>
+                                <th class="text-center">عدد الشقق</th>
+                                <th class="text-center">المؤجر</th>
+                                <th class="text-center">النسبة</th>
+                                <th class="text-center">الشاغر</th>
+                                <th class="text-center">النسبة</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <t t-foreach="buildings" t-as="building">
+
+                                <t t-set="b_lines" t-value="docs.filtered(lambda l: l.building_id == building)"/>
+                                <t t-set="b_total" t-value="len(b_lines)"/>
+                                <t t-set="b_unavailable" t-value="len(b_lines.filtered(lambda l: not l.is_available))"/>
+                                <t t-set="b_available" t-value="len(b_lines.filtered(lambda l: l.is_available))"/>
+                                <t t-set="b_unavailable_pct" t-value="(b_unavailable * 100.0 / b_total) if b_total else 0.0"/>
+                                <t t-set="b_available_pct" t-value="(b_available * 100.0 / b_total) if b_total else 0.0"/>
+
+                                <tr>
+                                    <td class="text-center">
+                                        <strong><t t-esc="building.name or ''"/></strong>
+                                    </td>
+                                    <td class="text-center">
+                                        <t t-esc="b_total"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <t t-esc="b_unavailable"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <t t-esc="('%.2f' % b_unavailable_pct) + '%'"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <t t-esc="b_available"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <t t-esc="('%.2f' % b_available_pct) + '%'"/>
+                                    </td>
+                                </tr>
+
+                            </t>
+                        </tbody>
+
+                        <!-- ================= GRAND TOTAL ================= -->
+                        <tbody>
+                            <tr style="background-color:#e8e8e8; border-top:2px solid #875A7B;">
+                                <td class="text-center">
+                                    <strong>الإجمالي</strong>
+                                </td>
+                                <td class="text-center">
+                                    <strong><t t-esc="grand_units"/></strong>
+                                </td>
+                                <td class="text-center">
+                                    <strong><t t-esc="grand_unavailable"/></strong>
+                                </td>
+                                <td class="text-center">
+                                    <strong>
+                                        <t t-esc="(('%.2f' % (grand_unavailable * 100.0 / grand_units)) + '%') if grand_units else '0.00%'"/>
+                                    </strong>
+                                </td>
+                                <td class="text-center">
+                                    <strong><t t-esc="grand_available"/></strong>
+                                </td>
+                                <td class="text-center">
+                                    <strong>
+                                        <t t-esc="(('%.2f' % (grand_available * 100.0 / grand_units)) + '%') if grand_units else '0.00%'"/>
+                                    </strong>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </main>
+
+        </t>
+    </template>
+
+</odoo>

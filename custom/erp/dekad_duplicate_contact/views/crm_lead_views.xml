@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_crm_lead_form_inherit_duplicate_contact_warning" model="ir.ui.view">
+        <field name="name">crm.lead.form.inherit.duplicate.contact.warning</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="after">
+                <div class="alert alert-warning oe_edit_only" name="warning_duplicate_contact"
+                     invisible="not same_contact_partner_id">
+                    The linked contact shares its
+                    <span>
+                        <field name="contact_conflict_label"/>
+                    </span>
+                    with another contact:
+
+                    <!-- Non clickable for pure salesman users -->
+                    <span groups="sales_team.group_sale_salesman,!sales_team.group_sale_salesman_all_leads">
+                        <field name="same_contact_partner_id"
+                               options="{'no_open': True}"
+                               context="{'show_address': False, 'show_vat': False}"/>
+                    </span>
+
+                    <!-- Clickable for all_leads + managers -->
+                    <span groups="sales_team.group_sale_salesman_all_leads,sales_team.group_sale_manager">
+                        <field name="same_contact_partner_id"
+                               context="{'show_address': False, 'show_vat': False}"/>
+                    </span>
+
+                    .
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,68 @@
+<odoo>
+
+    <record id="view_contract_report_search" model="ir.ui.view">
+        <field name="name">contract.report.search</field>
+        <field name="model">contract.report</field>
+        <field name="arch" type="xml">
+            <search string="Contract Report">
+                <!-- Search Fields -->
+                <field name="partner_id" string="Customer"/>
+                <field name="contract_date" string="Date"/>
+                <field name="day_name" string="Day"/>
+
+                <!-- Filters -->
+                <filter string="Today"
+                        name="filter_today"
+                        domain="[('contract_date', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                <filter string="This Month"
+                        name="filter_this_month"
+                        domain="[('contract_date', '>=', (context_today() + relativedelta(day=1)).strftime('%Y-%m-%d')),
+                                 ('contract_date', '&lt;=', (context_today() + relativedelta(day=31)).strftime('%Y-%m-%d'))]"/>
+                <separator/>
+                <filter string="Bank Transfer"  name="filter_transfer" domain="[('bank_transfer', '>', 0)]"/>
+                <filter string="Booking"        name="filter_booking"  domain="[('booking', '>', 0)]"/>
+                <filter string="Aquda"          name="filter_aquda"    domain="[('aquda', '>', 0)]"/>
+                <filter string="Airbnb"         name="filter_airbnb"   domain="[('airbnb', '>', 0)]"/>
+                <filter string="Cash"           name="filter_cash"     domain="[('cash', '>', 0)]"/>
+
+                <!-- Group By -->
+                <group expand="0" string="Group By">
+                    <filter string="Customer"      name="group_partner"   context="{'group_by': 'partner_id'}"/>
+                    <filter string="Date"          name="group_date"      context="{'group_by': 'contract_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="view_contract_report_tree" model="ir.ui.view">
+        <field name="name">contract.report.tree</field>
+        <field name="model">contract.report</field>
+        <field name="arch" type="xml">
+            <list editable="top">
+                <field name="currency_id" column_invisible="1"/>
+                <field name="day_name" readonly="1" optional="show"/>
+                <field name="contract_date" readonly="1" optional="show"/>
+                <field name="partner_id" readonly="1" optional="show"/>
+                <field name="cancel_type" widget="badge" decoration-danger="1" optional="show" readonly="1"/>
+                <field name="bank_transfer" sum="Total" readonly="1" optional="show"/>
+                <field name="booking" sum="Total" readonly="1" optional="show"/>
+                <field name="aquda" sum="Total" readonly="1" optional="show"/>
+                <field name="airbnb" sum="Total" readonly="1" optional="show"/>
+                <field name="cash" sum="Total" readonly="1" optional="show"/>
+                <field name="total_amount" sum="Total" readonly="1" optional="show"/>
+                <field name="note"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_contract_report" model="ir.actions.act_window">
+        <field name="name">Contract Report</field>
+        <field name="res_model">contract.report</field>
+        <field name="view_mode">list</field>
+        <field name="search_view_id" ref="view_contract_report_search"/>
+        <field name="context">{
+            'search_default_group_partner': 0
+        }</field>
+    </record>
+</odoo>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_account_journal_form_sequence_date"
+            model="ir.ui.view">
+
+        <field name="name">account.journal.form.sequence.date</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+
+        <field name="arch" type="xml">
+
+            <xpath expr="//notebook" position="inside">
+
+                <page string="Sequence">
+                    <group>
+
+                        <!-- Left column -->
+                        <group>
+                            <field name="sequence_date_format" widget="radio"/>
+                        </group>
+
+                        <!-- Right column -->
+                        <group col="1">
+
+                                <div class="text-muted">
+                                    Resequences all posted journal entries for this journal using the selected
+                                    date format. Save your changes first, then click the button.
+                                </div>
+
+                                <button
+                                    name="action_resequence_journal"
+                                    type="object"
+                                    string="Resequence Journal Entries"
+                                    class="btn-primary"
+                                    confirm="This will rename all posted entries for this journal. Are you sure?"
+                                />
+
+                        </group>
+
+                    </group>
+                </page>
+
+            </xpath>
+
+        </field>
+
+    </record>
+
+</odoo>

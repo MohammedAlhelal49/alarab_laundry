@@ -1,0 +1,61 @@
+<odoo>
+<!--     <record id="view_product_product_search_inactive_sold" model="ir.ui.view">-->
+<!--        <field name="name">product.product.search.inactive.sold</field>-->
+<!--        <field name="model">product.product</field>-->
+<!--        <field name="inherit_id" ref="stock.stock_product_search_form_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//filter[@name='inactive']" position="after">-->
+<!--                <filter-->
+<!--                    string="Inactive Products"-->
+<!--                    name="never_sold"-->
+<!--                    domain="[-->
+<!--                         '&amp;',-->
+<!--                        ('sale_order_line_ids', '=', False),-->
+<!--                        ('qty_available', '>', 0)-->
+<!--                    ]"-->
+<!--                />-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+    <record id="product_template_search_inherit" model="ir.ui.view">
+        <field name="name">product.template.search.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <filter
+                    string="Inactive Products"
+                    name="never_sold"
+                    domain="[('never_sold', '=', True), ('qty_available', '>', 0)]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_product_inactive_report" model="ir.actions.act_window">
+        <field name="name">Inactive Products</field>
+        <field name="res_model">product.product</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[
+            ('sale_order_line_ids', '=', False),
+            ('qty_available', '>', 0)
+        ]</field>
+        <field name="context">{'create': False}</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="views" eval="[(False, 'list'), (False, 'form')]"/>
+        <field name="search_view_id" ref="product.product_search_form_view"/>
+        <field name="help" type="html">
+            <p>This view lists all products that have never been sold and still have stock.</p>
+        </field>
+    </record>
+
+    <!-- Menu Item under Sales > Reporting -->
+    <menuitem id="menu_dash_product_inactive_report"
+              name="Inactive Products"
+              parent="sale.menu_sale_report"
+              action="action_product_inactive_report"
+              sequence="25"/>
+
+
+</odoo>
+

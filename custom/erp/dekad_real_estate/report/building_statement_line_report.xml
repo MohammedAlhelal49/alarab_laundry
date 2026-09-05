@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ========================= -->
+    <!-- REPORT ACTION -->
+    <!-- ========================= -->
+    <record id="action_report_building_statement_line" model="ir.actions.report">
+        <field name="name">Building Statement report</field>
+        <field name="model">building.statement.line</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dekad_real_estate.report_building_statement_line_document</field>
+        <field name="report_file">dekad_real_estate.report_building_statement_line_document</field>
+        <field name="binding_model_id" ref="model_building_statement_line"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="dekad_real_estate.paperformat_contract_report_landscape"/>
+    </record>
+
+
+    <!-- ========================= -->
+    <!-- QWEB TEMPLATE -->
+    <!-- ========================= -->
+    <template id="report_building_statement_line_document">
+        <t t-call="web.external_layout">
+
+            <main>
+                <div class="page" style="direction:rtl; text-align:right;">
+                    <!-- ================= HEADER ================= -->
+                    <div style="text-align:center; margin-bottom:25px;">
+
+                        <h2 style="margin-bottom:15px;">
+                            Building Statement
+                        </h2>
+
+                        <t t-set="ctx" t-value="env.context"/>
+
+                        <t t-set="building"
+                           t-value="ctx.get('statement_building_id') and env['real.estate.buildings'].browse(ctx.get('statement_building_id'))"/>
+
+                        <t t-set="properties"
+                           t-value="env['account.analytic.account'].browse(ctx.get('statement_property_ids', []))"/>
+
+                        <t t-set="customer"
+                           t-value="ctx.get('statement_customer_id') and env['res.partner'].browse(ctx.get('statement_customer_id'))"/>
+
+                        <t t-set="start_date" t-value="ctx.get('statement_start_date')"/>
+                        <t t-set="end_date" t-value="ctx.get('statement_end_date')"/>
+
+                        <div t-if="building" style="font-size:16px; font-weight:bold;">
+                            <t t-esc="building.name"/>
+                        </div>
+
+                        <div t-if="properties" style="margin-top:4px;">
+                            <t t-foreach="properties" t-as="p">
+                                <t t-esc="p.name"/>
+                                <t t-if="p != properties[-1]">، </t>
+                            </t>
+                        </div>
+
+                        <div t-if="customer" style="margin-top:4px;">
+                            <t t-esc="customer.name"/>
+                        </div>
+
+                        <div t-if="start_date or end_date" style="margin-top:4px;">
+                            <t t-if="start_date and end_date">
+                                <t t-esc="start_date"/> - <t t-esc="end_date"/>
+                            </t>
+                            <t t-elif="start_date">
+                                from
+                                <t t-esc="start_date"/>
+                            </t>
+                            <t t-else="">
+                                -
+                                <t t-esc="end_date"/>
+                            </t>
+                        </div>
+
+                    </div>
+                    <!-- ================= GROUP BY PROPERTY, THEN PAYMENT STATUS ================= -->
+                    <!-- Unique properties in the recordset, kept in alphabetical order -->
+                    <t t-set="properties" t-value="sorted(set(docs.mapped('property_id')), key=lambda p: p.name or '')"/>
+
+                    <!-- ================= GRAND TOTALS (overall + split by payment status) ================= -->
+                    <t t-set="grand_total" t-value="sum(docs.mapped('amount'))"/>
+                    <t t-set="collected_total" t-value="sum(docs.filtered(lambda l: l.payment_state == 'collected').mapped('amount'))"/>
+                    <t t-set="not_collected_total" t-value="sum(docs.filtered(lambda l: l.payment_state == 'not_collected').mapped('amount'))"/>
+
+                    <t t-foreach="properties" t-as="property">
+
+                        <t t-set="property_lines" t-value="docs.filtered(lambda l: l.property_id == property)"/>
+
+                        <!-- Property group header -->
+                        <div style="
+                            background-color:#e8e8e8;
+                            border-right:4px solid #875A7B;
+                            padding:6px 10px;
+                            margin-top:18px;
+                            margin-bottom:6px;
+                            font-weight:bold;
+                            font-size:13px;
+                        ">
+                            رقم ونوع الوحدة :
+                            <t t-esc="property.name or ''"/>
+                        </div>
+
+                        <!-- Payment statuses within this property, kept in a stable order -->
+                        <t t-set="payment_states" t-value="sorted(set(property_lines.mapped('payment_state')), key=lambda s: s or '')"/>
+
+                        <t t-foreach="payment_states" t-as="status">
+
+                            <t t-set="group_lines" t-value="property_lines.filtered(lambda l: l.payment_state == status)"/>
+                            <t t-set="group_total" t-value="sum(group_lines.mapped('amount'))"/>
+                            <t t-set="status_label" t-value="dict(group_lines._fields['payment_state'].selection).get(status, 'غير محدد') if status else 'غير محدد'"/>
+
+                            <!-- Payment status subgroup header -->
+                            <div style="
+                                background-color:#f5f5f5;
+                                border-right:3px solid #b0b0b0;
+                                padding:4px 10px;
+                                margin-top:8px;
+                                margin-bottom:4px;
+                                font-weight:bold;
+                                font-size:12px;
+                            ">
+                                حالة الدفعة :
+                                <t t-esc="status_label"/>
+                            </div>
+
+                            <table class="table table-sm o_main_table" style="width:100%; font-size:13px;">
+
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">#</th>
+                                        <th class="text-center">الحالة</th>
+                                        <th class="text-end">رقم العقد</th>
+                                        <th class="text-center">تاريخ نهاية العقد</th>
+                                        <th class="text-end">المستأجر</th>
+                                        <th class="text-center">قيمة العقد</th>
+                                        <th class="text-center">نوع الدفع</th>
+                                        <th class="text-center">رقم الدفعة</th>
+                                        <th class="text-center">تاريخ الدفعة</th>
+                                        <th class="text-center">حالة الدفعة</th>
+                                        <th class="text-center">المبلغ</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <t t-foreach="group_lines" t-as="o">
+
+                                        <tr>
+                                            <td class="text-center"><t t-esc="o_index + 1"/></td>
+
+                                            <td class="text-center">
+                                                <t t-esc="dict(o._fields['availability'].selection).get(o.availability, '')"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="o.contract_number"/>
+                                            </td>
+
+                                            <td class="text-center">
+                                                <t t-esc="o.rent_end_date"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="o.customer_id.name"/>
+                                            </td>
+
+                                            <td class="text-center">
+                                                <span t-field="o.sale_order_amount_untaxed"
+                                                      t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                            </td>
+
+                                            <td class="text-center">
+                                                <t t-esc="dict(o._fields['payment_type'].selection).get(o.payment_type, '')"/>
+                                            </td>
+
+                                            <td class="text-center">
+                                                <t t-esc="o.memo"/>
+                                            </td>
+
+                                            <td class="text-center">
+                                                <t t-esc="o.payment_date"/>
+                                            </td>
+                                            <td class="text-center">
+                                                <t t-esc="dict(o._fields['payment_state'].selection).get(o.payment_state, '')"/>
+                                            </td>
+                                            <td class="text-center">
+                                                <strong>
+                                                    <span t-field="o.amount"
+                                                          t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                </strong>
+                                            </td>
+                                        </tr>
+
+                                    </t>
+
+                                    <!-- ================= SUBGROUP SUBTOTAL =================
+                                         Placed as a normal row right after the data, inside
+                                         tbody (not tfoot), so it always prints directly under
+                                         its own group even if the table breaks across pages. -->
+                                    <tr style="background-color:#f8f9fa; border-top:2px solid #dcdcdc;">
+                                        <td colspan="9"></td>
+                                        <td class="text-center">
+                                            <strong>الإجمالي</strong>
+                                        </td>
+                                        <td class="text-center">
+                                            <strong>
+                                                <span t-esc="group_total"
+                                                      t-options='{"widget": "monetary", "display_currency": group_lines and group_lines[0].currency_id}'/>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+
+                        </t>
+
+                    </t>
+
+
+                    <!-- ================= GRAND TOTALS ================= -->
+                    <table class="table table-sm" style="width:100%; font-size:13px; margin-top:10px;">
+                        <tr style="background-color:#eafaf1; border:1px solid #a2d9ce;">
+                            <td class="text-center" style="width:88%;">
+                                <strong>
+                                    اجمالي المحصل
+                                </strong>
+                            </td>
+                            <td class="text-center">
+                                <strong>
+                                    <span t-esc="collected_total"
+                                          t-options='{"widget": "monetary", "display_currency": docs and docs[0].currency_id}'/>
+                                </strong>
+                            </td>
+                        </tr>
+                        <tr style="background-color:#fdedec; border:1px solid #f1948a;">
+                            <td class="text-center">
+                                <strong>
+                                    اجمالي الغير محصل
+                                </strong>
+                            </td>
+                            <td class="text-center">
+                                <strong>
+                                    <span t-esc="not_collected_total"
+                                          t-options='{"widget": "monetary", "display_currency": docs and docs[0].currency_id}'/>
+                                </strong>
+                            </td>
+                        </tr>
+                        <tr style="background-color:#e8e8e8; border:2px solid #875A7B;">
+                            <td class="text-center">
+                                <strong>
+                                    الإجمالي الكلي
+                                </strong>
+                            </td>
+                            <td class="text-center">
+                                <strong>
+                                    <span t-esc="grand_total"
+                                          t-options='{"widget": "monetary", "display_currency": docs and docs[0].currency_id}'/>
+                                </strong>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </main>
+
+        </t>
+    </template>
+
+</odoo>

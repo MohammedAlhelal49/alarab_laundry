@@ -1,0 +1,58 @@
+<odoo>
+  <data>
+    <!-- Form View -->
+    <record id="view_form_de_timetable" model="ir.ui.view">
+      <field name="name">de.timetable.form</field>
+      <field name="model">de.timetable</field>
+      <field name="arch" type="xml">
+        <form string="Timetable">
+          <header>
+            <button string="Print Timetable"
+                    type="object"
+                    name="print_timetable_report"
+                    class="btn-primary"/>
+          </header>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="academic_year_id"/>
+              <field name="academic_term_id"/>
+              <field name="grade_id"/>
+              <field name="classroom_id"/>
+            </group>
+            <notebook>
+              <page name="timetable_lines_page" string="Weekly Timetable"/>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+      <!--edit by ahmad 30/9 inherit Form View to add timetable lines to the Weekly Timetable tab -->
+<!--<record id="inherit_weekly_timetable_tab" model="ir.ui.view">-->
+<!--  <field name="name">de.timetable.weekly.tab</field>-->
+<!--  <field name="model">de.timetable</field>-->
+<!--  <field name="inherit_id" ref="dekad_timetable.view_form_de_timetable"/>-->
+<!--  <field name="arch" type="xml">-->
+<!--    <xpath expr="//page[@name='timetable_lines_page']" position="inside">-->
+<!--      <field name="line_ids">-->
+<!--        <list editable="bottom">-->
+<!--          <field name="session_slot_id"/>-->
+<!--          <field name="subject_id"/>-->
+<!--          <field name="teacher_id"/>-->
+<!--          <field name="is_break" column_invisible="1"/>-->
+<!--        </list>-->
+<!--      </field>-->
+<!--    </xpath>-->
+<!--  </field>-->
+<!--</record>-->
+
+    <!-- Action -->
+    <record id="action_de_timetable" model="ir.actions.act_window">
+      <field name="name">Timetable</field>
+      <field name="res_model">de.timetable</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+  </data>
+</odoo>

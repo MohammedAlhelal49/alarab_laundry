@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="paperformat_albusat_delivery_note" model="report.paperformat">
+        <field name="name">Al Busat Delivery Note</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">8</field>
+        <field name="margin_bottom">8</field>
+        <field name="margin_left">6</field>
+        <field name="margin_right">6</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_report_albusat_delivery_note" model="ir.actions.report">
+        <field name="name">Al Busat Delivery Note</field>
+        <field name="model">stock.picking</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">albusat_alakhdar_implemantation.report_albusat_delivery_note</field>
+        <field name="report_file">albusat_alakhdar_implemantation.report_albusat_delivery_note</field>
+        <field name="print_report_name">'Delivery Note - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="stock.model_stock_picking"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_albusat_delivery_note"/>
+    </record>
+
+    <template id="report_albusat_delivery_note">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+
+                    <div class="page" style="font-size:9.5px; font-family:Arial, sans-serif; color:#000;">
+
+                       
+                        <table style="width:100%; border-collapse:collapse; margin-bottom:0;">
+                            <tr>
+                                
+                                <td style="width:40%; vertical-align:middle; padding:4px; text-align:left;">
+                                    <img src="/albusat_alakhdar_implemantation/static/src/img/logo.png"
+                                         style="max-height:85px;" alt="Al Busat Logo"/>
+                                </td>
+                          
+                                <td style="width:60%; vertical-align:middle; padding:4px; text-align:right;">
+                                    <div style="font-size:13px; font-weight:bold; letter-spacing:0.3px;">
+                                        AL BUSAT AL AKHDAR AGRICULTRURAL SERVICES CO
+                                    </div>
+                                    <div style="font-size:11px; line-height:1.9; letter-spacing:0.2px; margin-top:3px;">
+                                        L.L.C - S.P.C<br/>
+                                        P.O. Box 1684, Khalifa St., Al Ain, UAE<br/>
+                                        Phone: +971 37 657 036<br/>
+                                        Website: www.albusath.com<br/>
+                                        Email: albusath@emirates.net.ae<br/>
+                                        TRN: 100304313800003
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
+                        
+                        <hr style="border:none; border-top:2px solid #000; margin:6px 0;"/>
+
+                        <h2 style="text-align:center; font-size:16px; padding:15px 0; margin:0;">Delivery Note</h2>
+
+                       
+                        <table style="width:100%; border-collapse:collapse; margin-bottom:0;">
+                            <tr>
+                                <td style="border:1px solid #000; padding:2px 5px; width:50%;">
+                                    <strong>P.O. No.:</strong>
+                                   
+                                </td>
+                                <td style="border:1px solid #000; padding:2px 5px; width:50%;">
+                                    <strong>Date:</strong>
+                                    <span t-esc="o.scheduled_date and o.scheduled_date.strftime('%d/%m/%Y') or ''"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>PR No.:</strong>
+                                    
+                                </td>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>Quotation Ref.:</strong>
+                                  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>Requisitioned By:</strong>
+                                    
+                                </td>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>Buyer:</strong>
+                                   
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- ===== CUSTOMER DETAILS / SHIP TO ===== -->
+                        <table style="width:100%; border-collapse:collapse; margin-top:5px;">
+                            <tr>
+                                <td style="border:1px solid #000; padding:2px 5px; width:50%; background:#f2f2f2;">
+                                    <strong>CUSTOMER DETAILS</strong>
+                                </td>
+                                <td style="border:1px solid #000; padding:2px 5px; width:50%; background:#f2f2f2;">
+                                    <strong>SHIP TO</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>Customer Name:</strong>
+                                    <span t-esc="o.partner_id.name or ''"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>Location:</strong>
+                                 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>TRN:</strong>
+                                    <span t-esc="o.partner_id.vat or ''"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>Contact Details:</strong>
+                                    <span t-esc="o.partner_id.phone or ''"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>Address:</strong>
+                                    <span t-esc="o.partner_id.contact_address or ''"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:2px 5px; background:#f2f2f2;">
+                                    <strong>BILL TO</strong>
+                                   
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>Email Address:</strong>
+                                    <span t-esc="o.partner_id.email or ''"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:2px 5px;"/>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>Contact Person:</strong>
+                                   
+                                </td>
+                                <td style="border:1px solid #000; padding:2px 5px;"/>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>Mobile Number:</strong>
+                                    <span t-esc="o.partner_id.mobile or ''"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:2px 5px;"/>
+                            </tr>
+                        </table>
+
+                        <!-- ===== PAYMENT / DELIVERY TERMS ===== -->
+                        <table style="width:100%; border-collapse:collapse; margin-top:5px;">
+                            <tr>
+                                <td style="border:1px solid #000; padding:2px 5px; width:50%;">
+                                    <strong>Payment Terms:</strong>
+                                   
+                                </td>
+                                <td style="border:1px solid #000; padding:2px 5px; width:50%;">
+                                    <strong>Delivery Terms:</strong>
+                                 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>Payment Method:</strong>
+                                   
+                                </td>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>Delivery Date Requested:</strong>
+                                  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:2px 5px;" colspan="2">
+                                    <strong>Term Date Basis:</strong>
+                                 
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- ===== ITEMS TABLE ===== -->
+                        <table style="width:100%; border-collapse:collapse; margin-top:5px;">
+                            <thead>
+                                <tr style="background:#f2f2f2;">
+                                    <th style="border:1px solid #000; padding:2px 5px; width:5%;">No.</th>
+                                    <th style="border:1px solid #000; padding:2px 5px; width:15%;">Item Code</th>
+                                    <th style="border:1px solid #000; padding:2px 5px; width:15%;">Item Category</th>
+                                    <th style="border:1px solid #000; padding:2px 5px;">Description</th>
+                                    <th style="border:1px solid #000; padding:2px 5px; width:10%;">UOM</th>
+                                    <th style="border:1px solid #000; padding:2px 5px; width:10%;">Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.move_ids_without_package" t-as="move">
+                                    <tr>
+                                        <td style="border:1px solid #000; padding:2px 5px;">
+                                            <span t-esc="move_index + 1"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:2px 5px;">
+                                            <span t-esc="move.product_id.default_code or ''"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:2px 5px;">
+                                            <span t-esc="move.product_id.categ_id.name or ''"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:2px 5px;">
+                                            <span t-esc="move.description_picking or move.product_id.name"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:2px 5px;">
+                                            <span t-esc="move.product_uom.name or ''"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:2px 5px;">
+                                            <span t-esc="move.quantity"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                                
+                                <tr t-if="len(o.move_ids_without_package) &lt; 3"
+                                    t-foreach="range(3 - len(o.move_ids_without_package))" t-as="filler">
+                                    <td style="border:1px solid #000; padding:3px 5px;">&#160;</td>
+                                    <td style="border:1px solid #000; padding:3px 5px;">&#160;</td>
+                                    <td style="border:1px solid #000; padding:3px 5px;">&#160;</td>
+                                    <td style="border:1px solid #000; padding:3px 5px;">&#160;</td>
+                                    <td style="border:1px solid #000; padding:3px 5px;">&#160;</td>
+                                    <td style="border:1px solid #000; padding:3px 5px;">&#160;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- ===== SIGNATURE BLOCK ===== -->
+                        <table style="width:100%; border-collapse:collapse; margin-top:5px;">
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px; width:50%; text-align:center; vertical-align:top;">
+                                    <strong>Signature &amp; Stamp</strong><br/>
+                                    AL BUSAT AL AKHDAR AGRICULTRURAL SERVICES CO<br/>
+                                    L.L.C - S.P.C
+                                </td>
+                                <td style="border:1px solid #000; padding:5px; width:50%;">
+                                    Name: _______________________<br/>
+                                    Title: _______________________<br/>
+                                    Mobile: _______________________<br/>
+                                    <strong>Customer Signature &amp; Stamp</strong>
+                                    <div style="border:1px dashed #000; height:22px; margin-top:2px;"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- ===== EXTRA NOTES ===== -->
+                        <table style="width:100%; border-collapse:collapse; margin-top:5px;">
+                            <tr>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>Delivery Duration of Material / Service(s):</strong>
+                                   
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>Warranty on Material / Service(s):</strong>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:2px 5px;">
+                                    <strong>Note to Customer:</strong>
+                                    
+                                </td>
+                            </tr>
+                        </table>
+
+                        <p style="text-align:center; margin-top:5px;">
+                            Note: The General Terms and Conditions attached to this Delivery Note are applicable.
+                        </p>
+
+                        <p style="margin-top:8px;">
+                            Customer Representative Name: _______________________________
+                        </p>
+
+                    </div>
+
+                </t>
+
+             
+                <t t-call="web.basic_layout">
+                 
+                    <div class="page" style="font-size:9px; font-family:Arial, sans-serif; color:#000;">
+
+                        <table style="width:100%; border-collapse:collapse; border:1px solid #000;">
+                            <tr>
+                                <th style="border:1px solid #000; padding:6px; width:50%; text-align:left; font-size:12px;">
+                                    GOODS DELIVERY TERMS AND CONDITIONS
+                                </th>
+                                <th style="border:1px solid #000; padding:6px; width:50%; text-align:right; font-size:12px; direction:rtl;">
+                                    شروط وأحكام تسليم البضاعة
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top;">
+                                    <strong>Delivery Acknowledgment:</strong><br/>
+                                    By signing this Delivery Note, the receiver confirms that the goods
+                                    have been received in the stated quantity and in good condition unless
+                                    otherwise noted.
+                                </td>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top; direction:rtl; text-align:right;">
+                                    <strong>إقرار الاستلام</strong><br/>
+                                    يُقَرّ المستلم بمجرد توقيعه على سند التسليم باستلام البضاعة بالكميات
+                                    المذكورة وبحالة جيدة ما لم يتم تدوين خلاف ذلك.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top;">
+                                    <strong>Inspection Upon Delivery:</strong><br/>
+                                    The receiver must inspect the goods at the time of delivery. Any visible
+                                    damage, shortage, or discrepancy must be clearly noted on the Delivery
+                                    Note at the time of receipt.
+                                </td>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top; direction:rtl; text-align:right;">
+                                    <strong>الفحص عند الاستلام</strong><br/>
+                                    يجب على المستلم فحص البضاعة وقت الاستلام، وأي تلف ظاهر أو نقص أو اختلاف
+                                    يجب تدوينه بوضوح على سند التسليم عند الاستلام.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top;">
+                                    <strong>Claims:</strong><br/>
+                                    Any claims related to damage, shortage, or non-conformity must be
+                                    submitted in writing within (3) days from the date of delivery. Claims
+                                    made after this period may not be accepted.
+                                </td>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top; direction:rtl; text-align:right;">
+                                    <strong>المطالبات</strong><br/>
+                                    يجب تقديم أي مطالبات تتعلق بتلف أو نقص أو عدم مطابقة كتابةً خلال مدة (3)
+                                    أيام من تاريخ التسليم، ولن يُعتد بأي مطالبات بعد هذه المدة.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top;">
+                                    <strong>Transfer of Risk:</strong><br/>
+                                    All risks associated with the goods pass to the buyer upon delivery and
+                                    signing of the Delivery Note.
+                                </td>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top; direction:rtl; text-align:right;">
+                                    <strong>انتقال المسؤولية</strong><br/>
+                                    تنتقل كافة مخاطر البضاعة إلى المشتري بمجرد التسليم والتوقيع على سند
+                                    التسليم.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top;">
+                                    <strong>Delay in Acceptance:</strong><br/>
+                                    If the receiver fails or delays in accepting delivery, the supplier
+                                    reserves the right to charge any additional costs including storage,
+                                    handling, or re-delivery fees.
+                                </td>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top; direction:rtl; text-align:right;">
+                                    <strong>التأخير في الاستلام</strong><br/>
+                                    في حال تأخر المستلم أو امتناعه عن استلام البضاعة، يحق للمورد تحميله أي
+                                    تكاليف إضافية تشمل التخزين أو المناولة أو إعادة التوصيل.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top;">
+                                    <strong>Payment Terms:</strong><br/>
+                                    This delivery is subject to the payment terms agreed upon in the
+                                    relevant invoice, contract, or purchase order.
+                                </td>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top; direction:rtl; text-align:right;">
+                                    <strong>شروط الدفع</strong><br/>
+                                    تخضع هذه الشحنة لشروط الدفع المتفق عليها في الفاتورة أو العقد أو أمر
+                                    الشراء.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top;">
+                                    <strong>Returns and Exchanges:</strong><br/>
+                                    Goods may not be returned or exchanged without prior written approval
+                                    from the supplier.
+                                </td>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top; direction:rtl; text-align:right;">
+                                    <strong>الارجاع والاستبدال</strong><br/>
+                                    لا يجوز إرجاع أو استبدال البضاعة إلا بعد الحصول على موافقة خطية مسبقة من
+                                    المورد.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top;">
+                                    <strong>Force Majeure:</strong><br/>
+                                    The supplier shall not be liable for any delay or failure in performance
+                                    due to events beyond its reasonable control, including but not limited
+                                    to natural disasters, strikes, or government actions.
+                                </td>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top; direction:rtl; text-align:right;">
+                                    <strong>القوة القاهرة</strong><br/>
+                                    لا يتحمل المورد أي مسؤولية عن أي تأخير أو إخفاق في الأداء ناتج عن ظروف
+                                    خارجة عن إرادته، بما في ذلك الكوارث الطبيعية أو الاضرابات أو القرارات
+                                    الحكومية.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top;">
+                                    <strong>Governing Law:</strong><br/>
+                                    These Terms and Conditions shall be governed by and construed in
+                                    accordance with the laws of the United Arab Emirates.
+                                </td>
+                                <td style="border:1px solid #000; padding:6px; vertical-align:top; direction:rtl; text-align:right;">
+                                    <strong>القانون الحاكم</strong><br/>
+                                    تخضع هذه الشروط وتُفسّر وفقاً لقوانين دولة الامارات العربية المتحدة.
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

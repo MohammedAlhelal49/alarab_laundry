@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- customize the parent portal template -->
+         <template id="dekad_portal_my_home" name="Portal My Home - Parent Simple" inherit_id="portal.portal_my_home">
+
+            <!-- Method 2: Aggressive xpath replacement - Try these one by one -->
+
+            <!-- Option 1: Replace portal category section -->
+            <xpath expr="//div[@id='portal_common_category']" position="replace">
+                <div id="portal_common_category" class="d-none">
+                    <!-- Hidden default categories -->
+                </div>
+            </xpath>
+
+            <!-- Option 2: Replace by class name (common in Odoo 18) -->
+<!--            <xpath expr="//div[contains(@class, 'o_portal_category')]" position="replace">-->
+<!--                <div class="d-none">-->
+<!--                    &lt;!&ndash; Hidden categories &ndash;&gt;-->
+<!--                </div>-->
+<!--            </xpath>-->
+
+            <!-- Option 3: Hide invoices by variable -->
+<!--            <xpath expr="//t[@t-if='invoices']" position="replace">-->
+<!--                <t t-if="False">-->
+<!--                    &lt;!&ndash; Hidden invoices &ndash;&gt;-->
+<!--                </t>-->
+<!--            </xpath>-->
+
+<!--            &lt;!&ndash; Option 4: Hide quotations by variable &ndash;&gt;-->
+<!--            <xpath expr="//t[@t-if='quotations']" position="replace">-->
+<!--                <t t-if="False">-->
+<!--                    &lt;!&ndash; Hidden quotations &ndash;&gt;-->
+<!--                </t>-->
+<!--            </xpath>-->
+
+            <xpath expr="//div[hasclass('o_portal_my_home')]" position="inside">
+                    <div class="card" t-if="request.env.user.is_parent">
+                        <div class="card-text">
+                            <t t-if="request.env.user.is_parent and not parent_student_param ">
+                                <div class="student-profile">
+                                    <div class="header-holder">
+                                        <div class="image-holder ">
+                                            <t t-if="parent.image_1920">
+                                                <img t-attf-src="data:image/png;base64,{{parent.image_1920}}"
+                                                     alt="Avatar" class=""
+                                                     style="width: 100px; "/>
+                                            </t>
+                                            <t t-else="">
+
+                                                <img t-if="parent.gender=='female'"
+                                                     src="/dekad_core/static/img/female.jpg"
+
+                                                     alt="Avatar"
+                                                     style="width: 100px ;"/>
+
+                                                <img t-else="" src="/dekad_core/static/img/male.jpg"
+
+                                                     alt="Avatar"
+                                                     style="width: 100px; "/>
+
+
+                                            </t>
+
+                                            <div t-esc="parent.sequence"/>
+                                        </div>
+                                        <div class="name-holder">
+                                            <h6 style="">
+                                                <t t-esc="parent.name"/>
+
+
+                                            </h6>
+                                            <p style="color: black;">
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="pt-4 ">
+                                        <hr class="mt-0 mb-4"/>
+                                        <div class="row pt-1">
+
+
+                                            <div class="col-6 col-lg-4 mb-3">
+                                                <h6>Relation with Student</h6>
+                                                <p class="text-muted">
+                                                    <t t-esc="parent.relationship_id.name"/>
+                                                </p>
+                                            </div>
+
+
+                                            <div class="col-6 col-lg-4 mb-3">
+                                                <h6>Gender</h6>
+                                                <p class="text-muted">
+                                                    <t t-esc="parent.gender"/>
+                                                </p>
+                                            </div>
+                                            <div class="col-6 col-lg-4 mb-3" t-if="parent.birth_date">
+                                                <h6>Birth Date</h6>
+                                                <p class="text-muted">
+                                                    <span t-field="parent.birth_date"
+                                                    />
+                                                </p>
+                                            </div>
+
+                                            <div class="col-6 col-lg-4 mb-3" t-if="parent.religion_id">
+                                                <h6>Religion</h6>
+                                                <p class="text-muted">
+                                                    <span t-field="parent.religion_id.name"
+                                                    />
+                                                </p>
+                                            </div>
+
+                                            <div class="col-6 col-lg-4 mb-3"
+                                                 t-if="parent.country_group_id">
+                                                <h6>Nationality Group</h6>
+                                                <p class="text-muted">
+                                                    <span t-field="parent.country_group_id.name"
+                                                    />
+                                                </p>
+                                            </div>
+
+                                            <div class="col-6 col-lg-4 mb-3" t-if="parent.nationality_id">
+                                                <h6>Nationality</h6>
+                                                <p class="text-muted">
+                                                    <span t-field="parent.nationality_id.name"
+                                                    />
+                                                </p>
+                                            </div>
+
+
+                                            <div class="col-6 col-lg-4 mb-3" t-if="parent.country_id">
+                                                <h6>Country of birth</h6>
+                                                <p class="text-muted">
+                                                    <span t-field="parent.country_id.name"
+                                                    />
+                                                </p>
+                                            </div>
+
+                                            <div class="col-6 col-lg-4 mb-3" t-if="parent.city">
+                                                <h6>City of birth</h6>
+                                                <p class="text-muted">
+                                                    <span t-field="parent.city"
+                                                    />
+                                                </p>
+                                            </div>
+
+                                            <div class="col-6 col-lg-4 mb-3">
+                                                <h6>Email</h6>
+                                                <p class="text-muted">
+                                                    <t t-esc="parent.email"/>
+                                                </p>
+                                            </div>
+
+
+                                            <div class="col-6 col-lg-4 mb-3">
+                                                <h6>Mobile</h6>
+                                                <p class="text-muted">
+                                                    <t t-esc="parent.mobile"/>
+                                                </p>
+                                            </div>
+                                            <div class="col-6 col-lg-4 mb-3" t-if="parent.phone">
+                                                <h6>Phone</h6>
+                                                <p class="text-muted">
+                                                    <t t-esc="parent.phone"/>
+                                                </p>
+                                            </div>
+
+
+                                            <div class="col-6 col-lg-4 mb-3" t-if="parent.visa_info">
+                                                <h6>Visa Info</h6>
+                                                <p class="text-muted">
+                                                    <t t-esc="parent.visa_info"/>
+                                                </p>
+                                            </div>
+
+
+                                            <div class="col-6 col-lg-4 mb-3" t-if="parent.emirate_id">
+                                                <h6>Emirate id number</h6>
+                                                <p class="text-muted">
+                                                    <t t-esc="parent.emirate_id"/>
+                                                </p>
+                                            </div>
+
+
+                                            <div class="col-6 col-lg-4 mb-3"
+                                                 t-if="parent.emirate_id_expiry_date">
+                                                <h6>Emirate id Expiry date</h6>
+                                                <p class="text-muted">
+                                                    <t t-esc="parent.emirate_id_expiry_date"/>
+                                                </p>
+                                            </div>
+
+
+                                            <div class="col-12 mb-3" t-if="parent.address">
+                                                <h6>Address</h6>
+                                                <p class="text-muted">
+                                                    <t t-esc="parent.address"/>
+                                                </p>
+                                            </div>
+                                            <a href="/my/students" t-att-title="title"
+                                               class="list-group-item list-group-item-action d-flex align-items-center parent-page-link">
+                                                <i class="fa fa-request.env.users parent-document-icon"/>
+                                                <span>Students</span>
+                                                <span class=" float-right badge text-bg-secondary rounded-pill"
+                                                >
+                                                    <span class="count-holder" t-esc="parent_student_document_count"/>
+                                                </span>
+                                            </a>
+
+
+                                            <a href="/student/notes" t-att-title="title"
+                                               class="list-group-item list-group-item-action d-flex align-items-center parent-page-link">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                     fill="currentColor"
+                                                     class="bi bi-sticky" viewBox="0 0 16 16">
+                                                    <path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v11A1.5 1.5 0 0 0 2.5 15h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 15 8.586V2.5A1.5 1.5 0 0 0 13.5 1h-11zM2 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5V8H9.5A1.5 1.5 0 0 0 8 9.5V14H2.5a.5.5 0 0 1-.5-.5v-11zm7 11.293V9.5a.5.5 0 0 1 .5-.5h4.293L9 13.793z"/>
+                                                </svg>
+                                                <span>Notes</span>
+                                                <span class=" float-right badge text-bg-secondary rounded-pill"
+                                                >
+                                                    <span class="count-holder" t-esc="parent_note_document_count"/>
+                                                </span>
+                                            </a>
+
+
+                                            <a href="/student/complaints" t-att-title="title"
+                                               class="list-group-item list-group-item-action d-flex align-items-center parent-page-link">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                     fill="currentColor"
+                                                     class="bi bi-envelope-paper-fill" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd"
+                                                          d="M6.5 9.5 3 7.5v-6A1.5 1.5 0 0 1 4.5 0h7A1.5 1.5 0 0 1 13 1.5v6l-3.5 2L8 8.75l-1.5.75ZM1.059 3.635 2 3.133v3.753L0 5.713V5.4a2 2 0 0 1 1.059-1.765ZM16 5.713l-2 1.173V3.133l.941.502A2 2 0 0 1 16 5.4v.313Zm0 1.16-5.693 3.337L16 13.372v-6.5Zm-8 3.199 7.941 4.412A2 2 0 0 1 14 16H2a2 2 0 0 1-1.941-1.516L8 10.072Zm-8 3.3 5.693-3.162L0 6.873v6.5Z"/>
+                                                </svg>
+                                                <span>Complaints</span>
+                                                <span class=" float-right badge text-bg-secondary rounded-pill"
+                                                >
+                                                    <span class="count-holder" t-esc="parent_complaint_document_count"/>
+                                                </span>
+                                            </a>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+
+                            <t t-elif="student.user_id == request.env.user or student.user_id in request.env.user.child_ids and parent_student_param ">
+                                <strong>
+                                    <t t-esc="student.name" t-if="parent_student_param"/>
+                                </strong>
+                                student profile
+                            </t>
+                        </div>
+
+                    </div>
+            </xpath>
+
+<!--                    <div class="o_portal_docs list-group">-->
+<!--                        <div class="o_portal_doc_spinner spinner-border text-o-color-2 align-self-center mt-5"/>-->
+<!--                        <p class="o_portal_no_doc_message d-none"/>-->
+<!--                    </div>-->
+
+                <div class="oe_structure" id="oe_structure_portal_my_home_2"/>
+
+        </template>
+    </data>
+</odoo>

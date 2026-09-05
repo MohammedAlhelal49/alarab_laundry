@@ -1,0 +1,424 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- document -->
+    <template id="student_assignment_doc_entry" inherit_id="portal.portal_my_home" priority="60">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-if="student_assignment_document and student_assignment_document['show']"
+               t-call="portal.portal_docs_entry">
+                <t t-set="url" t-value="student_assignment_document['url']"/>
+                <t t-set="title" t-value="'Assignments'"/>
+                <t t-set="icon">
+                    <i class="fa fa-book"/>
+                </t>
+                <t t-set="count">
+                    <span class="document_item_count" t-esc="student_assignment_document['count']"/>
+                </t>
+                <div class="clearing"/>
+            </t>
+        </xpath>
+    </template>
+    <!-- document -->
+
+    <!-- breadcrumb -->
+    <template id="student_assignment_breadcrumbs" inherit_id="portal.portal_breadcrumbs">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+
+            <li t-if="page_name=='Assignments'" t-attf-class="breadcrumb-item">
+                <a t-att-href="page_url">Assignments
+                </a>
+            </li>
+
+            <li t-if="page_name=='Assignment Show'" t-attf-class="breadcrumb-item">
+                <a t-att-href="list_url">Assignments
+                </a>
+                <span>/</span>
+                <a t-att-href="page_url">
+                    <t t-esc="record.display_name"/>
+                </a>
+            </li>
+
+            <li t-if="page_name=='Assignment submission'" t-attf-class="breadcrumb-item">
+                <a t-att-href="assignment_list_url">Assignments
+                </a>
+                <span>/</span>
+                <a t-att-href="assignment_show_url">
+                    <t t-esc="assignment.display_name"/>
+                </a>
+                <span>/</span>
+                <a t-att-href="page_url">
+                    Submission
+                </a>
+            </li>
+
+            <li t-if="page_name=='Assignment submission update'" t-attf-class="breadcrumb-item">
+                <a t-att-href="list_url">Assignments
+                </a>
+                <span>/</span>
+                <a t-att-href="assignment_url">
+                    <t t-esc="assignment.display_name"/>
+                </a>
+                <span>/</span>
+                <a t-att-href="page_url">
+                    Submission Update
+                </a>
+            </li>
+
+        </xpath>
+    </template>
+    <!-- breadcrumb -->
+
+    <!-- assignment list -->
+    <template id="student_assignment" name="assignments">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+            </t>
+
+            <div class="card dynamic-website-card-holder">
+                <div class="card-body">
+                    <div class="dynamic-website-card" t-if="assignment_records">
+
+                        <t t-call="portal.portal_table">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Submit date</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="assignment_records" t-as="assignment">
+                                        <tr>
+                                            <td>
+                                                <span t-esc="assignment.assignment_type.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="assignment.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="assignment.submission_date" t-options="{'widget':'datetime'}"/>
+                                            </td>
+                                            <td>
+                                                <t t-if="assignment.state == 'confirm'">
+                                                    <span class="badge badge-pill bg-info" t-out="'Confirmed'"/>
+                                                </t>
+                                                <t t-elif="assignment.state == 'finish'">
+                                                    <span class="badge badge-pill bg-warning" t-out="'Finished'"/>
+                                                </t>
+                                            </td>
+                                            <td class="website-actions-td">
+                                                <t t-if="parent_student_param">
+                                                    <t t-set="show_url" t-value="'/student/assignment/' + str(assignment.id) + '?parent_student_param=' + str(parent_student_param)"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <t t-set="show_url" t-value="'/student/assignment/' + str(assignment.id)"/>
+                                                </t>
+                                                <a t-att-href="show_url">
+                                                    <button class="btn btn-outline-secondary btn-sm">Show</button>
+                                                </a>
+
+                                                <t t-if="parent_student_param">
+                                                    <t t-set="submission_url" t-value="'/student/assignment/' + str(assignment.id) + '/submission' + '?parent_student_param=' + str(parent_student_param)"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <t t-set="submission_url" t-value="'/student/assignment/' + str(assignment.id) + '/submission'"/>
+                                                </t>
+
+                                                <t t-set="is_parent" t-value="parent_student_param"/>
+                                                <t t-set="is_submission" t-value="assignment.assignment_submission_ids"/>
+                                                <t t-set="submission_date" t-value="assignment.submission_date.strftime('%Y-%m-%d')"/>
+                                                <t t-set="current_date" t-value="datetime.datetime.now().strftime('%Y-%m-%d')"/>
+                                                <t t-set="date_pase" t-value="current_date &gt;= submission_date"/>
+                                                <a t-if="not ((is_parent and not is_submission) or (not is_parent and not is_submission and date_pase ))" t-att-href="submission_url">
+                                                    <t t-set="has_draft_submission" t-value="[obj for obj in assignment_submission_list if obj['id'] == assignment.id][0]"/>
+                                                    <button type="button" t-if="(not (has_draft_submission['has_draft_submission'])) or is_submission " class="btn btn-outline-secondary btn-sm">
+                                                        <t t-if="is_submission" t-esc="'Show submission'"/>
+                                                        <t t-else="" t-esc="'Submit'"/>
+                                                    </button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </t>
+
+                    </div>
+                    <t t-else="">
+                        <div class="alert alert-info" role="alert">
+                            There are no assignment to display.
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+    <!-- assignment list -->
+
+    <!-- assignment show -->
+    <template id="student_assignment_show" name="Assignment show">
+        <t t-call="portal.portal_layout">
+
+            <div class="card portal-page-content show-page">
+                <div class="card-body row">
+                    <div class="col-12">
+                        <h5>Assignment full information</h5>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <strong class="">Classroom :</strong>
+                        <span t-esc="record.classroom_id.name"/>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <strong class="">Assignment type :</strong>
+                        <span t-esc="record.assignment_type.name"/>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <strong>Name :</strong>
+                        <span t-esc="record.name"/>
+                    </div>
+
+                    <div class="col-12 col-md-6" t-if="record.teacher_id">
+                        <strong class="">Teacher :</strong>
+                        <span t-esc="record.teacher_id.name"/>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <strong class="">Mark :</strong>
+                        <span t-esc="record.mark"/>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <strong class="">Submission date :</strong>
+                        <span t-esc="record.submission_date" t-options="{'widget':'datetime'}"/>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <strong class="">Created At :</strong>
+                        <span t-esc="record.create_date" t-options="{'widget':'datetime'}"/>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <strong class="">State :</strong>
+                        <t t-if="record.state == 'confirm'">
+                            <span class="badge badge-pill bg-info" t-out="'Confirmed'"/>
+                        </t>
+                        <t t-elif="record.state == 'finish'">
+                            <span class="badge badge-pill bg-warning" t-out="'Finished'"/>
+                        </t>
+                    </div>
+
+                    <!-- File download with proper URL -->
+                    <div class="col-12 col-md-6" t-if="record.file and record.file_name">
+                        <strong class="">Attachment :</strong>
+                        <span t-esc="record.file_name"/>
+                        <t t-if="parent_student_param">
+                            <a t-attf-href="/student/assignment/download/#{record.id}?parent_student_param=#{parent_student_param}">
+                                <i class="fa fa-download form-file-download-icon"/>
+                            </a>
+                        </t>
+                        <t t-else="">
+                            <a t-attf-href="/student/assignment/download/#{record.id}">
+                                <i class="fa fa-download form-file-download-icon"/>
+                            </a>
+                        </t>
+                    </div>
+
+                    <div class="col-xl-12">
+                        <strong>Description :</strong>
+                        <span t-esc="record.description"/>
+                    </div>
+
+                </div>
+            </div>
+        </t>
+    </template>
+    <!-- assignment show -->
+
+    <!-- submission -->
+    <template id="student_assignment_submission" name="Assignment submission">
+        <t t-call="portal.portal_layout">
+
+            <!-- show submission if exist -->
+            <div t-if="submission" class="card portal-page-content show-page">
+                <div class="alert alert-success alert-dismissible fade show success-alert" role="alert" t-if="success_message">
+                    <i class="fa fa-check-circle"/>
+                    <span t-esc="success_message"/>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div class="card-body row">
+                    <div class="col-12">
+                        <h5>Submission full information</h5>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <strong class="">Submitted at :</strong>
+                        <span t-esc="submission.create_date" t-options="{'widget':'datetime'}"/>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <strong class="">State :</strong>
+                        <t t-if="submission.state == 'confirm'">
+                            <span class="badge badge-pill bg-info" t-out="'Sent'"/>
+                        </t>
+                        <t t-elif="submission.state == 'accept'">
+                            <span class="badge badge-pill bg-success" t-out="'Accepted'"/>
+                        </t>
+                        <t t-elif="submission.state == 'reject'">
+                            <span class="badge badge-pill bg-danger" t-out="'Rejected'"/>
+                        </t>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <strong class="">Mark :</strong>
+                        <span t-esc="submission.mark"/>
+                    </div>
+
+                    <!-- File download with proper URL -->
+                    <div class="col-12" t-if="submission.file and submission.file_name">
+                        <strong class="">Attachment :</strong>
+                        <span t-esc="submission.file_name"/>
+                        <t t-if="parent_student_param">
+                            <a t-attf-href="/student/assignment/#{assignment.id}/submission/download?parent_student_param=#{parent_student_param}">
+                                <i class="fa fa-download form-file-download-icon"/>
+                            </a>
+                        </t>
+                        <t t-else="">
+                            <a t-attf-href="/student/assignment/#{assignment.id}/submission/download">
+                                <i class="fa fa-download form-file-download-icon"/>
+                            </a>
+                        </t>
+                    </div>
+
+                    <div class="col-12">
+                        <strong>Description :</strong>
+                        <span t-esc="submission.description"/>
+                    </div>
+
+                    <div class="col-12" t-if="submission.notice">
+                        <strong>Correction Note :</strong>
+                        <span t-esc="submission.notice"/>
+                    </div>
+
+                    <t t-set="submission_date" t-value="assignment.submission_date.strftime('%Y-%m-%d')"/>
+                    <t t-set="current_date" t-value="datetime.datetime.now().strftime('%Y-%m-%d')"/>
+                    <t t-set="date_pase" t-value="current_date &gt;= submission_date"/>
+
+                    <div class="col-xl-12 mt-3 form-action-buttons" t-if=" not date_pase and submission.state == 'confirm' and not parent_student_param">
+                        <strong>Actions :</strong>
+                        <a t-attf-href="/student/assignment/#{assignment.id}/submission/update">
+                            <button class="btn btn-outline-secondary btn-sm">Update</button>
+                        </a>
+                        <a onclick="if(!confirm('Are you sure that you want to delete the record?'))return false"
+                           t-attf-href="/student/assignment/#{assignment.id}/submission/delete">
+                            <button class="btn btn-outline-secondary btn-sm">Delete</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Create new submission form -->
+            <div t-else="" class="card portal-page-content">
+                <div class="alert alert-success alert-dismissible fade show success-alert" role="alert" t-if="success_message">
+                    <i class="fa fa-check-circle"/>
+                    <span t-esc="success_message"/>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div class="card-body ">
+                    <form action="/student/assignments/submission/create" method="POST" enctype='multipart/form-data' class="row">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <input type="hidden" name="assignment_id" t-att-value="assignment.id"/>
+                        <input t-if="parent_student_param" type="hidden" name="parent_student_param" t-att-value="parent_student_param"/>
+
+                        <div class="col-12">
+                            <span class="file-size-alert">Attachment size must be less than 2mb</span>
+                            <h5>Submitting the assignment <t t-out="assignment.name"/></h5>
+                        </div>
+
+                        <div class="col-xl-12 file-field-container">
+                            <label class="col-form-label" for="file">Attachment</label>
+                            <span class="clear-icon">Clear</span>
+                            <input class="form-control" name="file" id="file" type="file"/>
+                        </div>
+
+                        <div class="col-12 assignment-description-holder">
+                            <label class="col-form-label" for="description">Description</label>
+                            <span class="important-field-asterisk">*</span>
+                            <textarea class="form-control" name="description" id="description" required="true"/>
+                        </div>
+
+                        <div class="form-buttons-holder mt-1">
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+    <!-- submission -->
+
+    <!-- update -->
+    <template id="student_assignment_submission_update" name="Assignment Submission Update">
+        <t t-call="portal.portal_layout">
+            <div class="card portal-page-content">
+                <div class="card-body ">
+                    <form action="/student/assignments/submission/update" method="POST" enctype='multipart/form-data' class="row">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <input type="hidden" name="assignment_id" t-att-value="assignment.id"/>
+                        <input type="hidden" name="id" t-att-value="submission.id"/>
+                        <input t-if="parent_student_param" type="hidden" name="parent_student_param" t-att-value="parent_student_param"/>
+
+                        <span class="file-size-alert">Attachment size must be less than 2mb</span>
+                        <h5 class="mb-0 pb-0">Update the assignment <t t-out="assignment.name"/> submission</h5>
+
+                        <!-- File field with download link -->
+                        <div t-if="submission.file and submission.file_name" class="col-xl-12 file-field-container update-file-holder">
+                            <label class="col-form-label" for="file">Attachment</label>
+                            <span>
+                                : <t t-esc="submission.file_name"/>
+                                <t t-if="parent_student_param">
+                                    <a t-attf-href="/student/assignment/#{assignment.id}/submission/download?parent_student_param=#{parent_student_param}">
+                                        <i class="fa fa-download update-form-file-download-icon"/>
+                                    </a>
+                                </t>
+                                <t t-else="">
+                                    <a t-attf-href="/student/assignment/#{assignment.id}/submission/download">
+                                        <i class="fa fa-download update-form-file-download-icon"/>
+                                    </a>
+                                </t>
+                                <span class="btn btn-outline-info btn-sm ml-2 file-update-trigger">Change</span>
+                            </span>
+                            <span class="clear-icon">Clear</span>
+                            <input name="file" id="file" type="file" class="form-control hidden-file"/>
+                        </div>
+
+                        <div t-else="" class="col-xl-12 file-field-container">
+                            <label class="col-form-label" for="file">Attachment</label>
+                            <span class="clear-icon">Clear</span>
+                            <input name="file" id="file" type="file" class="form-control"/>
+                        </div>
+
+                        <div class="col-xl-12 assignment-description-holder">
+                            <label class="col-form-label" for="description">Description</label>
+                            <span class="important-field-asterisk">*</span>
+                            <textarea class="form-control" required="true" name="description" id="description">
+                                <t t-esc="submission.description"/>
+                            </textarea>
+                        </div>
+
+                        <div class="form-buttons-holder mt-3">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+    <!-- update -->
+
+</odoo>

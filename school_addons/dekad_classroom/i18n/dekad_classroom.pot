@@ -1,0 +1,271 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_classroom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-28 16:49+0000\n"
+"PO-Revision-Date: 2025-09-28 16:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_form
+msgid ""
+"<i class=\"fa fa-close\"/>\n"
+"                                Clear all"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__active
+msgid "Active"
+msgstr ""
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_form
+msgid "Add students to the Classroom"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__all_selected_student_ids
+msgid "All Selected students"
+msgstr ""
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_form
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_search
+msgid "Archived"
+msgstr ""
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_form
+msgid "Are you sure you want to unlink all students from this classroom?"
+msgstr ""
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_asset_form
+msgid "Asset"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__asset_ids
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_form
+msgid "Assets"
+msgstr ""
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_search
+msgid "Capacity"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__product_category
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__category_id
+msgid "Category"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.actions.act_window,name:dekad_classroom.act_open_de_classroom_view
+msgid "ClassRooms"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model,name:dekad_classroom.model_de_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__classroom_id
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_student__classroom_id
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_student_grade__classroom_id
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_form
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_list
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_search
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_grade_form_classroom_inherited
+msgid "Classroom"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model,name:dekad_classroom.model_de_asset
+msgid "Classroom Assets"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_grade__classroom_count
+msgid "Classroom Count"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__filtered_students
+msgid "Classroom filtered students"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model,name:dekad_classroom.model_de_product
+msgid "Classroom products"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model,name:dekad_classroom.model_de_product_category
+msgid "Classroom products categories"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_grade__classroom_ids
+msgid "Classroom(s)"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.ui.menu,name:dekad_classroom.menu_de_classroom
+#: model:res.groups,name:dekad_classroom.group_de_classroom
+msgid "Classrooms"
+msgstr ""
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_graph
+msgid "Classrooms per grade"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__create_uid
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__create_uid
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__create_uid
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product_category__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__create_date
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__create_date
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__create_date
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product_category__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__display_name
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__display_name
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__display_name
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product_category__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__filtered_student_count
+msgid "Filtered student"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model,name:dekad_classroom.model_de_grade
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__grade_id
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_search
+msgid "Grade"
+msgstr ""
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_search
+msgid "Group By..."
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__id
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__id
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__id
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product_category__id
+msgid "ID"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__product_image
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__image
+msgid "Image"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__write_uid
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__write_uid
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__write_uid
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product_category__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__write_date
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__write_date
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__write_date
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product_category__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__product_name
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__name
+msgid "Name"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__product_id
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_product_form
+msgid "Product"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_asset__qty
+msgid "Quantity"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__all_classroom_student
+msgid "Selected students ids stored as string"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model,name:dekad_classroom.model_de_student
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__student_count
+msgid "Student"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__capacity
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_grade__max_student_count
+msgid "Student capacity"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model,name:dekad_classroom.model_de_student_grade
+msgid "Student grade Details"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_classroom__student_ids
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_form
+msgid "Students"
+msgstr ""
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_list
+msgid "Students capacity"
+msgstr ""
+
+#. module: dekad_classroom
+#: model_terms:ir.ui.view,arch_db:dekad_classroom.view_de_classroom_list
+msgid "Students count"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,help:dekad_classroom.field_de_classroom__sequence
+msgid "Used for sorting classrooms"
+msgstr ""
+
+#. module: dekad_classroom
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product__name
+#: model:ir.model.fields,field_description:dekad_classroom.field_de_product_category__name
+msgid "name"
+msgstr ""

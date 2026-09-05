@@ -1,0 +1,33 @@
+<odoo>
+
+    <template id="report_pdc_payment_inherit"
+              inherit_id="sh_pdc.report_pdc_payment_document">
+
+
+        <xpath expr="//t[@t-set='layout_document_title']" position="replace">
+
+            <t t-set="layout_document_title">
+                <div style="text-align:center; font-size:28px;margin-bottom:70px;">
+                    Cheque Payment Receipt
+                </div>
+
+                <span t-field="doc.name"/>
+            </t>
+
+        </xpath>
+
+        <!-- Remove Agent -->
+        <xpath expr="//strong[text()='Agent']/.." position="replace"/>
+
+        <!-- Change Reference label -->
+        <xpath expr="//strong[text()='Reference']" position="replace">
+            <strong>Cheque No:</strong>
+        </xpath>
+
+        <!-- Remove Done Date row -->
+        <xpath expr="//strong[text()='Done Date']/ancestor::div[contains(@class,'row')]"
+               position="replace"/>
+
+    </template>
+
+</odoo>

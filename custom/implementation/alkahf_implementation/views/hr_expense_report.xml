@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="report_expense_sheet_inherit_sequence"
+              inherit_id="hr_expense.report_expense_sheet">
+
+        <!-- Add sequence before the main title -->
+        <xpath expr="//h2" position="after">
+            <div class="text-muted" style="margin-bottom:5px;">
+                Code :
+                <span >
+                    <span t-field="o.sequence"/>
+                </span>
+            </div>
+        </xpath>
+        <!-- Add Total Before VAT header before Taxes -->
+        <xpath expr="//table[contains(@class,'o_has_total_table')]/thead/tr/th[6]"
+               position="replace">
+            <th class="text-end">VAT</th>
+        </xpath>
+
+        <!-- Replace Taxes header with VAT -->
+        <xpath expr="//table[contains(@class,'o_has_total_table')]/thead/tr/th[5]"
+               position="replace">
+            <th class="text-end">Total Before VAT</th>
+        </xpath>
+
+        <!-- Replace Taxes column with Total Before VAT + VAT -->
+        <xpath expr="//tr[@t-foreach='o.expense_line_ids']/td[5]"
+               position="replace">
+
+            <!-- Total Before VAT -->
+            <td class="text-end">
+                <span t-field="line.untaxed_amount_currency"
+                      t-options='{"widget":"monetary","display_currency":line.currency_id}'/>
+            </td>
+
+            <!-- VAT -->
+            <td class="text-end">
+                <span t-field="line.tax_amount"
+                      t-options='{"widget":"monetary","display_currency":o.company_currency_id}'/>
+            </td>
+
+        </xpath>
+
+        <!-- Rename Subtotal to Total After VAT -->
+        <xpath expr="//table[contains(@class,'o_has_total_table')]/thead/tr/th[last()]"
+               position="replace">
+            <th class="text-end">Total After VAT</th>
+        </xpath>
+
+        <!-- Serial No column -->
+        <xpath expr="//table/thead/tr/th[1]" position="before">
+            <th class="text-start">Serial No</th>
+        </xpath>
+
+        <xpath expr="//table/tbody/tr/td[1]" position="before">
+            <td class="text-start">
+                <span t-field="line.account_move.serial_number"/>
+            </td>
+        </xpath>
+        <xpath expr="//div[hasclass('row','o_header')]/div[hasclass('col-6')][1]/div[1]"
+               position="after">
+
+            <div class="row" t-if="o.payment_method_line_id">
+                <div class="col-4 fw-bold">
+                    <span>Payment Method:</span>
+                </div>
+
+                <div class="col-9 text-muted">
+                    <span style="direction: rtl;unicode-bidi: embed;" t-field="o.payment_method_line_id"/>
+                </div>
+            </div>
+            <div class="row" t-if="o.account_move_ids">
+
+                <!-- Get serial numbers sorted -->
+                <t t-set="serial_numbers"
+                   t-value="sorted(o.account_move_ids.mapped('serial_number'))"/>
+
+                <div class="col-3 fw-bold">
+                    <span>Serial No:</span>
+                </div>
+
+                <div class="col-9 text-muted">
+
+                    <t t-if="len(serial_numbers) == 1">
+                        <span t-out="serial_numbers[0]"/>
+                    </t>
+
+                    <t t-else="">
+                        <span>
+                            From <t t-out="serial_numbers[0]"/>
+                            to <t t-out="serial_numbers[-1]"/>
+                        </span>
+                    </t>
+
+                </div>
+
+            </div>
+        </xpath>
+
+
+        <xpath expr="//table/thead/tr/th[1]" position="before">
+            <th class="text-start">#</th>
+        </xpath>
+
+        <!-- Add value column at the beginning -->
+        <xpath expr="//table/tbody/tr/td[1]" position="before">
+            <td class="text-start">
+                <span t-field="line.line_index"/>
+            </td>
+        </xpath>
+    </template>
+
+        <!-- Define a landscape paper format -->
+    <record id="paperformat_expense_landscape" model="report.paperformat">
+        <field name="name">A4 Landscape - Expenses</field>
+        <field name="default">False</field>
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">20</field>
+        <field name="margin_left">10</field>
+        <field name="margin_right">10</field>
+        <field name="header_line">False</field>
+        <field name="header_spacing">30</field>
+    </record>
+
+    <!-- Inherit the report action to apply the landscape paper format -->
+    <record id="hr_expense.action_report_hr_expense_sheet" model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_expense_landscape"/>
+    </record>
+
+</odoo>

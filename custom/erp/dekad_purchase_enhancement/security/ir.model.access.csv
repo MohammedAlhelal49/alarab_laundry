@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_purchase_order_discount_user,purchase.order.discount user,model_purchase_order_discount,purchase.group_purchase_user,1,1,1,1
+access_purchase_order_discount_manager,purchase.order.discount manager,model_purchase_order_discount,purchase.group_purchase_manager,1,1,1,1
+access_purchase_order_discount_group,purchase.order.discount discount group,model_purchase_order_discount,dekad_purchase_enhancement.group_purchase_discount_user,1,1,1,1

@@ -1,0 +1,682 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_timetable
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-01 15:18+0000\n"
+"PO-Revision-Date: 2025-10-01 15:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_timetable
+#: model:ir.actions.report,print_report_name:dekad_timetable.action_report_timetable_pdf
+msgid "'Timetable - %s' % (object.name)"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.student_timetable_portal
+msgid "'s Timetable"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_form_de_period
+msgid "11.25 = 11:15 AM"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_form_de_period
+msgid "8.0 = 8:00 AM"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_form_de_period
+msgid "8.5 = 8:30 AM"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_form_de_period
+msgid "8.75 = 8:45 AM"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.student_timetable_portal
+msgid "<i class=\"fa fa-arrow-left\"/> Back to Dashboard"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.student_timetable_portal
+msgid "<i class=\"fa fa-coffee\"/> BREAK"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.student_timetable_portal
+msgid "<i class=\"fa fa-download\"/> Download PDF"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.student_timetable_portal
+msgid ""
+"<i class=\"fa fa-info-circle\"/> No active timetable available for your "
+"class."
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "<small>Class Teacher's Signature</small>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "<small>Principal's Signature</small>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.student_timetable_portal
+msgid ""
+"<span class=\"badge badge-primary\">\n"
+"                                        <i class=\"fa fa-book\"/> Subject\n"
+"                                    </span> - Regular class"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.student_timetable_portal
+msgid "<span class=\"badge badge-secondary\">-</span> - Free period"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.student_timetable_portal
+msgid ""
+"<span class=\"badge badge-warning\">\n"
+"                                        <i class=\"fa fa-coffee\"/> Break\n"
+"                                    </span> - Break/Lunch period"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.student_timetable_portal
+msgid "<span class=\"text-muted\">-</span>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "<span style=\"color: #6c757d;\">-</span>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "<strong style=\"color: #6c757d;\">☕ BREAK</strong>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "<strong>Academic Term:</strong>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.student_timetable_portal
+msgid "<strong>Academic Year:</strong>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_form_de_period
+msgid ""
+"<strong>Break Period:</strong> Check \"Is Break/Lunch\" for non-teaching "
+"periods (no subject/teacher will be assigned)"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "<strong>Break Periods:</strong>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.student_timetable_portal
+msgid "<strong>Classroom:</strong>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "<strong>Generated Date:</strong>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.student_timetable_portal
+msgid "<strong>Grade:</strong>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "<strong>School Timetable</strong>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "<strong>Subjects:</strong>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "<strong>Teachers:</strong>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "<strong>Teaching Periods:</strong>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.student_timetable_portal
+msgid "<strong>Term:</strong>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_form_de_period
+msgid "<strong>Time Format Help:</strong>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "<strong>Timetable Name:</strong>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "<strong>Total Periods:</strong>"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.constraint,message:dekad_timetable.constraint_de_period_period_time_unique
+msgid "A period with the same start and end time already exists!"
+msgstr ""
+
+#. module: dekad_timetable
+#. odoo-python
+#: code:addons/dekad_timetable/wizards/generate_timetable_wizard.py:0
+msgid "A timetable already exists for this classroom and term."
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__academic_term_id
+#: model:ir.model.fields,field_description:dekad_timetable.field_generate_timetable_wizard__academic_term_id
+msgid "Academic Term"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__academic_year_id
+#: model:ir.model.fields,field_description:dekad_timetable.field_generate_timetable_wizard__academic_year_id
+msgid "Academic Year"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_period__active
+msgid "Active"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_list_de_period
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_list_de_timetable_line
+msgid "Break"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_generate_timetable_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,help:dekad_timetable.field_de_period__is_break
+#: model:ir.model.fields,help:dekad_timetable.field_de_timetable_line__is_break
+msgid "Check this if this period is a break, lunch, or non-teaching time"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__classroom_id
+#: model:ir.model.fields,field_description:dekad_timetable.field_generate_timetable_wizard__classroom_id
+msgid "Classroom"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_period__create_uid
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_session_slot__create_uid
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__create_uid
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable_line__create_uid
+#: model:ir.model.fields,field_description:dekad_timetable.field_generate_timetable_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_period__create_date
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_session_slot__create_date
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__create_date
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable_line__create_date
+#: model:ir.model.fields,field_description:dekad_timetable.field_generate_timetable_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "Day"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_session_slot__day_of_week
+msgid "Day of Week"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_period__display_name
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_session_slot__display_name
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__display_name
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable_line__display_name
+#: model:ir.model.fields,field_description:dekad_timetable.field_generate_timetable_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_period__duration
+msgid "Duration (mins)"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_period__end_time
+msgid "End Time"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,help:dekad_timetable.field_de_period__start_time
+msgid "Enter time in decimal format (e.g., 8.5 = 08:30, 11.75 = 11:45)"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields.selection,name:dekad_timetable.selection__de_session_slot__day_of_week__fri
+msgid "Friday"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_generate_timetable_wizard_form
+msgid "Generate"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.actions.act_window,name:dekad_timetable.action_generate_timetable_wizard
+#: model:ir.ui.menu,name:dekad_timetable.menu_generate_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_generate_timetable_wizard_form
+msgid "Generate Timetable"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model,name:dekad_timetable.model_generate_timetable_wizard
+msgid "Generate Timetable Wizard"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__grade_id
+#: model:ir.model.fields,field_description:dekad_timetable.field_generate_timetable_wizard__grade_id
+msgid "Grade"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_period__id
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_session_slot__id
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__id
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable_line__id
+#: model:ir.model.fields,field_description:dekad_timetable.field_generate_timetable_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,help:dekad_timetable.field_de_timetable__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,help:dekad_timetable.field_de_timetable__message_has_error
+#: model:ir.model.fields,help:dekad_timetable.field_de_timetable__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable_line__is_break
+msgid "Is Break"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_period__is_break
+msgid "Is Break/Lunch"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_period__name
+msgid "Label"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_period__write_uid
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_session_slot__write_uid
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__write_uid
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable_line__write_uid
+#: model:ir.model.fields,field_description:dekad_timetable.field_generate_timetable_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_period__write_date
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_session_slot__write_date
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__write_date
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable_line__write_date
+#: model:ir.model.fields,field_description:dekad_timetable.field_generate_timetable_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.student_timetable_portal
+msgid "Legend:"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.ui.menu,name:dekad_timetable.menu_timetable_root
+msgid "Manage Timetables"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields.selection,name:dekad_timetable.selection__de_session_slot__day_of_week__mon
+msgid "Monday"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "N/A"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_session_slot__name
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__name
+msgid "Name"
+msgstr ""
+
+#. module: dekad_timetable
+#. odoo-python
+#: code:addons/dekad_timetable/wizards/generate_timetable_wizard.py:0
+msgid "No subjects found for the selected grade."
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "No timetable entries found. Please generate timetable lines."
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,help:dekad_timetable.field_de_timetable__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,help:dekad_timetable.field_de_timetable__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_session_slot__period_id
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "Period"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.actions.act_window,name:dekad_timetable.action_de_period
+#: model:ir.ui.menu,name:dekad_timetable.menu_period_main
+msgid "Periods"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_generate_timetable_wizard__periods_per_day
+msgid "Periods per Day"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_form_de_timetable
+msgid "Print Timetable"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields.selection,name:dekad_timetable.selection__de_session_slot__day_of_week__sat
+msgid "Saturday"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model,name:dekad_timetable.model_de_period
+msgid "School Day Period"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model,name:dekad_timetable.model_de_timetable
+msgid "School Timetable"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model,name:dekad_timetable.model_de_session_slot
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable_line__session_slot_id
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_form_de_session_slot
+msgid "Session Slot"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.actions.act_window,name:dekad_timetable.action_de_session_slot
+#: model:ir.ui.menu,name:dekad_timetable.menu_session_slot_main
+msgid "Session Slots"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_period__start_time
+msgid "Start Time"
+msgstr ""
+
+#. module: dekad_timetable
+#. odoo-python
+#: code:addons/dekad_timetable/models/period.py:0
+msgid "Start time must be before end time."
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable_line__subject_id
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "Subject"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.actions.act_window,name:dekad_timetable.action_de_subject
+#: model:ir.ui.menu,name:dekad_timetable.menu_subject_main
+msgid "Subjects"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields.selection,name:dekad_timetable.selection__de_session_slot__day_of_week__sun
+msgid "Sunday"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable_line__teacher_id
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "Teacher"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.actions.act_window,name:dekad_timetable.action_de_teacher
+#: model:ir.ui.menu,name:dekad_timetable.menu_teacher_main
+msgid "Teachers"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.constraint,message:dekad_timetable.constraint_de_session_slot_unique_day_period
+msgid "This day and period combination already exists!"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_form_de_timetable_line
+msgid "This is a break period. No subject or teacher assignment needed."
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.constraint,message:dekad_timetable.constraint_de_timetable_line_unique_timetable_slot
+msgid "This time slot is already assigned in this timetable!"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields.selection,name:dekad_timetable.selection__de_session_slot__day_of_week__thu
+msgid "Thursday"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "Time"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.student_timetable_portal
+msgid "Time / Day"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.actions.act_window,name:dekad_timetable.action_de_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable_line__timetable_id
+#: model:ir.ui.menu,name:dekad_timetable.menu_timetable_app
+#: model:ir.ui.menu,name:dekad_timetable.menu_timetable_main
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.student_timetable_portal
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_form_de_timetable
+msgid "Timetable"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model,name:dekad_timetable.model_de_timetable_line
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_form_de_timetable_line
+msgid "Timetable Line"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__line_ids
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_list_de_timetable_line
+msgid "Timetable Lines"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.actions.report,name:dekad_timetable.action_report_timetable_pdf
+msgid "Timetable Report"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields.selection,name:dekad_timetable.selection__de_session_slot__day_of_week__tue
+msgid "Tuesday"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,help:dekad_timetable.field_de_period__duration
+msgid "Use decimal format: .25 = 15 min, .5 = 30 min, .75 = 45 min"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,field_description:dekad_timetable.field_de_timetable__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,help:dekad_timetable.field_de_timetable__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields.selection,name:dekad_timetable.selection__de_session_slot__day_of_week__wed
+msgid "Wednesday"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "Weekly Schedule"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_form_de_timetable
+msgid "Weekly Timetable"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.report_timetable_document
+msgid "_______________________"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_form_de_period
+msgid "e.g., 11.5 = 11:30 AM"
+msgstr ""
+
+#. module: dekad_timetable
+#: model_terms:ir.ui.view,arch_db:dekad_timetable.view_form_de_period
+msgid "e.g., 12.25 = 12:15 PM"
+msgstr ""
+
+#. module: dekad_timetable
+#: model:ir.model.fields,help:dekad_timetable.field_de_period__name
+msgid "e.g., Period 1"
+msgstr ""

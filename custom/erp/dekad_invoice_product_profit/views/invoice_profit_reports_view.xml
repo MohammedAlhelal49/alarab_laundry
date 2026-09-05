@@ -1,0 +1,169 @@
+<odoo>
+    <!-- ============================================================ -->
+    <!-- Invoice-level profitability                                   -->
+    <!-- ============================================================ -->
+    <record id="view_invoice_profit_list" model="ir.ui.view">
+        <field name="name">account.report.invoice.profit.list</field>
+        <field name="model">account.report.invoice.profit</field>
+        <field name="arch" type="xml">
+            <list string="Invoice Profit Report" decoration-danger="profit &lt; 0" create="false" edit="false">
+                <field name="invoice_date"/>
+                <field name="move_id" widget="many2one"/>
+                <field name="ref" optional="show"/>
+                <field name="partner_id"/>
+                <field name="journal_id" optional="show"/>
+                <field name="invoice_user_id" optional="hide" widget="many2one_avatar_user"/>
+                <field name="company_id" optional="hide" groups="base.group_multi_company"/>
+                <field name="revenue" sum="Total Revenue"/>
+                <field name="total_cost" sum="Total Cost"/>
+                <field name="profit" sum="Total Profit"/>
+                <field name="profit_percentage" widget="percent"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_invoice_profit_search" model="ir.ui.view">
+        <field name="name">account.report.invoice.profit.search</field>
+        <field name="model">account.report.invoice.profit</field>
+        <field name="arch" type="xml">
+            <search string="Invoice Profit Search">
+                <field name="move_id" string="Invoice"/>
+                <field name="ref" string="Reference"/>
+                <field name="partner_id"/>
+                <field name="journal_id"/>
+                <field name="invoice_user_id" string="Salesperson"/>
+                <separator/>
+                <filter name="filter_invoice_date" date="invoice_date"/>
+                <filter name="filter_invoices" string="Invoices Only" domain="[('move_id.move_type', '=', 'out_invoice')]"/>
+                <filter name="filter_refunds" string="Credit Notes Only" domain="[('move_id.move_type', '=', 'out_refund')]"/>
+                <separator/>
+                <filter name="profit_pos" string="Profitable" domain="[('profit', '&gt;', 0)]"/>
+                <filter name="profit_neg" string="Loss" domain="[('profit', '&lt;', 0)]"/>
+                <separator/>
+                <filter name="profit_pct_high" string="Profit % • High (≥ 30%)"
+                        domain="[('profit_percentage', '&gt;=', 30)]"/>
+                <filter name="profit_pct_medium" string="Profit % • Medium (10% - 30%)"
+                        domain="[('profit_percentage', '&gt;=', 10), ('profit_percentage', '&lt;', 30)]"/>
+                <filter name="profit_pct_low" string="Profit % • Low (&lt; 10%)"
+                        domain="[('profit_percentage', '&lt;', 10)]"/>
+                <group>
+                    <filter name="group_partner" string="Customer" context="{'group_by': 'partner_id'}"/>
+                    <filter name="group_salesperson" string="Salesperson" context="{'group_by': 'invoice_user_id'}"/>
+                    <filter name="group_journal" string="Journal" context="{'group_by': 'journal_id'}"/>
+                    <filter name="group_company" string="Company" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
+                    <filter name="group_date_week" string="Week" context="{'group_by': 'invoice_date:week'}"/>
+                    <filter name="group_date_month" string="Month" context="{'group_by': 'invoice_date:month'}"/>
+                    <filter name="group_date_quarter" string="Quarter" context="{'group_by': 'invoice_date:quarter'}"/>
+                    <filter name="group_date_year" string="Year" context="{'group_by': 'invoice_date:year'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_invoice_profit_report" model="ir.actions.act_window">
+        <field name="name">Invoice Profitability</field>
+        <field name="res_model">account.report.invoice.profit</field>
+        <field name="view_mode">list,pivot,graph</field>
+        <field name="search_view_id" ref="view_invoice_profit_search"/>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- Product-level (aggregated) profitability                      -->
+    <!-- ============================================================ -->
+    <!-- Invoice-line-level (per-invoice-line) profitability           -->
+    <!-- ============================================================ -->
+    <record id="view_invoice_line_profit_list" model="ir.ui.view">
+        <field name="name">account.report.invoice.line.profit.list</field>
+        <field name="model">account.report.invoice.line.profit</field>
+        <field name="arch" type="xml">
+            <list string="Invoice Product Profit Report" decoration-danger="profit &lt; 0" create="false" edit="false">
+                <field name="invoice_date" optional="show"/>
+                <field name="move_id" widget="many2one"/>
+                <field name="ref" optional="hide"/>
+                <field name="product_id"/>
+                <field name="product_categ_id" optional="hide"/>
+                <field name="partner_id" optional="show"/>
+                <field name="journal_id" optional="hide"/>
+                <field name="invoice_user_id" optional="hide" widget="many2one_avatar_user"/>
+                <field name="company_id" optional="hide" groups="base.group_multi_company"/>
+                <field name="quantity" sum="Total Qty"/>
+                <field name="unit_cost" optional="hide"/>
+                <field name="revenue" sum="Total Revenue"/>
+                <field name="total_cost" sum="Total Cost"/>
+                <field name="profit" sum="Total Profit"/>
+                <field name="profit_percentage" widget="percent"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_invoice_line_profit_search" model="ir.ui.view">
+        <field name="name">account.report.invoice.line.profit.search</field>
+        <field name="model">account.report.invoice.line.profit</field>
+        <field name="arch" type="xml">
+            <search string="Invoice Line Profit Search">
+                <field name="product_id"/>
+                <field name="product_categ_id" filter_domain="[('product_categ_id', 'child_of', self)]"/>
+                <field name="partner_id"/>
+                <field name="move_id" string="Invoice"/>
+                <field name="ref" string="Reference"/>
+                <field name="journal_id"/>
+                <field name="invoice_user_id" string="Salesperson"/>
+                <separator/>
+                <filter name="filter_invoice_date" date="invoice_date"/>
+                <separator/>
+                <filter name="filter_invoices" string="Invoices Only" domain="[('move_id.move_type', '=', 'out_invoice')]"/>
+                <filter name="filter_refunds" string="Credit Notes Only" domain="[('move_id.move_type', '=', 'out_refund')]"/>
+                <separator/>
+                <filter name="profit_pos" string="Profitable" domain="[('profit', '&gt;', 0)]"/>
+                <filter name="profit_neg" string="Loss" domain="[('profit', '&lt;', 0)]"/>
+                <separator/>
+                <filter name="profit_pct_high" string="Profit % • High (≥ 30%)"
+                        domain="[('profit_percentage', '&gt;=', 30)]"/>
+                <filter name="profit_pct_medium" string="Profit % • Medium (10% - 30%)"
+                        domain="[('profit_percentage', '&gt;=', 10), ('profit_percentage', '&lt;', 30)]"/>
+                <filter name="profit_pct_low" string="Profit % • Low (&lt; 10%)"
+                        domain="[('profit_percentage', '&lt;', 10)]"/>
+                <group>
+                    <filter name="group_product" string="Product" context="{'group_by': 'product_id'}"/>
+                    <filter name="group_categ" string="Product Category" context="{'group_by': 'product_categ_id'}"/>
+                    <filter name="group_partner" string="Customer" context="{'group_by': 'partner_id'}"/>
+                    <filter name="group_invoice" string="Invoice" context="{'group_by': 'move_id'}"/>
+                    <filter name="group_journal" string="Journal" context="{'group_by': 'journal_id'}"/>
+                    <filter name="group_salesperson" string="Salesperson" context="{'group_by': 'invoice_user_id'}"/>
+                    <filter name="group_company" string="Company" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
+                    <filter name="group_date_week" string="Week" context="{'group_by': 'invoice_date:week'}"/>
+                    <filter name="group_date_month" string="Month" context="{'group_by': 'invoice_date:month'}"/>
+                    <filter name="group_date_quarter" string="Quarter" context="{'group_by': 'invoice_date:quarter'}"/>
+                    <filter name="group_date_year" string="Year" context="{'group_by': 'invoice_date:year'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_invoice_line_profit_report" model="ir.actions.act_window">
+        <field name="name">By Invoice Product(line item) Line</field>
+        <field name="res_model">account.report.invoice.line.profit</field>
+        <field name="view_mode">list,pivot,graph</field>
+        <field name="search_view_id" ref="view_invoice_line_profit_search"/>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- Menus                                                         -->
+    <!-- ============================================================ -->
+    <menuitem id="menu_account_profit_reports"
+              name="Profitability Analysis"
+              parent="account.menu_finance_reports"
+              sequence="50"/>
+
+    <menuitem id="menu_invoice_profit"
+              name="By Invoice"
+              parent="menu_account_profit_reports"
+              action="action_invoice_profit_report"
+              sequence="10"/>
+
+    <menuitem id="menu_invoice_line_profit"
+              name="By Invoice Product(line item) Line"
+              parent="menu_account_profit_reports"
+              action="action_invoice_line_profit_report"
+              sequence="20"/>
+</odoo>

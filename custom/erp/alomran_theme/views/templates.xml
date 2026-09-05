@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- LTR Support for English -->
+    <template id="layout_rtl" inherit_id="website.layout" name="Alomran LTR">
+        <xpath expr="//html" position="attributes">
+            <attribute name="t-attf-lang">#{request.env.lang.split('_')[0] if request.env.lang else 'en'}</attribute>
+            <attribute name="t-attf-dir">#{request.env.lang and request.env.lang.startswith('ar') and 'rtl' or 'ltr'}</attribute>
+        </xpath>
+
+        <xpath expr="//head" position="inside">
+            <link rel="preload" href="/alomran_theme/static/src/img/hero-bg.jpg" as="image"/>
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&amp;display=swap" rel="stylesheet"/>
+             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&amp;display=swap" rel="stylesheet"/>
+
+    <!-- ============================================================ -->
+    <!-- Google Tag Manager (gtag.js) - G-9DGH1G5YEY                -->
+    <!-- يضاف على كل الصفحات لتتبع الإحالات الناجحة                  -->
+    <!-- ============================================================ -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-9DGH1G5YEY"/>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9DGH1G5YEY');
+    </script>
+
+    <!-- ============================================================ -->
+    <!-- SEO Meta Tags - كل الصفحات الأساسية (عربي فقط)             -->
+    <!-- ============================================================ -->
+    <t t-if="request.env.lang and request.env.lang.startswith('ar')">
+
+        <!-- title وdescription ثابتان على كل الصفحات -->
+        <title>دورات لغة إنجليزية ومتابعة دراسية ودورات مهنية في الإمارات | مركز العمران</title>
+        <meta name="description" content="مركز العمران للتدريب والتطوير: دورات لغة إنجليزية وIELTS ومتابعة دراسية ودورات مهنية للنساء في العين ودبي وأبوظبي والشارقة. معتمد منذ 2010."/>
+
+        <!-- robots وgooglebot على كل الصفحات -->
+        <meta name="robots" content="index, follow, max-image-preview:large"/>
+        <meta name="googlebot" content="index, follow"/>
+
+        <!-- hreflang ديناميكي حسب الصفحة الحالية -->
+        <t t-set="current_path" t-value="request.httprequest.path"/>
+        <link rel="alternate" hreflang="ar-AE" t-attf-href="https://alomrantd.com/ar#{current_path.replace('/ar', '') if '/ar' in current_path else current_path}"/>
+        <link rel="alternate" hreflang="en-AE" t-attf-href="https://alomrantd.com#{current_path.replace('/ar', '') if '/ar' in current_path else current_path}"/>
+        <link rel="alternate" hreflang="x-default" t-attf-href="https://alomrantd.com/ar#{current_path.replace('/ar', '') if '/ar' in current_path else current_path}"/>
+
+        <!-- OG Tags ثابتة على كل الصفحات -->
+        <meta property="og:type" content="website"/>
+        <meta property="og:locale" content="ar_AE"/>
+        <meta property="og:locale:alternate" content="en_AE"/>
+        <meta property="og:site_name" content="مركز العمران للتدريب والتطوير"/>
+        <meta property="og:title" content="دورات لغة إنجليزية ومتابعة دراسية ودورات مهنية في الإمارات | مركز العمران"/>
+        <meta property="og:description" content="دورات إنجليزية وIELTS ومتابعة دراسية ودورات مهنية للنساء. 11 فرعاً في الإمارات منذ 2010."/>
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:title" content="مركز العمران للتدريب والتطوير"/>
+        <meta name="twitter:description" content="دورات لغة إنجليزية وIELTS ومتابعة دراسية ودورات مهنية للنساء في العين ودبي وأبوظبي والشارقة."/>
+
+        <!-- canonical + og:url خاصة بكل صفحة -->
+        <t t-if="request.httprequest.path in ['/', '/ar', '/ar/']">
+            <link rel="canonical" href="https://alomrantd.com/ar/"/>
+            <meta property="og:url" content="https://alomrantd.com/ar/"/>
+        </t>
+        <t t-elif="request.httprequest.path in ['/about', '/ar/about']">
+            <link rel="canonical" href="https://alomrantd.com/ar/about"/>
+            <meta property="og:url" content="https://alomrantd.com/ar/about"/>
+        </t>
+        <t t-elif="request.httprequest.path in ['/courses', '/ar/courses']">
+            <link rel="canonical" href="https://alomrantd.com/ar/courses"/>
+            <meta property="og:url" content="https://alomrantd.com/ar/courses"/>
+        </t>
+        <t t-elif="request.httprequest.path in ['/branches', '/ar/branches']">
+            <link rel="canonical" href="https://alomrantd.com/ar/branches"/>
+            <meta property="og:url" content="https://alomrantd.com/ar/branches"/>
+        </t>
+        <t t-elif="request.httprequest.path in ['/languages', '/ar/languages']">
+            <link rel="canonical" href="https://alomrantd.com/ar/languages"/>
+            <meta property="og:url" content="https://alomrantd.com/ar/languages"/>
+        </t>
+        <t t-elif="request.httprequest.path in ['/contact', '/ar/contact']">
+            <link rel="canonical" href="https://alomrantd.com/ar/contact"/>
+            <meta property="og:url" content="https://alomrantd.com/ar/contact"/>
+        </t>
+
+    </t>
+    <!-- TRACKING PIXELS - Replace XXXXXXXXXXXXXXX with real IDs     -->
+    <!-- ============================================================ -->
+
+    <!-- Facebook Pixel - uncomment and add your Pixel ID -->
+    <!--
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'XXXXXXXXXXXXXXX');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&amp;ev=PageView&amp;noscript=1"/></noscript>
+    -->
+
+    <!-- TikTok Pixel - uncomment and add your Pixel ID -->
+    <!--
+    <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify",
+      "instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],
+      ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+      for(var i=0;i&lt;ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+      ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n&lt;ttq.methods.length;n++)
+      ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";
+      ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,
+      ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");
+      o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&amp;lib="+t;
+      var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+      ttq.load('XXXXXXXXXXXXXXX');ttq.page();
+    }(window, document, 'ttq');
+    </script>
+    -->
+    <!-- ============================================================ -->
+
+    <!-- ============================================================ -->
+    <!-- Schema.org JSON-LD - Structured Data for SEO (Updated)     -->
+    <!-- ============================================================ -->
+    <script type="application/ld+json">
+    <![CDATA[
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["EducationalOrganization", "LocalBusiness"],
+          "@id": "https://alomrantd.com/#organization",
+          "name": "Al Omran Training and Development Center",
+          "alternateName": ["مركز العمران للتدريب والتطوير", "مركز العمران", "Al Omran"],
+          "url": "https://alomrantd.com",
+          "logo": "https://alomrantd.com/alomran_theme/static/src/img/logo1.png",
+          "image": "https://alomrantd.com/alomran_theme/static/src/img/hero-bg.jpg",
+          "description": "مركز تدريب في الإمارات يقدم برامج في اللغات وتقنية المعلومات والأعمال والدورات المهنية ومتابعة دراسية. معتمد منذ 2010، و11 فرعاً في العين وأبوظبي ودبي.",
+          "foundingDate": "2010",
+          "email": "alomran.td@gmail.com",
+          "telephone": "+971505829697",
+          "priceRange": "$$",
+          "currenciesAccepted": "AED",
+          "openingHours": "Sa-Th 08:00-20:00",
+          "numberOfEmployees": 250,
+          "areaServed": [
+            {"@type": "City", "name": "Al Ain"},
+            {"@type": "City", "name": "Abu Dhabi"},
+            {"@type": "City", "name": "Dubai"},
+            {"@type": "City", "name": "Sharjah"},
+            {"@type": "City", "name": "Ras Al Khaimah"}
+          ],
+          "sameAs": [
+            "https://www.facebook.com/alomran.td/",
+            "https://www.instagram.com/alomran.td/",
+            "https://www.tiktok.com/@alomran.td"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Training Programs",
+            "numberOfItems": 1750
+          },
+          "department": [
+            {"@type": "LocalBusiness", "name": "مركز العمران - البرشاء", "address": {"@type": "PostalAddress", "addressLocality": "Dubai", "addressCountry": "AE"}},
+            {"@type": "LocalBusiness", "name": "مركز العمران - القرهود", "address": {"@type": "PostalAddress", "addressLocality": "Dubai", "addressCountry": "AE"}},
+            {"@type": "LocalBusiness", "name": "مركز العمران - البراري مول", "address": {"@type": "PostalAddress", "addressLocality": "Al Ain", "addressCountry": "AE"}},
+            {"@type": "LocalBusiness", "name": "مركز العمران - سيتي سنتر", "address": {"@type": "PostalAddress", "addressLocality": "Al Ain", "addressCountry": "AE"}},
+            {"@type": "LocalBusiness", "name": "مركز العمران - الفوعة مول", "address": {"@type": "PostalAddress", "addressLocality": "Al Ain", "addressCountry": "AE"}},
+            {"@type": "LocalBusiness", "name": "مركز العمران - الوقن", "address": {"@type": "PostalAddress", "addressLocality": "Al Ain", "addressCountry": "AE"}},
+            {"@type": "LocalBusiness", "name": "مركز العمران - اليحر", "address": {"@type": "PostalAddress", "addressLocality": "Al Ain", "addressCountry": "AE"}},
+            {"@type": "LocalBusiness", "name": "مركز العمران - شارع المرور", "address": {"@type": "PostalAddress", "addressLocality": "Abu Dhabi", "addressCountry": "AE"}},
+            {"@type": "LocalBusiness", "name": "مركز العمران - مزيد مول", "address": {"@type": "PostalAddress", "addressLocality": "Abu Dhabi", "addressCountry": "AE"}}
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://alomrantd.com/#website",
+          "url": "https://alomrantd.com",
+          "name": "مركز العمران للتدريب والتطوير",
+          "inLanguage": ["ar", "en"],
+          "publisher": {"@id": "https://alomrantd.com/#organization"}
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://alomrantd.com/ar/#webpage",
+          "url": "https://alomrantd.com/ar/",
+          "name": "دورات لغة إنجليزية ومتابعة دراسية ودورات مهنية في الإمارات | مركز العمران",
+          "inLanguage": "ar",
+          "isPartOf": {"@id": "https://alomrantd.com/#website"},
+          "about": {"@id": "https://alomrantd.com/#organization"}
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://alomrantd.com/ar/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "الرئيسية",
+              "item": "https://alomrantd.com/ar/"
+            }
+          ]
+        }
+      ]
+    }
+    ]]>
+    </script>
+
+    <style type="text/css">
+    <![CDATA[
+    /* Previous CSS styles... */
+
+    /* Social media icon styles */
+    .social-btn {
+        width: 45px;
+        height: 45px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: all 0.3s ease !important;
+        border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .social-btn:hover {
+        background: #1a5490 !important;
+        border-color: #1a5490 !important;
+        transform: translateY(-5px) scale(1.1) !important;
+    }
+
+    .social-btn i {
+        font-size: 1.2rem;
+    }
+
+    /* TikTok icon if not available */
+    .fa-tiktok:before {
+        content: "\e07b";
+    }
+    ]]>
+    </style>
+
+            <style type="text/css">
+    <![CDATA[
+    /* Global */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        direction: ltr !important;
+        font-family: 'Cairo', sans-serif !important;
+        overflow-x: hidden;
+        background: #f8fafc;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    /* Animations */
+    @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+
+    @keyframes glow {
+        0%, 100% { box-shadow: 0 0 20px rgba(26, 84, 144, 0.3); }
+        50% { box-shadow: 0 0 40px rgba(26, 84, 144, 0.6); }
+    }
+
+    @keyframes scaleUp {
+        from { opacity: 0; transform: scale(0.8); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    .animate-float { animation: float 3s ease-in-out infinite; }
+    .animate-glow { animation: glow 2s ease-in-out infinite; }
+    .animate-scale { animation: scaleUp 0.8s ease-out both; }
+
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+    .delay-4 { animation-delay: 0.8s; }
+
+    /* Hero Section */
+     .hero-section {
+        position: relative;
+        background-image: url('/alomran_theme/static/src/img/hero-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    /* Overlay for text only */
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            to bottom,
+            rgba(26, 84, 144, 0.3) 0%,
+            rgba(26, 84, 144, 0.5) 50%,
+            rgba(26, 84, 144, 0.7) 100%
+        );
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 10;
+    }
+
+    /* Text Shadow for clarity */
+    .hero-content h1 {
+        text-shadow:
+            0 2px 10px rgba(0, 0, 0, 0.9),
+            0 4px 20px rgba(0, 0, 0, 0.7);
+        font-weight: 900 !important;
+    }
+
+    .hero-content p {
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-content .glass-card {
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Glass Card */
+    .glass-card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 24px;
+        padding: 2rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+    }
+
+    .glass-card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Stat Card */
+    .stat-card {
+        background: white;
+        border-radius: 24px;
+        padding: 2.5rem;
+        transition: all 0.4s;
+        border: 2px solid transparent;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-15px) scale(1.05);
+        border-color: #1a5490;
+        box-shadow: 0 20px 50px rgba(26, 84, 144, 0.2);
+    }
+
+    .stat-card:hover i { animation: float 1s infinite; }
+
+    /* Modern Card */
+    .modern-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        transition: all 0.4s;
+    }
+
+    .modern-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(26, 84, 144, 0.15);
+    }
+
+    .modern-card:hover .card-icon {
+        transform: scale(1.2) rotate(10deg);
+    }
+
+    .card-icon { transition: all 0.4s; }
+
+    /* Course Card */
+    .course-card {
+        background: white;
+        border-radius: 28px;
+        overflow: hidden;
+        transition: all 0.5s;
+    }
+
+    .course-card .course-header {
+        height: 200px;
+        background: linear-gradient(135deg, rgba(26, 84, 144, 0.9), rgba(45, 108, 179, 0.9));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .course-card .course-header i {
+        font-size: 5rem;
+        color: white;
+        transition: all 0.3s;
+    }
+
+    .course-card:hover {
+        transform: translateY(-20px);
+        box-shadow: 0 30px 60px rgba(26, 84, 144, 0.25);
+    }
+
+    .course-card:hover .course-header i {
+        transform: scale(1.2) rotate(10deg);
+        animation: float 2s infinite;
+    }
+
+    /* Buttons */
+    .btn {
+        font-weight: 600 !important;
+        border-radius: 50px !important;
+        transition: all 0.3s !important;
+    }
+
+    .btn:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #1a5490, #2d6cb3) !important;
+        border: none !important;
+        color: white !important;
+    }
+
+    .btn-light {
+        background: white !important;
+        color: #1a5490 !important;
+    }
+
+    .btn-outline-light {
+        border: 2px solid white !important;
+        color: white !important;
+        background: transparent !important;
+    }
+
+    .btn-outline-light:hover {
+        background: white !important;
+        color: #1a5490 !important;
+    }
+
+    /* Badge */
+    .badge {
+        font-weight: 600;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        background: linear-gradient(135deg, #1a5490, #2d6cb3);
+        box-shadow: 0 4px 15px rgba(26, 84, 144, 0.3);
+    }
+
+    /* Footer */
+    footer {
+        position: relative;
+        z-index: 100;
+    }
+
+    footer .hover-primary:hover {
+        color: #1a5490 !important;
+        padding-left: 5px;
+        transition: all 0.3s ease;
+    }
+
+    footer .btn-outline-light:hover {
+        background: #1a5490 !important;
+        border-color: #1a5490 !important;
+        transform: translateY(-3px);
+    }
+
+    footer h5 {
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    footer h5::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(135deg, #1a5490, #2d6cb3);
+        border-radius: 2px;
+    }
+.branch-featured {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s ease;
+    }
+
+    .branch-featured:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(26, 84, 144, 0.2);
+    }
+
+    .branch-featured .branch-image {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+
+    .branch-featured .branch-image img {
+        transition: transform 0.4s ease;
+    }
+
+    .branch-featured:hover .branch-image img {
+        transform: scale(1.1);
+    }
+
+    .branch-featured .badge {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero-section h1 { font-size: 2rem !important; }
+    }
+    ]]>
+</style>
+        </xpath>
+
+<xpath expr="//footer" position="replace">
+    <footer class="bg-dark text-white">
+        <!-- Footer Content -->
+        <div class="py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- Column 1: Quick Links -->
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="fw-bold mb-4">Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="/" class="text-white-50 text-decoration-none hover-primary">
+                                    <i class="fa fa-chevron-right me-2"/>Home
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="/about" class="text-white-50 text-decoration-none hover-primary">
+                                    <i class="fa fa-chevron-right me-2"/>About Us
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="/courses" class="text-white-50 text-decoration-none hover-primary">
+                                    <i class="fa fa-chevron-right me-2"/>Courses
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="/branches" class="text-white-50 text-decoration-none hover-primary">
+                                    <i class="fa fa-chevron-right me-2"/>Branches
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="/contact" class="text-white-50 text-decoration-none hover-primary">
+                                    <i class="fa fa-chevron-right me-2"/>Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Our Courses -->
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="fw-bold mb-4">Our Courses</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="/teachers" class="text-white-50 text-decoration-none hover-primary">
+                                    <i class="fa fa-check me-2 text-primary"/>Professional Training
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="/languages" class="text-white-50 text-decoration-none hover-primary">
+                                    <i class="fa fa-check me-2 text-primary"/>Language Learning
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="/it-programs" class="text-white-50 text-decoration-none hover-primary">
+                                    <i class="fa fa-check me-2 text-primary"/>Information Technology
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="/courses" class="text-white-50 text-decoration-none hover-primary">
+                                    <i class="fa fa-check me-2 text-primary"/>Business Administration
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="/courses" class="text-white-50 text-decoration-none hover-primary">
+                                    <i class="fa fa-check me-2 text-primary"/>Digital Marketing
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Logo in the center -->
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <!-- Logo -->
+                        <div class="footer-logo mb-4">
+                            <img src="/alomran_theme/static/src/img/logo1.png"
+                                 alt="Al Omran Training and Development Center"
+                                 class="footer-logo-img"
+                                 style="max-width: 200px; height: auto;"/>
+                        </div>
+
+                        <h5 class="fw-bold mb-3 text-primary">
+                            Al Omran Training &amp; Development Center
+                        </h5>
+                        <p class="mb-3 text-white-50">Shaping Tomorrow's Leaders Since 2010</p>
+
+                        <!-- Social media icons below logo -->
+                        <div class="social-icons d-flex gap-3 justify-content-center mb-4">
+                            <a href="https://www.facebook.com/alomran.td/"
+                               class="btn btn-outline-light rounded-circle social-btn"
+                               target="_blank"
+                               title="Facebook">
+                                <i class="fab fa-facebook-f"/>
+                            </a>
+                            <a href="https://www.instagram.com/alomran.td/"
+                               class="btn btn-outline-light rounded-circle social-btn"
+                               target="_blank"
+                               title="Instagram">
+                                <i class="fab fa-instagram"/>
+                            </a>
+                            <a href="https://www.tiktok.com/@alomran.td"
+                               class="btn btn-outline-light rounded-circle social-btn"
+                               target="_blank"
+                               title="TikTok">
+                                <i class="fab fa-tiktok"/>
+                            </a>
+                            <a href="https://wa.me/971505829697"
+                               class="btn btn-outline-light rounded-circle social-btn"
+                               target="_blank"
+                               title="WhatsApp">
+                                <i class="fab fa-whatsapp"/>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Column 4: Contact Information -->
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="fw-bold mb-4">Contact Information</h5>
+                        <div class="contact-info">
+                            <p class="mb-3">
+                                <i class="fa fa-phone me-2 text-primary"/>
+                                <a href="tel:+971505829697" class="text-white text-decoration-none hover-primary" dir="ltr">
+                                    +971505829697
+                                </a>
+                            </p>
+                            <p class="mb-3">
+                                <i class="fa fa-envelope me-2 text-primary"/>
+                                <a href="mailto:alomran.td@gmail.com" class="text-white text-decoration-none hover-primary">
+                                    alomran.td@gmail.com
+                                </a>
+                            </p>
+                            <p class="mb-3">
+                                <i class="fa fa-clock me-2 text-primary"/>
+                                Sat - Thu: 8:00 AM - 8:00 PM
+                            </p>
+                            <p class="mb-0">
+                                <i class="fa fa-map-marker-alt me-2 text-primary"/>
+                                11 branches across UAE
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <hr class="my-4 border-secondary"/>
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <p class="mb-0 text-white-50">
+                            © 2026 Al Omran Training &amp; Development Center. All Rights Reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="mb-0 text-white-50">
+                            Made with <i class="fa fa-heart text-danger"/> in the United Arab Emirates
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</xpath>
+    </template>
+</odoo>

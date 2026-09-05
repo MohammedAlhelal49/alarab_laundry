@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mrp_bom_sale_user,name_mrp_bom_sale_user,mrp.model_mrp_bom,sales_team.group_sale_salesman,1,0,1,0
+access_sale_customer_price_history,access.sale.customer.price.history,alkaisar_implementation.model_sale_customer_price_history,sales_team.group_sale_salesman,1,1,1,0
+
+
+access_invoice_user_account_report,name_invoice_user_account_report,account.model_account_report,account.group_account_invoice,1,0,0,0
+access_invoice_user_account_report_line,name_invoice_user_account_report_line,account.model_account_report_line,account.group_account_invoice,1,0,0,0
+access_invoice_user_account_fiscal_year,name_invoice_user_account_fiscal_year,account_accountant.model_account_fiscal_year,account.group_account_invoice,1,0,0,0
+access_invoice_user_account_group,name_invoice_user_account_group,account.model_account_group,account.group_account_invoice,1,0,0,0
+access_invoice_user_account_report_column,name_invoice_user_account_report_column,account.model_account_report_column,account.group_account_invoice,1,0,0,0
+
+
+
+
+
+
+

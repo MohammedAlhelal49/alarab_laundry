@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_de_student_form_fee_inherited" model="ir.ui.view">
+            <field name="name">de.student.form.fee.inherited</field>
+            <field name="model">de.student</field>
+            <field name="inherit_id" ref="dekad_core.view_de_student_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">d
+                    <button class="btn oe_stat_button" groups="dekad_fee.group_de_fee"
+                            type="object"
+                            name="action_show_fee"
+                            style="border-right: 1px solid;border-bottom: 1px solid;white-space: inherit;display: inline-flex;"
+                            icon="fa-file">
+                        <field string="Fee Count" name="student_fee_count" widget="statinfo"/>
+                    </button>
+                    <button class="btn oe_stat_button" type="object" groups="account.group_account_readonly"
+                            name="action_show_invoice"
+                            style="border-right: 1px solid;"
+                            icon="fa-pencil-square-o">
+                        <field string="Invoiced" name="total_invoiced" widget="statinfo"/>
+                    </button>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page name="Fees" string="Fees" groups="dekad_fee.group_de_fee"
+                          invisible="id == False">
+                        <field name="student_fee_ids" readonly="1">d
+                            <list string="Student fees">
+                                <field name="grade_id"/>
+                                <field name="amount" widget="monetary" modifiers="{}" sum="Total"
+                                       options="{'no_trailing_zeros': True}"/>
+                                <field name="discount" on_change="1" modifiers="{}"/>
+                                <field name="after_discount_amount" modifiers="{&quot;readonly&quot;: true}"
+                                       sum="Total"/>
+                                <field name="date" modifiers="{}"/>
+                            </list>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

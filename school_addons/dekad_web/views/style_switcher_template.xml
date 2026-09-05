@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ========================================== -->
+    <!-- PERFECT ODOO 18 NAVBAR INTEGRATION -->
+    <!-- Based on actual portal.frontend_layout structure -->
+    <!-- ========================================== -->
+
+    <!-- OPTION 1: ADD TO NAVBAR (Recommended for Navbar) -->
+    <template id="portal_navbar_style_switcher" name="Portal Navbar Style Switcher" inherit_id="portal.frontend_layout">
+        <!-- Insert before the user dropdown in the top menu -->
+        <xpath expr="//ul[@id='top_menu']" position="inside">
+            <li class="nav-item">
+                <a href="#" class="nav-link style-switcher-btn" title="Switch Style Theme" onclick="event.preventDefault();">
+                    <i class="fa fa-sun"></i>
+                    <span class="btn-text d-none d-lg-inline ms-1">Classic Style</span>
+                </a>
+            </li>
+        </xpath>
+    </template>
+
+    <!-- ========================================== -->
+    <!-- OPTION 2: FLOATING BUTTON (Alternative) -->
+    <!-- Comment out Option 1 above if using this -->
+    <!-- ========================================== -->
+    <!--
+    <template id="floating_style_switcher" name="Floating Style Switcher" inherit_id="web.layout">
+        <xpath expr="//body" position="inside">
+            <div class="floating-style-switcher">
+                <button class="style-switcher-btn floating-btn" title="Switch Style Theme">
+                    <i class="fa fa-sun"></i>
+                    <span class="btn-text">Style</span>
+                </button>
+            </div>
+        </xpath>
+    </template>
+    -->
+
+</odoo>

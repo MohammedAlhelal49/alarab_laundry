@@ -1,0 +1,772 @@
+{
+  "version": 21,
+  "sheets": [
+    {
+      "id": "sheet1",
+      "name": "Dashboard",
+      "colNumber": 5,
+      "rowNumber": 60,
+      "rows": {
+        "5": { "size": 40 },
+        "21": { "size": 40 },
+        "30": { "size": 29 },
+        "31": { "size": 29 },
+        "32": { "size": 29 },
+        "33": { "size": 29 },
+        "34": { "size": 29 },
+        "35": { "size": 29 },
+        "36": { "size": 29 },
+        "37": { "size": 29 },
+        "38": { "size": 29 },
+        "39": { "size": 29 },
+        "40": { "size": 29 },
+        "41": { "size": 23 },
+        "42": { "size": 43 },
+        "43": { "size": 35 },
+        "44": { "size": 28 },
+        "45": { "size": 28 },
+        "46": { "size": 28 },
+        "47": { "size": 28 },
+        "48": { "size": 28 },
+        "49": { "size": 28 },
+        "50": { "size": 28 },
+        "51": { "size": 28 },
+        "52": { "size": 28 }
+      },
+      "cols": {
+        "0": { "size": 349 },
+        "1": { "size": 150 },
+        "2": { "size": 80 },
+        "3": { "size": 50 },
+        "4": { "size": 323 },
+        "5": { "size": 150 },
+        "6": { "size": 80 }
+      },
+      "merges": [],
+      "cells": {
+        "A11": { "content": "[Monthly Revenue](odoo://view/{\"viewType\":\"graph\",\"action\":{\"domain\":[[\"amount\",\">\",0]],\"context\":{\"group_by\":[\"date:month\"]},\"modelName\":\"account.analytic.line\",\"views\":[[false,\"graph\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Monthly Revenue\"})" },
+        "A30": { "content": "[Revenue by Payment Method](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"amount\",\">\",0]],\"context\":{\"group_by\":[\"payment_method_id\"]},\"modelName\":\"account.analytic.line\",\"views\":[[false,\"pivot\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Revenue by Payment Method\"})" },
+        "E30": { "content": "[Deductions Detail](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"amount\",\"<\",0]],\"context\":{\"group_by\":[\"general_account_id\"]},\"modelName\":\"account.analytic.line\",\"views\":[[false,\"pivot\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"Deductions\"})" },
+        "A31": { "content": "=_t(\"Payment Method\")" },
+        "B31": { "content": "=_t(\"Amount\")" },
+        "E31": { "content": "=_t(\"Account\")" },
+        "F31": { "content": "=_t(\"Amount\")" },
+        "A32": { "content": "=PIVOT.HEADER(6,\"#payment_method_id\",1)" },
+        "B32": { "content": "=PIVOT.VALUE(6,\"amount\",\"#payment_method_id\",1)" },
+        "E32": { "content": "=PIVOT.HEADER(8,\"#general_account_id\",1)" },
+        "F32": { "content": "=PIVOT.VALUE(8,\"amount\",\"#general_account_id\",1)" },
+        "A33": { "content": "=PIVOT.HEADER(6,\"#payment_method_id\",2)" },
+        "B33": { "content": "=PIVOT.VALUE(6,\"amount\",\"#payment_method_id\",2)" },
+        "E33": { "content": "=PIVOT.HEADER(8,\"#general_account_id\",2)" },
+        "F33": { "content": "=PIVOT.VALUE(8,\"amount\",\"#general_account_id\",2)" },
+        "A34": { "content": "=PIVOT.HEADER(6,\"#payment_method_id\",3)" },
+        "B34": { "content": "=PIVOT.VALUE(6,\"amount\",\"#payment_method_id\",3)" },
+        "E34": { "content": "=PIVOT.HEADER(8,\"#general_account_id\",3)" },
+        "F34": { "content": "=PIVOT.VALUE(8,\"amount\",\"#general_account_id\",3)" },
+        "A35": { "content": "=PIVOT.HEADER(6,\"#payment_method_id\",4)" },
+        "B35": { "content": "=PIVOT.VALUE(6,\"amount\",\"#payment_method_id\",4)" },
+        "E35": { "content": "=PIVOT.HEADER(8,\"#general_account_id\",4)" },
+        "F35": { "content": "=PIVOT.VALUE(8,\"amount\",\"#general_account_id\",4)" },
+        "A36": { "content": "=PIVOT.HEADER(6,\"#payment_method_id\",5)" },
+        "B36": { "content": "=PIVOT.VALUE(6,\"amount\",\"#payment_method_id\",5)" },
+        "E36": { "content": "=PIVOT.HEADER(8,\"#general_account_id\",5)" },
+        "F36": { "content": "=PIVOT.VALUE(8,\"amount\",\"#general_account_id\",5)" },
+        "A37": { "content": "=PIVOT.HEADER(6,\"#payment_method_id\",6)" },
+        "B37": { "content": "=PIVOT.VALUE(6,\"amount\",\"#payment_method_id\",6)" },
+        "E37": { "content": "=PIVOT.HEADER(8,\"#general_account_id\",6)" },
+        "F37": { "content": "=PIVOT.VALUE(8,\"amount\",\"#general_account_id\",6)" },
+        "A38": { "content": "=PIVOT.HEADER(6,\"#payment_method_id\",7)" },
+        "B38": { "content": "=PIVOT.VALUE(6,\"amount\",\"#payment_method_id\",7)" },
+        "E38": { "content": "=PIVOT.HEADER(8,\"#general_account_id\",7)" },
+        "F38": { "content": "=PIVOT.VALUE(8,\"amount\",\"#general_account_id\",7)" },
+        "A39": { "content": "=PIVOT.HEADER(6,\"#payment_method_id\",8)" },
+        "B39": { "content": "=PIVOT.VALUE(6,\"amount\",\"#payment_method_id\",8)" },
+        "E39": { "content": "=PIVOT.HEADER(8,\"#general_account_id\",8)" },
+        "F39": { "content": "=PIVOT.VALUE(8,\"amount\",\"#general_account_id\",8)" },
+        "A40": { "content": "=PIVOT.HEADER(6,\"#payment_method_id\",9)" },
+        "B40": { "content": "=PIVOT.VALUE(6,\"amount\",\"#payment_method_id\",9)" },
+        "E40": { "content": "=PIVOT.HEADER(8,\"#general_account_id\",9)" },
+        "F40": { "content": "=PIVOT.VALUE(8,\"amount\",\"#general_account_id\",9)" },
+        "A41": { "content": "=PIVOT.HEADER(6,\"#payment_method_id\",10)" },
+        "B41": { "content": "=PIVOT.VALUE(6,\"amount\",\"#payment_method_id\",10)" },
+        "E41": { "content": "=PIVOT.HEADER(8,\"#general_account_id\",10)" },
+        "F41": { "content": "=PIVOT.VALUE(8,\"amount\",\"#general_account_id\",10)" },
+        "A44": { "content": "[KPI Summary](odoo://view/{\"viewType\":\"pivot\",\"action\":{\"domain\":[[\"amount\",\">\",0]],\"context\":{\"group_by\":[]},\"modelName\":\"account.analytic.line\",\"views\":[[false,\"pivot\"],[false,\"search\"]]},\"threshold\":0,\"name\":\"KPI Summary\"})" },
+        "A45": { "content": "=_t(\"Metric\")" },
+        "B45": { "content": "=_t(\"Amount\")" },
+        "C45": { "content": "=_t(\"vs Gross\")" },
+        "A46": { "content": "=_t(\"Gross Revenue\")" },
+        "B46": { "content": "=PIVOT.VALUE(1,\"amount\")" },
+        "C46": { "content": "=\"\"" },
+        "A47": { "content": "=_t(\"Thiqa\")" },
+        "B47": { "content": "=PIVOT.VALUE(11,\"amount\")" },
+        "C47": { "content": "=IFERROR(TEXT(B47/B46,\"0.0%\"),\"0%\")" },
+        "A48": { "content": "=_t(\"Cash\")" },
+        "B48": { "content": "=PIVOT.VALUE(12,\"amount\")" },
+        "C48": { "content": "=IFERROR(TEXT(B48/B46,\"0.0%\"),\"0%\")" },
+        "A49": { "content": "=_t(\"Visa / Card\")" },
+        "B49": { "content": "=PIVOT.VALUE(13,\"amount\")" },
+        "C49": { "content": "=IFERROR(TEXT(B49/B46,\"0.0%\"),\"0%\")" },
+        "A50": { "content": "=_t(\"3rd Party\")" },
+        "B50": { "content": "=PIVOT.VALUE(14,\"amount\")" },
+        "C50": { "content": "=IFERROR(TEXT(B50/B46,\"0.0%\"),\"0%\")" },
+        "A51": { "content": "=_t(\"Total Deductions\")" },
+        "B51": { "content": "=PIVOT.VALUE(4,\"amount\")" },
+        "C51": { "content": "=IFERROR(TEXT(ABS(B51)/B46,\"0.0%\"),\"0%\")" },
+        "A52": { "content": "=_t(\"Net Revenue\")" },
+        "B52": { "content": "=B46+B51" },
+        "C52": { "content": "=IFERROR(TEXT(B52/B46,\"0.0%\"),\"0%\")" }
+      },
+      "styles": {
+        "A11": 1,
+        "A30": 1,
+        "E30": 1,
+        "A44": 1,
+        "A31:B31": 2,
+        "E31:F31": 2,
+        "A45": 4,
+        "C45": 4,
+        "A32:A41": 3,
+        "E32:E41": 3,
+        "B32:B41": 5,
+        "F32:F41": 5,
+        "A46:A52": 3,
+        "B46:B52": 5,
+        "C46:C52": 5,
+        "B45": 6
+      },
+      "formats": {
+        "B32": "#,##0.00",
+        "F32": "#,##0.00",
+        "B33": "#,##0.00",
+        "F33": "#,##0.00",
+        "B34": "#,##0.00",
+        "F34": "#,##0.00",
+        "B35": "#,##0.00",
+        "F35": "#,##0.00",
+        "B36": "#,##0.00",
+        "F36": "#,##0.00",
+        "B37": "#,##0.00",
+        "F37": "#,##0.00",
+        "B38": "#,##0.00",
+        "F38": "#,##0.00",
+        "B39": "#,##0.00",
+        "F39": "#,##0.00",
+        "B40": "#,##0.00",
+        "F40": "#,##0.00",
+        "B41": "#,##0.00",
+        "F41": "#,##0.00",
+        "B46": "#,##0.00",
+        "B47": "#,##0.00",
+        "B48": "#,##0.00",
+        "B49": "#,##0.00",
+        "B50": "#,##0.00",
+        "B51": "#,##0.00",
+        "B52": "#,##0.00"
+      },
+      "borders": {
+        "A11:G11": 1,
+        "A30:C30": 1,
+        "E30:G30": 1,
+        "A31:B31": 3,
+        "C31": 3,
+        "E31:F31": 3,
+        "A32:B32": 4,
+        "E32:F32": 4,
+        "A33:B40": 5,
+        "E33:F40": 5,
+        "A41:B41": 6,
+        "E41:F41": 6,
+        "A42:C42": 7,
+        "E42:G42": 9,
+        "A44:C44": 1,
+        "A45": 8,
+        "B45": 13,
+        "A46:B46": 4,
+        "C46": 15,
+        "A47:B50": 5,
+        "C47:C50": 16,
+        "A51:B51": 5,
+        "C51": 16,
+        "A52:B52": 6,
+        "C52": 17,
+        "A53:C53": 9,
+        "D31": 21,
+        "D32:D41": 22,
+        "D45": 21,
+        "D46:D52": 23
+      },
+      "conditionalFormats": [
+        {
+          "rule": { "type": "DataBarRule", "color": 16775149, "rangeValues": "B32:B41" },
+          "id": "269e0ce8-de4c-4d61-b208-cb391ed8eb7b",
+          "ranges": ["A32:A41"]
+        },
+        {
+          "rule": { "type": "DataBarRule", "color": 16708338, "rangeValues": "F32:F41" },
+          "id": "5b2fc119-1229-4ba0-992c-528eb4039a37",
+          "ranges": ["E32:E41"]
+        },
+        {
+          "rule": { "type": "DataBarRule", "color": 15726335, "rangeValues": "B46:B52" },
+          "id": "72ca9440-1f27-4ef0-8b7d-de18b4fa2f2d",
+          "ranges": ["A46:A52"]
+        }
+      ],
+      "figures": [
+        {
+          "id": "9f3f3924-fca0-452b-8e93-326b289581fc",
+          "x": 0, "y": 300, "width": 1095, "height": 344,
+          "tag": "chart",
+          "data": {
+            "title": { "text": "" },
+            "background": "#FFFFFF",
+            "legendPosition": "none",
+            "metaData": { "groupBy": ["date:month"], "measure": "amount", "order": null, "resModel": "account.analytic.line", "mode": "line" },
+            "searchParams": { "comparison": null, "context": { "group_by": [] }, "domain": [["amount", ">", 0]], "groupBy": ["date:month"], "orderBy": [] },
+            "type": "odoo_line",
+            "verticalAxisPosition": "left",
+            "stacked": false,
+            "fillArea": true,
+            "fieldMatching": {
+              "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": 0 },
+              "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+              "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+              "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+              "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+            }
+          }
+        },
+        {
+          "id": "01876b02-ba02-4832-bb3a-abff6f4058a3",
+          "x": 0, "y": 11, "width": 537, "height": 101,
+          "tag": "chart",
+          "data": {
+            "baselineColorDown": "#DC6965", "baselineColorUp": "#00A04A", "baselineMode": "percentage",
+            "title": { "text": "Gross Revenue", "bold": true, "color": "#434343" },
+            "type": "scorecard", "background": "#EFF6FF",
+            "baseline": "Data!E2", "baselineDescr": "since last period", "keyValue": "Data!D2", "humanize": false
+          }
+        },
+        {
+          "id": "120ede71-b8ee-4fac-86d1-7253b7a85d23",
+          "x": 558, "y": 11, "width": 537, "height": 101,
+          "tag": "chart",
+          "data": {
+            "baselineColorDown": "#DC6965", "baselineColorUp": "#00A04A", "baselineMode": "percentage",
+            "title": { "text": "Net Revenue", "bold": true, "color": "#434343" },
+            "type": "scorecard", "background": "#FFF7ED",
+            "baseline": "Data!E8", "baselineDescr": "since last period", "keyValue": "Data!D8", "humanize": false
+          }
+        },
+        {
+          "id": "5218c740-a52c-463e-abd2-97a762cae871",
+          "x": 0, "y": 125, "width": 262, "height": 101,
+          "tag": "chart",
+          "data": {
+            "baselineColorDown": "#DC6965", "baselineColorUp": "#00A04A", "baselineMode": "percentage",
+            "title": { "text": "Thiqa", "bold": true, "color": "#434343" },
+            "type": "scorecard", "background": "#ECFDF5",
+            "baseline": "Data!E10", "baselineDescr": "since last period", "keyValue": "Data!D10", "humanize": false
+          }
+        },
+        {
+          "id": "722bb062-ee36-4604-a00a-f3261bec471d",
+          "x": 277, "y": 125, "width": 262, "height": 101,
+          "tag": "chart",
+          "data": {
+            "baselineColorDown": "#DC6965", "baselineColorUp": "#00A04A", "baselineMode": "percentage",
+            "title": { "text": "Cash", "bold": true, "color": "#434343" },
+            "type": "scorecard", "background": "#EFF6FF",
+            "baseline": "Data!E11", "baselineDescr": "since last period", "keyValue": "Data!D11", "humanize": false
+          }
+        },
+        {
+          "id": "7ce533ec-edeb-48fe-bb14-3518a85518db",
+          "x": 554, "y": 125, "width": 262, "height": 101,
+          "tag": "chart",
+          "data": {
+            "baselineColorDown": "#DC6965", "baselineColorUp": "#00A04A", "baselineMode": "percentage",
+            "title": { "text": "Visa / Card", "bold": true, "color": "#434343" },
+            "type": "scorecard", "background": "#FFF7ED",
+            "baseline": "Data!E12", "baselineDescr": "since last period", "keyValue": "Data!D12", "humanize": false
+          }
+        },
+        {
+          "id": "aee59b0a-d4a4-4c74-a01e-355273a074fd",
+          "x": 831, "y": 125, "width": 262, "height": 101,
+          "tag": "chart",
+          "data": {
+            "baselineColorDown": "#DC6965", "baselineColorUp": "#00A04A", "baselineMode": "percentage",
+            "title": { "text": "3rd Party", "bold": true, "color": "#434343" },
+            "type": "scorecard", "background": "#FDF4FF",
+            "baseline": "Data!E13", "baselineDescr": "since last period", "keyValue": "Data!D13", "humanize": false
+          }
+        }
+      ],
+      "tables": [],
+      "areGridLinesVisible": true,
+      "isVisible": true,
+      "headerGroups": { "ROW": [], "COL": [] },
+      "dataValidationRules": [],
+      "comments": {}
+    },
+    {
+      "id": "a83a78f2-b124-4d6f-9726-125e62a32b8d",
+      "name": "Data",
+      "colNumber": 5,
+      "rowNumber": 20,
+      "rows": {},
+      "cols": {
+        "0": { "size": 160 },
+        "1": { "size": 89 },
+        "2": { "size": 89 },
+        "3": { "size": 89 },
+        "4": { "size": 89 }
+      },
+      "merges": [],
+      "cells": {
+        "A1": { "content": "=_t(\"KPI\")" },
+        "B1": { "content": "=_t(\"Current\")" },
+        "C1": { "content": "=_t(\"Previous\")" },
+        "D1": { "content": "=_t(\"Formatted\")" },
+        "E1": { "content": "=_t(\"Change\")" },
+        "A2": { "content": "=_t(\"Gross Revenue\")" },
+        "B2": { "content": "=PIVOT.VALUE(1,\"amount\")" },
+        "C2": { "content": "=PIVOT.VALUE(10,\"amount\")" },
+        "D2": { "content": "=FORMAT.LARGE.NUMBER(B2)" },
+        "E2": { "content": "=FORMAT.LARGE.NUMBER(C2)" },
+        "A3": { "content": "=_t(\"Cash Revenue\")" },
+        "B3": { "content": "=PIVOT.VALUE(2,\"amount\")" },
+        "C3": { "content": "=0" },
+        "D3": { "content": "=FORMAT.LARGE.NUMBER(B3)" },
+        "E3": { "content": "=FORMAT.LARGE.NUMBER(C3)" },
+        "A4": { "content": "=_t(\"Card Revenue\")" },
+        "B4": { "content": "=PIVOT.VALUE(3,\"amount\")" },
+        "C4": { "content": "=0" },
+        "D4": { "content": "=FORMAT.LARGE.NUMBER(B4)" },
+        "E4": { "content": "=FORMAT.LARGE.NUMBER(C4)" },
+        "A5": { "content": "=_t(\"Lab Expenses\")" },
+        "B5": { "content": "=PIVOT.VALUE(4,\"amount\")" },
+        "C5": { "content": "=0" },
+        "D5": { "content": "=FORMAT.LARGE.NUMBER(B5)" },
+        "E5": { "content": "=FORMAT.LARGE.NUMBER(C5)" },
+        "A6": { "content": "=_t(\"Material Cost\")" },
+        "B6": { "content": "=PIVOT.VALUE(4,\"amount\")" },
+        "C6": { "content": "=0" },
+        "D6": { "content": "=FORMAT.LARGE.NUMBER(B6)" },
+        "E6": { "content": "=FORMAT.LARGE.NUMBER(C6)" },
+        "A7": { "content": "=_t(\"Total Deductions\")" },
+        "B7": { "content": "=PIVOT.VALUE(4,\"amount\")" },
+        "C7": { "content": "=0" },
+        "D7": { "content": "=FORMAT.LARGE.NUMBER(B7)" },
+        "E7": { "content": "=FORMAT.LARGE.NUMBER(C7)" },
+        "A8": { "content": "=_t(\"Net Revenue\")" },
+        "B8": { "content": "=PIVOT.VALUE(1,\"amount\")+PIVOT.VALUE(4,\"amount\")" },
+        "C8": { "content": "=PIVOT.VALUE(10,\"amount\")" },
+        "D8": { "content": "=FORMAT.LARGE.NUMBER(B8)" },
+        "E8": { "content": "=FORMAT.LARGE.NUMBER(C8)" },
+        "A10": { "content": "=_t(\"Thiqa Revenue\")" },
+        "B10": { "content": "=PIVOT.VALUE(11,\"amount\")" },
+        "C10": { "content": "=PIVOT.VALUE(15,\"amount\")" },
+        "D10": { "content": "=FORMAT.LARGE.NUMBER(B10)" },
+        "E10": { "content": "=FORMAT.LARGE.NUMBER(C10)" },
+        "A11": { "content": "=_t(\"Cash Revenue\")" },
+        "B11": { "content": "=PIVOT.VALUE(12,\"amount\")" },
+        "C11": { "content": "=PIVOT.VALUE(16,\"amount\")" },
+        "D11": { "content": "=FORMAT.LARGE.NUMBER(B11)" },
+        "E11": { "content": "=FORMAT.LARGE.NUMBER(C11)" },
+        "A12": { "content": "=_t(\"Visa/Card Revenue\")" },
+        "B12": { "content": "=PIVOT.VALUE(13,\"amount\")" },
+        "C12": { "content": "=PIVOT.VALUE(17,\"amount\")" },
+        "D12": { "content": "=FORMAT.LARGE.NUMBER(B12)" },
+        "E12": { "content": "=FORMAT.LARGE.NUMBER(C12)" },
+        "A13": { "content": "=_t(\"3rd Party Revenue\")" },
+        "B13": { "content": "=PIVOT.VALUE(14,\"amount\")" },
+        "C13": { "content": "=PIVOT.VALUE(18,\"amount\")" },
+        "D13": { "content": "=FORMAT.LARGE.NUMBER(B13)" },
+        "E13": { "content": "=FORMAT.LARGE.NUMBER(C13)" }
+      },
+      "styles": {
+        "A1:E1": 8,
+        "D2:E8": 9
+      },
+      "formats": {},
+      "borders": {},
+      "conditionalFormats": [],
+      "figures": [],
+      "tables": [],
+      "areGridLinesVisible": true,
+      "isVisible": true,
+      "headerGroups": { "ROW": [], "COL": [] },
+      "dataValidationRules": [],
+      "comments": {}
+    }
+  ],
+  "styles": {
+    "1": { "textColor": "#01666b", "bold": true, "fontSize": 16 },
+    "2": { "fontSize": 11, "textColor": "#434343", "verticalAlign": "middle", "bold": true },
+    "3": { "textColor": "#01666B", "verticalAlign": "middle" },
+    "4": { "bold": true, "fontSize": 11, "textColor": "#434343" },
+    "5": { "textColor": "#434343", "verticalAlign": "middle", "align": "left" },
+    "6": { "bold": true, "fontSize": 11, "textColor": "#434343", "align": "left" },
+    "7": { "align": "center", "fontSize": 11, "textColor": "#434343", "verticalAlign": "middle", "bold": true },
+    "8": { "bold": true },
+    "9": { "fillColor": "#f2f2f2" }
+  },
+  "formats": {},
+  "borders": {
+    "1": { "bottom": { "style": "thin", "color": "#CCCCCC" } },
+    "2": { "top": { "style": "thin", "color": "#CCCCCC" } },
+    "3": { "top": { "style": "thin", "color": "#CCCCCC" }, "bottom": { "style": "thin", "color": "#FFFFFF" } },
+    "4": { "top": { "style": "thin", "color": "#FFFFFF" }, "bottom": { "style": "thick", "color": "#FFFFFF" }, "left": { "style": "thick", "color": "#FFFFFF" }, "right": { "style": "thick", "color": "#FFFFFF" } },
+    "5": { "top": { "style": "thick", "color": "#FFFFFF" }, "bottom": { "style": "thick", "color": "#FFFFFF" }, "left": { "style": "thick", "color": "#FFFFFF" }, "right": { "style": "thick", "color": "#FFFFFF" } },
+    "6": { "top": { "style": "thick", "color": "#FFFFFF" }, "bottom": { "style": "thin", "color": "#FFFFFF" }, "left": { "style": "thick", "color": "#FFFFFF" }, "right": { "style": "thick", "color": "#FFFFFF" } },
+    "7": { "top": { "style": "thin", "color": "#FFFFFF" } },
+    "8": { "top": { "style": "thin", "color": "#CCCCCC" }, "bottom": { "style": "thick", "color": "#FFFFFF" }, "left": { "style": "thin", "color": "#FFFFFF" } },
+    "9": { "top": { "style": "thick", "color": "#FFFFFF" } },
+    "10": { "top": { "style": "thin", "color": "#CCCCCC" }, "bottom": { "style": "thick", "color": "#FFFFFF" }, "left": { "style": "thick", "color": "#FFFFFF" } },
+    "11": { "top": { "style": "thin", "color": "#CCCCCC" }, "left": { "style": "thick", "color": "#FFFFFF" } },
+    "12": { "bottom": { "style": "thick", "color": "#FFFFFF" }, "left": { "style": "thick", "color": "#FFFFFF" }, "right": { "style": "thick", "color": "#FFFFFF" } },
+    "13": { "top": { "style": "thin", "color": "#CCCCCC" }, "bottom": { "style": "thick", "color": "#FFFFFF" } },
+    "14": { "top": { "style": "thin", "color": "#CCCCCC" }, "bottom": { "style": "thin", "color": "#FFFFFF" }, "right": { "style": "thin", "color": "#FFFFFF" } },
+    "15": { "top": { "style": "thin", "color": "#FFFFFF" }, "bottom": { "style": "thick", "color": "#FFFFFF" }, "left": { "style": "thick", "color": "#FFFFFF" }, "right": { "style": "thin", "color": "#FFFFFF" } },
+    "16": { "top": { "style": "thick", "color": "#FFFFFF" }, "bottom": { "style": "thick", "color": "#FFFFFF" }, "left": { "style": "thick", "color": "#FFFFFF" }, "right": { "style": "thin", "color": "#FFFFFF" } },
+    "17": { "top": { "style": "thick", "color": "#FFFFFF" }, "bottom": { "style": "thin", "color": "#FFFFFF" }, "left": { "style": "thick", "color": "#FFFFFF" }, "right": { "style": "thin", "color": "#FFFFFF" } },
+    "18": { "top": { "style": "thin", "color": "#CCCCCC" }, "bottom": { "style": "thick", "color": "#FFFFFF" }, "right": { "style": "thin", "color": "#FFFFFF" } },
+    "19": { "top": { "style": "thin", "color": "#CCCCCC" }, "bottom": { "style": "thick", "color": "#FFFFFF" }, "right": { "style": "thick", "color": "#FFFFFF" } },
+    "20": { "top": { "style": "thin", "color": "#CCCCCC" }, "right": { "style": "thick", "color": "#FFFFFF" } },
+    "21": { "left": { "style": "thin", "color": "#FFFFFF" } },
+    "22": { "left": { "style": "thin", "color": "#FFFFFF" }, "right": { "style": "thick", "color": "#FFFFFF" } },
+    "23": { "left": { "style": "thick", "color": "#FFFFFF" }, "right": { "style": "thick", "color": "#FFFFFF" } }
+  },
+  "revisionId": "START_REVISION",
+  "uniqueFigureIds": true,
+  "settings": {
+    "locale": {
+      "name": "English (US)",
+      "code": "en_US",
+      "thousandsSeparator": ",",
+      "decimalSeparator": ".",
+      "dateFormat": "mm/dd/yyyy",
+      "timeFormat": "hh:mm:ss",
+      "formulaArgSeparator": ",",
+      "weekStart": 7
+    }
+  },
+  "pivots": {
+    "1": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "1", "formulaId": "1",
+      "name": "KPI - Gross Revenue",
+      "domain": [["amount", ">", 0]],
+      "rows": [], "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": 0 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": null
+    },
+    "2": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "2", "formulaId": "2",
+      "name": "KPI - Cash Revenue",
+      "domain": ["&", ["amount", ">", 0], ["journal_id.type", "=", "cash"]],
+      "rows": [], "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": 0 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": null
+    },
+    "3": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "3", "formulaId": "3",
+      "name": "KPI - Card Revenue",
+      "domain": ["&", ["amount", ">", 0], ["journal_id.type", "=", "bank"]],
+      "rows": [], "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": 0 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": null
+    },
+    "4": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "4", "formulaId": "4",
+      "name": "KPI - Deductions",
+      "domain": [["amount", "<", 0]],
+      "rows": [], "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": 0 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": null
+    },
+    "5": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "5", "formulaId": "5",
+      "name": "KPI - Deductions2",
+      "domain": [["amount", "<", 0]],
+      "rows": [], "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": 0 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": null
+    },
+    "6": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "6", "formulaId": "6",
+      "name": "Revenue by Payment Method",
+      "domain": [["amount", ">", 0]],
+      "rows": [{ "fieldName": "payment_method_id" }],
+      "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": 0 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": { "groupId": [[], []], "measure": "amount", "order": "desc" }
+    },
+    "7": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "7", "formulaId": "7",
+      "name": "Monthly Revenue",
+      "domain": [["amount", ">", 0]],
+      "rows": [{ "fieldName": "date", "granularity": "month" }],
+      "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": 0 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": null
+    },
+    "8": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "8", "formulaId": "8",
+      "name": "Deductions Detail",
+      "domain": [["amount", "<", 0]],
+      "rows": [{ "fieldName": "general_account_id" }],
+      "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": 0 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": { "groupId": [[], []], "measure": "amount", "order": "asc" }
+    },
+    "9": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "9", "formulaId": "9",
+      "name": "Stats Current",
+      "domain": [["amount", ">", 0]],
+      "rows": [], "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": 0 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": null
+    },
+    "10": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "10", "formulaId": "10",
+      "name": "Stats Previous",
+      "domain": [["amount", ">", 0]],
+      "rows": [], "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": -1 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": null
+    },
+    "11": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "11", "formulaId": "11",
+      "name": "Thiqa Revenue",
+      "domain": ["&", ["amount", ">", 0], ["payment_method_id.payment_category", "=", "thiqa"]],
+      "rows": [], "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": 0 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": null
+    },
+    "12": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "12", "formulaId": "12",
+      "name": "Cash Revenue",
+      "domain": ["&", ["amount", ">", 0], ["payment_method_id.payment_category", "=", "cash"]],
+      "rows": [], "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": 0 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": null
+    },
+    "13": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "13", "formulaId": "13",
+      "name": "Visa/Card Revenue",
+      "domain": ["&", ["amount", ">", 0],["payment_method_id.payment_category", "=", "visa"]],
+      "rows": [], "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": 0 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": null
+    },
+    "14": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "14", "formulaId": "14",
+      "name": "3rd Party Revenue",
+      "domain": ["&", ["amount", ">", 0], ["payment_method_id.payment_category", "=", "third_party"]],
+      "rows": [], "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": 0 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": null
+    },
+    "15": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "15", "formulaId": "15",
+      "name": "Thiqa Revenue (Prev)",
+      "domain": ["&", ["amount", ">", 0], ["payment_method_id.payment_category", "=", "thiqa"]],
+      "rows": [], "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": -1 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": null
+    },
+    "16": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "16", "formulaId": "16",
+      "name": "Cash Revenue (Prev)",
+      "domain": ["&", ["amount", ">", 0], ["payment_method_id.payment_category", "=", "cash"]],
+      "rows": [], "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": -1 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": null
+    },
+    "17": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "17", "formulaId": "17",
+      "name": "Visa/Card Revenue (Prev)",
+      "domain": ["&", ["amount", ">", 0], ["payment_method_id.payment_category", "=", "visa"]],
+      "rows": [], "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": -1 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": null
+    },
+    "18": {
+      "type": "ODOO", "model": "account.analytic.line", "id": "18", "formulaId": "18",
+      "name": "3rd Party Revenue (Prev)",
+      "domain": ["&", ["amount", ">", 0],["payment_method_id.payment_category", "=", "third_party"]],
+      "rows": [], "columns": [],
+      "measures": [{ "id": "amount", "fieldName": "amount" }],
+      "context": {},
+      "fieldMatching": {
+        "a1b2c3d4-0001-0001-0001-000000000001": { "chain": "date", "type": "date", "offset": -1 },
+        "a1b2c3d4-0002-0002-0002-000000000002": { "chain": "auto_account_id", "type": "relation" },
+        "a1b2c3d4-0003-0003-0003-000000000003": { "chain": "payment_method_id", "type": "relation" },
+        "a1b2c3d4-0004-0004-0004-000000000004": { "chain": "auto_account_id.plan_id", "type": "relation" },
+        "a1b2c3d4-0005-0005-0005-000000000005": { "chain": "general_account_id", "type": "relation" }
+      },
+      "sortedColumn": null
+    }
+  },
+  "pivotNextId": 19,
+  "customTableStyles": {},
+  "odooVersion": 12,
+  "globalFilters": [
+    {
+      "id": "a1b2c3d4-0001-0001-0001-000000000001",
+      "type": "date",
+      "label": "Period",
+      "rangeType": "from_to",
+      "defaultValue": {
+        "from": "2025-01-01",
+        "to": "2025-12-31"
+      }
+    },
+    { "id": "a1b2c3d4-0002-0002-0002-000000000002", "type": "relation", "label": "Analytic Account", "modelName": "account.analytic.account", "defaultValue": [], "defaultValueDisplayNames": [] },
+    { "id": "a1b2c3d4-0003-0003-0003-000000000003", "type": "relation", "label": "Payment Method", "modelName": "account.payment.method.line", "defaultValue": [], "defaultValueDisplayNames": [] },
+    { "id": "a1b2c3d4-0004-0004-0004-000000000004", "type": "relation", "label": "Analytic Plan", "modelName": "account.analytic.plan", "defaultValue": [], "defaultValueDisplayNames": [] },
+    { "id": "a1b2c3d4-0005-0005-0005-000000000005", "type": "relation", "label": "Financial Account", "modelName": "account.account", "defaultValue": [], "defaultValueDisplayNames": [] }
+  ],
+  "lists": {},
+  "listNextId": 1,
+  "chartOdooMenusReferences": {}
+}

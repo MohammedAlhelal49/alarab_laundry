@@ -1,0 +1,14 @@
+<odoo>
+    <record id="whatsapp_quotation_template" model="whatsapp.template">
+        <field name="name">Default Quotation Template</field>
+        <field name="message">
+            Hello {{partner_name}},
+
+            Your quotation {{quotation_name}} is ready.
+
+            You can view it here: {{quotation_link}}
+
+            Thank you!
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form view: add a stat button in the button box, next to Tasks -->
+    <record id="project_project_view_form_gmr" model="ir.ui.view">
+        <field name="name">project.project.form.gmr</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']/button[@name='action_view_tasks']" position="after">
+                <button class="oe_stat_button" type="object" name="action_view_material_requests"
+                        icon="fa-shopping-cart" groups="base.group_user">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="material_request_count"/>
+                        </span>
+                        <span class="o_stat_text">Material Requests</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Kanban view: add a box in the footer, next to the Tasks/Milestones boxes -->
+    <record id="project_project_view_kanban_gmr" model="ir.ui.view">
+        <field name="name">project.project.kanban.gmr</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='allow_milestones']" position="after">
+                <field name="material_request_count"/>
+            </xpath>
+            <xpath expr="//div[hasclass('o_project_kanban_boxes')]" position="inside">
+                <a t-if="record.material_request_count.raw_value &gt; 0"
+                   class="o_project_kanban_box me-1" role="button"
+                   name="action_view_material_requests" type="object"
+                   t-attf-title="#{record.material_request_count.value} Material Requests">
+                    <div>
+                        <field name="material_request_count" class="o_value"/>
+                        <span class="fa fa-shopping-cart ms-1" aria-label="Material Requests" title="Material Requests"/>
+                    </div>
+                </a>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

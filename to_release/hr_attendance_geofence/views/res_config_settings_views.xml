@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Extend Attendance Settings: Add Geofence Enforcement toggle -->
+    <record id="res_config_settings_view_form_inherit_geofence" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.geofence</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="hr_attendance.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='kiosk_mode_setting_container']" position="inside">
+                <setting string="Geofence Enforcement" company_dependent="1"
+                         help="When enabled, employees with assigned geofence zones must be inside a zone to check-in/check-out. GPS coordinates are validated server-side.">
+                    <field name="attendance_geofence_enabled"/>
+                    <div invisible="not attendance_geofence_enabled" class="mt-2">
+                        <button type="action" name="%(hr_attendance_geofence.action_geofence_zone)d"
+                                string="Manage Geofence Zones" class="btn-link" icon="fa-map-marker"/>
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

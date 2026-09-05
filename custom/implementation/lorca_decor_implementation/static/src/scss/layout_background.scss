@@ -1,0 +1,85 @@
+
+.custom-header-holder {
+
+
+
+    .image-holder {
+
+
+
+    }
+.header-content {
+
+.colored-icons {
+ background: #af944e;
+    padding: 5px 5px;
+    border-radius: 3px;
+    margin-right: 3px;
+    display: inline-block;
+    color: white;
+
+    }
+
+.address {
+    display : inline-block;
+
+    }
+
+text-align : right;
+padding-right : 50px;
+
+    }
+
+.logo {
+            max-width: 150px;
+
+    }
+    }
+
+.custom-footer-holder {
+border-top: 1px double #dbdbdb;
+     padding-top: 15px;
+    }
+.header-border {
+
+    padding-bottom: 15px;
+    border-bottom: 4px double #edddb5;
+    }
+
+
+
+.article[data-oe-model="account.move"] {
+    .hide-in-accounting-report{
+    display :none !important;
+    }
+    }
+
+
+
+.customer-info-block {
+
+    .vat {
+    font-weight: bold;
+    font-size: 22px;
+    color: #303030;
+        }
+    }
+
+
+#informations {
+
+    background : white !important;
+    border :  none !important;
+    }
+
+.o_company_1_layout #informations strong {
+    color: inherit !important;
+}
+
+.additional-client-info {
+
+        padding: 10px;
+    background: rgba(233, 236, 239, 0.5);;
+    border: 1px solid #d9d9d9;
+    margin-bottom: 20px;
+    }

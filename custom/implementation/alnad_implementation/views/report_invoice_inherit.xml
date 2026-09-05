@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_invoice_document_inherit_customer_label"
+                  inherit_id="account.report_invoice_document">
+            <!-- ============================= -->
+            <!-- NO SHIPPING CASE -->
+            <!-- ============================= -->
+            <xpath expr="//span[@t-field='line.product_uom_id']"
+                   position="replace">
+                <!-- removed UoM -->
+            </xpath>
+
+            <xpath expr="//div[@name='no_shipping']//address"
+                   position="replace">
+
+                <div class="mb-2">
+                    <strong>Customer Info</strong>
+                </div>
+
+                <div>
+                    <strong>Name:</strong>
+                    <span t-field="o.partner_id.name"/>
+                </div>
+                <div t-if="o.partner_id.mobile or o.partner_id.phone">
+                    <strong>Contact:</strong>
+
+                    <t t-if="o.partner_id.mobile">
+                        <span t-field="o.partner_id.mobile"/>
+                    </t>
+
+                    <t t-if="o.partner_id.mobile and o.partner_id.phone">
+                        <span> / </span>
+                    </t>
+
+                    <t t-if="o.partner_id.phone">
+                        <span t-field="o.partner_id.phone"/>
+                    </t>
+                </div>
+
+                <div style="display:flex;">
+                    <strong style="min-width:90px;">Address:</strong>
+                    <span t-field="o.partner_id"
+                          t-options='{
+                                "widget": "contact",
+                                "fields": ["address"],
+                                "no_marker": True
+                          }'/>
+                </div>
+
+            </xpath>
+
+
+            <!-- ============================= -->
+            <!-- SHIPPING = INVOICE ADDRESS -->
+            <!-- ============================= -->
+
+            <xpath expr="//div[@name='address_same_as_shipping']//address"
+                   position="replace">
+
+                <div class="mb-2">
+                    <strong>Customer Info</strong>
+                </div>
+
+                <div>
+                    <strong>Name:</strong>
+                    <span t-field="o.partner_id.name"/>
+                </div>
+
+                <div t-if="o.partner_id.mobile or o.partner_id.phone">
+                    <strong>Contact:</strong>
+
+                    <t t-if="o.partner_id.mobile">
+                        <span t-field="o.partner_id.mobile"/>
+                    </t>
+
+                    <t t-if="o.partner_id.mobile and o.partner_id.phone">
+                        <span> / </span>
+                    </t>
+
+                    <t t-if="o.partner_id.phone">
+                        <span t-field="o.partner_id.phone"/>
+                    </t>
+                </div>
+
+                <div style="display:flex;max-width:400px;">
+                    <strong style="min-width:90px;">Address:</strong>
+                     <span t-esc="', '.join(filter(None, [
+                        o.partner_id.street,
+                        o.partner_id.street2,
+                        o.partner_id.city,
+                        o.partner_id.state_id.name if o.partner_id.state_id else '',
+                        o.partner_id.zip,
+                        o.partner_id.country_id.name if o.partner_id.country_id else ''
+                    ]))"/>
+                </div>
+            </xpath>
+
+
+            <!-- ============================= -->
+            <!-- SHIPPING DIFFERENT -->
+            <!-- ============================= -->
+
+            <xpath expr="//div[@name='address_not_same_as_shipping']//address"
+                   position="replace">
+
+                <div class="mb-2">
+                    <strong>Customer Info</strong>
+                </div>
+
+                <div>
+                    <strong>Name:</strong>
+                    <span t-field="o.partner_id.name"/>
+                </div>
+                <div t-if="o.partner_id.mobile or o.partner_id.phone">
+                    <strong>Contact:</strong>
+
+                    <t t-if="o.partner_id.mobile">
+                        <span t-field="o.partner_id.mobile"/>
+                    </t>
+
+                    <t t-if="o.partner_id.mobile and o.partner_id.phone">
+                        <span> / </span>
+                    </t>
+
+                    <t t-if="o.partner_id.phone">
+                        <span t-field="o.partner_id.phone"/>
+                    </t>
+                </div>
+                <div style="display:flex;">
+                    <strong style="min-width:90px;">Address:</strong>
+                    <span t-field="o.partner_id"
+                          t-options='{
+                                "widget": "contact",
+                                "fields": ["address"],
+                                "no_marker": True
+                          }'/>
+                </div>
+
+            </xpath>
+
+
+
+            <!-- Insert signature at the end of the invoice page -->
+            <xpath expr="//div[@id='payment_term']" position="after">
+                <div style="margin-top:25px; margin-bottom:20px; clear:both; font-size:13px;">
+                    <ul style="padding-right:18px; direction:rtl; text-align:right;">
+                        <li>البضاعة المستلمة في حالة جيدة .</li>
+                        <li>
+                            في حال وجود اي استفسار يرجى التواصل عبر رقم الاتصال أو الواتساب الموضح في الفاتورة،
+                            أو ايميل الشركة الرسمي .
+                        </li>
+                    </ul>
+                </div>
+
+                <t t-set="sale_orders"
+                   t-value="o.invoice_line_ids.mapped('sale_line_ids.order_id')"/>
+
+                <t t-set="so"
+                   t-value="sale_orders.filtered(lambda s: s.signature)[:1]"/>
+
+                <t t-if="so">
+                    <div class="mt-5" style="clear:both;">
+                        <div class="row justify-content-center">
+
+                            <div class="col-4 text-start">
+                                <strong style="text-decoration: underline;">
+                                    مصنع الند Al Nad Factory
+                                </strong>
+                            </div>
+
+                            <div class="col-4 text-end">
+                                <strong style="text-decoration: underline;">
+                                    توقيع العميل Customer Signature
+                                </strong>
+                                <br/>
+                                <img t-att-src="'data:image/png;base64,%s' % so.signature"
+                                     style="max-height:120px; max-width:250px;"/>
+                                <br/>
+                                <span t-if="so.signed_by">
+                                    <t t-esc="so.signed_by"/>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </t>
+            </xpath>
+
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ============================================================ -->
+    <!-- CSRF META TAG - إضافة للـ header -->
+    <!-- ============================================================ -->
+    <template id="csrf_meta_tag" inherit_id="website.layout" name="CSRF Meta Tag">
+        <xpath expr="//head" position="inside">
+            <!-- ✅ CSRF Token Meta Tag للـ JavaScript -->
+            <meta name="csrf-token" t-att-content="request.csrf_token()"/>
+        </xpath>
+    </template>
+
+    <!-- ============================================================ -->
+    <!-- POP-UP MODAL TEMPLATE (Multi-Language Dynamic) -->
+    <!-- ============================================================ -->
+    <template id="popup_offer_modal" name="Pop-up Offer Modal">
+        <!-- Modal Structure -->
+        <div id="offerPopup"
+             class="modal fade"
+             tabindex="-1"
+             data-bs-backdrop="static"
+             data-bs-keyboard="false"
+             style="display: none;">
+
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content" style="border-radius: 24px; overflow: hidden; border: none; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+
+                    <!-- Close Button -->
+                    <button type="button"
+                            class="btn-close position-absolute"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                            style="top: 20px; right: 20px; z-index: 1000; background: white; border-radius: 50%; padding: 10px; opacity: 1; box-shadow: 0 2px 10px rgba(0,0,0,0.2);"/>
+
+                    <!-- Header with Gradient -->
+                    <div id="popupHeader" class="hero-section text-center py-5" style="position: relative; overflow: hidden;">
+                        <!-- Animated Background Elements -->
+                        <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%; animation: float 6s infinite;"/>
+                        <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: rgba(255,255,255,0.08); border-radius: 50%; animation: float 8s infinite reverse;"/>
+
+                        <div class="container position-relative">
+                            <!-- Badge -->
+                            <div class="mb-4">
+                                <span id="offerBadge" class="badge" style="font-size: 0.9rem; padding: 0.5rem 1.5rem; border-radius: 50px; box-shadow: 0 4px 15px rgba(255,107,107,0.4); animation: glow 2s infinite;">
+                                    <i class="fa fa-fire me-2"/>
+                                    <span id="badgeText"><!-- Dynamic --></span>
+                                </span>
+                            </div>
+
+                            <div class="animate-scale">
+                                <!-- Icon -->
+                                <div class="mb-4">
+                                    <i id="offerIcon" class="fa fa-gift" style="font-size: 5rem; color: white; animation: float 3s infinite;"/>
+                                </div>
+
+                                <!-- Title (Dynamic) -->
+                                <h1 id="offerTitle" class="fw-bold mb-3" style="color: white; font-size: 2.5rem; text-shadow: 0 2px 20px rgba(0,0,0,0.2);">
+                                    <!-- Dynamic Title -->
+                                </h1>
+
+                                <!-- Subtitle (Dynamic) -->
+                                <h2 id="offerSubtitle" class="fw-bold mb-4" style="color: white; font-size: 2rem;">
+                                    <!-- Dynamic Subtitle -->
+                                </h2>
+
+                                <!-- Description (Dynamic) -->
+                                <p id="offerDescription" class="lead mb-4" style="color: white; opacity: 0.95;">
+                                    <!-- Dynamic Description -->
+                                </p>
+
+                                <!-- Countdown Timer -->
+                                <div id="countdownContainer" class="mb-3" style="display: none;">
+                                    <p id="countdownTitle" style="color: white; font-size: 1.1rem; margin-bottom: 0.5rem;">
+                                        <i class="fa fa-clock me-2"/>
+                                        <!-- Dynamic -->
+                                    </p>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <div class="glass-card px-3 py-2" style="min-width: 60px;">
+                                            <div id="countdownDays" style="color: white; font-size: 1.5rem; font-weight: bold;">00</div>
+                                            <small id="daysLabel" style="color: rgba(255,255,255,0.8);"><!-- Dynamic --></small>
+                                        </div>
+                                        <div class="glass-card px-3 py-2" style="min-width: 60px;">
+                                            <div id="countdownHours" style="color: white; font-size: 1.5rem; font-weight: bold;">00</div>
+                                            <small id="hoursLabel" style="color: rgba(255,255,255,0.8);"><!-- Dynamic --></small>
+                                        </div>
+                                        <div class="glass-card px-3 py-2" style="min-width: 60px;">
+                                            <div id="countdownMins" style="color: white; font-size: 1.5rem; font-weight: bold;">00</div>
+                                            <small id="minsLabel" style="color: rgba(255,255,255,0.8);"><!-- Dynamic --></small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Social Proof (Dynamic) -->
+                                <p class="lead mb-0" style="color: white; opacity: 0.95;">
+                                    <i class="fa fa-users me-2"/>
+                                    <span id="socialProofText"><!-- Dynamic --></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="modal-body p-5" style="background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);">
+
+                        <!-- Form Container -->
+                        <div id="formContainer">
+                            <div class="text-center mb-4">
+                                <h4 id="formTitle" class="fw-bold mb-3" style="color: #1a5490;">
+                                    <i class="fa fa-rocket me-2" style="color: #ffd93d;"/>
+                                    <!-- Dynamic -->
+                                </h4>
+                                <p id="formSubtitle" class="text-muted">
+                                    <!-- Dynamic -->
+                                </p>
+                            </div>
+
+                            <!-- Form with CSRF Token -->
+                            <form id="popupForm" class="needs-validation" novalidate="">
+                                <!-- ✅ CSRF Token Hidden Field -->
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <input type="hidden" id="offerId" name="offer_id" value=""/>
+
+                                <!-- Name Field -->
+                                <div class="mb-4">
+                                    <label for="popupName" class="form-label fw-semibold">
+                                        <i class="fa fa-user text-primary me-2"/>
+                                        <span id="nameLabel"><!-- Dynamic --></span>
+                                        <span style="color: #ff6b6b;">*</span>
+                                    </label>
+                                    <input type="text"
+                                           class="form-control form-control-lg"
+                                           id="popupName"
+                                           name="name"
+                                           required=""
+                                           style="border-radius: 12px; border: 2px solid #e5e7eb;"/>
+                                    <div class="invalid-feedback">
+                                        <i class="fa fa-exclamation-circle me-1"/>
+                                    </div>
+                                </div>
+
+                                <!-- Phone Field -->
+                                <div class="mb-4">
+                                    <label for="popupPhone" class="form-label fw-semibold">
+                                        <i class="fa fa-phone text-primary me-2"/>
+                                        <span id="phoneLabel"><!-- Dynamic --></span>
+                                        <span style="color: #ff6b6b;">*</span>
+                                    </label>
+                                    <input type="tel"
+                                           class="form-control form-control-lg"
+                                           id="popupPhone"
+                                           name="phone"
+                                           required=""
+                                           style="border-radius: 12px; border: 2px solid #e5e7eb;"/>
+                                    <div class="invalid-feedback">
+                                        <i class="fa fa-exclamation-circle me-1"/>
+                                    </div>
+                                </div>
+
+                                <!-- Terms (Dynamic) -->
+                                <div id="termsContainer" class="mb-4" style="display: none;">
+                                    <div class="p-3" style="background: #fef3c7; border-radius: 12px; border-left: 4px solid #fbbf24;">
+                                        <small>
+                                            <i class="fa fa-info-circle me-2" style="color: #f59e0b;"/>
+                                            <span id="termsText"></span>
+                                        </small>
+                                    </div>
+                                </div>
+
+                                <!-- Buttons -->
+                                <div class="d-grid gap-2">
+                                    <button type="submit"
+                                            class="btn btn-lg"
+                                            id="submitBtn"
+                                            style="background: linear-gradient(135deg, #1a5490, #2d6cb3); color: white; border: none; border-radius: 12px; padding: 1rem; font-weight: 600; box-shadow: 0 4px 15px rgba(26,84,144,0.3);">
+                                        <i class="fa fa-rocket me-2"/>
+                                        <!-- Dynamic -->
+                                    </button>
+                                    <button type="button"
+                                            class="btn btn-outline-secondary btn-lg"
+                                            data-bs-dismiss="modal"
+                                            style="border-radius: 12px; border: 2px solid #e5e7eb;">
+                                        <i class="fa fa-times me-2"/>
+                                        <span id="closeBtnText"><!-- Dynamic --></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Success Message (Hidden by default) -->
+                        <div id="popupSuccess" class="text-center" style="display: none;">
+                            <div class="mb-4">
+                                <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #4ade80, #22c55e); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; animation: scaleUp 0.5s ease-out;">
+                                    <i class="fa fa-check" style="font-size: 3rem; color: white;"/>
+                                </div>
+                            </div>
+                            <h3 id="successTitle" class="fw-bold mb-3" style="color: #1a5490;">
+                                <!-- Dynamic -->
+                            </h3>
+                            <p id="successMessage" class="lead mb-4">
+                                <!-- Dynamic with {name} replaced -->
+                            </p>
+                            <div class="d-grid gap-2">
+                                <a href="/courses" class="btn btn-primary btn-lg" style="border-radius: 12px;">
+                                    <i class="fa fa-book-open me-2"/>
+                                    <span id="browseCoursesBtnText">Browse Our Courses</span>
+                                </a>
+                                <button type="button" class="btn btn-outline-secondary btn-lg" data-bs-dismiss="modal" style="border-radius: 12px;">
+                                    <span id="closeSuccessBtnText">Close</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Trust Badges -->
+                        <div class="text-center mt-4 pt-4" style="border-top: 1px solid #e5e7eb;">
+                            <small class="text-muted">
+                                <i class="fa fa-shield-alt me-2" style="color: #4ade80;"/>
+                                <span id="trustText"><!-- Dynamic --></span>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Styles for RTL/LTR Support -->
+        <style>
+            /* RTL Support */
+            #offerPopup[dir="rtl"] .me-2 {
+                margin-right: 0 !important;
+                margin-left: 0.5rem !important;
+            }
+
+            #offerPopup[dir="rtl"] .form-control,
+            #offerPopup[dir="rtl"] .form-label {
+                text-align: right;
+            }
+
+            #offerPopup[dir="rtl"] .fa {
+                margin-left: 0.5rem;
+                margin-right: 0;
+            }
+
+            #offerPopup[dir="rtl"] .btn i {
+                margin-left: 0.5rem;
+                margin-right: 0;
+            }
+
+            /* LTR Support */
+            #offerPopup[dir="ltr"] .form-control,
+            #offerPopup[dir="ltr"] .form-label {
+                text-align: left;
+            }
+
+            /* Glass Card Effect */
+            .glass-card {
+                background: rgba(255, 255, 255, 0.15);
+                backdrop-filter: blur(10px);
+                border-radius: 12px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            /* Animations */
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+            }
+
+            @keyframes glow {
+                0%, 100% { box-shadow: 0 4px 15px rgba(255,107,107,0.4); }
+                50% { box-shadow: 0 4px 25px rgba(255,107,107,0.6); }
+            }
+
+            @keyframes scaleUp {
+                0% { transform: scale(0); opacity: 0; }
+                100% { transform: scale(1); opacity: 1; }
+            }
+
+            @keyframes slideIn {
+                0% { transform: translateX(100px); opacity: 0; }
+                100% { transform: translateX(0); opacity: 1; }
+            }
+
+            /* Hero Section Default Gradient */
+            .hero-section {
+                background: linear-gradient(135deg, #1a5490 0%, #2d6cb3 50%, #4a90c2 100%);
+            }
+
+            /* Form Validation States */
+            .form-control.is-valid {
+                border-color: #4ade80 !important;
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%234ade80' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+            }
+
+            .form-control.is-invalid {
+                border-color: #ff6b6b !important;
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+                #offerPopup .modal-dialog {
+                    margin: 0.5rem;
+                }
+
+                #offerPopup .modal-body {
+                    padding: 1.5rem !important;
+                }
+
+                #offerPopup h1 {
+                    font-size: 1.75rem !important;
+                }
+
+                #offerPopup h2 {
+                    font-size: 1.5rem !important;
+                }
+
+                .glass-card {
+                    padding: 0.5rem !important;
+                    min-width: 50px !important;
+                }
+            }
+        </style>
+    </template>
+
+    <!-- ============================================================ -->
+    <!-- INCLUDE POP-UP IN ALL PAGES -->
+    <!-- ============================================================ -->
+    <template id="popup_include" inherit_id="website.layout" name="Include Pop-up">
+        <xpath expr="//body" position="inside">
+            <t t-call="alomran_theme.popup_offer_modal"/>
+        </xpath>
+    </template>
+</odoo>

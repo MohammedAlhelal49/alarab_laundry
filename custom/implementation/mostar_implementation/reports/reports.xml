@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--record id="action_report_sale_order_lines_per_page" model="ir.actions.report">
+        <field name="name">Sale Order Lines (Page Separated)</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">mostar_implementation.report_sale_order_lines_main</field>
+        <field name="report_file">mostar_implementation.report_sale_order_lines_main</field>
+        <field name="print_report_name">'Line Sheet - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+    </record-->
+
+    <record id="action_report_ticket_voucher" model="ir.actions.report">
+        <field name="name">Ticket Voucher</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">mostar_implementation.report_ticket_voucher</field>
+        <field name="report_file">mostar_implementation.report_ticket_voucher</field>
+        <field name="print_report_name">'Ticket Voucher - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_hotel_voucher" model="ir.actions.report">
+        <field name="name">Hotel Voucher</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">mostar_implementation.report_hotel_voucher</field>
+        <field name="report_file">mostar_implementation.report_hotel_voucher</field>
+        <field name="print_report_name">'Hotel Voucher - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_transportation_voucher" model="ir.actions.report">
+        <field name="name">Transportation Voucher</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">mostar_implementation.report_transportation_voucher</field>
+        <field name="report_file">mostar_implementation.report_transportation_voucher</field>
+        <field name="print_report_name">'Transportation Voucher - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_package_voucher" model="ir.actions.report">
+        <field name="name">Package Voucher</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">mostar_implementation.report_package_voucher</field>
+        <field name="report_file">mostar_implementation.report_package_voucher</field>
+        <field name="print_report_name">'Package Voucher - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

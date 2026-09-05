@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t
+        t-inherit="point_of_sale.ControlButtons"
+        t-inherit-mode="extension"
+    >
+
+        <xpath
+            expr="//button[contains(@class,'o_fiscal_position_button')]"
+            position="after"
+        >
+
+            <button
+                t-if="pos.config.enable_additional_charge"
+                class="btn btn-secondary btn-lg py-5"
+                t-on-click="() => this.clickAdditionalCharge()"
+            >
+
+                <i
+                    class="fa fa-plus-circle me-1"
+                    role="img"
+                    aria-label="Additional Charge"
+                    title="Additional Charge"
+                />
+
+                Additional Charge
+
+            </button>
+
+        </xpath>
+
+    </t>
+
+</templates>

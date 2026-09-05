@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ticket_passenger,ticket.passenger.user,model_ticket_passenger,sales_team.group_sale_salesman,1,1,1,1
+access_bag_type,bag.type,model_bag_type,base.group_user,1,1,1,1
+access_bag_weight,bag.weight,model_bag_weight,base.group_user,1,1,1,1
+access_hotel_room_detail,hotel.room.detail,model_hotel_room_detail,base.group_user,1,1,1,1
+access_transportation_location,transportation.location,model_transportation_location,base.group_user,1,1,1,1
+access_transportation_vehicle_type,transportation.vehicle.type,model_transportation_vehicle_type,base.group_user,1,1,1,1
+access_tour_tour,name_tour_tour,model_tour_tour,base.group_user,1,1,1,1
+access_tour_hotel,name_tour_hotel,model_tour_hotel,base.group_user,1,1,1,1

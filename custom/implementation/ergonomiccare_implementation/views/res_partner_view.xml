@@ -1,0 +1,95 @@
+<odoo>
+        <record id="view_partner_form_duplicate_warning" model="ir.ui.view">
+            <field name="name">res.partner.form.duplicate.warning</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+
+                <!-- Duplicate Name Warning -->
+                <xpath expr="//div[@name='warning_tax']" position="after">
+                    <div class="alert alert-warning oe_edit_only"
+                         name="warning_name"
+                         invisible="not same_name_partner_id">
+
+                        A contact with the same <strong>Name</strong> already exists:
+                        <field name="same_name_partner_id"
+                               context="{'show_address': False, 'show_vat': False}"/>,
+                        are you sure you want to create a new one?
+
+                    </div>
+                </xpath>
+
+                <!-- Duplicate Phone/Mobile Warning -->
+                <xpath expr="//div[@name='warning_tax']" position="after">
+                    <div class="alert alert-warning oe_edit_only"
+                         name="warning_contact"
+                         invisible="not same_contact_partner_id">
+
+                        A partner with the same
+                        <strong>
+                            <span>
+                                <field name="contact_conflict_label"/>
+                            </span>
+                        </strong>
+                        already exists:
+                        <field name="same_contact_partner_id"
+                               context="{'show_address': False, 'show_vat': False}"/>,
+                        are you sure you want to create a new one?
+
+                    </div>
+                </xpath>
+                <xpath expr="//div[@name='warning_tax']" position="after">
+                    <div class="alert alert-warning oe_edit_only"
+                         name="warning_mrn"
+                         invisible="not same_mrn_partner_id">
+
+                        A partner with the same
+                        <strong>MRN</strong>
+                        already exists:
+                        <field name="same_mrn_partner_id"
+                               context="{'show_address': False, 'show_vat': False}"/>,
+                        are you sure you want to create a new one?
+
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit the contact (res.partner) form view -->
+        <record id="view_partner_form_mrn" model="ir.ui.view">
+            <field name="name">res.partner.form.mrn</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+
+                <!-- Add MRN field after the name field -->
+                <field name="vat" position="after">
+                    <field name="mrn"/>
+                    <field name="theqa_no"/>
+                </field>
+
+            </field>
+        </record>
+
+        <record id="view_move_form_inherit_claim_fields" model="ir.ui.view">
+          <field name="name">account.move.form.claim.fields</field>
+          <field name="model">account.move</field>
+          <field name="inherit_id" ref="account.view_move_form"/>
+          <field name="arch" type="xml">
+
+                <xpath expr="//group[@id='header_left_group']/div[@class='o_col']" position="after">
+
+                    <field name="patient_id" readonly="1"/>
+                      <field name="claim_number" />
+                    <field name="lpo_number"
+                           invisible="lpo_authorization_type != 'lpo'"
+                    />
+
+                    <!-- Authorization Field -->
+                    <field name="authorization_number"
+                           invisible="lpo_authorization_type != 'authorization'"
+                    />
+                </xpath>
+          </field>
+        </record>
+</odoo>

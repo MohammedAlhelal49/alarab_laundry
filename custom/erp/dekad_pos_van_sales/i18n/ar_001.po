@@ -1,0 +1,240 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_pos_van_sales
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-10 09:15+0000\n"
+"PO-Revision-Date: 2026-01-10 09:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_pos_van_sales
+#: model:ir.actions.act_window,name:dekad_pos_van_sales.action_assign_van
+#: model:ir.ui.menu,name:dekad_pos_van_sales.van_assignment_assign_menu
+#: model_terms:ir.ui.view,arch_db:dekad_pos_van_sales.view_van_assignment_form
+msgid "Assign Van to Customers"
+msgstr "تعيين فان للعملاء"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model,name:dekad_pos_van_sales.model_van_assignment_customer
+msgid "Assigned Customer to Van"
+msgstr "عميل معين للفان"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment_customer__assignment_id
+msgid "Assignment"
+msgstr "التعيين"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment_customer__city
+msgid "City"
+msgstr "المدينة"
+
+#. module: dekad_pos_van_sales
+#: model:ir.ui.menu,name:dekad_pos_van_sales.van_assignment_config_menu
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model,name:dekad_pos_van_sales.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment_customer__country_id
+msgid "Country"
+msgstr "الدولة"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment__create_uid
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment_customer__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment__create_date
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment_customer__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment_customer__partner_id
+msgid "Customer"
+msgstr "العميل"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment__customer_ids
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment__customer_names
+msgid "Customers"
+msgstr "العملاء"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment__display_name
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment_customer__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment__driver_id
+msgid "Driver"
+msgstr "السائق"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,help:dekad_pos_van_sales.field_van_assignment__driver_id
+msgid "Driver address of the vehicle"
+msgstr "عنوان سائق المركبة"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment_customer__email
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: dekad_pos_van_sales
+#: model_terms:ir.ui.view,arch_db:dekad_pos_van_sales.view_pos_config_form_inherit_van_sales
+msgid "Enable Van Sales for POS and assign a vehicle"
+msgstr "تفعيل مبيعات الفان لنقطة البيع وتعيين مركبة"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,help:dekad_pos_van_sales.field_pos_config__is_van_sales
+msgid "Enable Van Sales for this POS"
+msgstr "تفعيل مبيعات الفان لنقطة البيع هذه"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_pos_config__fleet_vehicle_id
+msgid "Fleet Vehicle"
+msgstr "مركبة الأسطول"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment__id
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment_customer__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,help:dekad_pos_van_sales.field_fleet_vehicle__is_van_sale
+msgid "If checked, restrict driver selection to contacts linked to users."
+msgstr "إذا تم تحديده، قصر اختيار السائق على جهات الاتصال المرتبطة بالمستخدمين."
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_fleet_vehicle__is_van_sale
+msgid "Is Van Sale"
+msgstr "هل هي مبيعات فان"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_pos_config__is_van_sales
+#: model_terms:ir.ui.view,arch_db:dekad_pos_van_sales.view_pos_config_form_inherit_van_sales
+msgid "Is Van Sales"
+msgstr "هل هي مبيعات فان"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment__write_uid
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment_customer__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment__write_date
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment_customer__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: dekad_pos_van_sales
+#: model:ir.actions.act_window,name:dekad_pos_van_sales.action_my_customers_kanban
+#: model:ir.ui.menu,name:dekad_pos_van_sales.menu_my_customers_kanban
+msgid "My Customers"
+msgstr "عملائي"
+
+#. module: dekad_pos_van_sales
+#: model_terms:ir.actions.act_window,help:dekad_pos_van_sales.action_my_customers_kanban
+msgid "No customers assigned to your van yet."
+msgstr "لا توجد عملاء معينين لفانك بعد."
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment_customer__phone
+msgid "Phone"
+msgstr "الهاتف"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model,name:dekad_pos_van_sales.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "تهيئة نقطة البيع"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model,name:dekad_pos_van_sales.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "طلبات نقطة البيع"
+
+#. module: dekad_pos_van_sales
+#: model:ir.ui.menu,name:dekad_pos_van_sales.van_assignment_report_menu
+msgid "Reports"
+msgstr "التقارير"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment_customer__user_id
+msgid "Salesperson"
+msgstr "مندوب المبيعات"
+
+#. module: dekad_pos_van_sales
+#: model_terms:ir.ui.view,arch_db:dekad_pos_van_sales.view_pos_config_form_inherit_van_sales
+msgid "Select a fleet vehicle"
+msgstr "اختر مركبة من الأسطول"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,help:dekad_pos_van_sales.field_pos_config__fleet_vehicle_id
+msgid "Select the vehicle for Van Sales"
+msgstr "اختر المركبة لمبيعات الفان"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,help:dekad_pos_van_sales.field_van_assignment_customer__user_id
+msgid "The internal user in charge of this contact."
+msgstr "المستخدم الداخلي المسؤول عن جهة الاتصال هذه."
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.constraint,message:dekad_pos_van_sales.constraint_van_assignment_unique_van
+msgid "This van is already assigned. Duplicate vans are not allowed."
+msgstr "هذا الفان معين مسبقًا. لا يُسمح بتكرار الفانات."
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_van_assignment__van_id
+msgid "Van"
+msgstr "الفان"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model,name:dekad_pos_van_sales.model_van_assignment
+msgid "Van Assignment"
+msgstr "تعيين الفان"
+
+#. module: dekad_pos_van_sales
+#: model:ir.actions.act_window,name:dekad_pos_van_sales.action_van_assignment_report
+#: model:ir.ui.menu,name:dekad_pos_van_sales.van_assignment_report_submenu
+#: model_terms:ir.ui.view,arch_db:dekad_pos_van_sales.view_van_assignment_list
+msgid "Van Assignment Report"
+msgstr "تقرير تعيين الفان"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_pos_order__van_fleet_vehicle_id
+#: model:ir.model.fields,field_description:dekad_pos_van_sales.field_pos_order__van_name
+msgid "Van Name"
+msgstr "اسم الفان"
+
+#. module: dekad_pos_van_sales
+#: model:ir.ui.menu,name:dekad_pos_van_sales.van_assignment_main_menu
+msgid "Van Sales"
+msgstr "مبيعات الفان"
+
+#. module: dekad_pos_van_sales
+#: model:ir.model,name:dekad_pos_van_sales.model_fleet_vehicle
+msgid "Vehicle"
+msgstr "المركبة"

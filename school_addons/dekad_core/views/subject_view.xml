@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_de_subject_grade_form_quick_create" model="ir.ui.view">
+            <field name="name">de.subject.grade.quick.create</field>
+            <field name="model">de.subject</field>
+            <field name="arch" type="xml">
+                <form string="Subject">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_de_subject_list" model="ir.ui.view">
+            <field name="name">de.subject.list</field>
+            <field name="model">de.subject</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <list string="Subject" create="false">
+                    <field name="grade_id"/>
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_de_subject_form" model="ir.ui.view">
+            <field name="name">de.subject.form</field>
+            <field name="model">de.subject</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Subject" duplicate="0" create="false">
+                    <field name="id" invisible="1"/>
+                    <header/>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box" invisible="id == False"/>
+
+
+                        <group>
+                            <field name="grade_id" readonly="1"/>
+                            <field name="name" readonly="1"/>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_de_subject_search" model="ir.ui.view">
+            <field name="name">de.subject.search</field>
+            <field name="model">de.subject</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Subject">
+                    <field name="name"/>
+                    <newline/>
+                    <group string="Group By ...">
+                        <filter name="group_by_grade"
+                                string="Grade" domain="[]"
+                                context="{'group_by':'grade_id'}"
+                        />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="act_open_de_subject_view" model="ir.actions.act_window">
+            <field name="name">Subjects</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.subject</field>
+            <field name="view_mode">list,form</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="search_view_id" ref="view_de_subject_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record id="act_open_de_subject_view_list" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="act_open_de_subject_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_de_subject_list"/>
+        </record>
+
+        <record id="act_open_de_subject_view_form" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="act_open_de_subject_view"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="20"/>
+            <field name="view_id" ref="view_de_subject_form"/>
+        </record>
+
+    </data>
+</odoo>

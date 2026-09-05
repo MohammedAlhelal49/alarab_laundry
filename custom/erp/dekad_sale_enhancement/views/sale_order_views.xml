@@ -1,0 +1,33 @@
+<odoo>
+    <record id="view_order_form_enhancement_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.enhancement.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/list/field[1]" position="before">
+                 <field name="line_index" string="#" optional="show"/>
+            </xpath>
+            <xpath expr="//sheet/div[@name='button_box']" position="inside">
+                <button name="action_send_whatsapp"
+                        string="WhatsApp"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-whatsapp"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']//list//field[@name='price_unit']" position="after">
+                <field name="amount_delivered" optional="hide" widget="monetary"
+                       column_invisible="parent.state != 'sale'"/>
+                <field name="amount_to_deliver" optional="hide" widget="monetary"
+                       column_invisible="parent.state != 'sale'"/>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/list//field[@name='tax_id']" position="after">
+                <field name="price_unit_vat" widget="monetary" readonly="state not in ('draft' , 'sent')"
+                       optional="show"/>
+                <field name="price_subtotal" widget="monetary"/>
+                <field name="price_total" widget="monetary"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

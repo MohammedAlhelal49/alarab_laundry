@@ -1,0 +1,459 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_hr_paid_leave_allowance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-10 09:12+0000\n"
+"PO-Revision-Date: 2026-01-10 09:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: ar\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model_terms:ir.ui.view,arch_db:dekad_hr_paid_leave_allowance.hr_contract_view_form_inherit_ae_total_salary
+msgid "<span>/ month</span>"
+msgstr "<span>/ شهر</span>"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model_terms:ir.ui.view,arch_db:dekad_hr_paid_leave_allowance.view_holiday_status_form_inherit
+msgid ""
+"<strong>Warning:</strong> You have more than one leave type linked to Paid "
+"Leave Allowance."
+msgstr "<strong>تحذير:</strong> لديك أكثر من نوع إجازة مرتبط بمخصص الإجازة المدفوعة."
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_hr_contract__ae_total_salary
+msgid "AE Total Salary"
+msgstr "إجمالي الراتب"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model_terms:ir.ui.view,arch_db:dekad_hr_paid_leave_allowance.view_paid_leave_allowance_log_tree
+msgid "Approve"
+msgstr "موافقة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields.selection,name:dekad_hr_paid_leave_allowance.selection__paid_leave_allowance_log__state__approved
+msgid "Approved"
+msgstr "موافق عليه"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model_terms:ir.ui.view,arch_db:dekad_hr_paid_leave_allowance.view_paid_leave_allowance_wizard
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__user_id
+msgid "Created By"
+msgstr "تم الإنشاء بواسطة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__create_uid
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_wizard__create_uid
+msgid "Created by"
+msgstr "تم الإنشاء بواسطة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__create_date
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_wizard__create_date
+msgid "Created on"
+msgstr "تم الإنشاء في"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__days_requested
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_wizard__days_requested
+msgid "Days Requested"
+msgstr "الأيام المطلوبة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__display_name
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_wizard__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields.selection,name:dekad_hr_paid_leave_allowance.selection__paid_leave_allowance_log__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__employee_id
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_wizard__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model,name:dekad_hr_paid_leave_allowance.model_hr_contract
+msgid "Employee Contract"
+msgstr "عقد الموظف"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,help:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__id
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_wizard__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,help:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,help:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، تتطلب الرسائل الجديدة اهتمامك."
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,help:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__message_has_error
+#: model:ir.model.fields,help:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، لدى بعض الرسائل خطأ في التسليم."
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__write_uid
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__write_date
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__leave_allowance_amount
+msgid "Leave Allowance Amount"
+msgstr "مبلغ مخصص الإجازة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.ui.menu,name:dekad_hr_paid_leave_allowance.menu_hr_paid_leave_allowance_log
+msgid "Leave Allowance Report"
+msgstr "تقرير مخصص الإجازة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.ui.menu,name:dekad_hr_paid_leave_allowance.menu_hr_paid_leave_allowance_wizard
+msgid "Leave Allowance Request"
+msgstr "طلب مخصص الإجازة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__leave_type_id
+msgid "Leave Type"
+msgstr "نوع الإجازة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__leave_id
+msgid "Linked Leave Request"
+msgstr "طلب الإجازة المرتبط"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_hr_leave_type__linked_to_paid_leave_allowance
+#: model_terms:ir.ui.view,arch_db:dekad_hr_paid_leave_allowance.view_holiday_status_form_inherit
+msgid "Linked to Paid Leave Allowance"
+msgstr "مرتبط بمخصص الإجازة المدفوعة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_hr_leave_type__multiple_linked_leave_types
+msgid "Multiple Linked Leave Types"
+msgstr "أنواع إجازات متعددة مرتبطة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "حدث التقويم للنشاط التالي"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: dekad_hr_paid_leave_allowance
+#. odoo-python
+#: code:addons/dekad_hr_paid_leave_allowance/wizards/paid_leave_allowance_wizard.py:0
+msgid "No leave type is linked to Paid Leave Allowance."
+msgstr "لا يوجد نوع إجازة مرتبط بمخصص الإجازة المدفوعة."
+
+#. module: dekad_hr_paid_leave_allowance
+#: model_terms:ir.actions.act_window,help:dekad_hr_paid_leave_allowance.action_paid_leave_allowance_log
+msgid "No paid leave logs found."
+msgstr "لم يتم العثور على سجلات إجازة مدفوعة."
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,help:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,help:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل ذات خطأ التسليم"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.actions.act_window,name:dekad_hr_paid_leave_allowance.action_paid_leave_allowance_wizard
+#: model:ir.ui.menu,name:dekad_hr_paid_leave_allowance.menu_hr_paid_leave_allowance_root
+#: model_terms:ir.ui.view,arch_db:dekad_hr_paid_leave_allowance.view_paid_leave_allowance_wizard
+msgid "Paid Leave Allowance"
+msgstr "مخصص الإجازة المدفوعة"
+
+#. module: dekad_hr_paid_leave_allowance
+#. odoo-python
+#: code:addons/dekad_hr_paid_leave_allowance/wizards/paid_leave_allowance_wizard.py:0
+msgid "Paid Leave Allowance - %s"
+msgstr "مخصص الإجازة المدفوعة - %s"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model,name:dekad_hr_paid_leave_allowance.model_paid_leave_allowance_log
+#: model_terms:ir.ui.view,arch_db:dekad_hr_paid_leave_allowance.view_paid_leave_allowance_log_tree
+msgid "Paid Leave Allowance History"
+msgstr "سجل مخصص الإجازة المدفوعة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.actions.act_window,name:dekad_hr_paid_leave_allowance.action_paid_leave_allowance_log
+msgid "Paid Leave Allowance Logs"
+msgstr "سجلات مخصص الإجازة المدفوعة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model,name:dekad_hr_paid_leave_allowance.model_paid_leave_allowance_wizard
+msgid "Paid Leave Allowance Wizard"
+msgstr "معالج مخصص الإجازة المدفوعة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model_terms:ir.ui.view,arch_db:dekad_hr_paid_leave_allowance.view_paid_leave_allowance_log_tree
+msgid "Refuse"
+msgstr "رفض"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields.selection,name:dekad_hr_paid_leave_allowance.selection__paid_leave_allowance_log__state__refused
+msgid "Refused"
+msgstr "مرفوض"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__remaining_after
+msgid "Remaining After"
+msgstr "المتبقي بعد"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__remaining_before
+msgid "Remaining Before"
+msgstr "المتبقي قبل"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_wizard__remaining_days
+msgid "Remaining Paid Days"
+msgstr "الأيام المدفوعة المتبقية"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__request_date
+msgid "Request Date"
+msgstr "تاريخ الطلب"
+
+#. module: dekad_hr_paid_leave_allowance
+#. odoo-python
+#: code:addons/dekad_hr_paid_leave_allowance/wizards/paid_leave_allowance_wizard.py:0
+msgid "Requested days exceed remaining paid leave days."
+msgstr "الأيام المطلوبة تتجاوز أيام الإجازة المدفوعة المتبقية."
+
+#. module: dekad_hr_paid_leave_allowance
+#. odoo-python
+#: code:addons/dekad_hr_paid_leave_allowance/models/paid_leave_allowance_log.py:0
+#: code:addons/dekad_hr_paid_leave_allowance/wizards/paid_leave_allowance_wizard.py:0
+msgid "Requested days must be greater than zero."
+msgstr "يجب أن تكون الأيام المطلوبة أكبر من الصفر."
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسالة القصيرة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,help:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق قد مر بالفعل\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: dekad_hr_paid_leave_allowance
+#: model_terms:ir.ui.view,arch_db:dekad_hr_paid_leave_allowance.view_paid_leave_allowance_wizard
+msgid "Submit"
+msgstr "إرسال"
+
+#. module: dekad_hr_paid_leave_allowance
+#. odoo-python
+#: code:addons/dekad_hr_paid_leave_allowance/wizards/paid_leave_allowance_wizard.py:0
+msgid ""
+"This employee already has a pending Paid Leave Allowance request in draft "
+"state."
+msgstr "لدى هذا الموظف بالفعل طلب مخصص إجازة مدفوعة معلق في حالة المسودة."
+
+#. module: dekad_hr_paid_leave_allowance
+#. odoo-python
+#: code:addons/dekad_hr_paid_leave_allowance/wizards/paid_leave_allowance_wizard.py:0
+msgid "This employee has no remaining Paid Time Off days."
+msgstr "ليس لدى هذا الموظف أيام إجازة مدفوعة متبقية."
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model,name:dekad_hr_paid_leave_allowance.model_hr_leave_employee_type_report
+#: model:ir.model,name:dekad_hr_paid_leave_allowance.model_hr_leave_report
+msgid "Time Off Summary / Report"
+msgstr "ملخص/تقرير الإجازة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model,name:dekad_hr_paid_leave_allowance.model_hr_leave_type
+msgid "Time Off Type"
+msgstr "نوع الإجازة"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__ae_total_salary
+msgid "Total Salary"
+msgstr "إجمالي الراتب"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,help:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,field_description:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: dekad_hr_paid_leave_allowance
+#: model:ir.model.fields,help:dekad_hr_paid_leave_allowance.field_paid_leave_allowance_log__website_message_ids
+msgid "Website communication history"
+msgstr "سجل التواصل على الموقع الإلكتروني"
+
+#. module: dekad_hr_paid_leave_allowance
+#. odoo-python
+#: code:addons/dekad_hr_paid_leave_allowance/models/paid_leave_allowance_log.py:0
+msgid ""
+"You cannot delete a Paid Leave Allowance log that is linked to a leave "
+"request."
+msgstr "لا يمكنك حذف سجل مخصص الإجازة المدفوعة المرتبط بطلب إجازة."

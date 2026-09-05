@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_base_document_layout_header_footer_image" model="ir.ui.view">
+        <field name="name">base.document.layout.form.header.footer.image</field>
+        <field name="model">base.document.layout</field>
+        <field name="inherit_id" ref="web.view_base_document_layout"/>
+        <field name="arch" type="xml">
+            <field name="paperformat_id" position="after">
+                <field name="header_image"
+                       string="Header Image"
+                       widget="image"
+                       options="{'accepted_file_extensions': 'image/*'}"/>
+
+                <field name="footer_image"
+                       string="Footer Image"
+                       widget="image"
+                       options="{'accepted_file_extensions': 'image/*'}"/>
+
+            </field>
+
+        </field>
+
+    </record>
+
+</odoo>

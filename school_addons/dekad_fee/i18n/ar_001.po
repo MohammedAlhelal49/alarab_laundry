@@ -1,0 +1,696 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_fee
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-28 13:00+0000\n"
+"PO-Revision-Date: 2025-09-28 13:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: ar\n"
+
+#. module: dekad_fee
+#: model:ir.actions.report,print_report_name:dekad_fee.act_open_de_student_fee_report_view
+msgid "'Student fees - %s' % (object.name)"
+msgstr "'رسوم الطالب - %s' % (object.name)"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.de_student_fee_report
+msgid "<b>Student:</b>"
+msgstr "<b>الطالب:</b>"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.de_student_fee_report
+msgid "<b>Total Number of Fees :</b>"
+msgstr "<b>إجمالي عدد الرسوم:</b>"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.de_student_fee_report
+msgid "<b>Total amount of Fees :</b>"
+msgstr "<b>إجمالي مبلغ الرسوم:</b>"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.student_fee
+msgid "<span class=\"text-muted\">No Invoice</span>"
+msgstr "<span class=\"text-muted\">لا توجد فاتورة</span>"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.de_student_fee_report
+msgid "<strong>Student fee Details</strong>"
+msgstr "<strong>تفاصيل رسوم الطالب</strong>"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_student_fee_list
+msgid "After Discount Amo"
+msgstr "المبلغ بعد الخصم"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__after_discount_amount
+msgid "After Discount Amount"
+msgstr "المبلغ بعد الخصم"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.de_student_fee_report
+#: model_terms:ir.ui.view,arch_db:dekad_fee.student_fee
+msgid "After discount amount"
+msgstr "المبلغ بعد الخصم"
+
+#. module: dekad_fee
+#. odoo-python
+#: code:addons/dekad_fee/controllers/main.py:0
+#: model_terms:ir.ui.view,arch_db:dekad_fee.de_student_fee_report
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_admission_quick_create
+#: model_terms:ir.ui.view,arch_db:dekad_fee.student_fee
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_admission_quick_create
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_fee_quick_create
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_fee_term_form
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_fee_term_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: dekad_fee
+#. odoo-python
+#: code:addons/dekad_fee/models/student_fee.py:0
+msgid ""
+"Cannot create invoice even with automatic account detection: %s\n"
+"\n"
+"Please ensure your products are properly configured or contact your administrator."
+msgstr ""
+"لا يمكن إنشاء فاتورة حتى مع الكشف التلقائي عن الحساب: %s\n"
+"\n"
+"يرجى التأكد من تكوين المنتجات بشكل صحيح أو الاتصال بالمسؤول."
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_student_fee_list
+msgid "Create Invoice"
+msgstr "إنشاء فاتورة"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_element__create_uid
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__create_uid
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term_line__create_uid
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_element__create_date
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__create_date
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term_line__create_date
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.de_student_fee_report
+#: model_terms:ir.ui.view,arch_db:dekad_fee.student_fee
+msgid "Discount"
+msgstr "الخصم"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__discount
+msgid "Discount (%)"
+msgstr "الخصم (%)"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_element__display_name
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__display_name
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term_line__display_name
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dekad_fee
+#: model:ir.model.fields.selection,name:dekad_fee.selection__de_student_fee__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term_line__due_date
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__date
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term_line__due_days
+msgid "Due Days"
+msgstr "أيام الاستحقاق"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.student_fee
+msgid "Due date"
+msgstr "تاريخ الاستحقاق"
+
+#. module: dekad_fee
+#. odoo-python
+#: code:addons/dekad_fee/models/student_fee.py:0
+msgid ""
+"Error creating invoice: %s\n"
+"\n"
+"This might be due to missing accounting configuration. Please ensure:\n"
+"1. You have the Invoicing module installed\n"
+"2. Your products have proper accounting setup\n"
+"3. Or contact your administrator"
+msgstr ""
+"خطأ في إنشاء الفاتورة: %s\n"
+"\n"
+"قد يكون هذا بسبب عدم وجود تكوين محاسبي. يرجى التأكد من:\n"
+"1. تثبيت وحدة الفواتير\n"
+"2. أن منتجاتك تحتوي على إعداد محاسبي صحيح\n"
+"3. أو الاتصال بالمسؤول"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_student_form_fee_inherited
+msgid "Fee Count"
+msgstr "عدد الرسوم"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_fee_term_form
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_fee_term_list
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_fee_term_search
+msgid "Fee Term"
+msgstr "فترة الرسوم"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_grade__fee_term_id
+msgid "Fee Terms"
+msgstr "فترات الرسوم"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_element__fee_term_line_id
+msgid "Fee term line"
+msgstr "بند فترة الرسوم"
+
+#. module: dekad_fee
+#: model:ir.ui.menu,name:dekad_fee.menu_de_fee_root
+#: model_terms:ir.ui.view,arch_db:dekad_fee.student_fee_breadcrumbs
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_student_form_fee_inherited
+msgid "Fees"
+msgstr "الرسوم"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__amount
+msgid "Fees Amount"
+msgstr "مبلغ الرسوم"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student__student_fee_ids
+msgid "Fees Collection Details"
+msgstr "تفاصيل تحصيل الرسوم"
+
+#. module: dekad_fee
+#: model:ir.model,name:dekad_fee.model_de_fee_element
+msgid "Fees Element for fees terms lines"
+msgstr "عنصر الرسوم لبنود فترات الرسوم"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term_line__fee_element_ids
+msgid "Fees Elements"
+msgstr "عناصر الرسوم"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__fees_factor
+msgid "Fees Factor"
+msgstr "عامل الرسوم"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_fee_term_form
+msgid "Fees Term Line"
+msgstr "بند فترة الرسوم"
+
+#. module: dekad_fee
+#: model:ir.actions.act_window,name:dekad_fee.act_open_de_fee_term_view
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_grade__fee_term_id
+#: model:ir.ui.menu,name:dekad_fee.menu_de_fee_term
+msgid "Fees Terms"
+msgstr "فترات الرسوم"
+
+#. module: dekad_fee
+#: model:ir.model,name:dekad_fee.model_de_fee_term
+msgid "Fees Terms For Grade"
+msgstr "فترات الرسوم للصف"
+
+#. module: dekad_fee
+#: model:ir.model,name:dekad_fee.model_de_fee_term_line
+msgid "Fees Terms Line"
+msgstr "بند فترات الرسوم"
+
+#. module: dekad_fee
+#. odoo-python
+#: code:addons/dekad_fee/models/fee_term.py:0
+msgid "Fees Terms must be Required!"
+msgstr "يجب أن تكون فترات الرسوم مطلوبة!"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student__student_fee_count
+msgid "Fees count"
+msgstr "عدد الرسوم"
+
+#. module: dekad_fee
+#. odoo-python
+#: code:addons/dekad_fee/models/fee_term.py:0
+msgid "Fees elements inside term must be Required!"
+msgstr "يجب أن تكون عناصر الرسوم داخل الفترة مطلوبة!"
+
+#. module: dekad_fee
+#. odoo-python
+#: code:addons/dekad_fee/models/fee_term.py:0
+msgid "Fees elements must be divided as such sum up in 100%"
+msgstr "يجب تقسيم عناصر الرسوم بحيث يكون مجموعها 100%"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term_line__fee_term_id
+msgid "Fees term"
+msgstr "فترة الرسوم"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__fee_term_line_id
+msgid "Fees term line"
+msgstr "بند فترة الرسوم"
+
+#. module: dekad_fee
+#. odoo-python
+#: code:addons/dekad_fee/models/fee_term.py:0
+msgid "Fees terms must be divided as such sum up in 100%"
+msgstr "يجب تقسيم فترات الرسوم بحيث يكون مجموعها 100%"
+
+#. module: dekad_fee
+#: model:ir.model.fields.selection,name:dekad_fee.selection__de_fee_term__type__fixed_date
+msgid "Fixed Fees of Dates"
+msgstr "رسوم ثابتة حسب التواريخ"
+
+#. module: dekad_fee
+#: model:ir.model.fields.selection,name:dekad_fee.selection__de_fee_term__type__fixed_days
+msgid "Fixed Fees of Days"
+msgstr "رسوم ثابتة حسب الأيام"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_admission_quick_create
+msgid "General Information"
+msgstr "المعلومات العامة"
+
+#. module: dekad_fee
+#. odoo-python
+#: code:addons/dekad_fee/controllers/main.py:0
+#: model:ir.model,name:dekad_fee.model_de_grade
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__grade_id
+#: model_terms:ir.ui.view,arch_db:dekad_fee.de_student_fee_report
+#: model_terms:ir.ui.view,arch_db:dekad_fee.student_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_student_fee_search
+msgid "Grade"
+msgstr "الصف"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_student_fee_search
+msgid "Group By..."
+msgstr "تجميع حسب..."
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_element__id
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__id
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term_line__id
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: dekad_fee
+#: model:ir.model.fields,help:dekad_fee.field_de_fee_term__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: dekad_fee
+#: model:ir.model.fields,help:dekad_fee.field_de_fee_term__message_has_error
+#: model:ir.model.fields,help:dekad_fee.field_de_fee_term__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_fee_term_form
+msgid "Information"
+msgstr "المعلومات"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_admission_quick_create
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_fee_quick_create
+msgid "Internal Notes"
+msgstr "ملاحظات داخلية"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.student_fee
+msgid "Invoice"
+msgstr "الفاتورة"
+
+#. module: dekad_fee
+#: model:ir.model.fields.selection,name:dekad_fee.selection__de_student_fee__state__invoice
+msgid "Invoice Created"
+msgstr "تم إنشاء الفاتورة"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__invoice_id
+msgid "Invoice ID"
+msgstr "معرف الفاتورة"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__invoice_state
+msgid "Invoice Status"
+msgstr "حالة الفاتورة"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_student_form_fee_inherited
+msgid "Invoiced"
+msgstr "تم تحرير الفاتورة"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_element__write_uid
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__write_uid
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term_line__write_uid
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_element__write_date
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__write_date
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term_line__write_date
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_fee_quick_create
+msgid "Main"
+msgstr "رئيسي"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__name
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term_line__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: dekad_fee
+#. odoo-python
+#: code:addons/dekad_fee/controllers/main.py:0
+msgid "Newest"
+msgstr "الأحدث"
+
+#. module: dekad_fee
+#. odoo-python
+#: code:addons/dekad_fee/models/student_fee.py:0
+msgid "No invoice has been created yet."
+msgstr "لم يتم إنشاء أي فاتورة حتى الآن."
+
+#. module: dekad_fee
+#. odoo-python
+#: code:addons/dekad_fee/models/student_fee.py:0
+msgid "No invoices have been created for this student yet."
+msgstr "لم يتم إنشاء أي فواتير لهذا الطالب حتى الآن."
+
+#. module: dekad_fee
+#. odoo-python
+#: code:addons/dekad_fee/models/student_fee.py:0
+msgid ""
+"No suitable journal found for student fees. Please create a sales journal or"
+" contact administrator."
+msgstr ""
+"لم يتم العثور على دفتر يومية مناسب لرسوم الطلاب. يرجى إنشاء دفتر يومية مبيعات أو الاتصال بالمسؤول."
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: dekad_fee
+#: model:ir.model.fields,help:dekad_fee.field_de_fee_term__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: dekad_fee
+#: model:ir.model.fields,help:dekad_fee.field_de_fee_term__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: dekad_fee
+#. odoo-python
+#: code:addons/dekad_fee/controllers/main.py:0
+msgid "Oldest"
+msgstr "الأقدم"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__product_id
+msgid "Product"
+msgstr "المنتج"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_admission_quick_create
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_fee_quick_create
+msgid "Product Category"
+msgstr "فئة المنتج"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_admission_quick_create
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_fee_quick_create
+msgid "Product Name"
+msgstr "اسم المنتج"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_admission_quick_create
+msgid "Product product admission quick create"
+msgstr "إنشاء سريع لمنتج القبول"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_fee_quick_create
+msgid "Product product fee quick create"
+msgstr "إنشاء سريع لمنتج الرسوم"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_element__product_id
+msgid "Product(s)"
+msgstr "المنتج(ات)"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_grade__product_id
+msgid "Register Fee "
+msgstr "رسوم التسجيل"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_grade__fee
+msgid "Register Fee amount"
+msgstr "مبلغ رسوم التسجيل"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_grade__product_id
+msgid "Register fee"
+msgstr "رسوم التسجيل"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسالة القصيرة"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_element__sequence
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term_line__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: dekad_fee
+#. odoo-python
+#: code:addons/dekad_fee/controllers/main.py:0
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: dekad_fee
+#: model:ir.model,name:dekad_fee.model_de_student
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_fee__student_id
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_student_fee_search
+msgid "Student"
+msgstr "الطالب"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_student_fee_list
+msgid "Student Fee"
+msgstr "رسوم الطالب"
+
+#. module: dekad_fee
+#: model:ir.model,name:dekad_fee.model_de_student_fee
+#: model:ir.ui.menu,name:dekad_fee.menu_de_student_fee
+msgid "Student Fees"
+msgstr "رسوم الطلاب"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_student_fee_search
+msgid "Student fee"
+msgstr "رسوم الطالب"
+
+#. module: dekad_fee
+#: model:ir.actions.act_window,name:dekad_fee.act_open_de_student_fee_view
+#: model:ir.actions.report,name:dekad_fee.act_open_de_student_fee_report_view
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_student_form_fee_inherited
+msgid "Student fees"
+msgstr "رسوم الطلاب"
+
+#. module: dekad_fee
+#: model:ir.model,name:dekad_fee.model_de_student_grade
+msgid "Student grade Details"
+msgstr "تفاصيل صف الطالب"
+
+#. module: dekad_fee
+#: model:res.groups,name:dekad_fee.group_de_fee
+msgid "Students Fees"
+msgstr "رسوم الطلاب"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.de_student_fee_report
+msgid "Submit date"
+msgstr "تاريخ التقديم"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__type
+msgid "Term Type"
+msgstr "نوع الفترة"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__fee_term_line_count
+msgid "Term count"
+msgstr "عدد الفترات"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__fee_term_line_ids
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_fee_term_form
+msgid "Terms"
+msgstr "الفترات"
+
+#. module: dekad_fee
+#: model:ir.model.fields,help:dekad_fee.field_de_grade__fee
+msgid ""
+"The sale price is managed from the product template. Click on the 'Configure"
+" Variants' button to set the extra attribute prices."
+msgstr ""
+"يتم إدارة سعر البيع من قالب المنتج. انقر على زر 'تكوين المتغيرات' لتعيين أسعار السمات الإضافية."
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.student_fee
+msgid "There are no fees to display."
+msgstr "لا توجد رسوم لعرضها."
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.de_student_fee_report
+msgid "There is no fees to display"
+msgstr "لا توجد رسوم لعرضها"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_admission_quick_create
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_fee_quick_create
+msgid "This note is only for internal purposes."
+msgstr "هذه الملاحظة للاستخدام الداخلي فقط."
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_student_fee_list
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_student_form_fee_inherited
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_element__value
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term_line__value
+msgid "Value (%)"
+msgstr "القيمة (%)"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.student_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.view_de_student_fee_list
+msgid "View Invoice"
+msgstr "عرض الفاتورة"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_fee_term__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: dekad_fee
+#: model:ir.model.fields,help:dekad_fee.field_de_fee_term__website_message_ids
+msgid "Website communication history"
+msgstr "سجل الاتصال بالموقع"
+
+#. module: dekad_fee
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_admission_quick_create
+#: model_terms:ir.ui.view,arch_db:dekad_fee.product_product_form_view_fee_quick_create
+msgid "e.g. Cheese Burger"
+msgstr "مثال: تشيز برجر"
+
+#. module: dekad_fee
+#: model:ir.model.fields,field_description:dekad_fee.field_de_student_grade__fee_start_date
+msgid "fee Start Date"
+msgstr "تاريخ بداية الرسوم"

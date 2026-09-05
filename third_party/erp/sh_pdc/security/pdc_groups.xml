@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Module Category -->
+    <record id="module_category_pdc" model="ir.module.category">
+        <field name="name">PDC</field>
+        <field name="description">Post Dated Cheque Access</field>
+        <field name="sequence">35</field>
+        <field name="parent_id" ref="base.module_category_accounting"/>
+    </record>
+
+    <!-- PDC User -->
+    <record id="group_pdc_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="sh_pdc.module_category_pdc"/>
+        <field name="implied_ids" eval="[(4, ref('account.group_account_invoice'))]"/>
+    </record>
+
+    <!-- PDC Admin -->
+    <record id="group_pdc_admin" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="sh_pdc.module_category_pdc"/>
+        <field name="implied_ids" eval="[(4, ref('sh_pdc.group_pdc_user'))]"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+
+</odoo>

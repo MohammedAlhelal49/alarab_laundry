@@ -1,0 +1,527 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_activity
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-28 07:28+0000\n"
+"PO-Revision-Date: 2025-09-28 07:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity_show
+msgid ""
+"<i class=\"fa fa-home me-1\"/>\n"
+"                                Student Dashboard"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity_show
+msgid ""
+"<i class=\"fa fa-users me-1\"/>\n"
+"                                All Students"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.portal_student_activity_breadcrumbs
+msgid "<span>/</span>"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity_show
+msgid "<strong class=\"\">Activity Time :</strong>"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity_show
+msgid "<strong class=\"\">Activity type :</strong>"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity_show
+msgid "<strong class=\"\">Attachment :</strong>"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity_show
+msgid "<strong class=\"\">Classroom :</strong>"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity_show
+msgid "<strong class=\"\">Full description :</strong>"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity_show
+msgid "<strong class=\"\">Status :</strong>"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity_show
+msgid "<strong class=\"\">The responsible :</strong>"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_form
+msgid "Accept"
+msgstr ""
+
+#. module: dekad_activity
+#. odoo-python
+#: code:addons/dekad_activity/controllers/main.py:0
+#: model:ir.model.fields.selection,name:dekad_activity.selection__de_activity__state__accept
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_search
+msgid "Accepted"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity
+msgid "Actions"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.actions.act_window,name:dekad_activity.act_open_de_activity_type_view
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__activity_ids
+#: model:ir.ui.menu,name:dekad_activity.menu_de_activity_general
+#: model:ir.ui.menu,name:dekad_activity.menu_de_activity_type
+#: model:res.groups,name:dekad_activity.group_de_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.portal_student_activity_breadcrumbs
+msgid "Activities"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_form
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_graph
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_list
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_search
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_student_form_activity_inherited
+msgid "Activity"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_student__activity_count
+msgid "Activity Count"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_student__activity_log_ids
+msgid "Activity Lof"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model,name:dekad_activity.model_de_activity_type
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__type_id
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_type_list
+msgid "Activity Type"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity_show
+msgid "Activity full information"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__activity_time
+#: model:ir.model.fields,field_description:dekad_activity.field_de_multi_activity_wizard__activity_time
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity
+msgid "Activity time"
+msgstr ""
+
+#. module: dekad_activity
+#. odoo-python
+#: code:addons/dekad_activity/controllers/main.py:0
+#: model:ir.model.fields,field_description:dekad_activity.field_de_multi_activity_wizard__type_id
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_type_search
+msgid "Activity type"
+msgstr ""
+
+#. module: dekad_activity
+#. odoo-python
+#: code:addons/dekad_activity/controllers/main.py:0
+msgid "All"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__file
+#: model:ir.model.fields,field_description:dekad_activity.field_de_multi_activity_wizard__file
+msgid "Attachment"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_form
+msgid "Cancel"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__classroom_id
+#: model:ir.model.fields,field_description:dekad_activity.field_de_multi_activity_wizard__classroom_id
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_search
+msgid "Classroom"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__classroom_student_ids
+#: model:ir.model.fields,field_description:dekad_activity.field_de_multi_activity_wizard__classroom_student_ids
+msgid "Classroom Student"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_multi_activity_wizard_form
+msgid "Close"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_form
+msgid "Confirm"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields.selection,name:dekad_activity.selection__de_activity__state__confirm
+msgid "Confirmed"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__create_uid
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity_type__create_uid
+#: model:ir.model.fields,field_description:dekad_activity.field_de_multi_activity_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__create_date
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity_type__create_date
+#: model:ir.model.fields,field_description:dekad_activity.field_de_multi_activity_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__description
+#: model:ir.model.fields,field_description:dekad_activity.field_de_multi_activity_wizard__description
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_form
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_multi_activity_wizard_form
+msgid "Description"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__display_name
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity_type__display_name
+#: model:ir.model.fields,field_description:dekad_activity.field_de_multi_activity_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields.selection,name:dekad_activity.selection__de_activity__state__draft
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_form
+msgid "Draft"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,help:dekad_activity.field_de_activity__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_search
+msgid "Group By..."
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__id
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity_type__id
+#: model:ir.model.fields,field_description:dekad_activity.field_de_multi_activity_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,help:dekad_activity.field_de_activity__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,help:dekad_activity.field_de_activity__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,help:dekad_activity.field_de_activity__message_has_error
+#: model:ir.model.fields,help:dekad_activity.field_de_activity__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__write_uid
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity_type__write_uid
+#: model:ir.model.fields,field_description:dekad_activity.field_de_multi_activity_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__write_date
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity_type__write_date
+#: model:ir.model.fields,field_description:dekad_activity.field_de_multi_activity_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model,name:dekad_activity.model_de_multi_activity_wizard
+msgid "Multi Activity Wizard"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_multi_activity_wizard_form
+msgid "Multi activity"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.actions.act_window,name:dekad_activity.act_open_de_multi_activity_wizard_view
+#: model:ir.ui.menu,name:dekad_activity.menu_de_multi_activity_wizard
+msgid "Multi students activity"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity_type__name
+msgid "Name"
+msgstr ""
+
+#. module: dekad_activity
+#. odoo-python
+#: code:addons/dekad_activity/controllers/main.py:0
+msgid "Newest"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,help:dekad_activity.field_de_activity__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,help:dekad_activity.field_de_activity__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: dekad_activity
+#. odoo-python
+#: code:addons/dekad_activity/controllers/main.py:0
+msgid "Oldest"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_multi_activity_wizard_form
+msgid "Proceed"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_form
+msgid "Reject"
+msgstr ""
+
+#. module: dekad_activity
+#. odoo-python
+#: code:addons/dekad_activity/controllers/main.py:0
+#: model:ir.model.fields.selection,name:dekad_activity.selection__de_activity__state__reject
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_search
+msgid "Rejected"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__responsible_id
+#: model:ir.model.fields,field_description:dekad_activity.field_de_multi_activity_wizard__responsible_id
+msgid "Responsible"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity
+msgid "Show"
+msgstr ""
+
+#. module: dekad_activity
+#. odoo-python
+#: code:addons/dekad_activity/controllers/main.py:0
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__state
+msgid "State"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_search
+msgid "Status"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,help:dekad_activity.field_de_activity__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model,name:dekad_activity.model_de_student
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__student_id
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_search
+msgid "Student"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.actions.act_window,name:dekad_activity.act_open_de_activity_view
+msgid "Student Activities"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model,name:dekad_activity.model_de_activity
+msgid "Student Activity"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.ui.menu,name:dekad_activity.menu_de_activity
+msgid "Student activities"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_multi_activity_wizard__student_ids
+msgid "Students"
+msgstr ""
+
+#. module: dekad_activity
+#. odoo-python
+#: code:addons/dekad_activity/controllers/main.py:0
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity
+msgid "The Responsible"
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.student_activity
+msgid "There are no Activities to display."
+msgstr ""
+
+#. module: dekad_activity
+#: model_terms:ir.ui.view,arch_db:dekad_activity.view_de_activity_search
+msgid "Type"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,help:dekad_activity.field_de_activity__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,field_description:dekad_activity.field_de_activity__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: dekad_activity
+#: model:ir.model.fields,help:dekad_activity.field_de_activity__website_message_ids
+msgid "Website communication history"
+msgstr ""

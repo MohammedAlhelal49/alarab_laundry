@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_cancel_selected_transferes" model="ir.actions.server">
+        <field name="name">Cancel validated transfer</field>
+        <field name="model_id" ref="stock.model_stock_picking"/>
+        <field name="binding_model_id" ref="stock.model_stock_picking"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">
+            for record in records:
+            record.action_confirm_cancel()
+        </field>
+    </record>
+
+
+    <record id="view_picking_form_inherited" model="ir.ui.view">
+        <field name="name">view.picking.form.inherited</field>
+        <field name="model">stock.picking</field>
+        <field name="priority" eval="8"/>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+
+            <!-- إضافة زر Sign للـ Internal Transfer بعد حالة Done -->
+            <xpath expr="//widget[@name='signature'][1]" position="before">
+                <widget name="signature" string="Sign" highlight="1"
+                        invisible="not id or picking_type_code != 'internal' or state != 'done'"
+                        full_name="partner_id" groups="stock.group_stock_sign_delivery"/>
+                <widget name="signature" string="Sign"
+                        invisible="not id or picking_type_code != 'internal' or state == 'done'"
+                        full_name="partner_id" groups="stock.group_stock_sign_delivery"/>
+            </xpath>
+            <xpath expr="//field[@name='move_ids_without_package']/list/field[1]" position="before">
+                <field name="line_index" readonly="1" optional="show"/>
+                <field name="sequence" widget="handle"/>
+            </xpath>
+
+            <xpath expr="//field[@name='move_ids_without_package']//list//field[@name='location_id']"
+                   position="attributes">
+                <attribute name="column_invisible">parent.picking_type_code=='incoming'</attribute>
+            </xpath>
+            <xpath expr="//field[@name='move_ids_without_package']//list//field[@name='location_dest_id']"
+                   position="attributes">
+                <attribute name="column_invisible">parent.picking_type_code=='outgoing'</attribute>
+            </xpath>
+            <xpath expr="//field[@name='move_ids_without_package']//list//field[@name='quantity']" position="after">
+                <field name="analytic_account_id" readonly="state in ('done', 'cancel')" optional="hide"/>
+                <field name="unit_cost" optional="hide"/>
+                <field name="cost_amount" widget="monetary" optional="hide" sum="Total Cost amount"/>
+                <field name="currency_id" column_invisible="True"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_move_line_tree_inherited" model="ir.ui.view">
+        <field name="name">view_move_line_tree_inherited</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="analytic_account_id" optional="hide"/>
+                <field name="unit_cost" optional="hide"/>
+                <field name="cost_amount" widget="monetary" sum="Total Cost amount" optional="hide"/>
+                <field name="currency_id" column_invisible="True"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_move_tree_inherited" model="ir.ui.view">
+        <field name="name">view_move_tree_inherited</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="analytic_account_id" optional="hide"/>
+                <field name="unit_cost" optional="hide"/>
+                <field name="cost_amount" widget="monetary" sum="Total Cost amount" optional="hide"/>
+                <field name="currency_id" column_invisible="True"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_move_line_view_search_inherited" model="ir.ui.view">
+        <field name="name">stock.move.line.view.search.inherited</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.stock_move_line_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="analytic_account_id"/>
+            </xpath>
+
+            <xpath expr="//filter[@name='groupby_product_id']" position="after">
+                <filter string="Analytic account" name="groupby_analytic_account_id" domain="[]"
+                        context="{'group_by': 'analytic_account_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_move_search_inherited" model="ir.ui.view">
+        <field name="name">view.move.search.inherited</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="analytic_account_id"/>
+            </xpath>
+
+            <xpath expr="//filter[@name='by_product']" position="after">
+                <filter string="Analytic account" name="groupby_analytic_account_id" domain="[]"
+                        context="{'group_by': 'analytic_account_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <function model="stock.picking" name="action_add_analytic_distribution_all" eval="[[]]"/>
+</odoo>

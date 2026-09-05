@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="aflaj_alain_implementation_setting_inherit" model="ir.ui.view">
+        <field name="name">aflaj.alain.implementation.setting.inherit</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="stock.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <app name="stock" position="inside">
+                <block title="Dead inputs" name="production_period_inputs">
+                    <setting>
+                        <field name="chicken" domain="[('type' , '=' , 'consu')]"/>
+                    </setting>
+
+                    <setting>
+                        <field name="dead_chicken" domain="[('type' , '=' , 'consu')]"/>
+                    </setting>
+
+                    <setting>
+                        <field name="chicken1" domain="[('type' , '=' , 'consu')]"/>
+                    </setting>
+
+                    <setting>
+                        <field name="dead_chicken1" domain="[('type' , '=' , 'consu')]"/>
+                    </setting>
+
+                    <setting>
+                        <field name="chicken2" domain="[('type' , '=' , 'consu')]"/>
+                    </setting>
+
+                    <setting>
+                        <field name="dead_chicken2" domain="[('type' , '=' , 'consu')]"/>
+                    </setting>
+
+                    <setting>
+                        <field name="chicken3" domain="[('type' , '=' , 'consu')]"/>
+                    </setting>
+
+                    <setting>
+                        <field name="dead_chicken3" domain="[('type' , '=' , 'consu')]"/>
+                    </setting>
+
+                    <setting>
+                        <field name="chicken4" domain="[('type' , '=' , 'consu')]"/>
+                    </setting>
+
+                    <setting>
+                        <field name="dead_chicken4" domain="[('type' , '=' , 'consu')]"/>
+                    </setting>
+
+                    <setting>
+                        <field name="chicken_operation"/>
+                    </setting>
+
+                    <setting>
+                        <field name="dead_chicken_operation"/>
+                    </setting>
+
+                </block>
+                <block title="Production inputs" name="production_period_inputs">
+                    <setting>
+                        <field name="broken_egg" domain="[('type' , '=' , 'consu')]"/>
+                    </setting>
+
+                    <setting>
+                        <field name="rejected_egg" domain="[('type' , '=' , 'consu')]"/>
+                    </setting>
+
+                    <setting>
+                        <field name="damaged_egg" domain="[('type' , '=' , 'consu')]"/>
+                    </setting>
+
+                    <setting>
+                        <field name="mother_egg" domain="[('type' , '=' , 'consu')]"/>
+                    </setting>
+
+
+                    <setting>
+                        <field name="chicken_egg" domain="[('type' , '=' , 'consu')]"/>
+                    </setting>
+
+                    <setting>
+                        <field name="production_operation"/>
+                    </setting>
+
+                </block>
+            </app>
+        </field>
+    </record>
+</odoo>

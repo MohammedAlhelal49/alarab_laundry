@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_inherit_return" model="ir.ui.view">
+        <field name="name">res.config.settings.return.delivery</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <setting id="get_invoice_warnings" position="before">
+                <setting id="invoice_discount" help="Apply discounts on invoices and vendor bills">
+                    <field name="group_discount_per_invoice_line" string="Discounts"/>
+                    <div class="content-group mt8" invisible="not group_discount_per_invoice_line">
+                        <div class="row mt4">
+                            <label for="invoice_discount_product_id" class="col-lg-4 o_light_label"/>
+                            <field name="invoice_discount_product_id"
+                                   class="col-lg-4"
+                                   domain="[('type', '=', 'service')]"/>
+                        </div>
+                    </div>
+                </setting>
+            </setting>
+            <xpath expr="//block[@id='default_accounts']//setting[1]" position="before">
+                <setting id="refund_income_account" string="Credit Notes:">
+                    <div class="content-group">
+                        <div class="row mt8">
+                            <label for="refund_income_account_id" class="col-lg-5 o_light_label"/>
+                            <field name="refund_income_account_id"
+                                   placeholder="Same account as product"/>
+                        </div>
+                    </div>
+                </setting>
+            </xpath>
+
+            <xpath expr="//app[@name='account']" position="inside">
+
+                <block title="Credit Notes">
+
+                    <setting string="Enable Credit Note Return">
+                        <field name="enable_credit_note_return"/>
+                    </setting>
+
+                </block>
+
+            </xpath>
+
+             <xpath expr="//block[@id='invoicing_settings']/setting[@id='default_incoterm']" position="after">
+                <setting id="dekad_default_customer" string="Default Customer"
+                         help="Automatically set on new Customer Invoices / Credit Notes when the Customer field is left empty">
+                    <field name="dekad_default_customer_id" placeholder="e.g. Walk-in Customer"/>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

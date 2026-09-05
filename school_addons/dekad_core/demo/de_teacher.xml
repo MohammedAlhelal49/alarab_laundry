@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="de_res_partner_teacher_1" model="res.partner">
+            <field name="email">omeralmasri@gmail.com</field>
+            <field name="name">Omer almasri</field>
+            <field name="religion_id" ref="de_religion_1"/>
+            <field name="mobile">050569859</field>
+            <field name="phone">011238929</field>
+            <field name="is_teacher">True</field>
+            <field name="image_1920" type="base64"
+                   file="dekad_core/static/img/teacher1.jpg"/>
+            <field name="nationality_id" ref="base.eg"/>
+            <field name="country_id" ref="base.eg"/>
+        </record>
+        <record id="de_teacher_user_1" model="res.users" context="{'no_reset_password': True}">
+            <field name="email">omeralmasri@gmail.com</field>
+            <field name="name">Omer almasri</field>
+            <field name="partner_id" ref="de_res_partner_teacher_1"/>
+            <field name="login">teacher</field>
+            <field name="password">teacher</field>
+            <field name="tz">Asia/Dubai</field>
+            <field name="groups_id"
+                   eval="[(4,ref('group_de_teacher'))]"/>
+        </record>
+        <record id="de_teacher_1" model="de.teacher">
+            <field name="email">omeralmasri@gmail.com</field>
+            <field name="name">Omer almasri</field>
+            <field name="specialist_id" ref="de_specialist_1"/>
+            <field name="partner_id" ref="de_res_partner_teacher_1"/>
+            <field name="user_id" ref="de_teacher_user_1"/>
+            <field name="gender">male</field>
+            <field name="birth_date">1989-06-01</field>
+            <field name="address">Full address of the teacher</field>
+            <field name="subject_ids"
+                   eval="[(6, 0, [ref('de_subject_1'), ref('de_subject_4')])]"/>
+        </record>
+        <record id="de_teacher_2" model="de.teacher">
+            <field name="specialist_id" ref="de_specialist_2"/>
+            <field name="gender">male</field>
+            <field name="birth_date">1987-06-01</field>
+            <field name="address">Full address of the teacher</field>
+            <field name="email">imam@gmail.com</field>
+            <field name="name">Mohammed imam</field>
+            <field name="religion_id" ref="de_religion_1"/>
+            <field name="mobile">050567659</field>
+            <field name="phone">011238879</field>
+            <field name="nationality_id" ref="base.sd"/>
+            <field name="country_id" ref="base.sd"/>
+            <field name="image_1920" type="base64"
+                   file="dekad_core/static/img/teacher2.jpg"/>
+            <field name="subject_ids"
+                   eval="[(6, 0, [ref('de_subject_2'), ref('de_subject_5')])]"/>
+        </record>
+    </data>
+</odoo>

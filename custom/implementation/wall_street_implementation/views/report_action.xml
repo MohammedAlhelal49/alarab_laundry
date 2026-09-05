@@ -1,0 +1,144 @@
+<odoo>
+  <!-- ============ Wall Street Quotation (Sale Order) ============ -->
+  <record id="action_report_wall_street_quotation" model="ir.actions.report">
+    <field name="name">Wall Street Quotation</field>
+    <field name="model">sale.order</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">wall_street_implementation.report_wall_street_quotation</field>
+    <field name="report_file">wall_street_implementation.report_wall_street_quotation</field>
+    <field name="binding_model_id" ref="sale.model_sale_order"/>
+    <field name="binding_type">report</field>
+  </record>
+
+  <template id="report_wall_street_quotation">
+    <t t-call="web.html_container">
+      <t t-foreach="docs" t-as="doc">
+        <t t-call="web.external_layout">
+          <t t-call="wall_street_implementation.shared_document_body">
+            <t t-set="doc_title" t-value="'Quotation'"/>
+            <t t-set="doc_name" t-value="'QTN-' + (doc.partner_id.state_id.code or '') + '-' + (doc.reference_code or '')"/>
+            <t t-set="doc_date" t-value="doc.date_order.strftime('%d-%b-%Y') if doc.date_order else ''"/>
+            <t t-set="doc_due_date" t-value="doc.validity_date.strftime('%d-%b-%Y') if doc.validity_date else ''"/>
+            <t t-set="currency" t-value="doc.currency_id.name"/>
+            <t t-set="client_name" t-value="doc.partner_id.name"/>
+            <t t-set="client_attention" t-value="doc.partner_id.function or '-'"/>
+            <t t-set="client_trn" t-value="doc.partner_id.vat or '-'"/>
+            <t t-set="client_address" t-value="doc.partner_id.contact_address or '-'"/>
+            <t t-set="subject" t-value="doc.subject or '-'"/>
+            <t t-set="engagement_type" t-value="doc.engagement_type or '-'"/>
+            <t t-set="payment_terms" t-value="doc.payment_term_id.name or '-'"/>
+            <t t-set="expected_timeline" t-value="doc.commitment_date.strftime('%d-%b-%Y') if doc.commitment_date else '-'"/>
+            <t t-set="amount_untaxed" t-value="doc.amount_untaxed"/>
+            <t t-set="amount_tax" t-value="doc.amount_tax"/>
+            <t t-set="amount_total" t-value="doc.amount_total"/>
+            <t t-set="total_in_words" t-value="doc.currency_id.amount_to_text(doc.amount_total)"/>
+            <t t-set="lines" t-value="[{
+                'description': l.name,
+                'uom': l.product_uom.name,
+                'qty': l.product_uom_qty,
+                'price_unit': l.price_unit,
+                'tax': ', '.join([t.name for t in l.tax_id]) or '-',
+                'total': l.price_total,
+            } for l in doc.order_line if l.product_id]"/>
+          </t>
+        </t>
+      </t>
+    </t>
+  </template>
+
+  <!-- ============ Tax Invoice ============ -->
+  <record id="action_report_tax_invoice" model="ir.actions.report">
+    <field name="name">Tax Invoice</field>
+    <field name="model">account.move</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">wall_street_implementation.report_tax_invoice</field>
+    <field name="report_file">wall_street_implementation.report_tax_invoice</field>
+    <field name="binding_model_id" ref="account.model_account_move"/>
+    <field name="binding_type">report</field>
+  </record>
+
+  <template id="report_tax_invoice">
+    <t t-call="web.html_container">
+      <t t-foreach="docs" t-as="doc">
+        <t t-call="web.external_layout">
+          <t t-set="origin_order" t-value="doc.invoice_line_ids.sale_line_ids[:1].order_id"/>
+          <t t-call="wall_street_implementation.shared_document_body">
+            <t t-set="doc_title" t-value="'Tax Invoice'"/>
+            <t t-set="doc_name" t-value="'TXINV-' + (doc.partner_id.state_id.code or '') + '-' + (origin_order.reference_code or '') if origin_order else doc.name"/>
+            <t t-set="doc_date" t-value="doc.invoice_date.strftime('%d-%b-%Y') if doc.invoice_date else ''"/>
+            <t t-set="doc_due_date" t-value="doc.invoice_date_due.strftime('%d-%b-%Y') if doc.invoice_date_due else ''"/>
+            <t t-set="currency" t-value="doc.currency_id.name"/>
+            <t t-set="client_name" t-value="doc.partner_id.name"/>
+            <t t-set="client_attention" t-value="doc.partner_id.function or '-'"/>
+            <t t-set="client_trn" t-value="doc.partner_id.vat or '-'"/>
+            <t t-set="client_address" t-value="doc.partner_id.contact_address or '-'"/>
+            <t t-set="subject" t-value="origin_order.subject if origin_order else '-'"/>
+            <t t-set="engagement_type" t-value="origin_order.engagement_type if origin_order else '-'"/>
+            <t t-set="payment_terms" t-value="doc.invoice_payment_term_id.name or '-'"/>
+            <t t-set="expected_timeline" t-value="origin_order.commitment_date.strftime('%d-%b-%Y') if origin_order and origin_order.commitment_date else '-'"/>
+            <t t-set="amount_untaxed" t-value="doc.amount_untaxed"/>
+            <t t-set="amount_tax" t-value="doc.amount_tax"/>
+            <t t-set="amount_total" t-value="doc.amount_total"/>
+            <t t-set="total_in_words" t-value="doc.currency_id.amount_to_text(doc.amount_total)"/>
+            <t t-set="lines" t-value="[{
+                'description': l.name,
+                'uom': l.product_uom_id.name,
+                'qty': l.quantity,
+                'price_unit': l.price_unit,
+                'tax': ', '.join([t.name for t in l.tax_ids]) or '-',
+                'total': l.price_total,
+            } for l in doc.invoice_line_ids if l.product_id]"/>
+          </t>
+        </t>
+      </t>
+    </t>
+  </template>
+
+  <!-- ============ Proforma Invoice ============ -->
+  <record id="action_report_proforma_invoice" model="ir.actions.report">
+    <field name="name">Proforma Invoice</field>
+    <field name="model">account.move</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">wall_street_implementation.report_proforma_invoice</field>
+    <field name="report_file">wall_street_implementation.report_proforma_invoice</field>
+    <field name="binding_model_id" ref="account.model_account_move"/>
+    <field name="binding_type">report</field>
+  </record>
+
+  <template id="report_proforma_invoice">
+    <t t-call="web.html_container">
+      <t t-foreach="docs" t-as="doc">
+        <t t-call="web.external_layout">
+          <t t-set="origin_order" t-value="doc.invoice_line_ids.sale_line_ids[:1].order_id"/>
+          <t t-call="wall_street_implementation.shared_document_body">
+            <t t-set="doc_title" t-value="'Proforma Invoice'"/>
+            <t t-set="doc_name" t-value="'PRINV-' + (doc.partner_id.state_id.code or '') + '-' + (origin_order.reference_code or '') if origin_order else doc.name"/>
+            <t t-set="doc_date" t-value="doc.invoice_date.strftime('%d-%b-%Y') if doc.invoice_date else ''"/>
+            <t t-set="doc_due_date" t-value="doc.invoice_date_due.strftime('%d-%b-%Y') if doc.invoice_date_due else ''"/>
+            <t t-set="currency" t-value="doc.currency_id.name"/>
+            <t t-set="client_name" t-value="doc.partner_id.name"/>
+            <t t-set="client_attention" t-value="doc.partner_id.function or '-'"/>
+            <t t-set="client_trn" t-value="doc.partner_id.vat or '-'"/>
+            <t t-set="client_address" t-value="doc.partner_id.contact_address or '-'"/>
+            <t t-set="subject" t-value="origin_order.subject if origin_order else '-'"/>
+            <t t-set="engagement_type" t-value="origin_order.engagement_type if origin_order else '-'"/>
+            <t t-set="payment_terms" t-value="doc.invoice_payment_term_id.name or '-'"/>
+            <t t-set="expected_timeline" t-value="origin_order.commitment_date.strftime('%d-%b-%Y') if origin_order and origin_order.commitment_date else '-'"/>
+            <t t-set="amount_untaxed" t-value="doc.amount_untaxed"/>
+            <t t-set="amount_tax" t-value="doc.amount_tax"/>
+            <t t-set="amount_total" t-value="doc.amount_total"/>
+            <t t-set="total_in_words" t-value="doc.currency_id.amount_to_text(doc.amount_total)"/>
+            <t t-set="lines" t-value="[{
+                'description': l.name,
+                'uom': l.product_uom_id.name,
+                'qty': l.quantity,
+                'price_unit': l.price_unit,
+                'tax': ', '.join([t.name for t in l.tax_ids]) or '-',
+                'total': l.price_total,
+            } for l in doc.invoice_line_ids if l.product_id]"/>
+          </t>
+        </t>
+      </t>
+    </t>
+  </template>
+</odoo>

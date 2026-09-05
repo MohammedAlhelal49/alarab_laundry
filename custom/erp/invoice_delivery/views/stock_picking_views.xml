@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_picking_form_invoice_delivery" model="ir.ui.view">
+
+        <field name="name">stock.picking.form.invoice.delivery</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+
+            <xpath
+                expr="//div[@name='button_box']"
+                position="inside"
+            >
+
+                <button
+                    name="action_view_source_invoice"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-file-text-o"
+                    invisible="source_invoice_count == 0"
+                >
+
+                    <field
+                        name="source_invoice_count"
+                        widget="statinfo"
+                        string="Invoice"
+                    />
+
+                </button>
+
+            </xpath>
+
+        </field>
+
+    </record>
+
+</odoo>

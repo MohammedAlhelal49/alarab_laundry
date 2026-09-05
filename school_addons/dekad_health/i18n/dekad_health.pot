@@ -1,0 +1,401 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_health
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-28 13:13+0000\n"
+"PO-Revision-Date: 2025-09-28 13:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_health
+#: model:ir.model,name:dekad_health.model_de_teacher
+msgid " Teacher"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health_breadcrumbs
+msgid "<span>/</span>"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health_show
+msgid "<strong class=\"\">Attachment :</strong>"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health_show
+msgid "<strong class=\"\">Create Date :</strong>"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health_show
+msgid "<strong class=\"\">Name :</strong>"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health_show
+msgid "<strong class=\"\">Recommendation :</strong>"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields.selection,name:dekad_health.selection__de_health__blood_group__a+
+msgid "A+ve"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields.selection,name:dekad_health.selection__de_health__blood_group__a-
+msgid "A-ve"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields.selection,name:dekad_health.selection__de_health__blood_group__ab+
+msgid "AB+ve"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields.selection,name:dekad_health.selection__de_health__blood_group__ab-
+msgid "AB-ve"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health
+msgid "Action"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health_checkup__file
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health
+msgid "Attachment"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields.selection,name:dekad_health.selection__de_health__blood_group__b+
+msgid "B+ve"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields.selection,name:dekad_health.selection__de_health__blood_group__b-
+msgid "B-ve"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__blood_group
+msgid "Blood Type"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health
+msgid "Blood group"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health_checkup__name
+msgid "Checkup Name"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health_checkup__recommendation
+msgid "Checkup Recommendation"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health_show
+msgid "Checkup full information"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health
+msgid "Create Date"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__create_uid
+#: model:ir.model.fields,field_description:dekad_health.field_de_health_checkup__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__create_date
+#: model:ir.model.fields,field_description:dekad_health.field_de_health_checkup__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__display_name
+#: model:ir.model.fields,field_description:dekad_health.field_de_health_checkup__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__type
+#: model:ir.model.fields,field_description:dekad_health.field_de_health_checkup__type
+msgid "For"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_student_de_health_checkup_search
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_student_de_health_search
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_teacher_de_health_checkup_search
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_teacher_de_health_search
+msgid "Group By..."
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.ui.menu,name:dekad_health.menu_de_health_root
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health_breadcrumbs
+msgid "Health"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.ui.menu,name:dekad_health.menu_de_health_checkup_general
+msgid "Health Checkups"
+msgstr ""
+
+#. module: dekad_health
+#: model:res.groups,name:dekad_health.group_de_health
+msgid "Health Data and medical checkups"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_student_de_health_checkup_form
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_student_de_health_checkup_search
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_student_de_health_checkup_tree
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_student_de_health_form
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_student_de_health_tree
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_teacher_de_health_checkup_form
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_teacher_de_health_checkup_search
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_teacher_de_health_checkup_tree
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_teacher_de_health_form
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_teacher_de_health_search
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_teacher_de_health_tree
+msgid "Health checkup"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_student__health_checkup_ids
+#: model:ir.model.fields,field_description:dekad_health.field_de_teacher__health_checkup_ids
+msgid "Health checkup Detail"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.ui.menu,name:dekad_health.menu_de_health_general
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health_breadcrumbs
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_student_de_health_search
+msgid "Health data"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__height
+msgid "Height(C.M.)"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health
+msgid "Height(CM)"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__id
+#: model:ir.model.fields,field_description:dekad_health.field_de_health_checkup__id
+msgid "ID"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__student_image
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__teacher_image
+msgid "Image"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__write_uid
+#: model:ir.model.fields,field_description:dekad_health.field_de_health_checkup__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__write_date
+#: model:ir.model.fields,field_description:dekad_health.field_de_health_checkup__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_student_de_health_form
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_teacher_de_health_form
+msgid "Main info"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model,name:dekad_health.model_de_health_checkup
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health
+msgid "Medical checkups"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model,name:dekad_health.model_de_health
+msgid "Medical information"
+msgstr ""
+
+#. module: dekad_health
+#. odoo-python
+#: code:addons/dekad_health/controllers/main.py:0
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health
+msgid "Name"
+msgstr ""
+
+#. module: dekad_health
+#. odoo-python
+#: code:addons/dekad_health/controllers/main.py:0
+msgid "Newest"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields.selection,name:dekad_health.selection__de_health__blood_group__o+
+msgid "O+ve"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields.selection,name:dekad_health.selection__de_health__blood_group__o-
+msgid "O-ve"
+msgstr ""
+
+#. module: dekad_health
+#. odoo-python
+#: code:addons/dekad_health/controllers/main.py:0
+msgid "Oldesr"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_student_de_health_form
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_teacher_de_health_form
+msgid "Other info"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health
+msgid "Physical Disability"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__physical_challenge_note
+msgid "Physical Disability notes"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__physical_challenge
+msgid "Physical Disability?"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health
+msgid "Serious Illness"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__major_disease_note
+msgid "Serious Illness notes"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__major_disease
+msgid "Serious Illness?"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health
+msgid "Show"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model,name:dekad_health.model_de_student
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__student_id
+#: model:ir.model.fields,field_description:dekad_health.field_de_health_checkup__student_id
+#: model:ir.model.fields.selection,name:dekad_health.selection__de_health__type__student
+#: model:ir.model.fields.selection,name:dekad_health.selection__de_health_checkup__type__student
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_student_de_health_checkup_search
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_student_de_health_search
+msgid "Student"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.actions.act_window,name:dekad_health.act_open_student_de_health_view
+msgid "Student Health data"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.actions.act_window,name:dekad_health.act_open_student_de_health_checkup_view
+msgid "Student health Checkups"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.ui.menu,name:dekad_health.menu_student_de_health
+#: model:ir.ui.menu,name:dekad_health.menu_student_de_health_checkup
+msgid "Students"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__teacher_id
+#: model:ir.model.fields,field_description:dekad_health.field_de_health_checkup__teacher_id
+#: model:ir.model.fields.selection,name:dekad_health.selection__de_health__type__teacher
+#: model:ir.model.fields.selection,name:dekad_health.selection__de_health_checkup__type__teacher
+msgid "Teacher"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.actions.act_window,name:dekad_health.act_open_teacher_de_health_checkup_view
+msgid "Teacher Health Checkups"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.actions.act_window,name:dekad_health.act_open_teacher_de_health_view
+msgid "Teacher Health data"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health
+msgid "There are no medical checkups to display."
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health
+msgid "Vision problems"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__eye_glasses_note
+msgid "Vision problems notes"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__eye_glasses
+msgid "Vision problems?"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.model.fields,field_description:dekad_health.field_de_health__weight
+msgid "Weight"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_teacher_de_health_checkup_search
+#: model_terms:ir.ui.view,arch_db:dekad_health.view_teacher_de_health_search
+msgid "teacher"
+msgstr ""
+
+#. module: dekad_health
+#: model:ir.ui.menu,name:dekad_health.menu_teacher_de_health
+#: model:ir.ui.menu,name:dekad_health.menu_teacher_de_health_checkup
+msgid "teachers"
+msgstr ""
+
+#. module: dekad_health
+#: model_terms:ir.ui.view,arch_db:dekad_health.student_health
+msgid "weight (KG)"
+msgstr ""

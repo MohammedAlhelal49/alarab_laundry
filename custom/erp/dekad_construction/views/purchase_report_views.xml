@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add to the Search View for Grouping / Filtering Options -->
+    <record id="view_purchase_order_search_inherit_analysis" model="ir.ui.view">
+        <field name="name">purchase.report.search.inherit.analysis</field>
+        <field name="model">purchase.report</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_search"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//search" position="inside">
+
+                <field name="project_id" string="Project"/>
+
+                <!-- Requirement 1: Exact Task Match -->
+                <field name="task_id" string="Task (Exact Match)"/>
+
+                <!-- Requirement 2: Task + Subtasks -->
+                <!-- The 'child_of' operator automatically fetches the selected task AND any tasks where parent_id matches the selection -->
+                <field name="task_id" string="Task (With Subtasks)" operator="child_of"/>
+
+            </xpath>
+
+            <xpath expr="//group" position="inside">
+                <filter string="Project" name="group_by_project" context="{'group_by': 'project_id'}"/>
+                <filter string="Project Task" name="group_by_task" context="{'group_by': 'task_id'}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- Corrected Pivot View layout -->
+    <record id="purchase_report_view_pivot_inherit_project" model="ir.ui.view">
+        <field name="name">purchase.report.view.pivot.inherit</field>
+        <field name="model">purchase.report</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_pivot"/>
+        <field name="arch" type="xml">
+            <!-- Bulletproof anchor: targets the root pivot element -->
+            <xpath expr="//pivot" position="inside">
+                <field name="project_id" type="row"/>
+                <field name="task_id" type="row"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="purchase_report_list_inherit_project_task" model="ir.ui.view">
+        <field name="name">purchase.report.list.inherit.project.task</field>
+
+        <field name="model">purchase.report</field>
+
+        <field name="inherit_id" ref="dekad_purchase_enhancement.purchase_report_list"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='order_id']" position="after">
+                <field name="project_id" optional="show"/>
+                <field name="task_id" optional="show"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

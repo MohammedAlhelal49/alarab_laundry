@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="custom_external_layout_striped"
+              inherit_id="web.external_layout_striped">
+
+        <!-- HEADER -->
+        <xpath expr="//div[@t-attf-class='o_company_#{company.id}_layout header']"
+               position="replace">
+
+            <div t-attf-class="o_company_#{company.id}_layout header">
+
+                <img
+                    src="/photon_implementation/static/src/img/header.png"
+                    style="width:100%; display:block;"
+                    alt="Header"/>
+
+            </div>
+
+        </xpath>
+
+        <xpath expr="//div[contains(@t-attf-class, 'article o_report_layout_striped')]"
+               position="inside">
+
+                <div class="mt-5"
+                     style="background-color:#fff !important; padding:15px;">
+
+                    <table style="width:100%; margin-top:50px; background-color:#fff !important;border-top:2px solid #fff;border-bottom:2px solid #fff;">
+                        <tr>
+                            <td style="width:50%; text-align:center; background-color:#fff !important;">
+                                <strong>Accountant Signature &amp; Stamp</strong>
+                                <br/><br/><br/>
+                                _______________________
+                                <br/><br/>
+                                <img
+                                    src="/photon_implementation/static/src/img/stamp.png"
+                                    style="max-height:120px; max-width:220px; display:block; margin:0 auto; background-color:#fff;"/>
+                            </td>
+
+                            <td style="width:50%; text-align:center; background-color:#fff !important;">
+                                <strong>Customer Signature &amp; Stamp</strong>
+                                <br/><br/><br/>
+                                _______________________
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+        </xpath>
+
+        <!-- WATERMARK -->
+        <xpath expr="//div[contains(@t-attf-class, 'article o_report_layout_striped')]"
+               position="inside">
+
+            <div style="
+                position:absolute;
+                top:230px;
+                left:0;
+                width:100%;
+                text-align:center;
+                opacity:0.1;
+                z-index:0;
+            ">
+
+                <img
+                    src="/photon_implementation/static/src/img/watermark.png"
+                    style="width:90%;"/>
+
+            </div>
+
+        </xpath>
+
+
+        <!-- FOOTER -->
+        <xpath expr="//div[contains(@t-attf-class, 'footer o_company_')]"
+               position="replace">
+
+            <div t-attf-class="footer o_company_#{company.id}_layout">
+
+                <img
+                    src="/photon_implementation/static/src/img/footer.png"
+                    style="width:100%; display:block;"
+                    alt="Footer"/>
+
+            </div>
+
+        </xpath>
+
+    </template>
+
+</odoo>

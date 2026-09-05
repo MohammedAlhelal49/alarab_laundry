@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_report_form" model="ir.ui.view">
+        <field name="name">purchase.report.form</field>
+        <field name="model">purchase.report</field>
+        <field name="arch" type="xml">
+            <form create="False" delete="False" edit="False">
+                <sheet string="Purchase Report">
+                    <group>
+                        <group string="Main info">
+                            <field name="company_id"/>
+                            <field name="user_id"/>
+                            <field name="order_id"/>
+                            <field name="partner_id"/>
+                            <field name="date_order"/>
+                            <field name="category_id"/>
+                            <field name="product_id"/>
+                            <field name="product_uom" string="Unit of Measure"/>
+                            <field name="analytic_ids" widget="many2many_tags"/>
+
+                        </group>
+                        <group string="Product movements">
+                            <field name="currency_id" invisible="1"/>
+                            <field name="qty_received"/>
+                            <field name="qty_to_be_billed"/>
+                            <field name="qty_billed"/>
+                            <field name="amount_received" widget="monetary"/>
+                            <field name="amount_to_invoice" widget="monetary"/>
+                            <field name="amount_invoiced" widget="monetary"/>
+                            <field name="price_unit" widget="monetary"/>
+                            <field name="untaxed_total" widget="monetary"/>
+                            <field name="qty_ordered" string="Quantity"/>
+                            <field name="price_total" widget="monetary"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="paperformat_us_landscape" model="report.paperformat">
+        <field name="name">US Letter Landscape</field>
+        <field name="default" eval="False"/>
+        <field name="format">Letter</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">30</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_report_purchase_report" model="ir.actions.report">
+        <field name="name">Purchase report</field>
+        <field name="model">purchase.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dekad_purchase_enhancement.purchase_report</field>
+        <field name="report_file">dekad_purchase_enhancement.purchase_report</field>
+        <field name="print_report_name">'Purchase Report - %s' % (object.product_id.name)</field>
+        <field name="binding_model_id" ref="purchase.model_purchase_report"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="dekad_purchase_enhancement.paperformat_us_landscape"/>
+    </record>
+
+    <template id="purchase_report">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <h3 class="mt-3">Purchase report</h3>
+                <table class="table table-sm o_main_table table-borderless mt-4">
+                    <thead style="display: table-row-group">
+                        <tr class="text-center">
+                            <th>
+                                <strong>Order</strong>
+                            </th>
+                            <th>
+                                <strong>Date Order</strong>
+                            </th>
+                            <th>
+                                <strong>Product</strong>
+                            </th>
+                            <th>
+                                <strong>Unit price</strong>
+                            </th>
+                            <th>
+                                <strong>Quantity Ordered</strong>
+                            </th>
+                            <th>
+                                <strong>Total</strong>
+                            </th>
+                            <th>
+                                <strong>Vendor</strong>
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="docs" t-as="o">
+
+                            <td class=""
+                                t-out="o.order_id.name">
+                            </td>
+                            <td class="" t-options="{'widget': 'datetime'}"
+                                t-out="o.date_order">
+                            </td>
+                            <td class=""
+                                t-out="o.product_id.name">
+                            </td>
+
+
+                            <td class=""
+                                t-out="o.price_unit"
+                                t-options="{'widget': 'monetary', 'display_currency': o.currency_id}">
+                            </td>
+
+                            <td class=""
+                                t-out="o.qty_ordered">
+                            </td>
+
+                            <td class=""
+                                t-out="o.price_total"
+                                t-options="{'widget': 'monetary', 'display_currency': o.currency_id}">
+                            </td>
+
+                            <td class=""
+                                t-out="o.partner_id.name">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </t>
+        </t>
+
+    </template>
+
+</odoo>
+
+
+

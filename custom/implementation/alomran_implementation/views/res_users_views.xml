@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_users_form_transfer_company" model="ir.ui.view">
+        <field name="name">res.users.form.transfer.company</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+
+        <field name="arch" type="xml">
+
+            <xpath expr="//header" position="inside">
+
+                <button
+                    name="action_open_transfer_company_wizard"
+                    type="object"
+                    string="Transfer Leads &amp; Contacts"
+                    class="btn-primary"
+                    groups="base.group_system"/>
+
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

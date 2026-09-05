@@ -1,0 +1,55 @@
+<odoo>
+
+    <template id="report_payment_receipt_document_inherit"
+              inherit_id="account.report_payment_receipt_document">
+
+
+        <xpath expr="//div[@class='mb-4 mt-3']" position="replace">
+
+            <table class="table table-bordered mb-5 mt-5">
+                <thead>
+                    <tr>
+                        <th>Payment Date</th>
+                        <th>
+                            <t t-if="o.partner_type == 'customer'">
+                                Customer Name
+                            </t>
+                            <t t-else="">
+                                Vendor Name
+                            </t>
+                        </th>
+                        <th>Payment Amount</th>
+                        <th>Payment Method</th>
+                        <th>Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span t-field="o.date"/>
+                        </td>
+
+                        <td>
+                            <span t-field="o.partner_id"/>
+                        </td>
+
+                        <td>
+                            <span t-field="o.amount"
+                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                        </td>
+
+                        <td>
+                            <span t-field="o.payment_method_id.name"/>
+                        </td>
+
+                        <td>
+                            <span t-field="o.memo"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </xpath>
+
+    </template>
+</odoo>

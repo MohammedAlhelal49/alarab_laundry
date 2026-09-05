@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- document -->
+    <template id="student_achievement_doc_entry" inherit_id="portal.portal_my_home" priority="20">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry"
+               t-if="student_achievement_document and student_achievement_document['show']">
+                <t t-set="icon">
+                    <i class="fa fa-files-o"/>
+                </t>
+                <t t-set="title" t-value="'Achievement'"/>
+                <t t-set="url" t-value="student_achievement_document['url']"/>
+
+
+                <t t-set="count">
+                    <span class="document_item_count" t-esc="student_achievement_document['count']"/>
+                </t>
+                <div class="clearing"/>
+
+            </t>
+        </xpath>
+    </template>
+    <!-- document -->
+
+    <!-- breadcrumb -->
+    <template id="portal_student_achievement_breadcrumbs" inherit_id="portal.portal_breadcrumbs">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name=='Achievements'" t-attf-class="breadcrumb-item">
+                <a t-att-href="page_url">Achievements
+                </a>
+            </li>
+        </xpath>
+    </template>
+    <!-- breadcrumb -->
+
+
+    <!-- list -->
+    <template id="student_achievement" name="Achievements list">
+        <t t-call="portal.portal_layout">
+
+            <div class="card  portal-page-holder-topper">
+
+                <div class="card-body ">
+                    <t t-if="achievement_records">
+                        <div class="row achievement-cards-holder">
+                            <div class="holder col-12 col-md-6 col-xl-4  " t-foreach="achievement_records"
+                                 t-as="achievement">
+                                <div class="card">
+                                    <div class="card-text">
+                                        <div class="row">
+                                            <div class="col-3">
+
+                                                <t t-if="achievement.achievement_image">
+                                                    <img t-attf-src="data:image/png;base64,{{achievement.achievement_image}}"
+                                                         alt="Avatar" class=""
+                                                         style="width: 70px; "/>
+                                                </t>
+                                                <t t-else="">
+                                                    <img
+                                                            src="/dekad_achievement/static/img/achievement.jpg"
+                                                            alt="Avatar"
+                                                            style="width: 70px ;"/>
+
+                                                </t>
+                                            </div>
+                                            <div class="col-9">
+                                                <strong class="achievement-title">
+                                                    <t t-esc="achievement.achievement_id.name"/>
+                                                </strong>
+                                                <div class="achievement-description">
+                                                    <div class="block">
+                                                        <strong>Given by :</strong>
+                                                        <t t-esc="achievement.user_id.name"/>
+                                                    </div>
+                                                    <div class="block">
+                                                        <strong>Given on :</strong>
+                                                        <t t-esc="achievement.create_date"
+                                                           t-options="{'widget':'datetime'}"/>
+                                                    </div>
+                                                    <div class="block">
+                                                        <strong>Reason :</strong>
+                                                        <t t-esc="achievement.reason"/>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </t>
+
+                    <t t-else="">
+                        <div class="alert alert-info" role="alert">
+                            There are no achievement to display.
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+    <!-- list -->
+
+
+</odoo>

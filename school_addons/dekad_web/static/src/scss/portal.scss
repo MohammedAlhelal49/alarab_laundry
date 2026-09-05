@@ -1,0 +1,472 @@
+
+
+// parent student hint
+.parent-student-hint {
+    margin-top: 10px;
+    display: block;
+    position: relative;
+    top: 5px;
+    font-size: 14px;
+    color: #4c4c4c;
+    background: white;
+    padding: 7px 10px;
+    border: 1px solid #dee2e6 !important;
+    border-radius : 5px;
+}
+.o_portal_my_home .card-text{
+font-size:14px !important;
+}
+
+
+//  the student profile page
+.student-profile-navs {
+  .nav-link {
+    border-radius: 0px !important;
+    color: unset !important;
+    font-size: 15px !important;
+  }
+
+  .active {
+    background: #f3f3f3 !important;
+    color: unset !important;
+  }
+}
+.student-profile {
+  padding: 15px;
+
+  .header-holder {
+  display : flex;
+
+    .image-holder , .name-holder {
+  display: inline-block;
+  }
+
+  .image-holder {
+  div {
+      color: #727272;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left : 5px;
+  }
+  }
+
+  .name-holder {
+    display: flex;
+    max-width: 280px;
+    padding-left: 20px;
+    padding-top: 10px;
+  }
+
+  }
+
+p {
+font-size:14px !important;
+}
+
+@media (max-width:500px) {
+h6 {
+font-size:13px !important;
+}
+
+p {
+font-size:13px !important;
+}
+}
+
+
+  hr {
+    color: #a8a8a8 !important;
+  }
+}
+
+// the time table modal
+
+.session-modal span {
+font-size:14px !important;
+}
+
+
+// the success alert
+.success-alert {
+  border-radius: 0px !important;
+  span {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  i {
+    font-size: 18px !important;
+  }
+}
+
+// file size alert
+.file-size-alert {
+  font-size: 12px;
+  background: #ededed;
+  padding: 3px 7px;
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #767676;
+}
+
+//  handle the list records actions
+.website-actions-td:not(:first-child) {
+   button {
+     margin-left: 5px;
+      margin-top: 3px;
+       margin-bottom: 3px;
+   }
+}
+
+
+
+// handle the form designing
+.card-body {
+    color: #4a4a4a !important;
+    font-size: 15px !important;
+}
+
+.portal-page-content {
+  margin-top: 10px;
+
+  h5 {
+    margin-bottom: 10px;
+  }
+
+  .row {
+    .col-12,.col-6,.col-md-6,.col-lg-6,
+    .col-xl-6 {
+      margin-bottom: 10px !important;
+    }
+  }
+
+  .hidden-file {
+    visibility: hidden;
+  }
+
+  .file-field-container {
+    position: relative;
+    .clear-icon {
+      position: absolute;
+      top: 39px;
+      cursor: pointer;
+      font-size: 12px;
+      background: whitesmoke;
+      padding: 8px;
+      right: 17px;
+    }
+  }
+  .error-alert {
+    display: none;
+  }
+}
+
+.portal-page-content {
+  margin-top: 10px;
+
+  h5 {
+    margin-bottom: 10px;
+  }
+
+  .row {
+    .col-12,
+    .col-xl-6 {
+      margin-bottom: 15px;
+    }
+  }
+
+  .hidden-file {
+    visibility: hidden;
+  }
+
+  .file-field-container {
+    position: relative;
+
+    .clear-icon {
+      position: absolute;
+      top: 39px;
+      cursor: pointer;
+      font-size: 12px;
+      background: whitesmoke;
+      padding: 8px;
+      right: 17px;
+    }
+  }
+
+  .update-file-holder {
+
+      position: relative;
+      top: 20px;
+
+  }
+
+  .error-alert {
+    display: none;
+  }
+}
+
+.form-action-buttons {
+  a {
+    display: inline-block;
+    margin-left: 5px;
+  }
+}
+
+  .form-buttons-holder {
+  margin-top : 20px;
+  }
+
+.handle-input-span-height {
+  height: 38px !important;
+}
+
+.col-form-label {
+  color: #484848 !important;
+}
+
+.validation-error-span {
+  font-size: 12px;
+  margin-left: 5px;
+  margin-top: 2px;
+  visibility: hidden;
+  color: #d04646;
+}
+
+.important-field-asterisk {
+  color: #d04646;
+  margin-top: 2px;
+  position: relative;
+  top: 3px;
+  left: 2px;
+  font-size: 15px;
+}
+
+// handle the parent website parent => students cards
+.parent-document-icon {
+font-size:20px !important;
+}
+.parent-students-holder{
+padding: 0px;
+.parent-students-card {
+  width: calc(50% - 30px) !important;
+  margin: 15px;
+
+  @media (max-width: 991px) {
+    width: 100% !important;
+    margin: unset !important;
+    margin-bottom: 10px !important;
+  }
+  .student-content div {
+    margin-bottom: 8px;
+    color: rgba(0, 0, 0, 0.6) !important;
+    i {
+      margin-right: 4px !important;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  padding: 15px !important;
+}
+
+
+@media(max-width:500px) {
+h6 {
+font-size:15px !important;
+}
+
+}
+img {
+width : 100% !important;
+}
+}
+
+
+
+// parent account page pages links
+.parent-page-link {
+  display: block !important;
+  span:nth-of-type(1) {
+    display: inline-block;
+    margin-left: 5px;
+  }
+  span:nth-of-type(2) {
+  }
+
+  span.float-right {
+    display: flex;
+    align-items: center;
+  }
+}
+
+// handle the hr color
+hr {
+  color: #939393 !important;
+}
+
+// adding the quizz timer designing
+.quiz-questions-header {
+  position: relative;
+  top: -15px;
+  .quiz-countdown  , .count{
+    display: inline-block;
+
+    padding: 5px 10px;
+    margin-top: 10px;
+
+    color: white;
+
+        background: #f9f9f9 !important;
+    border: 1px solid #e7e7e7 !important;
+
+    color: #565656;
+
+  }
+
+}
+
+.quiz-hr {
+  color: #b3b3b3 !important;
+  margin-top: 0px !important;
+}
+
+.question-mark {
+  color: gray;
+  float: right;
+  margin-right: 10px;
+  margin-top: 5px;
+  font-weight: 400 !important;
+  font-size:12px !important;
+
+  @media(max-width:600px) {
+   display : block ;
+   float : none;
+   margin-top : 5px;
+   margin-bottom : 5px;
+  }
+}
+
+.quiz-questions-holder .card {
+  background: #f9f9f9 !important;
+  border: 1px solid #e7e7e7 !important;
+}
+
+.form-check-inline {
+  width: unset !important;
+}
+
+.options-input-header {
+  font-weight: 700;
+  color: #484848 !important;
+  padding-top: calc(0.375rem + 1px);
+  padding-bottom: 10px;
+  margin-bottom: 0;
+  font-size: inherit;
+  line-height: 1.5;
+}
+
+.form-check-label {
+  font-weight: unset !important;
+}
+
+// assignment page
+.assignment-description-holder {
+  margin-top: 15px !important;
+}
+
+// handling the portal pagination
+.o_portal_pager {
+  .page-item {
+    font-size: 11px !important;
+  }
+  .page-item.active .page-link {
+    background-color: #3d3b3d;
+    border-color: #3d3b3d;
+  }
+}
+
+// handle the breadcrumb designing
+.breadcrumb {
+.breadcrumb-item {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+     a {
+      color: #38383B !important;
+     }
+}
+span {
+margin : 0px 5px;
+}
+}
+
+.navbar-text {
+    color: #38383B !important;
+}
+
+
+// handle portal the document
+.portal-page-holder-topper {
+margin-top : 10px !important;
+.card-body {
+padding-top : 0px !important;
+}
+}
+
+// achievement designing
+.achievement-cards-holder {
+.achievement-title {
+font-size:18px !important;
+}
+.achievement-description {
+    margin-top: 7px;
+    font-size: 13px;
+
+    .block {
+    margin-top : 3px;
+    }
+}
+
+.holder {
+margin-top : 20px;
+}
+
+img {
+position :  relative;
+top : 5px;
+}
+
+@media(max-width:767px) {
+max-width:450px !important;
+
+}
+
+@media(max-width:830px) {
+.achievement-title {
+font-size:16px !important;
+margin-left : 5px;
+}
+.achievement-description {
+font-size:12px !important;
+margin-left : 5px;
+}
+
+}
+}
+
+
+.student-blocked-hint-alert {
+    font-size: 14px;
+    padding: 5px 10px !important;
+}
+
+
+.page-fade-animate {
+opacity : 0;
+  transition: opacity 1s;
+}
+
+.action-btn-links {
+button {
+margin-bottom : 5px ;
+}
+}

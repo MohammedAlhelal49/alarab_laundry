@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_job_cost_sheet" model="ir.sequence">
+            <field name="name">Job Cost Sheet Sequence</field>
+            <field name="code">job.cost.sheet.sequence</field>
+            <field name="prefix">COST-SHEET/</field>
+            <field name="padding">4</field>
+            <field name="implementation">no_gap</field>
+            <field name="number_next">1</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_account_analytic_line_form_inherit_payment_method"
+            model="ir.ui.view">
+        <field name="name">account.analytic.line.form.payment.method</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="account.view_account_analytic_line_form_inherit_account"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//group[@name='accounting']" position="inside">
+                <field name="payment_method_id" readonly="1"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_account_analytic_line_tree_inherit_payment_method"
+            model="ir.ui.view">
+        <field name="name">account.analytic.line.tree.payment.method</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_line_tree"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='move_line_id']" position="after">
+                <field name="payment_method_id" optional="show"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_account_analytic_line_filter_inherit_payment_method"
+            model="ir.ui.view">
+        <field name="name">account.analytic.line.filter.payment.method</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_line_filter"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//search" position="inside">
+                <field name="payment_method_id"/>
+            </xpath>
+
+            <xpath expr="//group" position="inside">
+                <filter string="Payment Method"
+                        name="group_by_payment_method"
+                        context="{'group_by': 'payment_method_id'}"/>
+
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

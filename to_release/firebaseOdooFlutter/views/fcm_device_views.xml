@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fcm_device_view_tree" model="ir.ui.view">
+        <field name="name">fcm.device.view.tree</field>
+        <field name="model">fcm.device</field>
+        <field name="arch" type="xml">
+            <list string="FCM Devices">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="token"/>
+                <field name="device_type"/>
+                <field name="dbname"/>
+                <field name="server_url"/>
+                <button name="action_test_notification" type="object" string="Test Notification" class="btn-primary" icon="fa-paper-plane"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="fcm_addon_preference_view_form" model="ir.ui.view">
+        <field name="name">fcm.addon.preference.view.form</field>
+        <field name="model">fcm.addon.preference</field>
+        <field name="arch" type="xml">
+            <form string="Addon Preference">
+                <sheet>
+                    <group>
+                        <field name="module_id" readonly="1"/>
+                        <field name="is_enabled" widget="boolean_toggle"/>
+                    </group>
+                    <notebook invisible="not is_enabled">
+                        <page string="Actions" name="actions">
+                            <field name="action_ids">
+                                <list editable="bottom" create="0" delete="0">
+                                    <field name="action_label" readonly="1" string="Action"/>
+                                    <field name="is_enabled" widget="boolean_toggle" string="Enabled"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="fcm_device_view_form" model="ir.ui.view">
+        <field name="name">fcm.device.view.form</field>
+        <field name="model">fcm.device</field>
+        <field name="arch" type="xml">
+            <form string="FCM Device">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_test_notification" type="object" string="Test Notification" class="oe_stat_button" icon="fa-paper-plane"/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="partner_id"/>
+                            <field name="device_type"/>
+                        </group>
+                        <group>
+                            <field name="token"/>
+                            <field name="dbname"/>
+                            <field name="server_url"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Addon Preferences" name="addon_preferences">
+                            <group>
+                                <button name="action_initialize_fcm_preferences" 
+                                        type="object" 
+                                        string="Load/Refresh Addons" 
+                                        class="btn-secondary"
+                                        help="Click to load all installed addons to manage their notifications for this device."/>
+                            </group>
+                            <field name="fcm_addon_preference_ids">
+                                <list create="0" delete="0">
+                                    <field name="module_id" readonly="1"/>
+                                    <field name="is_enabled" widget="boolean_toggle" string="Notifications Enabled"/>
+                                    <button name="open_actions" type="object" string="Manage Actions" icon="fa-list" class="oe_link"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="fcm_device_action" model="ir.actions.act_window">
+        <field name="name">FCM Devices</field>
+        <field name="res_model">fcm.device</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="fcm_device_menu"
+              name="FCM Devices"
+              parent="base.menu_administration"
+              action="fcm_device_action"
+              sequence="100"/>
+</odoo>

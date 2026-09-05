@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_res_config_settings_group_de_support,name_res_config_settings_group_de_support,base.model_res_config_settings,dekad_super_user.group_de_support,1,1,1,1
+
+
+

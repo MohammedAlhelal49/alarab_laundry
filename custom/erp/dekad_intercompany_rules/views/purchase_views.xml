@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_order_form_intercompany_lock" model="ir.ui.view">
+        <field name="name">purchase.order.form.intercompany.lock</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Hide the Unlock button when the PO is locked by an intercompany SO -->
+            <button name="button_unlock" position="attributes">
+                <attribute name="invisible">state != 'done' or intercompany_locked</attribute>
+            </button>
+        </field>
+    </record>
+</odoo>

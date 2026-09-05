@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_mobile_app_config_tree" model="ir.ui.view">
+        <field name="name">mobile.app.config.tree</field>
+        <field name="model">mobile.app.config</field>
+        <field name="arch" type="xml">
+            <list string="Mobile Apps Configuration">
+                <field name="name"/>
+                <field name="technical_name"/>
+                <field name="icon"/>
+                <field name="is_active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_mobile_app_config_form" model="ir.ui.view">
+        <field name="name">mobile.app.config.form</field>
+        <field name="model">mobile.app.config</field>
+        <field name="arch" type="xml">
+            <form string="Mobile App Configuration">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" placeholder="e.g. mobo Barcode"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="technical_name"/>
+                            <field name="icon"/>
+                        </group>
+                        <group>
+                            <field name="is_active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Security &amp; Permissions" name="security">
+                            <group>
+                                <field name="allowed_group_ids" widget="many2many_tags" placeholder="Select groups allowed to access..."/>
+                            </group>
+                            <p class="text-muted">
+                                If no groups are selected, this app will be available to all authenticated users (unless restricted by specific users list below).
+                            </p>
+                        </page>
+                        <page string="Allowed Users" name="allowed_users">
+                            <group>
+                                <field name="allowed_user_ids" widget="many2many_tags" placeholder="Select users allowed to access..."/>
+                            </group>
+                            <p class="text-muted">
+                                Assign access to individual users. This acts as an explicit override (in addition to any group permissions).
+                            </p>
+                        </page>
+                        <page string="Description" name="description">
+                            <field name="description" placeholder="Provide a short description of what this mobile module does..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_mobile_app_config_search" model="ir.ui.view">
+        <field name="name">mobile.app.config.search</field>
+        <field name="model">mobile.app.config</field>
+        <field name="arch" type="xml">
+            <search string="Search Mobile Apps">
+                <field name="name"/>
+                <field name="technical_name"/>
+                <filter string="Active" name="active" domain="[('is_active', '=', True)]"/>
+                <filter string="Inactive" name="inactive" domain="[('is_active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Window Action -->
+    <record id="action_mobile_app_config" model="ir.actions.act_window">
+        <field name="name">Mobile Apps Config</field>
+        <field name="res_model">mobile.app.config</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_mobile_app_config_search"/>
+        <field name="context">{'search_default_active': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Configure your mobile application features!
+            </p>
+            <p>
+                Manage active mobile features and restrict access using Odoo's user groups.
+            </p>
+        </field>
+    </record>
+</odoo>

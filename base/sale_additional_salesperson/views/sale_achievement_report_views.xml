@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_commission_report_view_list_inherit" model="ir.ui.view">
+        <field name="name">sale.commission.report.view.list.inherit</field>
+        <field name="model">sale.commission.report</field>
+        <field name="inherit_id" ref="sale_commission.sale_commission_report_view_list"/>
+        <field name="arch" type="xml">
+
+            <!-- Hide 'achieved' field from the list (tree) view -->
+            <xpath expr="//field[@name='achieved']" position="replace"/>
+
+            <!-- Hide 'commission' field from the list (tree) view -->
+            <xpath expr="//field[@name='commission']" position="replace"/>
+
+        </field>
+    </record>
+    <record id="sale_commission_report_list_inherit_net_paid_after_split" model="ir.ui.view">
+        <field name="name">sale.commission.report.view.list.inherit.net_paid_after_split</field>
+        <field name="model">sale.commission.report</field>
+        <field name="inherit_id" ref="sale_commission.sale_commission_report_view_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list/field[@name='target_id']" position="after">
+                <field name="net_paid_after_split"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="sale_achievement_report_view_list_inherit" model="ir.ui.view">
+        <field name="name">sale.commission.achievement.report.view.list.inherit</field>
+        <field name="model">sale.commission.achievement.report</field>
+        <field name="inherit_id" ref="sale_commission.sale_achievement_report_view_list"/>
+        <field name="arch" type="xml">
+            <!-- Hide 'achieved' field from the list (tree) view -->
+            <xpath expr="//field[@name='achieved']" position="replace"/>
+
+            <!-- Add custom invoice-related fields after 'user_id' in the list view -->
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="invoice_partner_display_name" optional="hide"/>
+                <field name="invoice_name" optional="hide"/>
+                <field name="invoice_amount_signed" optional="hide"/>
+                <field name="invoice_paid_amount" optional="hide"/>
+                <field name="third_party_deduction" optional="hide"/>
+                <field name="tax_deduction" optional="hide"/>
+                <field name="net_paid" optional="hide"/>
+                <field name="net_paid_after_split" optional="hide"/>
+                <field name="invoice_additional_salespersons" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale_achievement_report_view_search_inherit_related_group"
+            model="ir.ui.view">
+        <field name="name">sale.commission.achievement.report.search.inherit.related.group</field>
+        <field name="model">sale.commission.achievement.report</field>
+        <field name="inherit_id" ref="sale_commission.sale_achievement_report_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search/group" position="inside">
+                <filter name="grp_invoice_name"
+                        string="Customer Invoice"
+                        context="{'group_by': 'invoice_name'}"/>
+            </xpath>
+        </field>
+    </record>
+
+<!--    <record id="sale_commission.sale_achievement_action_report" model="ir.actions.act_window">-->
+<!--        <field name="context">{'search_default_grp_invoice_name': 1}</field>-->
+<!--    </record>-->
+
+
+
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record model="ir.module.category" id="module_category_inventory_additional_permissions">
+            <field name="name">Inventory Additional Permissions</field>
+            <field name="sequence">12</field>
+        </record>
+
+        <!-- Group: Allows users to delete stock pickings -->
+        <record id="group_stock_picking_delete" model="res.groups">
+            <field name="name">Allow Picking Delete</field>
+            <field name="category_id" ref="module_category_inventory_additional_permissions"/>
+        </record>
+
+        <!-- Group: Allows users to cancel stock pickings -->
+        <record id="group_stock_picking_cancel" model="res.groups">
+            <field name="name">Allow Picking Cancel</field>
+            <field name="category_id" ref="module_category_inventory_additional_permissions"/>
+        </record>
+
+        <!-- Group: Allows users to validate stock pickings -->
+        <record id="group_stock_picking_validate" model="res.groups">
+            <field name="name">Allow Picking Validation</field>
+            <field name="category_id" ref="module_category_inventory_additional_permissions"/>
+        </record>
+
+        <!-- Group: Allows users to return stock pickings -->
+        <record id="group_stock_picking_return" model="res.groups">
+            <field name="name">Allow Picking Return</field>
+            <field name="category_id" ref="module_category_inventory_additional_permissions"/>
+        </record>
+
+
+        <record id="base.group_user" model="res.groups">
+            <field name="implied_ids" eval="[(4, ref('dekad_erp_additional_permissions.group_stock_picking_delete')),
+                                              (4, ref('dekad_erp_additional_permissions.group_stock_picking_cancel')),
+                                              (4, ref('dekad_erp_additional_permissions.group_stock_picking_validate')),  (4, ref('dekad_erp_additional_permissions.group_stock_picking_return'))]"/>
+        </record>
+    </data>
+</odoo>

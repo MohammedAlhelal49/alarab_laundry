@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="rental_close_reason_end_of_term" model="rental.close.reason">
+        <field name="name">End of Contract Term</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="rental_close_reason_tenant_request" model="rental.close.reason">
+        <field name="name">Tenant Requested Termination</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="rental_close_reason_non_payment" model="rental.close.reason">
+        <field name="name">Non-Payment</field>
+        <field name="sequence">30</field>
+    </record>
+
+    <record id="rental_close_reason_property_sold" model="rental.close.reason">
+        <field name="name">Property Sold</field>
+        <field name="sequence">40</field>
+    </record>
+
+    <record id="rental_close_reason_property_maintenance" model="rental.close.reason">
+        <field name="name">Property Under Maintenance / Renovation</field>
+        <field name="sequence">50</field>
+    </record>
+
+    <record id="rental_close_reason_lease_violation" model="rental.close.reason">
+        <field name="name">Lease Violation</field>
+        <field name="sequence">60</field>
+    </record>
+
+    <record id="rental_close_reason_other" model="rental.close.reason">
+        <field name="name">Other</field>
+        <field name="sequence">100</field>
+    </record>
+</odoo>

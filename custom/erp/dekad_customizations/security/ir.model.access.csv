@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_partner_property_set_user,partner.property.set.user,model_res_partner_property_set,base.group_user,1,1,1,0
+access_sale_order_property_set_user,sale.order.property.set.user,model_sale_order_property_set,base.group_user,1,1,1,0
+access_account_move_property_set_user,account.move.property.set.user,model_account_move_property_set,base.group_user,1,1,1,0
+access_purchase_order_property_set_user,purchase.order.property.set.user,model_purchase_order_property_set,base.group_user,1,1,1,0
+access_hr_expense_property_set_user,hr.expense.property.set.user,model_hr_expense_property_set,base.group_user,1,1,1,0

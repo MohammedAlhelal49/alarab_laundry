@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dekad_stock_picking_cancel_stock_user,name_dekad_stock_picking_cancel_stock_user,model_dekad_picking_cancel_wizard,stock.group_stock_user,1,1,1,1

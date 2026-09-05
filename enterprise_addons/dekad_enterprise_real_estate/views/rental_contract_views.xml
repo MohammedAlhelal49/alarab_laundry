@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ====================================================== -->
+    <!-- Rental Contract Form -->
+    <!-- ====================================================== -->
+
+    <record id="view_sale_order_form_rental_contract1" model="ir.ui.view">
+        <field name="name">sale.order.form.rental.contract1</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="priority">1000</field>
+        <field name="arch" type="xml">
+
+            <!-- Rename Customer -->
+            <field name="partner_id" position="replace">
+                <field name="partner_id" string="Tenant" invisible="context.get('is_rental_contract') != True"/>
+                <field name="partner_id" string="Customer" invisible="context.get('is_rental_contract') == True"/>
+            </field>
+
+
+            <!-- Property + Guarantor -->
+            <field name="partner_id" position="after">
+                <field name="building_id" invisible="not context.get('is_rental_contract')"/>
+                <field name="account_analytic_account_id" invisible="not context.get('is_rental_contract')" domain="[('is_property', '=', True), ('property_building_id', '=', building_id)]"/>
+                <field name="guarant_partner_id" invisible="not context.get('is_rental_contract')"/>
+
+            </field>
+
+
+            <!-- Contract Number -->
+            <field name="guarant_partner_id" position="after">
+
+                <field name="contract_number" invisible="not context.get('is_rental_contract')"/>
+
+            </field>
+
+            <!-- Extra Fields -->
+            <field name="payment_term_id" position="after">
+
+                <field name="annual_rental" invisible="not context.get('is_rental_contract')"/>
+
+                <field name="contract_status" invisible="not context.get('is_rental_contract')"/>
+                <field name="notice_date"
+                       invisible="contract_status != 'notice'"/>
+
+                <field name="sd" invisible="not context.get('is_rental_contract')"/>
+
+            </field>
+
+        </field>
+    </record>
+
+
+    <!-- ====================================================== -->
+    <!-- Sale Order Tree -->
+    <!-- ====================================================== -->
+
+    <record id="view_sale_order_tree_rental_contract" model="ir.ui.view">
+        <field name="name">sale.order.tree.rental.contract</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='name']" position="after">
+
+                <field name="account_analytic_account_id" optional="show" invisible="not context.get('is_rental_contract')"/>
+
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_sale_order_form_rental_contract" model="ir.ui.view">
+        <field name="name">sale.order.form.rental.contract</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_subscription.sale_subscription_order_view_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Contract End Date Required -->
+            <field name="end_date" position="attributes">
+                <attribute name="required">context.get('is_rental_contract')</attribute>
+            </field>
+            <xpath expr="//label[@name='plan_label']" position="before">
+
+                <field
+                    name="rental_start_date"
+                    required="account_analytic_account_id"
+                    readonly="subscription_state == '2_renewal'"
+                    invisible="not context.get('is_rental_contract')"/>
+
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- ====================================================== -->
+    <!-- Rental Contract Action -->
+    <!-- ====================================================== -->
+
+
+    <record id="action_rental_contracts" model="ir.actions.act_window">
+        <field name="name">Rental Contracts</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">kanban,list,calendar,form</field>
+        <field name="context">{'is_rental_contract': True}</field>
+    </record>
+
+    <record id="filter_running_contracts" model="ir.filters">
+        <field name="name">Running contracts</field>
+        <field name="model_id">sale.order</field>
+        <field name="is_default">True</field>
+        <field name="user_id" eval="False"/>
+        <field name="action_id" ref="dekad_enterprise_real_estate.action_rental_contracts"/>
+        <field name="domain">[]</field>
+        <field name="context">{'group_by': ['related_building_id']}</field>
+        <field name="sort">[]</field>
+    </record>
+
+</odoo>

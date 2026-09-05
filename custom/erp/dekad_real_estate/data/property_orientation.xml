@@ -1,0 +1,16 @@
+<odoo>
+    <data noupdate="1">
+        <record id="orientation_east" model="property.orientation">
+            <field name="name">East</field>
+        </record>
+        <record id="orientation_west" model="property.orientation">
+            <field name="name">West</field>
+        </record>
+        <record id="orientation_north" model="property.orientation">
+            <field name="name">North</field>
+        </record>
+        <record id="orientation_south" model="property.orientation">
+            <field name="name">South</field>
+        </record>
+    </data>
+</odoo>

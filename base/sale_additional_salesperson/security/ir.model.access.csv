@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_scpml_user,sale_commission_payment_method_line_deduction_user,model_sale_commission_payment_method_line_deduction,base.group_user,1,0,0,0
+access_scpml_manager,sale_commission_payment_method_line_deduction_manager,model_sale_commission_payment_method_line_deduction,sales_team.group_sale_manager,1,1,1,1

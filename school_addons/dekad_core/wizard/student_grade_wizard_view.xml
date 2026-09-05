@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_de_student_grade_wizard_form" model="ir.ui.view">
+            <field name="name">de.student.grade.wizard.form</field>
+            <field name="model">de.student.grade.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Student grade status">
+                    <div invisible="multi_grade == False" class="alert alert warning">
+                        Please close
+                        the wizard and select student grades only from one grade to do this action
+                    </div>
+                    <div invisible="multi_grade == True">
+                        <group>
+                            <field name="student_ids" readonly="1" widget="many2many_tags"/>
+                            <field name="state"/>
+                            <field name="multi_grade" invisible="1"/>
+                        </group>
+                    </div>
+                    <footer>
+                        <span groups="base.group_user">
+                            <button invisible="multi_grade == True" string="Proceed" type="object" name="wizard_save"
+                                    class="oe_highlight"/>
+                            <span invisible="multi_grade == True">or</span>
+                            <button special="cancel" string="Cancel" type="object"/>
+                        </span>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_de_student_grade_wizard_view">
+            <field name="name">Status change (fail or finish)</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.student.grade.wizard</field>
+            <field name="binding_view_types">list</field>
+            <field name="binding_model_id" ref="model_de_student_grade"/>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_student_grade_wizard_view_form">
+            <field name="act_window_id" ref="act_open_de_student_grade_wizard_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_de_student_grade_wizard_form"/>
+        </record>
+    </data>
+</odoo>

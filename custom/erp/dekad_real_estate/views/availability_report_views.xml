@@ -1,0 +1,53 @@
+<odoo>
+    <record id="view_property_availability_report_list" model="ir.ui.view">
+        <field name="name">real.estate.property.availability.report.list</field>
+        <field name="model">real.estate.property.availability.report</field>
+        <field name="arch" type="xml">
+            <list create="false" edit="false" delete="false">
+                <field name="property_id" decoration-danger="not is_available" decoration-success="is_available"/>
+                <field name="building_id" optional="hide"/>
+                <field name="company_id"  optional="hide" groups="base.group_multi_company"/>
+                <field name="rental_contract_count" optional="hide"/>
+                <field name="is_available"/>
+                <field name="current_contract_id"/>
+                <field name="current_contract_rent_state" optional="hide"/>
+                <field name="rent_start_date"/>
+                <field name="rent_end_date"/>
+                <field name="days_left" decoration-danger="not is_available" decoration-success="is_available"/>
+                <button name="action_open_contract"
+                        type="object"
+                        icon="fa-file-text-o"
+                        invisible="not current_contract_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_property_availability_report_search" model="ir.ui.view">
+        <field name="name">real.estate.property.availability.report.search</field>
+        <field name="model">real.estate.property.availability.report</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="property_id"/>
+                <field name="building_id"/>
+                <field name="company_id"/>
+                <filter string="Available" name="filter_available" domain="[('is_available', '=', True)]"/>
+                <filter string="Unavailable" name="filter_unavailable" domain="[('is_available', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Building" name="group_building" context="{'group_by': 'building_id'}"/>
+                    <filter string="Company" name="group_company" context="{'group_by': 'company_id'}"/>
+                    <filter string="Availability" name="group_availability" context="{'group_by': 'availability_status'}"/>
+                    <filter string="Contract Status" name="group_rent_state" context="{'group_by': 'current_contract_rent_state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_property_availability_report" model="ir.actions.act_window">
+        <field name="name">Property Availability</field>
+        <field name="res_model">real.estate.property.availability.report</field>
+        <field name="view_mode">list</field>
+        <field name="search_view_id" ref="view_property_availability_report_search"/>
+        <field name="context">{'search_default_group_building': 1,
+                                'search_default_group_availability': 1}</field>
+    </record>
+</odoo>

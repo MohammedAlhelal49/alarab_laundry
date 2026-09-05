@@ -1,0 +1,23 @@
+{
+    'name': 'Mostar Implementation Customizations',
+    'version': '18.0.1.9.7',
+    'category': 'Sales',
+    'summary': 'Custom fields and individual line-per-page dynamic PDF engine for Mostar.',
+    'author': 'Dekad (Mofeed Dozkanji)',
+    'depends': ['base', 'web', 'sale_management', 'account', 'purchase', 'product'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/sale_order_views.xml',
+        'views/sale_order_line_views.xml',
+        'views/purchase_order_views.xml',
+        'views/product_views.xml',
+        'views/res_partner_views.xml',
+        'reports/reports.xml',
+        'reports/report_sale_order_line_templates.xml',
+        'reports/report_sale_order_line_service_separated_template.xml',
+        'reports/report_invoice_custom.xml',
+    ],
+    'installable': True,
+    'application': False,
+    'license': 'LGPL-3',
+}

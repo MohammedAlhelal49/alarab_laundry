@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="teachers_page" name="Teachers Training Programs">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <!-- Hero Section -->
+                <section class="hero-section py-5" style="min-height: 60vh; display: flex; align-items: center;">
+                    <div class="container text-center hero-content">
+                        <div class="animate-scale">
+                            <span class="badge bg-warning text-dark mb-3" style="font-size: 1rem; padding: 0.75rem 1.5rem;">
+                                <i class="fa fa-star me-2"></i>
+                                Most Requested Program
+                            </span>
+                            <h1 class="display-3 fw-bold mb-3" style="color: white;">Professional Teacher Training</h1>
+                            <p class="lead mb-4" style="color: white; opacity: 0.95; font-size: 1.3rem;">
+                                Specialized programs for developing educational competencies and modern pedagogical skills
+                            </p>
+                            <div class="glass-card d-inline-block">
+                                <p class="mb-0" style="font-size: 1.1rem;color: white;">
+                                    <i class="fa fa-graduation-cap me-2"></i>
+                                    6 Accredited Professional Programs
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Program Description -->
+                <section class="py-5 bg-light">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 mb-4 mb-lg-0">
+                                <span class="badge bg-primary mb-3">About the Program</span>
+                                <h2 class="display-5 fw-bold mb-4">Comprehensive Teacher Development Program</h2>
+                                <p class="lead text-muted mb-4">
+                                    We offer a comprehensive set of professional training programs specifically designed to develop the capabilities of teachers and educational institution managers.
+                                </p>
+                                <div class="d-flex gap-4 mb-4">
+                                    <div>
+                                        <h4 class="fw-bold text-primary mb-1">6</h4>
+                                        <small class="text-muted">Specialized Programs</small>
+                                    </div>
+                                    <div>
+                                        <h4 class="fw-bold text-primary mb-1">Accredited</h4>
+                                        <small class="text-muted">Internationally &amp; Locally</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="modern-card p-4">
+                                    <h5 class="fw-bold mb-3">
+                                        <i class="fa fa-check-circle text-success me-2"></i>
+                                        Program Features
+                                    </h5>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                            <i class="fa fa-check text-success me-2"></i>
+                                            <strong>Internationally accredited certificates</strong> from prestigious institutions
+                                        </li>
+                                        <li class="mb-3">
+                                            <i class="fa fa-check text-success me-2"></i>
+                                            <strong>Expert trainers</strong> in the educational field
+                                        </li>
+                                        <li class="mb-3">
+                                            <i class="fa fa-check text-success me-2"></i>
+                                            <strong>Practical application</strong> on real cases
+                                        </li>
+                                        <li class="mb-3">
+                                            <i class="fa fa-check text-success me-2"></i>
+                                            <strong>Continuous follow-up</strong> after graduation
+                                        </li>
+                                        <li class="mb-3">
+                                            <i class="fa fa-check text-success me-2"></i>
+                                            <strong>Modern training materials</strong> constantly updated
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Programs Grid -->
+                <section class="py-5">
+                    <div class="container">
+                        <div class="text-center mb-5">
+                            <span class="badge bg-primary mb-3">Available Programs</span>
+                            <h2 class="display-5 fw-bold mb-3">Choose the Right Program for You</h2>
+                            <p class="lead text-muted">6 specialized professional programs with accredited certificates</p>
+                        </div>
+
+                        <div class="row g-4">
+                            <!-- Program 1 -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="course-card h-100">
+                                    <div class="course-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                        <i class="fa fa-baby"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <span class="badge bg-primary mb-3">Child Care</span>
+                                        <h5 class="fw-bold mb-3">Professional Young Children Care Education Program</h5>
+                                        <p class="text-muted mb-4">
+                                            Specialized program in caring for and educating children aged 0-3 years, focusing on psychological and physical development.
+                                        </p>
+                                        <button class="btn btn-primary w-100 btn-register"
+                                                data-course="Professional Young Children Care Education Program">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Program 2 -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="course-card h-100">
+                                    <div class="course-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                                        <i class="fa fa-universal-access"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <span class="badge bg-success mb-3">People of Determination</span>
+                                        <h5 class="fw-bold mb-3">Professional Program in Effective Inclusion Strategies</h5>
+                                        <p class="text-muted mb-4">
+                                            Learn the latest strategies for effectively integrating students with determination in regular educational environments.
+                                        </p>
+                                        <button class="btn btn-primary w-100 btn-register"
+                                                data-course="Professional Program in Effective Inclusion Strategies">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Program 3 -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="course-card h-100">
+                                    <div class="course-header" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                        <i class="fa fa-child"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <span class="badge bg-info mb-3">Early Childhood</span>
+                                        <h5 class="fw-bold mb-3">Professional Program in Early Childhood and Leadership</h5>
+                                        <p class="text-muted mb-4">
+                                            Advanced program combining pedagogical skills and leadership skills in managing kindergarten institutions.
+                                        </p>
+                                        <button class="btn btn-primary w-100 btn-register"
+                                                data-course="Professional Program in Early Childhood and Leadership">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Program 4 -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="course-card h-100">
+                                    <div class="course-header" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                                        <i class="fa fa-chalkboard-teacher"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <span class="badge bg-warning text-dark mb-3">Professional</span>
+                                        <h5 class="fw-bold mb-3">Professional Teacher Preparation Program</h5>
+                                        <p class="text-muted mb-4">
+                                            Comprehensive program for preparing and qualifying new teachers with essential pedagogical and administrative skills.
+                                        </p>
+                                        <button class="btn btn-primary w-100 btn-register"
+                                                data-course="Professional Teacher Preparation Program">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Program 5 -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="course-card h-100">
+                                    <div class="course-header" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                                        <i class="fa fa-user-tie"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <span class="badge bg-danger mb-3">Leadership</span>
+                                        <h5 class="fw-bold mb-3">Certified Management Director in Modern Leadership</h5>
+                                        <p class="text-muted mb-4">
+                                            Advanced program for developing leadership and administrative skills for educational institution managers.
+                                        </p>
+                                        <button class="btn btn-primary w-100 btn-register"
+                                                data-course="Certified Management Director in Modern Leadership">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Program 6 -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="course-card h-100">
+                                    <div class="course-header" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                                        <i class="fa fa-laptop"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <span class="badge bg-primary mb-3">E-Learning</span>
+                                        <h5 class="fw-bold mb-3">Certified E-Trainer</h5>
+                                        <p class="text-muted mb-4">
+                                            Learn to design and deliver professional e-learning courses using the latest technologies.
+                                        </p>
+                                        <button class="btn btn-primary w-100 btn-register"
+                                                data-course="Certified E-Trainer">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Registration Modal -->
+                <div class="modal fade" id="registrationModal" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content" style="border-radius: 20px; border: none;">
+                            <div class="modal-header" style="background: linear-gradient(135deg, #1a5490, #2d6cb3); color: white; border-radius: 20px 20px 0 0;">
+                                <h5 class="modal-title">
+                                    <i class="fa fa-graduation-cap me-2"></i>
+                                    Program Registration
+                                </h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body p-4">
+                                <div id="registrationForm">
+                                    <div class="text-center mb-4">
+                                        <h6 class="fw-bold mb-2" id="modalCourseName"></h6>
+                                    </div>
+
+                                    <form id="courseRegistrationForm">
+                                        <input type="hidden" id="courseName" name="course_name"/>
+
+                                        <div class="mb-3">
+                                            <label class="form-label fw-semibold">
+                                                <i class="fa fa-user text-primary me-2"></i>
+                                                Full Name <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text"
+                                                   class="form-control form-control-lg"
+                                                   id="studentName"
+                                                   name="name"
+                                                   required=""
+                                                   placeholder="Enter your full name"
+                                                   style="border-radius: 12px;"/>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label fw-semibold">
+                                                <i class="fa fa-phone text-primary me-2"></i>
+                                                Phone Number <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="tel"
+                                                   class="form-control form-control-lg"
+                                                   id="studentPhone"
+                                                   name="phone"
+                                                   required=""
+                                                   placeholder="05XXXXXXXX"
+                                                   pattern="[0-9]{10}"
+                                                   style="border-radius: 12px;"/>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <label class="form-label fw-semibold">
+                                                <i class="fa fa-envelope text-primary me-2"></i>
+                                                Email (Optional)
+                                            </label>
+                                            <input type="email"
+                                                   class="form-control form-control-lg"
+                                                   id="studentEmail"
+                                                   name="email"
+                                                   placeholder="example@email.com"
+                                                   style="border-radius: 12px;"/>
+                                        </div>
+
+                                        <button type="submit"
+                                                class="btn btn-lg w-100"
+                                                id="submitRegistration"
+                                                style="background: linear-gradient(135deg, #1a5490, #2d6cb3); color: white; border-radius: 12px; border: none;">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Submit Request
+                                        </button>
+                                    </form>
+                                </div>
+
+                                <!-- Success Message -->
+                                <div id="registrationSuccess" style="display: none;" class="text-center">
+                                    <div class="mb-4">
+                                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4ade80, #22c55e); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                                            <i class="fa fa-check" style="font-size: 2.5rem; color: white;"></i>
+                                        </div>
+                                    </div>
+                                    <h4 class="fw-bold mb-3">Request Submitted Successfully! 🎉</h4>
+                                    <p class="mb-4">
+                                        Thank you! Our team will contact you within <strong>24 hours</strong> to confirm registration.
+                                    </p>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <section class="hero-section py-5">
+                    <div class="container text-center hero-content">
+                        <h2 class="display-4 fw-bold mb-4" style="color: white;">Have a Question?</h2>
+                        <p class="lead mb-5" style="color: white; opacity: 0.95;">
+                            Our team is ready to answer all your questions and help you choose the right program
+                        </p>
+                        <div class="d-flex gap-3 justify-content-center flex-wrap">
+                            <a href="tel:+971505829697" class="btn btn-light btn-lg px-5">
+                                <i class="fa fa-phone me-2"></i>
+                                Call Us
+                            </a>
+                            <a href="https://wa.me/971505829697" target="_blank" class="btn btn-success btn-lg px-5">
+                                <i class="fab fa-whatsapp me-2"></i>
+                                WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

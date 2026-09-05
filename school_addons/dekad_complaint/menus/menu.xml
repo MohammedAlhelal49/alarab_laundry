@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_de_complaint_root"
+              name="Complaints"
+              sequence="140"
+              web_icon="dekad_complaint,static/description/icon.png"
+              groups="dekad_complaint.group_de_complaint,dekad_core.group_de_teacher"/>
+    />
+
+    <menuitem id="menu_de_complaint"
+              name="Complaints"
+              parent="menu_de_complaint_root"
+              sequence="10"
+              action="act_open_de_complaint_view"/>
+
+
+    <menuitem id="menu_de_complaint_analysis_wizard" name="Complaint Report"
+              sequence="20"
+              parent="menu_de_complaint_root"
+              action="act_open_de_complaint_analysis_wizard_view"/>
+
+
+    <menuitem id="menu_de_complaint_configuration"
+              name="Configuration"
+              parent="menu_de_complaint_root"
+              sequence="30"
+    />
+
+
+    <menuitem id="menu_de_complaint_category"
+              name="Categories"
+              parent="menu_de_complaint_configuration"
+              sequence="10"
+              action="act_open_de_complaint_category_view"/>
+
+</odoo>

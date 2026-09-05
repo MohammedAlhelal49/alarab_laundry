@@ -1,0 +1,302 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_additional_features
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-10 09:06+0000\n"
+"PO-Revision-Date: 2026-01-10 09:06+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: ar\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: dekad_additional_features
+#. odoo-python
+#: code:addons/dekad_additional_features/models/product_template.py:0
+msgid "%s products skipped (no attribute lines)."
+msgstr "%s منتجات تم تخطيها (لا توجد خطوط سمات)."
+
+#. module: dekad_additional_features
+#. odoo-python
+#: code:addons/dekad_additional_features/models/product_template.py:0
+msgid "%s variants created successfully. "
+msgstr "%s متغيرات تم إنشاؤها بنجاح. "
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.view_whatsapp_template_form
+msgid "<code>{{email}}</code>: Partner's email address"
+msgstr "<code>{{email}}</code>: عنوان البريد الإلكتروني للشريك"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.view_whatsapp_template_form
+msgid ""
+"<code>{{invoice_amount}}</code>: The invoice's total amount including "
+"currency symbol"
+msgstr "<code>{{invoice_amount}}</code>: المبلغ الإجمالي للفاتورة بما في ذلك رمز العملة"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.view_whatsapp_template_form
+msgid "<code>{{invoice_link}}</code>: The link to the invoice"
+msgstr "<code>{{invoice_link}}</code>: الرابط إلى الفاتورة"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.view_whatsapp_template_form
+msgid "<code>{{invoice_name}}</code>: Invoice name or number"
+msgstr "<code>{{invoice_name}}</code>: اسم الفاتورة أو رقمها"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.view_whatsapp_template_form
+msgid "<code>{{partner_name}}</code>: Partner's name"
+msgstr "<code>{{partner_name}}</code>: اسم الشريك"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.view_whatsapp_template_form
+msgid "<code>{{partner_phone}}</code>: Partner's phone number"
+msgstr "<code>{{partner_phone}}</code>: رقم هاتف الشريك"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.view_whatsapp_template_form
+msgid "<code>{{quotation_amount}}</code>: Quotation total amount"
+msgstr "<code>{{quotation_amount}}</code>: المبلغ الإجمالي لعرض السعر"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.view_whatsapp_template_form
+msgid "<code>{{quotation_link}}</code>: The link to the quotation"
+msgstr "<code>{{quotation_link}}</code>: الرابط إلى عرض السعر"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.view_whatsapp_template_form
+msgid "<code>{{quotation_name}}</code>: Quotation name or number"
+msgstr "<code>{{quotation_name}}</code>: اسم عرض السعر أو رقمه"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.product_variant_easy_edit_view_inherited
+msgid "Additional_pricing"
+msgstr "تسعير إضافي"
+
+#. module: dekad_additional_features
+#. odoo-python
+#: code:addons/dekad_additional_features/models/product_template.py:0
+msgid "All possible variants already exist for all selected products."
+msgstr "جميع المتغيرات الممكنة موجودة بالفعل لجميع المنتجات المحددة."
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.view_whatsapp_template_form
+msgid "Available Placeholders"
+msgstr "النائبات المتاحة"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.view_send_whatsapp_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: dekad_additional_features
+#: model:ir.model,name:dekad_additional_features.model_res_company
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: dekad_additional_features
+#: model:ir.model,name:dekad_additional_features.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات"
+
+#. module: dekad_additional_features
+#: model:ir.model,name:dekad_additional_features.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: dekad_additional_features
+#: model:ir.actions.server,name:dekad_additional_features.action_create_missing_variants_server
+msgid "Create Missing Variants"
+msgstr "إنشاء المتغيرات المفقودة"
+
+#. module: dekad_additional_features
+#: model:ir.model.fields,field_description:dekad_additional_features.field_send_whatsapp_wizard__create_uid
+#: model:ir.model.fields,field_description:dekad_additional_features.field_whatsapp_template__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: dekad_additional_features
+#: model:ir.model.fields,field_description:dekad_additional_features.field_send_whatsapp_wizard__create_date
+#: model:ir.model.fields,field_description:dekad_additional_features.field_whatsapp_template__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: dekad_additional_features
+#: model:ir.model.fields,field_description:dekad_additional_features.field_send_whatsapp_wizard__display_name
+#: model:ir.model.fields,field_description:dekad_additional_features.field_whatsapp_template__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dekad_additional_features
+#: model:ir.actions.server,name:dekad_additional_features.action_create_variant_pricelist_server
+msgid "Generate variants pricelist"
+msgstr "إنشاء قائمة أسعار المتغيرات"
+
+#. module: dekad_additional_features
+#: model:ir.model.fields,field_description:dekad_additional_features.field_send_whatsapp_wizard__id
+#: model:ir.model.fields,field_description:dekad_additional_features.field_whatsapp_template__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: dekad_additional_features
+#: model:ir.model.fields,field_description:dekad_additional_features.field_send_whatsapp_wizard__write_uid
+#: model:ir.model.fields,field_description:dekad_additional_features.field_whatsapp_template__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dekad_additional_features
+#: model:ir.model.fields,field_description:dekad_additional_features.field_send_whatsapp_wizard__write_date
+#: model:ir.model.fields,field_description:dekad_additional_features.field_whatsapp_template__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: dekad_additional_features
+#: model:ir.model.fields,field_description:dekad_additional_features.field_whatsapp_template__message
+msgid "Message"
+msgstr "الرسالة"
+
+#. module: dekad_additional_features
+#: model:ir.model,name:dekad_additional_features.model_ir_module_module
+msgid "Module"
+msgstr "التطبيق"
+
+#. module: dekad_additional_features
+#: model:ir.model.fields,field_description:dekad_additional_features.field_send_whatsapp_wizard__partner_id
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: dekad_additional_features
+#: model:ir.model.fields,field_description:dekad_additional_features.field_send_whatsapp_wizard__preview_message
+msgid "Preview"
+msgstr "معاينة"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.product_product_tree_view_inherited
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.product_template_form_view_inherited
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.product_template_tree_view_inherited
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.product_variant_easy_edit_view_inherited
+msgid "Pricelist price"
+msgstr "سعر قائمة الأسعار"
+
+#. module: dekad_additional_features
+#: model:ir.model,name:dekad_additional_features.model_product_template
+msgid "Product"
+msgstr "المنتج"
+
+#. module: dekad_additional_features
+#: model:ir.model,name:dekad_additional_features.model_product_template_attribute_value
+msgid "Product Template Attribute Value"
+msgstr "قيمة خاصية قالب المنتج"
+
+#. module: dekad_additional_features
+#: model:ir.model,name:dekad_additional_features.model_product_product
+msgid "Product Variant"
+msgstr "متغير المنتج"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.res_config_settings_view_form_dekad_additional_features
+msgid "Product additional features"
+msgstr "ميزات المنتج الإضافية"
+
+#. module: dekad_additional_features
+#: model:ir.model.fields,field_description:dekad_additional_features.field_product_product__related_pricelist_price
+#: model:ir.model.fields,field_description:dekad_additional_features.field_product_template__related_pricelist_price
+msgid "Related Pricelist Price"
+msgstr "سعر قائمة الأسعار المرتبطة"
+
+#. module: dekad_additional_features
+#: model:ir.model.fields,field_description:dekad_additional_features.field_res_partner__related_user_id
+#: model:ir.model.fields,field_description:dekad_additional_features.field_res_users__related_user_id
+msgid "Related User"
+msgstr "المستخدم المرتبط"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.view_send_whatsapp_wizard_form
+msgid "Send WhatsApp"
+msgstr "إرسال واتساب"
+
+#. module: dekad_additional_features
+#: model:ir.model,name:dekad_additional_features.model_send_whatsapp_wizard
+msgid "Send WhatsApp Wizard"
+msgstr "معالج إرسال واتساب"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.view_send_whatsapp_wizard_form
+msgid "Send via WhatsApp"
+msgstr "إرسال عبر واتساب"
+
+#. module: dekad_additional_features
+#: model:ir.model.fields,field_description:dekad_additional_features.field_res_company__show_product_variation_attribute_name
+#: model:ir.model.fields,field_description:dekad_additional_features.field_res_config_settings__show_product_variation_attribute_name
+msgid "Show Product Variation Attribute Name"
+msgstr "إظهار اسم خاصية متغير المنتج"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.res_config_settings_view_form_dekad_additional_features
+msgid "Show product variation attribute name"
+msgstr "إظهار اسم خاصية متغير المنتج"
+
+#. module: dekad_additional_features
+#: model:ir.model.fields,field_description:dekad_additional_features.field_send_whatsapp_wizard__template_id
+msgid "Template"
+msgstr "النموذج"
+
+#. module: dekad_additional_features
+#: model:ir.model.fields,field_description:dekad_additional_features.field_whatsapp_template__name
+msgid "Template Name"
+msgstr "اسم النموذج"
+
+#. module: dekad_additional_features
+#: model:ir.actions.server,name:dekad_additional_features.action_uninstall_module_server
+msgid "Uninstall apps"
+msgstr "إلغاء تثبيت التطبيقات"
+
+#. module: dekad_additional_features
+#: model:ir.model,name:dekad_additional_features.model_res_users
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.view_partner_form_inherit_user_field
+msgid "User"
+msgstr "المستخدم"
+
+#. module: dekad_additional_features
+#. odoo-python
+#: code:addons/dekad_additional_features/models/product_template.py:0
+msgid "Variant Creation Summary"
+msgstr "ملخص إنشاء المتغيرات"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.view_partner_form_inherit_whatsapp
+msgid "WhatsApp"
+msgstr "واتساب"
+
+#. module: dekad_additional_features
+#: model:ir.model,name:dekad_additional_features.model_whatsapp_template
+msgid "WhatsApp Message Template"
+msgstr "نموذج رسالة واتساب"
+
+#. module: dekad_additional_features
+#: model:ir.actions.act_window,name:dekad_additional_features.action_whatsapp_templates
+msgid "WhatsApp Templates"
+msgstr "قوالب واتساب"
+
+#. module: dekad_additional_features
+#: model:ir.ui.menu,name:dekad_additional_features.menu_whatsapp_templates
+msgid "Whatsapp Templates"
+msgstr "قوالب واتساب"
+
+#. module: dekad_additional_features
+#: model:ir.model.fields,help:dekad_additional_features.field_whatsapp_template__message
+msgid "You can use placeholders like {{partner_name}} or {{invoice_name}}"
+msgstr "يمكنك استخدام نائبات مثل {{partner_name}} أو {{invoice_name}}"
+
+#. module: dekad_additional_features
+#: model_terms:ir.ui.view,arch_db:dekad_additional_features.view_whatsapp_template_form
+msgid "You can use the following placeholders in your message:"
+msgstr "يمكنك استخدام النائبات التالية في رسالتك:"

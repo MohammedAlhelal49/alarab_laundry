@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_de_parent_form_attachment_inherited" model="ir.ui.view">
+            <field name="name">de.parent.form.attachment.inherited</field>
+            <field name="model">de.parent</field>
+            <field name="inherit_id" ref="dekad_parent.view_de_parent_form"/>
+            <field name="priority" eval="9"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside" >
+                    <page string="Attachment">
+                        <field name="attachment_ids"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

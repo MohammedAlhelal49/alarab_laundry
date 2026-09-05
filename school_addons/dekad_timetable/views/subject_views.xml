@@ -1,0 +1,12 @@
+<odoo>
+      <record id="inherit_subject_list_enable_create" model="ir.ui.view">
+            <field name="name">de.subject.list.enable.create</field>
+            <field name="model">de.subject</field>
+            <field name="inherit_id" ref="dekad_core.view_de_subject_list"/>
+            <field name="arch" type="xml">
+                  <xpath expr="//list" position="attributes">
+                    <attribute name="create">1</attribute>
+                  </xpath>
+            </field>
+      </record>
+</odoo>

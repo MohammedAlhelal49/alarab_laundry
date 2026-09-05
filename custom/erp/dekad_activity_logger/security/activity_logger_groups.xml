@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="module_category_activity_logger" model="ir.module.category">
+        <field name="name">Activity Logger</field>
+        <field name="description">Activity Logger Access Rights</field>
+        <field name="sequence">30</field>
+    </record>
+
+    <record id="group_activity_logger_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id"
+               ref="dekad_activity_logger.module_category_activity_logger"/>
+    </record>
+
+    <record id="group_activity_logger_manager" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id"
+               ref="dekad_activity_logger.module_category_activity_logger"/>
+        <field name="implied_ids"
+               eval="[(4, ref('dekad_activity_logger.group_activity_logger_user'))]"/>
+    </record>
+
+</odoo>

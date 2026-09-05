@@ -1,0 +1,28 @@
+<odoo>
+  <template id="patient_selection_modal" inherit_id="hrms_dashboard.HrDashboardView">
+    <xpath expr="//div[@t-attf-class='dashboard_actions']" position="before">
+      <t t-if="state.showModalPatient">
+        <div class="modal-backdrop fade show"/>
+        <div class="o_modal o_active">
+          <div class="modal-header">
+            <h5 class="modal-title">‏اختر المريض</h5>
+            <button type="button" class="close" t-on-click="closeModal()">×</button>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group">
+              <li t-foreach="state.patients" t-as="p" class="list-group-item"
+                  t-on-click="selectPatient(p)">
+                <t t-esc="p.name"/>
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" t-on-click="closeModal()">إلغاء</button>
+            <button type="button" class="btn btn-primary"
+                    t-on-click="_attendanceWithPatient()">تأكيد</button>
+          </div>
+        </div>
+      </t>
+    </xpath>
+  </template>
+</odoo>

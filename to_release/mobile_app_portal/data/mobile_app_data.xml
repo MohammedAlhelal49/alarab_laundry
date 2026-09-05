@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Pre-populated Mobile Apps -->
+        <record id="app_barcode" model="mobile.app.config">
+            <field name="name">mobo Barcode</field>
+            <field name="technical_name">barcode</field>
+            <field name="icon">barcode</field>
+            <field name="description">Barcode scanning, product lookup, and validation tool.</field>
+            <field name="allowed_group_ids" eval="[(6, 0, [ref('group_mobile_barcode')])]"/>
+        </record>
+
+        <record id="app_employee" model="mobile.app.config">
+            <field name="name">mobo Employee</field>
+            <field name="technical_name">employee</field>
+            <field name="icon">employee</field>
+            <field name="description">Employee directory, profiles, and hierarchy access.</field>
+            <field name="allowed_group_ids" eval="[(6, 0, [ref('group_mobile_employee')])]"/>
+        </record>
+
+        <record id="app_event" model="mobile.app.config">
+            <field name="name">mobo Event</field>
+            <field name="technical_name">event</field>
+            <field name="icon">event</field>
+            <field name="description">Event management, attendees check-in, and schedules.</field>
+            <field name="allowed_group_ids" eval="[(6, 0, [ref('group_mobile_event')])]"/>
+        </record>
+
+        <record id="app_billing" model="mobile.app.config">
+            <field name="name">mobo Billing</field>
+            <field name="technical_name">billing</field>
+            <field name="icon">billing</field>
+            <field name="description">Quick invoicing, billing overview, and payment tracking.</field>
+            <field name="allowed_group_ids" eval="[(6, 0, [ref('group_mobile_billing')])]"/>
+        </record>
+
+        <record id="app_rental" model="mobile.app.config">
+            <field name="name">mobo Rental</field>
+            <field name="technical_name">rental</field>
+            <field name="icon">rental</field>
+            <field name="description">Rental orders, product availability, and returns management.</field>
+            <field name="allowed_group_ids" eval="[(6, 0, [ref('group_mobile_rental')])]"/>
+        </record>
+
+        <record id="app_attendance" model="mobile.app.config">
+            <field name="name">mobo Attendance</field>
+            <field name="technical_name">attendance</field>
+            <field name="icon">attendance</field>
+            <field name="description">Check-in, check-out, and attendance logs reporting.</field>
+            <field name="allowed_group_ids" eval="[(6, 0, [ref('group_mobile_attendance')])]"/>
+        </record>
+
+        <record id="app_expenses" model="mobile.app.config">
+            <field name="name">mobo Expenses</field>
+            <field name="technical_name">expenses</field>
+            <field name="icon">expenses</field>
+            <field name="description">Submit expense sheets, upload receipts, and track approvals.</field>
+            <field name="allowed_group_ids" eval="[(6, 0, [ref('group_mobile_expenses')])]"/>
+        </record>
+
+        <record id="app_fleet" model="mobile.app.config">
+            <field name="name">mobo Fleet</field>
+            <field name="technical_name">fleet</field>
+            <field name="icon">fleet</field>
+            <field name="description">Fleet vehicle details, fuel logs, and odometer records.</field>
+            <field name="allowed_group_ids" eval="[(6, 0, [ref('group_mobile_fleet')])]"/>
+        </record>
+
+        <record id="app_todo" model="mobile.app.config">
+            <field name="name">mobo Todo</field>
+            <field name="technical_name">todo</field>
+            <field name="icon">todo</field>
+            <field name="description">Task manager, checklists, and personal todo items.</field>
+            <field name="allowed_group_ids" eval="[(6, 0, [ref('group_mobile_todo')])]"/>
+        </record>
+
+        <record id="app_inventory" model="mobile.app.config">
+            <field name="name">mobo Inventory</field>
+            <field name="technical_name">inventory</field>
+            <field name="icon">inventory</field>
+            <field name="description">Real-time inventory lookup, stock adjustments, and moves.</field>
+            <field name="allowed_group_ids" eval="[(6, 0, [ref('group_mobile_inventory')])]"/>
+        </record>
+    </data>
+</odoo>

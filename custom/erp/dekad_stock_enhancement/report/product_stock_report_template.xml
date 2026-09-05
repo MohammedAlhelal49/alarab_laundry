@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="product_stock_report_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Product Stock Report</h2>
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th class="text-end">Qty On Hand</th>
+                                <th class="text-end">Unit Cost</th>
+                                <th class="text-end">Total Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="docs" t-as="product">
+                                <tr>
+                                    <td><t t-esc="product.display_name"/></td>
+
+                                    <td class="text-end">
+                                        <span t-field="product.qty_available"/>
+                                    </td>
+
+                                    <td class="text-end">
+                                        <span t-field="product.avg_cost"
+                                              t-options="{'widget': 'monetary', 'currency_field': 'company_currency_id'}"/>
+                                    </td>
+
+                                    <td class="text-end">
+                                        <span t-field="product.total_value"
+                                              t-options="{'widget': 'monetary', 'currency_field': 'company_currency_id'}"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

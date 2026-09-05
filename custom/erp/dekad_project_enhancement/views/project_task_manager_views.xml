@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Project Manager: All To-dos action (unfiltered) -->
+    <record id="dekad_project_task_action_all_for_manager" model="ir.actions.act_window">
+        <field name="name">All To-dos</field>
+        <field name="res_model">project.task</field>
+        <field name="view_mode">kanban,form,list,activity</field>
+        <field name="domain">[(1, '=', 1), ('project_id', '=', False), ('parent_id', '=', False)]</field>
+        <field name="search_view_id" ref="project_todo.project_task_view_todo_search"/>
+        <field name="context">{'search_default_open_tasks': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No To-dos found</p>
+            <p>You're viewing all To-dos as a project manager.</p>
+        </field>
+    </record>
+
+    <!-- Menu item under Project (visible only to project managers) -->
+    <menuitem id="dekad_project_todo_manager_menu"
+              name="All To-dos"
+              action="dekad_project_task_action_all_for_manager"
+              sequence="20"
+              parent="project_todo.menu_todo_todos"
+              groups="project.group_project_manager"
+
+    />
+
+</odoo>

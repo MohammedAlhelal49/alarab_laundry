@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="crm_lead_view_form_inherit_dekad_website" model="ir.ui.view">
+        <field name="name">crm.lead.view.form.inherit.dekad.website</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Locate the Extra Info page and inject our new group -->
+            <xpath expr="//page[@name='extra']" position="inside">
+                <group string="Website Request Details" name="dekad_website_request_info">
+                    <group>
+                        <field name="dekad_request_type" readonly="1"/>
+                        <field name="dekad_industry" readonly="1"/>
+                        <field name="dekad_employees" readonly="1"/>
+                        <field name="dekad_demo_date" readonly="1"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

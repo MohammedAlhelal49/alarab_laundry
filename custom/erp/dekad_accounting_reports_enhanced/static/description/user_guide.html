@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar-en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dekad Accounting Reports Enhanced — User Guide</title>
+<style>
+:root{--text-primary:#1a1a18;--text-secondary:#5f5e5a;--text-muted:#888780;--text-accent:#185fa5;--text-success:#0f6e56;--text-pro:#534ab7;--text-warning:#854f0b;--surface-0:#f1efe8;--surface-1:#f8f7f4;--surface-2:#ffffff;--border:rgba(0,0,0,.10);--bg-accent:#e6f1fb;--bg-success:#eaf3de;--bg-pro:#eeedfe;--bg-warning:#faeeda;--font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;--font-mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:var(--surface-0);color:var(--text-primary);padding:2rem;font-size:15px;line-height:1.6}
+.page{max-width:920px;margin:0 auto;background:var(--surface-2);border-radius:12px;border:.5px solid var(--border);padding:2.5rem}
+.hero{background:var(--surface-1);border:.5px solid var(--border);border-radius:12px;padding:1.75rem;margin-bottom:2rem;display:flex;gap:1.5rem;align-items:flex-start}
+.hero-icon{width:52px;height:52px;border-radius:12px;background:var(--bg-accent);color:var(--text-accent);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+.hero h1{font-size:19px;font-weight:500;margin-bottom:.25rem}
+.sub{font-size:13px;color:var(--text-secondary);line-height:1.6}
+.sub-ar{font-size:13px;color:var(--text-secondary);line-height:1.6;direction:rtl;text-align:right;margin-top:3px}
+.toc{background:var(--surface-1);border:.5px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:2rem}
+.toc-title{font-size:11px;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.6rem}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px}
+.toc-item{font-size:12px;color:var(--text-accent);padding:4px 10px;background:var(--bg-accent);border-radius:4px;display:flex;align-items:center;gap:6px;text-decoration:none}
+.toc-num{font-weight:600;font-size:11px}
+.section{margin-bottom:2.5rem}
+.sec-header{display:flex;align-items:center;gap:10px;margin-bottom:1.1rem;padding-bottom:.7rem;border-bottom:.5px solid var(--border)}
+.sec-num{width:26px;height:26px;border-radius:50%;background:var(--bg-accent);color:var(--text-accent);font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sec-en{font-size:15px;font-weight:500}
+.sec-ar{font-size:13px;color:var(--text-secondary);direction:rtl}
+.scope-tag{font-size:10px;padding:2px 7px;border-radius:3px;font-weight:500;margin-left:6px}
+.scope-all{background:var(--bg-success);color:var(--text-success)}
+.scope-gl{background:var(--bg-accent);color:var(--text-accent)}
+.scope-pl{background:var(--bg-pro);color:var(--text-pro)}
+.bilingual{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.85rem}
+@media(max-width:600px){.bilingual{grid-template-columns:1fr}}
+.lang-block{background:var(--surface-1);border:.5px solid var(--border);border-radius:8px;padding:.85rem 1rem}
+.lang-label{font-size:10px;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.4rem}
+.lang-block.ar{direction:rtl;text-align:right}
+.lang-block p{font-size:13px;color:var(--text-secondary);line-height:1.65}
+.steps{display:flex;flex-direction:column;gap:7px;margin-bottom:.85rem}
+.step{display:flex;gap:10px;align-items:flex-start}
+.step-dot{width:22px;height:22px;border-radius:50%;background:var(--bg-accent);color:var(--text-accent);font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.step-body{flex:1}
+.step-en{font-size:13px;font-weight:500;margin-bottom:1px}
+.step-ar{font-size:12px;color:var(--text-secondary);direction:rtl;text-align:right}
+.path{font-size:11px;color:var(--text-accent);background:var(--bg-accent);padding:2px 7px;border-radius:3px;display:inline-block;margin-top:3px;font-family:var(--font-mono)}
+.note{background:var(--bg-accent);border:.5px solid #85b7eb;border-radius:7px;padding:.75rem 1rem;font-size:12.5px;line-height:1.6;margin:.75rem 0;display:flex;gap:8px}
+.warn{background:var(--bg-warning);border:.5px solid #fac775;border-radius:7px;padding:.75rem 1rem;font-size:12.5px;line-height:1.6;margin:.75rem 0;display:flex;gap:8px}
+.note-ar,.warn-ar{direction:rtl;text-align:right;color:var(--text-secondary);font-size:11.5px;margin-top:3px}
+.mock{background:var(--surface-1);border:.5px solid var(--border);border-radius:8px;overflow:hidden;margin:.75rem 0}
+.mock-bar{background:var(--surface-2);border-bottom:.5px solid var(--border);padding:.4rem .85rem;font-size:12px;font-weight:500;color:var(--text-secondary)}
+.mock-body{padding:.75rem .85rem}
+.tbl{width:100%;border-collapse:collapse;font-size:11.5px}
+.tbl th{background:var(--surface-2);padding:.4rem .65rem;text-align:left;font-weight:500;color:var(--text-secondary);border-bottom:.5px solid var(--border);font-size:10.5px}
+.tbl td{padding:.38rem .65rem;border-bottom:.5px solid var(--border);color:var(--text-primary)}
+.tbl .grp td{background:var(--bg-pro);color:var(--text-pro);font-weight:500}
+.tbl .acc td{background:var(--bg-accent);color:var(--text-accent);padding-left:1.25rem}
+.tbl .aml td{padding-left:2.25rem;color:var(--text-secondary);font-size:11px}
+.tbl .tot td{font-weight:500;background:var(--surface-2)}
+.num{text-align:right;font-family:var(--font-mono);font-size:11px}
+.divider{height:.5px;background:var(--border);margin:1.75rem 0}
+code{font-family:var(--font-mono);font-size:11px;color:var(--text-accent);background:var(--bg-accent);padding:1px 4px;border-radius:3px}
+.combo-item{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;padding:.5rem .85rem;background:var(--surface-1);border-radius:6px;border:.5px solid var(--border);margin-bottom:6px}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="hero">
+  <div class="hero-icon">📊</div>
+  <div class="hero-text">
+    <h1>Dekad Accounting Reports Enhanced — User Guide / دليل المستخدم</h1>
+    <div class="sub">9 features across General Ledger, Partner Ledger, Trial Balance &amp; all reports</div>
+    <div class="sub-ar">٩ ميزات تغطي دفتر الأستاذ العام، كشف الشريك، ميزان المراجعة، وجميع التقارير</div>
+  </div>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Contents / المحتويات</div>
+  <div class="toc-grid">
+    <a href="#s1" class="toc-item"><span class="toc-num">1</span> Secondary Currency</a>
+    <a href="#s2" class="toc-item"><span class="toc-num">2</span> Hide Zero Balance</a>
+    <a href="#s3" class="toc-item"><span class="toc-num">3</span> Account Filter</a>
+    <a href="#s4" class="toc-item"><span class="toc-num">4</span> Show Analytic Account</a>
+    <a href="#s5" class="toc-item"><span class="toc-num">5</span> Group by Analytic</a>
+    <a href="#s6" class="toc-item"><span class="toc-num">6</span> Group by Company</a>
+    <a href="#s7" class="toc-item"><span class="toc-num">7</span> Hide Initial Balance</a>
+    <a href="#s8" class="toc-item"><span class="toc-num">8</span> Show Company Column</a>
+    <a href="#s9" class="toc-item"><span class="toc-num">9</span> Combining Features</a>
+  </div>
+</div>
+
+<div class="section" id="s1">
+  <div class="sec-header"><div class="sec-num">1</div><div><div class="sec-en">Secondary Currency Filter <span class="scope-tag scope-all">All reports</span></div><div class="sec-ar">فلتر العملة الثانوية</div></div></div>
+  <div class="bilingual">
+    <div class="lang-block"><div class="lang-label">English</div><p>View any accounting report in a foreign currency. Each journal line converts at the exchange rate active on its own posting date — not today's rate.</p></div>
+    <div class="lang-block ar"><div class="lang-label">عربي</div><p>اعرض أي تقرير محاسبي بعملة أجنبية. كل سطر يتحوّل بسعر الصرف الفعلي في تاريخ ترحيله — مش سعر اليوم.</p></div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="step-dot">1</div><div class="step-body"><div class="step-en">Open any accounting report</div><div class="step-ar">افتح أي تقرير محاسبي</div><span class="path">Accounting → Reporting → (any report)</span></div></div>
+    <div class="step"><div class="step-dot">2</div><div class="step-body"><div class="step-en">Click the Secondary Currency dropdown → select a currency</div><div class="step-ar">دوس على قائمة العملة الثانوية ← اختار العملة</div></div></div>
+    <div class="step"><div class="step-dot">3</div><div class="step-body"><div class="step-en">Report reloads with converted amounts. Clear selection to return to base currency.</div><div class="step-ar">التقرير يُحدَّث بالمبالغ المحوّلة. امسح الاختيار للرجوع للعملة الأساسية.</div></div></div>
+  </div>
+  <div class="note">ℹ️ <div>Lines already in the selected currency show their original <code>amount_currency</code>. Lines in other currencies convert at their posting-date rate.<div class="note-ar">السطور بالعملة المختارة تعرض قيمتها الأصلية. غيرها يتحوّل بسعر تاريخ الترحيل.</div></div></div>
+</div>
+<div class="divider"></div>
+
+<div class="section" id="s2">
+  <div class="sec-header"><div class="sec-num">2</div><div><div class="sec-en">Hide Zero Balance <span class="scope-tag scope-all">All reports</span></div><div class="sec-ar">إخفاء الأرصدة الصفرية</div></div></div>
+  <div class="bilingual">
+    <div class="lang-block"><div class="lang-label">English</div><p>Hides any account or partner whose net balance is exactly zero in the selected period. Keeps the report focused on accounts with actual activity.</p></div>
+    <div class="lang-block ar"><div class="lang-label">عربي</div><p>يخفي أي حساب أو شريك رصيده الصافي صفر في الفترة المحددة. يبقي التقرير مركّزاً على الحسابات ذات النشاط الفعلي.</p></div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="step-dot">1</div><div class="step-body"><div class="step-en">Open any report → click Hide Zero Balance in the filter bar</div><div class="step-ar">افتح أي تقرير ← دوس على Hide Zero Balance بشريط الفلاتر</div></div></div>
+    <div class="step"><div class="step-dot">2</div><div class="step-body"><div class="step-en">Accounts/partners with zero balance disappear automatically.</div><div class="step-ar">الحسابات والشركاء ذوو الرصيد الصفري يختفون تلقائياً.</div></div></div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<div class="section" id="s3">
+  <div class="sec-header"><div class="sec-num">3</div><div><div class="sec-en">Account Filter <span class="scope-tag scope-all">All reports</span></div><div class="sec-ar">فلتر الحسابات</div></div></div>
+  <div class="bilingual">
+    <div class="lang-block"><div class="lang-label">English</div><p>Filter any report to show only selected accounts. The selection is preserved when you switch date ranges.</p></div>
+    <div class="lang-block ar"><div class="lang-label">عربي</div><p>فلتر أي تقرير لإظهار حسابات محددة فقط. الاختيار يُحفظ عند تغيير نطاق التاريخ.</p></div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="step-dot">1</div><div class="step-body"><div class="step-en">Open any report → click the <strong>Accounts</strong> button in the filter bar</div><div class="step-ar">افتح أي تقرير ← دوس على زر Accounts بشريط الفلاتر</div></div></div>
+    <div class="step"><div class="step-dot">2</div><div class="step-body"><div class="step-en">Search and select one or more accounts → the report filters instantly.</div><div class="step-ar">ابحث واختار حساباً أو أكثر ← التقرير يُفلتر فوراً.</div></div></div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<div class="section" id="s4">
+  <div class="sec-header"><div class="sec-num">4</div><div><div class="sec-en">Show Analytic Account Column <span class="scope-tag scope-gl">General Ledger</span></div><div class="sec-ar">إظهار عمود الحساب التحليلي</div></div></div>
+  <div class="bilingual">
+    <div class="lang-block"><div class="lang-label">English</div><p>Adds an Analytic Account column to each journal line. See which cost centre or department each entry belongs to without leaving the report.</p></div>
+    <div class="lang-block ar"><div class="lang-label">عربي</div><p>يضيف عمود الحساب التحليلي لكل سطر قيد. شوف مركز التكلفة أو القسم لكل قيد بدون مغادرة التقرير.</p></div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="step-dot">1</div><div class="step-body"><div class="step-en">Open General Ledger → Options → <strong>Show Analytic Account</strong></div><div class="step-ar">افتح دفتر الأستاذ ← Options ← Show Analytic Account</div><span class="path">Accounting → Reporting → General Ledger</span></div></div>
+    <div class="step"><div class="step-dot">2</div><div class="step-body"><div class="step-en">The Analytic Account column is added to each AML line.</div><div class="step-ar">عمود الحساب التحليلي ينضاف لكل سطر قيد.</div></div></div>
+  </div>
+  <div class="warn">⚠️ <div>Lines with no analytic distribution show a blank cell — not an error.<div class="warn-ar">السطور بدون توزيع تحليلي تعرض خانة فاضية — مش خطأ.</div></div></div>
+</div>
+<div class="divider"></div>
+
+<div class="section" id="s5">
+  <div class="sec-header"><div class="sec-num">5</div><div><div class="sec-en">Group by Analytic Account <span class="scope-tag scope-gl">General Ledger</span></div><div class="sec-ar">التجميع بالحساب التحليلي</div></div></div>
+  <div class="bilingual">
+    <div class="lang-block"><div class="lang-label">English</div><p>Restructures the General Ledger as <strong>Analytic Account → Account → Journal Lines</strong>. See the complete financial picture of each department or project in one view.</p></div>
+    <div class="lang-block ar"><div class="lang-label">عربي</div><p>يحوّل دفتر الأستاذ لشجرة ثلاثية: <strong>الحساب التحليلي ← الحساب ← سطور القيود</strong>. شوف الصورة المالية الكاملة لكل قسم أو مشروع بمكان وحيد.</p></div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="step-dot">1</div><div class="step-body"><div class="step-en">Open General Ledger → Options → <strong>Group by Analytic Account</strong></div><div class="step-ar">افتح دفتر الأستاذ ← Options ← Group by Analytic Account</div></div></div>
+    <div class="step"><div class="step-dot">2</div><div class="step-body"><div class="step-en">Each row is an analytic account with totals. Click ▶ to expand accounts, then expand again for journal lines.</div><div class="step-ar">كل سطر حساب تحليلي مع مجاميع. دوس ▶ لتفتح الحسابات ثم القيود.</div></div></div>
+  </div>
+  <div class="note">ℹ️ <div><strong>∅ No Analytic Account</strong> — lines with no analytic distribution appear last. Mutually exclusive with Group by Company.<div class="note-ar">السطور بدون توزيع تحليلي تظهر بالآخر. لا يمكن تفعيله مع Group by Company في نفس الوقت.</div></div></div>
+</div>
+<div class="divider"></div>
+
+<div class="section" id="s6">
+  <div class="sec-header"><div class="sec-num">6</div><div><div class="sec-en">Group by Company <span class="scope-tag scope-gl">General Ledger</span></div><div class="sec-ar">التجميع بالشركة</div></div></div>
+  <div class="bilingual">
+    <div class="lang-block"><div class="lang-label">English</div><p>Restructures the General Ledger as <strong>Company → Account → Journal Lines</strong>. Useful in multi-company environments to see each entity's activity separately.</p></div>
+    <div class="lang-block ar"><div class="lang-label">عربي</div><p>يعيد هيكلة دفتر الأستاذ: <strong>الشركة ← الحساب ← سطور القيود</strong>. مفيد بالبيئات متعددة الشركات لعرض نشاط كل كيان منفصلاً.</p></div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="step-dot">1</div><div class="step-body"><div class="step-en">Open General Ledger → Options → <strong>Group by Company</strong></div><div class="step-ar">افتح دفتر الأستاذ ← Options ← Group by Company</div></div></div>
+    <div class="step"><div class="step-dot">2</div><div class="step-body"><div class="step-en">Each company appears as a collapsible row. Expand to see accounts, then journal lines.</div><div class="step-ar">كل شركة كسطر قابل للفتح. افتح لتشوف الحسابات ثم القيود.</div></div></div>
+  </div>
+  <div class="warn">⚠️ <div>Mutually exclusive with Group by Analytic — activating one automatically deactivates the other.<div class="warn-ar">لا يمكن تفعيله مع Group by Analytic في نفس الوقت — تفعيل أحدهما يُطفئ الآخر.</div></div></div>
+</div>
+<div class="divider"></div>
+
+<div class="section" id="s7">
+  <div class="sec-header"><div class="sec-num">7</div><div><div class="sec-en">Hide Initial Balance <span class="scope-tag scope-gl">General Ledger</span></div><div class="sec-ar">إخفاء رصيد أول الفترة</div></div></div>
+  <div class="bilingual">
+    <div class="lang-block"><div class="lang-label">English</div><p>Removes the Initial Balance line from each account and resets the running balance to zero. Useful to see only the movement within a specific date range, with no carry-forward from prior periods.</p></div>
+    <div class="lang-block ar"><div class="lang-label">عربي</div><p>يحذف سطر رصيد أول الفترة ويبدأ الرصيد الجاري من الصفر. مفيد لمراجعة الحركة ضمن فترة زمنية محددة فقط دون ترحيل من فترات سابقة.</p></div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="step-dot">1</div><div class="step-body"><div class="step-en">Open General Ledger → Options → <strong>Hide Initial Balance</strong></div><div class="step-ar">افتح دفتر الأستاذ ← Options ← Hide Initial Balance</div></div></div>
+    <div class="step"><div class="step-dot">2</div><div class="step-body"><div class="step-en">The Initial Balance row disappears. Debit/credit/balance now reflect only the selected period.</div><div class="step-ar">سطر رصيد أول الفترة يختفي. الأعمدة تعكس الفترة المحددة فقط.</div></div></div>
+  </div>
+  <div class="note">ℹ️ <div>Account totals (the collapsed row) also reflect only the selected period — not the cumulative balance from the fiscal year start.<div class="note-ar">مجاميع الحسابات تعكس الفترة المحددة فقط — ليس الرصيد التراكمي منذ بداية السنة المالية.</div></div></div>
+</div>
+<div class="divider"></div>
+
+<div class="section" id="s8">
+  <div class="sec-header"><div class="sec-num">8</div><div><div class="sec-en">Show Company Column <span class="scope-tag scope-gl">General Ledger</span> <span class="scope-tag scope-pl">Partner Ledger</span></div><div class="sec-ar">إظهار عمود الشركة</div></div></div>
+  <div class="bilingual">
+    <div class="lang-block"><div class="lang-label">English</div><p>Adds a Company column to each journal line. Useful in multi-company environments to identify which entity each entry belongs to at a glance.</p></div>
+    <div class="lang-block ar"><div class="lang-label">عربي</div><p>يضيف عمود الشركة لكل سطر قيد. مفيد بالبيئات متعددة الشركات لتحديد الكيان المالك لكل قيد بنظرة واحدة.</p></div>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="step-dot">1</div><div class="step-body"><div class="step-en">Open General Ledger or Partner Ledger → Options → <strong>Show Company</strong></div><div class="step-ar">افتح دفتر الأستاذ أو كشف الشريك ← Options ← Show Company</div></div></div>
+    <div class="step"><div class="step-dot">2</div><div class="step-body"><div class="step-en">The Company column appears on every journal line.</div><div class="step-ar">عمود الشركة يظهر على كل سطر قيد.</div></div></div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<div class="section" id="s9">
+  <div class="sec-header"><div class="sec-num">9</div><div><div class="sec-en">Combining Features</div><div class="sec-ar">دمج الميزات مع بعض</div></div></div>
+  <div class="bilingual">
+    <div class="lang-block"><div class="lang-label">English</div><p>Most features work independently and can be combined freely. Only Group by Analytic and Group by Company are mutually exclusive.</p></div>
+    <div class="lang-block ar"><div class="lang-label">عربي</div><p>معظم الميزات تعمل باستقلالية. الاستثناء الوحيد: Group by Analytic وGroup by Company لا يعملان معاً.</p></div>
+  </div>
+  <div style="background:var(--surface-1);border:.5px solid var(--border);border-radius:8px;overflow:hidden;margin:.75rem 0">
+    <table class="tbl">
+      <thead><tr><th>Combination / التركيبة</th><th>Works?</th><th>Note / ملاحظة</th></tr></thead>
+      <tbody>
+        <tr><td>Secondary Currency + any option</td><td style="color:var(--text-success);font-weight:500">✓</td><td style="font-size:11px;color:var(--text-secondary)">Works with all other options</td></tr>
+        <tr><td>Hide Zero Balance + Account Filter</td><td style="color:var(--text-success);font-weight:500">✓</td><td style="font-size:11px;color:var(--text-secondary)">GL, Partner Ledger, Trial Balance</td></tr>
+        <tr><td>Show Analytic + Show Company Column</td><td style="color:var(--text-success);font-weight:500">✓</td><td style="font-size:11px;color:var(--text-secondary)">Both columns visible at once (GL)</td></tr>
+        <tr><td>Group by Analytic + Hide Initial Balance</td><td style="color:var(--text-success);font-weight:500">✓</td><td style="font-size:11px;color:var(--text-secondary)">Initial Balance hidden inside each analytic group</td></tr>
+        <tr><td>Group by Company + Hide Initial Balance</td><td style="color:var(--text-success);font-weight:500">✓</td><td style="font-size:11px;color:var(--text-secondary)">Initial Balance hidden inside each company group</td></tr>
+        <tr><td>Group by Analytic + Group by Company</td><td style="color:var(--text-warning);font-weight:500">✗</td><td style="font-size:11px;color:var(--text-secondary)">Mutually exclusive — only one active at a time</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin-top:1rem">
+    <div style="font-size:12px;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:.4px;margin-bottom:.6rem">Popular combinations / تركيبات شائعة</div>
+    <div class="combo-item"><span style="color:var(--text-success);flex-shrink:0">✓</span><span>Secondary Currency + Group by Analytic — <span style="color:var(--text-secondary)">departmental P&amp;L in foreign currency / أرباح وخسائر قسمية بعملة أجنبية</span></span></div>
+    <div class="combo-item"><span style="color:var(--text-success);flex-shrink:0">✓</span><span>Account Filter + Hide Zero Balance — <span style="color:var(--text-secondary)">focused review of specific active accounts / مراجعة مركّزة لحسابات محددة ذات نشاط</span></span></div>
+    <div class="combo-item"><span style="color:var(--text-success);flex-shrink:0">✓</span><span>Hide Initial Balance + Account Filter — <span style="color:var(--text-secondary)">period-only movement for selected accounts / حركة الفترة فقط للحسابات المختارة</span></span></div>
+    <div class="combo-item"><span style="color:var(--text-success);flex-shrink:0">✓</span><span>Show Company + Show Analytic + Secondary Currency — <span style="color:var(--text-secondary)">full context per line in foreign currency / كل السياق لكل سطر بعملة أجنبية</span></span></div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

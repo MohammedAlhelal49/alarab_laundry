@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="view_form_res_company_farm_type" model="ir.ui.view">
+        <field name="name">view.form.res.company.code</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_registry']" position="after">
+                <field name="po_box"/>
+                <field name="company_code"/>
+            </xpath>
+            <xpath expr="//div[@class='oe_title']/h1/field[@name='name']" position="after">
+
+                <div class="mt-1">
+                    <field name="name_en"
+                           placeholder="Company Name (English)"
+                           nolabel="1"/>
+                </div>
+
+            </xpath>
+
+            <xpath expr="//field[@name='currency_id']" position="after">
+                <field name="move_serial_prefix"/>
+                <field name="company_header" widget="image"  class="float-start oe_avatar"/>
+                <field name="watermark_photo" widget="image"  class="float-start oe_avatar"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_config_settings_view_tax_invoice_terms" model="ir.ui.view">
+        <field name="name">res.config.settings.tax.invoice.terms</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='invoicing_settings']" position="inside">
+                <setting id="tax_invoice_terms" company_dependent="1"
+                         help="Add your terms &amp; conditions at the bottom of tax invoices">
+                    <field name="tax_invoice_terms"
+                           class="oe_account_terms mt-3"
+                           placeholder="Insert your tax invoice terms &amp; conditions here..."/>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+    <record id="res_config_settings_view_form_inherit_sale_commitment" model="ir.ui.view">
+        <field name="name">res.config.settings.sale.commitment</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//block[@name='quotation_order_setting_container']" position="inside">
+
+                <setting id="sale_commitment_declaration_setting"
+                         string="Commitment &amp; Declaration Terms">
+
+                    <div class="text-muted">
+                        Default Commitment &amp; Declaration for Sales Documents
+                    </div>
+
+                    <div class="">
+                        <field name="sale_commitment_declaration"/>
+                    </div>
+
+                </setting>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>

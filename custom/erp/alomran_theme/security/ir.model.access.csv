@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_popup_offer_public,popup.offer public access,model_popup_offer,,1,0,0,0
+access_popup_offer_user,popup.offer user access,model_popup_offer,base.group_user,1,1,1,0
+access_popup_offer_manager,popup.offer manager access,model_popup_offer,sales_team.group_sale_manager,1,1,1,1

@@ -1,0 +1,54 @@
+<odoo>
+
+    <!-- Add "Is Van Sales" checkbox to the POS Configuration-->
+    <record id="view_pos_config_form_inherit_van_sales" model="ir.ui.view">
+        <field name="name">pos.config.form.inherit.van.sales</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='is_posbox']/ancestor::setting[1]" position="after">
+                <setting string="Is Van Sales" help="Enable Van Sales for POS and assign a vehicle">
+                    <field name="is_van_sales"/>
+                    <div class="content-group mt16" invisible="not is_van_sales">
+                        <field name="fleet_vehicle_id" options="{'no_create': False}" placeholder="Select a fleet vehicle" invisible="not is_van_sales" domain="[('is_van_sale', '=', True)]"/>
+
+                    </div>
+                </setting>
+            </xpath>
+
+        </field>
+    </record>
+
+
+
+    <!-- Add "Van Name" column to POS Order tree (list) view -->
+    <record id="view_pos_order_tree_inherit_van_name" model="ir.ui.view">
+        <field name="name">pos.order.tree.inherit.van.name</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+        <field name="arch" type="xml">
+
+            <!-- Insert after config_id in tree view -->
+            <xpath expr="//field[@name='config_id']" position="after">
+                <field name="van_name"/>
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <!-- Add "Van Name" field to POS Order form view -->
+    <record id="view_pos_order_form_inherit_van_name" model="ir.ui.view">
+        <field name="name">pos.order.form.inherit.van.name</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Insert after fiscal_position_id -->
+            <xpath expr="//field[@name='fiscal_position_id']" position="after">
+                <field name="van_fleet_vehicle_id" readonly="1"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

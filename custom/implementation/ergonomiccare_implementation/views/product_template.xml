@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Product Template duplicate name warning -->
+    <record id="view_product_template_form_duplicate_warning" model="ir.ui.view">
+        <field name="name">product.template.form.duplicate.warning</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="before">
+                <div class="alert alert-warning oe_edit_only"
+                     name="warning_product_name"
+                     invisible="not same_name_product_id">
+                    A product with the same <strong>Name</strong> already exists:
+                    <field name="same_name_product_id"/>,
+                    are you sure you want to create a new one?
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

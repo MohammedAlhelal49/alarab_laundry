@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+
+    <!--
+        Secondary Currency Filter Dropdown
+        Shows all active currencies except company currency.
+        Single select — selecting one deselects the previous.
+    -->
+    <t t-name="dekad_accounting_reports_enhanced.FilterSecondaryCurrency">
+        <t t-if="'secondary_currencies' in controller.options and controller.options.secondary_currencies.length > 0">
+            <div id="filter_secondary_currency">
+                <Dropdown>
+                    <button class="btn btn-secondary">
+                        <t t-out="selectedSecondaryCurrencyLabel"/>
+                    </button>
+
+                    <t t-set-slot="content">
+                        <!-- Option: reset to company currency -->
+                        <DropdownItem
+                            class="{ 'selected': !controller.options.secondary_currency_id }"
+                            onSelected="() => this.filterSecondaryCurrency(false)"
+                        >
+                            Company Currency
+                        </DropdownItem>
+
+                        <t t-foreach="controller.options.secondary_currencies" t-as="currency" t-key="currency.id">
+                            <DropdownItem
+                                class="{ 'selected': controller.options.secondary_currency_id === currency.id }"
+                                onSelected="() => this.filterSecondaryCurrency(currency.id)"
+                            >
+                                <t t-out="currency.name"/>
+                            </DropdownItem>
+                        </t>
+                    </t>
+                </Dropdown>
+            </div>
+        </t>
+    </t>
+
+
+    <!--
+        Patch the main filters template — Trial Balance and all other reports
+        that have filter_rounding_unit div.
+    -->
+    <t t-name="account_reports.AccountReportFiltersCustomizable" t-inherit="account_reports.AccountReportFiltersCustomizable" t-inherit-mode="extension">
+        <xpath expr="//div[@id='filter_rounding_unit']" position="before">
+            <t t-call="dekad_accounting_reports_enhanced.FilterSecondaryCurrency"/>
+        </xpath>
+    </t>
+
+    <!--
+        Patch Partner Ledger filters separately.
+        PartnerLedgerFilters has no filter_rounding_unit div, so we inject
+        after filter_partner which is always present in Partner Ledger.
+    -->
+    <t t-name="account_reports.PartnerLedgerFilters" t-inherit="account_reports.PartnerLedgerFilters" t-inherit-mode="extension">
+        <xpath expr="//div[@id='filter_partner']" position="after">
+            <t t-call="dekad_accounting_reports_enhanced.FilterSecondaryCurrency"/>
+        </xpath>
+    </t>
+
+</templates>

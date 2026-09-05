@@ -1,0 +1,38 @@
+<odoo>
+  <record id="view_form_de_timetable_line" model="ir.ui.view">
+    <field name="name">de.timetable.line.form</field>
+    <field name="model">de.timetable.line</field>
+    <field name="arch" type="xml">
+      <form string="Timetable Line">
+        <group>
+          <field name="timetable_id" invisible="1"/>
+          <field name="is_break" invisible="1"/>
+          <field name="session_slot_id"/><field name="period_id"/>
+            <field name="period_start_time" widget="float_time"/>
+            <field name="period_end_time" widget="float_time"/>
+          <field name="subject_id" invisible="is_break"/>
+          <field name="teacher_id" invisible="is_break"/>
+        </group>
+        <div class="alert alert-info" role="alert" invisible="not is_break">
+          This is a break period. No subject or teacher assignment needed.
+        </div>
+      </form>
+    </field>
+  </record>
+
+  <!-- List view with break styling -->
+  <record id="view_list_de_timetable_line" model="ir.ui.view">
+    <field name="name">de.timetable.line.list</field>
+    <field name="model">de.timetable.line</field>
+    <field name="arch" type="xml">
+      <list string="Timetable Lines"
+            decoration-muted="is_break"
+            decoration-bf="not is_break">
+        <field name="session_slot_id"/>
+        <field name="subject_id"/>
+        <field name="teacher_id"/>
+        <field name="is_break" string="Break" widget="boolean_toggle"/>
+      </list>
+    </field>
+  </record>
+</odoo>

@@ -1,0 +1,467 @@
+<?xml version="1.0"?>
+<odoo>
+
+
+    <!-- Template: Single Back Button -->
+    <template id="student_back_button_single" name="Student Single Back Button">
+        <div class="mt-3">
+            <t t-if="parent_student_param">
+                <!-- For Parents: Add parent_student_param to URL -->
+                <t t-if="'/my/home' in (back_url or '/my/home')">
+                    <a t-attf-href="{{back_url or '/my/home'}}/{{parent_student_param}}"
+                       class="btn btn-outline-primary btn-sm">
+                        <i class="fa fa-arrow-left me-1"></i>
+                        <t t-esc="back_text or 'Back to Dashboard'"/>
+                    </a>
+                </t>
+                <t t-else="">
+                    <a t-attf-href="{{back_url or '/my/home'}}{{('/' + str(parent_student_param)) if back_url and back_url.endswith('s') else ('?parent_student_param=' + str(parent_student_param))}}"
+                       class="btn btn-outline-primary btn-sm">
+                        <i class="fa fa-arrow-left me-1"></i>
+                        <t t-esc="back_text or 'Back to Dashboard'"/>
+                    </a>
+                </t>
+            </t>
+            <t t-else="">
+                <!-- For Students: Normal URL -->
+                <a t-att-href="back_url or '/my/home'" class="btn btn-outline-primary btn-sm">
+                    <i class="fa fa-arrow-left me-1"></i>
+                    <t t-esc="back_text or 'Back to Dashboard'"/>
+                </a>
+            </t>
+        </div>
+    </template>
+
+    <!-- Template: Double Back Buttons (Back to List + Dashboard) -->
+    <template id="student_back_button_double" name="Student Double Back Buttons">
+        <div class="col-12 mt-4">
+            <div class="d-flex gap-2 flex-wrap">
+                <t t-if="parent_student_param">
+                    <!-- For Parents: Add parent_student_param to URLs -->
+                    <a t-attf-href="{{back_list_url}}/{{parent_student_param}}"
+                       class="btn btn-outline-primary btn-sm">
+                        <i class="fa fa-arrow-left me-1"></i>
+                        <t t-esc="back_list_text or 'Back to List'"/>
+                    </a>
+                    <a t-attf-href="/my/home/{{parent_student_param}}"
+                       class="btn btn-outline-secondary btn-sm">
+                        <i class="fa fa-home me-1"></i>
+                        Student Dashboard
+                    </a>
+                </t>
+                <t t-else="">
+                    <!-- For Students: Normal URLs -->
+                    <a t-att-href="back_list_url" class="btn btn-outline-primary btn-sm">
+                        <i class="fa fa-arrow-left me-1"></i>
+                        <t t-esc="back_list_text or 'Back to List'"/>
+                    </a>
+                    <a href="/my/home" class="btn btn-outline-secondary btn-sm">
+                        <i class="fa fa-home me-1"></i>
+                        Dashboard
+                    </a>
+                </t>
+            </div>
+        </div>
+    </template>
+
+    <!-- Template: Triple Back Buttons (for submission/nested pages) -->
+    <template id="student_back_button_triple" name="Student Triple Back Buttons">
+        <div class="mt-3">
+            <div class="d-flex gap-2 flex-wrap">
+                <t t-if="parent_student_param">
+                    <!-- For Parents: Add parent_student_param to URLs -->
+                    <t t-if="'?' in (back_detail_url or '')">
+                        <a t-attf-href="{{back_detail_url}}&amp;parent_student_param={{parent_student_param}}"
+                           class="btn btn-outline-primary btn-sm">
+                            <i class="fa fa-arrow-left me-1"></i>
+                            <t t-esc="back_detail_text or 'Back'"/>
+                        </a>
+                    </t>
+                    <t t-else="">
+                        <a t-attf-href="{{back_detail_url}}?parent_student_param={{parent_student_param}}"
+                           class="btn btn-outline-primary btn-sm">
+                            <i class="fa fa-arrow-left me-1"></i>
+                            <t t-esc="back_detail_text or 'Back'"/>
+                        </a>
+                    </t>
+                    <a t-attf-href="{{back_list_url}}/{{parent_student_param}}"
+                       class="btn btn-outline-secondary btn-sm">
+                        <i class="fa fa-list me-1"></i>
+                        <t t-esc="back_list_text or 'All Items'"/>
+                    </a>
+                    <a t-attf-href="/my/home/{{parent_student_param}}"
+                       class="btn btn-outline-secondary btn-sm">
+                        <i class="fa fa-home me-1"></i>
+                        Student Dashboard
+                    </a>
+                </t>
+                <t t-else="">
+                    <!-- For Students: Normal URLs -->
+                    <a t-att-href="back_detail_url" class="btn btn-outline-primary btn-sm">
+                        <i class="fa fa-arrow-left me-1"></i>
+                        <t t-esc="back_detail_text or 'Back'"/>
+                    </a>
+                    <a t-att-href="back_list_url" class="btn btn-outline-secondary btn-sm">
+                        <i class="fa fa-list me-1"></i>
+                        <t t-esc="back_list_text or 'All Items'"/>
+                    </a>
+                    <a href="/my/home" class="btn btn-outline-secondary btn-sm">
+                        <i class="fa fa-home me-1"></i>
+                        Dashboard
+                    </a>
+                </t>
+            </div>
+        </div>
+    </template>
+
+
+    <!-- ============================================
+         ACTIVITY TEMPLATES - Using Inheritance
+         ============================================ -->
+
+    <!-- Activity List -->
+    <template id="student_activity_back" inherit_id="dekad_activity.student_activity">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_url" t-value="'/my/home'"/>
+            <t t-set="back_text" t-value="'Back to Dashboard'"/>
+            <t t-call="dekad_web.student_back_button_single"/>
+        </xpath>
+    </template>
+
+    <!-- Activity Show -->
+    <template id="student_activity_show_back" inherit_id="dekad_activity.student_activity_show">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_list_url" t-value="'/student/activities'"/>
+            <t t-set="back_list_text" t-value="'Back to Activities'"/>
+            <t t-call="dekad_web.student_back_button_double"/>
+        </xpath>
+    </template>
+
+
+    <!-- ============================================
+         ASSIGNMENT TEMPLATES - Using Inheritance
+         ============================================ -->
+
+    <!-- Assignment List -->
+    <template id="student_assignment_back" inherit_id="dekad_assignment.student_assignment">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_url" t-value="'/my/home'"/>
+            <t t-set="back_text" t-value="'Back to Dashboard'"/>
+            <t t-call="dekad_web.student_back_button_single"/>
+        </xpath>
+    </template>
+
+    <!-- Assignment Show -->
+    <template id="student_assignment_show_back" inherit_id="dekad_assignment.student_assignment_show">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_list_url" t-value="'/student/assignments'"/>
+            <t t-set="back_list_text" t-value="'Back to Assignments'"/>
+            <t t-call="dekad_web.student_back_button_double"/>
+        </xpath>
+    </template>
+
+    <!-- Assignment Submission -->
+    <template id="student_assignment_submission_back" inherit_id="dekad_assignment.student_assignment_submission">
+        <xpath expr="//div[hasclass('card')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_detail_url" t-value="'/student/assignment/' + str(assignment.id)"/>
+            <t t-set="back_detail_text" t-value="'Back to Assignment'"/>
+            <t t-set="back_list_url" t-value="'/student/assignments'"/>
+            <t t-set="back_list_text" t-value="'All Assignments'"/>
+            <t t-call="dekad_web.student_back_button_triple"/>
+        </xpath>
+    </template>
+
+    <!-- Assignment Submission Update -->
+    <template id="student_assignment_submission_update_back" inherit_id="dekad_assignment.student_assignment_submission_update">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_detail_url" t-value="'/student/assignment/' + str(assignment.id) + '/submission'"/>
+            <t t-set="back_detail_text" t-value="'Back to Submission'"/>
+            <t t-set="back_list_url" t-value="'/student/assignments'"/>
+            <t t-set="back_list_text" t-value="'All Assignments'"/>
+            <t t-call="dekad_web.student_back_button_triple"/>
+        </xpath>
+    </template>
+
+
+    <!-- ============================================
+         ATTENDANCE TEMPLATES - Using Inheritance
+         ============================================ -->
+
+    <template id="student_attendance_back" inherit_id="dekad_attendance.student_attendance">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_url" t-value="'/my/home'"/>
+            <t t-set="back_text" t-value="'Back to Dashboard'"/>
+            <t t-call="dekad_web.student_back_button_single"/>
+        </xpath>
+    </template>
+
+
+    <!-- ============================================
+         COMPLAINT TEMPLATES - Using Inheritance
+         ============================================ -->
+
+    <!-- Complaint List -->
+    <template id="student_complaint_back" inherit_id="dekad_complaint.student_complaint">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_url" t-value="'/my/home'"/>
+            <t t-set="back_text" t-value="'Back to Dashboard'"/>
+            <t t-call="dekad_web.student_back_button_single"/>
+        </xpath>
+    </template>
+
+    <!-- Complaint Show -->
+    <template id="student_complaint_show_back" inherit_id="dekad_complaint.student_complaint_show">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_list_url" t-value="'/student/complaints'"/>
+            <t t-set="back_list_text" t-value="'Back to Complaints'"/>
+            <t t-call="dekad_web.student_back_button_double"/>
+        </xpath>
+    </template>
+
+    <!-- Complaint Create -->
+    <template id="student_complaint_create_back" inherit_id="dekad_complaint.student_complaint_create">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_url" t-value="'/student/complaints'"/>
+            <t t-set="back_text" t-value="'Back to Complaints'"/>
+            <t t-call="dekad_web.student_back_button_single"/>
+        </xpath>
+    </template>
+
+    <!-- Complaint Update -->
+    <template id="student_complaint_update_back" inherit_id="dekad_complaint.student_complaint_update">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_detail_url" t-value="'/student/complaint/' + str(record.id)"/>
+            <t t-set="back_detail_text" t-value="'Back to Complaint'"/>
+            <t t-set="back_list_url" t-value="'/student/complaints'"/>
+            <t t-set="back_list_text" t-value="'All Complaints'"/>
+            <t t-call="dekad_web.student_back_button_triple"/>
+        </xpath>
+    </template>
+
+
+    <!-- ============================================
+         CONTRAVENTION TEMPLATES - Using Inheritance
+         ============================================ -->
+
+    <!-- Contravention List -->
+    <template id="student_contravention_back" inherit_id="dekad_contravention.student_contravention">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_url" t-value="'/my/home'"/>
+            <t t-set="back_text" t-value="'Back to Dashboard'"/>
+            <t t-call="dekad_web.student_back_button_single"/>
+        </xpath>
+    </template>
+
+    <!-- Contravention Show -->
+    <template id="student_contravention_show_back" inherit_id="dekad_contravention.student_contravention_show">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_list_url" t-value="'/student/contraventions'"/>
+            <t t-set="back_list_text" t-value="'Back to Contraventions'"/>
+            <t t-call="dekad_web.student_back_button_double"/>
+        </xpath>
+    </template>
+
+
+    <!-- ============================================
+         HEALTH TEMPLATES - Using Inheritance
+         ============================================ -->
+
+    <!-- Health List -->
+    <template id="student_health_back" inherit_id="dekad_health.student_health">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_url" t-value="'/my/home'"/>
+            <t t-set="back_text" t-value="'Back to Dashboard'"/>
+            <t t-call="dekad_web.student_back_button_single"/>
+        </xpath>
+    </template>
+
+    <!-- Health Show -->
+    <template id="student_health_show_back" inherit_id="dekad_health.student_health_show">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_list_url" t-value="'/student/health'"/>
+            <t t-set="back_list_text" t-value="'Back to Health Records'"/>
+            <t t-call="dekad_web.student_back_button_double"/>
+        </xpath>
+    </template>
+
+
+    <!-- ============================================
+         LEAVE TEMPLATES - Using Inheritance
+         ============================================ -->
+
+    <!-- Leave List -->
+    <template id="student_leave_back" inherit_id="dekad_leave.student_leave">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_url" t-value="'/my/home'"/>
+            <t t-set="back_text" t-value="'Back to Dashboard'"/>
+            <t t-call="dekad_web.student_back_button_single"/>
+        </xpath>
+    </template>
+
+    <!-- Leave Show -->
+    <template id="student_leave_show_back" inherit_id="dekad_leave.student_leave_show">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_list_url" t-value="'/student/leaves'"/>
+            <t t-set="back_list_text" t-value="'Back to Days Off'"/>
+            <t t-call="dekad_web.student_back_button_double"/>
+        </xpath>
+    </template>
+
+    <!-- Leave Create -->
+    <template id="student_leave_create_back" inherit_id="dekad_leave.student_leave_create">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_url" t-value="'/student/leaves'"/>
+            <t t-set="back_text" t-value="'Back to Days Off'"/>
+            <t t-call="dekad_web.student_back_button_single"/>
+        </xpath>
+    </template>
+
+    <!-- Leave Update -->
+    <template id="student_leave_update_back" inherit_id="dekad_leave.student_leave_update">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_detail_url" t-value="'/student/leave/' + str(record.id)"/>
+            <t t-set="back_detail_text" t-value="'Back to Day Off'"/>
+            <t t-set="back_list_url" t-value="'/student/leaves'"/>
+            <t t-set="back_list_text" t-value="'All Days Off'"/>
+            <t t-call="dekad_web.student_back_button_triple"/>
+        </xpath>
+    </template>
+
+
+    <!-- ============================================
+         NOTE TEMPLATES - Using Inheritance
+         ============================================ -->
+
+    <!-- Note List -->
+    <template id="student_note_back" inherit_id="dekad_note.student_note">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_url" t-value="'/my/home'"/>
+            <t t-set="back_text" t-value="'Back to Dashboard'"/>
+            <t t-call="dekad_web.student_back_button_single"/>
+        </xpath>
+    </template>
+
+    <!-- Note Show -->
+    <template id="student_note_show_back" inherit_id="dekad_note.student_note_show">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_list_url" t-value="'/student/notes'"/>
+            <t t-set="back_list_text" t-value="'Back to Notes'"/>
+            <t t-call="dekad_web.student_back_button_double"/>
+        </xpath>
+    </template>
+
+
+    <!-- ============================================
+         QUIZ TEMPLATES - Using Inheritance
+         ============================================ -->
+
+    <!-- Quiz List -->
+    <template id="student_quiz_back" inherit_id="dekad_quiz.student_quiz">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_url" t-value="'/my/home'"/>
+            <t t-set="back_text" t-value="'Back to Dashboard'"/>
+            <t t-call="dekad_web.student_back_button_single"/>
+        </xpath>
+    </template>
+
+    <!-- Quiz Show -->
+    <template id="student_quiz_show_back" inherit_id="dekad_quiz.student_quiz_show">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_list_url" t-value="'/student/quizzes'"/>
+            <t t-set="back_list_text" t-value="'Back to Quizzes'"/>
+            <t t-call="dekad_web.student_back_button_double"/>
+        </xpath>
+    </template>
+
+    <!-- Quiz Submission -->
+    <template id="student_quiz_submission_back" inherit_id="dekad_quiz.student_quiz_submission">
+        <xpath expr="//div[hasclass('card')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_detail_url" t-value="'/student/quiz/' + str(quiz.id)"/>
+            <t t-set="back_detail_text" t-value="'Back to Quiz'"/>
+            <t t-set="back_list_url" t-value="'/student/quizzes'"/>
+            <t t-set="back_list_text" t-value="'All Quizzes'"/>
+            <t t-call="dekad_web.student_back_button_triple"/>
+        </xpath>
+    </template>
+
+
+    <!-- ============================================
+         FEE TEMPLATE - Using Inheritance
+         ============================================ -->
+
+    <template id="student_fee_back" inherit_id="dekad_fee.student_fee">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_url" t-value="'/my/home'"/>
+            <t t-set="back_text" t-value="'Back to Dashboard'"/>
+            <t t-call="dekad_web.student_back_button_single"/>
+        </xpath>
+    </template>
+
+
+    <!-- ============================================
+         PROFILE TEMPLATE - Using Inheritance
+         ============================================ -->
+
+    <template id="student_profile_back" inherit_id="dekad_core.student_profile">
+        <xpath expr="//section" position="after">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_url" t-value="'/my/home'"/>
+            <t t-set="back_text" t-value="'Back to Dashboard'"/>
+            <t t-call="dekad_web.student_back_button_single"/>
+        </xpath>
+    </template>
+
+
+    <!-- ============================================
+         ACHIEVEMENT TEMPLATE - Using Inheritance
+         ============================================ -->
+
+    <template id="student_achievement_back" inherit_id="dekad_achievement.student_achievement">
+        <xpath expr="//div[hasclass('card-body')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_url" t-value="'/my/home'"/>
+            <t t-set="back_text" t-value="'Back to Dashboard'"/>
+            <t t-call="dekad_web.student_back_button_single"/>
+        </xpath>
+    </template>
+
+
+    <!-- ============================================
+         TIMETABLE TEMPLATE - Using Inheritance
+         ============================================ -->
+
+    <template id="student_timetable_back" inherit_id="dekad_timetable.student_timetable_portal">
+        <xpath expr="//div[hasclass('container')]" position="inside">
+            <t t-set="parent_student_param" t-value="parent_student_param"/>
+            <t t-set="back_url" t-value="'/my/home'"/>
+            <t t-set="back_text" t-value="'Back to Dashboard'"/>
+            <t t-call="dekad_web.student_back_button_single"/>
+        </xpath>
+    </template>
+
+</odoo>

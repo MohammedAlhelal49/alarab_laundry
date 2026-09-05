@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Paper Format -->
+    <record id="paperformat_pdc_cheques_landscape" model="report.paperformat">
+        <field name="name">PDC Cheques Landscape</field>
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">33</field>
+        <field name="margin_bottom">20</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">30</field>
+        <field name="dpi">90</field>
+    </record>
+
+
+    <!-- Report Action -->
+    <record id="action_report_pdc_cheques" model="ir.actions.report">
+        <field name="name">Cheque List Report</field>
+        <field name="model">pdc.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sh_pdc.report_pdc_cheques_template</field>
+        <field name="report_file">sh_pdc.report_pdc_cheques_template</field>
+        <field name="binding_model_id" ref="sh_pdc.model_pdc_wizard"/>
+        <field name="binding_type">report</field>
+        <field name="binding_view_types">list</field>
+        <field name="paperformat_id" ref="paperformat_pdc_cheques_landscape"/>
+    </record>
+
+    <!-- Report Template -->
+    <template id="report_pdc_cheques_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+
+                <div class="page">
+
+                    <h2 style="margin-bottom:16px;">
+                        PDC Cheques Report
+                    </h2>
+
+                    <!-- Sort by Due Date -->
+                    <t t-set="docs" t-value="docs.sorted(key=lambda r: str(r.due_date or ''))"/>
+                    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+
+                        <thead>
+                            <tr style="background-color:#875A7B; color:#fff;">
+                                <th style="padding:5px 8px; text-align:left;">
+                                    Due Date
+                                </th>
+                                <th style="padding:5px 8px; text-align:left;">
+                                    Customer Name
+                                </th>
+                                <th style="padding:5px 8px; text-align:left;">
+                                    Cheque Number
+                                </th>
+                                <th style="padding:5px 8px; text-align:left;">
+                                    Cheque Reference
+                                </th>
+                                <th style="padding:5px 8px; text-align:left;">
+                                    Bank Name
+                                </th>
+                                <th style="padding:5px 8px; text-align:right;">
+                                    Amount
+                                </th>
+                                <th style="padding:5px 8px; text-align:left;">
+                                    Memo
+                                </th>
+                                <th style="padding:5px 8px; text-align:center;">
+                                    Status
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <t t-foreach="docs" t-as="doc">
+                                <tr style="border-bottom:1px solid #e8e8e8;">
+
+                                    <td style="padding:4px 8px;">
+                                        <span t-field="doc.due_date"/>
+                                    </td>
+
+                                    <td style="padding:4px 8px;">
+                                        <span t-field="doc.partner_id"/>
+                                    </td>
+
+                                    <td style="padding:4px 8px;">
+                                        <span t-field="doc.name"/>
+                                    </td>
+
+                                    <td style="padding:4px 8px;">
+                                        <span t-field="doc.reference"/>
+                                    </td>
+
+                                    <td style="padding:4px 8px;">
+                                        <span t-field="doc.journal_id"/>
+                                    </td>
+
+                                    <td style="padding:4px 8px; text-align:right;">
+                                        <span t-field="doc.payment_amount"/>
+                                    </td>
+
+                                    <td style="padding:4px 8px;">
+                                        <span t-field="doc.memo"/>
+                                    </td>
+
+                                    <td style="padding:4px 8px; text-align:center;">
+                                        <span t-field="doc.state"/>
+                                    </td>
+
+                                </tr>
+                            </t>
+                        </tbody>
+
+                        <!-- Total Row -->
+                        <tr style="background-color:#f2f2f2;
+                                   font-weight:bold;
+                                   border-top:2px solid #875A7B;
+                                   font-size:14px;">
+                            <td colspan="4" style="padding:6px 8px;">
+                                Number of Cheques:
+                                <t t-esc="len(docs)"/>
+                            </td>
+
+                            <td style="padding:6px 8px; text-align:right;">
+                                Total Amount:
+                            </td>
+
+                            <td style="padding:6px 8px; text-align:right;">
+                                <t t-esc="'{:,.2f}'.format(sum(docs.mapped('payment_amount')))"/>
+                                <t t-esc="docs[:1].currency_id.symbol if docs else ''"/>
+
+                            </td>
+
+                            <td colspan="2"></td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </t>
+        </t>
+    </template>
+
+</odoo>

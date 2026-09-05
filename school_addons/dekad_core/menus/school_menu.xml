@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_de_school_root"
+                  name="School"
+                  sequence="10"
+                  web_icon="dekad_core,static/description/icon.png"/>
+
+        <!-- Academic Periods -->
+        <menuitem id="menu_de_academic_year_root"
+                  name="Academic periods"
+                  parent="menu_de_school_root"
+                  sequence="20"/>
+
+        <menuitem id="menu_de_academic_year"
+                  name="Academic years"
+                  parent="menu_de_academic_year_root"
+                  action="act_open_de_academic_year_view"
+                  sequence="10"/>
+        <menuitem id="menu_de_academic_term"
+                  name="Academic Terms"
+                  sequence="30"
+                  parent="menu_de_academic_year_root"
+                  action="act_open_de_academic_term_view"/>
+
+        <!--        school configuration-->
+        <menuitem id="menu_de_school_configuration"
+                  name="Configuration"
+                  sequence="40"
+                  parent="menu_de_school_root"
+
+        />
+        <menuitem id="menu_de_religion"
+                  name="Religions"
+                  sequence="10"
+                  action="act_open_de_religion_view"
+                  parent="menu_de_school_configuration"
+                  groups="dekad_core.group_de_back_office_admin"
+
+        />
+         <record id="act_open_res_country_group_view" model="ir.actions.act_window">
+        <field name="name">Countries groups</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.country.group</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_de_country_group"
+              name="Countries groups"
+              sequence="20"
+              action="act_open_res_country_group_view"
+              parent="menu_de_school_configuration"
+              groups="dekad_core.group_de_back_office_admin"
+    />
+    <menuitem id="menu_de_country"
+              name="Countries"
+              sequence="30"
+              action="base.action_country"
+              parent="menu_de_school_configuration"
+              groups="dekad_core.group_de_back_office_admin"
+    />
+        <menuitem id="menu_de_holiday"
+                  name="Holidays"
+                  sequence="40"
+                  action="act_open_de_holiday_view"
+                  parent="menu_de_school_configuration"
+        />
+        <!--            grades-->
+        <menuitem id="menu_de_grade_root"
+                  name="Grades"
+                  sequence="20"
+                  web_icon="dekad_core,static/description/grade.png"
+        />
+        <menuitem id="menu_de_grade"
+                  name="Grades"
+                  parent="menu_de_grade_root"
+                  sequence="20"
+                  action="act_open_de_grade_view"
+                  groups="dekad_core.group_de_grade,dekad_core.group_de_teacher"
+
+        />
+    </data>
+</odoo>

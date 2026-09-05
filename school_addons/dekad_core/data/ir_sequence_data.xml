@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="sequence_de_student_grade" model="ir.sequence">
+            <field name="name">Student grade</field>
+            <field name="code">de.student.grade</field>
+            <field name="prefix">SG</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_de_student" model="ir.sequence">
+            <field name="name">Student</field>
+            <field name="code">de.student</field>
+            <field name="prefix">ST</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="sequence_de_teacher" model="ir.sequence">
+            <field name="name">Teacher</field>
+            <field name="code">de.teacher</field>
+            <field name="prefix">TE</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

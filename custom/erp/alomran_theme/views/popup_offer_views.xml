@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ============================================================ -->
+    <!-- LIST VIEW -->
+    <!-- ============================================================ -->
+    <record id="popup_offer_view_list" model="ir.ui.view">
+        <field name="name">popup.offer.list</field>
+        <field name="model">popup.offer</field>
+        <field name="arch" type="xml">
+            <list string="Pop-up Offers"
+                  decoration-success="state=='active'"
+                  decoration-muted="state in ('expired','paused')"
+                  decoration-info="state=='scheduled'"
+                  decoration-warning="state=='draft'">
+
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="offer_type"/>
+                <field name="start_date" optional="show"/>
+                <field name="end_date" optional="show"/>
+                <field name="state"
+                       widget="badge"
+                       decoration-success="state=='active'"
+                       decoration-info="state=='scheduled'"
+                       decoration-warning="state=='draft'"
+                       decoration-muted="state in ('expired','paused')"/>
+                <field name="view_count" optional="show"/>
+                <field name="lead_count" optional="show"/>
+                <field name="conversion_rate" widget="percentage" optional="show"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- FORM VIEW -->
+    <!-- ============================================================ -->
+    <record id="popup_offer_view_form" model="ir.ui.view">
+        <field name="name">popup.offer.form</field>
+        <field name="model">popup.offer</field>
+        <field name="arch" type="xml">
+            <form string="Pop-up Offer">
+                <header>
+                    <field name="state"
+                           widget="statusbar"
+                           statusbar_visible="draft,scheduled,active,expired"/>
+                </header>
+
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_leads"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-users">
+                            <field name="lead_count" widget="statinfo" string="Leads"/>
+                        </button>
+
+                        <button class="oe_stat_button" icon="fa-eye">
+                            <field name="view_count" widget="statinfo" string="Views"/>
+                        </button>
+
+                        <button class="oe_stat_button" icon="fa-percent">
+                            <field name="conversion_rate" widget="statinfo" string="Conversion"/>
+                        </button>
+                    </div>
+
+                    <widget name="web_ribbon"
+                            title="Active"
+                            bg_color="bg-success"
+                            invisible="state != 'active'"/>
+
+                    <widget name="web_ribbon"
+                            title="Expired"
+                            bg_color="bg-danger"
+                            invisible="state != 'expired'"/>
+
+                    <widget name="web_ribbon"
+                            title="Scheduled"
+                            bg_color="bg-info"
+                            invisible="state != 'scheduled'"/>
+
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" placeholder="e.g., Ramadan Offer 2026"/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group string="Basic Settings">
+                            <field name="sequence"/>
+                            <field name="active" widget="boolean_toggle"/>
+                            <field name="offer_type"/>
+                        </group>
+                        <group string="Scheduling">
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="countdown_days" invisible="show_countdown == False"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <!-- TAB 1: Offer Details -->
+                        <page string="Offer Details" name="offer_details">
+                            <group string="Offer Type Settings">
+                                <group string="Buy X Get Y Free"
+                                       invisible="offer_type != 'buy_x_get_y'">
+                                    <field name="buy_quantity"/>
+                                    <field name="get_quantity"/>
+                                </group>
+
+                                <group string="Discount Settings"
+                                       invisible="offer_type not in ['discount_percentage', 'discount_fixed']">
+                                    <field name="discount_type"/>
+                                    <field name="discount_value"/>
+                                </group>
+                            </group>
+
+                            <separator string="Text Content"/>
+
+                            <group string="Content">
+                                <group string="Arabic Text">
+                                    <field name="title_ar"
+                                           placeholder="Book 2 courses and get the 3rd FREE!"/>
+                                    <field name="subtitle_ar"
+                                           placeholder="Save 33% on total cost"/>
+                                    <field name="description_ar"
+                                           placeholder="Offer details..."
+                                           widget="text"/>
+                                </group>
+
+                                <group string="English Text">
+                                    <field name="title_en"
+                                           placeholder="Buy 2 Get 1 FREE!"/>
+                                    <field name="subtitle_en"
+                                           placeholder="Save 33% on total cost"/>
+                                    <field name="description_en"
+                                           placeholder="Offer details..."
+                                           widget="text"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <!-- TAB 2: Design -->
+                        <page string="Design &amp; Appearance" name="design">
+                            <group>
+                                <group string="Badge (Arabic)">
+                                    <field name="badge_text_ar"
+                                           placeholder="عرض لفترة محدودة!"/>
+                                </group>
+                                <group string="Badge (English)">
+                                    <field name="badge_text_en"
+                                           placeholder="Limited Time Offer!"/>
+                                </group>
+                            </group>
+
+                            <group>
+                                <group string="Badge Color">
+                                    <field name="badge_color" widget="color"/>
+                                </group>
+                                <group string="Countdown Timer">
+                                    <field name="show_countdown"/>
+                                </group>
+                            </group>
+
+                            <separator string="Terms &amp; Conditions"/>
+
+                            <group>
+                                <group string="Arabic">
+                                    <field name="terms_ar"
+                                           placeholder="Terms and conditions in Arabic..."
+                                           nolabel="1"
+                                           widget="text"/>
+                                </group>
+                                <group string="English">
+                                    <field name="terms_en"
+                                           placeholder="Terms and Conditions in English..."
+                                           nolabel="1"
+                                           widget="text"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <!-- TAB 3: Pop-up Settings -->
+                        <page string="Pop-up Settings" name="popup_settings">
+                            <group string="Pop-up Behavior">
+                                <group>
+                                    <field name="delay_seconds"/>
+                                    <field name="cookie_duration"/>
+                                </group>
+                                <group>
+                                    <field name="exit_intent"/>
+                                </group>
+                            </group>
+
+                            <group string="Additional Information">
+                                <div class="alert alert-info" role="alert">
+                                    <strong>Note:</strong>
+                                    <ul>
+                                        <li><strong>Delay:</strong> Number of seconds before showing Pop-up when entering the page</li>
+                                        <li><strong>Cookie Duration:</strong> Number of days before showing Pop-up again to the same visitor</li>
+                                        <li><strong>Exit Intent:</strong> Show Pop-up when visitor tries to leave the page</li>
+                                    </ul>
+                                </div>
+                            </group>
+                        </page>
+
+                        <!-- TAB 4: Localized Texts -->
+                        <page string="Localized Texts" name="localized_texts">
+                            <group string="Form Section">
+                                <group string="Arabic">
+                                    <field name="form_title_ar"/>
+                                    <field name="form_subtitle_ar"/>
+                                </group>
+                                <group string="English">
+                                    <field name="form_title_en"/>
+                                    <field name="form_subtitle_en"/>
+                                </group>
+                            </group>
+
+                            <separator string="Field Labels"/>
+
+                            <group>
+                                <group string="Name Field (Arabic)">
+                                    <field name="name_label_ar"/>
+                                    <field name="name_placeholder_ar"/>
+                                </group>
+                                <group string="Name Field (English)">
+                                    <field name="name_label_en"/>
+                                    <field name="name_placeholder_en"/>
+                                </group>
+                            </group>
+
+                            <group>
+                                <group string="Phone Field (Arabic)">
+                                    <field name="phone_label_ar"/>
+                                    <field name="phone_placeholder_ar"/>
+                                </group>
+                                <group string="Phone Field (English)">
+                                    <field name="phone_label_en"/>
+                                    <field name="phone_placeholder_en"/>
+                                </group>
+                            </group>
+
+                            <separator string="Buttons"/>
+
+                            <group>
+                                <group string="Arabic">
+                                    <field name="submit_btn_ar"/>
+                                    <field name="close_btn_ar"/>
+                                </group>
+                                <group string="English">
+                                    <field name="submit_btn_en"/>
+                                    <field name="close_btn_en"/>
+                                </group>
+                            </group>
+
+                            <separator string="Success Message"/>
+
+                            <group>
+                                <group string="Arabic">
+                                    <field name="success_title_ar"/>
+                                    <field name="success_message_ar" widget="text"
+                                           help="Use {name} as placeholder for customer name"/>
+                                </group>
+                                <group string="English">
+                                    <field name="success_title_en"/>
+                                    <field name="success_message_en" widget="text"
+                                           help="Use {name} as placeholder for customer name"/>
+                                </group>
+                            </group>
+
+                            <separator string="Social Proof &amp; Trust"/>
+
+                            <group>
+                                <group string="Arabic">
+                                    <field name="social_proof_ar"/>
+                                    <field name="trust_text_ar"/>
+                                </group>
+                                <group string="English">
+                                    <field name="social_proof_en"/>
+                                    <field name="trust_text_en"/>
+                                </group>
+                            </group>
+
+                            <separator string="Countdown Labels"/>
+
+                            <group>
+                                <group string="Arabic">
+                                    <field name="countdown_title_ar"/>
+                                    <field name="days_label_ar"/>
+                                    <field name="hours_label_ar"/>
+                                    <field name="mins_label_ar"/>
+                                </group>
+                                <group string="English">
+                                    <field name="countdown_title_en"/>
+                                    <field name="days_label_en"/>
+                                    <field name="hours_label_en"/>
+                                    <field name="mins_label_en"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <!-- TAB 5: Analytics -->
+                        <page string="Analytics &amp; Performance" name="analytics">
+                            <group>
+                                <group string="Numbers">
+                                    <field name="view_count"/>
+                                    <field name="lead_count"/>
+                                    <field name="conversion_rate" widget="percentage"/>
+                                </group>
+
+                                <group string="Analysis">
+                                    <p class="text-muted">
+                                        <strong>Conversion Rate:</strong> Measures offer effectiveness in converting views to registrations.
+                                    </p>
+                                    <p class="text-muted">
+                                        • Excellent rate: More than 5%<br/>
+                                        • Good rate: 2-5%<br/>
+                                        • Low rate: Less than 2%
+                                    </p>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+
+                <!--<div class="oe_chatter">-->
+                <!--    <field name="message_follower_ids"/>-->
+                <!--    <field name="activity_ids"/>-->
+                <!--    <field name="message_ids"/>-->
+                <!--</div>-->
+            </form>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- SEARCH VIEW -->
+    <!-- ============================================================ -->
+    <record id="popup_offer_view_search" model="ir.ui.view">
+        <field name="name">popup.offer.search</field>
+        <field name="model">popup.offer</field>
+        <field name="arch" type="xml">
+            <search string="Pop-up Offers">
+                <field name="name"/>
+                <field name="offer_type"/>
+
+                <filter string="Active"
+                        name="filter_active"
+                        domain="[('state', '=', 'active')]"/>
+
+                <filter string="Scheduled"
+                        name="filter_scheduled"
+                        domain="[('state', '=', 'scheduled')]"/>
+
+                <filter string="Expired"
+                        name="filter_expired"
+                        domain="[('state', '=', 'expired')]"/>
+
+                <separator/>
+
+                <filter string="Buy X Get Y"
+                        name="filter_buy_get"
+                        domain="[('offer_type', '=', 'buy_x_get_y')]"/>
+
+                <filter string="Discount %"
+                        name="filter_discount"
+                        domain="[('offer_type', '=', 'discount_percentage')]"/>
+
+                <separator/>
+
+                <filter string="Archived"
+                        name="inactive"
+                        domain="[('active', '=', False)]"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Offer Type"
+                            name="group_offer_type"
+                            context="{'group_by': 'offer_type'}"/>
+
+                    <filter string="Status"
+                            name="group_state"
+                            context="{'group_by': 'state'}"/>
+
+                    <filter string="Start Date"
+                            name="group_start_date"
+                            context="{'group_by': 'start_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- ACTION -->
+    <!-- ============================================================ -->
+    <record id="popup_offer_action" model="ir.actions.act_window">
+        <field name="name">Pop-up Offers</field>
+        <field name="res_model">popup.offer</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_filter_active': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Pop-up offer
+            </p>
+            <p>
+                Create dynamic offers with automatic scheduling and performance tracking.<br/>
+                Active offers will be automatically displayed to visitors based on the schedule.<br/>
+                <strong>Multi-language support:</strong> Content will be displayed based on website language.
+            </p>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- MENU ITEMS -->
+    <!-- ============================================================ -->
+
+    <menuitem id="menu_popup_offers_root"
+              name="Pop-up Offers"
+              sequence="100"/>
+
+    <menuitem id="menu_popup_offers"
+              name="Offers"
+              parent="menu_popup_offers_root"
+              action="popup_offer_action"
+              sequence="10"/>
+
+    <menuitem id="menu_popup_analytics"
+              name="Analytics"
+              parent="menu_popup_offers_root"
+              sequence="20"
+              groups="sales_team.group_sale_manager"/>
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="project_embedded_action_material_requests" model="ir.embedded.actions">
+        <field name="parent_res_model">project.project</field>
+        <field name="sequence">75</field>
+        <field name="name">Material Requests</field>
+        <field name="parent_action_id" ref="project.act_project_project_2_project_task_all"/>
+        <field name="python_method">action_view_material_requests</field>
+        <field name="context">{"from_embedded_action": true}</field>
+        <field name="groups_ids" eval="[(4, ref('dekad_material_request.group_gmr_user')), (4, ref('dekad_material_request.group_gmr_approver')), (4, ref('dekad_material_request.group_gmr_admin'))]"/>
+    </record>
+</odoo>

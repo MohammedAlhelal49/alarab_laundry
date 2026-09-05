@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="paperformat_invoice_landscape" model="report.paperformat">
+        <field name="name">Invoice Landscape</field>
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">33</field>
+        <field name="margin_bottom">20</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">30</field>
+        <field name="dpi">90</field>
+
+    </record>
+
+    <record id="action_report_custom_invoice" model="ir.actions.report">
+        <field name="name">Print Customer Invoice</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dekad_account_enhancement.report_custom_invoice_template</field>
+        <field name="report_file">dekad_account_enhancement.report_custom_invoice_template</field>
+        <field name="print_report_name">'Invoice - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+        <field name="binding_view_types">list</field>
+        <field name="paperformat_id" ref="paperformat_invoice_landscape"/>
+
+    </record>
+
+
+
+
+    <template id="report_custom_invoice_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2 style="margin-bottom:16px;">Customer Invoices</h2>
+                    <table style="width:100%; border-collapse:collapse; font-size:10px;">
+                        <thead>
+                            <tr style="background-color:#875A7B; color:#fff;">
+                                <th style="padding:5px 8px; text-align:left;">Number</th>
+                                <th style="padding:5px 8px; text-align:left;">Customer</th>
+                                <th style="padding:5px 8px; text-align:left;">Invoice Date</th>
+                                <th style="padding:5px 8px; text-align:left;">Due Date</th>
+                                <th style="padding:5px 8px; text-align:left;">Salesperson</th>
+                                <th style="padding:5px 8px; text-align:right;">Tax Excluded</th>
+                                <th style="padding:5px 8px; text-align:right;">Tax</th>
+                                <th style="padding:5px 8px; text-align:right;">Total</th>
+                                <th style="padding:5px 8px; text-align:right;">Amount Due</th>
+                                <th style="padding:5px 8px; text-align:center;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="docs" t-as="doc">
+                                <tr style="border-bottom:1px solid #e8e8e8;">
+                                    <td style="padding:4px 8px;">
+                                        <span t-field="doc.name"/>
+                                    </td>
+                                    <td style="padding:4px 8px;">
+                                        <span t-field="doc.invoice_partner_display_name"/>
+                                    </td>
+                                    <td style="padding:4px 8px;">
+                                        <span t-field="doc.invoice_date"/>
+                                    </td>
+                                    <td style="padding:4px 8px;">
+                                        <span t-field="doc.invoice_date_due"/>
+                                    </td>
+                                    <td style="padding:4px 8px;">
+                                        <span t-field="doc.invoice_user_id"/>
+                                    </td>
+                                    <td style="padding:4px 8px; text-align:right;">
+                                        <span t-field="doc.amount_untaxed_in_currency_signed"/>
+                                    </td>
+                                    <td style="padding:4px 8px; text-align:right;">
+                                        <span t-field="doc.amount_tax_signed"/>
+                                    </td>
+                                    <td style="padding:4px 8px; text-align:right;">
+                                        <span t-field="doc.amount_total_in_currency_signed"/>
+                                    </td>
+                                    <td style="padding:4px 8px; text-align:right;">
+                                        <span t-field="doc.amount_residual_signed"/>
+                                    </td>
+                                    <td style="padding:4px 8px; text-align:center;">
+                                        <span t-field="doc.payment_state"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                        <!-- Grand Totals -->
+                        <tfoot>
+                            <tr style="background-color:#f2f2f2; font-weight:bold; border-top:2px solid #875A7B; font-size:11px;">
+                                <td colspan="5" style="padding:6px 8px; text-align:right;">Grand Total</td>
+                                <td style="padding:6px 8px; text-align:right;">
+                                    <t t-esc="'%.2f' % sum(docs.mapped('amount_untaxed_in_currency_signed'))"/>
+                                </td>
+                                <td style="padding:6px 8px; text-align:right;">
+                                    <t t-esc="'%.2f' % sum(docs.mapped('amount_tax_signed'))"/>
+                                </td>
+                                <td style="padding:6px 8px; text-align:right;">
+                                    <t t-esc="'%.2f' % sum(docs.mapped('amount_total_in_currency_signed'))"/>
+                                </td>
+                                <td style="padding:6px 8px; text-align:right;">
+                                    <t t-esc="'%.2f' % sum(docs.mapped('amount_residual_signed'))"/>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

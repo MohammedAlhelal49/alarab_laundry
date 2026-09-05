@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="de_activity_type_1" model="de.leave.type">
+            <field name="name">Sick</field>
+        </record>
+
+        <record id="de_activity_type_2" model="de.leave.type">
+            <field name="name">Religious</field>
+        </record>
+
+
+        <record id="de_leave_1" model="de.leave">
+            <field name="leave_type" ref="de_activity_type_1"/>
+            <field name="student_id" ref="dekad_core.de_student_1"/>
+            <field name="start_date">2025-12-01</field>
+            <field name="end_date">2025-12-03</field>
+        </record>
+
+        <record id="de_leave_2" model="de.leave">
+            <field name="leave_type" ref="de_activity_type_1"/>
+            <field name="student_id" ref="dekad_core.de_student_2"/>
+            <field name="start_date">2025-11-01</field>
+            <field name="end_date">2025-11-03</field>
+        </record>
+
+        <function model="de.leave" name="set_accept" eval="[(ref('de_leave_1'), ref('de_leave_1'))]"/>
+    </data>
+</odoo>

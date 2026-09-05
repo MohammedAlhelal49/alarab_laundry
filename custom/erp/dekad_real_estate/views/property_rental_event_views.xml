@@ -1,0 +1,115 @@
+<odoo>
+    <!-- Calendar View (No mini-wizard) -->
+    <record id="view_property_rental_event_calendar" model="ir.ui.view">
+        <field name="name">property.rental.event.calendar</field>
+        <field name="model">property.rental.event</field>
+        <field name="priority" eval="2"/>
+        <field name="arch" type="xml">
+            <calendar
+                string="Rental Events"
+                date_start="start_date"
+                date_stop="end_date"
+                color="property_id"
+                event_open_popup="true"
+                quick_create="false">
+                <field name="name"/>
+                <field name="property_ids"
+                       options="{'block': True, 'icon': 'fa fa-building'}"
+                       filters="1"
+                       write_model="property.rental.filter"
+                       write_field="property_id"
+                       filter_field="property_checked"
+                       avatar_field="property_image"
+                />
+                <field name="cost"/>
+                <field name="description"/>
+
+            </calendar>
+        </field>
+    </record>
+
+
+
+    <!-- Form View -->
+    <record id="view_property_rental_event_form" model="ir.ui.view">
+        <field name="name">property.rental.event.form</field>
+        <field name="model">property.rental.event</field>
+        <field name="arch" type="xml">
+            <form string="Rental Event">
+                <sheet>
+                    <group>
+                        <field name="multi_property_ids"
+                               widget="many2many_tags"
+                               domain="[('offer_type', '=', 'rent')]"
+                               options="{'no_create': True, 'no_create_edit': True}"
+                               required="1"/>
+
+                        <field name="property_id" invisible="1"/>
+                        <field name="cost"/>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="start_date"
+                               widget="daterange"
+                               options="{'end_date_field': 'end_date'}"
+                               required="1"/>
+                        <field name="end_date" invisible="1"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List View -->
+    <record id="view_property_rental_event_list" model="ir.ui.view">
+        <field name="name">property.rental.event.list</field>
+        <field name="model">property.rental.event</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="property_id"/>
+                <field name="cost"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </list>
+        </field>
+    </record>
+
+        <!-- Search View -->
+    <record id="view_property_rental_event_search" model="ir.ui.view">
+        <field name="name">property.rental.event.search</field>
+        <field name="model">property.rental.event</field>
+        <field name="arch" type="xml">
+            <search string="Search Rental Events">
+                <!-- Filter: Property -->
+                <field name="property_id" string="Property"/>
+
+                <separator/>
+
+                <!-- Group By Section -->
+                <group expand="0" string="Group By">
+                    <filter name="group_by_property" string="Property" context="{'group_by': 'property_id'}"/>
+                    <filter name="group_by_cost" string="Cost" context="{'group_by': 'cost'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Default Action (general use) -->
+    <record id="action_property_rental_event" model="ir.actions.act_window">
+        <field name="name">Rental Events</field>
+        <field name="res_model">property.rental.event</field>
+        <field name="view_mode">calendar,list,form</field>
+        <field name="view_id" ref="view_property_rental_event_calendar"/>
+        <field name="search_view_id" ref="view_property_rental_event_search"/>
+    </record>
+
+    <!-- Action From Property (used in stat button) -->
+    <record id="action_property_rental_event_from_property" model="ir.actions.act_window">
+        <field name="name">Rental Events</field>
+        <field name="res_model">property.rental.event</field>
+        <field name="view_mode">calendar,list,form</field>
+        <field name="domain">[('property_id', '=', active_id)]</field>
+        <field name="context">{}</field>
+        <field name="view_id" ref="view_property_rental_event_calendar"/>
+        <field name="search_view_id" ref="view_property_rental_event_search"/>
+    </record>
+</odoo>

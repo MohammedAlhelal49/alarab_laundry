@@ -1,0 +1,54 @@
+// Define Brand Colors from Visual Identity
+$dekad-navy: #1E1E3A;
+$dekad-indigo: #4E54C8;
+$dekad-teal: #00B2A9;
+$dekad-light: #F5F6FA;
+
+// Inject into Odoo Theme Variables
+// Using !default or direct assignment before odoo assets load
+$o-color-primary: $dekad-indigo;
+$o-color-secondary: $dekad-teal;
+
+:root {
+    // This handles CSS variable consumers
+    --primary: #{$dekad-indigo};
+    --secondary: #{$dekad-teal};
+    --footer-bg: #{$dekad-navy};
+
+    // Specifically targeting Odoo's button variable system
+    --o-color-1: #{$dekad-indigo};
+}
+
+// Force override for all standard primary buttons
+.btn-primary {
+    background-color: $dekad-indigo !important;
+    border-color: $dekad-indigo !important;
+    color: #FFFFFF !important; // Ensures contrast
+
+    &:hover, &:focus, &:active {
+        background-color: darken($dekad-indigo, 7%) !important;
+        border-color: darken($dekad-indigo, 7%) !important;
+    }
+}
+
+// Use Odoo's specific hook variables
+$o-website-values-palette: (
+    'primary': $dekad-indigo,
+    'secondary': $dekad-teal,
+    'footer-bg': $dekad-navy,
+);
+
+// This helps the Website Configurator pick up your colors
+$o-color-palettes: (
+    'dekad-default': (
+        'primary': $dekad-indigo,
+        'secondary': $dekad-teal,
+        'footer-bg': $dekad-navy,
+    )
+);
+
+// General Typography adjustments
+body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    background-color: $dekad-light;
+}

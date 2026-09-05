@@ -1,0 +1,11 @@
+<templates id="attendance_location.extend_attendance_button" xml:space="preserve" inherit_id="LoginEmployeeDetails">
+  <!-- ننفّذ ال-xpath بعد الـ div اللي فيه t-ref="log_in_out" -->
+  <xpath expr="//div[@t-ref='log_in_out']" position="after">
+    <t t-if="this.state.login_employee.attendance_state=='checked_in' and this.state.login_employee.patient_name">
+      <div class="stat-subtext"
+           style="font-size:0.75rem;color:#555;margin-top:4px;">
+        Checked-in with: <t t-esc="this.state.login_employee.patient_name"/>
+      </div>
+    </t>
+  </xpath>
+</templates>

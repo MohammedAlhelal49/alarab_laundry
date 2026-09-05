@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_landed_cost_form_cancel_inherit" model="ir.ui.view">
+        <field name="name">stock.landed.cost.form.cancel</field>
+        <field name="model">stock.landed.cost</field>
+        <field name="inherit_id" ref="stock_landed_costs.view_stock_landed_cost_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <!-- Active cancel button — visible only when Posted -->
+                <button name="action_cancel_landed_cost"
+                        type="object"
+                        string="Cancel Landed Cost"
+                        class="btn-danger"
+                        invisible="state != 'done'"/>
+                <!-- Correct button — visible only when Posted -->
+                <button name="action_correct_landed_cost"
+                        type="object"
+                        string="Correct Landed Cost"
+                        class="btn-warning"
+                        invisible="state != 'done'"/>
+                <!-- Disabled indicator — visible only when already cancelled -->
+                <button string="Cancelled"
+                        class="btn-secondary"
+                        invisible="state != 'cancel'"
+                        disabled="1"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

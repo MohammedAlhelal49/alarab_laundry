@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem id="menu_de_classroom"
+                  name="Classrooms"
+                  sequence="30"
+                  parent="dekad_core.menu_de_grade_root"
+                  action="act_open_de_classroom_view"
+                  groups="dekad_classroom.group_de_classroom,dekad_core.group_de_teacher"
+
+        />
+    </data>
+</odoo>

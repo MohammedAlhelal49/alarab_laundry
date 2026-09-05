@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- breadcrumb -->
+    <template id="parent_students_breadcrumbs" inherit_id="portal.portal_breadcrumbs">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name=='Students'" t-attf-class="breadcrumb-item">
+                <a t-attf-href="/my/students">Students
+                </a>
+            </li>
+        </xpath>
+    </template>
+    <!-- breadcrumb -->
+
+    <!-- list -->
+    <template id="parent_students" name="My students">
+        <t t-call="portal.portal_layout">
+            <div class="row parent-students-holder">
+
+                <div class="card parent-students-card" t-foreach="parent.student_ids" t-as="student">
+                    <div t-if="parent.student_ids" class="card-body row">
+                        <div class="col-4">
+                            <img t-if="student.image_1920" t-attf-src="data:image/png;base64,{{student.image_1920}}"
+                                 class="rounded-circle"
+                                 alt="Avatar"
+                                 style="width: 100%; "/>
+
+
+                            <t t-else="">
+                                <img t-if="student.gender=='f'" src="/dekad_core/static/img/female.jpg"
+                                     class="rounded-circle"
+                                     alt="Avatar"
+                                     style="width: 100px; "/>
+
+                                <img t-else="" src="/dekad_core/static/img/male.jpg"
+                                     class="rounded-circle"
+                                     alt="Avatar"
+                                />
+
+                            </t>
+
+
+                        </div>
+                        <div class="col-8">
+
+                            <div class="row">
+                                <div class="col-12 ">
+                                    <h6 t-esc="student.name"/>
+                                </div>
+                                <div class="col-12 mt-1 ">
+                                    <a t-attf-href="/my/home/{{student.id}}">
+                                        <button type="button"
+                                                class="btn btn-primary">
+                                            Information
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                            <hr/>
+                            <div class="student-content">
+                                <div class="grade" t-if="student.grade">
+                                    <i class="fa fa-book"/>
+                                    <span t-esc="student.grade.name"/>
+                                </div>
+                                <div class="mobile">
+                                    <i class="fa fa-phone"/>
+                                    <span t-esc="student.mobile"/>
+                                </div>
+                                <div class="blood">
+                                    <i class="fa fa-calendar"/>
+                                    <span t-esc="student.birth_date"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-3 pt-2" t-if="not parent.student_ids">
+                    <div class="alert alert-info" role="alert" >
+                        There are no related students(childs) to display.
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="dekad_parent_profile" name="Parent Profile">
+    <t t-call="portal.portal_layout">
+        <div class="card portal-page-content">
+            <div class="card-body">
+                <h5>My Profile Information</h5>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong>Name:</strong>
+                        <span t-esc="parent.name"/>
+                    </div>
+                    <div class="col-md-6">
+                        <strong>Email:</strong>
+                        <span t-esc="parent.email"/>
+                    </div>
+
+
+                     <div class="col-md-6">
+                        <strong>Birth Date:</strong>
+                        <span t-esc="parent.birth_date"/>
+                    </div>
+                     <div class="col-md-6">
+                        <strong>Gender:</strong>
+                        <span t-esc="parent.gender"/>
+                    </div>
+
+                     <div class="col-md-6">
+                        <strong>Address:</strong>
+                        <span t-esc="parent.address"/>
+                    </div>
+                     <div class="col-md-6">
+                        <strong>Relation With Student:</strong>
+                        <span t-esc="parent.relationship_id.name"/>
+                    </div>
+
+                     <div class="col-md-6">
+                        <strong>Religion:</strong>
+                        <span t-esc="parent.religion_id.name"/>
+                    </div>
+
+                     <div class="col-md-6">
+                        <strong>Nationality:</strong>
+                        <span t-esc="parent.nationality_id.name"/>
+                    </div>
+
+                     <div class="col-md-6">
+                        <strong>Country of birth:</strong>
+                        <span t-esc="parent.country_id.name"/>
+                    </div>
+
+                     <div class="col-md-6">
+                        <strong>Phone:</strong>
+                        <span t-esc="parent.phone"/>
+                    </div>
+
+                     <div class="col-md-6">
+                        <strong>Mobile:</strong>
+                        <span t-esc="parent.mobile"/>
+                    </div>
+                </div>
+
+<!--                &lt;!&ndash; Edit button if you want parents to edit their profile &ndash;&gt;-->
+<!--                <div class="mt-3">-->
+<!--                    <a href="/parent/profile/edit" class="btn btn-primary">-->
+<!--                        Edit Profile-->
+<!--                    </a>-->
+<!--                </div>-->
+            </div>
+        </div>
+    </t>
+</template>
+
+
+</odoo>

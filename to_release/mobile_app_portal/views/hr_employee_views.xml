@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit Employee Form View -->
+    <record id="view_employee_form_mobile_apps" model="ir.ui.view">
+        <field name="name">hr.employee.form.mobile.apps</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Mobile Apps" name="mobile_apps">
+                    <group>
+                        <field name="allowed_mobile_app_ids" widget="many2many_tags" placeholder="Select allowed mobile apps..." invisible="not user_id"/>
+                    </group>
+                    <p class="text-muted" invisible="user_id">
+                        Please link a related user to this employee under "Work Information" first to configure their mobile applications.
+                    </p>
+                    <p class="text-muted" invisible="not user_id">
+                        Explicitly authorize specific mobile applications or features for the user linked to this employee.
+                        Modifying this list will automatically sync with the user's direct mobile permissions.
+                    </p>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

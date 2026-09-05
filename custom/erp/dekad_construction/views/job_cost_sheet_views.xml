@@ -1,0 +1,304 @@
+<odoo>
+    <!-- The Updated List View -->
+    <record id="view_job_cost_sheet_list" model="ir.ui.view">
+        <field name="name">job.cost.sheet.list</field>
+        <field name="model">job.cost.sheet</field>
+        <field name="arch" type="xml">
+            <list string="Job Cost Sheet">
+                <field name="currency_id" column_invisible="True"/>
+
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="job_cost_project_id"/>
+                <field name="employee_id" widget="many2one_avatar"/>
+                <field name="final_selling_price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'draft'"
+                       decoration-warning="state == 'confirmed'"
+                       decoration-success="state == 'done'"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- The New Search View -->
+    <record id="view_job_cost_sheet_search" model="ir.ui.view">
+        <field name="name">job.cost.sheet.search</field>
+        <field name="model">job.cost.sheet</field>
+        <field name="arch" type="xml">
+            <search string="Search Job Cost Sheets">
+                <!-- Direct Text Search Fields -->
+                <field name="name" string="Sheet Name/Code" filter_domain="[('name', 'ilike', self)]"/>
+                <field name="job_cost_project_id" string="Project"/>
+                <field name="employee_id" string="Responsible"/>
+
+                <!-- Quick Filters -->
+                <filter string="My Cost Sheets" name="my_sheets" domain="[('employee_id', '=', uid)]"/>
+                <separator/>
+                <filter string="Draft" name="state_draft" domain="[('state', '=', 'draft')]"/>
+                <filter string="Confirmed" name="state_confirmed" domain="[('state', '=', 'confirmed')]"/>
+                <filter string="Done" name="state_done" domain="[('state', '=', 'done')]"/>
+
+                <!-- Group By Options -->
+                <group expand="0" string="Group By">
+                    <filter string="Job Cost Project" name="group_by_project"
+                            context="{'group_by': 'job_cost_project_id'}"/>
+                    <filter string="State" name="group_by_state" context="{'group_by': 'state'}"/>
+                    <filter string="Responsible" name="group_by_employee" context="{'group_by': 'employee_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_job_cost_sheet_form" model="ir.ui.view">
+        <field name="name">job.cost.sheet.form</field>
+        <field name="model">job.cost.sheet</field>
+        <field name="arch" type="xml">
+            <form string="Job Cost Sheet">
+                <header>
+                    <!-- Confirm Phase -->
+                    <button name="action_confirm" string="Confirm" type="object"
+                            class="oe_highlight" invisible="state != 'draft'"/>
+
+                    <!-- Done Phase (Triggers directly from Confirmed now) -->
+                    <button name="action_done" string="Mark Done" type="object"
+                            class="oe_highlight" invisible="state != 'confirmed'"/>
+
+                    <!-- Return to Draft Phase (Visible anytime except when already in Draft) -->
+                    <button name="action_draft" string="Return to Draft" type="object"
+                            invisible="state == 'draft'"/>
+
+                    <!-- Statusbar Layout Configuration -->
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,confirmed,done"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Locked" bg_color="text-danger" invisible="not is_locked"/>
+
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" string="Cost Sheet Reference / Name"/>
+                        <h1>
+                            <field class="text-break" options="{'line_breaks': False}" widget="text" name="name"
+                                   placeholder="e.g. Earthworks &amp; Excavation Layout"/>
+                        </h1>
+                    </div>
+
+                    <group name="parent_project_context" string="Parent Project Context">
+                        <group>
+                            <field name="job_cost_project_id" readonly="1" options="{'no_open': False}"/>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="employee_id" widget="many2one_avatar_user" readonly="1"/>
+                        </group>
+                        <group string="Allowed Project Window">
+                            <field name="jcp_creation_date" readonly="1"/>
+                            <field name="lead_deadline" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group name="sheet_operations" string="Sheet Parameters">
+                            <field name="boq_code" placeholder="e.g. BOQ-SEC-01"/>
+                            <field name="sequence"/>
+                            <field name="quantity"/>
+                            <field name="uom_id" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="percentage"/>
+                            <field name="total_project_percentage"
+                                   string="Project Total Share (%)"
+                                   readonly="1"
+                                   decoration-danger="total_project_percentage &gt; 100"
+                                   decoration-warning="total_project_percentage == 100"
+                                   decoration-success="total_project_percentage &lt; 100 and total_project_percentage &gt; 0"/>
+                            <field name="is_locked" invisible="1"/>
+                        </group>
+
+                        <group name="sheet_schedule" string="Project Schedule">
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="boq_expected_duration_days" class="oe_inline"/>
+                            <field name="currency_id" options="{'no_open': True}"/>
+                        </group>
+                    </group>
+
+                    <notebook class="mt-4">
+                        <page string="Materials" name="materials_page">
+                            <field name="material_ids">
+                                <list editable="bottom">
+                                    <field name="currency_id" column_invisible="True"/>
+                                    <field name="type"/>
+
+                                    <field name="product_id"
+                                           domain="[('type', '=', type == 'services' and 'service' or ['consu', 'product'])]"
+                                           options="{'no_open': True}"/>
+
+                                    <field name="description"/>
+                                    <field name="quantity"/>
+                                    <field name="wastage"/>
+                                    <field name="quantity_after" readonly="1"/>
+                                    <field name="uom_id" options="{'no_open': True, 'no_create': True}"/>
+                                    <field name="unit_cost"/>
+                                    <field name="cost_price_subtotal" sum="Total Material Subtotal"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Equipment" name="equipment_page">
+                            <separator string="Owned Assets Configuration"/>
+                            <field name="equipment_asset_ids" context="{'default_equipment_ownership_type': 'asset'}">
+                                <list editable="bottom">
+                                    <field name="currency_id" column_invisible="True"/>
+                                    <field name="equipment_ownership_type" column_invisible="True"/>
+                                    <field name="product_id" column_invisible="True"/>
+
+                                    <field name="asset_id" required="1"/>
+                                    <field name="description"/>
+                                    <field name="expenses"/>
+                                    <field name="duration_type"/>
+                                    <field name="duration"/>
+                                    <field name="cost_price_subtotal" sum="Subtotal Assets"/>
+                                </list>
+                            </field>
+
+                            <separator string="Rental &amp; External Equipment Configuration" class="mt-4"/>
+                            <field name="equipment_rental_ids" context="{'default_equipment_ownership_type': 'rental'}">
+                                <list editable="bottom">
+                                    <field name="currency_id" column_invisible="True"/>
+                                    <field name="equipment_ownership_type" column_invisible="True"/>
+                                    <field name="asset_id" column_invisible="True"/>
+
+                                    <field name="product_id" required="1"/>
+                                    <field name="description"/>
+                                    <field name="simplified_equipment_cost" string="Rental Rate"/>
+                                    <field name="duration_type"/>
+                                    <field name="duration"/>
+                                    <field name="cost_price_subtotal" sum="Subtotal Rentals"/>
+                                </list>
+                            </field>
+
+                            <group class="oe_subtotal_footer oe_right">
+                                <field name="total_equipment_cost" class="oe_subtotal_footer_separator"
+                                       widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            </group>
+                        </page>
+
+                        <page string="External Labor" name="page_external_labor">
+                            <field name="external_labor_ids">
+                                <list editable="bottom">
+                                    <field name="currency_id" column_invisible="True"/>
+                                    <field name="profession_id"/>
+                                    <field name="description"/>
+                                    <field name="labor_count"/>
+                                    <field name="period_count"/>
+                                    <field name="period_type"/>
+                                    <field name="unit_rate" string="Rate / Period"/>
+                                    <field name="subtotal" sum="External Labor Total"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Internal Employees" name="page_internal_labor">
+                            <field name="internal_labor_ids">
+                                <list editable="bottom">
+                                    <field name="currency_id" column_invisible="True"/>
+                                    <field name="employee_id" options="{'no_create': True}"/>
+                                    <field name="job_title" optional="show"/>
+                                    <field name="description"/>
+                                    <field name="monthly_salary" string="HR Basic Salary"/>
+                                    <field name="allocated_months" string="Months Budgeted"/>
+                                    <field name="subtotal" sum="Internal Payroll Total"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Subcontractor" name="subcontractor_page">
+                            <field name="subcontractor_ids">
+                                <list editable="bottom">
+                                    <field name="partner_id"
+                                           domain="[('category_id.name', '=', 'Subcontractor')]"
+                                           context="{
+                       'res_partner_search_mode': 'supplier',
+                       'default_vat': context.get('vat', False),
+                       'default_phone': context.get('phone', False),
+                       'default_category_id': [%(dekad_construction.tag_subcontractor_category)d]
+                   }"
+                                           options="{'no_quick_create': True}"/>
+                                    <field name="description"/>
+                                    <field name="duration_type"/>
+                                    <field name="duration"/>
+                                    <field name="price_per_duration"/>
+                                    <field name="cost_price_subtotal" sum="Total Subcontractor Cost"/>
+                                    <!-- >>> NEW column, added for retention & billing feature -->
+                                    <field name="retention_percent"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Overhead" name="overhead_page">
+                            <field name="overhead_ids">
+                                <list editable="bottom">
+                                    <field name="overhead_tag_id"/>
+                                    <field name="description"/>
+                                    <field name="duration_type"/>
+                                    <field name="duration"/>
+                                    <field name="uom_id" options="{'no_open': True, 'no_create': True}"/>
+                                    <field name="price_per_duration"/>
+                                    <field name="cost_price_subtotal" sum="Total Indirect Overhead"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+
+                    <div class="row justify-content-end mt-3">
+                        <div class="col-6">
+                            <group class="oe_subtotal_footer oe_right">
+                                <field name="material_total" widget="monetary"/>
+                                <field name="equipment_total" widget="monetary"/>
+                                <field name="labor_total" widget="monetary"/>
+                                <field name="subcontractor_total" widget="monetary"/>
+                                <field name="overhead_total" widget="monetary"/>
+                                <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                    <label for="base_cost_total"/>
+                                </div>
+                                <field name="base_cost_total" nolabel="1" class="oe_subtotal_footer_separator"
+                                       widget="monetary"/>
+
+                                <field name="risk_percent" class="oe_inline"/>
+                                <field name="risk_amount" widget="monetary"/>
+
+                                <field name="margin_percent" class="oe_inline"/>
+                                <field name="margin_amount" widget="monetary"/>
+                            </group>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-success text-end font-weight-bold h3 m-0" role="alert">
+                        Sheet Final Selling Target:
+                        <field name="final_selling_price" widget="monetary"/>
+                    </div>
+
+                    <group string="Client Requirements &amp; Scope Constraints" class="mt-4">
+                        <field name="requirement_note" placeholder="Write operational scope notes here..." nolabel="1"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_construction_cost_sheets" model="ir.actions.act_window">
+        <field name="name">Job Cost Sheets</field>
+        <field name="res_model">job.cost.sheet</field>
+        <field name="view_mode">list,form</field>
+
+        <!-- Sets the default search configuration -->
+        <field name="context">{'search_default_group_by_project': 1}</field>
+
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Job Cost Sheet
+            </p>
+            <p>
+                All job cost sheets are tracked here. Group them by project to see the overall breakdown.
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="module_category_reception" model="ir.module.category">
+        <field name="name">Reception</field>
+        <field name="description">Front-desk users</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="group_reception" model="res.groups">
+        <field name="name">Reception</field>
+        <field name="category_id" ref="module_category_reception"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!-- Customers only -->
+    <record id="rule_reception_partner" model="ir.rule">
+        <field name="name">Reception Customers</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups" eval="[(4, ref('group_reception'))]"/>
+        <field name="domain_force"></field>
+    </record>
+
+    <!-- Customer invoices -->
+    <record id="rule_reception_account_move" model="ir.rule">
+        <field name="name">Reception Customer Invoices</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="groups" eval="[(4, ref('group_reception'))]"/>
+        <field name="domain_force">
+            [('move_type','in',('out_invoice','out_refund'))]
+        </field>
+    </record>
+
+
+    <!-- Customer payments -->
+    <record id="rule_reception_account_payment" model="ir.rule">
+        <field name="name">Reception Customer Payments</field>
+        <field name="model_id" ref="account.model_account_payment"/>
+        <field name="groups" eval="[(4, ref('group_reception'))]"/>
+        <field name="domain_force">
+            [('payment_type','=','inbound'),('partner_type', '=', 'customer'),]
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- list used inside the one2many on the lead form -->
+    <record id="view_construction_lead_requirement_list" model="ir.ui.view">
+        <field name="name">construction.lead.requirement.list</field>
+        <field name="model">construction.lead.requirement</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="sequence" width="60"/>
+
+                <!--
+                     Domain added here. Odoo's 'service_tracking' field manages what the product creates.
+                     - task_global_project: Task
+                     - task_in_project: Project & Task
+                     - project_only: Project
+                -->
+                <field name="product_id"
+                       domain="[('type', '=', 'service'), ('service_tracking', 'in', ['task_global_project', 'task_in_project', 'project_only'])]"/>
+
+                <field name="note" widget="text"/>
+                <field name="quantity"/>
+                <field name="uom_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form extension: add a notebook page inside CRM lead form -->
+    <record id="view_crm_lead_form_inherit_requirements" model="ir.ui.view">
+        <field name="name">crm.lead.form.inherit.requirements</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <!-- Renamed page slightly to encompass both concepts -->
+                <page string="Construction &amp; Requirements">
+
+                    <!-- NEW: Group for specific construction execution details -->
+                    <group string="Construction Planning" name="construction_planning_details">
+                        <group>
+                            <field name="project_type" widget="radio"/>
+                            <field name="construction_responsible_id" widget="many2one_avatar_user"/>
+                        </group>
+                        <group>
+                            <field name="construction_deadline"/>
+                        </group>
+                    </group>
+
+                    <!-- Original Requirements section -->
+                    <group string="Client Requirements">
+                        <field name="requirement_ids"
+                               readonly="requirement_state == 'requirements_confirmed' or job_cost_project_id != False"
+                               nolabel="1">
+                            <list view_id="view_construction_lead_requirement_list"/>
+                        </field>
+                    </group>
+
+                    <group>
+                        <button name="action_create_job_cost_project" type="object" string="Create Job Cost Project"
+                                class="oe_highlight" invisible="job_cost_project_id != False"/>
+                        <span class="o_form_note">
+                            Use the table above to edit the standard steps for this lead.
+                        </span>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

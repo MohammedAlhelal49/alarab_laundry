@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="request_demo_form_template" name="Request Demo">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+
+                <section class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24 o_colored_level"
+                         data-vcss="001" data-snippet="s_title" data-scroll-background-ratio="1" data-name="Title">
+                    <span class="s_parallax_bg oe_img_bg o_bg_img_center"
+                          style="background-position: 50% 19.783617%; background-image: url(&#34;/web/image/theme_dekad_website.demo_banner_image&#34;);"
+                          data-mimetype="image/webp"></span>
+                    <div class="o_we_bg_filter bg-black-50"></div>
+                    <div class="container">
+                        <h1>
+                            <strong>Request a Live Demo</strong>
+                        </h1>
+                    </div>
+                </section>
+
+                <section class="s_text_block pb40 o_colored_level o_cc o_cc2 pt32" data-snippet="s_text_block"
+                         data-name="Text" style="position: relative;"
+                         data-oe-shape-data="{&#34;shape&#34;:&#34;web_editor/Floats/05&#34;,&#34;colors&#34;:{&#34;c1&#34;:&#34;#FFFFFF&#34;,&#34;c2&#34;:&#34;#003163&#34;,&#34;c3&#34;:&#34;rgba(232, 233, 234, 0.94)&#34;,&#34;c5&#34;:&#34;#003163&#34;},&#34;flip&#34;:[],&#34;showOnMobile&#34;:false,&#34;shapeAnimationSpeed&#34;:&#34;2&#34;,&#34;animated&#34;:&#34;true&#34;}">
+                    <div class="o_we_shape o_web_editor_Floats_05 o_we_animated bg-o-color-3"
+                         style="background-image: url(&#34;/web_editor/shape/web_editor%2FFloats%2F05.svg?c1=%23FFFFFF&amp;c2=%23003163&amp;c3=rgba(232%2C%20233%2C%20234%2C%200.94)&amp;c5=%23003163&amp;shapeAnimationSpeed=2&#34;);"></div>
+
+                    <div class="s_allow_columns container">
+                        <div class="row">
+                            <div class="col-lg-7 mt-4 mt-lg-0 o_colored_level">
+                                <p>
+                                    <br/>
+                                </p>
+                                <p class="lead">Experience Odoo in action. Fill out the details below, and one of our
+                                    experts will prepare a personalized demo for your business.
+                                </p>
+
+                                <div class="container p-0">
+
+                                    <t t-if="error">
+                                        <div class="alert alert-danger" role="alert">
+                                            <t t-esc="error"/>
+                                        </div>
+                                    </t>
+
+                                    <form action="/request-demo/submit" method="post" class="dekad_form" id="demo_form">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <input type="hidden" name="type_label" value="Software Demo Request"/>
+                                        <input type="hidden" name="recaptcha_token_response"
+                                               class="recaptcha_token_response"/>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3 form-group">
+                                                <label for="name" class="col-form-label">Name *</label>
+                                                <input type="text" class="form-control" name="name" required="required"
+                                                       placeholder="e.g. Jane Doe"/>
+                                            </div>
+                                            <div class="col-md-6 mb-3 form-group">
+                                                <label for="company_name" class="col-form-label">Company Name *</label>
+                                                <input type="text" class="form-control" name="company_name"
+                                                       required="required" placeholder="Your Company"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3 form-group">
+                                                <label for="email" class="col-form-label">Email *</label>
+                                                <input type="email" class="form-control" name="email"
+                                                       required="required" placeholder="email@company.com"/>
+                                            </div>
+                                            <div class="col-md-6 mb-3 form-group">
+                                                <label for="phone" class="col-form-label">Phone *</label>
+                                                <input type="tel" class="form-control" name="phone" required="required"
+                                                       placeholder="+971 ..."/>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3 form-group">
+                                                <label for="industry" class="col-form-label">Company Field / Industry
+                                                </label>
+                                                <input type="text" class="form-control" name="industry"
+                                                       placeholder="e.g. ERP Implementation"/>
+                                            </div>
+                                            <div class="col-md-6 mb-3 form-group">
+                                                <label for="employees" class="col-form-label">Number of Employees
+                                                </label>
+                                                <input type="number" class="form-control" name="employees" min="1"
+                                                       placeholder="e.g. 20"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4 form-group">
+                                            <label for="dekad_demo_date" class="col-form-label">Preferred Demo Date
+                                                &amp; Time
+                                            </label>
+                                            <input type="datetime-local" class="form-control" name="dekad_demo_date"/>
+                                        </div>
+
+                                        <div class="mt-4">
+                                            <button type="submit" class="btn btn-primary btn-lg w-100">Schedule Demo
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 offset-lg-1 mt-4 mt-lg-0 o_colored_level">
+                                <h5 style="text-align: center;">
+                                    <strong>DEKAD Software Solutions</strong>
+                                </h5>
+                                <p>
+                                    <br/>
+                                </p>
+                                <ul class="list-unstyled mb-0 ps-2">
+                                    <li>
+                                        <i class="fa fa-map-marker fa-fw me-2"></i>
+                                        <span class="o_force_ltr">Abu Dhabi - Al Ain - Al Muwaiji - Khalifa bin Zayed st
+                                            - Armex building - Second floor - office 04
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <br/>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-phone fa-fw me-2"></i>
+                                        <span class="o_force_ltr">+ 971 50 420 2663</span>
+                                    </li>
+                                    <li>
+                                        <br/>
+                                    </li>
+                                    <li><i class="fa fa-1x fa-fw fa-envelope me-2"></i>sales@dekad.tech
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <t t-set="site_key" t-value="request.env['ir.config_parameter'].sudo().get_param('recaptcha_public_key')"/>
+            <t t-if="site_key">
+                <script t-attf-src="https://www.google.com/recaptcha/api.js?render=#{site_key}"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                    var form = document.getElementById('demo_form');
+                    if (form) {
+                    form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    grecaptcha.ready(function() {
+                    grecaptcha.execute('<t t-esc="site_key"/>', {action: 'submit'}).then(function(token) {
+                    form.querySelector('.recaptcha_token_response').value = token;
+                    form.submit();
+                    });
+                    });
+                    });
+                    }
+                    });
+                </script>
+            </t>
+        </t>
+    </template>
+
+    <template id="request_demo_success_template" name="Demo Request Success">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <section class="s_text_block pt80 pb80">
+                    <div class="container text-center">
+                        <i class="fa fa-check-circle text-success" style="font-size: 64px; margin-bottom: 20px;"/>
+                        <h2 class="mb-4">Request Submitted Successfully</h2>
+                        <p class="lead">“Thank you for reaching out to us. Our team will get back to you shortly.”</p>
+                        <a href="/" class="btn btn-primary mt-4">Return to Homepage</a>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+    <template id="request_consultation_form_template" name="Request Free Consultation">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+
+                <section class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24 o_colored_level"
+                         data-vcss="001" data-snippet="s_title" data-scroll-background-ratio="1" data-name="Title">
+                    <span class="s_parallax_bg oe_img_bg o_bg_img_center"
+                          style="background-position: 50% 19.783617%; background-image: url(&#34;/web/image/1746-d302ccec/colleagues-working-together-call-center-office.webp&#34;);"
+                          data-mimetype="image/webp" data-resize-width="1920"></span>
+                    <div class="o_we_bg_filter bg-black-50"></div>
+                    <div class="container">
+                        <h1>
+                            <strong>Free Consultation</strong>
+                        </h1>
+                    </div>
+                </section>
+
+                <section class="s_text_block pb40 o_colored_level o_cc o_cc2 pt32" data-snippet="s_text_block"
+                         data-name="Text" style="position: relative;"
+                         data-oe-shape-data="{&#34;shape&#34;:&#34;web_editor/Floats/05&#34;,&#34;colors&#34;:{&#34;c1&#34;:&#34;#FFFFFF&#34;,&#34;c2&#34;:&#34;#003163&#34;,&#34;c3&#34;:&#34;rgba(232, 233, 234, 0.94)&#34;,&#34;c5&#34;:&#34;#003163&#34;},&#34;flip&#34;:[],&#34;showOnMobile&#34;:false,&#34;shapeAnimationSpeed&#34;:&#34;2&#34;,&#34;animated&#34;:&#34;true&#34;}">
+                    <div class="o_we_shape o_web_editor_Floats_05 o_we_animated bg-o-color-3"
+                         style="background-image: url(&#34;/web_editor/shape/web_editor%2FFloats%2F05.svg?c1=%23FFFFFF&amp;c2=%23003163&amp;c3=rgba(232%2C%20233%2C%20234%2C%200.94)&amp;c5=%23003163&amp;shapeAnimationSpeed=2&#34;);"></div>
+
+                    <div class="s_allow_columns container">
+                        <div class="row">
+                            <div class="col-lg-7 mt-4 mt-lg-0 o_colored_level">
+                                <p>
+                                    <br/>
+                                </p>
+                                <p class="lead">Fill out the form below and our team will get in touch to schedule your
+                                    free, no-obligation consultation.
+                                </p>
+
+                                <div class="container p-0">
+
+                                    <t t-if="error">
+                                        <div class="alert alert-danger" role="alert">
+                                            <t t-esc="error"/>
+                                        </div>
+                                    </t>
+
+                                    <form action="/free-consultation/submit" method="post" class="dekad_form"
+                                          id="consultation_form">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <input type="hidden" name="type_label" value="Consultation Request"/>
+                                        <input type="hidden" name="recaptcha_token_response"
+                                               class="recaptcha_token_response"/>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3 form-group">
+                                                <label for="name" class="col-form-label">Name *</label>
+                                                <input type="text" class="form-control" name="name" required="required"
+                                                       placeholder="e.g. Jane Doe"/>
+                                            </div>
+                                            <div class="col-md-6 mb-3 form-group">
+                                                <label for="company_name" class="col-form-label">Company Name *</label>
+                                                <input type="text" class="form-control" name="company_name"
+                                                       required="required" placeholder="Your Company"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3 form-group">
+                                                <label for="email" class="col-form-label">Email *</label>
+                                                <input type="email" class="form-control" name="email"
+                                                       required="required" placeholder="jane@company.com"/>
+                                            </div>
+                                            <div class="col-md-6 mb-3 form-group">
+                                                <label for="phone" class="col-form-label">Phone *</label>
+                                                <input type="tel" class="form-control" name="phone" required="required"
+                                                       placeholder="+1 234 567 8900"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3 form-group">
+                                                <label for="industry" class="col-form-label">Company Field / Industry
+                                                </label>
+                                                <input type="text" class="form-control" name="industry"
+                                                       placeholder="e.g. IT Services"/>
+                                            </div>
+                                            <div class="col-md-6 mb-3 form-group">
+                                                <label for="employees" class="col-form-label">Number of Employees
+                                                </label>
+                                                <input type="number" class="form-control" name="employees" min="1"
+                                                       placeholder="e.g. 50"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4 form-group">
+                                            <label for="dekad_consultation_date" class="col-form-label">Preferred
+                                                Consultation Date &amp; Time
+                                            </label>
+                                            <input type="datetime-local" class="form-control"
+                                                   name="dekad_consultation_date"/>
+                                        </div>
+
+                                        <div class="mt-4">
+                                            <button type="submit" class="btn btn-primary btn-lg w-100">Submit Request
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 offset-lg-1 mt-4 mt-lg-0 o_colored_level">
+                                <h5 style="text-align: center;">
+                                    <strong>DEKAD Software Solutions</strong>
+                                </h5>
+                                <p>
+                                    <br/>
+                                </p>
+                                <ul class="list-unstyled mb-0 ps-2">
+                                    <li>
+                                        <i class="fa fa-map-marker fa-fw me-2"></i>
+                                        <span class="o_force_ltr">Abu Dhabi - Al Ain - Al Muwaiji -Khalifa bin Zayed st
+                                            - Armex building - Second floor - office 04
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <br/>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-phone fa-fw me-2"></i>
+                                        <span class="o_force_ltr">+ 971 50 420 2663</span>
+                                    </li>
+                                    <li>
+                                        <br/>
+                                    </li>
+                                    <li><i class="fa fa-1x fa-fw fa-envelope me-2"></i>sales@dekad.tech
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <t t-set="site_key" t-value="request.env['ir.config_parameter'].sudo().get_param('recaptcha_public_key')"/>
+            <t t-if="site_key">
+                <script t-attf-src="https://www.google.com/recaptcha/api.js?render=#{site_key}"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                    var form = document.getElementById('consultation_form');
+                    if (form) {
+                    form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    grecaptcha.ready(function() {
+                    grecaptcha.execute('<t t-esc="site_key"/>', {action: 'submit'}).then(function(token) {
+                    form.querySelector('.recaptcha_token_response').value = token;
+                    form.submit();
+                    });
+                    });
+                    });
+                    }
+                    });
+                </script>
+            </t>
+        </t>
+    </template>
+
+    <template id="request_consultation_success_template" name="Free Consultation Success">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <section class="s_text_block pt80 pb80">
+                    <div class="container text-center">
+                        <i class="fa fa-check-circle text-success" style="font-size: 64px; margin-bottom: 20px;"/>
+                        <h2 class="mb-4">Request Submitted Successfully</h2>
+                        <p class="lead">“Thank you for reaching out to us. Our team will get back to you shortly.”</p>
+                        <a href="/" class="btn btn-primary mt-4">Return to Homepage</a>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_order_form_tb_rental_summary_button" model="ir.ui.view">
+        <field name="name">sale.order.form.tb.rental.summary.button</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_tb_print_rental_summary"
+                        type="object"
+                        string="Print Rental Contract Summary"
+                        class="btn-secondary"/>
+            </xpath>
+
+            <xpath expr="//notebook" position="inside">
+
+                <page string="Other Charges">
+
+                    <field name="other_charge_ids">
+
+                        <list editable="bottom">
+                            <field name="amount"  widget="monetary"/>
+                            <field name="currency_id" column_invisible="True"/>
+
+                            <field name="due_date"/>
+
+                            <field name="journal_id"/>
+
+                            <field name="payment_method_line_id"/>
+
+                            <field name="remarks"/>
+
+                        </list>
+
+                    </field>
+
+                </page>
+
+                <page string="Insurance Details" name="pdc_guarantee_cheques">
+                    <field name="pdc_ids" domain="[('is_warranty_cheque', '=', True)]">
+                        <list editable="bottom" create="0">
+                            <field name="name"/>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="payment_type" readonly="1"/>
+                            <field name="reference" readonly="1"/>
+                            <field name="bank_id" readonly="1"/>
+                            <field name="payment_amount" widget="monetary" readonly="1"/>
+                            <field name="currency_id" column_invisible="True"/>
+                            <field name="due_date" readonly="1"/>
+                            <field name="cheque_status" readonly="1"/>
+                            <field name="state" readonly="1"/>
+                        </list>
+                    </field>
+                </page>
+
+
+            </xpath>
+
+
+
+
+        </field>
+    </record>
+
+</odoo>

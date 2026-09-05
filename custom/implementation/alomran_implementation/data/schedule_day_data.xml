@@ -1,0 +1,23 @@
+<odoo>
+    <record id="schedule_day_monday" model="schedule.day">
+        <field name="name">Monday</field>
+    </record>
+    <record id="schedule_day_tuesday" model="schedule.day">
+        <field name="name">Tuesday</field>
+    </record>
+    <record id="schedule_day_wednesday" model="schedule.day">
+        <field name="name">Wednesday</field>
+    </record>
+    <record id="schedule_day_thursday" model="schedule.day">
+        <field name="name">Thursday</field>
+    </record>
+    <record id="schedule_day_friday" model="schedule.day">
+        <field name="name">Friday</field>
+    </record>
+    <record id="schedule_day_saturday" model="schedule.day">
+        <field name="name">Saturday</field>
+    </record>
+    <record id="schedule_day_sunday" model="schedule.day">
+        <field name="name">Sunday</field>
+    </record>
+</odoo>

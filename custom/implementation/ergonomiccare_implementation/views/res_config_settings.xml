@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit_opportunity_transfer" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.opportunity_transfer</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="crm.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Add after the crm_use_auto_assignment field -->
+            <xpath expr="//setting[field[@name='crm_use_auto_assignment']]" position="after">
+                <setting string="Duplicate Contacts Policy"
+                         help="Choose whether to allow duplicate contacts with a warning or block them completely.">
+
+                    <field name="duplicate_contact_policy" widget="radio"/>
+
+                </setting>
+                <setting string="Duplicate Products Policy"
+                         help="Choose whether to allow duplicate product names with a warning or block them completely.">
+                    <field name="duplicate_product_policy" widget="radio"/>
+                </setting>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

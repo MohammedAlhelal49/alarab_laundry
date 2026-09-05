@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_internal_search_inherit_project_task" model="ir.ui.view">
+        <field name="name">stock.picking.internal.search.inherit.project.task</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//search" position="inside">
+                <!-- Search Header Project -->
+                <field name="project_id" string="Project"/>
+
+                <!-- Search Line Tasks on Stock Moves -->
+                <field name="move_ids" string="Task (Exact Match)"
+                       filter_domain="[('move_ids.task_id', '=', self)]"/>
+
+                <field name="move_ids" string="Task (With Subtasks)"
+                       filter_domain="[('move_ids.task_id', 'child_of', self)]"/>
+            </xpath>
+
+            <xpath expr="//group" position="inside">
+                <filter string="Project" name="group_by_project" context="{'group_by': 'project_id'}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_picking_form_inherit_dekad_project" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit.project</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+
+            <!-- 1. Add project_id to the transfer header -->
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="project_id" readonly="state in ['cancel', 'done']"/>
+            </xpath>
+
+            <!-- 2. Target the move_ids_without_package list layout safely -->
+            <xpath expr="//field[@name='move_ids_without_package']//list/field[@name='product_id']" position="after">
+                <field name="task_id" optional="show" readonly="parent.state in ['cancel', 'done']"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="vpicktree_inherit_project_task" model="ir.ui.view">
+        <field name="name">stock.picking.list.inherit.project.task</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.vpicktree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="project_id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Search & Grouping Options for Stock Moves (stock.move) -->
+    <record id="view_move_search_inherit_project_task" model="ir.ui.view">
+        <field name="name">stock.move.select.inherit.project.task</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_search"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//search" position="inside">
+                <!-- Search Direct Project on Stock Move -->
+                <field name="project_id" string="Project"/>
+
+                <!-- Requirement 1: Exact Task Match -->
+                <field name="task_id" string="Task (Exact Match)"/>
+
+                <!-- Requirement 2: Task + Subtasks -->
+                <field name="task_id" string="Task (With Subtasks)" operator="child_of"/>
+            </xpath>
+
+            <xpath expr="//group" position="inside">
+                <filter string="Project" name="group_by_project" context="{'group_by': 'project_id'}"/>
+                <filter string="Project Task" name="group_by_task" context="{'group_by': 'task_id'}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_move_tree_inherit_project_task" model="ir.ui.view">
+        <field name="name">stock.move.list.inherit.project.task</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_tree"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="project_id" optional="hide"/>
+                <field name="task_id" optional="hide"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

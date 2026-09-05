@@ -1,0 +1,55 @@
+.pl-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+.pl-icon-sales { background: #cfe2ff; color: #0d6efd; }
+.pl-icon-cogs { background: #ffe5d0; color: #fd7e14; }
+.pl-icon-gross { background: #d1f2e0; color: #198754; }
+.pl-icon-expenses { background: #f8d7da; color: #dc3545; }
+.pl-icon-net { background: #e6d9f7; color: #6f42c1; }
+
+.pl-card-label {
+    font-size: 0.75rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.pl-card-value { font-size: 1.5rem; font-weight: 700; }
+
+.pl-pct-grey { color: #6c757d; font-size: 0.8rem; }
+.pl-pct-green { color: #198754; font-size: 0.8rem; }
+.pl-pct-red { color: #dc3545; font-size: 0.8rem; }
+.pl-pct-blue { color: #6f42c1; font-size: 0.8rem; }
+
+.pl-dashboard table thead th {
+    background-color: #343a40;
+    color: #fff;
+}
+.pl-cards-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+@media (max-width: 900px) {
+    .pl-cards-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Pagination: with a lot of records the row of page numbers used to
+   overflow way past the card width. Wrap onto multiple lines instead,
+   and shrink the buttons so more of them fit per line. */
+.pl-dashboard .pagination {
+    max-width: 100%;
+    flex-wrap: wrap;
+    row-gap: 4px;
+}
+.pl-dashboard .pagination .page-link {
+    padding: 0.2rem 0.55rem;
+    font-size: 0.78rem;
+}

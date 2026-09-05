@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="dekad_invoice_product_profit.Dashboard" owl="1">
+    <div class="p-4 h-100 overflow-auto pl-dashboard">
+      <h2 class="mb-4">Profit and Loss Dashboard</h2>
+
+      <div class="d-flex flex-wrap align-items-center gap-2 mb-5">
+        <label class="me-2">Date From</label>
+        <input type="date" t-att-value="state.date_from" t-on-change="onDateFromChange" class="me-3"/>
+        <label class="me-2">Date To</label>
+        <input type="date" t-att-value="state.date_to" t-on-change="onDateToChange"/>
+      </div>
+
+      <div class="pl-cards-row mb-4">
+        <div>
+          <div class="card p-3 h-100">
+            <div class="d-flex align-items-center mb-2">
+              <div class="pl-icon-box pl-icon-sales me-2"><i class="fa fa-shopping-cart"/></div>
+              <div class="pl-card-label">Total Sales</div>
+            </div>
+            <div class="pl-card-value">$<t t-esc="formatAmount(state.summary.total_sales)"/></div>
+            <div class="pl-pct-grey">100.00% of Sales</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card p-3 h-100">
+            <div class="d-flex align-items-center mb-2">
+              <div class="pl-icon-box pl-icon-cogs me-2"><i class="fa fa-cube"/></div>
+              <div class="pl-card-label">Cost of Goods Sold</div>
+            </div>
+            <div class="pl-card-value">$<t t-esc="formatAmount(state.summary.cost_of_goods_sold)"/></div>
+            <div class="pl-pct-grey"><t t-esc="formatAmount(state.summary.cogs_percentage)"/>% of Sales</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card p-3 h-100">
+            <div class="d-flex align-items-center mb-2">
+              <div class="pl-icon-box pl-icon-gross me-2"><i class="fa fa-line-chart"/></div>
+              <div class="pl-card-label">Gross Profit</div>
+            </div>
+            <div class="pl-card-value">$<t t-esc="formatAmount(state.summary.gross_profit)"/></div>
+            <div class="pl-pct-green"><t t-esc="formatAmount(state.summary.gross_profit_percentage)"/>% of Sales</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card p-3 h-100">
+            <div class="d-flex align-items-center mb-2">
+              <div class="pl-icon-box pl-icon-expenses me-2"><i class="fa fa-money"/></div>
+              <div class="pl-card-label">Total Expenses</div>
+            </div>
+            <div class="pl-card-value">$<t t-esc="formatAmount(state.summary.total_expenses)"/></div>
+            <div class="pl-pct-red"><t t-esc="formatAmount(state.summary.expense_percentage)"/>% of Sales</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card p-3 h-100">
+            <div class="d-flex align-items-center mb-2">
+              <div class="pl-icon-box pl-icon-net me-2"><i class="fa fa-university"/></div>
+              <div class="pl-card-label">Net Profit</div>
+            </div>
+            <div class="pl-card-value">$<t t-esc="formatAmount(state.summary.net_profit)"/></div>
+            <div class="pl-pct-blue"><t t-esc="formatAmount(state.summary.net_profit_percentage)"/>% of Sales</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-xl-6 mb-4">
+          <h4>Invoice Profit Report</h4>
+          <div t-if="state.invoice_lines.length === 0" class="text-muted fst-italic p-3">
+            No Data
+          </div>
+          <t t-else="">
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Invoice Number</th>
+                    <th>Invoice Date</th>
+                    <th>Total Sales</th>
+                    <th>Total Cost</th>
+                    <th>Total Profit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr t-foreach="paginatedInvoiceLines" t-as="line" t-key="line.invoice_number">
+                    <td t-esc="line.invoice_number"/>
+                    <td t-esc="line.invoice_date"/>
+                    <td t-esc="formatAmount(line.total_sales)"/>
+                    <td t-esc="formatAmount(line.total_cost)"/>
+                    <td t-esc="formatAmount(line.total_profit)"/>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+            <nav t-if="totalPages > 1" aria-label="Invoice Profit Report pagination">
+              <ul class="pagination pagination-sm justify-content-center mb-0">
+                <li t-attf-class="page-item {{ state.currentPage === 1 ? 'disabled' : '' }}">
+                  <a href="#" class="page-link" t-on-click.prevent="previousPage">Previous</a>
+                </li>
+                <li t-foreach="pageNumbers" t-as="page" t-key="page"
+                    t-attf-class="page-item {{ state.currentPage === page ? 'active' : '' }}">
+                  <a href="#" class="page-link" t-on-click.prevent="() => this.goToPage(page)" t-esc="page"/>
+                </li>
+                <li t-attf-class="page-item {{ state.currentPage === totalPages ? 'disabled' : '' }}">
+                  <a href="#" class="page-link" t-on-click.prevent="nextPage">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </t>
+        </div>
+
+        <div class="col-12 col-xl-6 mb-4">
+          <h4>Expense Report</h4>
+          <div t-if="state.expense_lines.length === 0" class="text-muted fst-italic p-3">
+            No Data
+          </div>
+          <div t-else="" class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Account Name</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr t-foreach="state.expense_lines" t-as="line" t-key="line.account_name">
+                  <td t-esc="line.account_name"/>
+                  <td t-esc="formatAmount(line.amount)"/>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <h4>Profit &amp; Loss Summary</h4>
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <div class="card p-3 flex-fill">
+            <div>Total Sales</div>
+            <h5>$<t t-esc="formatAmount(state.summary.total_sales)"/></h5>
+          </div>
+          <div class="fs-3 fw-bold text-muted">−</div>
+          <div class="card p-3 flex-fill">
+            <div>Cost of Goods Sold</div>
+            <h5>$<t t-esc="formatAmount(state.summary.cost_of_goods_sold)"/></h5>
+          </div>
+          <div class="fs-3 fw-bold text-muted">=</div>
+          <div class="card p-3 flex-fill">
+            <div>Gross Profit</div>
+            <h5>$<t t-esc="formatAmount(state.summary.gross_profit)"/></h5>
+            <small><t t-esc="formatAmount(state.summary.gross_profit_percentage)"/>%</small>
+          </div>
+          <div class="fs-3 fw-bold text-muted">−</div>
+          <div class="card p-3 flex-fill">
+            <div>Total Expenses</div>
+            <h5>$<t t-esc="formatAmount(state.summary.total_expenses)"/></h5>
+            <small><t t-esc="formatAmount(state.summary.expense_percentage)"/>%</small>
+          </div>
+          <div class="fs-3 fw-bold text-muted">=</div>
+          <div class="card p-3 flex-fill">
+            <div>Net Profit</div>
+            <h5>$<t t-esc="formatAmount(state.summary.net_profit)"/></h5>
+            <small><t t-esc="formatAmount(state.summary.net_profit_percentage)"/>%</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </t>
+</templates>

@@ -1,0 +1,303 @@
+/* ============================================================
+   LTR OVERRIDE STYLES FOR ENGLISH VERSION
+   Add this file AFTER the original SCSS/CSS files
+   ============================================================ */
+
+/* Global LTR Direction */
+html, body {
+    direction: ltr !important;
+}
+
+body {
+    text-align: left !important;
+}
+
+/* ============================================================
+   TRUST BADGE - LTR
+   ============================================================ */
+.trust-badge .badge-icon {
+    margin-right: 0.75rem;
+    margin-left: 0;
+}
+
+/* ============================================================
+   PROGRAM CARDS - LTR
+   ============================================================ */
+.program-card-hover:hover .program-link {
+    transform: translateX(10px); /* Changed from -10px */
+}
+
+.program-badge {
+    right: auto;
+    left: -10px; /* Moved to left side for LTR */
+}
+
+.program-link:hover {
+    gap: 1rem;
+}
+
+/* ============================================================
+   TESTIMONIALS - LTR
+   ============================================================ */
+.testimonial-card .testimonial-rating i {
+    margin-right: 0.25rem;
+    margin-left: 0;
+}
+
+/* ============================================================
+   FLOATING BUTTONS - LTR
+   (المواضع محددة في main.css - هنا فقط overrides إضافية)
+   ============================================================ */
+
+/* في LTR: أيقونة الهاتف بدون قلب */
+.o_call_btn i.fa-phone {
+    transform: none !important;
+}
+
+/* في LTR: tooltip الاتصال على اليسار، tooltip واتساب على اليمين */
+.o_call_tooltip {
+    right: 70px !important;
+    left: auto !important;
+}
+.o_whatsapp_tooltip {
+    left: 70px !important;
+    right: auto !important;
+}
+
+/* ============================================================
+   FOOTER - LTR
+   ============================================================ */
+footer h5::after {
+    right: auto;
+    left: 0;
+}
+
+footer .hover-primary:hover {
+    padding-left: 5px;
+    padding-right: 0;
+}
+
+/* Footer list icons */
+footer .fa-chevron-left {
+    display: none;
+}
+
+footer a .fa-chevron-right,
+footer li .fa-chevron-right {
+    margin-right: 0.5rem;
+    margin-left: 0;
+}
+
+/* ============================================================
+   EXPERIENCE BADGE - LTR
+   ============================================================ */
+.experience-badge {
+    left: auto;
+    right: 30px;
+}
+
+@media (max-width: 768px) {
+    .experience-badge {
+        right: 15px;
+        left: auto;
+    }
+}
+
+/* ============================================================
+   CARD TAGS - LTR
+   ============================================================ */
+.card-tag {
+    left: auto;
+    right: 20px;
+}
+
+/* ============================================================
+   GOAL ITEMS - LTR
+   ============================================================ */
+.goal-icon {
+    margin-left: 0;
+    margin-right: 1rem;
+}
+
+/* ============================================================
+   FEATURE BOXES - LTR
+   ============================================================ */
+.feature-box-with-logo {
+    text-align: left;
+}
+
+.feature-box-with-logo .feature-icon {
+    margin-right: 1.5rem;
+    margin-left: 0;
+}
+
+@media (max-width: 768px) {
+    .feature-box-with-logo {
+        text-align: center;
+    }
+
+    .feature-box-with-logo .feature-icon {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+/* ============================================================
+   STATS BAR - LTR
+   ============================================================ */
+.stats-bar .stat-box::after {
+    right: auto;
+    left: 0;
+}
+
+/* ============================================================
+   HERO GRADIENT - LTR
+   ============================================================ */
+.hero-premium .hero-gradient-overlay {
+    background: linear-gradient(
+        270deg, /* Reversed from 90deg */
+        rgba(13, 58, 109, 0.9) 0%,
+        rgba(13, 58, 109, 0.7) 50%,
+        rgba(13, 58, 109, 0.4) 100%
+    );
+}
+
+/* ============================================================
+   BUTTONS & LINKS - LTR
+   ============================================================ */
+.btn i.fa-arrow-left {
+    transform: rotate(180deg);
+}
+
+.btn i.me-2 {
+    margin-right: 0.5rem !important;
+    margin-left: 0 !important;
+}
+
+.btn i.ms-2 {
+    margin-left: 0.5rem !important;
+    margin-right: 0 !important;
+}
+
+/* ============================================================
+   NAVBAR BRAND - LTR
+   ============================================================ */
+.navbar-brand .brand-text {
+    margin-left: 0.5rem;
+    margin-right: 0;
+}
+
+/* ============================================================
+   FORM INPUTS - LTR
+   ============================================================ */
+.form-control,
+.form-select,
+input,
+textarea {
+    text-align: left;
+}
+
+/* ============================================================
+   MODAL - LTR
+   ============================================================ */
+.modal .btn-close {
+    right: auto;
+    left: 20px;
+}
+
+/* ============================================================
+   CONTACT INFO - LTR
+   ============================================================ */
+.contact-info i {
+    margin-right: 0.5rem;
+    margin-left: 0;
+}
+
+/* ============================================================
+   LIST ITEMS - LTR
+   ============================================================ */
+.list-unstyled li i,
+ul li i.fa-check,
+ul li i.fa-chevron-right {
+    margin-right: 0.5rem;
+    margin-left: 0;
+}
+
+/* ============================================================
+   SOCIAL BUTTONS - LTR
+   ============================================================ */
+.social-icons {
+    direction: ltr;
+}
+
+/* ============================================================
+   TEXT ALIGNMENT OVERRIDES
+   ============================================================ */
+.text-end {
+    text-align: right !important;
+}
+
+.text-start {
+    text-align: left !important;
+}
+
+/* On mobile, center everything */
+@media (max-width: 768px) {
+    .about-title,
+    .about-subtitle,
+    .section-title,
+    .section-subtitle,
+    .cta-title,
+    .cta-text {
+        text-align: center !important;
+    }
+
+    .about-badges,
+    .cta-buttons {
+        justify-content: center !important;
+    }
+}
+
+/* ============================================================
+   CERTIFICATE SEAL - LTR
+   ============================================================ */
+.certificate-seal {
+    text-align: center;
+}
+
+/* ============================================================
+   BRANCHES CARDS - LTR
+   ============================================================ */
+.branch-featured .badge {
+    left: auto;
+    right: 15px;
+}
+
+/* ============================================================
+   COURSE CARDS - LTR
+   ============================================================ */
+.course-card {
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .course-card {
+        text-align: center;
+    }
+}
+
+/* ============================================================
+   WHY CHOOSE US SECTION - LTR Comments Update
+   ============================================================ */
+/* Feature 1: Specialized Trainers */
+/* Feature 2: Accredited Certificates */
+/* Feature 3: Largest Coverage */
+/* Feature 4: Language Courses */
+/* Feature 5: Professional Courses */
+
+/* ============================================================
+   GOLDEN BUTTON - LTR
+   ============================================================ */
+.btn-gold {
+    direction: ltr;
+}

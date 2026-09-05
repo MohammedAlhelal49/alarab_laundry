@@ -1,0 +1,108 @@
+<odoo>
+
+    <template id="invoice_signature_block"
+              inherit_id="account.report_invoice_document">
+
+                <!-- Hide customer address section -->
+        <xpath expr="//div[@class='row'][1]" position="replace"/>
+
+        <!-- Hide invoice info section -->
+        <xpath expr="//div[@id='informations']" position="replace"/>
+
+        <xpath expr="//t[@t-set='layout_document_title']" position="replace">
+            <t t-set="layout_document_title"/>
+        </xpath>
+
+        <xpath expr="//table[@name='invoice_line_table']" position="before">
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h2 style="font-weight:bold; margin-bottom:20px;">
+                        Tax Invoice
+                    </h2>
+                    <br/>
+
+                </div>
+            </div>
+
+            <div class="row mb-4">
+
+                <div class="col-6">
+                    <div>
+                        <strong>Customer Information:</strong>
+                        <br/>
+
+                        <t t-if="o.partner_id.name">
+                            <strong>Name:</strong>
+                            <span t-field="o.partner_id.name"/>
+                            <br/>
+                        </t>
+
+                        <t t-if="o.partner_id.phone or o.partner_id.mobile">
+                            <strong>Contact:</strong>
+
+                            <t t-if="o.partner_id.phone">
+                                <span t-field="o.partner_id.phone"/>
+                            </t>
+
+                            <t t-if="o.partner_id.phone and o.partner_id.mobile">
+                                <span> / </span>
+                            </t>
+
+                            <t t-if="o.partner_id.mobile">
+                                <span t-field="o.partner_id.mobile"/>
+                            </t>
+                            <br/>
+                        </t>
+
+                        <t t-if="o.partner_id.contact_address">
+                            <strong>Address:</strong>
+                            <span t-field="o.partner_id.contact_address"/>
+                            <br/>
+                        </t>
+
+                        <t t-if="o.partner_id.vat">
+                            <strong>TRN:</strong>
+                            <span t-field="o.partner_id.vat"/>
+                            <br/>
+                        </t>
+
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div>
+
+                        <div t-if="o.name">
+                            <strong>Invoice No:</strong>
+                            <span t-field="o.name"/>
+                        </div>
+
+                        <div t-if="o.invoice_date">
+                            <strong>Invoice Date:</strong>
+                            <span t-field="o.invoice_date"/>
+                        </div>
+
+                        <div t-if="o.invoice_date_due">
+                            <strong>Due Date:</strong>
+                            <span t-field="o.invoice_date_due"/>
+                        </div>
+
+                        <div t-if="o.delivery_date">
+                            <strong>Delivery Date:</strong>
+                            <span t-field="o.delivery_date"/>
+                        </div>
+                        <div t-if="o.invoice_origin">
+                            <strong>Source:</strong>
+                            <span t-field="o.invoice_origin"/>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+        </xpath>
+
+    </template>
+
+</odoo>

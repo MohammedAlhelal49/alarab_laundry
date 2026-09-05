@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- List view -->
+        <record id="view_dekad_backup_log_list" model="ir.ui.view">
+            <field name="name">dekad.backup.log.list</field>
+            <field name="model">dekad.backup.log</field>
+            <field name="arch" type="xml">
+                <list string="Database Backup Logs" decoration-danger="state == 'failed'" decoration-success="state == 'success'">
+                    <field name="name"/>
+                    <field name="started_at"/>
+                    <field name="state" widget="badge" decoration-success="state == 'success'" decoration-danger="state == 'failed'"/>
+                    <field name="trigger"/>
+                    <field name="db_name"/>
+                    <field name="file_size_mb"/>
+                    <field name="file_path"/>
+                    <field name="duration_seconds"/>
+                    <button name="action_download" type="object" string="Download" icon="fa-download" invisible="state != 'success' or not file_path"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Form view -->
+        <record id="view_dekad_backup_log_form" model="ir.ui.view">
+            <field name="name">dekad.backup.log.form</field>
+            <field name="model">dekad.backup.log</field>
+            <field name="arch" type="xml">
+                <form string="Backup Log">
+                    <header>
+                        <button name="action_download" type="object" string="Download Backup" class="oe_highlight" invisible="state != 'success' or not file_path"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="db_name"/>
+                                <field name="trigger"/>
+                                <field name="file_path"/>
+                                <field name="file_size_mb"/>
+                            </group>
+                            <group>
+                                <field name="started_at"/>
+                                <field name="finished_at"/>
+                                <field name="duration_seconds"/>
+                            </group>
+                        </group>
+                        <group string="Message / Error">
+                            <field name="message" nolabel="1" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search view -->
+        <record id="view_dekad_backup_log_search" model="ir.ui.view">
+            <field name="name">dekad.backup.log.search</field>
+            <field name="model">dekad.backup.log</field>
+            <field name="arch" type="xml">
+                <search string="Database Backup Logs">
+                    <field name="name"/>
+                    <field name="db_name"/>
+                    <field name="state"/>
+                    <field name="trigger"/>
+                    <field name="file_path"/>
+                    <field name="message"/>
+                    <filter string="Success" name="state_success" domain="[('state','=','success')]"/>
+                    <filter string="Failed" name="state_failed" domain="[('state','=','failed')]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="State" name="group_by_state" context="{'group_by': 'state'}"/>
+                        <filter string="Trigger" name="group_by_trigger" context="{'group_by': 'trigger'}"/>
+                        <filter string="Date" name="group_by_date" context="{'group_by': 'started_at:day'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_dekad_backup_log" model="ir.actions.act_window">
+            <field name="name">Database Backup Logs</field>
+            <field name="res_model">dekad.backup.log</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No backup logs found
+                </p>
+                <p>
+                    This screen shows all automatic and manual database backups
+                    performed by the Dekad backup scheduler.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

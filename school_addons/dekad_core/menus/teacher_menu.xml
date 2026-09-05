@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem id="menu_de_teacher_root"
+                  name="Teachers"
+                  sequence="50"
+                  web_icon="dekad_core,static/description/teacher.png"
+
+        />
+
+        <menuitem id="menu_de_teacher_details"
+                  name="Teachers"
+                  parent="menu_de_teacher_root"
+                  sequence="10"
+                  action="act_open_de_teacher_view"
+                  groups="dekad_core.group_de_teacher_manage,dekad_core.group_de_teacher"/>
+
+        <menuitem id="menu_de_teacher_configuration"
+                  name="Configuration"
+                  parent="menu_de_teacher_root"
+                  sequence="30"
+        />
+
+        <menuitem id="menu_de_specialist"
+                  parent="menu_de_teacher_configuration"
+                  sequence="10"
+                  name="Specialists"
+                  action="act_open_de_specialist_view"
+
+        />
+    </data>
+</odoo>

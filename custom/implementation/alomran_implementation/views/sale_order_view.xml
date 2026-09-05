@@ -1,0 +1,277 @@
+<odoo>
+
+    <!-- Insert Admin Signature tab after Customer Signature -->
+    <record id="sale_order_admin_signature_tab" model="ir.ui.view">
+        <field name="name">sale.order.admin.signature.tab</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='customer_signature']" position="after">
+                <page string="Admin Signature" name="admin_signature_tab">
+                    <group>
+                        <field name="admin_signed_by"/>
+                        <field name="admin_signed_on"/>
+                        <field widget="signature" name="admin_signature" style="width:300px; height:150px;"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Adds custom fields to the Sale Order form -->
+    <record id="view_order_form_inherit_custom_fields" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.custom.fields</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group//field[@name='partner_id']" position="after">
+                <field name="admin_approval" groups="sales_team.group_sale_salesman_all_leads" widget="radio"
+                       options="{&quot;horizontal&quot;:true}"/>
+                <field name="admin_approval" readonly="1" groups="!sales_team.group_sale_salesman_all_leads"
+                       widget="radio"
+                       options="{&quot;horizontal&quot;:true}"/>
+                <field name="registration_type" widget="radio" options="{&quot;horizontal&quot;:true}"/>
+                <field name="schedule_day" widget="many2many_checkboxes"/>
+                <field name="time"/>
+                <field name="study_method" widget="radio" options="{&quot;horizontal&quot;:true}"/>
+                <field name="source" widget="radio" options="{&quot;horizontal&quot;:true}"/>
+                <field name="enrollment_type" widget="radio" options="{&quot;horizontal&quot;:true}"/>
+                <field name="quotation_note"/>
+            </xpath>
+            <xpath expr="//group//field[@name='payment_term_id']" position="after">
+                <field name="payment_method" widget="radio" options="{&quot;horizontal&quot;:true}"/>
+                <field name="course_duration_value"/>
+                <field name="course_duration_units" widget="many2many_checkboxes"/>
+                <field name="starting_course_date"/>
+                <field name="contract_date"/>
+                <field name="amount_invoiced" string="Already Invoiced Amount"/>
+                <field name="remaining_amount" string="Remaining Invoiced Amount"/>
+
+                <separator string="Payment Info"/>
+                <field name="initial_payment"/>
+                <field name="balance" readonly="1"/>
+                <field name="second_payment_amount"/>
+                <field name="second_payment_date"/>
+
+            </xpath>
+
+
+            <xpath expr="//button[@id='action_confirm']" position="replace">
+                <!-- 'Sent' state button with signature requirement -->
+                <button name="action_confirm"
+                        id="action_confirm"
+                        data-hotkey="q"
+                        string="Confirm"
+                        class="btn-primary"
+                        type="object"
+                        context="{'validate_analytic': True}"
+                        invisible="state != 'sent' or admin_approval != 'approved' "
+                        />
+            </xpath>
+
+            <!-- ✅ Group: sales_team.group_sale_salesman_all_leads -->
+            <!-- Insert normal Confirm buttons for this group only -->
+            <xpath expr="//button[@name='action_confirm'][not(@id)]" position="replace">
+
+                <button name="action_confirm"
+                        data-hotkey="q"
+                        string="Confirm"
+                        type="object"
+                        context="{'validate_analytic': True}"
+                        invisible="state != 'draft' or admin_approval != 'approved'"
+                        />
+            </xpath>
+
+
+            <xpath expr="//button[@id='create_invoice']" position="attributes">
+                <attribute name="invisible">invoice_status != 'to invoice' or admin_approval != 'approved'</attribute>
+            </xpath>
+            <xpath expr="//button[@id='create_invoice_percentage']" position="attributes">
+                <attribute name="invisible">invoice_status != 'no' or state != 'sale' or admin_approval != 'approved'
+                </attribute>
+            </xpath>
+            <xpath expr="//group//field[@name='partner_id']" position="replace">
+                <field name="partner_id" widget="res_partner_many2one"
+                       groups="!sales_team.group_sale_salesman_all_leads"
+                       context="{'res_partner_search_mode': 'customer', 'show_address': 1, 'show_vat': True}"
+                       placeholder="Type to find a customer..." readonly="state in ['cancel', 'sale']"
+                       domain="[('user_id', '=', uid) , ('company_id' , '!=' , False) ,  ('partner_share', '=', True)]"/>
+
+                <field name="partner_id" widget="res_partner_many2one"
+                       domain="[('company_id' , '!=' , False) , ('partner_share', '=', True)]"
+                       groups="sales_team.group_sale_salesman_all_leads"
+                       context="{'res_partner_search_mode': 'customer', 'show_address': 1, 'show_vat': True}"
+                       placeholder="Select a customer ...  " readonly="state in ['cancel', 'sale']"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add fields to both Sales Orders and Quotations list views -->
+    <record id="view_order_tree_inherit_add_amounts" model="ir.ui.view">
+        <field name="name">sale.order.tree.inherit.invoiced.remaining</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_tree"/>
+        <field name="arch" type="xml">
+            <field name="amount_total" position="after">
+                <field name="amount_invoiced" optional="show" string="Already Invoiced Amount"/>
+                <field name="remaining_amount" optional="show" string="Remaining Invoiced Amount"/>
+                <field name="admin_approval"
+                       widget="badge"
+                       decoration-success="admin_approval == 'approved'"
+                       decoration-danger="admin_approval == 'rejected'"
+                       decoration-warning="admin_approval == 'pending'"
+                       optional="show"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Inherit SALES ORDERS search view -->
+    <record id="sale_order_filter_inherit_for_sales_orders" model="ir.ui.view">
+        <field name="name">sale.order.search.inherit.admin.approval.sales</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_sale"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//filter[last()]" position="after">
+                <group expand="0" string="Approval Status">
+                    <filter name="admin_approval_pending" string="Pending Approval"
+                            domain="[('admin_approval','=','pending')]"/>
+                    <filter name="admin_approval_approved" string="Approved Orders"
+                            domain="[('admin_approval','=','approved')]"/>
+                    <filter name="admin_approval_rejected" string="Rejected Orders"
+                            domain="[('admin_approval','=','rejected')]"/>
+                </group>
+
+                <group expand="0" string="Payment Status">
+                    <filter name="remaining_amount_gt_0" string="Remaining &gt; 0"
+                            domain="[('remaining_amount','&gt;',0)]"/>
+                    <filter name="fully_paid" string="Fully Paid" domain="[('remaining_amount','=',0)]"/>
+                </group>
+            </xpath>
+
+            <xpath expr="//group[last()]" position="inside">
+                <filter name="group_admin_approval" string="Admin Approval" context="{'group_by':'admin_approval'}"/>
+                <filter name="group_contract_date" string="Contract Date" context="{'group_by':'contract_date'}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- Inherit QUOTATIONS search view -->
+    <record id="sale_order_filter_inherit_for_quotations" model="ir.ui.view">
+        <field name="name">sale.order.search.inherit.admin.approval.quotations</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//filter[last()]" position="after">
+                <group expand="0" string="Approval Status">
+                    <filter name="admin_approval_pending" string="Pending Approval"
+                            domain="[('admin_approval','=','pending')]"/>
+                    <filter name="admin_approval_approved" string="Approved Orders"
+                            domain="[('admin_approval','=','approved')]"/>
+                    <filter name="admin_approval_rejected" string="Rejected Orders"
+                            domain="[('admin_approval','=','rejected')]"/>
+                </group>
+
+                <group expand="0" string="Payment Status">
+                    <filter name="remaining_amount_gt_0" string="Remaining &gt; 0"
+                            domain="[('remaining_amount','&gt;',0)]"/>
+                    <filter name="fully_paid" string="Fully Paid" domain="[('remaining_amount','=',0)]"/>
+                </group>
+            </xpath>
+
+            <xpath expr="//group[last()]" position="inside">
+                <filter name="group_admin_approval" string="Admin Approval" context="{'group_by':'admin_approval'}"/>
+                <filter name="group_contract_date" string="Contract Date" context="{'group_by':'contract_date'}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <template id="report_saleorder_document_inherited" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@id='informations']" position="inside">
+            <div t-if="doc.contract_date" class="col">
+                <strong>Contract Date</strong>
+                <div t-field="doc.contract_date" t-options='{"widget": "date"}'>2023-12-31</div>
+            </div>
+        </xpath>
+    </template>
+
+
+    <record id="view_quotation_tree_with_onboarding_inherited" model="ir.ui.view">
+        <field name="name">view.quotation.tree.with.onboarding.inherited</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="contract_date" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale_order_list_upload" model="ir.ui.view">
+        <field name="name">sale.order.list.upload.inherited</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_list_upload"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="contract_date" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="res_partner_action_customer_self" model="ir.actions.act_window">
+        <field name="name">My Customers</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('user_id','=',uid) , ('company_id' , '!=' , False) , ('partner_share', '=', True)]
+        </field>
+        <field name="context">{'search_default_customer': 1,'res_partner_search_mode': 'customer', 'default_is_company':
+            True, 'default_customer_rank': 1}
+        </field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new customer in your address book
+            </p>
+            <p>
+                Odoo helps you easily track all activities related to a customer.
+            </p>
+        </field>
+    </record>
+    <menuitem id="res_partner_menu_self"
+              name="My customers"
+              parent="sale.sale_order_menu"
+              action="res_partner_action_customer_self"
+              sequence="50"/>
+
+
+    <record id="res_partner_action_customer_self_branch" model="ir.actions.act_window">
+        <field name="name">Branch Customers</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('company_id' , '!=' , False) , ('partner_share', '=', True)]</field>
+        <field name="context">{'search_default_customer': 1,'res_partner_search_mode': 'customer', 'default_is_company':
+            True, 'default_customer_rank': 1}
+        </field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new customer in your address book
+            </p>
+            <p>
+                Odoo helps you easily track all activities related to a customer.
+            </p>
+        </field>
+    </record>
+    <menuitem id="res_partner_menu_self_branch"
+              groups="sales_team.group_sale_salesman_all_leads"
+              name="Branch customers"
+              parent="sale.sale_order_menu"
+              action="res_partner_action_customer_self_branch"
+              sequence="50"/>
+
+
+</odoo>

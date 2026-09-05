@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_labor_tag_list" model="ir.ui.view">
+        <field name="name">labor.tag.list</field>
+        <field name="model">labor.tag</field>
+        <field name="arch" type="xml">
+            <list string="Labor Tags" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="scope"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Menus & Actions -->
+    <record id="action_labor_tag" model="ir.actions.act_window">
+        <field name="name">Labor Tags</field>
+        <field name="res_model">labor.tag</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add a new labor tag.</p>
+        </field>
+    </record>
+</odoo>

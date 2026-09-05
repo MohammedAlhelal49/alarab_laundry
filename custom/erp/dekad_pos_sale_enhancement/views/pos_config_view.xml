@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="pos_config_form_view_inherit_price_control" model="ir.ui.view">
+        <field name="name">pos.config.form.inherit.price.control.allowed</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="pos_hr.pos_config_form_view_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='is_posbox']/ancestor::setting[1]" position="before">
+                <setting string="Restrict Price Control to Selected Employees" help="only the selected employees can override product prices.">
+                    <field name="use_strict_price_control_list"/>
+                    <div class="content-group mt16" invisible="not use_strict_price_control_list">
+                        <field name="price_control_allowed_employee_ids" widget="many2many_tags" options="{'no_create': False}" placeholder="Select Employee(s)"
+                           domain="[('company_id', '=', company_id)]"/>
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_pos_config_form_inherit_restrict_cashiers" model="ir.ui.view">
+        <field name="name">pos.config.form.inherit.restrict.cashiers</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <!-- extends the POS Config form to add the "Allowed Cashiers" field -->
+            <xpath expr="//field[@name='is_posbox']/ancestor::setting[1]" position="after">
+                <setting string="Allow Employee" help="Only allow selected employees to act as cashiers.">
+                    <field name="restrict_cashiers"/>
+                    <div class="content-group mt16" invisible="not restrict_cashiers">
+                        <field name="allowed_cashier_ids" widget="many2many_tags" options="{'no_create': False}"
+                               placeholder="Choose Allowed Employees"/>
+                    </div>
+                </setting>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                    <group string="Stock Quantity Restriction">
+                        <group>
+                            <field name="stock_restriction_enabled"/>
+                        </group>
+                        <group invisible="not stock_restriction_enabled">
+                            <field name="stock_restriction_type"
+                                   widget="radio"
+                                   options="{'horizontal': true}"/>
+                        </group>
+                    </group>
+                </xpath>
+        </field>
+    </record>
+
+    <!-- extends the POS settings to add an option for limiting
+the per-line discount percentage when line discounts are enabled. -->
+    <record id="res_config_settings_view_form_inherit_discount_limit" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.discount.limit</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//setting[@id='manual_discount']" position="after">
+                <setting string="Limit Per-Line Discount" invisible="not pos_manual_discount"
+                         help="Restrict how much discount a cashier can give per line when Line Discounts are enabled.">
+                    <field name="enable_max_discount_limit"/>
+                    <div class="content-group mt16" invisible="not enable_max_discount_limit">
+                        <field name="max_discount_percent" placeholder="e.g. 20 (%)"
+                               invisible="not enable_max_discount_limit"/>
+                    </div>
+                </setting>
+            </xpath>
+
+            <xpath expr="//setting[field[@name='pos_module_pos_discount']]" position="after">
+                <setting string="Limit Global Discount"
+                         help="Restrict how much discount a cashier can apply using the global discount button.">
+                    <field name="enable_restrict_global_discount"/>
+                    <div class="content-group mt16" invisible="not enable_restrict_global_discount">
+                        <field name="max_global_discount_percent"
+                               placeholder="e.g. 10 (%)"/>
+                    </div>
+                </setting>
+
+                <setting string="Additional Charge"
+                         help="Adds a button to set a additional charge">
+                    <field name="enable_additional_charge"/>
+                    <div class="content-group mt16"
+                         invisible="not enable_additional_charge">
+                        <div class="row">
+                            <label string="Additional Product"
+                                   for="additional_charge_product_id"
+                                   class="col-lg-4 o_light_label"/>
+                            <field name="additional_charge_product_id"
+                                   options="{'no_create': True}"
+                                   domain="[('is_additional_charge', '=', True)]"
+                                   required="enable_additional_charge"/>
+                        </div>
+                        <div class="row">
+                            <label string="Additional %"
+                                   for="additional_charge_percent"
+                                   class="col-lg-4 o_light_label"/>
+                            <field name="additional_charge_percent"/>
+                        </div>
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_pos_config_form_inherit_pdf_download" model="ir.ui.view">
+        <field name="name">pos.config.form.inherit.pdf.download</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='is_posbox']/ancestor::setting[1]" position="after">
+                <!-- extends the POS Config form to add the "Invoice PDF Download" checkbox -->
+                <setting string="Auto-Download Invoice PDF"
+                         help="Control whether invoice PDF is auto-downloaded after validation.">
+                    <field name="enable_invoice_pdf_download"/>
+                </setting>
+
+                <setting string="Hide cache control"
+                         help="Hide cache control in the session closing window">
+                    <field name="hide_cash_control"/>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_pos_config_form_inherit_add_whatsapp_template" model="ir.ui.view">
+        <field name="name">pos.config.form.inherit.add.whatsapp.template</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+
+                <group string="Cash Difference Notifications">
+                    <group>
+                        <field name="notify_on_cash_difference"/>
+                    </group>
+                    <group invisible="not notify_on_cash_difference">
+                        <field name="cash_difference_threshold"/>
+                    </group>
+                    <group colspan="2" invisible="not notify_on_cash_difference">
+                        <field name="cash_difference_notify_employee_ids"
+                               widget="many2many_tags"
+                               placeholder="Select employees to notify..."
+                               options="{'no_create': True, 'color_field': 'color'}"/>
+                    </group>
+                    <group colspan="2" invisible="not notify_on_cash_difference">
+                        <div class="text-muted">
+                            <p>
+                                <strong>Note:</strong> Selected employees will receive an email
+                                (to their work email) and an activity notification when this
+                                POS session is closed with a cash difference exceeding the minimum amount.
+                            </p>
+                            <p>
+                                <strong>Important:</strong> For activity notifications, the employee
+                                must have a linked user account.
+                            </p>
+                        </div>
+                    </group>
+                </group>
+            </xpath>
+
+            <xpath expr="//field[@name='is_posbox']/ancestor::setting[1]" position="after">
+                <setting string="Enable WhatsApp Template"
+                         help="Enable sending WhatsApp messages from this POS.">
+                    <field name="enable_whatsapp_template"/>
+                    <div class="content-group mt16" invisible="not enable_whatsapp_template">
+                        <field name="whatsapp_template_id"
+                               placeholder="Select WhatsApp Template"
+                               options="{'no_create': True}"
+                               widget="many2one"
+                               help="Select a default WhatsApp message template for this POS configuration."/>
+                    </div>
+                </setting>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

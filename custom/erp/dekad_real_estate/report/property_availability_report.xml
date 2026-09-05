@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ========================= -->
+    <!-- REPORT ACTION -->
+    <!-- ========================= -->
+    <record id="action_report_property_availability_wizard_line" model="ir.actions.report">
+        <field name="name">Building Summary</field>
+        <field name="model">real.estate.property.availability.wizard.line</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dekad_real_estate.report_property_availability_wizard_line_document</field>
+        <field name="report_file">dekad_real_estate.report_property_availability_wizard_line_document</field>
+        <field name="binding_model_id" ref="model_real_estate_property_availability_wizard_line"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <!-- ========================= -->
+    <!-- QWEB TEMPLATE -->
+    <!-- ========================= -->
+    <template id="report_property_availability_wizard_line_document">
+        <t t-call="web.external_layout">
+            <main>
+                <!-- group selected lines by wizard, since each wizard = one building/date range -->
+                <t t-set="wizards" t-value="sorted(set(docs.mapped('wizard_id')), key=lambda w: w.id)"/>
+
+                <t t-foreach="wizards" t-as="wiz">
+                <div class="page" style="direction:rtl; text-align:right;">
+
+                    <!-- ================= HEADER ================= -->
+                    <div style="text-align:center; margin-bottom:25px;">
+                        <h2 style="margin-bottom:8px;">
+                            تقرير إشغال العقارات
+                        </h2>
+                        <h4 style="margin-bottom:4px;">
+                            <t t-esc="wiz.building_id.name or ''"/>
+                        </h4>
+                        <p>
+                            <span t-field="wiz.date_start"/>
+                            -
+                            <span t-field="wiz.date_end"/>
+                        </p>
+                    </div>
+
+                    <!-- only the lines the user actually selected, for this wizard -->
+                    <t t-set="lines" t-value="docs.filtered(lambda l: l.wizard_id == wiz)"/>
+
+                    <!-- ================= OVERALL STAT BOXES ================= -->
+                    <t t-set="b_total" t-value="len(lines)"/>
+                    <t t-set="b_unavailable" t-value="len(lines.filtered(lambda l: not l.is_available))"/>
+                    <t t-set="b_available" t-value="len(lines.filtered(lambda l: l.is_available))"/>
+                    <t t-set="b_unavailable_pct" t-value="(b_unavailable * 100.0 / b_total) if b_total else 0.0"/>
+                    <t t-set="b_available_pct" t-value="(b_available * 100.0 / b_total) if b_total else 0.0"/>
+
+                    <table style="width:100%; border-collapse:separate; border-spacing:10px 0; margin-bottom:25px;">
+                        <tr>
+                            <!-- إجمالي الوحدات (total) -->
+                            <td style="width:33%; border:2px solid #6b5b73; border-radius:6px; text-align:center; padding:18px 10px;">
+                                <div style="font-size:15px; color:#333; margin-bottom:8px;">إجمالي الوحدات</div>
+                                <div style="font-size:32px; font-weight:bold; color:#000;"><t t-esc="b_total"/></div>
+                                <div style="font-size:13px; color:#555; margin-top:6px;">100.0%</div>
+                            </td>
+
+                            <!-- الشاغر (vacant) -->
+                            <td style="width:33%; border:2px solid #6aa84f; border-radius:6px; text-align:center; padding:18px 10px;">
+                                <div style="font-size:15px; color:#333; margin-bottom:8px;">الشاغر</div>
+                                <div style="font-size:32px; font-weight:bold; color:#000;"><t t-esc="b_available"/></div>
+                                <div style="font-size:13px; color:#555; margin-top:6px;">
+                                    <t t-esc="('%.1f' % b_available_pct) + '%'"/>
+                                </div>
+                            </td>
+                            <!-- المؤجر (rented) -->
+                            <td style="width:33%; border:2px solid #a64d4d; border-radius:6px; text-align:center; padding:18px 10px;">
+                                <div style="font-size:15px; color:#333; margin-bottom:8px;">المؤجر</div>
+                                <div style="font-size:32px; font-weight:bold; color:#000;"><t t-esc="b_unavailable"/></div>
+                                <div style="font-size:13px; color:#555; margin-top:6px;">
+                                    <t t-esc="('%.1f' % b_unavailable_pct) + '%'"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- ================= GROUP BY PROPERTY TYPE ================= -->
+                    <!-- distinct property types found among the selected lines, in a stable order -->
+                    <t t-set="ptypes" t-value="sorted(set(lines.mapped('property_type')), key=lambda x: (x is False, x or ''))"/>
+
+                    <!--- Summary table: one row per property type  -->
+                    <table class="table table-sm o_main_table" style="width:100%; font-size:12px; margin-bottom:15px;">
+                        <thead>
+                            <tr style="background-color:#f2f2f2;">
+                                <th class="text-center">نوع الوحدة</th>
+                                <th class="text-center">عدد الشقق</th>
+                                <th class="text-center">شاغر</th>
+                                <th class="text-center">نسبة</th>
+                                <th class="text-center">مؤجر</th>
+                                <th class="text-center">نسبة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="ptypes" t-as="ptype">
+                                <t t-set="glines" t-value="lines.filtered(lambda l: l.property_type == ptype)"/>
+                                <t t-set="g_total" t-value="len(glines)"/>
+                                <t t-set="g_available" t-value="len(glines.filtered(lambda l: l.is_available))"/>
+                                <t t-set="g_unavailable" t-value="g_total - g_available"/>
+                                <t t-set="g_available_pct" t-value="(g_available * 100.0 / g_total) if g_total else 0.0"/>
+                                <t t-set="g_unavailable_pct" t-value="(g_unavailable * 100.0 / g_total) if g_total else 0.0"/>
+                                <tr>
+                                    <td class="text-center">
+                                        <t t-if="ptype">
+                                            <span t-field="glines[0].property_id.property_type"/>
+                                        </t>
+                                        <t t-else="">غير محدد</t>
+                                    </td>
+                                    <td class="text-center"><t t-esc="g_total"/></td>
+                                    <td class="text-center"><t t-esc="g_available"/></td>
+                                    <td class="text-center"><t t-esc="('%.1f' % g_available_pct) + '%'"/></td>
+                                    <td class="text-center"><t t-esc="g_unavailable"/></td>
+                                    <td class="text-center"><t t-esc="('%.1f' % g_unavailable_pct) + '%'"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+
+                    <!-- ================= DETAIL TABLE, GROUPED BY PROPERTY TYPE ================= -->
+                    <t t-foreach="ptypes" t-as="ptype">
+                        <t t-set="glines" t-value="lines.filtered(lambda l: l.property_type == ptype)"/>
+                        <br/>
+
+                        <h5 style="margin-top:15px; margin-bottom:6px; background-color:#f2f2f2; padding:6px;">
+                            <t t-if="ptype">
+                                <span t-field="glines[0].property_id.property_type"/>
+                            </t>
+                            <t t-else="">غير محدد</t>
+                        </h5>
+                        <table class="table table-sm o_main_table" style="width:100%; font-size:12px; margin-bottom:20px;">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th class="text-center">الوحدة</th>
+                                    <th class="text-center">الحالة</th>
+                                    <th class="text-center">العقد</th>
+                                    <th class="text-center">تاريخ البداية</th>
+                                    <th class="text-center">تاريخ النهاية</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="row_no" t-value="1"/>
+
+                                <t t-foreach="glines" t-as="line">
+                                    <tr>
+                                        <td class="text-center">
+                                            <t t-esc="row_no"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <t t-esc="line.property_id.name or ''"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <t t-esc="'شاغر' if line.is_available else 'مؤجر'"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <t t-esc="line.contract_id.name or ''"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="line.rent_start_date"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="line.rent_end_date"/>
+                                        </td>
+                                    </tr>
+
+                                    <t t-set="row_no" t-value="row_no + 1"/>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+
+                </div>
+                </t>
+            </main>
+        </t>
+    </template>
+
+</odoo>

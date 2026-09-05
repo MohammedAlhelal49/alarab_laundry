@@ -1,0 +1,612 @@
+# ترجمة خادم أودو.
+# يحتوي هذا الملف على ترجمة الوحدات التالية:
+# 	* dekad_leave
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-28 13:39+0000\n"
+"PO-Revision-Date: 2025-09-28 13:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_leave
+#: model:ir.actions.report,print_report_name:dekad_leave.act_open_de_student_leave_report_view
+msgid "'Student time off - %s' % (object.name)"
+msgstr "'إجازة الطالب - %s' % (object.name)"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.de_student_leave_report
+msgid "<b>Student Name:</b>"
+msgstr "<b>اسم الطالب:</b>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.de_student_leave_report
+msgid "<b>Total time off</b>"
+msgstr "<b>إجمالي الإجازات</b>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_create
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_update
+msgid "<option value=\"\">Select Day off type</option>"
+msgstr "<option value=\"\">اختر نوع اليوم الإضافي</option>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_update
+msgid ""
+"<span class=\"btn btn-outline-info btn-sm ml-2 file-update-trigger\">\n"
+"                                    Change\n"
+"                                </span>"
+msgstr ""
+"<span class=\"btn btn-outline-info btn-sm ml-2 file-update-trigger\">\n"
+"                                    تغيير\n"
+"                                </span>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_create
+msgid "<span class=\"clear-icon\">Clear</span>"
+msgstr "<span class=\"clear-icon\">مسح</span>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_create
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_update
+msgid ""
+"<span class=\"file-size-alert\">Attachment size must be less than 2mb</span>"
+msgstr "<span class=\"file-size-alert\">يجب أن يكون حجم المرفق أقل من 2 ميجابايت</span>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_create
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_update
+msgid "<span class=\"important-field-asterisk\">*</span>"
+msgstr "<span class=\"important-field-asterisk\">*</span>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_breadcrumbs
+msgid "<span>/</span>"
+msgstr "<span>/</span>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_show
+msgid "<strong class=\"\">Attachment :</strong>"
+msgstr "<strong class=\"\">المرفق:</strong>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_show
+msgid "<strong class=\"\">Created at :</strong>"
+msgstr "<strong class=\"\">تم الإنشاء في:</strong>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_show
+msgid "<strong class=\"\">Day off type :</strong>"
+msgstr "<strong class=\"\">نوع اليوم الإضافي:</strong>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_show
+msgid "<strong class=\"\">Duration :</strong>"
+msgstr "<strong class=\"\">المدة:</strong>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_show
+msgid "<strong class=\"\">End Date :</strong>"
+msgstr "<strong class=\"\">تاريخ الانتهاء:</strong>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_show
+msgid "<strong class=\"\">Sequence :</strong>"
+msgstr "<strong class=\"\">التسلسل:</strong>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_show
+msgid "<strong class=\"\">Start Date :</strong>"
+msgstr "<strong class=\"\">تاريخ البدء:</strong>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_show
+msgid "<strong class=\"\">State :</strong>"
+msgstr "<strong class=\"\">الحالة:</strong>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_show
+msgid "<strong>Description :</strong>"
+msgstr "<strong>الوصف:</strong>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.de_student_leave_report
+msgid "<strong>Student time off Details</strong>"
+msgstr "<strong>تفاصيل إجازة الطالب</strong>"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_form
+msgid "Accept"
+msgstr "قبول"
+
+#. module: dekad_leave
+#. odoo-python
+#: code:addons/dekad_leave/controllers/main.py:0
+#: model:ir.model.fields.selection,name:dekad_leave.selection__de_leave__state__accept
+msgid "Accepted"
+msgstr "مقبول"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave
+msgid "Actions"
+msgstr "الإجراءات"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: dekad_leave
+#. odoo-python
+#: code:addons/dekad_leave/controllers/main.py:0
+msgid "All"
+msgstr "الكل"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_form
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__file
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_create
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_update
+msgid "Attachment"
+msgstr "المرفق"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: dekad_leave
+#: model:ir.actions.server,name:dekad_leave.cron_start_finish_leave_state_ir_actions_server
+msgid "Change the state of student leave to start or finish"
+msgstr "تغيير حالة إجازة الطالب للبدء أو الانتهاء"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_update
+msgid "Clear"
+msgstr "مسح"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: dekad_leave
+#: model:ir.ui.menu,name:dekad_leave.menu_de_leave_configuration
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_breadcrumbs
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_create
+msgid "Create"
+msgstr "إنشاء"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_create
+msgid "Create new Day off"
+msgstr "إنشاء يوم إضافي جديد"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__create_uid
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave_type__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__create_date
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave_type__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave
+msgid "Day off Type"
+msgstr "نوع اليوم الإضافي"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_show
+msgid "Day off full information"
+msgstr "معلومات كاملة عن اليوم الإضافي"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_create
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_update
+msgid "Day off type"
+msgstr "نوع اليوم الإضافي"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_breadcrumbs
+msgid "Days off"
+msgstr "الأيام الإضافية"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave
+msgid "Delete"
+msgstr "حذف"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__description
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_create
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_update
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_form
+msgid "Description"
+msgstr "الوصف"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__display_name
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave_type__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dekad_leave
+#: model:ir.model.fields.selection,name:dekad_leave.selection__de_leave__state__draft
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_form
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__duration
+#: model_terms:ir.ui.view,arch_db:dekad_leave.de_student_leave_report
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave
+msgid "Duration"
+msgstr "المدة"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__end_date
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_create
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_update
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: dekad_leave
+#. odoo-python
+#: code:addons/dekad_leave/models/leave.py:0
+msgid "End Date cant be less than Start Date."
+msgstr "لا يمكن أن يكون تاريخ الانتهاء أقل من تاريخ البدء."
+
+#. module: dekad_leave
+#. odoo-python
+#: code:addons/dekad_leave/controllers/main.py:0
+#: model:ir.model.fields.selection,name:dekad_leave.selection__de_leave__state__finish
+msgid "Finished"
+msgstr "منتهي"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_search
+msgid "Group By..."
+msgstr "تجميع حسب..."
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__id
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave_type__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: dekad_leave
+#: model:ir.model.fields,help:dekad_leave.field_de_leave__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: dekad_leave
+#: model:ir.model.fields,help:dekad_leave.field_de_leave__message_has_error
+#: model:ir.model.fields,help:dekad_leave.field_de_leave__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__write_uid
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave_type__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__write_date
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave_type__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_search
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_student_form_leave_inherited
+msgid "Leave"
+msgstr "إجازة"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_student__leave_count
+msgid "Leave Count"
+msgstr "عدد الإجازات"
+
+#. module: dekad_leave
+#. odoo-python
+#: code:addons/dekad_leave/controllers/main.py:0
+msgid "Leave Type"
+msgstr "نوع الإجازة"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.de_student_leave_report
+msgid "Leave type"
+msgstr "نوع الإجازة"
+
+#. module: dekad_leave
+#: model:ir.actions.act_window,name:dekad_leave.act_open_de_leave_view
+#: model:ir.model.fields,field_description:dekad_leave.field_de_student__leave_ids
+#: model:ir.ui.menu,name:dekad_leave.menu_de_leave
+#: model:ir.ui.menu,name:dekad_leave.menu_de_leave_root
+#: model:res.groups,name:dekad_leave.group_de_leave
+msgid "Leaves"
+msgstr "الإجازات"
+
+#. module: dekad_leave
+#: model:ir.model,name:dekad_leave.model_de_leave_type
+msgid "Manage students days off types"
+msgstr "إدارة أنواع الأيام الإضافية للطلاب"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave_type__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: dekad_leave
+#. odoo-python
+#: code:addons/dekad_leave/controllers/main.py:0
+msgid "Newest"
+msgstr "الأحدث"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: dekad_leave
+#: model:ir.model.fields,help:dekad_leave.field_de_leave__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: dekad_leave
+#: model:ir.model.fields,help:dekad_leave.field_de_leave__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل ذات خطأ التسليم"
+
+#. module: dekad_leave
+#. odoo-python
+#: code:addons/dekad_leave/controllers/main.py:0
+msgid "Oldest"
+msgstr "الأقدم"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__parent_id
+msgid "Parent"
+msgstr "ولي الأمر"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_form
+msgid "Reject"
+msgstr "رفض"
+
+#. module: dekad_leave
+#. odoo-python
+#: code:addons/dekad_leave/controllers/main.py:0
+#: model:ir.model.fields.selection,name:dekad_leave.selection__de_leave__state__reject
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية"
+
+#. module: dekad_leave
+#. odoo-python
+#: code:addons/dekad_leave/controllers/main.py:0
+msgid "Sent"
+msgstr "مرسل"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave
+msgid "Show"
+msgstr "عرض"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__start_date
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_create
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_update
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: dekad_leave
+#. odoo-python
+#: code:addons/dekad_leave/models/leave.py:0
+msgid "Start Date cant be less than today"
+msgstr "لا يمكن أن يكون تاريخ البدء أقل من اليوم"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_search
+msgid "Start Today"
+msgstr "يبدأ اليوم"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.de_student_leave_report
+msgid "Start date"
+msgstr "تاريخ البدء"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_search
+msgid "Start in current Month"
+msgstr "يبدأ في الشهر الحالي"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_search
+msgid "Start in current Week"
+msgstr "يبدأ في الأسبوع الحالي"
+
+#. module: dekad_leave
+#. odoo-python
+#: code:addons/dekad_leave/controllers/main.py:0
+#: model:ir.model.fields.selection,name:dekad_leave.selection__de_leave__state__start
+msgid "Started"
+msgstr "بدأ"
+
+#. module: dekad_leave
+#. odoo-python
+#: code:addons/dekad_leave/controllers/main.py:0
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__state
+#: model_terms:ir.ui.view,arch_db:dekad_leave.de_student_leave_report
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_search
+msgid "State"
+msgstr "الحالة"
+
+#. module: dekad_leave
+#: model:ir.model,name:dekad_leave.model_de_student
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__student_id
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_search
+msgid "Student"
+msgstr "الطالب"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_calendar
+msgid "Student Leaves"
+msgstr "إجازات الطلاب"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_form
+msgid "Student leave"
+msgstr "إجازة الطالب"
+
+#. module: dekad_leave
+#: model:ir.actions.report,name:dekad_leave.act_open_de_student_leave_report_view
+msgid "Student time off"
+msgstr "إجازة الطالب"
+
+#. module: dekad_leave
+#: model:ir.model,name:dekad_leave.model_de_leave
+msgid "Students leaves manage"
+msgstr "إدارة إجازات الطلاب"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave
+msgid "There are no days off to display."
+msgstr "لا توجد أيام إضافية للعرض."
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.de_student_leave_report
+msgid "There is no time off to display"
+msgstr "لا توجد إجازات للعرض"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_graph
+msgid "Time off"
+msgstr "إجازة"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__leave_type
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_search
+msgid "Type"
+msgstr "النوع"
+
+#. module: dekad_leave
+#: model:ir.actions.act_window,name:dekad_leave.act_open_de_leave_type_view
+#: model:ir.ui.menu,name:dekad_leave.menu_de_leave_type
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_type_tree
+msgid "Types"
+msgstr "الأنواع"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_breadcrumbs
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_update
+msgid "Update"
+msgstr "تحديث"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.student_leave_update
+msgid "Update day off data"
+msgstr "تحديث بيانات اليوم الإضافي"
+
+#. module: dekad_leave
+#: model:ir.model.fields,field_description:dekad_leave.field_de_leave__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: dekad_leave
+#: model:ir.model.fields,help:dekad_leave.field_de_leave__website_message_ids
+msgid "Website communication history"
+msgstr "سجل التواصل عبر الموقع الإلكتروني"
+
+#. module: dekad_leave
+#: model:ir.model.fields.selection,name:dekad_leave.selection__de_leave__state__confirm
+msgid "confirmed"
+msgstr "مؤكد"
+
+#. module: dekad_leave
+#: model_terms:ir.ui.view,arch_db:dekad_leave.view_de_leave_tree
+msgid "leave"
+msgstr "إجازة"

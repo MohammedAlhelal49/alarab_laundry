@@ -1,0 +1,565 @@
+/* ============================================
+   Parent Students List & Profile - Modern Styles
+   ============================================ */
+
+/* === Color Variables === */
+:root {
+    --parent-primary: #667eea;
+    --parent-primary-dark: #764ba2;
+    --parent-success: #56ab2f;
+    --parent-info: #0093e9;
+    --parent-warning: #f093fb;
+    --parent-danger: #fa709a;
+    --parent-text-dark: #1e293b;
+    --parent-text-light: #64748b;
+    --parent-bg-light: #f8fafc;
+    --parent-border: #e2e8f0;
+}
+
+/* === Parent Students Holder === */
+.parent-students-holder {
+    padding: 2rem 0;
+    gap: 2rem;
+    row-gap: 2rem;
+}
+
+/* === Student Cards Grid === */
+.parent-students-card {
+    border: none;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: white;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.parent-students-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--parent-primary), var(--parent-primary-dark));
+}
+
+.parent-students-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.2);
+}
+
+.parent-students-card .card-body {
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* === Student Image === */
+.parent-students-card .col-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.parent-students-card img {
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+    transition: all 0.4s ease;
+}
+
+.parent-students-card:hover img {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.5);
+}
+
+/* === Student Info Section === */
+.parent-students-card .col-8 {
+    padding: 0;
+}
+
+.parent-students-card h6 {
+    color: var(--parent-text-dark);
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--parent-primary), var(--parent-primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* === Action Button === */
+.parent-students-card .btn-primary {
+    background: linear-gradient(135deg, var(--parent-primary), var(--parent-primary-dark));
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.parent-students-card .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+}
+
+/* === Horizontal Divider === */
+.parent-students-card hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--parent-border), transparent);
+    margin: 1.5rem 0;
+}
+
+/* === Student Content Details === */
+.student-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.student-content > div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+    border-radius: 12px;
+    border: 1px solid var(--parent-border);
+    transition: all 0.3s ease;
+}
+
+.student-content > div:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    transform: translateX(5px);
+    border-color: var(--parent-primary);
+}
+
+.student-content i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--parent-primary), var(--parent-primary-dark));
+    color: white;
+    border-radius: 12px;
+    font-size: 1.125rem;
+    flex-shrink: 0;
+}
+
+.student-content span {
+    color: var(--parent-text-dark);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* === Empty State Alert === */
+.parent-students-holder .alert-info {
+    background: linear-gradient(135deg, rgba(0, 147, 233, 0.1), rgba(128, 208, 199, 0.1));
+    color: #0369a1;
+    border: 2px solid rgba(0, 147, 233, 0.3);
+    border-radius: 16px;
+    padding: 2rem;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.125rem;
+    box-shadow: 0 4px 15px rgba(0, 147, 233, 0.1);
+}
+
+/* === Parent Profile Page === */
+.portal-page-content h5 {
+    color: var(--parent-text-dark);
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--parent-primary);
+    display: inline-block;
+    background: linear-gradient(135deg, var(--parent-primary), var(--parent-primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Side by side layout with proper grid */
+.portal-page-content .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    row-gap: 0.75rem;
+}
+
+.portal-page-content .row > div {
+    flex: 0 0 calc(50% - 0.375rem);
+    max-width: calc(50% - 0.375rem);
+    padding: 1rem 1.25rem;
+    background: linear-gradient(135deg, white 0%, var(--parent-bg-light) 100%);
+    border-radius: 10px;
+    border: 1px solid var(--parent-border);
+    transition: all 0.3s ease;
+    margin-bottom: 0;
+}
+
+.portal-page-content .row > div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: var(--parent-primary);
+    background: white;
+}
+
+.portal-page-content strong {
+    color: var(--parent-primary);
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.portal-page-content span {
+    color: var(--parent-text-dark);
+    font-size: 1rem;
+    font-weight: 600;
+    display: block;
+    word-break: break-word;
+}
+
+/* === Parent Profile Card === */
+.portal-page-content.card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
+}
+
+.portal-page-content.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--parent-primary), var(--parent-primary-dark));
+}
+
+.portal-page-content .card-body {
+    padding: 2rem;
+}
+
+/* === Edit Profile Button === */
+.portal-page-content .btn-primary {
+    background: linear-gradient(135deg, var(--parent-primary), var(--parent-primary-dark));
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 2rem;
+    font-weight: 700;
+    font-size: 0.938rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.3);
+}
+
+.portal-page-content .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* === Animations === */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.parent-students-card {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.parent-students-card:nth-child(1) { animation-delay: 0.1s; }
+.parent-students-card:nth-child(2) { animation-delay: 0.2s; }
+.parent-students-card:nth-child(3) { animation-delay: 0.3s; }
+.parent-students-card:nth-child(4) { animation-delay: 0.4s; }
+.parent-students-card:nth-child(5) { animation-delay: 0.5s; }
+.parent-students-card:nth-child(6) { animation-delay: 0.6s; }
+
+.portal-page-content .row > div {
+    animation: fadeInUp 0.4s ease-out backwards;
+}
+
+.portal-page-content .row > div:nth-child(1) { animation-delay: 0.03s; }
+.portal-page-content .row > div:nth-child(2) { animation-delay: 0.06s; }
+.portal-page-content .row > div:nth-child(3) { animation-delay: 0.09s; }
+.portal-page-content .row > div:nth-child(4) { animation-delay: 0.12s; }
+.portal-page-content .row > div:nth-child(5) { animation-delay: 0.15s; }
+.portal-page-content .row > div:nth-child(6) { animation-delay: 0.18s; }
+.portal-page-content .row > div:nth-child(7) { animation-delay: 0.21s; }
+.portal-page-content .row > div:nth-child(8) { animation-delay: 0.24s; }
+.portal-page-content .row > div:nth-child(9) { animation-delay: 0.27s; }
+.portal-page-content .row > div:nth-child(10) { animation-delay: 0.3s; }
+
+/* === Responsive Design === */
+@media (max-width: 992px) {
+    .parent-students-holder {
+        padding: 1.5rem 0;
+        gap: 1.5rem;
+        row-gap: 1.5rem;
+    }
+
+    .parent-students-card .card-body {
+        padding: 2rem;
+    }
+
+    .parent-students-card img {
+        width: 120px !important;
+        height: 120px !important;
+    }
+
+    .parent-students-card h6 {
+        font-size: 1.5rem;
+    }
+
+    /* Keep 2 columns on tablets for parent profile */
+    .portal-page-content .row > div {
+        flex: 0 0 calc(50% - 0.3125rem);
+        max-width: calc(50% - 0.3125rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .parent-students-holder {
+        padding: 1rem 0;
+        gap: 1rem;
+        row-gap: 1rem;
+    }
+
+    .parent-students-card .card-body {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .parent-students-card .col-4,
+    .parent-students-card .col-8 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .parent-students-card img {
+        width: 120px !important;
+        height: 120px !important;
+    }
+
+    .parent-students-card h6 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .parent-students-card .btn-primary {
+        width: 100%;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .student-content > div {
+        justify-content: center;
+    }
+
+    .portal-page-content .card-body {
+        padding: 1.5rem;
+    }
+
+    .portal-page-content .row {
+        gap: 0.625rem;
+        row-gap: 0.625rem;
+    }
+
+    .portal-page-content .row > div {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0.875rem 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .parent-students-card .card-body {
+        padding: 1.25rem;
+    }
+
+    .parent-students-card img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .parent-students-card h6 {
+        font-size: 1.25rem;
+    }
+
+    .student-content i {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .student-content span {
+        font-size: 0.938rem;
+    }
+
+    .portal-page-content .card-body {
+        padding: 1.25rem;
+    }
+
+    .portal-page-content h5 {
+        font-size: 1.25rem;
+    }
+
+    .portal-page-content .row {
+        gap: 0.5rem;
+        row-gap: 0.5rem;
+    }
+
+    .portal-page-content span {
+        font-size: 0.938rem;
+    }
+
+    .portal-page-content .row > div {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* === Hover Glow Effect === */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 20px 50px rgba(102, 126, 234, 0.2);
+    }
+    50% {
+        box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4);
+    }
+}
+
+.parent-students-card:hover {
+    animation: glow 2s infinite;
+}
+
+/* === Loading State === */
+.parent-students-card.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* === Focus States for Accessibility === */
+.parent-students-card:focus-within,
+.portal-page-content .row > div:focus-within {
+    outline: 3px solid rgba(102, 126, 234, 0.5);
+    outline-offset: 3px;
+}
+
+/* === Print Styles === */
+@media print {
+    .parent-students-holder {
+        display: block;
+    }
+
+    .parent-students-card,
+    .portal-page-content.card {
+        box-shadow: none;
+        border: 1px solid var(--parent-border);
+        page-break-inside: avoid;
+        margin-bottom: 1rem;
+    }
+
+    .parent-students-card::before,
+    .portal-page-content.card::before {
+        display: none;
+    }
+}
+
+/* === Selection Styling === */
+::selection {
+    background: rgba(102, 126, 234, 0.3);
+    color: var(--parent-text-dark);
+}
+
+/* === Smooth Scrolling === */
+html {
+    scroll-behavior: smooth;
+}
+
+/* === Accessibility - Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* === Custom Scrollbar === */
+.parent-students-holder::-webkit-scrollbar {
+    width: 10px;
+}
+
+.parent-students-holder::-webkit-scrollbar-track {
+    background: var(--parent-bg-light);
+    border-radius: 10px;
+}
+
+.parent-students-holder::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--parent-primary), var(--parent-primary-dark));
+    border-radius: 10px;
+}
+
+.parent-students-holder::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--parent-primary-dark), var(--parent-primary));
+}
+
+/* === Additional Info Cards Enhancement === */
+.student-content .grade {
+    background: linear-gradient(135deg, rgba(86, 171, 47, 0.05), rgba(168, 224, 99, 0.05));
+    border-color: rgba(86, 171, 47, 0.2);
+}
+
+.student-content .grade i {
+    background: linear-gradient(135deg, var(--parent-success), #a8e063);
+}
+
+.student-content .mobile {
+    background: linear-gradient(135deg, rgba(0, 147, 233, 0.05), rgba(128, 208, 199, 0.05));
+    border-color: rgba(0, 147, 233, 0.2);
+}
+
+.student-content .mobile i {
+    background: linear-gradient(135deg, var(--parent-info), #80d0c7);
+}
+
+.student-content .blood {
+    background: linear-gradient(135deg, rgba(240, 147, 251, 0.05), rgba(245, 87, 108, 0.05));
+    border-color: rgba(240, 147, 251, 0.2);
+}
+
+.student-content .blood i {
+    background: linear-gradient(135deg, var(--parent-warning), #f5576c);
+}

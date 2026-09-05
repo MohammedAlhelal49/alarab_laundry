@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- types -->
+        <record id="de_achievement_type_1" model="de.achievement.type">
+            <field name="name">Academic</field>
+        </record>
+
+        <record id="de_achievement_type_2" model="de.achievement.type">
+            <field name="name">Non academic</field>
+        </record>
+        <!-- achievements -->
+
+        <record id="de_student_achievement_1" model="de.student.achievement">
+            <field name="name">Student of the month</field>
+            <field name="description">Great participation in all classes</field>
+            <field name="type_id" ref="de_achievement_type_1"/>
+            <field name="image" type="base64"
+                   file="dekad_achievement/static/img/student-achievement.jpg"/>
+        </record>
+
+        <record id="de_teacher_achievement_1" model="de.teacher.achievement">
+            <field name="name">Teacher of the month</field>
+            <field name="description">Good teaching skills</field>
+            <field name="type_id" ref="de_achievement_type_1"/>
+            <field name="image" type="base64"
+                   file="dekad_achievement/static/img/teacher-achievement.jpg"/>
+        </record>
+
+        <!-- achievements assign -->
+        <record id="de_student_achievement_assign_1" model="de.student.achievement.assign">
+            <field name="reason">Good participation in classes</field>
+            <field name="achievement_id" ref="de_student_achievement_1"/>
+            <field name="student_id" ref="dekad_core.de_student_1"/>
+            <field name="user_id" ref="base.user_admin"/>
+        </record>
+
+        <record id="de_teacher_achievement_assign_1" model="de.teacher.achievement.assign">
+            <field name="reason">Good teaching skills</field>
+            <field name="achievement_id" ref="de_teacher_achievement_1"/>
+            <field name="teacher_id" ref="dekad_core.de_teacher_1"/>
+            <field name="user_id" ref="base.user_admin"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,23 @@
+<odoo>
+    <!-- Meters List View -->
+    <record id="view_real_estate_meters_list" model="ir.ui.view">
+        <field name="name">real.estate.meters.list</field>
+        <field name="model">real.estate.meters</field>
+        <field name="arch" type="xml">
+            <list string="Meters" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="price" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_real_estate_meters" model="ir.actions.act_window">
+        <field name="name">Meters</field>
+        <field name="res_model">real.estate.meters</field>
+        <field name="view_mode">list</field>
+        <field name="context">{}</field>
+    </record>
+
+</odoo>

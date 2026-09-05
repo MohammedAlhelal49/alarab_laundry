@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <!--
+        Extend AccountReportFilterExtraOptions in-place (extension mode)
+        to add Show Company toggle inside the Options dropdown.
+        Guarded with t-if so it only appears when show_company_column exists.
+    -->
+    <t t-name="account_reports.AccountReportFilterExtraOptions"
+       t-inherit="account_reports.AccountReportFilterExtraOptions"
+       t-inherit-mode="extension">
+        <xpath expr="//t[@t-set-slot='content']" position="inside">
+            <t t-if="'show_company_column' in controller.options">
+                <DropdownItem
+                    class="{ 'selected': controller.options.show_company_column }"
+                    onSelected="() => this.filterClicked({ optionKey: 'show_company_column', reload: true})"
+                    closingMode="'none'"
+                >
+                    Show Company
+                </DropdownItem>
+            </t>
+        </xpath>
+    </t>
+</templates>

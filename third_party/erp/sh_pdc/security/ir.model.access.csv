@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pdc_user,pdc.user,model_pdc_wizard,sh_pdc.group_pdc_user,1,1,1,1
+access_pdc_admin,pdc.admin,model_pdc_wizard,sh_pdc.group_pdc_admin,1,1,1,1
+access_ir_actions_act_window,name_ir_actions_act_window,base.model_ir_actions_act_window,base.group_user,1,1,1,1
+access_ir_actions_act_window_close,name_ir_actions_act_window_close,base.model_ir_actions_act_window_close,base.group_user,1,1,1,1
+access_ir_actions_act_window_view,name_ir_actions_act_window_view,base.model_ir_actions_act_window_view,base.group_user,1,1,1,1

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Security Category -->
+        <record id="module_category_mobile_apps" model="ir.module.category">
+            <field name="name">Mobile Applications Access</field>
+            <field name="description">Manage access to specific mobile applications and features.</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Groups for each mobile sub-app -->
+        <record id="group_mobile_barcode" model="res.groups">
+            <field name="name">Mobile Barcode User</field>
+            <field name="category_id" ref="module_category_mobile_apps"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_mobile_employee" model="res.groups">
+            <field name="name">Mobile Employee User</field>
+            <field name="category_id" ref="module_category_mobile_apps"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_mobile_event" model="res.groups">
+            <field name="name">Mobile Event User</field>
+            <field name="category_id" ref="module_category_mobile_apps"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_mobile_billing" model="res.groups">
+            <field name="name">Mobile Billing User</field>
+            <field name="category_id" ref="module_category_mobile_apps"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_mobile_rental" model="res.groups">
+            <field name="name">Mobile Rental User</field>
+            <field name="category_id" ref="module_category_mobile_apps"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_mobile_attendance" model="res.groups">
+            <field name="name">Mobile Attendance User</field>
+            <field name="category_id" ref="module_category_mobile_apps"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_mobile_expenses" model="res.groups">
+            <field name="name">Mobile Expenses User</field>
+            <field name="category_id" ref="module_category_mobile_apps"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_mobile_fleet" model="res.groups">
+            <field name="name">Mobile Fleet User</field>
+            <field name="category_id" ref="module_category_mobile_apps"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_mobile_todo" model="res.groups">
+            <field name="name">Mobile Todo User</field>
+            <field name="category_id" ref="module_category_mobile_apps"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_mobile_inventory" model="res.groups">
+            <field name="name">Mobile Inventory User</field>
+            <field name="category_id" ref="module_category_mobile_apps"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- ========================================================= -->
+    <!-- Actions -->
+    <!-- ========================================================= -->
+
+    <record id="action_real_estate_products" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+
+    <!-- ========================================================= -->
+    <!-- Root Menu -->
+    <!-- ========================================================= -->
+
+    <menuitem
+        id="menu_real_estate_root"
+        name="Real Estate"
+        sequence="10"/>
+
+    <!-- ========================================================= -->
+    <!-- First Level Menus -->
+    <!-- ========================================================= -->
+
+    <menuitem
+        id="menu_rental_contracts"
+        name="Rental Contracts"
+        parent="menu_real_estate_root"
+        action="action_rental_contracts"
+        sequence="20"/>
+
+    <menuitem
+        id="menu_real_estate_availability"
+        name="Availability"
+        parent="menu_real_estate_root"
+        action="action_real_estate_availability"
+        sequence="30"/>
+
+    <menuitem
+        id="menu_properties"
+        name="Properties"
+        parent="menu_real_estate_root"
+        sequence="40"/>
+
+    <menuitem
+        id="menu_real_estate_config"
+        name="Configuration"
+        parent="menu_real_estate_root"
+        sequence="100"/>
+
+    <!-- ========================================================= -->
+    <!-- Properties Submenus -->
+    <!-- ========================================================= -->
+
+    <menuitem
+        id="menu_real_estate_properties"
+        name="Properties"
+        parent="menu_properties"
+        action="action_real_estate_properties"
+        sequence="10"/>
+
+    <menuitem
+        id="menu_building"
+        name="Buildings"
+        parent="menu_properties"
+        action="action_building"
+        sequence="20"/>
+
+    <menuitem
+        id="menu_real_estate_products"
+        name="Products"
+        parent="menu_properties"
+        action="action_real_estate_products"
+        sequence="40"/>
+
+    <!-- ========================================================= -->
+    <!-- Configuration Submenus -->
+    <!-- ========================================================= -->
+
+    <menuitem
+        id="menu_real_estate_meters"
+        name="Meters"
+        parent="menu_real_estate_config"
+        action="action_real_estate_meters"
+        sequence="10"/>
+
+</odoo>

@@ -1,0 +1,199 @@
+<odoo>
+
+    <!-- Inherit the analytic account list view -->
+    <record id="view_account_analytic_account_list_inherit" model="ir.ui.view">
+        <field name="name">account.analytic.account.list.inherit</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_list"/>
+        <field name="arch" type="xml">
+            <!-- Add fields after the name column -->
+            <xpath expr="//list/field[@name='name']" position="after">
+                <field name="rental_contract_id" optional="show"/>
+                <field name="property_building_id" optional="show"/>
+                <field name="floor_no" optional="show"/>
+                <field name="property_type" optional="show"/>
+                <field name="is_property_sold" optional="show"/>
+                <field name="bedroom_no" optional="hide"/>
+                <field name="bathroom_no" optional="hide"/>
+                <field name="furnished" optional="show"/>
+
+            </xpath>
+
+            <xpath expr="//field[@name='debit']" position="attributes">
+                <attribute name="column_invisible">context.get('property_mode') == True</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='credit']" position="attributes">
+                <attribute name="column_invisible">context.get('property_mode') == True</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='balance']" position="attributes">
+                <attribute name="column_invisible">context.get('property_mode') == True</attribute>
+            </xpath>
+
+
+            <xpath expr="//field[@name='code']" position="attributes">
+                <attribute name="column_invisible">context.get('property_mode') == True</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="column_invisible">context.get('property_mode') == True</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Inherit the default search view to add 'Group by Building' -->
+    <record id="view_account_analytic_account_filter_inherit" model="ir.ui.view">
+        <field name="name">account.analytic.account.search.inherit.building</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+
+                <field name="property_building_id" string="Building"
+                       />
+                <field name="floor_no" string="Floor No"
+                       />
+                <field name="property_type" string="Property Type"
+                       />
+
+                <field name="apartment_orientation_ids" string="Orientation"
+                       />
+
+                <field name="bedroom_no" string="Property Type ID"
+                       />
+
+
+                <filter name="group_by_building"
+                        string="Building"
+                        context="{'group_by': 'property_building_id'}"
+                        help="Group by building"/>
+
+                <filter name="group_by_property_type"
+                    string="Property Type"
+                    context="{'group_by': 'property_type'}"
+                    />
+
+                <filter name="group_by_apartment_orientation_ids"
+                    string="Orientation"
+                    context="{'group_by': 'apartment_orientation_ids'}"
+                    />
+
+                <filter name="group_by_floor"
+                    string="Floor"
+                    context="{'group_by': 'floor_no'}"
+                    />
+
+               <filter name="available" string="Available"  domain="[('is_available', '=', True)]"/>
+               <filter name="unavailable" string="Unavailable" domain="[('is_available', '=', False)]" />
+                <filter name="furnished_yes" string="Furnished"
+                        domain="[('furnished', '=', True)]"
+                        />
+                <filter name="furnished_no" string="Not Furnished"
+                        domain="[('furnished', '=', False)]"
+                        />
+                <separator/>
+                <filter name="offer_type_rent" string="For Rent" domain="[('offer_type', '=', 'rent')]"/>
+                <filter name="offer_type_sale" string="For Sale" domain="[('offer_type', '=', 'sale')]"/>
+
+                <separator/>
+                <filter name="sold" string="Sold" domain="[('is_property_sold', '=', True)]"/>
+
+            <separator/>
+            <group expand="0" string="Group By">
+                <filter string="Offer Type" name="group_by_offer_type" context="{'group_by': 'offer_type'}"/>
+                <filter string="Sold Status" name="group_by_sold" context="{'group_by': 'is_property_sold'}"/>
+                <separator/>
+
+                <!-- Group By Fields -->
+                <filter string="Bedrooms" name="group_by_bedroom"
+                        context="{'group_by': 'bedroom_no'}"/>
+                <filter string="Bathrooms" name="group_by_bathroom"
+                        context="{'group_by': 'bathroom_no'}"/>
+
+                <!-- Bedroom Filters -->
+                <group string="Filter: Bedrooms">
+                    <filter string="1 Bedroom" name="bedroom_1"
+                            domain="[('bedroom_no', '=', 1)]"/>
+                    <filter string="2 Bedrooms" name="bedroom_2"
+                            domain="[('bedroom_no', '=', 2)]"/>
+                    <filter string="3 Bedrooms" name="bedroom_3"
+                            domain="[('bedroom_no', '=', 3)]"/>
+                </group>
+
+                <!-- Bathroom Filters -->
+                <group string="Filter: Bathrooms">
+                    <filter string="1 Bathroom" name="bathroom_1"
+                            domain="[('bathroom_no', '=', 1)]"/>
+                    <filter string="2 Bathrooms" name="bathroom_2"
+                            domain="[('bathroom_no', '=', 2)]"/>
+                    <filter string="3 Bathrooms" name="bathroom_3"
+                            domain="[('bathroom_no', '=', 3)]"/>
+                </group>
+            </group>
+
+
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Custom Kanban view for Properties -->
+    <record id="view_account_analytic_account_kanban_custom" model="ir.ui.view">
+        <field name="name">account.analytic.account.kanban.custom</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban/templates" position="replace">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click o_kanban_card o_kanban_record #{record.color and 'o_kanban_color_' + str(record.color) or ''}"
+                             t-att-data-id="record.id">
+                             <field name="is_property_sold" invisible="1"/>
+
+                            <div class="d-flex align-items-start o_kanban_card_content">
+                                <div class="o_kanban_image" style="margin-right: 9px;">
+                                    <field name="property_image" widget="image" options="{'size': [94, 94]}"/>
+                                </div>
+                                <div class="o_kanban_details">
+                                    <strong>
+                                        <field name="name"/>
+                                    </strong>
+                                    <div class="o_kanban_record_field">
+                                        <field name="property_building_id"/>
+                                    </div>
+                                    <div class="o_kanban_record_field text-muted">
+                                        <field name="property_address"/>
+                                    </div>
+                                    <t t-if="record.is_property_sold.raw_value">
+                                        <span class="badge bg-danger text-white mt-2">SOLD</span>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Action for Analytic Accounts (Properties) -->
+    <record id="action_analytic_account_custom" model="ir.actions.act_window">
+        <field name="name">Properties</field>
+        <field name="res_model">account.analytic.account</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="target">current</field>
+        <field name="domain">[('is_property', '=', True)]</field>
+        <field name="context">{'search_default_group_by_building': 1, 'property_mode': True}</field>
+        <field name="view_ids" eval="[
+            (5, 0, 0),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_account_analytic_account_kanban_custom')}),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('view_account_analytic_account_list_inherit')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('analytic.view_account_analytic_account_form')}),
+        ]"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new property (analytic account)
+            </p>
+        </field>
+    </record>
+</odoo>

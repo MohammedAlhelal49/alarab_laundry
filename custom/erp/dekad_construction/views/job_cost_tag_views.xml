@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_job_cost_tag_list" model="ir.ui.view">
+        <field name="name">job.cost.tag.list</field>
+        <field name="model">job.cost.tag</field>
+        <field name="arch" type="xml">
+            <list string="Job Cost Tags" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Menus & Actions -->
+    <record id="action_construction_cost_tag" model="ir.actions.act_window">
+        <field name="name">Job Cost Tags</field>
+        <field name="res_model">job.cost.tag</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add a new job cost tag.</p>
+        </field>
+    </record>
+</odoo>

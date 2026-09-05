@@ -1,0 +1,18 @@
+<odoo>
+    <menuitem id="menu_hr_paid_leave_allowance_root"
+              name="Paid Leave Allowance"
+              parent="hr_holidays.menu_hr_holidays_root"
+              sequence="4"/>
+
+    <menuitem id="menu_hr_paid_leave_allowance_wizard"
+              name="Leave Allowance Request"
+              parent="menu_hr_paid_leave_allowance_root"
+              action="action_paid_leave_allowance_wizard"
+              sequence="10"/>
+
+    <menuitem id="menu_hr_paid_leave_allowance_log"
+              name="Leave Allowance Report"
+              parent="menu_hr_paid_leave_allowance_root"
+              action="action_paid_leave_allowance_log"
+              sequence="20"/>
+</odoo>

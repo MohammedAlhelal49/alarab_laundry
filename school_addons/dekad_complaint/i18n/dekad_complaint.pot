@@ -1,0 +1,661 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_complaint
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-28 14:20+0000\n"
+"PO-Revision-Date: 2025-09-28 14:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.de_complaint_analysis_report
+msgid "<b>Created by:</b>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.de_complaint_analysis_report
+msgid "<b>Total complaint</b>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_create
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_update
+msgid "<option value=\"\">Select category</option>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_update
+msgid ""
+"<span class=\"btn btn-outline-info btn-sm ml-2 file-update-trigger\">\n"
+"                                    Change\n"
+"                                </span>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_create
+msgid "<span class=\"clear-icon\">Clear</span>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_create
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_update
+msgid ""
+"<span class=\"file-size-alert\">Attachment size must be less than 2mb</span>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_create
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_update
+msgid "<span class=\"important-field-asterisk\">*</span>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_breadcrumbs
+msgid "<span>/</span>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_show
+msgid "<strong class=\"\">Attachment :</strong>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_show
+msgid "<strong class=\"\">Created at :</strong>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_show
+msgid "<strong class=\"\">Sequence :</strong>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_show
+msgid "<strong class=\"\">State :</strong>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_show
+msgid "<strong class=\"\">Subject :</strong>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_show
+msgid "<strong>Action to be take :</strong>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_show
+msgid "<strong>Category :</strong>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.de_complaint_analysis_report
+msgid "<strong>Complaint Analysis</strong>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_show
+msgid "<strong>Description :</strong>"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields.selection,name:dekad_complaint.selection__de_complaint_category__type__academic
+msgid "Academic"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__action
+msgid "Action Taken"
+msgstr ""
+
+#. module: dekad_complaint
+#. odoo-python
+#: code:addons/dekad_complaint/controllers/main.py:0
+#: model:ir.model.fields.selection,name:dekad_complaint.selection__de_complaint__state__action
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_search
+msgid "Action taken"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_form
+msgid "Action to take"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint
+msgid "Actions"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: dekad_complaint
+#. odoo-python
+#: code:addons/dekad_complaint/controllers/main.py:0
+msgid "All"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__file
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_create
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_update
+msgid "Attachment"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.de_complaint_analysis_wizard_form
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_form
+msgid "Cancel"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.ui.menu,name:dekad_complaint.menu_de_complaint_category
+msgid "Categories"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.actions.act_window,name:dekad_complaint.act_open_de_complaint_category_view
+msgid "Categorise"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__category_id
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.de_complaint_analysis_report
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_create
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_update
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_search
+msgid "Category"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__is_complaint_user
+msgid "Check Complaint user"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_update
+msgid "Clear"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint
+msgid "Close"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_graph
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_list
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_search
+msgid "Complaint"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.de_complaint_analysis_wizard_form
+msgid "Complaint Analysis"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_category_list
+msgid "Complaint Category"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.ui.menu,name:dekad_complaint.menu_de_complaint_analysis_wizard
+msgid "Complaint Report"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.actions.act_window,name:dekad_complaint.act_open_de_complaint_analysis_wizard_view
+msgid "Complaint analysis"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model,name:dekad_complaint.model_de_complaint_category
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_category_search
+msgid "Complaint category"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_show
+msgid "Complaint full information"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.actions.act_window,name:dekad_complaint.act_open_de_complaint_view
+#: model:ir.model,name:dekad_complaint.model_de_complaint
+#: model:ir.ui.menu,name:dekad_complaint.menu_de_complaint
+#: model:ir.ui.menu,name:dekad_complaint.menu_de_complaint_root
+#: model:res.groups,name:dekad_complaint.group_de_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_breadcrumbs
+msgid "Complaints"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.ui.menu,name:dekad_complaint.menu_de_complaint_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_form
+msgid "Confirm"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields.selection,name:dekad_complaint.selection__de_complaint__state__confirm
+msgid "Confirmed"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_breadcrumbs
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_create
+msgid "Create"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_search
+msgid "Create by"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_create
+msgid "Create new Complaint"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__created_by
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint_analysis_wizard__created_by
+msgid "Created By"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.de_complaint_analysis_report
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint
+msgid "Created at"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__create_uid
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint_analysis_wizard__create_uid
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint_category__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__create_date
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint_analysis_wizard__create_date
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint_category__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint
+msgid "Delete"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__description
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_create
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_update
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_form
+msgid "Description"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__display_name
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint_analysis_wizard__display_name
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint_category__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields.selection,name:dekad_complaint.selection__de_complaint__state__draft
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_form
+msgid "Draft"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,help:dekad_complaint.field_de_complaint__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_search
+msgid "Group By..."
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__id
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint_analysis_wizard__id
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint_category__id
+msgid "ID"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,help:dekad_complaint.field_de_complaint__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,help:dekad_complaint.field_de_complaint__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,help:dekad_complaint.field_de_complaint__message_has_error
+#: model:ir.model.fields,help:dekad_complaint.field_de_complaint__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__write_uid
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint_analysis_wizard__write_uid
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint_category__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__write_date
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint_analysis_wizard__write_date
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint_category__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint_category__name
+msgid "Name"
+msgstr ""
+
+#. module: dekad_complaint
+#. odoo-python
+#: code:addons/dekad_complaint/controllers/main.py:0
+msgid "Newest"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields.selection,name:dekad_complaint.selection__de_complaint_category__type__non-academic
+msgid "Non Academic"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,help:dekad_complaint.field_de_complaint__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,help:dekad_complaint.field_de_complaint__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: dekad_complaint
+#. odoo-python
+#: code:addons/dekad_complaint/controllers/main.py:0
+msgid "Oldest"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__parent_id
+#: model:ir.model.fields.selection,name:dekad_complaint.selection__de_complaint__created_by__parent
+#: model:ir.model.fields.selection,name:dekad_complaint.selection__de_complaint_analysis_wizard__created_by__parent
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.de_complaint_analysis_report
+msgid "Parent"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.de_complaint_analysis_wizard_form
+msgid "Print"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__readonly_field
+msgid "Readonly field"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields.selection,name:dekad_complaint.selection__de_complaint__state__reject
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_form
+msgid "Reject"
+msgstr ""
+
+#. module: dekad_complaint
+#. odoo-python
+#: code:addons/dekad_complaint/controllers/main.py:0
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_search
+msgid "Rejected"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint
+msgid "Show"
+msgstr ""
+
+#. module: dekad_complaint
+#. odoo-python
+#: code:addons/dekad_complaint/controllers/main.py:0
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_search
+msgid "State"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,help:dekad_complaint.field_de_complaint__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__student_id
+#: model:ir.model.fields.selection,name:dekad_complaint.selection__de_complaint__created_by__student
+#: model:ir.model.fields.selection,name:dekad_complaint.selection__de_complaint_analysis_wizard__created_by__student
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.de_complaint_analysis_report
+msgid "Student"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__subject
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.de_complaint_analysis_report
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_create
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_update
+msgid "Subject"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_form
+msgid "Take action"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__teacher_id
+#: model:ir.model.fields.selection,name:dekad_complaint.selection__de_complaint__created_by__teacher
+#: model:ir.model.fields.selection,name:dekad_complaint.selection__de_complaint_analysis_wizard__created_by__teacher
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.de_complaint_analysis_report
+msgid "Teacher"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint
+msgid "There are no Complaints to display."
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.de_complaint_analysis_report
+msgid "There is no complaints to display"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint_category__type
+msgid "Type"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,help:dekad_complaint.field_de_complaint__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_breadcrumbs
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_update
+msgid "Update"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.student_complaint_update
+msgid "Update complaint data"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,help:dekad_complaint.field_de_complaint__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: dekad_complaint
+#: model_terms:ir.ui.view,arch_db:dekad_complaint.view_de_complaint_form
+msgid "complaint"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model,name:dekad_complaint.model_report_dekad_complaint_de_complaint_analysis_report
+msgid "complaint Analysis Report"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model,name:dekad_complaint.model_de_complaint_analysis_wizard
+msgid "complaint Analysis Wizard"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.actions.report,name:dekad_complaint.act_open_de_complaint_analysis_report_view
+msgid "complaint Analysis report"
+msgstr ""
+
+#. module: dekad_complaint
+#: model:ir.model.fields,field_description:dekad_complaint.field_de_complaint__state
+msgid "state"
+msgstr ""

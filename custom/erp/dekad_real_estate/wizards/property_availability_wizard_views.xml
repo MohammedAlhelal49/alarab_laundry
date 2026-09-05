@@ -1,0 +1,85 @@
+<odoo>
+    <!-- Wizard input form -->
+    <record id="view_property_availability_wizard_form" model="ir.ui.view">
+        <field name="name">real.estate.property.availability.wizard.form</field>
+        <field name="model">real.estate.property.availability.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="building_id"/>
+                    <field name="date_start"
+                               widget="daterange"
+                               options="{'end_date_field': 'date_end'}"
+                    />
+                    <field name="date_end" invisible="1"/>
+                </group>
+                <footer>
+                    <button name="action_search" string="Search" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_property_availability_wizard" model="ir.actions.act_window">
+        <field name="name">Property Availability</field>
+        <field name="res_model">real.estate.property.availability.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Result list view -->
+    <record id="view_property_availability_wizard_line_list" model="ir.ui.view">
+        <field name="name">real.estate.property.availability.wizard.line.list</field>
+        <field name="model">real.estate.property.availability.wizard.line</field>
+        <field name="arch" type="xml">
+            <list create="false" edit="false" delete="false">
+                <field name="property_id" decoration-danger="not is_available" decoration-success="is_available"/>
+                <field name="property_type" optional="show"/>
+                <field name="is_available"/>
+                <field name="contract_id"/>
+                <field name="rent_start_date"/>
+                <field name="rent_end_date"/>
+                <button name="action_open_contract"
+                        type="object"
+                        icon="fa-file-text-o"
+                        invisible="not contract_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_property_availability_wizard_line_search" model="ir.ui.view">
+        <field name="name">real.estate.property.availability.wizard.line.search</field>
+        <field name="model">real.estate.property.availability.wizard.line</field>
+        <field name="arch" type="xml">
+            <search string="Property Availability">
+                <field name="property_id"/>
+                <field name="contract_id"/>
+                <field name="property_type"/>
+
+                <separator/>
+
+                <filter name="available"
+                        string="Available"
+                        domain="[('is_available', '=', True)]"/>
+
+                <filter name="Un available"
+                        string="Un available"
+                        domain="[('is_available', '=', False)]"/>
+
+                <separator/>
+
+                <group expand="0" string="Group By">
+                    <filter name="group_available"
+                            string="Availability"
+                            context="{'group_by': 'availability_status'}"/>
+                    <filter name="property_type"
+                            string="Property Type"
+                            context="{'group_by': 'property_type'}"/>
+
+                </group>
+            </search>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_hr_expense_sheet_formm_inherit_sequence" model="ir.ui.view">
+        <field name="name">hr.expense.sheet.formm.inherit.sequence</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='expense_line_ids']/list/field[@name='date']" position="before">
+                <field name="line_index" readonly="1" optional="show"/>
+                <field name="sequence" widget="handle"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

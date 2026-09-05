@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="de_holiday_1" model="de.holiday">
+            <field name="name">Teachers holiday</field>
+            <field name="date">2024-10-06</field>
+        </record>
+        <record id="de_holiday_2" model="de.holiday">
+            <field name="name">National holiday</field>
+            <field name="date">2025-12-02</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_contract_view_form_ae_total_allowances" model="ir.ui.view">
+        <field name="name">hr.contract.view.form.ae.total.allowances</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='date_start']" position="after">
+                <field name="actual_start_date"/>
+            </xpath>
+
+            <div name="l10n_ae_other_allowances" position="after">
+                <label
+                    for="l10n_ae_total_allowances"
+                    invisible="country_code != 'AE'"/>
+                <div
+                    class="o_row"
+                    name="l10n_ae_total_allowances"
+                    invisible="country_code != 'AE'">
+                    <field name="l10n_ae_total_allowances" nolabel="1" readonly="1"/>
+                    <span>/ month</span>
+                </div>
+            </div>
+        </field>
+    </record>
+
+    <!-- Additional Contract Tab -->
+    <record id="hr_contract_view_form_additional_tab" model="ir.ui.view">
+        <field name="name">hr.contract.view.form.additional.tab</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Visa Contract" name="additional_contract">
+
+                    <group col="2">
+
+                        <group string="Visa Contract Details">
+
+                            <field name="additional_job_id"/>
+                            <field name="additional_wage_type"/>
+                            <field name="additional_schedule_pay"/>
+
+                            <separator/>
+
+
+                            <label for="additional_wage"/>
+                            <div class="o_row">
+                                <field name="additional_wage" nolabel="1"/>
+                                <span invisible="additional_schedule_pay != 'monthly'">/ month</span>
+                                <span invisible="additional_schedule_pay != 'daily'">/ day</span>
+                                <span invisible="additional_schedule_pay != 'weekly'">/ week</span>
+                                <span invisible="additional_schedule_pay != 'bi-weekly'">/ two weeks</span>
+                                <span invisible="additional_schedule_pay != 'semi-monthly'">/ half-month</span>
+                                <span invisible="additional_schedule_pay != 'bi-monthly'">/ two months</span>
+                                <span invisible="additional_schedule_pay != 'quarterly'">/ quarter</span>
+                                <span invisible="additional_schedule_pay != 'semi-annually'">/ half-year</span>
+                                <span invisible="additional_schedule_pay != 'annually'">/ year</span>
+                            </div>
+
+                            <!-- Housing -->
+                            <label for="additional_housing_allowance"/>
+                            <div class="o_row">
+                                <field name="additional_housing_allowance" nolabel="1"/>
+                                <span>/ month</span>
+                            </div>
+
+                            <!-- Transport -->
+                            <label for="additional_transportation_allowance"/>
+                            <div class="o_row">
+                                <field name="additional_transportation_allowance" nolabel="1"/>
+                                <span>/ month</span>
+                            </div>
+
+                            <!-- Other -->
+                            <label for="additional_other_allowances"/>
+                            <div class="o_row">
+                                <field name="additional_other_allowances" nolabel="1"/>
+                                <span>/ month</span>
+                            </div>
+
+                            <!-- Total -->
+                            <label for="additional_total_allowances"/>
+                            <div class="o_row">
+                                <field name="additional_total_allowances" nolabel="1" readonly="1"/>
+                                <span>/ month</span>
+                            </div>
+
+                        </group>
+
+                        <group/>
+
+                    </group>
+
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

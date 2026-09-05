@@ -1,0 +1,70 @@
+<odoo>
+    <!-- Kanban view for van.assignment.customer model -->
+    <record id="view_van_assignment_customer_kanban" model="ir.ui.view">
+        <field name="name">van.assignment.customer.kanban</field>
+        <field name="model">van.assignment.customer</field>
+        <field name="arch" type="xml">
+            <kanban create="0">
+                <field name="partner_id"/>
+                <field name="city"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="country_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_card">
+                            <div class="o_kanban_image">
+                                <img t-if="record.partner_id.raw_value" t-att-src="'/web/image/res.partner/' + record.partner_id.raw_value + '/image_128'" class="img img-fluid rounded"/>
+                            </div>
+                            <div class="o_kanban_details">
+                                <a t-attf-href="/web#id=#{record.partner_id.raw_value}&amp;model=res.partner&amp;view_type=form" target="_self">
+                                    <strong>
+                                        <field name="partner_id"/>
+                                    </strong>
+                                    <div t-if="record.email.raw_value">
+                                        <field name="email" widget="email"/>
+                                    </div>
+                                    <div t-if="record.phone.raw_value">
+                                        <field name="phone"/>
+                                    </div>
+                                    <div>
+                                        <field name="city"/>
+                                        <span t-if="record.country_id.raw_value">, </span>
+                                        <field name="country_id"/>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Action to open kanban view for customers assigned to the logged-in user -->
+
+    <record id="action_my_customers_kanban" model="ir.actions.act_window">
+        <field name="name">My Customers</field>
+        <field name="res_model">van.assignment.customer</field>
+        <field name="view_mode">kanban</field>
+        <!-- Filter records based on driver assignment to current user -->
+        <field name="domain">[('assignment_id.driver_id.related_user_id', '=', uid)]</field>
+        <field name="view_id" ref="view_van_assignment_customer_kanban"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No customers assigned to your van yet.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu item to access the filtered customer kanban view from POS menu -->
+
+    <menuitem
+        id="menu_my_customers_kanban"
+        name="My Customers"
+        parent="point_of_sale.menu_point_of_sale"
+        action="action_my_customers_kanban"
+        sequence="25"/>
+
+</odoo>

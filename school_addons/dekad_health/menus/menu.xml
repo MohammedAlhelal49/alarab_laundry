@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_de_health_root"
+                  name="Health"
+                  sequence="160"
+                  web_icon="dekad_health,static/description/icon.png"
+                  groups="dekad_health.group_de_health"/>
+
+        <menuitem id="menu_de_health_general"
+                  name="Health data"
+                  parent="menu_de_health_root"
+                  sequence="10"
+        />
+
+        <menuitem id="menu_student_de_health"
+                  name="Students"
+                  parent="menu_de_health_general"
+                  sequence="10"
+                  action="act_open_student_de_health_view"
+
+        />
+
+        <menuitem id="menu_teacher_de_health"
+                  name="teachers"
+                  parent="menu_de_health_general"
+                  sequence="20"
+                  action="act_open_teacher_de_health_view"
+        />
+
+
+        <menuitem id="menu_de_health_checkup_general"
+                  name="Health Checkups"
+                  parent="menu_de_health_root"
+                  sequence="20"
+        />
+
+        <menuitem id="menu_student_de_health_checkup"
+                  name="Students"
+                  parent="menu_de_health_checkup_general"
+                  sequence="10"
+                  action="act_open_student_de_health_checkup_view"
+
+        />
+
+        <menuitem id="menu_teacher_de_health_checkup"
+                  name="teachers"
+                  parent="menu_de_health_checkup_general"
+                  sequence="20"
+                  action="act_open_teacher_de_health_checkup_view"
+        />
+    </data>
+</odoo>

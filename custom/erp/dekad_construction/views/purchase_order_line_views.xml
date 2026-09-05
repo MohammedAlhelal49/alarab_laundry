@@ -1,0 +1,38 @@
+<odoo>
+
+    <record id="view_purchase_order_form_inherit_task" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.task</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+
+            <!--xpath expr="//field[@name='partner_id']" position="after">
+                <field name="project_id" options="{'no_create': True}"/>
+            </xpath-->
+
+            <xpath expr="//field[@name='order_line']/form//field[@name='taxes_id']" position="after">
+                <field name="task_id"
+                       domain="[('project_id', '=', parent.project_id), ('project_id', '!=', False)]"
+                       options="{'no_create': True}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/list//field[@name='taxes_id']" position="after">
+                <field name="task_id"
+                       domain="[('project_id', '=', parent.project_id), ('project_id', '!=', False)]"
+                       options="{'no_create': True}"/>
+            </xpath>
+
+            <!-- Hide Unit Price column in the main Order Lines list view -->
+            <xpath expr="//field[@name='order_line']/list//field[@name='price_unit']" position="attributes">
+                <attribute name="column_invisible">1</attribute>
+            </xpath>
+
+            <!-- Hide Unit Price field if a line is opened in a pop-up form -->
+            <!--xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath-->
+
+        </field>
+    </record>
+
+</odoo>

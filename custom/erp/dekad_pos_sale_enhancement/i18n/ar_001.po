@@ -1,0 +1,527 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_pos_sale_enhancement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-10 09:13+0000\n"
+"PO-Revision-Date: 2026-01-10 09:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: ar\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: dekad_pos_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.view_pos_config_form_inherit_restrict_cashiers
+msgid "Allow Employee"
+msgstr "السماح للموظف"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_pos_config__allow_price_override
+msgid "Allow Price Out of Range"
+msgstr "السماح بالسعر خارج النطاق"
+
+#. module: dekad_pos_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.view_pos_config_form_inherit_price_override
+msgid "Allow prices outside the configured min/max range for products."
+msgstr "السماح بأسعار خارج النطاق الأدنى/الأقصى المحدد للمنتجات."
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,help:dekad_pos_sale_enhancement.field_pos_config__allow_price_override
+msgid ""
+"Allow setting prices in the POS that are below the minimum or above the "
+"maximum price limit."
+msgstr "السماح بتعيين أسعار في نقطة البيع أقل من الحد الأدنى أو أعلى من الحد الأقصى للسعر."
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_pos_config__allowed_cashier_ids
+msgid "Allowed Cashiers"
+msgstr "المحاسبون المسموح لهم"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_product__x_name_ar
+msgid "Arabic Name"
+msgstr "الاسم العربي"
+
+#. module: dekad_pos_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.view_pos_config_form_inherit_pdf_download
+msgid "Auto-Download Invoice PDF"
+msgstr "التنزيل التلقائي لملف PDF للفاتورة"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_pos_config__enable_invoice_pdf_download
+msgid "Auto-download Invoice PDF"
+msgstr "التنزيل التلقائي لملف PDF للفاتورة"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_multi_uom_price__category_id
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_tmpl_multi_uom_price__category_id
+msgid "Category"
+msgstr "الفئة"
+
+#. module: dekad_pos_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.view_pos_config_form_inherit_restrict_cashiers
+msgid "Choose Allowed Employees"
+msgstr "اختر الموظفين المسموح لهم"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model,name:dekad_pos_sale_enhancement.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_account_bank_statement_line__partner_contact
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_account_move__partner_contact
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.view_account_invoice_filter_inherit_contact
+msgid "Contact Phone"
+msgstr "هاتف الاتصال"
+
+#. module: dekad_pos_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.view_pos_config_form_inherit_pdf_download
+msgid "Control whether invoice PDF is auto-downloaded after validation."
+msgstr "التحكم في ما إذا كان سيتم تنزيل ملف PDF للفاتورة تلقائيًا بعد التحقق."
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,help:dekad_pos_sale_enhancement.field_product_multi_uom_price__category_id
+#: model:ir.model.fields,help:dekad_pos_sale_enhancement.field_product_tmpl_multi_uom_price__category_id
+msgid ""
+"Conversion between Units of Measure can only occur if they belong to the "
+"same category. The conversion will be made based on the ratios."
+msgstr "يمكن أن يحدث التحويل بين وحدات القياس فقط إذا كانت تنتمي إلى نفس الفئة. سيتم إجراء التحويل بناءً على النسب."
+
+#. module: dekad_pos_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.view_pos_order_form_correction
+msgid "Correct Order"
+msgstr "تصحيح الطلب"
+
+#. module: dekad_pos_sale_enhancement
+#: model_terms:ir.actions.act_window,help:dekad_pos_sale_enhancement.action_pos_invoice_custom
+msgid "Create a new customer invoice"
+msgstr "إنشاء فاتورة عميل جديدة"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_multi_uom_price__create_uid
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_tmpl_multi_uom_price__create_uid
+msgid "Created by"
+msgstr "تم الإنشاء بواسطة"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_multi_uom_price__create_date
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_tmpl_multi_uom_price__create_date
+msgid "Created on"
+msgstr "تم الإنشاء في"
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/xml/extend_order_receipt.xml:0
+msgid "Customer :"
+msgstr "العميل :"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.ui.menu,name:dekad_pos_sale_enhancement.menu_pos_customer_payments
+msgid "Customer Payments"
+msgstr "مدفوعات العملاء"
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/js/discount_limit_patch.js:0
+#: code:addons/dekad_pos_sale_enhancement/static/src/js/pos_price_override.js:0
+msgid "Discount Limit Exceeded"
+msgstr "تم تجاوز حد الخصم"
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/js/discount_limit_patch.js:0
+msgid "Discount Percentage"
+msgstr "نسبة الخصم"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_multi_uom_price__display_name
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_tmpl_multi_uom_price__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.constraint,message:dekad_pos_sale_enhancement.constraint_product_tmpl_multi_uom_price_product_tmpl_uom_uniq
+msgid ""
+"Each Point of sale Unit of Measure must be unique per product template."
+msgstr "يجب أن تكون كل وحدة قياس في نقطة البيع فريدة لكل قالب منتج."
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.constraint,message:dekad_pos_sale_enhancement.constraint_product_multi_uom_price_product_variant_uom_uniq
+msgid "Each Point of sale Unit of Measure must be unique per product variant."
+msgstr "يجب أن تكون كل وحدة قياس في نقطة البيع فريدة لكل متغير منتج."
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model,name:dekad_pos_sale_enhancement.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_pos_config__enable_whatsapp_template
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.view_pos_config_form_inherit_add_whatsapp_template
+msgid "Enable WhatsApp Template"
+msgstr "تمكين قالب واتساب"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,help:dekad_pos_sale_enhancement.field_pos_config__enable_whatsapp_template
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.view_pos_config_form_inherit_add_whatsapp_template
+msgid "Enable sending WhatsApp messages from this POS."
+msgstr "تمكين إرسال رسائل واتساب من نقطة البيع هذه."
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.actions.server,name:dekad_pos_sale_enhancement.action_cancel_pos_order
+msgid "Force Cancel order"
+msgstr "إلغاء الطلب إجباريًا"
+
+#. module: dekad_pos_sale_enhancement
+#: model:res.groups,comment:dekad_pos_sale_enhancement.group_pos_see_all_orders
+msgid ""
+"Grants access to all POS orders and reports. If disabled, the user can only see their\n"
+"                own data.\n"
+"            "
+msgstr "يمنح صلاحية الوصول إلى جميع أوامر وتقارير نقاط البيع. إذا تم تعطيله، يمكن للمستخدم رؤية بياناته الخاصة فقط."
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_pos_config__hide_cash_control
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.view_pos_config_form_inherit_pdf_download
+msgid "Hide cache control"
+msgstr "إخفاء تحكم النقدية"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_multi_uom_price__id
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_tmpl_multi_uom_price__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,help:dekad_pos_sale_enhancement.field_pos_config__enable_invoice_pdf_download
+msgid "If checked, invoice PDF will be downloaded after validation."
+msgstr "إذا تم تحديده، سيتم تنزيل ملف PDF للفاتورة بعد التحقق."
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,help:dekad_pos_sale_enhancement.field_pos_config__restrict_cashiers
+msgid "If enabled, only selected employees will be available in POS."
+msgstr "إذا تم تمكينه، سيكون الموظفون المحددون فقط متاحين في نقطة البيع."
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/js/pos_price_override.js:0
+msgid "Invalid Price"
+msgstr "سعر غير صالح"
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/js/payment_screen/payment_screen.xml:0
+msgid "Invoice"
+msgstr "الفاتورة"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.actions.act_window,name:dekad_pos_sale_enhancement.action_pos_invoice_custom
+#: model:ir.ui.menu,name:dekad_pos_sale_enhancement.menu_pos_invoice_custom
+msgid "Invoices"
+msgstr "الفواتير"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model,name:dekad_pos_sale_enhancement.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_multi_uom_price__write_uid
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_tmpl_multi_uom_price__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_multi_uom_price__write_date
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_tmpl_multi_uom_price__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: dekad_pos_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.res_config_settings_view_form_inherit_discount_limit
+msgid "Limit Global Discount"
+msgstr "تقييد الخصم الإجمالي"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_pos_config__enable_max_discount_limit
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_res_config_settings__enable_max_discount_limit
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.res_config_settings_view_form_inherit_discount_limit
+msgid "Limit Per-Line Discount"
+msgstr "تقييد الخصم لكل سطر"
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/js/navbar/navbar.xml:0
+msgid "Logo"
+msgstr "الشعار"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_pos_config__max_discount_percent
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_res_config_settings__max_discount_percent
+msgid "Max Allowed Discount (%)"
+msgstr "الحد الأقصى المسموح به للخصم (%)"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_pos_config__max_global_discount
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_res_config_settings__max_global_discount_percent
+msgid "Maximum Global Discount (%)"
+msgstr "أقصى خصم إجمالي (%)"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_product__max_price
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_template__max_price
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.product_variant_easy_edit_view_inherited
+msgid "Maximum Sale Price"
+msgstr "أقصى سعر بيع"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_product__min_price
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_template__min_price
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.product_variant_easy_edit_view_inherited
+msgid "Minimum Sale Price"
+msgstr "أدنى سعر بيع"
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/js/invoice_button/invoice_button.js:0
+msgid "Network Error"
+msgstr "خطأ في الشبكة"
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/app/control_buttons/multi_uom_price_button.js:0
+msgid "No UOM"
+msgstr "لا توجد وحدة قياس"
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/js/pos_price_override.js:0
+msgid "No items in order."
+msgstr "لا توجد عناصر في الطلب."
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/app/control_buttons/multi_uom_price_button.js:0
+msgid "No product"
+msgstr "لا يوجد منتج"
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/js/pos_price_override.js:0
+msgid "OK"
+msgstr "موافق"
+
+#. module: dekad_pos_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.view_pos_config_form_inherit_restrict_cashiers
+msgid "Only allow selected employees to act as cashiers."
+msgstr "السماح للموظفين المحددين فقط بالعمل كمحاسبين."
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,help:dekad_pos_sale_enhancement.field_pos_config__allowed_cashier_ids
+msgid "Only selected employees will be available as cashiers in POS."
+msgstr "سيتمكن الموظفون المحددون فقط من العمل كمحاسبين في نقطة البيع."
+
+#. module: dekad_pos_sale_enhancement
+#: model:res.groups,name:dekad_pos_sale_enhancement.group_pos_see_all_orders
+msgid "POS Admin Privileges"
+msgstr "صلاحيات إدارة نقطة البيع"
+
+#. module: dekad_pos_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.product_form_inherit_uom_prices_pos_view
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.product_template_form_inherit_uom_prices_pos_view
+msgid "POS UOM items"
+msgstr "عناصر وحدة القياس في نقطة البيع"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model,name:dekad_pos_sale_enhancement.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "تهيئة نقطة البيع"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model,name:dekad_pos_sale_enhancement.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "طلبات نقطة البيع"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model,name:dekad_pos_sale_enhancement.model_pos_session
+msgid "Point of Sale Session"
+msgstr "جلسة نقطة البيع"
+
+#. module: dekad_pos_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.view_pos_config_form_inherit_price_override
+msgid "Price Override Control"
+msgstr "تحكم في تجاوز السعر"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model,name:dekad_pos_sale_enhancement.model_product_template
+msgid "Product"
+msgstr "المنتج"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_tmpl_multi_uom_price__product_tmpl_id
+msgid "Product Template"
+msgstr "قالب المنتج"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model,name:dekad_pos_sale_enhancement.model_product_product
+msgid "Product Variant"
+msgstr "متغير المنتج"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model,name:dekad_pos_sale_enhancement.model_product_tmpl_multi_uom_price
+msgid "Product template multiple uom price"
+msgstr "سعر وحدات القياس المتعددة لقالب المنتج"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_multi_uom_price__product_id
+msgid "Product variant"
+msgstr "متغير المنتج"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model,name:dekad_pos_sale_enhancement.model_product_multi_uom_price
+msgid "Product variant multiple uom price"
+msgstr "سعر وحدات القياس المتعددة لمتغير المنتج"
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/js/pos_price_override.js:0
+msgid ""
+"Product: %s\n"
+"Price must be between %s and %s. You entered: %s"
+msgstr ""
+"المنتج: %s\n"
+"يجب أن يكون السعر بين %s و %s. أدخلت: %s"
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/js/pos_price_override.js:0
+msgid ""
+"Product: %s\n"
+"The maximum allowed discount is %s%.\n"
+"You entered: %s%."
+msgstr ""
+"المنتج: %s\n"
+"الحد الأقصى المسموح به للخصم هو %s%.\n"
+"أدخلت: %s%."
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_pos_config__restrict_cashiers
+msgid "Restrict Cashiers"
+msgstr "تقييد المحاسبين"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_pos_config__restrict_global_discount
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_res_config_settings__enable_restrict_global_discount
+msgid "Restrict Global Discount"
+msgstr "تقييد الخصم الإجمالي"
+
+#. module: dekad_pos_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.res_config_settings_view_form_inherit_discount_limit
+msgid ""
+"Restrict how much discount a cashier can apply using the global discount "
+"button."
+msgstr "تقييد مقدار الخصم الذي يمكن للمحاسب تطبيقه باستخدام زر الخصم الإجمالي."
+
+#. module: dekad_pos_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.res_config_settings_view_form_inherit_discount_limit
+msgid ""
+"Restrict how much discount a cashier can give per line when Line Discounts "
+"are enabled."
+msgstr "تقييد مقدار الخصم الذي يمكن للمحاسب منحه لكل سطر عند تمكين خصومات السطر."
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_pos_config__whatsapp_template_id
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.view_pos_config_form_inherit_add_whatsapp_template
+msgid "Select WhatsApp Template"
+msgstr "اختر قالب واتساب"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,help:dekad_pos_sale_enhancement.field_pos_config__whatsapp_template_id
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.view_pos_config_form_inherit_add_whatsapp_template
+msgid "Select a default WhatsApp message template for this POS configuration."
+msgstr "اختر قالب رسالة واتساب افتراضيًا لتكوين نقطة البيع هذه."
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/app/control_buttons/multi_uom_price_button.js:0
+msgid "Select a product line first."
+msgstr "اختر سطر المنتج أولاً."
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/xml/extend_order_receipt.xml:0
+msgid "Tax Invoice"
+msgstr "فاتورة ضريبية"
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/app/control_buttons/multi_uom_price_button.js:0
+msgid "There is no configured UOM for ${selectedLine.product_id.display_name}"
+msgstr "لا توجد وحدة قياس مكونة لـ ${selectedLine.product_id.display_name}"
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-python
+#: code:addons/dekad_pos_sale_enhancement/models/pos_order.py:0
+msgid ""
+"This POS order was created as a correction of a previously cancelled order."
+msgstr "تم إنشاء طلب نقطة البيع هذا كتصحيح لطلب تم إلغاؤه سابقًا."
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/app/control_buttons/multi_uom_price_button.js:0
+#: code:addons/dekad_pos_sale_enhancement/static/src/app/control_buttons/multi_uom_price_button.xml:0
+msgid "UOM"
+msgstr "وحدة القياس"
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_product__multi_uom_price_ids
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_template__multi_uom_price_ids
+msgid "UOM Prices"
+msgstr "أسعار وحدات القياس"
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/js/invoice_button/invoice_button.js:0
+msgid "Unable to download invoice."
+msgstr "تعذر تنزيل الفاتورة."
+
+#. module: dekad_pos_sale_enhancement
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_multi_uom_price__uom_id
+#: model:ir.model.fields,field_description:dekad_pos_sale_enhancement.field_product_tmpl_multi_uom_price__uom_id
+msgid "Unit of Measure"
+msgstr "وحدة القياس"
+
+#. module: dekad_pos_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.view_invoice_form_inherit_whatsapp
+msgid "WhatsApp"
+msgstr "واتساب"
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-javascript
+#: code:addons/dekad_pos_sale_enhancement/static/src/js/discount_limit_patch.js:0
+msgid "You are not allowed to apply a discount greater than ${maxAllowed}%."
+msgstr "غير مسموح لك بتطبيق خصم أكبر من ${maxAllowed}%."
+
+#. module: dekad_pos_sale_enhancement
+#. odoo-python
+#: code:addons/dekad_pos_sale_enhancement/models/pos_order.py:0
+msgid "You must have the group (Accounting Invoicing) to perform this action."
+msgstr "يجب أن تكون عضوًا في المجموعة (إصدار الفواتير المحاسبية) لأداء هذا الإجراء."
+
+#. module: dekad_pos_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.res_config_settings_view_form_inherit_discount_limit
+msgid "e.g. 10 (%)"
+msgstr "مثال: 10 (%)"
+
+#. module: dekad_pos_sale_enhancement
+#: model_terms:ir.ui.view,arch_db:dekad_pos_sale_enhancement.res_config_settings_view_form_inherit_discount_limit
+msgid "e.g. 20 (%)"
+msgstr "مثال: 20 (%)"

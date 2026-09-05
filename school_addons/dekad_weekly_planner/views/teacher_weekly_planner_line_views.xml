@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- list View -->
+    <record id="view_teacher_weekly_planner_line_list" model="ir.ui.view">
+        <field name="name">teacher.weekly.planner.line.list</field>
+        <field name="model">teacher.weekly.planner.line</field>
+        <field name="arch" type="xml">
+            <list string="Planning Lines" editable="top">
+                <field name="planner_id" readonly="1"/>
+                <field name="teacher_id" readonly="1"/>
+                <field name="day_of_week"/>
+                <field name="start_time" widget="float_time"/>
+                <field name="end_time" widget="float_time"/>
+                <field name="duration" widget="float_time" readonly="1"/>
+                <field name="activity_type"/>
+                <field name="subject_id" options="{'no_create': True}"/>
+                <field name="classroom_id" options="{'no_create': True}"/>
+                <field name="grade_id" readonly="1"/>
+                <field name="notes"/>
+                <field name="state" readonly="1" widget="badge"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_teacher_weekly_planner_line_form" model="ir.ui.view">
+        <field name="name">teacher.weekly.planner.line.form</field>
+        <field name="model">teacher.weekly.planner.line</field>
+        <field name="arch" type="xml">
+            <form string="Planning Line">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="planner_id" options="{'no_create': True}"/>
+                            <field name="teacher_id" readonly="1"/>
+                            <field name="state" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="day_of_week"/>
+                            <field name="activity_type"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Time">
+                            <label for="start_time"/>
+                            <div class="o_row">
+                                <field name="start_time" widget="float_time" class="oe_inline"/>
+                                <span class="oe_inline"> to </span>
+                                <field name="end_time" widget="float_time" class="oe_inline"/>
+                            </div>
+                            <field name="duration" widget="float_time"/>
+                            <field name="start_time_formatted" readonly="1"/>
+                            <field name="end_time_formatted" readonly="1"/>
+                        </group>
+                        <group string="Details" invisible="activity_type != 'lesson'">
+                            <field name="subject_id" options="{'no_create': True}"/>
+                            <field name="classroom_id" options="{'no_create': True}"/>
+                            <field name="grade_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="notes" placeholder="Additional notes..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Calendar View for Lines -->
+    <record id="view_teacher_weekly_planner_line_calendar" model="ir.ui.view">
+        <field name="name">teacher.weekly.planner.line.calendar</field>
+        <field name="model">teacher.weekly.planner.line</field>
+        <field name="arch" type="xml">
+            <calendar string="Weekly Activities"
+                      date_start="start_time"
+                      date_stop="end_time"
+                      color="teacher_id"
+                      mode="week"
+                      event_open_popup="true"
+                      quick_create="false">
+                <field name="teacher_id"/>
+                <field name="activity_type"/>
+                <field name="subject_id"/>
+                <field name="classroom_id"/>
+                <field name="display_name"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!-- Pivot View -->
+    <record id="view_teacher_weekly_planner_line_pivot" model="ir.ui.view">
+        <field name="name">teacher.weekly.planner.line.pivot</field>
+        <field name="model">teacher.weekly.planner.line</field>
+        <field name="arch" type="xml">
+            <pivot string="Planning Analysis">
+                <field name="teacher_id" type="row"/>
+                <field name="day_of_week" type="col"/>
+                <field name="duration" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Graph View -->
+    <record id="view_teacher_weekly_planner_line_graph" model="ir.ui.view">
+        <field name="name">teacher.weekly.planner.line.graph</field>
+        <field name="model">teacher.weekly.planner.line</field>
+        <field name="arch" type="xml">
+            <graph string="Planning Statistics" type="bar">
+                <field name="teacher_id"/>
+                <field name="duration" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_teacher_weekly_planner_line_search" model="ir.ui.view">
+        <field name="name">teacher.weekly.planner.line.search</field>
+        <field name="model">teacher.weekly.planner.line</field>
+        <field name="arch" type="xml">
+            <search string="Search Planning Lines">
+                <field name="planner_id"/>
+                <field name="teacher_id"/>
+                <field name="day_of_week"/>
+                <field name="activity_type"/>
+                <field name="subject_id"/>
+                <field name="classroom_id"/>
+                <separator/>
+                <filter string="Lessons" name="lessons" domain="[('activity_type', '=', 'lesson')]"/>
+                <filter string="Preparation" name="preparation" domain="[('activity_type', '=', 'preparation')]"/>
+                <filter string="Meetings" name="meetings" domain="[('activity_type', '=', 'meeting')]"/>
+                <filter string="Other" name="other" domain="[('activity_type', '=', 'other')]"/>
+                <separator/>
+                <filter string="Monday" name="monday" domain="[('day_of_week', '=', 'monday')]"/>
+                <filter string="Tuesday" name="tuesday" domain="[('day_of_week', '=', 'tuesday')]"/>
+                <filter string="Wednesday" name="wednesday" domain="[('day_of_week', '=', 'wednesday')]"/>
+                <filter string="Thursday" name="thursday" domain="[('day_of_week', '=', 'thursday')]"/>
+                <filter string="Friday" name="friday" domain="[('day_of_week', '=', 'friday')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Teacher" name="group_teacher" context="{'group_by': 'teacher_id'}"/>
+                    <filter string="Day" name="group_day" context="{'group_by': 'day_of_week'}"/>
+                    <filter string="Activity Type" name="group_activity" context="{'group_by': 'activity_type'}"/>
+                    <filter string="Subject" name="group_subject" context="{'group_by': 'subject_id'}"/>
+                    <filter string="Classroom" name="group_classroom" context="{'group_by': 'classroom_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Actions -->
+    <record id="action_teacher_weekly_planner_line" model="ir.actions.act_window">
+        <field name="name">Planning Activities</field>
+        <field name="res_model">teacher.weekly.planner.line</field>
+        <field name="view_mode">list,form,calendar,pivot,graph</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No planning activities found
+            </p>
+            <p>
+                Activities are created within weekly planners.
+            </p>
+        </field>
+    </record>
+
+</odoo>

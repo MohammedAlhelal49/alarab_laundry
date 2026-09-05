@@ -1,0 +1,92 @@
+<odoo>
+    <record id="hr_expense_view_form_inherit_always_show_price" model="ir.ui.view">
+        <field name="name">hr.expense.view.form.inherit.always.show.price</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Make price_unit always visible and editable -->
+            <xpath expr="//field[@name='price_unit' and @widget='monetary' and @required='1']"
+                   position="attributes">
+                <attribute name="readonly">False</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- Sequence -->
+    <record id="seq_hr_expense_sheet" model="ir.sequence">
+        <field name="name">Expense Sheet Sequence</field>
+        <field name="code">hr.expense.sheet.seq</field>
+        <field name="prefix">EX</field>
+        <field name="padding">5</field>
+        <field name="number_increment">1</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+    <record id="view_hr_expense_sheet_inherit_sequence" model="ir.ui.view">
+        <field name="name">hr.expense.sheet.inherit.sequence</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Add sequence BEFORE name -->
+            <xpath expr="//div[@class='oe_title']" position="before">
+                <h1>
+                    <field name="sequence" readonly="1" class="me-2"/>
+                </h1>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_hr_expense_sheet_tree_inherit_sequence" model="ir.ui.view">
+        <field name="name">hr.expense.sheet.tree.sequence</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_tree"/>
+        <field name="arch" type="xml">
+
+            <!-- Insert sequence before name -->
+            <xpath expr="//field[@name='employee_id']" position="before">
+                <field name="sequence"/>
+            </xpath>
+
+        </field>
+    </record>
+    <record id="hr_expense_sheet_search_inherit_sequence" model="ir.ui.view">
+        <field name="name">hr.expense.sheet.search.inherit.sequence</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_sheet_view_search_with_panel"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="sequence" string="Code"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_expense_sheet_form_inherit_index" model="ir.ui.view">
+        <field name="name">hr.expense.sheet.form.sequence.index</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='expense_line_ids']/list/field[@name='date']"
+                   position="before">
+
+                <field name="account_move"
+                       string="Journal Entry"
+                       optional="show"
+                       readonly="1"/>
+
+            </xpath>
+
+            <xpath expr="//field[@name='expense_line_ids']//list/field[@name='tax_ids']"
+                   position="before">
+                <field name="untaxed_amount_currency"
+                       string="Total Before VAT"
+                       optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

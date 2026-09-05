@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form view -->
+    <record id="view_picking_form_inherit_tracking" model="ir.ui.view">
+        <field name="name">stock.picking.form.shipment.tracking</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+
+            <!-- أعمدة على جدول Operations — read-only عند UAE -->
+            <xpath expr="//field[@name='move_ids_without_package']//list//field[@name='product_uom_qty']" position="after">
+                <field name="x_order_confirm_date"
+                       optional="show"
+                       readonly="1"/>
+                <field name="x_preparing_order_date"
+                       optional="show"
+                       readonly="x_is_intercompany_dest"/>
+                <field name="x_shipping_order_date"
+                       optional="show"
+                       readonly="1"/>
+                <field name="x_shipment_delivery_date"
+                       optional="show"
+                       readonly="x_is_intercompany_dest"/>
+                <field name="x_shipment_company"
+                       optional="show"
+                       readonly="x_is_intercompany_dest"/>
+                <field name="x_shipment_method"
+                       optional="show"
+                       readonly="x_is_intercompany_dest"/>
+                <field name="x_is_intercompany_dest" column_invisible="1"/>
+            </xpath>
+
+            <!-- حقل Source Delivery تحت backorder_id -->
+<!--            <xpath expr="//field[@name='backorder_id']" position="after">-->
+<!--                <field name="x_source_delivery_id"-->
+<!--                       invisible="not x_is_intercompany_dest"-->
+<!--                       domain="[('picking_type_code', '=', 'outgoing'), ('company_id', '!=', company_id)]"-->
+<!--                       options="{'no_create': True}"/>-->
+<!--                <field name="x_is_intercompany_dest" invisible="1"/>-->
+<!--            </xpath>-->
+
+            <!-- تبويب Shipment Tracking — read-only عند UAE -->
+            <xpath expr="//notebook" position="inside">
+                <page string="Shipment Tracking" name="shipment_tracking">
+
+                    <div class="alert alert-info" role="alert"
+                         invisible="not x_is_intercompany_dest">
+                        <i class="fa fa-info-circle"/>
+                        These fields are managed by the selling company and are read-only here.
+                    </div>
+
+                    <group string="Tracking Dates">
+                        <group>
+                            <field name="x_order_confirm_date"
+                                   readonly="1"/>
+                            <field name="x_preparing_order_date"
+                                   readonly="x_is_intercompany_dest"/>
+                        </group>
+                        <group>
+                            <field name="x_shipping_order_date"
+                                   readonly="1"/>
+                            <field name="x_shipment_delivery_date"
+                                   readonly="x_is_intercompany_dest"/>
+                        </group>
+                    </group>
+
+                    <group string="Shipment Info">
+                        <group>
+                            <field name="x_shipment_company"
+                                   readonly="x_is_intercompany_dest"/>
+                            <field name="x_shipment_method"
+                                   readonly="x_is_intercompany_dest"/>
+                        </group>
+                    </group>
+
+                    <field name="x_is_intercompany_dest" invisible="1"/>
+
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- List view -->
+    <record id="view_picking_list_inherit_tracking" model="ir.ui.view">
+        <field name="name">stock.picking.list.shipment.tracking</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.vpicktree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list/field[@name='state']" position="before">
+                <field name="x_order_confirm_date" optional="show" readonly="1"/>
+                <field name="x_preparing_order_date" optional="show"/>
+                <field name="x_shipping_order_date" optional="show"/>
+                <field name="x_shipment_delivery_date" optional="show"/>
+                <field name="x_shipment_company" optional="show"/>
+                <field name="x_shipment_method" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,66 @@
+<!-- attendance_location/views/hr_attendance_views.xml -->
+<odoo>
+  <!-- Inherit the form view of hr.attendance and add patient and location fields -->
+  <record id="view_attendance_location_hr_attendance" model="ir.ui.view">
+    <field name="name">hr.attendance.form.attendance_location</field>
+    <field name="model">hr.attendance</field>
+    <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//sheet" position="replace">
+        <sheet>
+
+          <!-- Employee and Linked Patient -->
+          <group>
+            <group>
+              <field name="employee_id"/>
+            </group>
+            <group>
+              <field name="patient_id" readonly="1"/>
+            </group>
+          </group>
+
+          <!-- Check-in Information -->
+          <group>
+            <group string="Check-in">
+              <field name="check_in"/>
+              <field name="in_ip"/>
+              <field name="in_localisation"/>
+              <field name="in_latitude" string="Latitude"/>
+              <field name="in_longitude" string="Longitude"/>
+              <field name="checkin_distance_m" string="Distance (m)"/>
+              <button name="action_open_checkin_map"
+                      type="object"
+                      string="View on Map"
+                      icon="fa-map-marker"/>
+            </group>
+
+            <!-- Check-out Information -->
+            <group string="Check-out">
+              <field name="check_out"/>
+              <field name="out_ip"/>
+              <field name="out_localisation"/>
+              <field name="out_latitude" string="Latitude"/>
+              <field name="out_longitude" string="Longitude"/>
+              <field name="checkout_distance_m" string="Distance (m)"/>
+              <button name="action_open_checkout_map"
+                      type="object"
+                      string="View on Map"
+                      icon="fa-map-marker"/>
+            </group>
+          </group>
+
+          <!-- Patient Stored Location -->
+          <group string="Patient Location" colspan="2">
+            <field name="patient_latitude" string="Patient Latitude"/>
+            <field name="patient_longitude" string="Patient Longitude"/>
+            <button name="action_open_patient_map"
+                    type="object"
+                    string="View on Map"
+                    icon="fa-map-marker"/>
+          </group>
+
+        </sheet>
+      </xpath>
+    </field>
+  </record>
+</odoo>

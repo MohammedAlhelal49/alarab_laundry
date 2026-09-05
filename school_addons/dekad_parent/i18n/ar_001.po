@@ -1,0 +1,1511 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_parent
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-29 06:13+0000\n"
+"PO-Revision-Date: 2025-09-29 06:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__supplier_invoice_count
+msgid "# Vendor Bills"
+msgstr "# فواتير الموردين"
+
+#. module: dekad_parent
+#: model:ir.actions.report,print_report_name:dekad_parent.act_open_de_parent_idcard_report_view
+msgid "'Parent ID Carf - %s' %(object.name)"
+msgstr "'بطاقة ولي الأمر - %s' %(object.name)"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.parent_idcard_report
+msgid ""
+"<span style=\"font-weight:600\">\n"
+"                                                                BirthDate :\n"
+"                                                            </span>"
+msgstr ""
+"<span style=\"font-weight:600\">\n"
+"                                                                تاريخ الميلاد :\n"
+"                                                            </span>"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.parent_idcard_report
+msgid ""
+"<span style=\"font-weight:600\">\n"
+"                                                                Email:\n"
+"                                                            </span>"
+msgstr ""
+"<span style=\"font-weight:600\">\n"
+"                                                                البريد الإلكتروني:\n"
+"                                                            </span>"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.parent_idcard_report
+msgid ""
+"<span style=\"font-weight:600\">\n"
+"                                                                Mobile :\n"
+"                                                            </span>"
+msgstr ""
+"<span style=\"font-weight:600\">\n"
+"                                                                الجوال :\n"
+"                                                            </span>"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.parent_idcard_report
+msgid ""
+"<span style=\"font-weight:600\">\n"
+"                                                                Name :\n"
+"                                                            </span>"
+msgstr ""
+"<span style=\"font-weight:600\">\n"
+"                                                                الاسم :\n"
+"                                                            </span>"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_form
+msgid "<span>Detailed name</span>"
+msgstr "<span>الاسم المفصل</span>"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.dekad_parent_profile
+msgid "<strong>Address:</strong>"
+msgstr "<strong>العنوان:</strong>"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.dekad_parent_profile
+msgid "<strong>Birth Date:</strong>"
+msgstr "<strong>تاريخ الميلاد:</strong>"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.dekad_parent_profile
+msgid "<strong>Country of birth:</strong>"
+msgstr "<strong>بلد الميلاد:</strong>"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.dekad_parent_profile
+msgid "<strong>Email:</strong>"
+msgstr "<strong>البريد الإلكتروني:</strong>"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.dekad_parent_profile
+msgid "<strong>Gender:</strong>"
+msgstr "<strong>الجنس:</strong>"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.dekad_parent_profile
+msgid "<strong>Mobile:</strong>"
+msgstr "<strong>الجوال:</strong>"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.dekad_parent_profile
+msgid "<strong>Name:</strong>"
+msgstr "<strong>الاسم:</strong>"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.dekad_parent_profile
+msgid "<strong>Nationality:</strong>"
+msgstr "<strong>الجنسية:</strong>"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.dekad_parent_profile
+msgid "<strong>Phone:</strong>"
+msgstr "<strong>الهاتف:</strong>"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.dekad_parent_profile
+msgid "<strong>Relation With Student:</strong>"
+msgstr "<strong>العلاقة مع الطالب:</strong>"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.dekad_parent_profile
+msgid "<strong>Religion:</strong>"
+msgstr "<strong>الديانة:</strong>"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__property_account_payable_id
+msgid "Account Payable"
+msgstr "حساب الدائنين"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__property_account_receivable_id
+msgid "Account Receivable"
+msgstr "حساب المدينين"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__active_lang_count
+msgid "Active Lang Count"
+msgstr "عدد اللغات النشطة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تزيين استثناء النشاط"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__additional_info
+msgid "Additional info"
+msgstr "معلومات إضافية"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_form
+msgid "Additional information"
+msgstr "معلومات إضافية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__type
+msgid "Address Type"
+msgstr "نوع العنوان"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__lang
+msgid ""
+"All the emails and documents sent to this contact will be translated in this"
+" language."
+msgstr "سيتم ترجمة جميع رسائل البريد الإلكتروني والمستندات المرسلة إلى جهة الاتصال هذه بهذه اللغة."
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_form
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__autopost_bills
+msgid "Auto-post bills"
+msgstr "ترحيل الفواتير تلقائياً"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__autopost_bills
+msgid "Automatically post bills for this trusted partner"
+msgstr "ترحيل فواتير هذا الشريك الموثوق تلقائياً"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__avatar_1920
+#: model_terms:ir.ui.view,arch_db:dekad_parent.parent_students
+msgid "Avatar"
+msgstr "الصورة الشخصية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__avatar_1024
+msgid "Avatar 1024"
+msgstr "الصورة الشخصية 1024"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__avatar_128
+msgid "Avatar 128"
+msgstr "الصورة الشخصية 128"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__avatar_256
+msgid "Avatar 256"
+msgstr "الصورة الشخصية 256"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__avatar_512
+msgid "Avatar 512"
+msgstr "الصورة الشخصية 512"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__bank_account_count
+msgid "Bank"
+msgstr "البنك"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__bank_ids
+msgid "Banks"
+msgstr "البنوك"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__barcode
+msgid "Barcode"
+msgstr "الباركود"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__birth_date
+msgid "Birth Date"
+msgstr "تاريخ الميلاد"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__is_blacklisted
+msgid "Blacklist"
+msgstr "القائمة السوداء"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__mobile_blacklisted
+msgid "Blacklisted Phone Is Mobile"
+msgstr "الهاتف المحمول في القائمة السوداء"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__phone_blacklisted
+msgid "Blacklisted Phone is Phone"
+msgstr "الهاتف في القائمة السوداء"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__message_bounce
+msgid "Bounce"
+msgstr "الارتداد"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.de_parent_create_user_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__channel_ids
+msgid "Channels"
+msgstr "القنوات"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__is_company
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "حدد إذا كانت جهة الاتصال شركة، وإلا فهي شخص"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__employee
+msgid "Check this box if this contact is an Employee."
+msgstr "حدد هذا المربع إذا كانت جهة الاتصال هذه موظفاً."
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__city
+msgid "City"
+msgstr "المدينة"
+
+#. module: dekad_parent
+#: model:ir.actions.server,name:dekad_parent.cron_clear_parent_unused_contact_ir_actions_server
+msgid "Clear the parent unused contacts"
+msgstr "مسح جهات اتصال أولياء الأمور غير المستخدمة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__color
+msgid "Color Index"
+msgstr "مؤشر اللون"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__commercial_partner_id
+msgid "Commercial Entity"
+msgstr "الكيان التجاري"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__ref_company_ids
+msgid "Companies that refers to partner"
+msgstr "الشركات التي تشير إلى الشريك"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__company_registry
+msgid "Company ID"
+msgstr "رقم السجل التجاري"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__company_registry_label
+msgid "Company ID Label"
+msgstr "تسمية رقم السجل التجاري"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__company_name
+msgid "Company Name"
+msgstr "اسم الشركة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__commercial_company_name
+msgid "Company Name Entity"
+msgstr "كيان اسم الشركة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__company_type
+msgid "Company Type"
+msgstr "نوع الشركة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__partner_gid
+msgid "Company database ID"
+msgstr "معرف الشركة في قاعدة البيانات"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__contact_address
+msgid "Complete Address"
+msgstr "العنوان الكامل"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__complete_name
+msgid "Complete Name"
+msgstr "الاسم الكامل"
+
+#. module: dekad_parent
+#: model:ir.ui.menu,name:dekad_parent.menu_de_parent_configuration
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: dekad_parent
+#: model:ir.model,name:dekad_parent.model_res_partner
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__child_ids
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_form
+msgid "Contact information"
+msgstr "معلومات الاتصال"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__partner_id
+msgid "Contacts"
+msgstr "جهات الاتصال"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__message_bounce
+msgid "Counter of the number of bounced emails for this contact"
+msgstr "عداد عدد رسائل البريد الإلكتروني المرتدة لهذا جهة الاتصال"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__country_id
+msgid "Country"
+msgstr "الدولة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__country_code
+msgid "Country Code"
+msgstr "رمز الدولة"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_form
+msgid "Country of birth"
+msgstr "بلد الميلاد"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.de_parent_create_user_wizard_form
+msgid "Create User"
+msgstr "إنشاء مستخدم"
+
+#. module: dekad_parent
+#: model:ir.model,name:dekad_parent.model_de_parent_create_user_wizard
+#: model_terms:ir.ui.view,arch_db:dekad_parent.de_parent_create_user_wizard_form
+msgid "Create User for selected parent(s)"
+msgstr "إنشاء مستخدم لولي/أولياء الأمر المحددين"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.de_parent_create_user_wizard_form
+msgid "Create Users"
+msgstr "إنشاء مستخدمين"
+
+#. module: dekad_parent
+#: model:ir.actions.act_window,name:dekad_parent.act_open_de_parent_create_user_wizard_view
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_form
+msgid "Create user"
+msgstr "إنشاء مستخدم"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__create_uid
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent_create_user_wizard__create_uid
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent_relationship__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__create_date
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent_create_user_wizard__create_date
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent_relationship__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__credit_limit
+msgid "Credit Limit"
+msgstr "الحد الائتماني"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__credit_to_invoice
+msgid "Credit To Invoice"
+msgstr "ائتمان للفوترة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__credit_limit
+msgid "Credit limit specific to this partner."
+msgstr "الحد الائتماني المخصص لهذا الشريك."
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__property_payment_term_id
+msgid "Customer Payment Terms"
+msgstr "شروط الدفع للعميل"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__customer_rank
+msgid "Customer Rank"
+msgstr "تصنيف العميل"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__days_sales_outstanding
+msgid "Days Sales Outstanding (DSO)"
+msgstr "أيام المبيعات المعلقة (DSO)"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__trust
+msgid "Degree of trust you have in this debtor"
+msgstr "درجة الثقة التي لديك في هذا المدين"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__detailed_name
+msgid "Detailed Name"
+msgstr "الاسم المفصل"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__display_invoice_edi_format
+msgid "Display Invoice Edi Format"
+msgstr "عرض تنسيق الفاتورة الإلكترونية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__display_invoice_template_pdf_report_id
+msgid "Display Invoice Template Pdf Report"
+msgstr "عرض تقرير قالب الفاتورة PDF"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__display_name
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent_create_user_wizard__display_name
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent_relationship__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__duplicated_bank_account_partners_count
+msgid "Duplicated Bank Account Partners Count"
+msgstr "عدد الشركاء بحسابات بنكية مكررة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__partner_share
+msgid ""
+"Either customer (not a user), either shared user. Indicated the current "
+"partner is a customer without access or with a limited access created for "
+"sharing data."
+msgstr "إما عميل (ليس مستخدمًا)، أو مستخدم مشترك. يشير إلى أن الشريك الحالي هو عميل بدون وصول أو مع وصول محدث تم إنشاؤه لمشاركة البيانات."
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__email
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__emirate_id
+msgid "Emirate Id"
+msgstr "رقم الهوية الإماراتية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__emirate_id_expiry_date
+msgid "Emirate Id Expiry Date"
+msgstr "تاريخ انتهاء الهوية الإماراتية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__employee
+msgid "Employee"
+msgstr "موظف"
+
+#. module: dekad_parent
+#: model:ir.model.fields.selection,name:dekad_parent.selection__de_parent__gender__female
+msgid "Female"
+msgstr "أنثى"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__phone_sanitized
+msgid ""
+"Field used to store sanitized phone number. Helps speeding up searches and "
+"comparisons."
+msgstr "حقل مستخدم لتخزين رقم الهاتف المنقح. يساعد في تسريع عمليات البحث والمقارنات."
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__first_name
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_form
+msgid "First Name"
+msgstr "الاسم الأول"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__fiscal_country_codes
+msgid "Fiscal Country Codes"
+msgstr "رموز الدول المالية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__property_account_position_id
+msgid "Fiscal Position"
+msgstr "الوضع المالي"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__email_formatted
+msgid "Format email address \"Name <email@domain>\""
+msgstr "تنسيق عنوان البريد الإلكتروني \"الاسم <email@domain>\""
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__email_formatted
+msgid "Formatted Email"
+msgstr "البريد الإلكتروني المنسق"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__address
+msgid "Full Address"
+msgstr "العنوان الكامل"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_form
+msgid "Full name"
+msgstr "الاسم الكامل"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__gender
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_search
+msgid "Gender"
+msgstr "الجنس"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__partner_latitude
+msgid "Geo Latitude"
+msgstr "خط العرض الجغرافي"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__partner_longitude
+msgid "Geo Longitude"
+msgstr "خط الطول الجغرافي"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_search
+msgid "Group By..."
+msgstr "تجميع حسب..."
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__id
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent_create_user_wizard__id
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent_relationship__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__im_status
+msgid "IM Status"
+msgstr "حالة المراسلة الفورية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، تتطلب الرسائل الجديدة انتباهك."
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__message_has_error
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، بعض الرسائل بها خطأ في التسليم."
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__is_blacklisted
+msgid ""
+"If the email address is on the blacklist, the contact won't receive mass "
+"mailing anymore, from any list"
+msgstr "إذا كان عنوان البريد الإلكتروني في القائمة السوداء، فلن تتلقى جهة الاتصال البريد الإلكتروني الجماعي بعد الآن، من أي قائمة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__phone_sanitized_blacklisted
+msgid ""
+"If the sanitized phone number is on the blacklist, the contact won't receive"
+" mass mailing sms anymore, from any list"
+msgstr "إذا كان رقم الهاتف المنقح في القائمة السوداء، فلن تتلقى جهة الاتصال رسائل SMS جماعية بعد الآن، من أي قائمة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__ignore_abnormal_invoice_amount
+msgid "Ignore Abnormal Invoice Amount"
+msgstr "تجاهل مبلغ الفاتورة غير الطبيعي"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__ignore_abnormal_invoice_date
+msgid "Ignore Abnormal Invoice Date"
+msgstr "تجاهل تاريخ الفاتورة غير الطبيعي"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__image_1920
+msgid "Image"
+msgstr "الصورة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__image_1024
+msgid "Image 1024"
+msgstr "الصورة 1024"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__image_128
+msgid "Image 128"
+msgstr "الصورة 128"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__image_256
+msgid "Image 256"
+msgstr "الصورة 256"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__image_512
+msgid "Image 512"
+msgstr "الصورة 512"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__mobile_blacklisted
+msgid ""
+"Indicates if a blacklisted sanitized phone number is a mobile number. Helps "
+"distinguish which number is blacklisted             when there is both a "
+"mobile and phone field in a model."
+msgstr "يشير إلى ما إذا كان رقم الهاتف المنقح في القائمة السوداء هو رقم هاتف محمول. يساعد في التمييز بين الرقم المدرج في القائمة السوداء عندما يكون هناك حقل للهاتف المحمول والهاتف في النموذج."
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__phone_blacklisted
+msgid ""
+"Indicates if a blacklisted sanitized phone number is a phone number. Helps "
+"distinguish which number is blacklisted             when there is both a "
+"mobile and phone field in a model."
+msgstr "يشير إلى ما إذا كان رقم الهاتف المنقح في القائمة السوداء هو رقم هاتف. يساعد في التمييز بين الرقم المدرج في القائمة السوداء عندما يكون هناك حقل للهاتف المحمول والهاتف في النموذج."
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__industry_id
+msgid "Industry"
+msgstr "الصناعة"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.parent_students
+msgid "Information"
+msgstr "المعلومات"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__contact_address_inline
+msgid "Inlined Complete Address"
+msgstr "العنوان الكامل المضمن"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__invoice_warn
+msgid "Invoice"
+msgstr "الفاتورة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__invoice_edi_format_store
+msgid "Invoice Edi Format Store"
+msgstr "متجر تنسيق الفاتورة الإلكترونية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__invoice_sending_method
+msgid "Invoice sending"
+msgstr "إرسال الفاتورة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__invoice_template_pdf_report_id
+msgid "Invoice template"
+msgstr "قالب الفاتورة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__invoice_ids
+msgid "Invoices"
+msgstr "الفواتير"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__is_coa_installed
+msgid "Is Coa Installed"
+msgstr "هل تم تثبيت دليل الحسابات"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__is_public
+msgid "Is Public"
+msgstr "عام"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__is_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_student__is_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_teacher__is_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_res_partner__is_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_res_users__is_parent
+msgid "Is a parent"
+msgstr "ولي أمر"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__function
+msgid "Job Position"
+msgstr "الوظيفة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__journal_item_count
+msgid "Journal Items"
+msgstr "البنود المحاسبية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__lang
+msgid "Language"
+msgstr "اللغة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__last_name
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_form
+msgid "Last Name"
+msgstr "اسم العائلة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__write_uid
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent_create_user_wizard__write_uid
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent_relationship__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__write_date
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent_create_user_wizard__write_date
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent_relationship__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__last_login
+msgid "Latest Connection"
+msgstr "آخر تسجيل دخول"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__login
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#. module: dekad_parent
+#: model:ir.model.fields.selection,name:dekad_parent.selection__de_parent__gender__male
+msgid "Male"
+msgstr "ذكر"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__invoice_warn_msg
+msgid "Message for Invoice"
+msgstr "رسالة الفاتورة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__middle_name
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_form
+msgid "Middle Name"
+msgstr "الاسم الأوسط"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__mobile
+msgid "Mobile"
+msgstr "رقم الجوال"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.dekad_parent_profile
+msgid "My Profile Information"
+msgstr "معلومات ملفي الشخصي"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__name
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent_relationship__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__nationality_id
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_search
+msgid "Nationality"
+msgstr "الجنسية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__country_group_id
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_search
+msgid "Nationality Group"
+msgstr "مجموعة الجنسية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__email_normalized
+msgid "Normalized Email"
+msgstr "البريد الإلكتروني الموحد"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__comment
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: dekad_parent
+#: model:ir.actions.act_window,name:dekad_parent.act_open_de_parent_view
+#: model:ir.model,name:dekad_parent.model_de_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_form
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_kanban
+msgid "Parent"
+msgstr "ولي الأمر"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_student__parent_count
+msgid "Parent Count"
+msgstr "عدد أولياء الأمور"
+
+#. module: dekad_parent
+#: model:ir.actions.report,name:dekad_parent.act_open_de_parent_idcard_report_view
+msgid "Parent ID Card"
+msgstr "بطاقة هوية ولي الأمر"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.parent_idcard_report
+msgid "Parent id card"
+msgstr "بطاقة هوية ولي الأمر"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.parent_idcard_report
+msgid "Parent image"
+msgstr "صورة ولي الأمر"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__parent_name
+msgid "Parent name"
+msgstr "اسم ولي الأمر"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_relationship_list
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_relationship_search
+msgid "Parent relationship"
+msgstr "علاقة ولي الأمر"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_student__parent_ids
+#: model:ir.ui.menu,name:dekad_parent.menu_de_parent
+#: model:ir.ui.menu,name:dekad_parent.menu_de_parent_root
+#: model:res.groups,name:dekad_parent.group_de_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_student_form_inherited
+msgid "Parents"
+msgstr "أولياء الأمور"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__contract_ids
+msgid "Partner Contracts"
+msgstr "عقود الشريك"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__use_partner_credit_limit
+msgid "Partner Limit"
+msgstr "حد الشريك"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__partner_vat_placeholder
+msgid "Partner Vat Placeholder"
+msgstr "الرقم الضريبي للشريك"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__same_company_registry_partner_id
+msgid "Partner with same Company Registry"
+msgstr "شريك بنفس سجل الشركة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__same_vat_partner_id
+msgid "Partner with same Tax ID"
+msgstr "شريك بنفس الرقم الضريبي"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__debit_limit
+msgid "Payable Limit"
+msgstr "حد المدفوعات المستحقة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__payment_token_count
+msgid "Payment Token Count"
+msgstr "عدد رموز الدفع"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__payment_token_ids
+msgid "Payment Tokens"
+msgstr "رموز الدفع"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_form
+msgid "Personal Information"
+msgstr "المعلومات الشخصية"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_form
+msgid "Personal info"
+msgstr "المعلومات الشخصية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__phone
+msgid "Phone"
+msgstr "الهاتف"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__phone_sanitized_blacklisted
+msgid "Phone Blacklisted"
+msgstr "رقم الهاتف في القائمة السوداء"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__phone_mobile_search
+msgid "Phone/Mobile"
+msgstr "الهاتف/الجوال"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__property_outbound_payment_method_line_id
+msgid ""
+"Preferred payment method when buying from this vendor. This will be set by "
+"default on all outgoing payments created for this vendor"
+msgstr ""
+"طريقة الدفع المفضلة عند الشراء من هذا المورد. سيتم تعيينها افتراضيًا على "
+"جميع المدفوعات الصادرة التي تم إنشاؤها لهذا المورد"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__property_inbound_payment_method_line_id
+msgid ""
+"Preferred payment method when selling to this customer. This will be set by "
+"default on all incoming payments created for this customer"
+msgstr ""
+"طريقة الدفع المفضلة عند البيع لهذا العميل. سيتم تعيينها افتراضيًا على "
+"جميع المدفوعات الواردة التي تم إنشاؤها لهذا العميل"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__property_product_pricelist
+msgid "Pricelist"
+msgstr "قائمة الأسعار"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__property_inbound_payment_method_line_id
+msgid "Property Inbound Payment Method Line"
+msgstr "خط طريقة الدفع الواردة للخاصية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__property_outbound_payment_method_line_id
+msgid "Property Outbound Payment Method Line"
+msgstr "خط طريقة الدفع الصادرة للخاصية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__ref
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__parent_id
+msgid "Related Company"
+msgstr "الشركة ذات الصلة"
+
+#. module: dekad_parent
+#. odoo-python
+#: code:addons/dekad_parent/models/parent_relationship.py:0
+msgid "Relation must be unique"
+msgstr "يجب أن تكون العلاقة فريدة"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_search
+msgid "Relations with student"
+msgstr "العلاقات مع الطالب"
+
+#. module: dekad_parent
+#: model:ir.ui.menu,name:dekad_parent.menu_de_parent_relationship
+msgid "Relations with student "
+msgstr "العلاقات مع الطالب"
+
+#. module: dekad_parent
+#: model:ir.actions.act_window,name:dekad_parent.act_open_de_parent_relationship_view
+msgid "Relations with students"
+msgstr "العلاقات مع الطلاب"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__relationship_id
+msgid "Relationship with student"
+msgstr "العلاقة مع الطالب"
+
+#. module: dekad_parent
+#: model:ir.model,name:dekad_parent.model_de_parent_relationship
+msgid "Relationships"
+msgstr "العلاقات"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__religion_id
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_search
+msgid "Religion"
+msgstr "الديانة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسالة القصيرة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__phone_sanitized
+msgid "Sanitized Number"
+msgstr "الرقم المنظف"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__invoice_warn
+msgid ""
+"Selecting the \"Warning\" option will notify user with the message, "
+"Selecting \"Blocking Message\" will throw an exception with the message and "
+"block the flow. The Message has to be written in the next field."
+msgstr ""
+"اختيار خيار \"التحذير\" سيخطر المستخدم بالرسالة، "
+"اختيار \"رسالة الحظر\" سيلقي استثناءً بالرسالة ويحظر التدفق. يجب كتابة الرسالة في الحقل التالي."
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__self
+msgid "Self"
+msgstr "الذات"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__use_partner_credit_limit
+msgid "Set a value greater than 0.0 to activate a credit limit check"
+msgstr "قم بتعيين قيمة أكبر من 0.0 لتفعيل التحقق من حد الائتمان"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__partner_share
+msgid "Share Partner"
+msgstr "مشاركة الشريك"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__show_credit_limit
+msgid "Show Credit Limit"
+msgstr "عرض حد الائتمان"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__signup_type
+msgid "Signup Token Type"
+msgstr "نوع رمز التسجيل"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__specific_property_product_pricelist
+msgid "Specific Property Product Pricelist"
+msgstr "قائمة أسعار منتج الخاصية المحددة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__starred_message_ids
+msgid "Starred Message"
+msgstr "الرسالة المميزة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__state_id
+msgid "State"
+msgstr "الولاية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق قد مر\n"
+"اليوم: تاريخ النشاط اليوم\n"
+"مخطط: الأنشطة المستقبلية."
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__street
+msgid "Street"
+msgstr "الشارع"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__street2
+msgid "Street2"
+msgstr "الشارع 2"
+
+#. module: dekad_parent
+#: model:ir.model,name:dekad_parent.model_de_student
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_form
+msgid "Student"
+msgstr "الطالب"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__student_count
+msgid "Student Count"
+msgstr "عدد الطلاب"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_search
+msgid "Studenta"
+msgstr "الطلاب"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__student_ids
+#: model_terms:ir.ui.view,arch_db:dekad_parent.parent_students_breadcrumbs
+msgid "Students"
+msgstr "الطلاب"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__supplier_rank
+msgid "Supplier Rank"
+msgstr "تصنيف المورد"
+
+##. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__category_id
+msgid "Tags"
+msgstr "الوسوم"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__vat
+msgid "Tax ID"
+msgstr "الرقم الضريبي"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__vat_label
+msgid "Tax ID Label"
+msgstr "تسمية الرقم الضريبي"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__country_code
+msgid ""
+"The ISO country code in two chars. \n"
+"You can use this field for quick search."
+msgstr ""
+"رمز البلد ISO بحرفين.\n"
+"يمكنك استخدام هذا الحقل للبحث السريع."
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__vat
+msgid ""
+"The Tax Identification Number. Values here will be validated based on the "
+"country format. You can use '/' to indicate that the partner is not subject "
+"to tax."
+msgstr ""
+"رقم التعريف الضريبي. سيتم التحقق من صحة القيم هنا بناءً على تنسيق البلد. "
+"يمكنك استخدام '/' للإشارة إلى أن الشريك لا يخضع للضريبة."
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__property_account_position_id
+msgid ""
+"The fiscal position determines the taxes/accounts used for this contact."
+msgstr "يحدد المركز المالي الضرائب/الحسابات المستخدمة لهذا جهة الاتصال."
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__company_registry
+msgid ""
+"The registry number of the company. Use it if it is different from the Tax "
+"ID. It must be unique across all partners of a same country"
+msgstr ""
+"رقم سجل الشركة. استخدمه إذا كان يختلف عن الرقم الضريبي. يجب أن يكون فريدًا "
+"عبر جميع الشركاء في نفس البلد"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.parent_students
+msgid "There are no related students(childs) to display."
+msgstr "لا توجد طلاب (أبناء) مرتبطين لعرضهم."
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__property_account_payable_id
+msgid ""
+"This account will be used instead of the default one as the payable account "
+"for the current partner"
+msgstr "سيتم استخدام هذا الحساب بدلاً من الحساب الافتراضي كحساب دائن للشريك الحالي"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__property_account_receivable_id
+msgid ""
+"This account will be used instead of the default one as the receivable "
+"account for the current partner"
+msgstr "سيتم استخدام هذا الحساب بدلاً من الحساب الافتراضي كحساب مدين للشريك الحالي"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__email_normalized
+msgid ""
+"This field is used to search on email address as the primary email field can"
+" contain more than strictly an email address."
+msgstr "يستخدم هذا الحقل للبحث في عنوان البريد الإلكتروني حيث أن حقل البريد الإلكتروني الأساسي يمكن أن يحتوي على أكثر من مجرد عنوان بريد إلكتروني."
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__property_supplier_payment_term_id
+msgid ""
+"This payment term will be used instead of the default one for purchase "
+"orders and vendor bills"
+msgstr "سيتم استخدام شروط الدفع هذه بدلاً من الإفتراضية لأوامر الشراء وفواتير الموردين"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__property_payment_term_id
+msgid ""
+"This payment term will be used instead of the default one for sales orders "
+"and customer invoices"
+msgstr "سيتم استخدام شروط الدفع هذه بدلاً من الإفتراضية لأوامر المبيعات وفواتير العملاء"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__property_product_pricelist
+msgid ""
+"This pricelist will be used, instead of the default one, for sales to the "
+"current partner"
+msgstr "سيتم استخدام قائمة الأسعار هذه، بدلاً من القائمة الافتراضية، للمبيعات للشريك الحالي"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__tz
+msgid "Timezone"
+msgstr "المنطقة الزمنية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__tz_offset
+msgid "Timezone offset"
+msgstr "إزاحة المنطقة الزمنية"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__title
+msgid "Title"
+msgstr "المسمى الوظيفي"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__total_invoiced
+msgid "Total Invoiced"
+msgstr "إجمالي الفواتير"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__debit
+msgid "Total Payable"
+msgstr "إجمالي المديونيات"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__credit
+msgid "Total Receivable"
+msgstr "إجمالي المستحقات"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__credit
+msgid "Total amount this customer owes you."
+msgstr "المبلغ الإجمالي الذي يدين به لك هذا العميل."
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__debit
+msgid "Total amount you have to pay to this vendor."
+msgstr "المبلغ الإجمالي الذي يجب أن تدفعه لهذا المورد."
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__barcode
+msgid "Use a barcode to identify this contact."
+msgstr "استخدم الرمز الشريطي لتحديد جهة الاتصال هذه."
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__login
+msgid "Used to log into the system"
+msgstr "يستخدم لتسجيل الدخول إلى النظام"
+
+#. module: dekad_parent
+#: model:ir.model,name:dekad_parent.model_res_users
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__user_id
+msgid "User"
+msgstr "المستخدم"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_form
+msgid "User information"
+msgstr "معلومات المستخدم"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__user_ids
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__property_supplier_payment_term_id
+msgid "Vendor Payment Terms"
+msgstr "شروط دفع المورد"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__visa_info
+msgid "Visa Info"
+msgstr "معلومات التأشيرة"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__website
+msgid "Website Link"
+msgstr "رابط الموقع الإلكتروني"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__website_message_ids
+msgid "Website communication history"
+msgstr "سجل التواصل عبر الموقع الإلكتروني"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__tz
+msgid ""
+"When printing documents and exporting/importing data, time values are computed according to this timezone.\n"
+"If the timezone is not set, UTC (Coordinated Universal Time) is used.\n"
+"Anywhere else, time values are computed according to the time offset of your web client."
+msgstr ""
+"عند طباعة المستندات وتصدير/استيراد البيانات، يتم حساب قيم الوقت وفقًا لهذه المنطقة الزمنية.\n"
+"إذا لم يتم تعيين المنطقة الزمنية، يتم استخدام التوقيت العالمي المنسق (UTC).\n"
+"في أي مكان آخر، يتم حساب قيم الوقت وفقًا لإزاحة الوقت لعميل الويب الخاص بك."
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__zip
+msgid "Zip"
+msgstr "الرمز البريدي"
+
+#. module: dekad_parent
+#: model:ir.model.fields,help:dekad_parent.field_de_parent__days_sales_outstanding
+msgid ""
+"[(Total Receivable/Total Revenue) * number of days since the first invoice] "
+"for this customer"
+msgstr "[(إجمالي المستحقات / إجمالي الإيرادات) * عدد الأيام منذ أول فاتورة] لهذا العميل"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent__invoice_edi_format
+msgid "eInvoice format"
+msgstr "تنسيق الفاتورة الإلكترونية"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.de_parent_create_user_wizard_form
+msgid "or"
+msgstr "أو"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_list
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_search
+msgid "parent"
+msgstr "ولي الأمر"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_graph
+msgid "parent charts"
+msgstr "مخططات أولياء الأمور"
+
+#. module: dekad_parent
+#: model:ir.model.fields,field_description:dekad_parent.field_de_parent_create_user_wizard__parent_ids
+#: model_terms:ir.ui.view,arch_db:dekad_parent.de_parent_create_user_wizard_form
+msgid "parents"
+msgstr "أولياء الأمور"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.view_de_parent_form
+msgid "student"
+msgstr "طالب"
+
+#. module: dekad_parent
+#: model_terms:ir.ui.view,arch_db:dekad_parent.parent_idcard_report
+msgid "student image"
+msgstr "صورة الطالب"

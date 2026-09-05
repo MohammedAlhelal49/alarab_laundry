@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_de_student_achievement_inherited" model="ir.ui.view">
+            <field name="name">de.student.achievement.assign.inherited</field>
+            <field name="model">de.student</field>
+            <field name="inherit_id" ref="dekad_core.view_de_student_form"/>
+            <field name="priority" eval="3"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="achievements" string="Achievements" invisible="id == False"
+                          groups="dekad_achievement.group_de_achievement">
+
+                        <field readonly="1" context="{
+                                'form_view_ref': 'dekad_achievement.view_de_student_achievement_form'
+                                }"
+                               name="achievement_ids" widget="many2many_kanban">
+                            <kanban class="o_res_partner_kanban"
+                            >
+                                <field name="id"/>
+                                <field name="achievement_image"/>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div t-attf-class="oe_kanban_global_click o_res_partner_kanban">
+                                            <div class="o_kanban_image">
+                                                <t t-if="record.achievement_image.value">
+                                                    <img t-att-src="kanban_image('de.student.achievement.assign', 'achievement_image', record.id.raw_value)"
+                                                         alt="Student Achievement"/>
+                                                </t>
+                                                <t t-if="!record.achievement_image.value">
+                                                    <img
+                                                            src="/dekad_achievement/static/img/achievement.jpg"
+                                                            alt="Student Achievement"/>
+                                                </t>
+                                            </div>
+                                            <div class="oe_kanban_details">
+                                                <h4>
+                                                    <field name="achievement_id"/>
+                                                </h4>
+                                                <ul class="mt-2">
+                                                    <li>
+                                                        <strong>Given by :</strong>
+                                                        <field name="user_id"/>
+                                                    </li>
+                                                    <li class="mt-1" t-if="record.student_id.raw_value">
+                                                        <strong>Given to :</strong>
+                                                        <field name="student_id"/>
+                                                    </li>
+
+                                                    <li class="mt-1" t-if="record.student_id.raw_value">
+                                                        <strong>Reason :</strong>
+                                                        <field name="reason"/>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                        </field>
+
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

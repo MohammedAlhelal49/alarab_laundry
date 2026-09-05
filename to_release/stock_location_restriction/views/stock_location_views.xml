@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_location_form_inherit_restriction" model="ir.ui.view">
+            <field name="name">stock.location.form.inherit.restriction</field>
+            <field name="model">stock.location</field>
+            <field name="inherit_id" ref="stock.view_location_form"/>
+            <field name="arch" type="xml">
+
+                <!-- نضيف الـ notebook قبل حقل comment -->
+                <xpath expr="//field[@name='comment']" position="before">
+                    <notebook>
+                        <page string="Accessibility" name="accessibility">
+
+                            <!-- is_restricted مرئي للـ Administrator فقط -->
+                            <group groups="base.group_system">
+                                <field name="is_restricted"
+                                       string="Restricted Access"
+                                       widget="boolean_toggle"/>
+                            </group>
+
+                            <!-- allowed_user_ids مرئي للـ Administrator فقط وبيظهر لما is_restricted = True -->
+                            <group invisible="not is_restricted"
+                                   groups="base.group_system">
+                                <field name="allowed_user_ids"
+                                       string="Allowed Users"
+                                       widget="many2many_tags"
+                                       options="{'no_create': True, 'no_create_edit': True}"
+                                       help="Only these users will see this location when Restricted Access is enabled."/>
+                            </group>
+
+                        </page>
+                    </notebook>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

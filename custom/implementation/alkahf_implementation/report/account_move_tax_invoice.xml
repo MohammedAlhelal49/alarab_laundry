@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_tax_invoice_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.basic_layout">
+                    <div class="page" style="font-family: Arial, sans-serif; direction: rtl;">
+
+                        <div style="text-align: center; line-height: 1.2; margin-bottom: 8px; margin-top: 20px; border-bottom: 2px solid #000; padding-bottom: 8px;">
+                            <h2 style="margin: 0; font-size: 18pt; font-weight: bold;">
+                                <span t-out="doc.company_id.name"/>
+                            </h2>
+                            <h3 style="margin: 4px 0; font-size: 14pt; font-weight: bold; letter-spacing: 1px; direction: ltr;">
+                                <span t-out="doc.company_id.name_en"/>
+                            </h3>
+                            <p>
+                                تليفون: <span t-esc="doc.company_id.phone"/> |
+                                فاكس: 037217272 |
+                                ص.ب:  <span t-esc="doc.company_id.po_box or ''"/>
+                            </p>
+                            <p>الرقم الضريبي: <span t-esc="doc.company_id.vat"/></p>
+                        </div>
+                        <h4 style="text-align: center;" ><u>فاتورة ضريبية TAX INVOICE</u></h4>
+
+                        <!-- Invoice Info Table -->
+                        <table style="width:100%; border-collapse:collapse; direction:rtl;font-size: 16px; margin-bottom:10px;">
+                            <tr>
+                                <td style="border:1px solid #000; padding:6px 10px; width:50%;">
+                                    <strong>التاريخ:</strong> <span t-esc="doc.invoice_date"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:6px 10px; width:50%;">
+                                    <strong>رقم الفاتورة:</strong> <span t-esc="doc.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:6px 10px;">
+                                    <strong>اسم المستأجر:</strong> <span t-esc="doc.partner_id.name"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:6px 10px;">
+                                    <strong>الهاتف:</strong> <span style="direction:ltr; unicode-bidi:embed;" t-esc="doc.partner_id.phone or doc.partner_id.mobile "/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:6px 10px;">
+                                    <t t-if="doc.partner_id.license_type == 'trade_name'">
+                                        <strong>الاسم التجاري:</strong>
+                                        <span t-esc="doc.partner_id.trade_name or ''"/>
+                                    </t>
+                                    <t t-else="">
+                                        <strong>رخصة تجارية رقم:</strong>
+                                        <span t-esc="doc.partner_id.trade_license or ''"/>
+                                    </t>
+                                </td>
+                                <td style="border:1px solid #000; padding:6px 10px;">
+                                    <strong>الرقم الضريبي:</strong> <span t-esc="doc.partner_id.vat or ''"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:6px 10px;">
+                                    <strong>نوع ورقم الوحدة:</strong> <span t-esc="doc.sale_order_id.account_analytic_account_id.name"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:6px 10px;">
+                                    <strong>الطابق:</strong> <span t-esc="doc.sale_order_id.account_analytic_account_id.floor_no"/>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td style="border:1px solid #000; padding:6px 10px;">
+                                    <strong>البناية:</strong> <span t-esc="doc.sale_order_id.property_building_id.name"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:6px 10px;">
+                                    <strong>العنوان:</strong> <span t-esc="doc.sale_order_id.account_analytic_account_id.property_address"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:6px 10px;">
+                                    <strong>رقم عقد البلدية:</strong>
+                                          <span style="direction:ltr; unicode-bidi:embed;"
+                                                  t-esc="doc.sale_order_id.municipality_contract_number or ''"/>
+
+                                </td>
+                                <td style="border:1px solid #000; padding:6px 10px;">
+                                    <strong>قيمة الإيجار:</strong> <span t-field="doc.amount_untaxed" t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:6px 10px;">
+                                    <strong>بداية العقد:</strong> <span t-esc="doc.sale_order_id.rent_start_date"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:6px 10px;">
+                                    <strong>نهاية العقد:</strong> <span t-esc="doc.sale_order_id.rent_end_date"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- Invoice Lines -->
+                        <h5 style="margin-bottom:6px;">التفاصيل:</h5>
+                        <table style="width:100%; border-collapse:collapse; direction:rtl; margin-bottom:16px; font-size:13px;">
+                            <thead>
+                                <tr style="background-color:#e9ecef;">
+                                    <th style="border:1px solid #000; padding:6px 8px; text-align:center;">الرقم</th>
+                                    <th style="border:1px solid #000; padding:6px 8px; text-align:center;">تفاصيل الفاتورة</th>
+                                    <th style="border:1px solid #000; padding:6px 8px; text-align:center;">قيمة الإيجار</th>
+                                    <th style="border:1px solid #000; padding:6px 8px; text-align:center;">تخفيض / خصم</th>
+                                    <th style="border:1px solid #000; padding:6px 8px; text-align:center;">المبلغ</th>
+                                    <th style="border:1px solid #000; padding:6px 8px; text-align:center;">الضريبة %</th>
+                                    <th style="border:1px solid #000; padding:6px 8px; text-align:center;">قيمة الضريبة</th>
+                                    <th style="border:1px solid #000; padding:6px 8px; text-align:center;">المبلغ الإجمالي</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.invoice_line_ids" t-as="line">
+                                    <tr>
+                                        <td style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                            <t t-esc="line_index + 1"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:6px 8px;">
+                                            <t t-esc="line.name"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                            <span t-field="line.price_unit"
+                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                            <t t-esc="line.discount or 0"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                            <span t-field="line.price_subtotal"
+                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                            <t t-foreach="line.tax_ids" t-as="tax">
+                                                <t t-esc="tax.amount"/>%
+                                            </t>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                            <span t-field="doc.amount_tax"
+                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                            <span t-field="line.price_total"
+                                                  t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                            <tfoot>
+                                <tr style="background-color:#f8f9fa; font-weight:bold;">
+                                    <td colspan="4" style="border:1px solid #000; padding:6px 8px; text-align:left;">
+                                        الإجمالي
+                                    </td>
+                                    <td style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                        <span t-field="doc.amount_untaxed"
+                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>                                    </td>
+                                    <td style="border:1px solid #000; padding:6px 8px;"></td>
+                                    <td style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                        <span t-field="doc.amount_tax"
+                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                    </td>
+                                    <td style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                        <span t-field="doc.amount_total"
+                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                        <!-- Payment Details -->
+                        <h5 style="margin-bottom:6px;">تفاصيل الدفع:</h5>
+
+                        <t t-set="payments" t-value="doc.get_rent_receipt_payments()"/>
+                        <t t-set="row_counter" t-value="0"/>
+
+                        <table style="width:100%; border-collapse:collapse; direction:rtl; margin-bottom:16px; font-size:13px;">
+                            <thead>
+                                <tr style="background-color:#e9ecef;">
+                                    <th style="border:1px solid #000; padding:6px 8px; text-align:center;">الرقم</th>
+                                    <th style="border:1px solid #000; padding:6px 8px; text-align:center;">الدفعة</th>
+                                    <th style="border:1px solid #000; padding:6px 8px; text-align:center;">المبلغ</th>
+                                    <th style="border:1px solid #000; padding:6px 8px; text-align:center;">رقم الشيك</th>
+                                    <th style="border:1px solid #000; padding:6px 8px; text-align:center;">التاريخ</th>
+                                    <th style="border:1px solid #000; padding:6px 8px; text-align:center;">على بنك / مصرف</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                <t t-set="payments"
+                                   t-value="doc.get_rent_receipt_payments()"/>
+
+                                <t t-set="row_counter" t-value="0"/>
+
+                                <t t-foreach="payments" t-as="pay">
+
+                                    <t t-set="row_counter" t-value="row_counter + 1"/>
+
+                                    <tr>
+                                        <td style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                            <t t-esc="row_counter"/>
+                                        </td>
+
+                                        <td style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                            <t t-esc="pay['name']"/>
+                                        </td>
+
+                                        <td style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                            <t t-esc="'{:,.2f}'.format(pay['amount'])"/>
+                                            &#160;
+                                            <t t-esc="pay['currency']"/>
+                                        </td>
+
+                                        <td style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                            <t t-esc="pay['check_number']"/>
+                                        </td>
+
+                                        <td style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                            <t t-if="pay['date']">
+                                                <t t-esc="pay['date'].strftime('%Y-%m-%d')"/>
+                                            </t>
+                                        </td>
+
+                                        <td style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                            <t t-esc="pay['bank']"/>
+                                        </td>
+                                    </tr>
+
+                                </t>
+
+                                <t t-if="not payments">
+                                    <tr>
+                                        <td colspan="6"
+                                            style="border:1px solid #000; padding:6px 8px; text-align:center;">
+                                            لا توجد دفعات مسجلة لهذه الفاتورة
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        <!-- Terms -->
+                        <div style="direction:rtl;" t-if="doc.company_id.tax_invoice_terms">
+                            <h5>الشروط و الأحكام:</h5>
+                            <div style="margin:4px 0; padding-right: 40px;" t-field="doc.company_id.tax_invoice_terms"/>
+                        </div>
+
+                     <!-- Signatures -->
+                        <table style="width:100%;direction:rtl; border:none;" class = "avoid-page-break-inside">
+                            <tr>
+                                <td style="text-align:center; width:33%; border:none; padding:0; font-weight:bold;">
+                                    توقيع المستلم
+                                </td>
+                                <td style="text-align:center; width:33%; border:none; padding:0; font-weight:bold;">
+                                    توقيع المحاسب
+                                </td>
+                                <td style="text-align:center; width:33%; border:none; padding:0; font-weight:bold;">
+                                    توقيع المدير
+                                </td>
+                            </tr>
+
+                            <!-- Space -->
+                            <tr>
+                                <td style="height:30px;"></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <!-- Signature Line -->
+                            <tr>
+                                <td style="text-align:center;">
+                                    <div style="border-top:1px solid black; width:120px; margin:auto;"></div>
+                                </td>
+                                <td style="text-align:center;">
+                                    <div style="border-top:1px solid black; width:120px; margin:auto;"></div>
+                                </td>
+                                <td style="text-align:center;">
+                                    <div style="border-top:1px solid black; width:120px; margin:auto;"></div>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

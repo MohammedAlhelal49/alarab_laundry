@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_reception_customers" model="ir.actions.act_window">
+        <field name="name">Customers</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain"></field>
+        <field name="context">{
+            'default_customer_rank': 1,
+            'search_default_customer': 1,
+            'res_partner_search_mode': 'customer',
+        }</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new customer
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="menu_reception_root"
+              name="Receptions"
+              sequence="15"
+              web_icon="dekad_reception_management,static/description/icon.png"
+              groups="dekad_reception_management.group_reception"/>
+
+    <!-- Customers -->
+    <menuitem id="menu_reception_customers"
+              name="Customers"
+              parent="menu_reception_root"
+              action="action_reception_customers"
+              groups="dekad_reception_management.group_reception"
+              sequence="10"/>
+
+    <menuitem id="menu_reception_invoices"
+              name="Invoices"
+              parent="menu_reception_root"
+              action="account.action_move_out_invoice_type"
+              groups="dekad_reception_management.group_reception"
+              sequence="20"/>
+
+    <menuitem id="menu_reception_payments"
+              name="Customers Payments"
+              parent="menu_reception_root"
+              action="account.action_account_payments"
+              groups="dekad_reception_management.group_reception"
+              sequence="30"/>
+
+</odoo>

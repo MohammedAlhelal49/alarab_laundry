@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- quiz submission attempt -->
+        <record id="view_de_quiz_submission_attempt_search" model="ir.ui.view">
+            <field name="name">de.quiz.submission.attempt.search</field>
+            <field name="model">de.quiz.submission.attempt</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="quiz Submission attempt">
+                    <field name="quiz_id"/>
+                    <field name="student_id"/>
+                    <field name="name"/>
+                    <filter string="Today" name="filter_submission_today"
+                            domain="[('create_date', '&gt;=', time.strftime('%%Y-%%m-%%d 00:00:00')),('create_date', '&lt;=', time.strftime('%%Y-%%m-%%d 23:59:59'))]"/>
+                    <filter string="Last Week" name="filter_submission_week"
+                            domain="[('create_date', '&gt;=',(context_today()-relativedelta(days=6)).strftime('%Y-%m-%d 00:00:00')),
+                                    ('create_date', '&lt;', context_today().strftime('%Y-%m-%d 23:59:59'))]"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="quiz" domain="[]" name="group_by_quiz"
+                                context="{'group_by':'quiz_id'}"/>
+                        <filter string="Student" domain="[]" name="group_by_quiz_student"
+                                context="{'group_by':'student_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="view_de_quiz_submission_attempt_tree" model="ir.ui.view">
+            <field name="name">de.quiz.submission.attempt.list</field>
+            <field name="model">de.quiz.submission.attempt</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <list string="quiz submission attempt" create='0'>
+                    <field name="quiz_id"/>
+                    <field name="student_id"/>
+                    <field name="name"/>
+                    <field name="create_date"/>
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_de_quiz_submission_attempt_view">
+            <field name="name">Quizzes Submissions attempts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.quiz.submission.attempt</field>
+            <field name="view_mode">list</field>
+            <field name="binding_view_types">list</field>
+            <field name="search_view_id" ref="view_de_quiz_submission_attempt_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_quiz_submission_attempt_view_tree">
+            <field name="act_window_id" ref="act_open_de_quiz_submission_attempt_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_de_quiz_submission_attempt_tree"/>
+        </record>
+        <!-- quiz submission answer -->
+
+
+        <record id="view_de_quiz_submission_answer_form_quick_create" model="ir.ui.view">
+            <field name="name">de.quiz.submission.answer.form.quick.create</field>
+            <field name="model">de.quiz.submission.answer</field>
+            <field name="arch" type="xml">
+                <form string="Quiz question answer quick create">
+                    <field name="is_quiz_user" invisible="1"/>
+                    <group>
+                        <group>
+                            <field name="question_type" invisible="1"/>
+                            <field name="question_id" readonly="1"/>
+                            <field name="answer" string="Student answer"
+                                   invisible="is_quiz_user == False"/>
+                            <field name="consider_correct" invisible="is_correct == True"/>
+                        </group>
+                        <group>
+                            <field name="mark" string="Question mark"/>
+                            <field name="is_correct"/>
+                            <field name="gained_mark"/>
+                        </group>
+                        <separator string="Answers"/>
+                        <field name="right_answer"/>
+
+                        <field name="answer_ids" widget = "many2many_tags"
+                               invisible="question_type != 'select_from_multiple'">
+
+
+                        </field>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!-- quiz submission -->
+        <record id="view_de_quiz_submission_form_quick_create" model="ir.ui.view">
+            <field name="name">de.quiz.submission.form.quick.create</field>
+            <field name="model">de.quiz.submission</field>
+            <field name="arch" type="xml">
+                <form string="quiz submission" duplicate="0">
+                    <field name="id" invisible="1"/>
+                    <field name="state" invisible="1"/>
+                    <field name="student_ids" invisible="1"/>
+                    <header groups="base.group_user">
+                        <button name="set_draft" invisible="state not in ('finish','reject','correcting')" type="object"
+                                string="Draft"
+                        />
+                        <button name="set_reject" invisible="state != 'draft'" type="object"
+                                string="Reject" class="oe_highlight"/>
+                        <button name="set_correcting" invisible="state != 'draft'" type="object"
+                                string="Correcting" class="oe_highlight"/>
+                        <button name="set_finish" invisible="state not in ('draft','correcting')" type="object"
+                                string="Finish" class="oe_highlight"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="quiz_id"
+                                   readonly="1"/>
+                            <field name="student_id" readonly="1"
+                            />
+                            <field name="create_date" invisible="create_date == False"
+                            />
+                            <field name="mark" string="mark"
+                            />
+                        </group>
+
+                        <separator string="Answers"/>
+
+                        <field name="answer_ids" invisible="id == False" context="{
+                                'form_view_ref' : 'dekad_quiz.view_de_quiz_submission_answer_form_quick_create'
+                                }">
+                            <list create="0" delete="0">
+                                <field name="question_id"/>
+                                <field name="answer" string="Answer"/>
+                                <field name="mark"/>
+                                <field name="is_correct" string="Is correct"/>
+                                <field name="consider_correct"/>
+                                <field name="right_answer"/>
+                            </list>
+                        </field>
+                        <separator string="Attempts"/>
+                        <field name="attempt_ids" invisible="id == False or attempt_ids == []">
+                            <list delete="1">
+                                <field name="name"/>
+                                <field name="create_date"/>
+                            </list>
+                        </field>
+                    </sheet>
+
+                        <field name="message_ids" widget="mail_thread"/>
+
+                </form>
+            </field>
+        </record>
+        <record id="view_de_quiz_submission_tree" model="ir.ui.view">
+            <field name="name">de.quiz.submission.list</field>
+            <field name="model">de.quiz.submission</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <list string="quiz submission">
+                    <field name="quiz_id"/>
+                    <field name="student_id"/>
+                    <field name="mark"/>
+                    <field name="state"/>
+                    <field name="create_date"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_de_quiz_submission_form" model="ir.ui.view">
+            <field name="name">de.quiz.submission.form</field>
+            <field name="model">de.quiz.submission</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="quiz submission" duplicate="0">
+
+                    <field name="id" invisible="1"/>
+                    <field name="state" invisible="1"/>
+                    <field name="student_ids" invisible="1"/>
+                    <field name="is_quiz_user" invisible="1"/>
+                    <header invisible="id == False">
+                        <button name="set_draft" type="object"
+                                string="Draft"
+                        />
+                        <button name="set_reject" invisible="state != 'draft'" type="object"
+                                string="Reject" class="oe_highlight"/>
+                        <button name="set_correcting" invisible="state != 'draft'" type="object"
+                                string="Correcting" class="oe_highlight"/>
+                        <button name="set_finish" invisible="state not in ('draft','correcting')" type="object"
+                                string="Finish" class="oe_highlight"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+
+
+                            <field name="quiz_id"
+                                   domain="[('state','=','confirm')]"
+                                   options="{'no_create': True}" readonly="is_quiz_user == False and id != False"
+                            />
+
+                            <field name="student_id" options="{'no_create': True , 'no_open' : True}"
+                                   readonly="is_quiz_user == False and id != False"
+                                   domain="[('id','in',student_ids)]"
+                            />
+
+                            <field name="create_date" readonly="1"/>
+                            <field name="mark" string="mark"
+                            />
+                        </group>
+
+                        <separator string="Answers" invisible="answer_ids == [] and id == False"
+                        />
+
+                        <field name="answer_ids" invisible="answer_ids == [] and id == False"
+                               context="{
+                                'form_view_ref' : 'dekad_quiz.view_de_quiz_submission_answer_form_quick_create'
+                                }">
+                            <list create="0" delete="0">
+                                <field name="question_id"/>
+                                <field name="answer" string="Answer"/>
+                                <field name="mark"/>
+                                <field name="is_correct" string="Is correct"/>
+                                <field name="right_answer"/>
+                            </list>
+                        </field>
+
+                        <separator string="Attempts" invisible="attempt_ids == [] or id == False"/>
+
+                        <field name="attempt_ids" invisible="attempt_ids == [] or id == False"
+                        >
+                            <list>
+                                <field name="name"/>
+                                <field name="create_date"/>
+                            </list>
+                        </field>
+
+
+                    </sheet>
+
+
+                        <field name="message_ids" widget="mail_thread"/>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="view_de_quiz_submission_search" model="ir.ui.view">
+            <field name="name">de.quiz.submission.search</field>
+            <field name="model">de.quiz.submission</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="quiz Submission">
+                    <field name="quiz_id"/>
+                    <field name="student_id"/>
+                    <field name="state"/>
+                    <filter string="Today" name="filter_submission_today"
+                            domain="[('create_date', '&gt;=', time.strftime('%%Y-%%m-%%d 00:00:00')),('create_date', '&lt;=', time.strftime('%%Y-%%m-%%d 23:59:59'))]"/>
+                    <filter string="Last Week" name="filter_submission_week"
+                            domain="[('create_date', '&gt;=',(context_today()-relativedelta(days=6)).strftime('%Y-%m-%d 00:00:00')),
+                                    ('create_date', '&lt;', context_today().strftime('%Y-%m-%d 23:59:59'))]"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="quiz" domain="[]" name="group_by_quiz"
+                                context="{'group_by':'quiz_id'}"/>
+                        <filter string="Student" domain="[]" name="group_by_quiz_student"
+                                context="{'group_by':'student_id'}"/>
+                        <filter string="State" domain="[]" name="group_by_quiz_state"
+                                context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_de_quiz_submission_view">
+            <field name="name">Quizzes Submissions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.quiz.submission</field>
+            <field name="view_mode">list,form</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="search_view_id" ref="view_de_quiz_submission_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_quiz_submission_view_tree">
+            <field name="act_window_id" ref="act_open_de_quiz_submission_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_de_quiz_submission_tree"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_quiz_submission_view_form">
+            <field name="act_window_id" ref="act_open_de_quiz_submission_view"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="20"/>
+            <field name="view_id" ref="view_de_quiz_submission_form"/>
+        </record>
+
+
+    </data>
+</odoo>

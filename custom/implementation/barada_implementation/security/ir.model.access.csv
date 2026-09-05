@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_crm_reservation_user,crm.reservation.user,model_crm_reservation,base.group_user,1,1,1,1
+access_crm_reservation_cancel_wizard_user,crm.reservation.cancel.wizard.user,model_crm_reservation_cancel_wizard,base.group_user,1,1,1,1
+access_crm_reservation_delay_reason_user,crm.reservation.delay.reason user,model_crm_reservation_delay_reason,base.group_user,1,1,1,0
+access_hr_employee_group_user,hr.employee.group user,model_hr_employee_group,base.group_user,1,0,0,0
+access_hr_employee_group_hr_manager,hr.employee.group HR manager,model_hr_employee_group,hr.group_hr_manager,1,1,1,1

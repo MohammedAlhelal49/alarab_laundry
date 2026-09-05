@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_de_student_form_inherited" model="ir.ui.view">
+            <field name="name">view.de.student.form.parent.inherited</field>
+            <field name="model">de.student</field>
+            <field name="inherit_id" ref="dekad_core.view_de_student_form"/>
+            <field name="priority" eval="3"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="parents" string="Parents" groups="dekad_parent.group_de_parent">
+                        <group>
+                            <field
+                                    options="{'no_create':True, 'no_open':True}"
+                                    name="parent_ids" widget="many2many_tags"
+                            />
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

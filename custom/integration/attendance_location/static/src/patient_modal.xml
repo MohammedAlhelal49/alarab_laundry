@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+  <!-- Modal Template for Patient Selection -->
+  <t t-name="attendance_location.PatientModal" owl="1">
+
+    <!-- Show modal only if flag is enabled -->
+    <t t-if="state.showModalPatient">
+
+      <!-- Modal backdrop -->
+      <div class="modal-backdrop fade show"></div>
+
+      <!-- Modal wrapper -->
+      <div class="modal fade show d-block" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content p-3">
+
+            <!-- Modal header -->
+            <div class="modal-header">
+              <h5 class="modal-title">اختر المريض</h5>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+
+              <!-- Display list of patients -->
+              <t t-if="state.patients.length">
+                <ul class="list-group">
+                  <t t-foreach="state.patients" t-as="patient">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <span><t t-esc="patient.name"/></span>
+                      <button t-on-click="() => selectPatient(patient.id)" class="btn btn-sm btn-primary">
+                        اختيار
+                      </button>
+                    </li>
+                  </t>
+                </ul>
+              </t>
+
+              <!-- No patients fallback -->
+               <t t-else>
+                <p>لا يوجد مرضى مرتبطين بك.</p>
+              </t>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </t>
+  </t>
+
+</templates>

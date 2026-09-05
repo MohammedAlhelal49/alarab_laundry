@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_de_parent_kanban">
+            <field name="name">de.parent.kanban</field>
+            <field name="model">de.parent</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban"
+                        group_edit="false" group_delete="false" quick_create="false"
+                        records_draggable="false" group_draggable="false"
+                >
+                    <field name="id"/>
+                    <field name="image_1920"/>
+                    <field name="gender"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_res_partner_kanban">
+                                <div class="o_kanban_image">
+                                    <t t-if="record.image_1920.value">
+                                        <img t-att-src="kanban_image('de.parent', 'image_1920', record.id.raw_value)"
+                                             alt="Parent"/>
+                                    </t>
+                                    <t t-if="!record.image_1920.value">
+                                        <img t-if="record.gender.value=='Male'"
+                                             src="/dekad_core/static/img/male.jpg"
+                                             alt="Parent"/>
+                                        <img t-else=""
+                                             src="/dekad_core/static/img/female.jpg"
+                                             alt="Parent"/>
+                                    </t>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <h5>
+                                        <field name="name"/>
+                                    </h5>
+                                    <ul>
+                                        <li t-if="record.email.raw_value">
+                                            <field name="email"/>
+                                        </li>
+                                        <li t-if="record.mobile.raw_value">
+                                            <field name="mobile"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_de_parent_list" model="ir.ui.view">
+            <field name="name">de.parent.list</field>
+            <field name="model">de.parent</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <list string="parent">
+                    <field name="name"/>
+                    <field name="gender"/>
+                    <field name="email" required="1"/>
+                    <field name="religion_id"/>
+                    <field name="mobile" required="1"/>
+                    <field name="phone"/>
+                    <field name="sequence"/>
+                    <field name="birth_date"/>
+                    <field name="country_group_id"/>
+                    <field name="country_id"/>
+                    <field name="nationality_id"/>
+                    <!--                    <field name="emirate_id" optional="hide"/>-->
+                    <!--                    <field name="emirate_id_expiry_date" optional="hide"/>-->
+                    <field name="visa_info" optional="hide"/>
+
+                </list>
+            </field>
+        </record>
+
+        <record id="view_de_parent_form" model="ir.ui.view">
+            <field name="name">de.parent.form</field>
+            <field name="model">de.parent</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Parent">
+                    <field name="id" invisible="1"/>
+                    <field name="active" invisible="1"/>
+                    <field name="name" invisible="1"/>
+                    <field name="user_id" invisible="1"/>
+                    <header groups="base.group_erp_manager" invisible="id == False">
+                        <button name="create_user" class="oe_highlight" string="Create user" type="object"
+                                invisible="user_id != False"
+
+                        />
+                    </header>
+                    <sheet>
+                        <div name="button_box" class="oe_button_box" invisible="id == False">
+                            <button name="action_show_student" type="object" class="oe_stat_button" icon="fa-users"
+                                    groups="dekad_core.group_de_student">
+                                <field string="Student" name="student_count" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger" invisible="active == True"/>
+
+                        <div style="width:100%;" class="row align-items-center">
+                            <div class="col-4 col-lg-2">
+                                <field name="image_1920" widget="image" class="oe_avatar role_image"/>
+                                <strong>
+                                    <field class="role_sequence" name="sequence" invisible="sequence == '/'"/>
+                                </strong>
+                            </div>
+                            <div class="mb16 col-8 col-lg-10 px-0">
+                                <div class="row">
+                                    <h2 class="col-12 col-lg-8">
+                                        <div class="detailed-name-holder">
+                                            <field name="detailed_name"/>
+                                            <span>Detailed name</span>
+                                        </div>
+                                        <field name="name" placeholder="Full name"
+                                               invisible="detailed_name == True"
+                                               required="detailed_name == False"/>
+
+
+                                        <tr invisible="detailed_name == False">
+                                            <td style="padding-right:10px;">
+                                                <field name="first_name" placeholder="First Name"
+                                                       required="detailed_name == True"/>
+                                            </td>
+                                            <td style="padding-right:10px;">
+                                                <field name="middle_name" placeholder="Middle Name"
+                                                       required="detailed_name == True"/>
+                                            </td>
+                                            <td style="padding-right:10px;">
+                                                <field name="last_name" placeholder="Last Name"
+                                                       required="detailed_name == True"/>
+                                            </td>
+                                        </tr>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <notebook>
+                            <page name="personal_information" string="Personal Information"
+                                  groups="dekad_parent.group_de_parent"
+                            >
+                                <group>
+                                    <group string="Personal info">
+                                        <field name="gender" required="1"/>
+                                        <field name="birth_date"/>
+                                        <field name="religion_id"/>
+                                        <field name="country_group_id"
+                                               options="{'no_create': True , 'no_open':True}"
+                                        />
+                                        <field name="nationality_id"
+                                               domain="[('country_group_ids','in',country_group_id)]"
+                                               options="{ 'no_create': True , 'no_open' : True}"
+                                        />
+                                        <field name="country_id" string="Country of birth"
+                                               domain="[('country_group_ids','in',country_group_id)]"
+                                               options="{ 'no_create': True , 'no_open' : True}"
+                                        />
+                                        <field name="city"/>
+                                    </group>
+                                    <group string="Contact information">
+                                        <field name="email" required="1"/>
+                                        <field name="mobile" required="1"/>
+                                        <field name="phone"/>
+                                        <field name="address"/>
+                                    </group>
+                                    <group string="User information" groups="base.group_erp_manager"
+                                           invisible="id == False or user_id == False"
+                                    >
+                                        <field name="user_id" readonly="1"/>
+                                    </group>
+                                    <group string="Additional information">
+                                        <!--                                        <field name="emirate_id"/>-->
+                                        <!--                                        <field name="emirate_id_expiry_date"/>-->
+                                        <field name="visa_info"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="students" string="student">
+                                <group>
+                                    <field name="relationship_id"/>
+                                    <field options="{'no_create':True ,'no_open':True}" name="student_ids"
+                                           widget="many2many_tags"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_de_parent_graph">
+            <field name="name">de.parent.graph</field>
+            <field name="model">de.parent</field>
+            <field name="arch" type="xml">
+                <graph string="parent charts" type="bar" stacked="False">
+                    <field name="gender"/>
+                    <field name="nationality_id"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_de_parent_search" model="ir.ui.view">
+            <field name="name">de.parent.search</field>
+            <field name="model">de.parent</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="parent">
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="mobile"/>
+                    <field name="phone"/>
+                    <field name="birth_date"/>
+                    <group string=" Group By...">
+                        <filter name="relationship" string="Relations with student"
+                                domain="[]" context="{'group_by':'relationship_id'}"
+                        />
+                        <filter name="students" string="Studenta"
+                                domain="[]" context="{'group_by':'student_ids'}"
+                        />
+
+                        <filter name="gender" string="Gender"
+                                domain="[]" context="{'group_by': 'gender'}"/>
+                        <filter name="religion" string="Religion"
+                                domain="[]" context="{'group_by':'religion_id'}"
+                        />
+                        <filter name="nationality" string="Nationality"
+                                domain="[]" context="{'group_by':'nationality_id'}"
+                        />
+                        <filter name="nationality_group" string="Nationality Group"
+                                domain="[]" context="{'group_by':'country_group_id'}"
+                        />
+                        <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_de_parent_view">
+            <field name="name">Parent</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.parent</field>
+            <field name="view_mode">kanban,list,form,graph</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="search_view_id" ref="view_de_parent_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_parent_view_list">
+            <field name="act_window_id" ref="act_open_de_parent_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_de_parent_list"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_parent_view_form">
+            <field name="act_window_id" ref="act_open_de_parent_view"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="20"/>
+            <field name="view_id" ref="view_de_parent_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_parent_view_kanban">
+            <field name="act_window_id" ref="act_open_de_parent_view"/>
+            <field name="view_mode">kanban</field>
+            <field name="sequence" eval="5"/>
+            <field name="view_id" ref="view_de_parent_kanban"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_parent_view_graph">
+            <field name="act_window_id" ref="act_open_de_parent_view"/>
+            <field name="view_mode">graph</field>
+            <field name="sequence" eval="30"/>
+            <field name="view_id" ref="view_de_parent_graph"/>
+        </record>
+
+    </data>
+</odoo>

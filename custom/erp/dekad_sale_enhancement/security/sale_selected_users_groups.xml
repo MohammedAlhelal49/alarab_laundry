@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- New group -->
+
+    <record id="group_sale_selected_users" model="res.groups">
+        <field name="name">User: Selected Users Documents</field>
+
+        <field name="category_id"
+               ref="base.module_category_sales_sales"/>
+
+        <field name="implied_ids"
+               eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+
+        <field name="comment">
+            Access own documents and selected users documents.
+        </field>
+    </record>
+
+
+    <record id="sales_team.group_sale_salesman_all_leads"
+            model="res.groups">
+
+        <field name="implied_ids"
+               eval="[
+                   (3, ref('sales_team.group_sale_salesman')),
+                   (4, ref('dekad_sale_enhancement.group_sale_selected_users'))
+               ]"/>
+
+    </record>
+
+</odoo>

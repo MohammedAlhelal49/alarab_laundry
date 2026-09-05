@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_gmr" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.gmr</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Material Requests"
+                     string="Material Requests"
+                     name="dekad_material_request"
+                     logo="/dekad_material_request/static/description/icon.png"
+                     groups="dekad_material_request.group_gmr_admin">
+                    <block title="Approval Settings">
+                        <setting string="Default Approver"
+                                 help="Pre-filled as the Approver on new material requests. The requester can still change it before submitting.">
+                            <field name="gmr_default_approver_id" options="{'no_create': True}"/>
+                        </setting>
+                    </block>
+                    <block title="Purchase Settings">
+                        <setting string="Default Vendor"
+                                 help="Default vendor when creating purchase orders from material requests">
+                            <field name="gmr_default_vendor_id" options="{'no_create': True}"/>
+                        </setting>
+                        <setting string="Document Type Policy"
+                                 help="Restricts what an Admin can create from the 'Create PO/Bill' wizard.">
+                            <field name="gmr_doc_type_policy" widget="radio"/>
+                        </setting>
+                        <setting string="Default Choice"
+                                 help="Which option is pre-selected in the wizard when both PO and Bill are allowed."
+                                 invisible="gmr_doc_type_policy != 'both'">
+                            <field name="gmr_default_doc_type" widget="radio"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Standalone action so Admins can reach these settings directly
+         from a dedicated menu item, not just via the general Settings app -->
+    <record id="action_gmr_config_settings" model="ir.actions.act_window">
+        <field name="name">Material Requests Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module': 'dekad_material_request'}</field>
+    </record>
+</odoo>

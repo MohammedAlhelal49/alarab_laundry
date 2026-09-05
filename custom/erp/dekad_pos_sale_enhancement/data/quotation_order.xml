@@ -1,0 +1,18 @@
+<odoo>
+    <record id="whatsapp_invoice_template" model="whatsapp.template">
+        <field name="name">Default Invoice Template</field>
+        <field name="message">
+            Hello {{partner_name}},
+
+            Thank you for your purchase!
+
+            Here is your invoice:
+
+            Invoice Number: {{invoice_name}}
+            Amount: {{invoice_amount}}
+            Invoice Link: {{invoice_link}}
+
+            If you have any questions, feel free to reach out.
+        </field>
+    </record>
+</odoo>

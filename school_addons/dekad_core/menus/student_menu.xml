@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_de_student_root"
+                  name="Students"
+                  sequence="60"
+                  web_icon="dekad_core,static/description/student.png"
+        />
+        <menuitem id="menu_de_student_details"
+                  name="Students"
+                  parent="menu_de_student_root"
+                  sequence="10"
+                  action="act_open_de_student_view"
+                  groups="dekad_core.group_de_student,dekad_core.group_de_teacher"/>
+
+
+        <menuitem id="menu_de_student_grade"
+                  name="Student Grades"
+                  parent="menu_de_student_root"
+                  sequence="40"
+                  action="act_open_de_student_grade_view"
+                  groups="dekad_core.group_de_student"/>
+
+    </data>
+</odoo>

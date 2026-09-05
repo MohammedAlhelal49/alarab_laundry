@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_crm_lead_form_custom_referred" model="ir.ui.view">
+        <field name="name">crm.lead.form.referred</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Hide mobile in Lead -->
+            <xpath expr="//group[@name='lead_info']//field[@name='mobile']/.." position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!-- Hide mobile in Opportunity Extra Information page -->
+            <xpath expr="//field[@id='mobile_page_lead']/.." position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!-- Hide source in Lead Extra tab -->
+            <xpath expr="//page[@name='extra']//field[@name='source_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!-- Hide source in Opportunity Extra Information tab -->
+            <xpath expr="//page[@name='lead']//field[@name='source_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//group[@name='opportunity_partner']//field[@name='phone']/.." position="after">
+                <label for="mobile" class="oe_inline"/>
+                <div class="o_row o_row_readonly">
+                    <button name="phone_action_blacklist_remove"
+                            class="fa fa-ban text-danger"
+                            type="object"
+                            context="{'default_phone': mobile}"
+                            groups="base.group_user"
+                            invisible="not mobile_blacklisted"/>
+                    <field name="mobile" widget="phone"/>
+                </div>
+
+                <field name="source_id"/>
+                <field
+                    name="referred_by_id"
+                    domain="[('customer_rank', '>', 0), ('user_id', '=', user_id)]"
+                    invisible="not show_referred_field"
+                />
+            </xpath>
+
+            <!-- Lead -->
+            <xpath expr="//group[@name='lead_info']//field[@name='phone']/.." position="after">
+                <label for="mobile" class="oe_inline"/>
+                <div class="o_row o_row_readonly">
+                    <button name="phone_action_blacklist_remove"
+                            class="fa fa-ban text-danger"
+                            type="object"
+                            context="{'default_phone': mobile}"
+                            groups="base.group_user"
+                            invisible="not mobile_blacklisted"/>
+                    <field name="mobile" widget="phone"/>
+                </div>
+
+                <field name="source_id"/>
+                <field
+                    name="referred_by_id"
+                    domain="[('customer_rank', '>', 0), ('user_id', '=', user_id)]"
+                    invisible="not show_referred_field"
+                />
+            </xpath>
+
+            <xpath expr="//div[@name='button_box']" position="after">
+
+                <!-- Phone / Mobile Warning -->
+                <div class="alert alert-warning oe_edit_only"
+                     invisible="not same_contact_partner_id">
+
+                    A partner with the same
+                    <span>
+                        <field name="contact_conflict_label"/>
+                    </span>
+                    already exists:
+
+                    <span groups="sales_team.group_sale_salesman,!sales_team.group_sale_salesman_all_leads">
+                        <field name="same_contact_partner_id"
+                               options="{'no_open': True}"
+                               context="{'show_address': False,'show_vat': False}"/>
+                    </span>
+
+                    <span groups="sales_team.group_sale_salesman_all_leads,sales_team.group_sale_manager">
+                        <field name="same_contact_partner_id"
+                               context="{'show_address': False,'show_vat': False}"/>
+                    </span>
+
+                    . Are you sure you want to continue?
+                    <field name="same_contact_partner_inactive" invisible="1"/>
+                    <button name="action_takeover_same_contact_partner"
+                            type="object"
+                            string="Take Over Existing Contact"
+                            class="btn-link"
+                            confirm="This will reassign the existing contact to you and link it to this record. Continue?"
+                            invisible="not same_contact_partner_inactive"/>
+                </div>
+
+                <!-- Name Warning -->
+                <div class="alert alert-warning oe_edit_only"
+                     invisible="not same_name_partner_id">
+
+                    A contact with the same <strong>Name</strong> already exists:
+
+                    <span groups="sales_team.group_sale_salesman,!sales_team.group_sale_salesman_all_leads">
+                        <field name="same_name_partner_id"
+                               options="{'no_open': True}"
+                               context="{'show_address': False,'show_vat': False}"/>
+                    </span>
+
+                    <span groups="sales_team.group_sale_salesman_all_leads,sales_team.group_sale_manager">
+                        <field name="same_name_partner_id"
+                               context="{'show_address': False,'show_vat': False}"/>
+                    </span>
+
+                    . Are you sure you want to continue?
+                </div>
+
+            </xpath>
+
+                        <!-- Hide original referred field in LEAD view -->
+            <xpath expr="//page[@name='extra']//field[@name='referred']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!-- Hide original referred field in OPPORTUNITY view -->
+            <xpath expr="//page[@name='lead']//field[@name='referred']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- Inherit CRM settings view to add opportunity transfer configuration -->
+    <record id="res_config_settings_view_form_inherit_opportunity_transfer" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.opportunity_transfer</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="crm.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Add after the crm_use_auto_assignment field -->
+            <xpath expr="//setting[field[@name='crm_use_auto_assignment']]" position="after">
+                <setting string="Duplicate Contacts Policy"
+                         help="Choose whether to allow duplicate contacts with a warning or block them completely.">
+
+                    <field name="duplicate_contact_policy" widget="radio"/>
+
+                </setting>
+
+                <setting string="Auto Transfer Inactive Opportunities"
+                         help="Automatically reassign inactive opportunities to another salesperson after a predefined duration.">
+                    <field name="enable_auto_transfer"/>
+                    <div class="content-group mt16" invisible="not enable_auto_transfer">
+                        <div class="d-flex align-items-center">
+                            <field name="auto_transfer_duration_days"
+                                   placeholder="e.g. 10"
+                                   class="me-2"/>
+                            <span>day(s)</span>
+                        </div>
+                    </div>
+                </setting>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

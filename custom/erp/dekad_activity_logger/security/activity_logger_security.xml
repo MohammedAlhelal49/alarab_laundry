@@ -1,0 +1,21 @@
+<odoo>
+
+    <record id="activity_logger_company_rule"
+            model="ir.rule">
+
+        <field name="name">
+            Activity Logger Multi Company
+        </field>
+
+        <field name="model_id"
+               ref="model_activity_logger"/>
+
+        <field name="global" eval="True"/>
+
+        <field name="domain_force">
+            [('company_id', 'in', company_ids)]
+        </field>
+
+    </record>
+
+</odoo>

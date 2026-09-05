@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree/List View -->
+
+    <record id="view_real_estate_building_list" model="ir.ui.view">
+        <field name="name">real.estate.building.list</field>
+        <field name="model">real.estate.building</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="city"/>
+                <field name="country_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+
+    <record id="view_real_estate_building_form" model="ir.ui.view">
+        <field name="name">real.estate.building.form</field>
+        <field name="model">real.estate.building</field>
+        <field name="arch" type="xml">
+            <form string="Buildings">
+
+                <sheet>
+
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Name..."/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group>
+
+                            <div class="o_form_label">Address</div>
+
+                            <div class="o_address_format">
+
+                                <field name="street"
+                                       placeholder="Street..."
+                                       class="o_address_street"/>
+
+                                <field name="street2"
+                                       placeholder="Street 2..."
+                                       class="o_address_street"/>
+
+                                <field name="city"
+                                       placeholder="City"
+                                       class="o_address_city"/>
+
+                                <field name="state_id"
+                                       placeholder="State"
+                                       class="o_address_state"/>
+
+                                <field name="zip"
+                                           placeholder="ZIP"
+                                       class="o_address_zip"/>
+
+                                <field name="country_id"
+                                       placeholder="Country"
+                                       class="o_address_country"/>
+
+                            </div>
+
+                            <field name="land_lord"/>
+                            <field name="plot_number"/>
+                            <field name="no_of_floors"/>
+                            <field name="no_of_stores"/>
+                            <field name="no_of_residential_flat"/>
+                            <field name="no_of_commercial_flat"/>
+                            <field name="total_units"/>
+
+                        </group>
+                    </group>
+
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <!-- Kanban -->
+
+    <record id="view_real_estate_building_kanban" model="ir.ui.view">
+        <field name="name">real.estate.building.kanban</field>
+        <field name="model">real.estate.building</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="card">
+                        <div class="oe_kanban_global_click">
+                            <strong>
+                                <field name="name"/>
+                            </strong>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_building" model="ir.actions.act_window">
+        <field name="name">Buildings</field>
+        <field name="res_model">real.estate.building</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+
+
+</odoo>

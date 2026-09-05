@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_form_inherited" model="ir.ui.view">
+        <field name="name">view.picking.form.inherited</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='move_ids_without_package']//list//field[@name='quantity']" position="after">
+                <field name="analytic_account_id" readonly="state in ('done', 'cancel')"/>
+                <field name="unit_cost" />
+                <field name="cost_amount"  widget="monetary" sum="Total Cost amount" />
+                <field name="currency_id" column_invisible="True"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_move_line_tree_inherited" model="ir.ui.view">
+        <field name="name">view_move_line_tree_inherited</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="analytic_account_id"/>
+                <field name="unit_cost" />
+                <field name="cost_amount" widget="monetary" sum="Total Cost amount"/>
+                <field name="currency_id" column_invisible="True"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_move_tree_inherited" model="ir.ui.view">
+        <field name="name">view_move_tree_inherited</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="analytic_account_id"/>
+                <field name="unit_cost"/>
+                <field name="cost_amount" widget="monetary" sum="Total Cost amount"/>
+                <field name="currency_id" column_invisible="True"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_move_line_view_search_inherited" model="ir.ui.view">
+        <field name="name">stock.move.line.view.search.inherited</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.stock_move_line_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="analytic_account_id"/>
+            </xpath>
+
+            <xpath expr="//filter[@name='groupby_product_id']" position="after">
+                <filter string="Analytic account" name="groupby_analytic_account_id" domain="[]"
+                        context="{'group_by': 'analytic_account_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_move_search_inherited" model="ir.ui.view">
+        <field name="name">view.move.search.inherited</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="analytic_account_id"/>
+            </xpath>
+
+            <xpath expr="//filter[@name='by_product']" position="after">
+                <filter string="Analytic account" name="groupby_analytic_account_id" domain="[]"
+                        context="{'group_by': 'analytic_account_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>
+
+
+
+
+

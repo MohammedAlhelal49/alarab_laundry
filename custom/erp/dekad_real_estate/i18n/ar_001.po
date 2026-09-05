@@ -1,0 +1,1662 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_real_estate
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-20 10:59+0000\n"
+"PO-Revision-Date: 2026-04-20 10:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_real_estate
+#. odoo-python
+#: code:addons/dekad_real_estate/wizards/rental_cancel_wizard.py:0
+msgid ""
+"%s cancelled as Cancel & Refund.Invoice and related payment(s) reversed."
+msgstr ""
+"تم إلغاء %s كإلغاء مع استرداد. تم عكس الفاتورة والدفعة/الدفعات المرتبطة بها."
+
+#. module: dekad_real_estate
+#. odoo-python
+#: code:addons/dekad_real_estate/wizards/rental_cancel_wizard.py:0
+msgid "%s cancelled as Cancel without Refund."
+msgstr "%s تم إلغاؤه كإلغاء بدون استرداد."
+
+#. module: dekad_real_estate
+#. odoo-python
+#: code:addons/dekad_real_estate/wizards/rental_cancel_wizard.py:0
+msgid "%s cancelled as Early Checkout."
+msgstr "%s تم إلغاؤه كمغادرة مبكرة."
+
+#. module: dekad_real_estate
+#. odoo-python
+#: code:addons/dekad_real_estate/wizards/rental_cancel_wizard.py:0
+msgid "%s cancelled as No Response."
+msgstr "%s تم إلغاؤه بسبب عدم الاستجابة."
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "1 Bathroom"
+msgstr "حمام واحد"
+
+#. module: dekad_real_estate
+#: model:property.type,name:dekad_real_estate.property_type_1_bedroom
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "1 Bedroom"
+msgstr "غرفة نوم واحدة"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "2 Bathrooms"
+msgstr "حمامان"
+
+#. module: dekad_real_estate
+#: model:property.type,name:dekad_real_estate.property_type_2_bedrooms
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "2 Bedrooms"
+msgstr "غرفتا نوم"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "3 Bathrooms"
+msgstr "ثلاثة حمامات"
+
+#. module: dekad_real_estate
+#: model:property.type,name:dekad_real_estate.property_type_3_bedrooms
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "3 Bedrooms"
+msgstr "ثلاث غرف نوم"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_kanban_custom
+msgid "<span class=\"badge bg-danger text-white mt-2\">SOLD</span>"
+msgstr "<span class=\"badge bg-danger text-white mt-2\">مُباع</span>"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_real_estate_form
+msgid "<span class=\"fw-bold\">Address</span>"
+msgstr "<span class=\"fw-bold\">العنوان</span>"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_order_form_inherit_custom
+msgid "<span class=\"o_stat_text\">View Payment</span>"
+msgstr "<span class=\"o_stat_text\">عرض الدفعة</span>"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_form_real_estate
+msgid "<span style=\"margin: 0 0.5rem;\">sqm</span>"
+msgstr "<span style=\"margin: 0 0.5rem;\">م²</span>"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_order_form_inherit_custom
+msgid "<span> hours</span>"
+msgstr "<span> ساعات</span>"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_real_estate_kanban
+msgid "<span>No. of Floors: </span>"
+msgstr "<span>عدد الطوابق: </span>"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.report_contract_report_document
+msgid ""
+"<strong>\n"
+"                                    TOTAL\n"
+"                                </strong>"
+msgstr ""
+"<strong>\n"
+"                                    الإجمالي\n"
+"                                </strong>"
+
+#. module: dekad_real_estate
+#: model:ir.model.constraint,message:dekad_real_estate.constraint_property_rental_filter_user_property_unique
+msgid "A user cannot have the same property twice."
+msgstr "لا يمكن للمستخدم أن يمتلك نفس الوحدة مرتين."
+
+#. module: dekad_real_estate
+#: model:res.groups,name:dekad_real_estate.group_real_estate_user
+msgid "Access Real Estate"
+msgstr "الوصول إلى العقارات"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_form_real_estate
+msgid "Add Images"
+msgstr "إضافة صور"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__property_address
+msgid "Address"
+msgstr "العنوان"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__airbnb
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_payment_method_line__payment_category__airbnb
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.report_contract_report_document
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_contract_report_search
+msgid "Airbnb"
+msgstr "Airbnb"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_analytic_account__invoice_status__invoiced
+msgid "Already invoiced"
+msgstr "تمت الفوترة مسبقاً"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order_payment_info__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_account_analytic_account
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.industry_real_estate_rental_search_view_gantt
+msgid "Analytic Account"
+msgstr "الحساب التحليلي"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_analytic_account__property_type__apartment
+msgid "Apartment"
+msgstr "شقة"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_form_real_estate
+msgid "Apartment Area"
+msgstr "مساحة الشقة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__apartment_area
+msgid "Apartment Area (sqm)"
+msgstr "مساحة الشقة (م²)"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__aquda
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_payment_method_line__payment_category__aquda
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.report_contract_report_document
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_contract_report_search
+msgid "Aquda"
+msgstr "Aquda"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_buildings__attachment_ids
+#: model:ir.model.fields,field_description:dekad_real_estate.field_res_partner__attachment_ids
+#: model:ir.model.fields,field_description:dekad_real_estate.field_res_users__attachment_ids
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_partner_form_inherit_custom
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_real_estate_form
+msgid "Attachments"
+msgstr "المرفقات"
+
+#. module: dekad_real_estate
+#: model:ir.actions.act_window,name:dekad_real_estate.action_availability
+#: model:ir.ui.menu,name:dekad_real_estate.menu_availability
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.industry_real_estate_rental_gantt_view
+msgid "Availability"
+msgstr "التوفر"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__is_available
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "Available"
+msgstr "متاح"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_contract_report_search
+msgid "Bank Transfer"
+msgstr "تحويل بنكي"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__bathroom_no
+msgid "Bathroom No"
+msgstr "عدد الحمامات"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "Bathrooms"
+msgstr "الحمامات"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__bedroom_label
+msgid "Bedroom Label"
+msgstr "تسمية غرفة النوم"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__bedroom_no
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__bedroom_no
+msgid "Bedroom No"
+msgstr "عدد غرف النوم"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.industry_real_estate_rental_search_view_gantt
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "Bedrooms"
+msgstr "غرف النوم"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order__rent_state__booked
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.industry_real_estate_rental_search_view_gantt
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+msgid "Booked"
+msgstr "محجوز"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__booking
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.report_contract_report_document
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_contract_report_search
+msgid "Booking"
+msgstr "Booking"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_payment_method_line__payment_category__booking
+msgid "Booking.com"
+msgstr "Booking.com"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__property_building_id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report_wizard__building_id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__property_building_id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__related_buildings_ids
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.industry_real_estate_rental_search_view_gantt
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+msgid "Building"
+msgstr "المبنى"
+
+#. module: dekad_real_estate
+#: model:ir.actions.act_window,name:dekad_real_estate.action_real_estate
+#: model:ir.ui.menu,name:dekad_real_estate.real_estate_menu
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_real_estate_form
+msgid "Buildings"
+msgstr "المباني"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_contract_report_wizard
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_order_form_inherit_custom
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: dekad_real_estate
+#. odoo-python
+#: code:addons/dekad_real_estate/wizards/rental_cancel_wizard.py:0
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__contract_report__cancel_type__paid_cancel
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order__cancel_type__paid_cancel
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_cancel_wizard_form
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+msgid "Cancel & Refund"
+msgstr "إلغاء مع استرداد"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_cancel_wizard_form
+msgid "Cancel Options"
+msgstr "خيارات الإلغاء"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.report_contract_report_document
+msgid "Cancel Type"
+msgstr "نوع الإلغاء"
+
+#. module: dekad_real_estate
+#. odoo-python
+#: code:addons/dekad_real_estate/wizards/rental_cancel_wizard.py:0
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__contract_report__cancel_type__no_show
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order__cancel_type__no_show
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_cancel_wizard_form
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+msgid "Cancel without Refund"
+msgstr "إلغاء بدون استرداد"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_rental_cancel_wizard__reason
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__cancel_reason
+msgid "Cancellation Reason"
+msgstr "سبب الإلغاء"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__cancel_type
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__cancel_type
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+msgid "Cancellation Type"
+msgstr "نوع الإلغاء"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order__rent_state__cancel
+msgid "Cancelled"
+msgstr "ملغى"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__cash
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_payment_method_line__payment_category__cash
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.report_contract_report_document
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_contract_report_search
+msgid "Cash"
+msgstr "نقد"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__category_id
+msgid "Category"
+msgstr "الفئة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_filter__property_checked
+msgid "Checked"
+msgstr "تم التحقق"
+
+#. module: dekad_real_estate
+#. odoo-python
+#: code:addons/dekad_real_estate/wizards/rental_cancel_wizard.py:0
+msgid ""
+"Checkout date must be between rental start date (%s) and rental end date "
+"(%s)."
+msgstr ""
+"يجب أن يكون تاريخ المغادرة بين تاريخ بدء الإيجار (%s) وتاريخ انتهاء الإيجار (%s)."
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_account_analytic_account__property_type_id
+msgid "Choose the type of property like 1 Bedroom, 2 Bedroom, etc."
+msgstr "اختر نوع الوحدة مثل غرفة نوم واحدة أو غرفتا نوم وما إلى ذلك."
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_buildings__city
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_real_estate_form
+msgid "City"
+msgstr "المدينة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_analytic_account__property_type__commercial_space
+msgid "Commercial space"
+msgstr "مساحة تجارية"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_res_company
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات"
+
+#. module: dekad_real_estate
+#: model:ir.ui.menu,name:dekad_real_estate.menu_real_estate_config
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_cancel_wizard_form
+msgid "Confirm Early Checkout"
+msgstr "تأكيد المغادرة المبكرة"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_contract_report
+msgid "Contract Report Result"
+msgstr "نتيجة تقرير العقود"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_contract_report_wizard
+msgid "Contract Report Wizard"
+msgstr "معالج تقرير العقود"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__rental_contract_ids_m2m
+#: model:ir.ui.menu,name:dekad_real_estate.menu_contracts_root
+msgid "Contracts"
+msgstr "العقود"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_property_rental_event_search
+msgid "Cost"
+msgstr "التكلفة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_buildings__country
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_real_estate_form
+msgid "Country"
+msgstr "الدولة"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_form_real_estate
+msgid "Create Invoice"
+msgstr "إنشاء فاتورة"
+
+#. module: dekad_real_estate
+#: model_terms:ir.actions.act_window,help:dekad_real_estate.action_product_template_custom
+msgid "Create a new product"
+msgstr "إنشاء منتج جديد"
+
+#. module: dekad_real_estate
+#: model_terms:ir.actions.act_window,help:dekad_real_estate.action_analytic_account_custom
+msgid "Create a new property (analytic account)"
+msgstr "إنشاء وحدة جديدة (حساب تحليلي)"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__create_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report_wizard__create_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_meter_reading__create_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_orientation__create_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_event__create_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_filter__create_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_type__create_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_buildings__create_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_meters__create_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_rental_cancel_wizard__create_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order_payment_info__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__create_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report_wizard__create_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_meter_reading__create_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_orientation__create_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_event__create_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_filter__create_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_type__create_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_buildings__create_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_meters__create_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_rental_cancel_wizard__create_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order_payment_info__create_date
+msgid "Created on"
+msgstr "تاريخ الإنشاء"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__currency_id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_event__currency_id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_meters__currency_id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order_payment_info__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__partner_id
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.industry_real_estate_rental_search_view_gantt
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.report_contract_report_document
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_contract_report_search
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_order_form_inherit_custom
+msgid "Customer"
+msgstr "العميل"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order__rental_type__daily
+msgid "Daily"
+msgstr "يومي"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__contract_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_meter_reading__date
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.report_contract_report_document
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_contract_report_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report_wizard__date_from
+msgid "Date From"
+msgstr "من تاريخ"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report_wizard__date_to
+msgid "Date To"
+msgstr "إلى تاريخ"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__day_name
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.report_contract_report_document
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_contract_report_search
+msgid "Day"
+msgstr "اليوم"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_form_real_estate
+msgid "Describe your property here"
+msgstr "اكتب وصف الوحدة هنا"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__website_description
+#: model:ir.model.fields,field_description:dekad_real_estate.field_meter_reading__description
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_meters__name
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_form_real_estate
+msgid "Description"
+msgstr "الوصف"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order_payment_info__source__direct
+msgid "Direct Payment"
+msgstr "دفع مباشر"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_account_analytic_account__apartment_orientation_ids
+msgid "Directions the apartment faces (e.g., East, West, etc.)."
+msgstr "الاتجاهات التي تواجهها الشقة (مثل الشرق والغرب وما إلى ذلك)."
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__display_name
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report_wizard__display_name
+#: model:ir.model.fields,field_description:dekad_real_estate.field_meter_reading__display_name
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_orientation__display_name
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_event__display_name
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_filter__display_name
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_type__display_name
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_buildings__display_name
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_meters__display_name
+#: model:ir.model.fields,field_description:dekad_real_estate.field_rental_cancel_wizard__display_name
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order_payment_info__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_form_real_estate
+msgid "Documents"
+msgstr "المستندات"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_account_analytic_account__category_id
+msgid "Dummy category for Owl filter compatibility"
+msgstr "فئة وهمية لتوافق مرشح Owl"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_account_analytic_account__email
+msgid "Dummy email field for Owl widget compatibility."
+msgstr "حقل بريد إلكتروني وهمي لتوافق أداة Owl."
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_account_analytic_account__phone_mobile_search
+msgid "Dummy field for Owl filter compatibility."
+msgstr "حقل وهمي لتوافق مرشح Owl."
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_account_analytic_account__fiscal_country_codes
+msgid "Dummy field for Owl frontend compatibility"
+msgstr "حقل وهمي لتوافق واجهة Owl الأمامية"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_account_analytic_account__parent_id
+msgid "Dummy field for filter compatibility. Not used in logic."
+msgstr "حقل وهمي لتوافق المرشح. لا يُستخدم في المنطق."
+
+#. module: dekad_real_estate
+#. odoo-python
+#: code:addons/dekad_real_estate/wizards/rental_cancel_wizard.py:0
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__contract_report__cancel_type__early_checkout
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order__cancel_type__early_checkout
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_cancel_wizard_form
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+msgid "Early Checkout"
+msgstr "مغادرة مبكرة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_rental_cancel_wizard__checkout_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__checkout_date
+msgid "Early Checkout Date"
+msgstr "تاريخ المغادرة المبكرة"
+
+#. module: dekad_real_estate
+#. odoo-python
+#: code:addons/dekad_real_estate/wizards/rental_cancel_wizard.py:0
+msgid "Early Checkout date cannot be earlier than today's date (%s)."
+msgstr "لا يمكن أن يكون تاريخ المغادرة المبكرة قبل تاريخ اليوم (%s)."
+
+#. module: dekad_real_estate
+#: model:property.orientation,name:dekad_real_estate.orientation_east
+msgid "East"
+msgstr "شرق"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__email
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_res_company__enable_rental_properties
+#: model:ir.model.fields,field_description:dekad_real_estate.field_res_config_settings__enable_rental_properties
+#: model:res.groups,name:dekad_real_estate.group_enable_rental_properties
+msgid "Enable Rental Properties"
+msgstr "تفعيل وحدات الإيجار"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_res_company__enable_sale_properties
+#: model:ir.model.fields,field_description:dekad_real_estate.field_res_config_settings__enable_sale_properties
+#: model:res.groups,name:dekad_real_estate.group_enable_sale_properties
+msgid "Enable Sale Properties"
+msgstr "تفعيل وحدات البيع"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_res_company__enable_rental_properties
+#: model:ir.model.fields,help:dekad_real_estate.field_res_config_settings__enable_rental_properties
+msgid ""
+"Enable features related to property rentals, including access to Rental "
+"Contracts and Calendar."
+msgstr ""
+"تفعيل الميزات المتعلقة بإيجار الوحدات، بما في ذلك الوصول إلى عقود الإيجار والتقويم."
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_res_config_settings_real_estate
+msgid "Enable features related to property rentals."
+msgstr "تفعيل الميزات المتعلقة بإيجار الوحدات."
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_res_company__enable_sale_properties
+#: model:ir.model.fields,help:dekad_real_estate.field_res_config_settings__enable_sale_properties
+msgid ""
+"Enable features related to property sales, including access to Sales "
+"Contracts."
+msgstr ""
+"تفعيل الميزات المتعلقة ببيع الوحدات، بما في ذلك الوصول إلى عقود البيع."
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_res_config_settings_real_estate
+msgid "Enable features related to property sales."
+msgstr "تفعيل الميزات المتعلقة ببيع الوحدات."
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_event__end_date
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_res_company__enforce_product_price_limits
+#: model:ir.model.fields,field_description:dekad_real_estate.field_res_config_settings__enforce_product_price_limits
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_sale_config_settings_inherit_price_limits
+msgid "Enforce Product Price Limits"
+msgstr "تطبيق حدود أسعار المنتجات"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "Filter: Bathrooms"
+msgstr "تصفية: الحمامات"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "Filter: Bedrooms"
+msgstr "تصفية: غرف النوم"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__fiscal_country_codes
+msgid "Fiscal Country Codes"
+msgstr "رموز البلد الضريبي"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "Floor"
+msgstr "الطابق"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__floor_no
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "Floor No"
+msgstr "رقم الطابق"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_account_analytic_account__floor_no
+msgid "Floor number of the property inside the building"
+msgstr "رقم طابق الوحدة داخل المبنى"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_analytic_account__offer_type__rent
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "For Rent"
+msgstr "للإيجار"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_analytic_account__offer_type__sale
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "For Sale"
+msgstr "للبيع"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__furnished
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "Furnished"
+msgstr "مفروش"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_form_real_estate
+msgid "Gallery"
+msgstr "معرض الصور"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_analytic_account__property_type__garage
+msgid "Garage"
+msgstr "كراج"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.industry_real_estate_rental_search_view_gantt
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_contract_report_search
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_property_rental_event_search
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_sale_order_filter_inherit_sold_properties
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.industry_real_estate_rental_search_view_gantt
+msgid "Group by Analytic Account"
+msgstr "تجميع حسب الحساب التحليلي"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.industry_real_estate_rental_search_view_gantt
+msgid "Group by Property Type"
+msgstr "تجميع حسب نوع الوحدة"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.industry_real_estate_rental_search_view_gantt
+msgid "Group by Related Buildings"
+msgstr "تجميع حسب المباني المرتبطة"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+msgid "Group by Running contracts"
+msgstr "تجميع حسب العقود الجارية"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "Group by building"
+msgstr "تجميع حسب المبنى"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.industry_real_estate_rental_search_view_gantt
+msgid "Group by customer"
+msgstr "تجميع حسب العميل"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__guarant_partner_id
+msgid "Guarant"
+msgstr "الضامن"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order__rental_type__hourly
+msgid "Hourly"
+msgstr "بالساعة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_analytic_account__property_type__house
+msgid "House"
+msgstr "منزل"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report_wizard__id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_meter_reading__id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_orientation__id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_event__id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_filter__id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_type__id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_buildings__id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_meters__id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_rental_cancel_wizard__id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order_payment_info__id
+msgid "ID"
+msgstr "ID"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_res_partner__id_number
+#: model:ir.model.fields,field_description:dekad_real_estate.field_res_users__id_number
+msgid "ID No."
+msgstr "رقم الهوية"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_meter_reading__invoice_id
+msgid "Invoice"
+msgstr "الفاتورة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order_payment_info__source__invoice
+msgid "Invoice Payment"
+msgstr "دفع فاتورة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__invoice_status
+msgid "Invoice Status"
+msgstr "حالة الفاتورة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__is_property
+msgid "Is Property"
+msgstr "Is Property "
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__is_property_sale_contract
+msgid "Is Property Sale Contract"
+msgstr "عقد بيع وحدة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__is_rental_contract
+msgid "Is Rental Contract"
+msgstr "عقد إيجار"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_analytic_account__property_type__land
+msgid "Land"
+msgstr "أرض"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__write_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report_wizard__write_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_meter_reading__write_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_orientation__write_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_event__write_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_filter__write_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_type__write_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_buildings__write_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_meters__write_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_rental_cancel_wizard__write_uid
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order_payment_info__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__write_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report_wizard__write_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_meter_reading__write_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_orientation__write_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_event__write_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_filter__write_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_type__write_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_buildings__write_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_meters__write_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_rental_cancel_wizard__write_date
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order_payment_info__write_date
+msgid "Last Updated on"
+msgstr "تاريخ آخر تحديث"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__linked_product_ids
+msgid "Linked Products"
+msgstr "المنتجات المرتبطة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_buildings__location
+msgid "Location"
+msgstr "الموقع"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_product_product__max_sale_price
+#: model:ir.model.fields,field_description:dekad_real_estate.field_product_template__max_sale_price
+msgid "Maximum Price"
+msgstr "الحد الأقصى للسعر"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_filter__user_id
+msgid "Me"
+msgstr "أنا"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_meter_reading__meter_id
+msgid "Meter"
+msgstr "العداد"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_meter_reading
+msgid "Meter Reading"
+msgstr "قراءة العداد"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__property_meter_reading_ids
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__so_meter_reading_ids
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_form_real_estate
+msgid "Meter Readings"
+msgstr "قراءات العدادات"
+
+#. module: dekad_real_estate
+#: model:ir.actions.act_window,name:dekad_real_estate.action_real_estate_meters
+#: model:ir.ui.menu,name:dekad_real_estate.menu_real_estate_meters
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_real_estate_meters_list
+msgid "Meters"
+msgstr "العدادات"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_product_product__min_sale_price
+#: model:ir.model.fields,field_description:dekad_real_estate.field_product_template__min_sale_price
+msgid "Minimum Price"
+msgstr "الحد الأدنى للسعر"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order__rental_type__monthly
+msgid "Monthly"
+msgstr "شهري"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+msgid "My Quotations"
+msgstr "عروض أسعاري"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_orientation__name
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_event__name
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_buildings__name
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order_payment_info__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_real_estate_form
+msgid "Name..."
+msgstr "الاسم..."
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_res_partner__nationality
+#: model:ir.model.fields,field_description:dekad_real_estate.field_res_users__nationality
+msgid "Nationality"
+msgstr "الجنسية"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__contract_report__cancel_type__free_cancel
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order__cancel_type__free_cancel
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_cancel_wizard_form
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+msgid "No Response"
+msgstr "لا استجابة"
+
+#. module: dekad_real_estate
+#. odoo-python
+#: code:addons/dekad_real_estate/wizards/rental_cancel_wizard.py:0
+msgid "No Sale Order found in context."
+msgstr "لم يتم العثور على أمر بيع في السياق."
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_buildings__number_of_floors
+msgid "No. of Floors"
+msgstr "عدد الطوابق"
+
+#. module: dekad_real_estate
+#: model:property.orientation,name:dekad_real_estate.orientation_north
+msgid "North"
+msgstr "شمال"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order__rent_state__not_booked
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.industry_real_estate_rental_search_view_gantt
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+msgid "Not Booked"
+msgstr "غير محجوز"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "Not Furnished"
+msgstr "غير مفروش"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order__rent_state__not_paid
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.industry_real_estate_rental_search_view_gantt
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+msgid "Not Paid"
+msgstr "غير مدفوع"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_sale_order_filter_inherit_sold_properties
+msgid "Not Sold"
+msgstr "غير مُباع"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__note
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.report_contract_report_document
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_event__description
+msgid "Notes"
+msgstr "الملاحظات"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_analytic_account__invoice_status__no
+msgid "Nothing to invoice"
+msgstr "لا يوجد ما يستدعي الفوترة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__hour_number
+msgid "Number of Hours"
+msgstr "عدد الساعات"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__number_of_nights
+msgid "Number of Nights"
+msgstr "عدد الليالي"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_account_analytic_account__bathroom_no
+msgid "Number of bathrooms in the property"
+msgstr "عدد الحمامات في الوحدة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_account_analytic_account__bedroom_no
+#: model:ir.model.fields,help:dekad_real_estate.field_sale_order__bedroom_no
+msgid "Number of bedrooms in the property"
+msgstr "عدد غرف النوم في الوحدة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__offer_type
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "Offer Type"
+msgstr "نوع العرض"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_analytic_account__property_type__office
+msgid "Office"
+msgstr "مكتب"
+
+#. module: dekad_real_estate
+#. odoo-python
+#: code:addons/dekad_real_estate/wizards/rental_cancel_wizard.py:0
+msgid ""
+"Order %s cancelled as Cancel & Refund.Invoice and related payment(s) "
+"reversed."
+msgstr ""
+"تم إلغاء الطلب %s كإلغاء مع استرداد. تم عكس الفاتورة والدفعة/الدفعات المرتبطة بها."
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__user_id
+msgid "Organizer"
+msgstr "المنظم"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__apartment_orientation_ids
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "Orientation"
+msgstr "الاتجاه"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order_payment_info__source__pdc
+msgid "PDC"
+msgstr "شيك مؤجل"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order__rent_state__paid
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.industry_real_estate_rental_search_view_gantt
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_filter__parent_id
+msgid "Parent"
+msgstr "الأصل"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__parent_id
+msgid "Parent Property"
+msgstr "الوحدة الأصل"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order__rent_state__partially_paid
+msgid "Partially Paid"
+msgstr "مدفوع جزئياً"
+
+#. module: dekad_real_estate
+#. odoo-python
+#: code:addons/dekad_real_estate/wizards/rental_cancel_wizard.py:0
+msgid "Payment %s cancelled because it was linked to invoice %s."
+msgstr "تم إلغاء الدفعة %s لأنها كانت مرتبطة بالفاتورة %s."
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_payment_method_line__payment_category
+msgid "Payment Category"
+msgstr "فئة الدفع"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__payment_info_ids
+msgid "Payment Details"
+msgstr "تفاصيل الدفع"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order_payment_info__payment_method_line_id
+msgid "Payment Method"
+msgstr "طريقة الدفع"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_account_payment_method_line
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__payment_method_ids
+msgid "Payment Methods"
+msgstr "طرق الدفع"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+msgid "Payment method"
+msgstr "طريقة الدفع"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_account_payment
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__payment_info_tag_ids
+msgid "Payments"
+msgstr "الدفعات"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__phone_mobile_search
+msgid "Phone or Mobile"
+msgstr "الهاتف أو الجوال"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_event__cost
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_meters__price
+msgid "Price"
+msgstr "السعر"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_product_template
+msgid "Product"
+msgstr "المنتج"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_product_product
+msgid "Product Variant"
+msgstr "متغير المنتج"
+
+#. module: dekad_real_estate
+#: model:ir.actions.act_window,name:dekad_real_estate.action_product_template_custom
+#: model:ir.ui.menu,name:dekad_real_estate.menu_product_template_custom
+msgid "Products"
+msgstr "المنتجات"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_account_analytic_account__product_ids
+msgid "Products associated with this property."
+msgstr "المنتجات المرتبطة بهذه الوحدة."
+
+#. module: dekad_real_estate
+#: model:account.analytic.plan,name:dekad_real_estate.analytic_plan_properties
+#: model:ir.actions.act_window,name:dekad_real_estate.action_analytic_account_custom
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_event__multi_property_ids
+#: model:ir.ui.menu,name:dekad_real_estate.menu_analytic_account_custom
+#: model:ir.ui.menu,name:dekad_real_estate.properties_main_menu
+#: model:ir.ui.menu,name:dekad_real_estate.properties_sub_menu
+msgid "Properties"
+msgstr "الوحدات"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report_wizard__property_id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_meter_reading__account_analytic_account_id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_event__property_id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_filter__property_id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__account_analytic_account_id
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.industry_real_estate_rental_search_view_gantt
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_form_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_property_rental_event_search
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_sale_order_filter_inherit_sold_properties
+msgid "Property"
+msgstr "الوحدة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__property_type
+msgid "Property Category"
+msgstr "فئة الوحدة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__property_attachment_doc_ids
+msgid "Property Documents"
+msgstr "مستندات الوحدة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_event__property_ids
+msgid "Property Filter Helper"
+msgstr "مساعد تصفية الوحدة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__property_image
+msgid "Property Image"
+msgstr "صورة الوحدة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__property_attachment_image_ids
+msgid "Property Images"
+msgstr "صور الوحدة"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_property_orientation
+msgid "Property Orientation"
+msgstr "اتجاه الوحدة"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_property_rental_event
+msgid "Property Rental Event"
+msgstr "حدث إيجار الوحدة"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_property_type
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__property_type_id
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "Property Type"
+msgstr "نوع الوحدة"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "Property Type ID"
+msgstr "معرّف نوع الوحدة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__is_published
+msgid "Published"
+msgstr "منشور"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_meter_reading__quantity
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: dekad_real_estate
+#: model:ir.module.category,name:dekad_real_estate.module_category_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_res_config_settings_real_estate
+msgid "Real Estate"
+msgstr "العقارات"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_real_estate_buildings
+msgid "Real Estate Buildings"
+msgstr "مباني العقارات"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_real_estate_meters
+msgid "Real Estate Meters"
+msgstr "عدادات العقارات"
+
+#. module: dekad_real_estate
+#: model:ir.actions.act_window,name:dekad_real_estate.action_real_estate_config_settings
+msgid "Real Estate Settings"
+msgstr "إعدادات العقارات"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_order_form_inherit_custom
+msgid "Receipt Voucher"
+msgstr "سند القبض"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__payment_id
+msgid "Receipt Voucher Payment"
+msgstr "دفعة سند القبض"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.industry_real_estate_rental_search_view_gantt
+msgid "Related Buildings"
+msgstr "المباني المرتبطة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__product_ids
+msgid "Related Products"
+msgstr "المنتجات المرتبطة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__rent_end_date
+msgid "Rent End Date"
+msgstr "تاريخ انتهاء الإيجار"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__rent_start_date
+msgid "Rent Start Date"
+msgstr "تاريخ بدء الإيجار"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__rent_state
+msgid "Rent State"
+msgstr "حالة الإيجار"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+msgid "Rent state"
+msgstr "حالة الإيجار"
+
+#. module: dekad_real_estate
+#: model:ir.ui.menu,name:dekad_real_estate.menu_property_rental_event_root
+msgid "Rental Calendar"
+msgstr "تقويم الإيجار"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_rental_cancel_wizard
+msgid "Rental Cancel Wizard"
+msgstr "معالج إلغاء الإيجار"
+
+#. module: dekad_real_estate
+#: model:ir.actions.act_window,name:dekad_real_estate.action_rental_contracts
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__rental_contract_id
+#: model:ir.ui.menu,name:dekad_real_estate.menu_rental_contracts
+msgid "Rental Contracts"
+msgstr "عقود الإيجار"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__rental_event_count
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_property_rental_event_form
+msgid "Rental Event"
+msgstr "حدث الإيجار"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_property_rental_filter
+msgid "Rental Event Property Filter"
+msgstr "مرشح وحدة حدث الإيجار"
+
+#. module: dekad_real_estate
+#: model:ir.actions.act_window,name:dekad_real_estate.action_property_rental_event
+#: model:ir.actions.act_window,name:dekad_real_estate.action_property_rental_event_from_property
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__rental_event_ids
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_form_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_property_rental_event_calendar
+msgid "Rental Events"
+msgstr "أحداث الإيجار"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__rental_mode
+msgid "Rental Mode"
+msgstr "نمط الإيجار"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__rental_type
+msgid "Rental Type"
+msgstr "نوع الإيجار"
+
+#. module: dekad_real_estate
+#: model:ir.actions.server,name:dekad_real_estate.cron_check_not_paid_contracts_ir_actions_server
+msgid "Rental: Auto Set Not Paid"
+msgstr "الإيجار: ضبط غير مدفوع تلقائياً"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_analytic_account__property_type__room
+msgid "Room"
+msgstr "غرفة"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+msgid "Running contracts"
+msgstr "العقود الجارية"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_form_real_estate
+msgid "SOLD"
+msgstr "مُباع"
+
+#. module: dekad_real_estate
+#: model:ir.actions.act_window,name:dekad_real_estate.action_property_sale_orders
+msgid "Sale Contracts"
+msgstr "عقود البيع"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__sale_mode
+msgid "Sale Mode"
+msgstr "نمط البيع"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_payment__sale_order_id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_meter_reading__sale_order_id
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order_payment_info__sale_order_id
+msgid "Sale Order"
+msgstr "أمر البيع"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_sale_order_payment_info
+msgid "Sale Order Payment Details"
+msgstr "تفاصيل دفع أمر البيع"
+
+#. module: dekad_real_estate
+#: model:ir.ui.menu,name:dekad_real_estate.menu_sales_contracts
+msgid "Sales Contracts"
+msgstr "عقود المبيعات"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: dekad_real_estate
+#: model:ir.model,name:dekad_real_estate.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "بند أمر المبيعات"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_property_rental_event_search
+msgid "Search Rental Events"
+msgstr "البحث في أحداث الإيجار"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_meters__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: dekad_real_estate
+#: model:ir.ui.menu,name:dekad_real_estate.menu_real_estate_settings
+msgid "Settings"
+msgstr "الإعدادات"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_analytic_account__property_type__shed
+msgid "Shabra"
+msgstr "شبرة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_analytic_account__property_type__shop
+msgid "Shop"
+msgstr "محل تجاري"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__show_cancel_info
+msgid "Show Cancel Info"
+msgstr "عرض معلومات الإلغاء"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_rental_cancel_wizard__show_checkout_date
+msgid "Show Checkout Date"
+msgstr "عرض تاريخ المغادرة"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_contract_report_wizard
+msgid "Show Contracts"
+msgstr "عرض العقود"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__show_offer_type
+msgid "Show Offer Type"
+msgstr "عرض نوع العرض"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_product_product__show_price_limit_fields
+#: model:ir.model.fields,field_description:dekad_real_estate.field_product_template__show_price_limit_fields
+msgid "Show Price Limit Fields"
+msgstr "عرض حقول حد السعر"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__show_rental_event_button
+msgid "Show Rental Event Button"
+msgstr "عرض زر حدث الإيجار"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_account_analytic_account__is_property_sold
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order__is_property_sold
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_sale_order_filter_inherit_sold_properties
+msgid "Sold"
+msgstr "مُباع"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_sale_order_filter_inherit_sold_properties
+msgid "Sold Status"
+msgstr "حالة البيع"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_sale_order_payment_info__source
+msgid "Source"
+msgstr "المصدر"
+
+#. module: dekad_real_estate
+#: model:property.orientation,name:dekad_real_estate.orientation_south
+msgid "South"
+msgstr "جنوب"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_account_analytic_account__offer_type
+msgid "Specify whether the property is available for Sale or Rent."
+msgstr "حدد ما إذا كانت الوحدة متاحة للبيع أم الإيجار."
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_rental_event__start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_buildings__state
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_real_estate_form
+msgid "State"
+msgstr "المنطقة"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_buildings__street
+msgid "Street"
+msgstr "الشارع"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_buildings__street2
+msgid "Street 2"
+msgstr "الشارع 2"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_real_estate_form
+msgid "Street 2..."
+msgstr "الشارع 2..."
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_real_estate_form
+msgid "Street..."
+msgstr "الشارع..."
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_analytic_account__property_type__studio
+msgid "Studio"
+msgstr "استوديو"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_order_form_inherit_custom
+msgid "Tenant"
+msgstr "المستأجر"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_contract_report_search
+msgid "This Month"
+msgstr "هذا الشهر"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_analytic_account__invoice_status__to_invoice
+msgid "To invoice"
+msgstr "للفوترة"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_contract_report_search
+msgid "Today"
+msgstr "اليوم"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__total_amount
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.report_contract_report_document
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_contract_report_tree
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_account_analytic_account__apartment_area
+msgid "Total area of the apartment in square meters."
+msgstr "إجمالي مساحة الشقة بالمتر المربع."
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_sale_order__hour_number
+msgid "Total rental hours (only for hourly rentals)"
+msgstr "إجمالي ساعات الإيجار (للإيجار بالساعة فقط)"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_contract_report__bank_transfer
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_payment_method_line__payment_category__bank_transfer
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.report_contract_report_document
+msgid "Transfer"
+msgstr "تحويل بنكي"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_property_type__name
+msgid "Type Name"
+msgstr "اسم النوع"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_filter_inherit
+msgid "Unavailable"
+msgstr "غير متاح"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_meter_reading__usage
+msgid "Usage"
+msgstr "الاستهلاك"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__account_analytic_account__property_type__warehouse
+msgid "Warehouse"
+msgstr "مستودع"
+
+#. module: dekad_real_estate
+#: model:property.orientation,name:dekad_real_estate.orientation_west
+msgid "West"
+msgstr "غرب"
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,help:dekad_real_estate.field_res_company__enforce_product_price_limits
+#: model:ir.model.fields,help:dekad_real_estate.field_res_config_settings__enforce_product_price_limits
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_sale_config_settings_inherit_price_limits
+msgid ""
+"When enabled, the system will block sale order line prices outside the "
+"min/max defined on the product."
+msgstr ""
+"عند التفعيل، سيمنع النظام أسعار بنود أمر البيع التي تقع خارج الحد الأدنى/الأقصى المحدد للمنتج."
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_cancel_wizard_form
+msgid "Write the reason for cancellation..."
+msgstr "اكتب سبب الإلغاء..."
+
+#. module: dekad_real_estate
+#: model:ir.model.fields.selection,name:dekad_real_estate.selection__sale_order__rental_type__yearly
+msgid "Yearly"
+msgstr "سنوي"
+
+#. module: dekad_real_estate
+#. odoo-python
+#: code:addons/dekad_real_estate/wizards/rental_cancel_wizard.py:0
+msgid "You cannot use %s because the order is not paid or partially paid."
+msgstr "لا يمكنك استخدام %s لأن الطلب غير مدفوع أو مدفوع جزئياً."
+
+#. module: dekad_real_estate
+#. odoo-python
+#: code:addons/dekad_real_estate/wizards/rental_cancel_wizard.py:0
+msgid "You cannot use %s because there is no invoice for this order."
+msgstr "لا يمكنك استخدام %s لأنه لا توجد فاتورة لهذا الطلب."
+
+#. module: dekad_real_estate
+#. odoo-python
+#: code:addons/dekad_real_estate/wizards/rental_cancel_wizard.py:0
+msgid "You must choose the Early Checkout date."
+msgstr "يجب عليك اختيار تاريخ المغادرة المبكرة."
+
+#. module: dekad_real_estate
+#: model:ir.model.fields,field_description:dekad_real_estate.field_real_estate_buildings__zip
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_real_estate_form
+msgid "ZIP"
+msgstr "الرمز البريدي"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_account_analytic_account_form_real_estate
+msgid "e.g. Apartment Oxford Street"
+msgstr "مثال: شقة شارع أكسفورد"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_rental_contracts_custom_search
+msgid "paid"
+msgstr "مدفوع"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.view_res_config_settings_real_estate
+msgid "properties Settings"
+msgstr "إعدادات الوحدات"
+
+#. module: dekad_real_estate
+#: model_terms:ir.ui.view,arch_db:dekad_real_estate.report_contract_report_document
+msgid "بيان ايجار"
+msgstr "بيان إيجار"

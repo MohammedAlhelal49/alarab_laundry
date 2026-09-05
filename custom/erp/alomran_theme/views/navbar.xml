@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="add_custom_links"
+              inherit_id="website.navbar_nav"
+              name="Add Custom Navigation Links">
+
+        <!-- Add before default menu items -->
+        <xpath expr="//t[@t-out='0']" position="before">
+
+            <li class="nav-item">
+                <a class="nav-link active" href="/">
+                    <i class="fa fa-home me-2"/>
+                    Home
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/about">
+                    <i class="fa fa-info-circle me-2"/>
+                    About Us
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/courses">
+                    <i class="fa fa-book-open me-2"/>
+                    Courses
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/branches">
+                    <i class="fa fa-map-marker-alt me-2"/>
+                    Branches
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/initiative">
+                    <i class="fa fa-map-marker-alt me-2"/>
+                    Woman Initiative
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">
+                    <i class="fa fa-envelope me-2"/>
+                    Contact Us
+                </a>
+            </li>
+
+        </xpath>
+
+    </template>
+<template id="replace_phone_content" inherit_id="website.header_text_element" name="Replace Phone Content">
+    <!-- Replace phone sections -->
+    <xpath expr="//a[contains(@href,'tel:')]" position="replace"> </xpath>
+    <!-- Replace default section -->
+    <xpath expr="//t[@t-else='']/div/a[contains(@href,'tel:')]" position="replace"> </xpath>
+</template>
+
+
+</odoo>

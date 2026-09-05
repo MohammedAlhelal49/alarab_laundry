@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_payment_pos_user,Access Payment for POS User,account.model_account_payment,point_of_sale.group_pos_user,1,1,1,1
+access_account_move_sale_user,name_account_move_sale_user,account.model_account_move,sales_team.group_sale_salesman,1,1,1,1
+access_account_move_line_sale_user,name_account_move_line_sale_user,account.model_account_move_line,sales_team.group_sale_salesman,1,1,1,1
+access_product_multi_uom_price_user,product.multi.uom.price pos user,model_product_multi_uom_price,point_of_sale.group_pos_user,1,0,0,0
+access_product_multi_uom_price_manager,product.multi.uom.price pos manager,model_product_multi_uom_price,point_of_sale.group_pos_manager,1,1,1,1
+access_product_tmpl_multi_uom_price_user,product.tmpl.multi.uom.price pos user,model_product_tmpl_multi_uom_price,point_of_sale.group_pos_user,1,0,0,0
+access_product_tmpl_multi_uom_price_manager,product.tmpl.multi.uom.price pos manager,model_product_tmpl_multi_uom_price,point_of_sale.group_pos_manager,1,1,1,1

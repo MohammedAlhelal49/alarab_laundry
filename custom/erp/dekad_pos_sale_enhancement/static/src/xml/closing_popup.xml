@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-inherit="point_of_sale.ClosePosPopup"
+       t-inherit-mode="extension">
+
+        <!--
+            Hide the cash control block when 'hide_cash_control' is enabled,
+            UNLESS the current user has the Cash Control Bypass group.
+            The bypass flag is injected via pos.session._load_pos_data()
+            following Odoo 18 core pattern (same as _has_cash_move_perm).
+        -->
+        <xpath expr="//div"
+               position="after">
+ <span> Test</span>
+            <!--            <attribute name="t-att-class">-->
+            <!--            {-->
+            <!--                'w-100 mb-3': true,-->
+            <!--                'd-none': pos.config.hide_cash_control &amp;&amp; !pos.session._cash_control_bypass-->
+            <!--            }-->
+            <!--            </attribute>-->
+
+        </xpath>
+
+    </t>
+
+</templates>

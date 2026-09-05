@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_product_company_visibility_add_wizard_form" model="ir.ui.view">
+        <field name="name">product.company.visibility.add.wizard.form</field>
+        <field name="model">product.company.visibility.add.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Add Companies to Product Visibility">
+                <group>
+                    <field name="product_tmpl_ids" widget="many2many_tags" readonly="1"/>
+                    <field name="company_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                </group>
+                <footer>
+                    <button name="action_apply" type="object" string="Add" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- Appears in the "⚙ Actions" menu on the Products LIST view     -->
+    <!-- only (binding_view_types="list") - requires a selection since -->
+    <!-- it operates on the selected products (active_ids passed via   -->
+    <!-- context, picked up by product_tmpl_ids' default below).       -->
+    <!-- Opens as a dialog (target="new"). -->
+    <!-- ============================================================ -->
+    <record id="action_product_company_visibility_add_wizard" model="ir.actions.act_window">
+        <field name="name">Add Companies to Visibility</field>
+        <field name="res_model">product.company.visibility.add.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_product_company_visibility_add_wizard_form"/>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="product.model_product_template"/>
+        <field name="binding_view_types">list</field>
+        <field name="context">{'default_product_tmpl_ids': context.get('active_ids', [])}</field>
+    </record>
+
+</odoo>

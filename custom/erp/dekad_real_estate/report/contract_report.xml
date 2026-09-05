@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="paperformat_contract_report_landscape" model="report.paperformat">
+        <field name="name">Contract Report Landscape</field>
+        <field name="default">False</field>
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+
+        <field name="margin_top">47</field>
+        <field name="margin_bottom">25</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">10</field>
+
+        <field name="header_line">False</field>
+        <field name="header_spacing">45</field>
+        <field name="dpi">90</field>
+    </record>
+
+
+    <!-- ========================= -->
+    <!-- REPORT ACTION -->
+    <!-- ========================= -->
+    <record id="action_report_contract_report" model="ir.actions.report">
+        <field name="name">بيان الإيجار</field>
+        <field name="model">contract.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dekad_real_estate.report_contract_report_document</field>
+        <field name="report_file">dekad_real_estate.report_contract_report_document</field>
+        <field name="binding_model_id" ref="model_contract_report"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="dekad_real_estate.paperformat_contract_report_landscape"/>
+
+    </record>
+
+
+    <!-- ========================= -->
+    <!-- QWEB TEMPLATE -->
+    <!-- ========================= -->
+    <template id="report_contract_report_document">
+        <t t-call="web.external_layout">
+
+            <main>
+                <div class="page" style="direction:rtl; text-align:right;">
+
+                    <!-- ================= HEADER ================= -->
+
+                    <div style="text-align:center; margin-bottom:30px;">
+
+                        <h2 style="margin-bottom:8px;">
+                            بيان ايجار
+                        </h2>
+
+                        <t t-set="wiz" t-value="docs and docs[0].env['contract.report.wizard'].search([], limit=1, order='id desc')"/>
+
+                        <!-- Line 1 -->
+                        <div style="font-size:16px; margin-bottom:4px;">
+                            <strong>
+                                <t t-esc="wiz.building_id.name"/>
+                                <t t-if="wiz.building_id and wiz.property_id">
+                                    -<t t-esc="wiz.property_id.name"/>
+                                </t>
+                            </strong>
+                        </div>
+
+                        <!-- Line 2 -->
+                        <div style="font-size:14px;">
+                            <strong>
+                                <t t-if="wiz.date_from or wiz.date_to">
+                                    (
+                                    <t t-if="wiz.date_from">
+                                        <t t-esc="wiz.date_from"/>
+                                    </t>
+
+                                    <t t-if="wiz.date_from and wiz.date_to">
+                                        \
+                                    </t>
+
+                                    <t t-if="wiz.date_to">
+                                        <t t-esc="wiz.date_to"/>
+                                    </t>
+                                    )
+                                </t>
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <!-- ================= INIT TOTALS ================= -->
+                    <t t-set="total_transfer" t-value="0"/>
+                    <t t-set="total_booking"  t-value="0"/>
+                    <t t-set="total_aquda"    t-value="0"/>
+                    <t t-set="total_airbnb"   t-value="0"/>
+                    <t t-set="total_cash"     t-value="0"/>
+
+
+                    <!-- ================= TABLE ================= -->
+                    <table class="table table-sm o_main_table" style="width:100%; font-size:14px;">
+
+                        <thead>
+                            <tr>
+                                <th class="text-end">اليوم</th>
+                                <th class="text-end">التاريخ</th>
+                                <th class="text-end">المستأجر</th>
+                                <th class="text-end">نوع الإلغاء</th>
+                                <th class="text-center">الإجمالي</th>
+                                <th class="text-center">تحويل</th>
+                                <th class="text-center">Booking</th>
+                                <th class="text-center">Aquda</th>
+                                <th class="text-center">Airbnb</th>
+                                <th class="text-center">Cash</th>
+                                <th class="text-end">ملاحظات</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <t t-foreach="docs" t-as="o">
+
+                                <tr>
+                                    <td><t t-esc="o.day_name"/></td>
+                                    <td><t t-esc="o.contract_date"/></td>
+
+                                    <td>
+                                        <t t-esc="o.partner_id.name"/>
+                                    </td>
+
+                                    <!-- Cancel Type -->
+                                    <td class="text-start">
+                                        <t t-if="o.cancel_type">
+                                            <span style="color:#b30000;">
+                                                <t t-esc="dict(o._fields['cancel_type'].selection).get(o.cancel_type, '')"/>
+                                            </span>
+                                        </t>
+                                    </td>
+                                    <td class="text-center">
+                                        <strong>
+                                             <span t-field="o.total_amount"
+                                                    t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                        </strong>
+
+                                    </td>
+                                    <!-- Monetary -->
+                                    <td class="text-center">
+                                        <span t-field="o.bank_transfer"
+                                              t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                    </td>
+
+                                    <td class="text-center">
+                                        <span t-field="o.booking"
+                                              t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                    </td>
+
+                                    <td class="text-center">
+                                        <span t-field="o.aquda"
+                                              t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                    </td>
+
+                                    <td class="text-center">
+                                        <span t-field="o.airbnb"
+                                              t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                    </td>
+
+                                    <td class="text-center">
+                                        <span t-field="o.cash"
+                                              t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                    </td>
+
+                                    <td>
+                                        <t t-esc="o.note"/>
+                                    </td>
+                                </tr>
+
+                                <!-- accumulate -->
+                                <t t-set="total_transfer" t-value="total_transfer + (o.bank_transfer or 0)"/>
+                                <t t-set="total_booking"  t-value="total_booking  + (o.booking or 0)"/>
+                                <t t-set="total_aquda"    t-value="total_aquda    + (o.aquda or 0)"/>
+                                <t t-set="total_airbnb"   t-value="total_airbnb   + (o.airbnb or 0)"/>
+                                <t t-set="total_cash"     t-value="total_cash     + (o.cash or 0)"/>
+
+                            </t>
+                        </tbody>
+
+
+                        <!-- ================= TOTAL ================= -->
+                        <tr style="background-color:#f8f9fa; border:2px solid #dcdcdc;">
+                            <td colspan="3"></td>
+
+                            <td>
+                                <strong>
+                                    الإجمالي
+                                </strong>
+                            </td>
+                            <td class="text-center">
+                                <strong>
+                                    <span t-esc="total_transfer + total_booking + total_aquda + total_airbnb + total_cash"
+                                       t-options='{"widget": "monetary", "display_currency": docs and docs[0].currency_id}'/>
+                                </strong>
+                            </td>
+
+                            <td class="text-center">
+                                <strong>
+                                    <span t-esc="total_transfer"
+                                          t-options='{"widget": "monetary", "display_currency": docs and docs[0].currency_id}'/>
+                                </strong>
+                            </td>
+
+                            <td class="text-center">
+                                <strong>
+                                    <span t-esc="total_booking"
+                                          t-options='{"widget": "monetary", "display_currency": docs and docs[0].currency_id}'/>
+                                </strong>
+                            </td>
+
+                            <td class="text-center">
+                                <strong>
+                                    <span t-esc="total_aquda"
+                                          t-options='{"widget": "monetary", "display_currency": docs and docs[0].currency_id}'/>
+                                </strong>
+                            </td>
+
+                            <td class="text-center">
+                                <strong>
+                                    <span t-esc="total_airbnb"
+                                          t-options='{"widget": "monetary", "display_currency": docs and docs[0].currency_id}'/>
+                                </strong>
+                            </td>
+
+                            <td class="text-center">
+                                <strong>
+                                    <span t-esc="total_cash"
+                                          t-options='{"widget": "monetary", "display_currency": docs and docs[0].currency_id}'/>
+                                </strong>
+                            </td>
+
+                            <td></td>
+                        </tr>
+
+                    </table>
+
+                </div>
+            </main>
+
+        </t>
+    </template>
+
+</odoo>
+

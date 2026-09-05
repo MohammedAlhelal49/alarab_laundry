@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Sales Orders -->
+
+    <record id="sale_order_selected_users_rule"
+            model="ir.rule">
+
+        <field name="name">Selected Users Orders</field>
+
+        <field name="model_id"
+               ref="sale.model_sale_order"/>
+
+        <field name="groups"
+               eval="[(4, ref('dekad_sale_enhancement.group_sale_selected_users'))]"/>
+
+        <field name="domain_force">
+            [('user_id', 'in', user.allowed_sales_user_ids.ids + [user.id])]
+        </field>
+
+    </record>
+
+        <!-- Sale Order Lines -->
+    <record id="sale_order_line_selected_users_rule" model="ir.rule">
+        <field name="name">Selected Users Order Lines</field>
+        <field name="model_id" ref="sale.model_sale_order_line"/>
+        <field name="groups"
+               eval="[(4, ref('dekad_sale_enhancement.group_sale_selected_users'))]"/>
+        <field name="domain_force">
+            [('order_id.user_id', 'in', user.allowed_sales_user_ids.ids + [user.id])]
+        </field>
+    </record>
+
+        <!-- =========================================================
+         CRM Leads / Opportunities
+        ========================================================== -->
+    <record id="crm_lead_selected_users_rule" model="ir.rule">
+        <field name="name">Selected Users CRM Leads / Opportunities</field>
+        <field name="model_id" ref="crm.model_crm_lead"/>
+        <field name="groups"
+               eval="[(4, ref('dekad_sale_enhancement.group_sale_selected_users'))]"/>
+        <field name="domain_force">
+            [('user_id', 'in', user.allowed_sales_user_ids.ids + [user.id])]
+        </field>
+    </record>
+
+</odoo>

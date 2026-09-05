@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="de_student_fee_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="font">
+                            <div class="page">
+                                <br/>
+                                <br/>
+                                <br/>
+                                <div class="text-center">
+                                    <h3>
+                                        <strong>Student fee Details</strong>
+                                    </h3>
+                                </div>
+                                <div class="row  mt-5">
+                                    <div style=" margin-left:15px;">
+                                        <b>Student:</b>
+                                        <span style="font-weight: 300 !important;" t-out="o.name"/>
+                                    </div>
+                                </div>
+                                <br/>
+                                <table t-if="len(o.student_fee_ids)" class="table table-bordered">
+                                    <thead class="text-center"
+                                           style="background-color:#eeeeee; font-size:14px; font-weight:600;">
+                                        <th>Grade</th>
+                                        <th>Submit date</th>
+                                        <th>Amount</th>
+                                        <th>Discount</th>
+                                        <th>After discount amount</th>
+
+
+                                    </thead>
+                                    <tbody class="text-center"
+                                           style="font-size:12px;border-top: 1px solid #dbdbdb !important;">
+                                        <tr t-foreach="o.student_fee_ids" t-as="fee">
+                                            <td>
+                                                <span t-field="fee.grade_id.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="fee.date" t-options="{'widget':'date'}"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="fee.amount"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="fee.discount"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="fee.after_discount_amount"/>
+                                            </td>
+
+
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">
+                                                <b>Total Number of Fees :</b>
+                                            </td>
+                                            <td class="text-center">
+                                                <b>
+                                                    <span t-esc="len(o.student_fee_ids)"/>
+                                                </b>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">
+                                                <b>Total amount of Fees :</b>
+                                            </td>
+                                            <td class="text-center">
+                                                <b>
+                                                    <span t-esc="sum([x.after_discount_amount for x in o.student_fee_ids])"/>
+                                                </b>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div t-else="" class="alert alert-secondary" role="alert">
+                                    There is no fees to display
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="act_open_de_student_fee_report_view" model="ir.actions.report">
+            <field name="name">Student fees</field>
+            <field name="model">de.student</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">dekad_fee.de_student_fee_report</field>
+            <field name="report_file">dekad_fee.de_student_fee_report</field>
+            <field name="print_report_name">'Student fees - %s' % (object.name)</field>
+            <field name="binding_model_id" ref="dekad_core.model_de_student"/>
+            <field name="binding_type">report</field>
+            <field name="binding_view_types">form</field>
+        </record>
+
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

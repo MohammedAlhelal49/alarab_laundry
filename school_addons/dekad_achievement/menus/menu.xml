@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- student achievement menus -->
+    <menuitem id="menu_de_student_achievement_general"
+              name="Achievements"
+              parent="dekad_core.menu_de_student_root"
+              sequence="30"
+    />
+    <menuitem id="menu_de_student_achievement"
+              name="Achievements"
+              parent="menu_de_student_achievement_general"
+              sequence="10" action="act_open_de_student_achievement_view"
+    />
+    <menuitem id="menu_de_student_achievement_assign"
+              name="Students Achievements"
+              parent="menu_de_student_achievement_general"
+              sequence="20"
+              action="act_open_de_student_achievement_assign_view"
+    />
+
+    <menuitem id="menu_de_multi_student_achievement_wizard" name="Multi students achievement"
+              sequence="30"
+              parent="menu_de_student_achievement_general"
+              action="act_open_de_multi_student_achievement_wizard_view"/>
+
+
+    <!-- teacher achievement menus -->
+    <menuitem id="menu_de_teacher_achievement_general"
+              name="Achievements"
+              parent="dekad_core.menu_de_teacher_root"
+              sequence="20"
+    />
+    <menuitem id="menu_de_teacher_achievement"
+              name="Achievements"
+              parent="menu_de_teacher_achievement_general"
+              sequence="10" action="act_open_de_teacher_achievement_view"
+
+    />
+    <menuitem id="menu_de_teacher_achievement_assign"
+              name="Teachers Achievements"
+              parent="menu_de_teacher_achievement_general"
+              sequence="20"
+              action="act_open_de_teacher_achievement_assign_view"
+    />
+
+    <menuitem id="menu_de_multi_teacher_achievement_wizard" name="Multi teachers achievement"
+              sequence="30"
+              parent="menu_de_teacher_achievement_general"
+              action="act_open_de_multi_teacher_achievement_wizard_view"/>
+</odoo>

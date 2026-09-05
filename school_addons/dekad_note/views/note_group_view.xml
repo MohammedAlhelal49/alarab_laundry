@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_de_note_group_tree" model="ir.ui.view">
+            <field name="name">de.note.group.list</field>
+            <field name="model">de.note.group</field>
+            <field name="arch" type="xml">
+                <list string="Note Group">
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_de_note_group_form" model="ir.ui.view">
+            <field name="name">de.note.group.form</field>
+            <field name="model">de.note.group</field>
+            <field name="arch" type="xml">
+                <form string="Note Group">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <separator string="Grades"/>
+                            <field name="by_grade"
+                            />
+                            <field name="grade_ids" required="by_grade == True" invisible="by_grade != True"
+
+                                   widget="many2many_tags" options="{'no_create': True , 'no_open' : True}"/>
+
+                            <field name="student_ids" widget="many2many_tags" readonly="1"
+                                   invisible="by_grade == False or grade_ids == []"
+
+                                   options="{'no_create': True , 'no_open' : True}"
+                            />
+                            <field name="parent_ids" widget="many2many_tags" readonly="1"
+                                   options="{'no_create': True , 'no_open' : True}"
+                                   invisible="by_grade == False or grade_ids == []"
+                            />
+                            <field name="teacher_ids" widget="many2many_tags" readonly="1"
+                                   options="{'no_create': True , 'no_open' : True}"
+                                   invisible="by_grade == False or grade_ids == []"/>
+                        </group>
+                        <group invisible="by_grade == True">
+                            <separator string="Students"/>
+                            <field name="all_students"
+                                   invisible="selected_students == True"/>
+
+                            <field name="selected_students" invisible="all_students == True"
+                            />
+
+                            <field name="student_ids" widget="many2many_tags"
+                                   options="{'no_create': True , 'no_open' : True}"
+                                   invisible="all_students == True" required="selected_students == True"
+                            />
+
+
+                            <separator string="Teachers"/>
+                            <field name="all_teachers" invisible="selected_teachers == True"
+                            />
+
+                            <field name="selected_teachers" invisible="all_teachers == True"
+                            />
+
+                            <field name="teacher_ids" widget="many2many_tags"
+                                   options="{'no_create': True , 'no_open' : True}"
+                                   invisible="all_teachers == True" required="selected_teachers == True"
+                            />
+
+                            <separator string="Parents"/>
+                            <field name="all_parents" invisible="selected_parents == True"
+                            />
+
+                            <field name="selected_parents"
+                                   invisible="all_parents == True"/>
+
+                            <field name="parent_ids" widget="many2many_tags"
+                                   invisible="all_parents == True" required="selected_parents == True"
+                                   options="{'no_create': True , 'no_open' : True}"
+                            />
+                        </group>
+
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="view_de_note_group_search" model="ir.ui.view">
+            <field name="name">de.note.group.search</field>
+            <field name="model">de.note.group</field>
+            <field name="arch" type="xml">
+                <search string="Note Group">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_de_note_group_view">
+            <field name="name">Groups</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.note.group</field>
+            <field name="view_mode">list,form</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="search_view_id" ref="view_de_note_group_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_note_group_view_tree">
+            <field name="act_window_id" ref="act_open_de_note_group_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_de_note_group_tree"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_note_group_view_form">
+            <field name="act_window_id" ref="act_open_de_note_group_view"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="20"/>
+            <field name="view_id" ref="view_de_note_group_form"/>
+        </record>
+    </data>
+</odoo>

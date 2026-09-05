@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_de_student_form_classroom_inherited" model="ir.ui.view">
+            <field name="name">de.student.form.classroom.inherited</field>
+            <field name="model">de.student</field>
+            <field name="inherit_id" ref="dekad_core.view_de_student_form"/>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='grades']//field[@name='student_grade_ids']//field[@name='grade_id']"
+                       position="after">
+                    <field name="classroom_id" groups="dekad_classroom.group_de_classroom"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Smart Button -->
+    <record id="view_company_form_attachment_button" model="ir.ui.view">
+        <field name="name">res.company.form.attachment.button</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+
+        <field name="arch" type="xml">
+
+            <xpath expr="//div[contains(@class, 'oe_button_box')]" position="inside">
+
+                <button type="object"
+                        name="action_view_company_attachments"
+                        class="oe_stat_button"
+                        icon="fa-paperclip">
+
+                    <field name="attachment_count"
+                           widget="statinfo"
+                           string="Attachments"/>
+
+                </button>
+
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- Notebook -->
+    <record id="view_company_form_attachment_tab" model="ir.ui.view">
+        <field name="name">res.company.form.attachment.tab</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+
+        <field name="arch" type="xml">
+
+            <xpath expr="//notebook" position="inside">
+
+                <page string="Attachments">
+
+                    <field name="attachment_ids">
+
+                        <list editable="bottom"
+                              decoration-success="status == 'valid'"
+                              decoration-warning="status == 'expiring'"
+                              decoration-danger="status == 'expired'">
+
+                            <field name="name"/>
+
+                            <field name="upload_file"
+                                   filename="upload_filename"/>
+
+                            <field name="expiry_date"/>
+
+                            <field name="notify_before"/>
+                            <field name="status"  optional="hide"/>
+                            <field name="notification_type"/>
+                            <field name="user_ids"  widget="many2many_tags"/>
+                            <field name="description"  optional="hide"/>
+
+                        </list>
+
+                    </field>
+
+                </page>
+
+            </xpath>
+
+        </field>
+
+    </record>
+
+</odoo>

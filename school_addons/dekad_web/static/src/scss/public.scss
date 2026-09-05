@@ -1,0 +1,591 @@
+// handling the footer
+.js_language_selector {
+// display : none !important;
+}
+
+// handling the navbar
+.navbar-nav {
+.nav-item {
+a {
+font-size : 14px !important;
+}
+.active {
+ color: #45978B !important;
+}
+&:hover {
+a {
+ color: #45978B !important;
+}
+}
+}
+.dropdown:hover {
+.dropdown-menu {
+a {
+ color: #212529 !important;
+}
+}
+}
+}
+
+
+
+
+
+#oe_structure_header_contact_1 {
+.col-lg-8  {
+width:calc(100% - 87px) !important;
+@media (max-width : 500px) {
+font-size:14px !important;
+}
+}
+.col-lg-4 {
+text-align :  right  ;
+width:87px !important;
+}
+}
+
+#top_menu .dropdown-toggle {
+position: relative;
+  left: 15px;
+  @media(max-width:991px) {
+  left : 0px ;
+  }
+}
+ .navbar-toggler {
+&:focus {
+outline : nine !important;
+border : none !important;
+box-shadow : none !important;
+}
+}
+
+@media(max-width:991px) {
+#top_menu_container {
+display : block !important;
+.navbar-brand {
+display : inline-block !important;
+}
+.navbar-toggler  {
+float : right  !important;
+}
+}
+}
+
+
+
+// the administration message
+.administration-message {
+  padding: 50px 0px;
+  .message {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .mr {
+      color: white;
+    font-size: 16px;
+    margin: 10px 0px 0px;
+  }
+
+  .holder {
+    border: 1px solid #979797;
+    border-radius: 5px;
+    width: 90%;
+    padding: 15px;
+    height : 100% !important;
+    margin : auto;
+  }
+
+  .role {
+    color: #585858;
+    font-size: 13px;
+  }
+
+  img {
+    width: 60px;
+    height: 70px;
+    border-radius: 50%;
+    margin-top: 10px;
+  }
+
+  .col-12 {
+    text-align: center;
+  }
+}
+
+// the PARTNERSHIP
+#academic_partnership {
+  padding-top: 80px !important;
+  .academic-partnership {
+    .row {
+      margin-top: 50px;
+    }
+    .col-12 {
+      .holder {
+        padding: 10px;
+        width: 95%;
+        margin: auto;
+        border: 1px solid #e1e1e1;
+      }
+      img {
+        width: 100%;
+        height: 220px !important;
+      }
+    }
+  }
+}
+
+// the Get In Touch section
+#get_in_touch {
+  padding-top: 120px !important;
+
+  .get-in-touch {
+    .col-12 {
+      padding: 0px !important;
+    }
+
+    .media {
+      height: 450px;
+      background-color: #45978b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .holder {
+        background-color: #45978b;
+
+        .facebook-social-holder,
+        .instagram-social-holder {
+          background-color: #38393a !important;
+          padding: 15px 20px;
+          border-radius: 50%;
+
+          i {
+            color: white !important;
+          }
+        }
+      }
+
+      @media(max-width:767px) {
+      display : none !important;
+      }
+    }
+
+    .touch {
+      position: relative;
+      top: -40px;
+
+      .card {
+        border: none !important;
+        box-shadow: 0px 0px 20px 0px rgba(33, 33, 33, 0.25);
+
+        .icon-holder,
+        .content-holder {
+          display: inline-block;
+        }
+
+        .icon-holder {
+          background-color: #45978b;
+          padding: 15px 20px;
+          border-radius: 50%;
+
+          i {
+            color: white;
+          }
+        }
+
+        .content-holder {
+          margin-left: 10px;
+          position: relative;
+          top: 15px;
+
+          .content {
+            font-size: 14px;
+            margin-top: 10px;
+          }
+        }
+
+        .block {
+          margin-top: 40px;
+        }
+
+        hr {
+          color: #bba5a5 !important;
+        }
+
+        .block:nth-of-type(3) {
+          padding-bottom: 50px;
+        }
+      }
+    }
+
+    .map {
+      iframe {
+        height: 450px;
+        width: 100% !important;
+      }
+    }
+  }
+}
+// about section
+#about_school {
+  .about-school {
+    padding: 100px 30px;
+
+    background-color: black;
+
+    h1 {
+      margin-top: 20px;
+    }
+
+    h1,
+    h4 {
+      color: white;
+    }
+
+    .tab-content {
+      min-height: 300px !important;
+      line-height: 30px;
+      font-size: 18px;
+      color: #dbdbdb;
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .show > .nav-link {
+      width: 160px !important;
+      text-align: left !important;
+    }
+  }
+
+  #v-pills-tab {
+    margin-right: 50px !important;
+    .nav-link {
+      text-align: left !important;
+    }
+    button {
+      margin-top: 15px !important;
+      background: #1f2620 !important;
+      color: #dbdbdb !important;
+    }
+    .active {
+      background: #45978b !important;
+    }
+  }
+
+  .tabs-custom-holder {
+  @media(max-width:767px) {
+  display:block !important;
+
+     .nav-pills .nav-link.active,
+    .nav-pills .show > .nav-link {
+      width: 100% !important;
+    }
+
+     .tab-content {
+     margin-top : 40px !important;
+    }
+  }
+  }
+}
+
+// back to school
+.back-to-school {
+
+  @media(max-width:768px) {
+  padding: 80px 0px !important;
+  h1,h2 {
+  span {
+  font-size:30px !important;
+  }
+
+  }
+}
+  .container {
+    max-width: 950px !important;
+  }
+  padding: 120px 0px;
+  .item:nth-of-type(1) {
+    margin-bottom: 60px;
+  }
+  @media(max-width:767px) {
+
+    .item:nth-of-type(1) {
+    margin-bottom: 30px;
+  }
+    .item {
+  margin-top : 25px;
+  }
+  }
+
+
+
+
+  h6 {
+    margin: 20px 0px 40px;
+  }
+  .item img {
+    border-radius: 15px;
+  }
+}
+
+// careers
+.careers {
+  padding-top: 80px;
+  .content-row {
+    align-items: center;
+  }
+
+  img {
+    width: 100% !important;
+    max-width: 400px;
+  }
+
+  h1 {
+    font-weight: 600;
+    text-transform: uppercase !important;
+    line-height: 50px !important;
+     font-size : 35px !important;
+
+    @media(max-width:991px) {
+    font-size : 30px !important;
+    }
+
+       @media(max-width:767px) {
+    span {
+    display : block !important;
+    }
+    }
+  }
+
+  .colored {
+    color: #45978b !important;
+  }
+
+  .career-content {
+    margin-top: 100px;
+    background-color: #00a39030;
+    padding: 50px 0px;
+  }
+
+  .description p {
+    line-height: 28px;
+    color:  #686868;
+    font-size: 17px;
+    margin-top: 20px;
+  }
+
+  .card-text {
+    padding: 20px;
+  }
+
+  .image-holder {
+    display: flex;
+    align-items: center;
+  }
+
+  .image-holder img {
+    width: 50px !important;
+  }
+
+  .count-holder {
+    text-align: right;
+    font-size: 50px;
+    color: rgba(4, 4, 44, 0.17);
+    color: #6a6a6a;
+    opacity: 0.3;
+  }
+
+  .cards {
+  margin-top : 15px !important;
+  @media (max-width:991px) {
+  .col-12:nth-of-type(3) {
+  margin-top : 30px ;
+  }
+  }
+  }
+
+  .cards h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px 0px 15px;
+  }
+
+  .cards p {
+    font-size: 14px;
+    color: #868686;
+    line-height: 23px;
+    min-height: 92px;
+  }
+
+  .description p {
+    max-width: 90%;
+  }
+
+  .caser,
+  .baser {
+    margin-top: 30px;
+  }
+}
+
+// contact us page
+
+.contact-us-page {
+  background-image: linear-gradient(180deg, #30ac95 0%, black 100%);
+  color: #ffffff;
+  padding: 150px 0px;
+  @media(max-width:991px) {
+    padding: 100px 0px;
+  }
+
+  h3 {
+    margin-bottom: 25px;
+    font-weight: bold !important;
+    font-size: 30px !important;
+
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .contact-block {
+    padding: 15px 0px;
+  }
+  .icon-holder,
+  .content-holder {
+    display: inline-block;
+  }
+
+  .icon-holder {
+    position: relative;
+    top: -30px;
+    margin-right: 15px;
+
+    i {
+      font-size: 22px !important;
+    }
+  }
+
+  .content {
+    margin-top: 10px;
+    font-size: 22px !important;
+     @media(max-width:768px) {
+       font-size: 20px !important;
+     }
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+     @media(max-width:768px) {
+      height: 300px;
+     }
+  }
+
+  .content-section {
+    padding-right: 40px !important;
+  }
+}
+
+// customizations on the portal designing
+section#contact {
+  p.border-style {
+    border-bottom: none !important;
+  }
+  .footer-link {
+    margin-bottom: 3px !important;
+  }
+
+  .s_social_media {
+    i {
+      width: 2.5rem !important;
+      height: 2.5rem !important;
+    }
+  }
+
+  #connect {
+    ul {
+      li {
+        margin-bottom: 3px !important;
+      }
+    }
+  }
+
+  // handling the homepage designing
+  .homepage {
+    .carousel {
+      .oe_custom_bg {
+        min-height: 800px !important;
+        position: relative;
+      }
+      .oe_custom_bg::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.35
+        ); /* Adjust the opacity as needed */
+        z-index: -1; /* Place the overlay behind the content */
+      }
+    }
+  }
+
+  #home-page .background_style {
+    @media (min-width: 768px) and (max-width: 991px) {
+      min-height: 700px !important;
+    }
+  }
+
+  section#achieve {
+    padding-top: 0px !important;
+  }
+
+  // ananymous public designing
+  @media (max-width: 991px) {
+    .row {
+      .o_colored_level:nth-of-type(2) {
+        margin-top: 40px;
+        max-height: 170px;
+      }
+    }
+  }
+}
+
+//  home about adiips
+
+    #about_adiips {
+      padding: 70px 0px 100px;
+img {
+width:100px;
+
+}
+
+.row{
+margin-top : 60px;
+
+}
+a {
+    color : black !important;
+    text-decoration: none !important;
+
+}
+
+a:hover {
+
+    color : #45978B !important;
+}
+p {
+
+    margin-top : 10px;
+}
+
+    }
+
+

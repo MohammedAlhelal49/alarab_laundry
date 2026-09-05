@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="product_product_form_view_admission_quick_create" model="ir.ui.view">
+            <field name="name">product.product.form.view.admission.quick.create</field>
+            <field name="model">product.product</field>
+            <field name="arch" type="xml">
+                <form string="Product product admission quick create" duplicate="0">
+                    <sheet name="product_form">
+                        <field name="product_variant_count" invisible="1"/>
+                        <field name="is_product_variant" invisible="1"/>
+                        <field name="attribute_line_ids" invisible="1"/>
+                        <field name="type" invisible="1"/>
+                        <field name="company_id" invisible="1"/>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                                invisible="active  == True"/>
+                        <field name="id" invisible="True"/>
+                        <field name="image_1920" widget="image" class="oe_avatar"
+                               options="{'preview_image': 'image_128'}"/>
+                        <div class="oe_title">
+                            <label for="name" string="Product Name"/>
+                            <h1>
+                                <div class="d-flex">
+                                    <field class="text-break" name="name" placeholder="e.g. Cheese Burger"/>
+                                </div>
+                            </h1>
+                        </div>
+
+                        <notebook>
+                            <page string="General Information" name="general_information">
+                                <group>
+
+                                    <group name="group_general">
+<!--                                        <field name="detailed_type" invisible="1"/>-->
+                                        <field name="active" invisible="1"/>
+                                        <label for="list_price"/>
+                                        <div name="pricing">
+                                            <field name="list_price" class="oe_inline" widget="monetary" string="Amount"
+                                                   options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                                        </div>
+                                        <field name="categ_id" string="Product Category"/>
+                                        <field name="product_tag_ids" widget="many2many_tags"
+                                               options="{'color_field': 'color'}"/>
+                                        <field name="currency_id" invisible="1"/>
+                                        <field name="cost_currency_id" invisible="1"/>
+                                        <field name="product_variant_id" invisible="1"/>
+                                    </group>
+                                </group>
+                                <group string="Internal Notes">
+                                    <field colspan="2" name="description" nolabel="1"
+                                           placeholder="This note is only for internal purposes."/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter/>
+                </form>
+
+            </field>
+        </record>
+        <record id="view_de_grade_list_fee_inherited" model="ir.ui.view">
+            <field name="name">de.grade.list.fee.inherited</field>
+            <field name="model">de.grade</field>
+            <field name="inherit_id" ref="dekad_core.view_de_grade_list"/>
+            <field name="arch" type="xml">
+                <field name="teacher_count" position="after">
+                    <field name="fee_term_id" groups="dekad_core.group_de_grade" optional="hide"/>
+                    <field name="fee" groups="dekad_core.group_de_grade" optional="hide"/>
+                </field>
+            </field>
+        </record>
+        <record id="view_de_grade_form_fee_inherited" model="ir.ui.view">
+            <field name="name">de.grade.form.fee.inherited</field>
+            <field name="model">de.grade</field>
+            <field name="inherit_id" ref="dekad_core.view_de_grade_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='admission']" position="inside" groups="dekad_core.group_de_grade">
+                    <group>
+                        <field name="fee_term_id" options="{'no_create': True , 'no_open': True}"/>
+                           <field name="product_id" />
+<!--                               context="{'default_detailed_type': 'service',-->
+                        <!--                                                'form_view_ref':'dekad_fee.product_product_form_view_admission_quick_create'}"-->
+<!--                               domain="[('detailed_type' , '=' , 'service')]"-->
+
+                        <field name="fee"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

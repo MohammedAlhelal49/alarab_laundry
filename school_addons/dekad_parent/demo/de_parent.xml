@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--        parents relationships-->
+        <record id="de_parent_relationship_1" model="de.parent.relationship">
+            <field name="name">Father</field>
+        </record>
+        <record id="de_parent_relationship_2" model="de.parent.relationship">
+            <field name="name">Mother</field>
+        </record>
+        <record id="de_parent_relationship_3" model="de.parent.relationship">
+            <field name="name">Aunt</field>
+        </record>
+        <record id="de_parent_relationship_4" model="de.parent.relationship">
+            <field name="name">Sister</field>
+        </record>
+        <record id="de_parent_relationship_5" model="de.parent.relationship">
+            <field name="name">Brother</field>
+        </record>
+        <!--parents-->
+        <record id="de_res_partner_parent_1" model="res.partner">
+            <field name="email">mahmood@gmail.com</field>
+            <field name="name">Mahmood mansor</field>
+            <field name="religion_id" ref="dekad_core.de_religion_1"/>
+            <field name="mobile">050556759</field>
+            <field name="phone">011235679</field>
+            <field name="is_parent">True</field>
+            <field name="image_1920" type="base64"
+                   file="dekad_parent/static/img/parent.jpg"/>
+            <field name="nationality_id" ref="base.ae"/>
+            <field name="country_id" ref="base.ae"/>
+        </record>
+
+        <record id="de_parent_user_1" model="res.users" context="{'no_reset_password': True}">
+            <field name="email">mahmood@gmail.com</field>
+            <field name="name">Mahmood mansor</field>
+            <field name="partner_id" ref="de_res_partner_parent_1"/>
+            <field name="login">parent</field>
+            <field name="password">parent</field>
+            <field name="tz">Asia/Dubai</field>
+            <field name="groups_id"
+                   eval="[(4,ref('base.group_portal'))]"/>
+        </record>
+
+        <record id="de_parent_1" model="de.parent">
+            <field name="relationship_id" ref="de_parent_relationship_1"/>
+            <field name="email">mahmood@gmail.com</field>
+            <field name="name">Mahmood mansor</field>
+            <field name="partner_id" ref="de_res_partner_parent_1"/>
+            <field name="user_id" ref="de_parent_user_1"/>
+            <field name="gender">male</field>
+            <field name="birth_date">1982-06-01</field>
+            <field name="address">Full address of the parent</field>
+            <field name="student_ids"
+                   eval="[(6, 0, [ref('dekad_core.de_student_1'), ref('dekad_core.de_student_2')])]"/>
+        </record>
+
+    </data>
+</odoo>

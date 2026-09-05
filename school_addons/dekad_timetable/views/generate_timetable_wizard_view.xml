@@ -1,0 +1,31 @@
+<odoo>
+  <!-- Wizard Form View -->
+  <record id="view_generate_timetable_wizard_form" model="ir.ui.view">
+    <field name="name">generate.timetable.wizard.form</field>
+    <field name="model">generate.timetable.wizard</field>
+    <field name="arch" type="xml">
+      <form string="Generate Timetable">
+        <group>
+          <field name="academic_year_id"/>
+          <field name="academic_term_id"/>
+          <field name="grade_id"/>
+          <field name="classroom_id"/>
+          <field name="periods_per_day"/>
+        </group>
+        <footer>
+          <button name="action_generate" type="object" string="Generate" class="btn-primary"/>
+          <button string="Cancel" class="btn-secondary" special="cancel"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+
+  <!-- Action to Launch the Wizard -->
+  <record id="action_generate_timetable_wizard" model="ir.actions.act_window">
+    <field name="name">Generate Timetable</field>
+    <field name="res_model">generate.timetable.wizard</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="view_generate_timetable_wizard_form"/> <!-- Ensures this view is used -->
+    <field name="target">new</field>
+  </record>
+</odoo>

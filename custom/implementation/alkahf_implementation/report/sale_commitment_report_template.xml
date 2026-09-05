@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_sale_commitment_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.basic_layout">
+                    <t t-set="o" t-value="doc"/>
+                    <div class="page"
+                         style="font-family: 'Amiri', 'Arial', sans-serif; direction: rtl; text-align: right;">
+
+                        <!-- Date -->
+                        <div style="text-align: left; margin-bottom: 20px; direction: ltr;">
+                            <strong>التاريخ :</strong>
+                            <span t-esc="doc.date_order.strftime('%Y / %m / %d') if doc.date_order else ''"/>
+                        </div>
+
+                        <!-- Title -->
+                        <div style="text-align: center; margin-bottom: 30px;">
+                            <h2 style="text-decoration: underline; letter-spacing: 3px;">
+                                تعهد و إقـرار
+                            </h2>
+                        </div>
+
+                        <!-- Customer Info Block -->
+                        <table style="width: 100%; margin-bottom: 20px; direction: rtl;">
+                            <tr>
+                                <td style="width: 70%; vertical-align: top; padding: 4px;">
+                                    <p>
+                                        <strong>أنا السيد :</strong>
+                                        <span t-esc="doc.partner_id.name or ''"/>
+                                    </p>
+                                    <p>
+                                        <strong>بطاقة هوية رقم :</strong>
+                                        <span t-esc="doc.partner_id.id_number"/>
+                                    </p>
+                                </td>
+                                <td class="text-end"
+                                    style="width: 25%; vertical-align: top; padding: 4px; text-align: left;">
+                                    <p>
+                                        <strong>الجنسية :</strong>
+                                        <span t-esc="doc.partner_id.nationality.with_context(lang='ar_001').name"/>
+                                    </p>
+                                    <p>
+                                        <strong>تليفون رقم :</strong>
+                                        <span style="direction:ltr; unicode-bidi:bidi-override; display:inline-block;"
+                                              t-esc="doc.partner_id.phone or doc.partner_id.mobile"/>
+                                    </p>
+
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div style="margin-bottom: 20px; text-align: center;">
+                            <p>
+                                مستأجر
+                                <strong>
+                                    <span t-esc="o.account_analytic_account_id.name"/>
+                                </strong>
+                                في بناية
+                                <strong>
+                                    <span t-esc="o.property_building_id.name"/>
+                                </strong>
+                                -
+                                <span t-esc="o.account_analytic_account_id.property_address"/>
+                            </p>
+                            <p>
+                                <strong>المالك :</strong>
+                                <span t-esc="res_company.name"/>
+                            </p>
+                            <p>
+                                <strong>بإسم :</strong>
+                                <span t-esc="doc.partner_id.name or ''"/>
+                            </p>
+                            <p invisible="not doc.partner_id.license_type">
+                                <strong t-if="doc.partner_id.license_type == 'trade_license'">رخصة تجارية رقم :</strong>
+                                <strong t-if="doc.partner_id.license_type == 'trade_name'">الاسم التجاري :</strong>
+                                <span t-if="doc.partner_id.license_type == 'trade_license'"
+                                      t-esc="doc.partner_id.trade_license or ''"/>
+                                <span t-if="doc.partner_id.license_type == 'trade_name'"
+                                      t-esc="doc.partner_id.trade_name or ''"/>
+                            </p>
+                        </div>
+
+                        <hr style="border: 1px solid #000; margin-bottom: 15px;"/>
+
+                        <!-- Commitment Paragraphs -->
+
+                        <div style="font-family: 'Arial'; line-height: 2; margin-bottom: 15px; padding-right: 10px;">
+                            <t t-out="res_company.sale_commitment_declaration or ''"/>
+                        </div>
+
+                        <div style="margin-top:20px; border:1px solid #000; padding:10px; text-align:center;">
+                            <strong>* يمنع إستخدام سلندرات الغاز داخل البناية.</strong>
+                        </div>
+
+                        <!-- Signature Block -->
+
+                        <div class="row mt-5">
+                            <div class="col-6">
+                                <div style="padding: 10px; height: 80px; vertical-align: top;">
+                                    <p>
+                                        <strong>التوقيع :</strong>
+                                    </p>
+                                    <div style="margin-top: 40px; border-bottom: 1px solid #000; width: 80%;"></div>
+                                </div>
+                                <div style="padding: 10px; height: 80px; vertical-align: top;">
+                                    <!-- Intentionally blank for stamp -->
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div style="padding: 10px; height: 80px; vertical-align: top;">
+                                    <p>
+                                        <strong>الختم :</strong>
+                                    </p>
+                                    <div style="margin-top: 40px; border-bottom: 1px solid #000; width: 80%;"></div>
+                                </div>
+                                <div style="padding: 10px; vertical-align: top; text-align: center;">
+                                    <!-- Company stamp area -->
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

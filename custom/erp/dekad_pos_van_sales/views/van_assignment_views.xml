@@ -1,0 +1,42 @@
+<odoo>
+    <!-- FORM VIEW -->
+    <record id="view_van_assignment_form" model="ir.ui.view">
+        <field name="name">van.assignment.form</field>
+        <field name="model">van.assignment</field>
+        <field name="arch" type="xml">
+            <form string="Assign Van to Customers">
+                <sheet>
+                    <group>
+                        <field name="van_id" domain="[('is_van_sale', '=', True)]"/>
+                        <field name="driver_id" readonly="1"/>
+                        <field name="note"/>
+                    </group>
+                    <field name="customer_ids">
+                        <list editable="bottom">
+                            <field name="partner_id" />
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="user_id"/>
+                            <field name="city"/>
+                            <field name="country_id"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- LIST VIEW -->
+    <record id="view_van_assignment_list" model="ir.ui.view">
+        <field name="name">van.assignment.list</field>
+        <field name="model">van.assignment</field>
+        <field name="arch" type="xml">
+            <list string="Van Assignment Report">
+                <field name="van_id" />
+                <field name="driver_id"/>
+                <field name="customer_names" />
+                <field name="note"/>
+            </list>
+        </field>
+    </record>
+</odoo>

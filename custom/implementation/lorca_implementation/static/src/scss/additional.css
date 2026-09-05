@@ -1,0 +1,24 @@
+.main-content-holder {
+    min-height: 700px;
+}
+ .invoice-signs-block {
+	 padding-top: 30px;
+	  page-break-inside: avoid;
+    break-inside: avoid; /* For compatibility */
+}
+ .invoice-signs-block .approved {
+	 text-align: center;
+}
+ .invoice-signs-block .company {
+	 text-align: right;
+}
+ .invoice-signs-block .holder {
+	 display: inline-block;
+	 border-top: 1px solid #dfdfdf;
+	 padding: 5px 10px;
+}
+
+.copy-revision {
+     text-align: right;
+  padding-bottom: 10px;
+     }

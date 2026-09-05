@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_report_invoice_profit_user,account.report.invoice.profit,model_account_report_invoice_profit,account.group_account_invoice,1,0,0,0
+access_account_report_invoice_line_profit_user,account.report.invoice.line.profit,model_account_report_invoice_line_profit,account.group_account_invoice,1,0,0,0

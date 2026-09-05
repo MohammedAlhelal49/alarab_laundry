@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        General Ledger: Add Analytic Account column.
+        Hidden by default, toggled via "Show Analytic Account" in Options dropdown.
+        Only on General Ledger — the only report whose lines are individual AMLs.
+        "Group by Analytic Account" restructures the layout entirely (no column needed).
+    -->
+    <record id="general_ledger_report_analytic_account" model="account.report.column">
+        <field name="report_id" ref="account_reports.general_ledger_report"/>
+        <field name="name">Analytic Account</field>
+        <field name="expression_label">analytic_account</field>
+        <field name="figure_type">string</field>
+        <field name="sequence">15</field>
+    </record>
+
+    <!-- Company column: General Ledger -->
+    <record id="general_ledger_report_company_name" model="account.report.column">
+        <field name="report_id" ref="account_reports.general_ledger_report"/>
+        <field name="name">Company</field>
+        <field name="expression_label">company_name</field>
+        <field name="figure_type">string</field>
+        <field name="sequence">1</field>
+    </record>
+
+    <!-- Analytic Account column: Partner Ledger -->
+    <record id="partner_ledger_report_analytic_account" model="account.report.column">
+        <field name="report_id" ref="account_reports.partner_ledger_report"/>
+        <field name="name">Analytic Account</field>
+        <field name="expression_label">analytic_account</field>
+        <field name="figure_type">string</field>
+        <field name="sequence">1</field>
+    </record>
+
+    <!-- Company column: Partner Ledger -->
+    <record id="partner_ledger_report_company_name" model="account.report.column">
+        <field name="report_id" ref="account_reports.partner_ledger_report"/>
+        <field name="name">Company</field>
+        <field name="expression_label">company_name</field>
+        <field name="figure_type">string</field>
+        <field name="sequence">1</field>
+    </record>
+
+    <!-- Enable Hide Initial Balance filter on General Ledger only -->
+    <record id="account_reports.general_ledger_report" model="account.report">
+        <field name="filter_hide_initial_balance">True</field>
+    </record>
+</odoo>

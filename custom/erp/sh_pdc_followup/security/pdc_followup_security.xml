@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="pdc_followup_comp_rule" model="ir.rule">
+        <field name="name">PDC Follow-up multi company rule</field>
+        <field name="model_id" ref="model_pdc_followup_line"/>
+        <field eval="True" name="global"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id', 'parent_of', company_ids)]</field>
+    </record>
+
+</odoo>

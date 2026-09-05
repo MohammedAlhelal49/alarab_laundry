@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="de_complaint_analysis_wizard_form">
+            <field name="name">de.complaint.analysis.wizard.form</field>
+            <field name="model">de.complaint.analysis.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Complaint Analysis">
+                    <group>
+                        <field name="created_by"/>
+                    </group>
+                    <footer groups="base.group_user">
+                        <button name="print_report" type="object"
+                                string="Print" class="oe_highlight"/>
+                        <button string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_de_complaint_analysis_wizard_view">
+            <field name="name">Complaint analysis</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.complaint.analysis.wizard</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode" ref="de_complaint_analysis_wizard_form"/>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>
+
+
+
+
+
+
+
+

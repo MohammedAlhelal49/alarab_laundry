@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_template_form_view_company_visibility" model="ir.ui.view">
+        <field name="name">product.template.form.company.visibility</field>
+        <field name="model">product.template</field>
+        <!-- We inherit the same form used before (product_template_only_form_view).
+             We confirmed from the Odoo source (product/views/product_views.xml)
+             that there are TWO occurrences of the company_id field on the base
+             form:
+               1) At the top of the sheet: <field name="company_id" invisible="1"/> (hidden, technical only)
+               2) Inside <group name="group_standard_price">: the real, visible field.
+             So we use a scoped xpath that targets company_id only inside
+             group_standard_price specifically, to avoid matching the hidden
+             one (a generic //field[@name='company_id'] xpath would match
+             the first occurrence in document order = the hidden one, which
+             would be a silent bug). -->
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <!-- IMPORTANT: unlike the native company_id field (which
+                 carries groups="base.group_multi_company"), our field
+                 must NOT have that restriction. base.group_multi_company
+                 is only auto-granted to users with access to more than
+                 one company - in this deployment every user belongs to
+                 exactly one company, so no regular user (only Admin) has
+                 that group, making the field invisible to everyone else
+                 if we copy that restriction. Our field's purpose (mark
+                 which company a product should be visible to) is
+                 unrelated to whether the CURRENT user has multi-company
+                 access - any product manager needs to be able to set it
+                 regardless. Confirmed as the root cause of the field
+                 only showing for Admin users. -->
+            <xpath expr="//group[@name='group_standard_price']/field[@name='company_id']" position="after">
+                <field name="company_visibility_id" groups = "dekad_super_user.group_de_support"
+                       options="{'no_create': True}"
+                       placeholder="Visible to all companies (leave empty)"/>
+                <field name="company_visibility_ids" groups = "dekad_super_user.group_de_support"
+                       widget="many2many_tags"
+                       options="{'no_create': True}"
+                       placeholder="Visible to all companies (leave empty)"/>
+            </xpath>
+            <!-- Hide the native company_id field entirely from every user
+                 (Admin included, per explicit client requirement). We keep
+                 the field present in the arch (invisible="1") rather than
+                 removing the node - it's still needed internally (e.g. by
+                 our own create() logic, and by Odoo's own multi-company
+                 machinery), just not shown in the UI anymore. -->
+            <xpath expr="//group[@name='group_standard_price']/field[@name='company_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- PRODUCTS LIST VIEW (main Products screen, e.g. Sales/Inventory) -->
+    <!-- Base list record id: product.product_template_tree_view       -->
+    <!-- Confirmed via Community source (product/views/                -->
+    <!-- product_template_views.xml, lines 3-30): the company_id       -->
+    <!-- column here is a direct child of the top-level <list>, no      -->
+    <!-- nesting - same field, same attributes                        -->
+    <!-- (groups="base.group_multi_company" optional="hide") as the    -->
+    <!-- one we already patch on the form. We fully REPLACE this       -->
+    <!-- column with our own field, per explicit client requirement    -->
+    <!-- (replace the "Company" column with our new field). -->
+    <!-- ============================================================ -->
+    <record id="product_template_tree_view_company_visibility" model="ir.ui.view">
+        <field name="name">product.template.tree.company.visibility</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="replace">
+                <field name="company_visibility_ids" groups = "dekad_super_user.group_de_support"
+                       widget="many2many_tags"
+                       options="{'no_create': True}"
+                       optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- PRODUCT VARIANT LIST VIEW ("Product Variants" screen)         -->
+    <!-- Base list record id: product.product_product_tree_view        -->
+    <!-- Same fix as the template-level list above, applied to the     -->
+    <!-- variant-level list (a separate, sibling view - NOT inherited  -->
+    <!-- from the template list). -->
+    <!-- ============================================================ -->
+    <record id="product_product_tree_view_company_visibility" model="ir.ui.view">
+        <field name="name">product.product.tree.company.visibility</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="replace">
+                <field name="company_visibility_ids" groups = "dekad_super_user.group_de_support"
+                       widget="many2many_tags"
+                       options="{'no_create': True}"
+                       optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- PRODUCT VARIANT FORM ("Product Variants" card)                -->
+    <!-- Base form record id: product.product_normal_form_view          -->
+    <!-- IMPORTANT: this view inherits DIRECTLY from                   -->
+    <!-- product.product_template_form_view (the shared base form),    -->
+    <!-- NOT from product_template_only_form_view (the one we already  -->
+    <!-- patched for the Products/template screen) - it's a SIBLING    -->
+    <!-- inherit chain, so our earlier invisible=1 patch does NOT      -->
+    <!-- propagate here. Needs its own separate patch, same scoped     -->
+    <!-- xpath (group_standard_price/field[company_id]) since this     -->
+    <!-- view doesn't touch that group itself (confirmed via source    -->
+    <!-- review), so the node is inherited unmodified from the base    -->
+    <!-- form and the same xpath applies cleanly. -->
+    <!-- ============================================================ -->
+    <record id="product_normal_form_view_company_visibility" model="ir.ui.view">
+        <field name="name">product.product.form.company.visibility</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='group_standard_price']/field[@name='company_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

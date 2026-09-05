@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="group_de_admission" model="res.groups">
+            <field name="name">Students Admission</field>
+             <field name="category_id" ref="dekad_core.module_category_school"/>
+             <field name="implied_ids"
+                   eval="[(4, ref('base.group_user'))]"/>
+               <field name="sequence">40</field>
+        </record>
+
+
+        <record id="dekad_core.group_de_back_office_admin" model="res.groups">
+            <field name="implied_ids"
+                   eval="[(4, ref('group_de_admission'))]"/>
+        </record>
+
+    </data>
+</odoo>
+
+

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_de_production_period_input_list" model="ir.ui.view">
+        <field name="name">view.de.production.period.input.tree</field>
+        <field name="model">production.period.input</field>
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <list>
+                <field name="company_id" optional="hide"/>
+                <field name="current_user" optional="show"/>
+                <field name="name" optional="show"/>
+                <field name="stock_picking_ids" column_invisible="1"/>
+                <field name="stock_picking_ids_count" column_invisible="1"/>
+                <field name="location_id" required="1" readonly="stock_picking_ids"
+                       options='{"no_open": True, "no_create": True}'
+                       domain="[('usage' , '=' , 'internal')]"/>
+                <field name="input_date" required="1" optional="show" string="Date" widget="date"/>
+            </list>
+        </field>
+    </record>
+
+
+    <record id="view_de_production_period_input_form" model="ir.ui.view">
+        <field name="name">view.de.production.period.input.form</field>
+        <field name="model">production.period.input</field>
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="action_view_picking" class="oe_stat_button" icon="fa-truck"
+                                invisible="stock_picking_ids_count == 0">
+                            <field name="stock_picking_ids_count" widget="statinfo" string="Pickings"/>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="stock_picking_ids" invisible="1"/>
+                            <field name="stock_picking_ids_count" invisible="1"/>
+                            <field name="location_id" required="1" readonly="stock_picking_ids"
+                                   options='{"no_open": True, "no_create": True}'
+                                   domain="[('usage' , '=' , 'internal')]"/>
+
+                            <field name="input_date" required="1" optional="show" widget="date"/>
+                        </group>
+
+                        <group>
+                            <field name="company_id"/>
+                            <field name="current_user"/>
+                            <field name="name"/>
+                        </group>
+
+
+                        <notebook>
+                            <page string="Broken Egg"
+                            >
+                                <group>
+                                    <field name="broken_egg_input" required="1"/>
+                                </group>
+
+                            </page>
+
+                            <page string="Rejected Egg"
+                            >
+                                <group>
+                                    <field name="rejected_egg_input" required="1"/>
+                                </group>
+
+                            </page>
+
+
+                            <page string="Damaged Egg"
+                            >
+                                <group>
+                                    <field name="damaged_egg_input" required="1"/>
+                                </group>
+
+                            </page>
+
+                            <page string="Mother double Egg"
+                            >
+                                <group>
+                                    <field name="mother_egg_input" required="1"/>
+                                </group>
+
+                            </page>
+
+                            <page string="Hatching Egg"
+                            >
+                                <group>
+                                    <field name="chicken_egg_input" required="1"/>
+                                </group>
+
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+                <!-- ✅ Add chatter here -->
+                <div class="oe_chatter">
+                    <chatter/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_de_production_period_input_search" model="ir.ui.view">
+        <field name="name">view.de.production.period.input.search</field>
+        <field name="model">production.period.input</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="location_id"/>
+                <field name="company_id"/>
+                <field name="current_user"/>
+                <field name="input_date" type="date"/>
+                <filter string="Location" name="group_by_location" domain="[]" context="{'group_by': 'location_id'}"/>
+                <filter string="Company" name="group_by_company" domain="[]" context="{'group_by': 'company_id'}"/>
+                <filter string="User" name="group_by_current_user" domain="[]" context="{'group_by': 'current_user'}"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="act_open_de_production_period_input">
+        <field name="name">Production input</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">production.period.input</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+
+    <menuitem id="production_period_input"
+              name="Production Input"
+              action="act_open_de_production_period_input"
+                parent = "dekad_stock_location_additional_cost.stock_daily_inputs"
+
+    />
+</odoo>

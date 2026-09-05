@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Product Template: Search by Arabic/English name, reference, and barcode -->
+    <record id="product_template_multilang_search_view" model="ir.ui.view">
+        <field name="name">product.template.multilang.search</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="attributes">
+
+                <attribute name="string">Product</attribute>
+
+                <attribute name="filter_domain">
+                    [('x_product_search', 'ilike', self)]
+                </attribute>
+
+            </xpath>
+        </field>
+    </record>
+
+
+    <!-- Product Variants: Search by Arabic/English name, reference, and barcode -->
+    <record id="product_product_multilang_search_view" model="ir.ui.view">
+        <field name="name">product.product.multilang.search</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_search_form_view"/>
+
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="attributes">
+
+                <attribute name="string">Product</attribute>
+
+                <attribute name="filter_domain">
+                    [('x_product_search', 'ilike', self)]
+                </attribute>
+
+            </xpath>
+        </field>
+    </record>
+
+
+    <!-- Inventory Transfers: Extend existing Product search -->
+    <record id="stock_picking_multilang_product_search" model="ir.ui.view">
+        <field name="name">stock.picking.multilang.product.search</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="attributes">
+
+                <attribute name="filter_domain">
+                    [('product_id.x_product_search', 'ilike', self)]
+                </attribute>
+
+            </xpath>
+        </field>
+    </record>
+
+
+    <!-- Sales Orders: Extend existing Product search through order lines -->
+    <record id="sale_order_multilang_product_search" model="ir.ui.view">
+        <field name="name">sale.order.multilang.product.search</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']" position="attributes">
+
+                <attribute name="filter_domain">
+                    [('order_line.product_id.x_product_search', 'ilike', self)]
+                </attribute>
+
+            </xpath>
+        </field>
+    </record>
+
+
+    <!-- Purchase Orders: Extend existing Product search -->
+    <record id="purchase_order_multilang_product_search" model="ir.ui.view">
+        <field name="name">purchase.order.multilang.product.search</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
+
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="attributes">
+
+                <attribute name="filter_domain">
+                    [('product_id.x_product_search', 'ilike', self)]
+                </attribute>
+
+            </xpath>
+        </field>
+    </record>
+
+
+    <!-- Invoices/Bills: Add Product search through invoice lines -->
+    <record id="account_move_multilang_product_search" model="ir.ui.view">
+        <field name="name">account.move.multilang.product.search</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+
+        <field name="arch" type="xml">
+
+            <!-- Add Product after the existing Invoice Line search -->
+            <xpath expr="//field[@name='line_ids']" position="after">
+
+                <field name="line_ids"
+                       string="Product"
+                       filter_domain="[('invoice_line_ids.product_id.x_product_search', 'ilike', self)]"/>
+
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

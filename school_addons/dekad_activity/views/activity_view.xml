@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_de_activity_list" model="ir.ui.view">
+            <field name="name">de.activity.list</field>
+            <field name="model">de.activity</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <list string="Activity">
+                    <field name="classroom_id"/>
+                    <field name="type_id"/>
+                    <field name="activity_time" optional="hide"/>
+                    <field name="responsible_id" optional="hide"/>
+                    <field name="student_id"/>
+                    <field name="state"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_de_activity_form" model="ir.ui.view">
+            <field name="name">de.activity.form</field>
+            <field name="model">de.activity</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Activity">
+                    <field name="classroom_student_ids" invisible="1"/>
+                    <field name="id" invisible="1"/>
+                    <header invisible="id==False">
+                        <field name="state" widget="statusbar"/>
+                        <button name="set_confirm" string="Confirm" type="object"
+                                groups="dekad_activity.group_de_activity"
+                                class="oe_highlight" invisible="state != 'draft'"/>
+
+                        <button name="set_draft" string="Draft" type="object"
+                                groups="dekad_activity.group_de_activity"
+                                class="oe_highlight" invisible="state !='confirm'"/>
+
+                        <button name="set_reject" invisible="state != 'confirm' " string="Reject" type="object"
+                                groups="dekad_activity.group_de_activity" class="oe_highlight"/>
+
+                        <button name="set_accept" invisible="state != 'confirm'" string="Accept" type="object"
+                                groups="dekad_activity.group_de_activity" class="oe_highlight"/>
+
+                        <button name="set_cancel" invisible="state not in ('accept','reject')" string="Cancel"
+                                type="object"
+                                groups="dekad_activity.group_de_activity"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="type_id" readonly="state != 'draft'"/>
+                                <field name="classroom_id" readonly="state != 'draft'"/>
+                                <field name="student_id" readonly="state != 'draft'"
+                                       options="{'no_create': True , 'no_open' : True}"
+                                       domain="[('id','in',classroom_student_ids)]"/>
+                            </group>
+                            <group>
+                                <field name="activity_time" readonly="state !='draft'"/>
+                                <field name="responsible_id" readonly="state != 'draft'"
+                                       options="{'no_create': True , 'no_open' : True}"
+                                       domain="[('id','not in' , (1,10130)),('is_student' , '=' , False),('is_teacher' , '=' , False),('is_parent' , '=' , False)]"/>
+                                <field name="create_date" readonly="1"
+                                       invisible="create_date== False"/>
+                                <field name="file" readonly="state != 'draft'" filename="file_name"/>
+                                <field name="file_name" invisible="1"/>  <!-- Added by Ahmed -->
+                            </group>
+                        </group>
+                        <separator string="Description"/>
+                        <field name="description" readonly="state != 'draft'"/>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_de_activity_search" model="ir.ui.view">
+            <field name="name">de.activity.search</field>
+            <field name="model">de.activity</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Activity">
+                    <field name="student_id"/>
+                    <field name="type_id"/>
+                    <field name="state"/>
+                    <filter name="accept" string="Accepted" domain="[('state','=','accept')]"/>
+                    <filter name="reject" string="Rejected" domain="[('state','=','reject')]"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Classroom" name="group_by_classroom"
+                                domain="[]" context="{'group_by':'classroom_id'}"/>
+                        <filter string="Student" name="group_by_student"
+                                domain="[]" context="{'group_by':'student_id'}"/>
+                        <filter string="Type" name="group_by_type"
+                                domain="[]" context="{'group_by':'type_id'}"/>
+
+                        <filter string="Status" name="group_by_state"
+                                domain="[]" context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_de_activity_graph">
+            <field name="name">de.activity.graph</field>
+            <field name="model">de.activity</field>
+            <field name="arch" type="xml">
+                <graph string="Activity" type="bar">
+                    <field name="type_id"/>
+                    <field name="state"/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_de_activity_view">
+            <field name="name">Student Activities</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.activity</field>
+            <field name="binding_view_types">list,form,graph</field>
+            <field name="view_mode">list,form</field>
+            <field name="search_view_id" ref="view_de_activity_search"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_activity_view_form">
+            <field name="act_window_id" ref="act_open_de_activity_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_de_activity_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_activity_view_list">
+            <field name="act_window_id" ref="act_open_de_activity_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="view_de_activity_list"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_activity_view_graph">
+            <field name="act_window_id" ref="act_open_de_activity_view"/>
+            <field name="view_mode">graph</field>
+            <field name="sequence" eval="30"/>
+            <field name="view_id" ref="view_de_activity_graph"/>
+        </record>
+
+    </data>
+</odoo>

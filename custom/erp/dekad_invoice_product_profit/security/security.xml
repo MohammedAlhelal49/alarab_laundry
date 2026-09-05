@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- New security group: only users in this group will see the
+             Profit & Loss Dashboard menu item. -->
+        <record id="group_profit_loss_dashboard_user" model="res.groups">
+            <field name="name">Profit &amp; Loss Dashboard User</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,700 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_web
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-25 11:34+0000\n"
+"PO-Revision-Date: 2025-10-25 11:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_back_button_double
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_back_button_triple
+msgid ""
+"<i class=\"fa fa-home me-1\"/>\n"
+"                        <span>Dashboard</span>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_back_button_double
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_back_button_triple
+msgid ""
+"<i class=\"fa fa-home me-1\"/>\n"
+"                        <span>Student Dashboard</span>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons_extended
+msgid ""
+"<i class=\"fa fa-home me-1\"/>\n"
+"                   Back to Student Dashboard"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons
+msgid ""
+"<i class=\"fa fa-home me-1\"/>\n"
+"                Back to Student Dashboard"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons_extended
+msgid ""
+"<i class=\"fa fa-users me-1\"/>\n"
+"                    Back to My Children"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">Submit and track complaints</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View all your children</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View and edit your profile information</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View and manage student information</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View and submit complaints</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View attendance records</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View class schedule</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View disciplinary records</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View fee information</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View health checkups</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View leave applications</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View notes and communications</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View student notes and communications</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View student profile information</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View your achievements</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View your activities</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View your assignments</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View your class schedule</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View your profile information</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "<small class=\"text-muted\">View your quizzes</small>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_back_button_triple
+msgid "<span>All Items</span>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_back_button_single
+msgid "<span>Back to Dashboard</span>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_back_button_double
+msgid "<span>Back to List</span>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_back_button_triple
+msgid "<span>Back</span>"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.blocked_user
+msgid "Access denied!"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Achievements"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Activities"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_assignment_submission_back
+msgid "All Assignments"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_complaint_update_back
+msgid "All Complaints"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_leave_update_back
+msgid "All Days Off"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+msgid "All Exams"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+msgid "All Items"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_quiz_submission_back
+msgid "All Quizzes"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Assignments"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Attendance"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+msgid "Back"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_activity_show_back
+msgid "Back to Activities"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_assignment_submission_back
+msgid "Back to Assignment"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_assignment_show_back
+msgid "Back to Assignments"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_complaint_update_back
+msgid "Back to Complaint"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_complaint_create_back
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_complaint_show_back
+msgid "Back to Complaints"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_contravention_show_back
+msgid "Back to Contraventions"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_achievement_back
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_activity_back
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_assignment_back
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_attendance_back
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_complaint_back
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_contravention_back
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_fee_back
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_health_back
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_leave_back
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_note_back
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_profile_back
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_quiz_back
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_timetable_back
+msgid "Back to Dashboard"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_leave_update_back
+msgid "Back to Day Off"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_leave_create_back
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_leave_show_back
+msgid "Back to Days Off"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+msgid "Back to Exam"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+msgid "Back to Exams"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+msgid "Back to Fee Invoices"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+msgid "Back to Grades"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_health_show_back
+msgid "Back to Health Records"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+msgid "Back to List"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_note_show_back
+msgid "Back to Notes"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_quiz_submission_back
+msgid "Back to Quiz"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_quiz_show_back
+msgid "Back to Quizzes"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Back to Students List"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+msgid "Back to Submission"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_blocked_breadcrumbs
+msgid "Blocked"
+msgstr ""
+
+#. module: dekad_web
+#. odoo-javascript
+#: code:addons/dekad_web/static/src/js/style_switcher.js:0
+#: code:addons/school_addons/dekad_web/static/src/js/style_switcher.js:0
+msgid "Classic Style"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Complaints"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Contraventions"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+msgid "Dashboard"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Email"
+msgstr ""
+
+#. module: dekad_web
+#. odoo-python
+#: code:addons/dekad_web/controllers/helper.py:0
+#: code:addons/school_addons/dekad_web/controllers/helper.py:0
+msgid "Error processing file: %s"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Fees"
+msgstr ""
+
+#. module: dekad_web
+#. odoo-javascript
+#: code:addons/dekad_web/static/src/js/change_file_btn.js:0
+#: code:addons/school_addons/dekad_web/static/src/js/change_file_btn.js:0
+msgid "File size must be less than 2MB. Please select a smaller file."
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Grade:"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Health Records"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Leave Requests"
+msgstr ""
+
+#. module: dekad_web
+#. odoo-javascript
+#: code:addons/dekad_web/static/src/js/style_switcher.js:0
+#: code:addons/school_addons/dekad_web/static/src/js/style_switcher.js:0
+msgid "Modern Style"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "My Profile"
+msgstr ""
+
+#. module: dekad_web
+#. odoo-python
+#: code:addons/dekad_web/controllers/helper.py:0
+#: code:addons/school_addons/dekad_web/controllers/helper.py:0
+msgid "No file attached to this record."
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Notes"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Parent Avatar"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Parent Portal"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Phone"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.blocked_user
+msgid "Please contact the school administrators for more information"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Profile"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Quick Access"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Quizzes"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Student Avatar"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.hidden_translation_strings
+msgid "Student Dashboard"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Student Information"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Student Portal"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Student Profile"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Students"
+msgstr ""
+
+#. module: dekad_web
+#. odoo-javascript
+#: code:addons/dekad_web/static/src/js/style_switcher.js:0
+#: code:addons/school_addons/dekad_web/static/src/js/style_switcher.js:0
+msgid "Style Changed"
+msgstr ""
+
+#. module: dekad_web
+#. odoo-javascript
+#: code:addons/dekad_web/static/src/js/style_switcher.js:0
+#: code:addons/school_addons/dekad_web/static/src/js/style_switcher.js:0
+msgid "Style changed to: "
+msgstr ""
+
+#. module: dekad_web
+#. odoo-javascript
+#: code:addons/dekad_web/static/src/js/style_switcher.js:0
+#: code:addons/school_addons/dekad_web/static/src/js/style_switcher.js:0
+msgid "Switch to Classic Style"
+msgstr ""
+
+#. module: dekad_web
+#. odoo-javascript
+#: code:addons/dekad_web/static/src/js/style_switcher.js:0
+#: code:addons/school_addons/dekad_web/static/src/js/style_switcher.js:0
+msgid "Switch to Modern Style"
+msgstr ""
+
+#. module: dekad_web
+#. odoo-javascript
+#: code:addons/dekad_web/static/src/js/style_switcher.js:0
+#: code:addons/school_addons/dekad_web/static/src/js/style_switcher.js:0
+msgid "Switched to "
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Timetable"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons
+msgid "Updating submission for:"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.dekad_portal_my_home
+msgid "Viewing Student Information"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons
+msgid "Viewing achievements for:"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons_extended
+msgid "Viewing activity for:"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons_extended
+msgid "Viewing assignment for:"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons_extended
+msgid "Viewing assignments for:"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons_extended
+msgid "Viewing attendance for:"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons_extended
+msgid "Viewing complaint for:"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons_extended
+msgid "Viewing content for:"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons_extended
+msgid "Viewing contravention for:"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons_extended
+msgid "Viewing health for:"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons_extended
+msgid "Viewing leave for:"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons_extended
+msgid "Viewing note for:"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.student_page_buttons
+msgid "Viewing submission for:"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.blocked_user
+msgid "You are blocked to log in to your account from the school management"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_achievements
+msgid "achievements"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_activity_list
+msgid "activity"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_assignment_show
+msgid "assignment"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_assignment_list
+msgid "assignments"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_attendance_list
+msgid "attendance"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_complaint_list
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_complaint_show
+msgid "complaint"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_contravention_list
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_contravention_show
+msgid "contravention"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_health_list
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_health_show
+msgid "health"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_leave_list
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_leave_show
+msgid "leave"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_note_list
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_note_show
+msgid "note"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_assignment_submission
+msgid "submission"
+msgstr ""
+
+#. module: dekad_web
+#: model_terms:ir.ui.view,arch_db:dekad_web.add_buttons_to_assignment_update
+msgid "submission_update"
+msgstr ""

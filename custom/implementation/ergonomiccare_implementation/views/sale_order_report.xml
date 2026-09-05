@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_saleorder_document_inherit_custom_fields" inherit_id="sale.report_saleorder_document">
+
+        <xpath expr="//div[@id='informations']/div[div[@t-field='doc.user_id']]" position="replace"/>
+
+        <xpath expr="//t[@t-set='address']" position="replace">
+            <t t-set="address">
+                <div class="row align-items-end" style="margin-top:20px; margin-bottom:20px;">
+
+                    <!-- LEFT SIDE -->
+                    <div class="col-6 d-flex flex-column justify-content-end">
+
+                        <p>Bill To:</p>
+
+                        <div class="fw-bold">
+                            <div t-field="doc.partner_id"
+                                 t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT SIDE (Patient stays top) -->
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-end"
+                                 t-if="doc.patient_id or doc.patient_code or doc.theqa_no or doc.mrn">
+
+                                <div class="fs-8 text-start" style="line-height:1.8;">
+
+                                    <br/>
+                                    <div t-if="doc.patient_id" class="mb-2">
+                                        <strong>Patient Name:</strong>
+                                        <span t-field="doc.patient_id"/>
+                                    </div>
+
+                                    <div t-if="doc.patient_code" class="mb-2">
+                                        <strong>Code:</strong>
+                                        <span t-field="doc.patient_code"/>
+                                    </div>
+
+                                    <div t-if="doc.theqa_no" class="mb-2">
+                                        <strong>Card No.:</strong>
+                                        <span t-field="doc.theqa_no"/>
+                                    </div>
+
+                                    <div t-if="doc.mrn" class="mb-2">
+                                        <strong>MR No.:</strong>
+                                        <span t-field="doc.mrn"/>
+                                    </div>
+
+                                    <div t-if="doc.lpo_authorization_type == 'lpo' and doc.lpo_number"
+                                         style="margin-bottom: 15px;">
+                                        <strong>LPO No. :</strong>
+                                        <t t-esc="doc.lpo_number"/>
+                                    </div>
+
+                                    <div t-if="doc.lpo_authorization_type == 'authorization' and doc.authorization_number"
+                                         style="margin-bottom: 15px;">
+                                        <strong>Authorization No. :</strong>
+                                        <t t-esc="doc.authorization_number"/>
+                                    </div>
+
+                                    <div t-if="doc.claim_number" class="mb-2">
+                                        <strong>Claim No.:</strong>
+                                        <span t-field="doc.claim_number"/>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </t>
+        </xpath>
+
+        <xpath expr="//t[@t-set='address']" position="after">
+
+            <div class="mt-3" style="line-height:1.4;">
+
+                <div class="fs-8">
+                    <strong>Subject:</strong>
+                </div>
+
+                <div t-if="doc.product_ids">
+                    <t t-foreach="doc.product_ids" t-as="product" t-join=" | ">
+                        <span t-field="product.name" style="font-size:14px;"/>
+                    </t>
+                </div>
+
+                <div t-if="doc.product_description">
+                    <span t-field="doc.product_description"
+                          style="color:#888888; font-size:12px;"/>
+                </div>
+
+                <br/>
+                <br/>
+            </div>
+
+        </xpath>
+
+        <!-- Keep other custom fields in the order info box -->
+        <xpath expr="//div[@id='informations']" position="inside">
+            <div t-if="doc.manufacturer" class="col">
+                <strong>Manufacturer</strong>
+                <div t-field="doc.manufacturer"/>
+            </div>
+            <div t-if="doc.warranty_value" class="col">
+                <strong>Warranty</strong>
+                <div>
+                    <span t-field="doc.warranty_value"/>
+                    <span t-field="doc.warranty_unit"/>
+                </div>
+            </div>
+            <div t-if="doc.delivery_duration_display" class="col">
+                <strong>Delivery Duration</strong>
+                <div t-field="doc.delivery_duration_display"/>
+            </div>
+        </xpath>
+
+    </template>
+</odoo>

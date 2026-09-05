@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- © 2025 ehuerta _at_ ixer.mx License AGPL-3.0 or later (AGPL-3.0) -->
+
+<templates id="template" xml:space="preserve">
+
+    <t t-name="dekad_pos_sale_uom.ControlButtons" t-inherit="point_of_sale.ControlButtons" t-inherit-mode="extension">
+        <xpath expr="//SelectPartnerButton" position="after">
+            <t t-if="!props.showRemainingButtons">
+                <button class="btn btn-light btn-lg lh-lg text-truncate w-auto" t-on-click="() => this.onClickUOMSelector()">
+                    UOM
+                </button>
+            </t>
+        </xpath>
+    </t>
+
+    <t t-name="dekad_pos_sale_uom.Orderline" t-inherit="point_of_sale.Orderline" t-inherit-mode="extension">
+        <xpath expr="//span[contains(@class, 'qty')]" position="before">
+            <span t-esc="line.uom_rec_id_name"/>
+        </xpath>
+    </t>
+
+</templates>

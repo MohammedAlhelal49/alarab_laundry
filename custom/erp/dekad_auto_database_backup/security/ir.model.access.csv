@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dekad_backup_settings_system,name_dekad_backup_settings_system,model_dekad_backup_settings,base.group_system,1,1,1,1
+access_dekad_backup_config_system,name_dekad_backup_config_system,model_dekad_backup_config,base.group_system,1,1,1,1
+access_dekad_backup_log_system,name_dekad_backup_log_system,model_dekad_backup_log,base.group_system,1,1,1,1

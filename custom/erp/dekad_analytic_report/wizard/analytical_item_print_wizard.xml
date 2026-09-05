@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_analytical_item_print_wizard" model="ir.ui.view">
+        <field name="name">analytical.item.print.wizard.form</field>
+        <field name="model">analytical.item.print.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Print Analytical Item Report">
+                <group>
+                    <field name="analytic_line_ids" invisible="1"/>
+                    <field name="group_by" required="1"/>
+                    <field name="show_lines"/>
+                </group>
+                <footer>
+                    <button name="action_print_pdf"
+                            string="Print PDF"
+                            type="object"
+                            class="btn-primary"/>
+                    <button string="Cancel"
+                            class="btn-secondary"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

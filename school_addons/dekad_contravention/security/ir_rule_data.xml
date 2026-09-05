@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="group_de_contravention" model="res.groups">
+            <field name="name">Contraventions</field>
+             <field name="category_id" ref="dekad_core.module_category_student"/>
+             <field name="implied_ids"
+                   eval="[(4, ref('base.group_user'))]"/>
+              <field name="sequence">70</field>
+        </record>
+
+        <record id="dekad_core.group_de_back_office_admin" model="res.groups">
+            <field name="implied_ids"
+                   eval="[(4, ref('group_de_contravention'))]"/>
+        </record>
+
+        <record model="ir.rule" id="portal_de_contravention_rule">
+            <field name="name">portal contravention rule</field>
+            <field name="model_id" ref="model_de_contravention"/>
+            <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">['|' , ( 'student_id.user_id', '=' , user.id) , ( 'student_id.user_id', 'in' ,
+                user.child_ids.ids) , ('state' , '!=' , 'draft')]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="portal_de_student_penalty_rule">
+            <field name="name">portal student penalty rule</field>
+            <field name="model_id" ref="model_de_student_penalty"/>
+            <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">['|' , ( 'student_id.user_id', '=' , user.id) , ( 'student_id.user_id', 'in' ,
+                user.child_ids.ids) ]
+            </field>
+        </record>
+
+        <record model="ir.rule" id="portal_de_student_suspend_rule">
+            <field name="name">portal student suspend rule</field>
+            <field name="model_id" ref="model_de_student_suspend"/>
+            <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">['|' , ( 'student_id.user_id', '=' , user.id) , ( 'student_id.user_id', 'in' ,
+                user.child_ids.ids) ]
+            </field>
+        </record>
+    </data>
+</odoo>
+
+

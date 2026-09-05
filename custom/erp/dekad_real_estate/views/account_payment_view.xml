@@ -1,0 +1,59 @@
+<odoo>
+    <record id="view_account_payment_register_form_inherit_order"
+            model="ir.ui.view">
+
+        <field name="name">account.payment.register.form.order</field>
+
+        <field name="model">account.payment.register</field>
+
+        <field name="inherit_id"
+               ref="account.view_account_payment_register_form"/>
+
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='communication']"
+                   position="after">
+
+                <field name="payment_order"/>
+
+            </xpath>
+
+        </field>
+
+    </record>
+
+    <record id="view_account_payment_form_inherit_order"
+            model="ir.ui.view">
+
+        <field name="name">account.payment.form.order</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='memo']"
+                   position="after">
+
+                <field name="payment_order"/>
+
+            </xpath>
+
+        </field>
+
+    </record>
+
+
+    <record id="view_account_journal_form_inherit_source" model="ir.ui.view">
+        <field name="name">account.journal.form.inherit.source</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//page[@name='page_incoming_payments']//field[@name='inbound_payment_method_line_ids']/list/field[@name='name']" position="after">
+                <field name="real_estate_payment_category"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

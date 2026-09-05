@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="module_category_dynamic_fields" model="ir.module.category">
+        <field name="name">Dynamic Fields</field>
+        <field name="description">Dynamic Fields Management</field>
+        <field name="sequence">50</field>
+    </record>
+
+    <record id="group_required_field_manager" model="res.groups">
+        <field name="name">Required Field Manager</field>
+        <field name="category_id" ref="module_category_dynamic_fields"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_system'))]"/>
+    </record>
+
+</odoo>

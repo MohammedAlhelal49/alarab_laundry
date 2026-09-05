@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="payment_provider_form" model="ir.ui.view">
+        <field name="name">Telr Provider Form</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form" />
+        <field name="arch" type="xml">
+            <group name="provider_credentials" position='inside'>
+                <group invisible="code != 'telr'">
+                    <field name="telr_merchant_id"
+                           string="Merchant ID"
+                           required="code == 'telr' and state != 'disabled'"/>
+                    <field name="telr_api_key"
+                           string="Authentication Key"
+                           required="code == 'telr' and state != 'disabled'"/>
+                    <field name="telr_remote_key"
+                           string="Remote Authentication Key"
+                           required="code == 'telr' and state != 'disabled'"/>
+                </group>
+            </group>
+			<group name="provider_config" position='inside'>
+                <group invisible="code != 'telr'">
+					 <field name="telr_lang"
+                           string="Language"
+                           required="code == 'telr' and state != 'disabled'"/>
+                     <field name="telr_payment_mode"
+                           string="Payment Mode"
+                           required="code == 'telr' and state != 'disabled'"/>
+                     <field name="telr_trans_type"
+                           string="Transaction Type"
+                           required="code == 'telr' and state != 'disabled'"/>
+				 </group>
+            </group>
+            <field name="capture_manually" invisible="not support_manual_capture"/>
+        </field>
+    </record>
+	<record id="payment_transaction_form" model="ir.ui.view">
+        <field name="name">payment.transaction.form.telr</field>
+        <field name="model">payment.transaction</field>
+        <field name="inherit_id" ref="payment.payment_transaction_form" />
+        <field name="arch" type="xml">
+            <field name="provider_reference" position="after">
+                <field name="telr_order_id" invisible="provider_code != 'telr'"/>
+            </field>
+        </field>
+    </record>
+</odoo>

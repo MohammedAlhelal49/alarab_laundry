@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="report_properties_block">
+
+        <t t-if="o
+                 and 'custom_properties' in o._fields
+                 and 'property_set_id' in o._fields
+                 and o.property_set_id
+                 and o.property_set_id.properties_definition">
+
+            <div style="margin-top: 15px; margin-bottom: 15px;">
+
+                <div style="font-weight: bold; margin-bottom: 5px;">
+                    Properties
+                </div>
+
+                <t t-foreach="o.property_set_id.properties_definition"
+                   t-as="prop">
+
+                    <!-- Separator -->
+                    <div t-if="prop.get('type') == 'separator'"
+                         style="display: block;
+                                width: 100%;
+                                font-weight: bold;
+                                margin-top: 8px;
+                                margin-bottom: 4px;">
+
+                        <span t-esc="prop.get('string')"/>
+
+                    </div>
+
+                    <!-- Normal Property -->
+                    <div t-else=""
+                         style="display: block;
+                                width: 100%;
+                                margin-bottom: 3px;">
+
+                        <strong>
+                            <t t-esc="prop.get('string')"/>:
+                        </strong>
+
+                        <span t-esc="o.get_property_print_value(prop)"/>
+
+                    </div>
+
+                </t>
+
+            </div>
+
+        </t>
+
+    </template>
+
+
+    <!-- STANDARD -->
+    <template id="properties_layout_standard"
+              inherit_id="web.external_layout_standard">
+
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-call="dekad_customizations.report_properties_block"/>
+        </xpath>
+
+    </template>
+
+
+    <!-- STRIPED -->
+    <template id="properties_layout_striped"
+              inherit_id="web.external_layout_striped">
+
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-call="dekad_customizations.report_properties_block"/>
+        </xpath>
+
+    </template>
+
+
+    <!-- BOXED -->
+    <template id="properties_layout_boxed"
+              inherit_id="web.external_layout_boxed">
+
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-call="dekad_customizations.report_properties_block"/>
+        </xpath>
+
+    </template>
+
+
+    <!-- BOLD -->
+    <template id="properties_layout_bold"
+              inherit_id="web.external_layout_bold">
+
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-call="dekad_customizations.report_properties_block"/>
+        </xpath>
+
+    </template>
+
+
+    <!-- FOLDER -->
+    <template id="properties_layout_folder"
+              inherit_id="web.external_layout_folder">
+
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-call="dekad_customizations.report_properties_block"/>
+        </xpath>
+
+    </template>
+
+
+    <!-- WAVE -->
+    <template id="properties_layout_wave"
+              inherit_id="web.external_layout_wave">
+
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-call="dekad_customizations.report_properties_block"/>
+        </xpath>
+
+    </template>
+
+
+    <!-- BUBBLE -->
+    <template id="properties_layout_bubble"
+              inherit_id="web.external_layout_bubble">
+
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-call="dekad_customizations.report_properties_block"/>
+        </xpath>
+
+    </template>
+
+    <!-- BILINGUAL / ARABIC - ENGLISH -->
+    <template id="properties_layout_bilingual"
+              inherit_id="dekad_customizations.external_layout_bilingual">
+
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-call="dekad_customizations.report_properties_block"/>
+        </xpath>
+
+    </template>
+
+</odoo>

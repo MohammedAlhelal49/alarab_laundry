@@ -1,0 +1,101 @@
+<odoo>
+
+    <!-- Add group filters to default sales order search view -->
+    <record id="industry_real_estate_rental_search_view_gantt" model="ir.ui.view">
+        <field name="name">sale.order.search.availability.gantt</field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- Filters -->
+                <filter name="group_by_related_buildings"
+                        string="Related Buildings"
+                        context="{'group_by': 'related_buildings_ids'}"
+                        help="Group by Related Buildings"/>
+                <filter name="group_by_account_analytic"
+                        string="Analytic Account"
+                        context="{'group_by': 'account_analytic_account_id'}"
+                        help="Group by Analytic Account"/>
+
+                <separator/>
+
+                <!-- Rent State Filters -->
+                <filter string="Not Booked" name="rent_state_not_booked"
+                        domain="[('rent_state','=','not_booked')]"/>
+                <filter string="Booked" name="rent_state_booked"
+                        domain="[('rent_state','=','booked')]"/>
+                <filter string="Not Paid" name="rent_state_not_paid"
+                        domain="[('rent_state','=','not_paid')]"/>
+                <filter string="Paid" name="rent_state_paid"
+                        domain="[('rent_state','=','paid')]"/>
+
+                <group expand="0" string="Group By">
+                    <filter name="group_by_building"
+                            string="Building"
+                            context="{'group_by': 'related_buildings_ids'}"/>
+                    <filter name="group_by_property"
+                            string="Property"
+                            context="{'group_by': 'account_analytic_account_id'}"/>
+                    <filter name="group_by_customer"
+                            string="Customer"
+                            context="{'group_by': 'partner_id'}"
+                            help="Group by customer"/>
+                    <filter name="group_by_property_type"
+                            string="Bedrooms"
+                            context="{'group_by': 'bedroom_label'}"
+                            help="Group by Property Type"/>
+
+                </group>
+            </search>
+        </field>
+    </record>
+
+            <!-- Gantt view for availability calendar -->
+    <record id="industry_real_estate_rental_gantt_view" model="ir.ui.view">
+        <field name="name">sale.order gantt</field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <gantt date_start="rent_start_date"
+                   date_stop="rent_end_date"
+                   default_scale="month"
+                   display_unavailability="true"
+                   color="partner_id"
+                   string="Availability"/>
+        </field>
+    </record>
+
+        <!-- Action to open Gantt View -->
+    <record id="action_availability" model="ir.actions.act_window">
+        <field name="name">Availability</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">gantt,list</field>
+        <field name="domain">[('account_analytic_account_id', '!=', False), ('is_rental_contract', '=', True)]</field>
+        <field name="context">
+            {
+                'gantt_view': True,
+                'rental_mode': True,
+                'default_is_rental_contract': True,
+                'search_default_group_by_related_buildings_ids': 1,
+                'create': False
+
+            }
+        </field>
+        <field name="view_id" ref="industry_real_estate_rental_gantt_view"/>
+        <field name="search_view_id" ref="industry_real_estate_rental_search_view_gantt"/>
+    </record>
+
+        <!-- Default saved filter for Availability action -->
+    <record id="filter_sale_order_availability" model="ir.filters">
+        <field name="name">Availability</field>
+        <field name="model_id">sale.order</field>
+        <field name="user_id" eval="False"/>
+        <field name="is_default">True</field>
+        <field name="active">True</field>
+        <field name="domain">[]</field>
+        <field name="context">
+            {'group_by': ['related_buildings_ids', 'account_analytic_account_id']}
+        </field>
+        <field name="action_id" ref="action_availability"/>
+    </record>
+
+
+</odoo>

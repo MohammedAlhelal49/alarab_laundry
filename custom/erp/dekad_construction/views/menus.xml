@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_construction_root" name="Construction" sequence="1"
+              web_icon="dekad_construction,static/description/icon.png"/>
+
+    <menuitem id="menu_construction" name="Construction" parent="menu_construction_root" sequence="1"/>
+
+    <!--menuitem id="menu_construction_dashboard" name="Dashboard" parent="menu_construction_root"
+              action="action_job_cost_project_dashboard" sequence="5"/-->
+
+    <menuitem id="menu_job_cost_project_root" name="Job Cost Projects" parent="menu_construction_root"
+              action="action_job_cost_project" sequence="10"/>
+
+    <menuitem id="menu_construction_cost_sheets" name="Job Cost Sheets" parent="menu_construction_root"
+              action="action_construction_cost_sheets" sequence="15"/>
+
+    <menuitem id="menu_configuration" name="Configuration" parent="menu_construction_root" sequence="100"/>
+
+    <menuitem id="menu_labor_tag" name="Labor Tags" parent="menu_configuration"
+              action="action_labor_tag" sequence="5"/>
+
+    <menuitem id="menu_construction_overhead_tag" name="Overhead Tags" parent="menu_configuration"
+              action="action_job_cost_overhead_tag" sequence="10"/>
+
+    <menuitem id="menu_construction_logs" name="Logs" parent="menu_configuration"
+              action="action_construction_logs" sequence="15"/>
+
+    <menuitem id="menu_account_move_project_report"
+              name="Account Move Project Report"
+              parent="account.menu_finance_reports"
+              action="action_account_move_project_report_wizard"
+              sequence="50"/>
+</odoo>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+
+    <!--
+        Custom Filters Dropdown
+        Shows all Dekad-specific report options as a single dropdown button.
+        Each option is shown only when available for the current report
+        (keys are injected via _custom_options_initializer in Python).
+    -->
+    <t t-name="dekad_accounting_reports_enhanced.CustomFilters">
+        <t t-if="
+            'show_analytic_account' in controller.options or
+            'group_by_analytic'     in controller.options or
+            'group_by_company'      in controller.options or
+            'hide_initial_balance'  in controller.options or
+            'show_company_column'   in controller.options
+        ">
+            <div id="dekad_custom_filters">
+                <Dropdown>
+                    <button class="btn btn-secondary">
+                        <i class="fa fa-sliders me-1"/>
+                        Custom
+                    </button>
+
+                    <t t-set-slot="content">
+
+                        <t t-if="'show_analytic_account' in controller.options">
+                            <DropdownItem
+                                class="{ 'selected': controller.options.show_analytic_account }"
+                                onSelected="() => this.toggleCustomOption('show_analytic_account')"
+                                closingMode="'none'"
+                            >
+                                Show Analytic Account
+                            </DropdownItem>
+                        </t>
+
+                        <t t-if="'group_by_analytic' in controller.options">
+                            <DropdownItem
+                                class="{ 'selected': controller.options.group_by_analytic }"
+                                onSelected="() => this.toggleCustomOption('group_by_analytic')"
+                                closingMode="'none'"
+                            >
+                                Group by Analytic Account
+                            </DropdownItem>
+                        </t>
+
+                        <t t-if="'group_by_company' in controller.options">
+                            <DropdownItem
+                                class="{ 'selected': controller.options.group_by_company }"
+                                onSelected="() => this.toggleCustomOption('group_by_company')"
+                                closingMode="'none'"
+                            >
+                                Group by Company
+                            </DropdownItem>
+                        </t>
+
+                        <t t-if="'hide_initial_balance' in controller.options">
+                            <DropdownItem
+                                class="{ 'selected': controller.options.hide_initial_balance }"
+                                onSelected="() => this.toggleCustomOption('hide_initial_balance')"
+                                closingMode="'none'"
+                            >
+                                Hide Initial Balance
+                            </DropdownItem>
+                        </t>
+
+                        <t t-if="'show_company_column' in controller.options">
+                            <DropdownItem
+                                class="{ 'selected': controller.options.show_company_column }"
+                                onSelected="() => this.toggleCustomOption('show_company_column')"
+                                closingMode="'none'"
+                            >
+                                Show Company Column
+                            </DropdownItem>
+                        </t>
+
+                    </t>
+                </Dropdown>
+            </div>
+        </t>
+    </t>
+
+    <!-- Accounts filter dropdown — shown on all reports, before Custom and rounding_unit -->
+    <t t-name="account_reports.AccountReportFiltersCustomizable"
+       t-inherit="account_reports.AccountReportFiltersCustomizable"
+       t-inherit-mode="extension">
+        <xpath expr="//div[@id='filter_rounding_unit']" position="before">
+            <Dropdown menuClass="'account_report_filter account'">
+                <button class="btn btn-secondary">
+                    <i class="fa fa-book me-1"/> Accounts
+                </button>
+                <t t-set-slot="content">
+                    <div class="dropdown-item-text gap-3 d-flex flex-column p-3" style="min-width: 300px;">
+                        <label class="fw-bold">Filter by Accounts</label>
+                        <MultiRecordSelector
+                            t-props="getMultiRecordSelectorProps('account.account', 'account_ids')"
+                            placeholder="'Search accounts...'"/>
+                    </div>
+                </t>
+            </Dropdown>
+            <t t-call="dekad_accounting_reports_enhanced.CustomFilters"/>
+        </xpath>
+    </t>
+
+    <!-- Inject into Partner Ledger (no filter_rounding_unit, inject after filter_partner) -->
+    <t t-name="account_reports.PartnerLedgerFilters"
+       t-inherit="account_reports.PartnerLedgerFilters"
+       t-inherit-mode="extension">
+        <xpath expr="//div[@id='filter_partner']" position="after">
+            <t t-call="dekad_accounting_reports_enhanced.CustomFilters"/>
+        </xpath>
+    </t>
+
+</templates>

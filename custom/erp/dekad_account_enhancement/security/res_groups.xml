@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Sub-category under Accounting — makes group appear as checkbox in user form -->
+    <record model="ir.module.category" id="module_category_accounting_discount">
+        <field name="name">Discount</field>
+        <field name="parent_id" ref="base.module_category_accounting"/>
+        <field name="sequence">51</field>
+    </record>
+
+    <!-- Hidden group — controls UI visibility (toggled via Settings checkbox) -->
+    <record id="group_discount_per_invoice_line" model="res.groups">
+        <field name="name">Show Discount on Invoices</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <!-- Visible group — appears under Accounting section in user form -->
+    <record id="group_invoice_discount_user" model="res.groups">
+        <field name="name">Can Apply Discounts on Invoices</field>
+        <field name="category_id" ref="module_category_accounting_discount"/>
+        <field name="implied_ids" eval="[(4, ref('group_discount_per_invoice_line'))]"/>
+    </record>
+</odoo>

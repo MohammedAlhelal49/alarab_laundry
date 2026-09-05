@@ -1,0 +1,370 @@
+.o_bilingual_report_header {
+    width: 100%;
+    min-height: 150px;
+
+    position: relative;
+
+    overflow: visible !important;
+
+
+    .o_bilingual_header_wave {
+        pointer-events: none;
+
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow: visible !important;
+    }
+
+
+    .o_bilingual_header_content {
+        position: relative;
+
+        z-index: 2;
+
+        width: 100%;
+
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+
+    /*
+     * ========================================================
+     * THREE COLUMNS
+     *
+     * English        Logo        Arabic
+     * ========================================================
+     */
+
+    .o_bilingual_header_row {
+        display: flex;
+
+        width: 100%;
+
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+
+    /*
+     * ========================================================
+     * COMPANY INFORMATION
+     * ========================================================
+     */
+
+    .o_bilingual_company_info {
+        width: 38%;
+
+        padding-top: 8px;
+
+        font-size: 14px;
+        font-weight: 500;
+
+        line-height: 1.5;
+
+        color: #212529;
+    }
+
+
+    /*
+     * ========================================================
+     * ENGLISH
+     * ========================================================
+     */
+
+    .o_bilingual_english {
+        text-align: left !important;
+
+        direction: ltr;
+    }
+
+
+    /*
+     * ========================================================
+     * ARABIC
+     * ========================================================
+     */
+
+    .o_bilingual_arabic {
+        text-align: right !important;
+
+        direction: rtl;
+
+        line-height: 1.6;
+    }
+
+
+    /*
+     * ========================================================
+     * COMPANY DETAILS HTML
+     * ========================================================
+     */
+
+    .o_bilingual_company_details {
+        width: 100%;
+
+        font-size: 14px;
+        font-weight: 500;
+
+
+        p {
+            margin: 0 0 3px 0 !important;
+            padding: 0 !important;
+
+            font-size: 14px !important;
+
+            line-height: 1.5;
+        }
+
+
+        div {
+            margin: 0 !important;
+            padding: 0 !important;
+
+            font-size: 14px !important;
+
+            line-height: 1.5;
+        }
+
+
+        span {
+            font-size: 14px !important;
+        }
+    }
+
+
+    /*
+     * ========================================================
+     * FORCE ENGLISH ALIGNMENT
+     * ========================================================
+     */
+
+    .o_bilingual_english {
+
+        .o_bilingual_company_details,
+        .o_bilingual_company_details p,
+        .o_bilingual_company_details div,
+        .o_bilingual_company_details span {
+
+            text-align: left !important;
+
+            direction: ltr;
+        }
+    }
+
+
+    /*
+     * ========================================================
+     * FORCE ARABIC ALIGNMENT
+     * ========================================================
+     */
+
+    .o_bilingual_arabic {
+
+        .o_bilingual_company_details,
+        .o_bilingual_company_details p,
+        .o_bilingual_company_details div,
+        .o_bilingual_company_details span {
+
+            text-align: right !important;
+
+            direction: rtl;
+        }
+    }
+
+
+    /*
+     * ========================================================
+     * LOGO CONTAINER
+     * ========================================================
+     */
+
+    .o_bilingual_logo_container {
+        width: 24%;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: flex-start;
+
+        text-align: center;
+    }
+
+
+    .o_bilingual_logo_wrapper {
+        display: flex;
+
+        width: 100%;
+
+        align-items: flex-start;
+        justify-content: center;
+
+        padding: 0;
+        margin: 0;
+
+        background: transparent !important;
+
+        border: 0 !important;
+        border-radius: 0 !important;
+
+        box-shadow: none !important;
+    }
+
+
+    /*
+     * ========================================================
+     * LOGO
+     * ========================================================
+     */
+
+    .o_bilingual_company_logo {
+        display: block;
+
+        max-width: 160px;
+        max-height: 85px;
+
+        width: auto;
+        height: auto;
+
+        margin: 0 auto;
+
+        object-fit: contain;
+
+        background: transparent !important;
+
+        border: 0 !important;
+
+        box-shadow: none !important;
+    }
+}
+
+
+.o_report_layout_wave {
+
+
+    .address {
+        direction: ltr;
+    }
+}
+
+
+/*
+ * ============================================================
+ * FOOTER
+ * ============================================================
+ */
+
+.o_bilingual_report_footer {
+    position: relative;
+
+    min-height: 100px;
+
+    overflow: visible !important;
+
+
+    /*
+     * ========================================================
+     * FOOTER WAVE
+     * ========================================================
+     */
+
+    .o_bilingual_footer_wave {
+        pointer-events: none;
+
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    /*
+     * ========================================================
+     * CENTERED FOOTER CONTENT
+     * ========================================================
+     */
+
+    .o_bilingual_footer_content {
+        position: relative;
+
+        z-index: 2;
+
+        width: 100%;
+
+        /*
+         * Move footer information toward the bottom.
+         */
+        padding-top: 55px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+
+        text-align: center !important;
+
+        font-size: 10px;
+
+        line-height: 1.35;
+    }
+
+
+    /*
+     * ========================================================
+     * COMPANY FOOTER
+     * ========================================================
+     */
+
+    .o_bilingual_footer_text {
+        width: 100%;
+
+        margin: 0;
+
+        text-align: center !important;
+
+
+        p,
+        div,
+        span {
+            text-align: center !important;
+        }
+
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+
+    /*
+     * ========================================================
+     * DOCUMENT NAME
+     * ========================================================
+     */
+
+    .o_bilingual_footer_document {
+        width: 100%;
+
+        margin-top: 2px;
+
+        text-align: center !important;
+    }
+
+
+    /*
+     * ========================================================
+     * PAGE NUMBER
+     * ========================================================
+     */
+
+    .o_bilingual_page_number {
+        width: 100%;
+
+        margin-top: 2px;
+
+        text-align: center !important;
+    }
+}

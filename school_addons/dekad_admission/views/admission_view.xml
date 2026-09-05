@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_de_admission_list" model="ir.ui.view">
+            <field name="name">de.admission.list</field>
+            <field name="model">de.admission</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <list string="Admission">
+                    <field name="academic_year_id"/>
+                    <field name="grade_id"/>
+                    <field name="student_id"/>
+                    <field name="admission_date"/>
+                    <field name="state"/>
+                    <field name="sequence" optional="hide"/>
+                    <field name="fee_term_id" optional="hide"/>
+                    <field name="fee" optional="hide"/>
+                    <field name="discount" optional="hide"/>
+                    <field name="fee_after_discount" optional="hide"/>
+                    <field name="prev_institute_id" optional="hide"/>
+                    <field name="prev_grade_id" optional="hide"/>
+                    <field name="prev_result" optional="hide"/>
+                    <field name="family_business" optional="hide"/>
+                    <field name="family_income" optional="hide"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_de_admission_form" model="ir.ui.view">
+            <field name="name">de.admission.form</field>
+            <field name="model">de.admission</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Admission" duplicate="0">
+                    <field name="state" invisible="1"/>
+                    <field name="id" invisible="1"/>
+                    <header groups="base.group_user" invisible="id == False">
+                        <field name="state" widget="statusbar"/>
+                        <button string="Confirm" invisible="state != 'draft'" class="oe_highlight" type="object"
+                                name="set_confirm"
+                        />
+
+                        <button name="set_cancel" invisible="state != 'confirm'" string="Cancel enroll" type="object"
+                        />
+                        <button name="action_show_student" invisible="state != 'confirm'" string="Open Student Profile"
+                                type="object"
+                                class="oe_highlight"
+                                groups="dekad_core.group_de_student"
+                        />
+
+                    </header>
+                    <sheet>
+
+                        <field name="active" invisible="1"/>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                                invisible="active == True"/>
+                        <div style="width:100%;" class="row align-items-center">
+                            <div class="col-4 col-lg-2">
+                                <field name="image" widget="image" class=" oe_avatar role_image"/>
+                                <strong>
+                                    <field class="role_sequence" name="student_id_sequence"
+                                           invisible="student_id_sequence == '/'"
+                                    />
+                                </strong>
+                            </div>
+                            <div class="mb16 col-8 col-lg-10 px-0">
+                                <div class="row">
+                                    <h2 class="col-12 col-lg-10">
+                                        <table>
+                                            <tr>
+                                                <field name="name" placeholder="Full name"
+                                                />
+
+                                            </tr>
+                                        </table>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <notebook>
+                            <page name="admission_detail" string="Admission Details">
+                                <group>
+                                    <group string="Admission info">
+
+                                        <field name="academic_year_id" readonly="state != 'draft'"
+                                               options="{'no_create': True, 'no_open' : True}"
+                                        />
+                                        <field name="student_id" readonly="state != 'draft'"
+                                               options="{'no_create': True, 'no_open' : True}"
+                                               domain="['|' , ('student_grade_ids', '=', False),('student_grade_ids.state', '!=', 'running')]"
+                                        />
+
+                                        <field name="sequence"/>
+
+                                        <field name="admission_date" invisible="admission_date == False"
+                                        />
+                                    </group>
+
+                                    <group string="Grade info">
+                                        <field name="grade_id" required="1"
+                                               options="{'no_create': True, 'no_open' : False}"
+                                               readonly="state != 'draft'"
+                                        />
+
+                                        <field name="max_student_count"
+                                               readonly="grade_id == False"
+                                        />
+
+                                        <field name="student_count" invisible="grade_id == False"
+                                        />
+
+                                    </group>
+
+                                    <group string="Fee info">
+                                        <field name="fee_term_id" options="{'no_create': True, 'no_open' : True}"
+                                        />
+                                        <field name="fee"
+                                        />
+                                        <field name="discount" readonly="state != 'draft'"/>
+
+                                        <field name="fee_after_discount"
+                                        />
+
+                                        <field name="fee_start_date" readonly="state != 'draft'"
+                                        />
+
+
+                                        <field invisible="1" name="fee_term_type"/>
+
+                                    </group>
+                                </group>
+                            </page>
+
+
+                            <page name="educational_detail" string="Student Detail"
+                                  invisible="student_id == False">
+                                <group>
+                                    <group>
+                                        <field name="prev_institute_id" readonly="state != 'draft'"
+                                        />
+                                        <field name="prev_grade_id" readonly="state != 'draft'"/>
+                                        <field name="prev_result" readonly="state != 'draft'"/>
+                                    </group>
+                                    <group>
+                                        <field name="birth_date"
+                                               required="student_id != False"/>
+                                        <field name="family_business" readonly="state != 'draft'"/>
+                                        <field name="family_income" readonly="state != 'draft'"/>
+                                    </group>
+                                </group>
+
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_de_admission_search" model="ir.ui.view">
+            <field name="name">de.admission.search</field>
+            <field name="model">de.admission</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Admission">
+                    <field name="name"/>
+                    <field name="grade_id"/>
+                    <filter name="enrolled" string="Enrolled" domain="[('state','=','finish')]"/>
+                    <filter string="Today" name="filter_admission_today"
+                            domain="[('admission_date','=',context_today().strftime('%Y-%m-%d'))]"/>
+
+                    <filter string="Last Week" name="filter_admission_week"
+                            domain="[('admission_date', '&gt;=', (context_today()-relativedelta(days=6)).strftime('%Y-%m-%d')),
+                    (   'admission_date', '&lt;=', context_today().strftime('%Y-%m-%d')    )]"/>
+
+                    <filter string="Last Month" name="filter_admission_month"
+                            domain="[('admission_date', '&gt;=', (context_today()-relativedelta(days=29)).strftime('%Y-%m-%d')),
+                    (   'admission_date', '&lt;=', context_today().strftime('%Y-%m-%d'))]"/>
+
+                    <group expand="0" string="Group BY...">
+                        <filter string="Admission Date" name="group_by_admission_date"
+                                domain="[]" context="{'group_by':'admission_date'}"
+                        />
+                        <filter string="Academic year" name="group_by_academic_year_id"
+                                domain="[]" context="{'group_by':'academic_year_id'}"
+                        />
+                        <filter string="Grade" name="group_by_grade"
+                                domain="[]" context="{'group_by':'grade_id'}"
+                        />
+                        <filter string="Student" name="group_by_student"
+                                domain="[]" context="{'group_by':'student_id'}"
+                        />
+                        <filter string="Status" name="group_by_state"
+                                domain="[]" context="{'group_by':'state'}"
+                        />
+                        <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_de_admission_view">
+            <field name="name">Admission</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.admission</field>
+            <field name="view_mode">list,form</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="search_view_id" ref="view_de_admission_search"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_admission_view_list">
+            <field name="act_window_id" ref="act_open_de_admission_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_de_admission_list"/>
+        </record>
+
+
+        <record model="ir.actions.act_window.view" id="act_open_de_admission_view_form">
+            <field name="act_window_id" ref="act_open_de_admission_view"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="20"/>
+            <field name="view_id" ref="view_de_admission_form"/>
+        </record>
+
+    </data>
+</odoo>

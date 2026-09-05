@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Extend Employee Form: Add Geofence section in the HR Settings area -->
+    <record id="hr_employee_view_form_inherit_geofence" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.geofence</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_attendance.view_employee_form_inherit_hr_attendance"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='identification_group']" position="after">
+                <group name="geofence_group" string="Geofence Settings"
+                       groups="hr_attendance.group_hr_attendance_officer">
+                    <field name="geofence_required"/>
+                    <field name="geofence_zone_ids" widget="many2many_tags"
+                           options="{'color_field': 'color'}"
+                           placeholder="Assign geofence zones..."
+                           invisible="not geofence_required"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

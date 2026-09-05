@@ -1,0 +1,41 @@
+<odoo>
+
+    <record id="view_contract_report_wizard" model="ir.ui.view">
+        <field name="name">contract.report.wizard.form</field>
+        <field name="model">contract.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Contract Report">
+                <group>
+                    <field name="building_id"/>
+                    <field name="property_id"
+                           domain="[('is_property', '=', True),
+                                    ('offer_type', '=', 'rent'),
+                                    ('property_building_id', '=', building_id)]"/>
+                    <field name="date_from"
+                               widget="daterange"
+                               options="{'end_date_field': 'date_to'}"
+                    />
+                    <field name="date_to" invisible="1"/>
+                </group>
+
+                <footer>
+                    <button name="action_show_report"
+                            string="Show Contracts"
+                            type="object"
+                            class="btn-primary"/>
+                    <button string="Cancel"
+                            special="cancel"
+                            class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_contract_report_wizard" model="ir.actions.act_window">
+        <field name="name">Contract Report</field>
+        <field name="res_model">contract.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,16 @@
+<odoo>
+    <record id="hr_contract_view_form_inherit_ae_total_salary" model="ir.ui.view">
+        <field name="name">hr.contract.view.form.inherit.ae.total.salary</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='l10n_ae_other_allowances']" position="after">
+                <label for="ae_total_salary" invisible="country_code != 'AE'"/>
+                <div class="o_row" name="ae_total_salary" invisible="country_code != 'AE'">
+                    <field name="ae_total_salary" nolabel="1" readonly="1"/>
+                    <span>/ month</span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

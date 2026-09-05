@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+    <t t-name="generic.CopyButton.RecordRow"
+       t-inherit="web.ListRenderer.RecordRow"
+       t-inherit-mode="extension">
+        <xpath expr="//td[hasclass('o_list_record_remove')]" position="before">
+            <td class="o_list_record_copy text-center"
+                t-if="this.onCopyRecord">
+                <button
+                        type="button"
+                        class="btn btn-link p-0"
+                        t-on-pointerdown.stop=""
+                        t-on-click.stop="() => this.onCopyRecord(record)">
+                    <i class="fa fa-copy"/>
+                </button>
+            </td>
+        </xpath>
+    </t>
+
+    <t t-name="generic.CopyButton.Header"
+       t-inherit="web.ListRenderer"
+       t-inherit-mode="extension">
+        <xpath expr="//th[hasclass('o_list_actions_header')]" position="before">
+            <th class="o_list_record_copy_header w-print-0 p-print-0"
+                t-if="this.onCopyRecord"/>
+        </xpath>
+    </t>
+
+    <t t-name="sale.CopyButton.RecordRow"
+       t-inherit="sale.ListRenderer.RecordRow"
+       t-inherit-mode="extension">
+
+        <xpath expr="//td[hasclass('o_list_record_remove')]/button"
+               position="replace">
+
+            <span class="d-inline-flex align-items-center ms-2">
+
+                <button
+                    type="button"
+                    class="btn btn-link p-0 me-2"
+                    title="Duplicate line"
+                    t-on-pointerdown.stop=""
+                    t-on-click.stop="() => this.onCopyRecord(record)">
+                    <i class="fa fa-copy"/>
+                </button>
+
+                <button
+                    class="fa d-print-none"
+                    t-att-class="{
+                        'fa-trash-o': !useUnlink and activeActions.delete,
+                        'fa-times': useUnlink and activeActions.unlink,
+                    }"
+                    name="delete"
+                    aria-label="Delete row"
+                    tabindex="-1"/>
+
+            </span>
+
+        </xpath>
+
+    </t>
+
+</templates>

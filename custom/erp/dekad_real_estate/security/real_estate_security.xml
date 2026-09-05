@@ -1,0 +1,17 @@
+<odoo>
+    <data noupdate="0">
+
+        <!-- Optional: Custom Application Category -->
+        <record id="module_category_real_estate" model="ir.module.category">
+            <field name="name">Real Estate</field>
+            <field name="sequence">15</field>
+        </record>
+
+        <!-- Security Group -->
+        <record id="group_real_estate_user" model="res.groups">
+            <field name="name">Access Real Estate</field>
+            <field name="category_id" ref="dekad_real_estate.module_category_real_estate"/>
+        </record>
+
+    </data>
+</odoo>

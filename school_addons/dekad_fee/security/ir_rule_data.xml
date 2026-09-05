@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_de_fee" model="res.groups">
+            <field name="name">Students Fees</field>
+            <field name="category_id" ref="dekad_core.module_category_school"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user'))]"/>
+            <field name="sequence">30</field>
+        </record>
+
+        <record id="dekad_core.group_de_back_office_admin" model="res.groups">
+            <field name="implied_ids"
+                   eval="[(4, ref('group_de_fee'))]"/>
+        </record>
+
+        <record model="ir.rule" id="portal_de_student_fee_rule">
+            <field name="name">Portal Fees Rule</field>
+            <field name="model_id" ref="model_de_student_fee"/>
+            <field name="groups"
+                   eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">['|',('student_id.user_id','=',user.id) , ('student_id.user_id', 'in'
+                ,user.child_ids.ids)]
+            </field>
+        </record>
+    </data>
+</odoo>

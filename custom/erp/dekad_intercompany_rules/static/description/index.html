@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #333; margin: 0; padding: 0; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .header { background: linear-gradient(135deg, #875A7B 0%, #5B3F6E 100%); color: white; padding: 48px 40px; border-radius: 8px; margin-bottom: 40px; }
+        .header h1 { margin: 0 0 12px 0; font-size: 32px; font-weight: 700; }
+        .header p { margin: 0; font-size: 16px; color: #FFFFFF; line-height: 1.6; }
+        .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 13px; margin-top: 16px; }
+        h2 { font-size: 22px; color: #875A7B; border-bottom: 2px solid #875A7B; padding-bottom: 8px; margin-top: 40px; margin-bottom: 20px; }
+        h3 { font-size: 16px; color: #444; margin: 24px 0 8px 0; }
+        p, li { font-size: 15px; line-height: 1.7; color: #555; }
+        .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 24px 0; }
+        .rule-card { border-radius: 8px; padding: 24px; background: #F8F5FB; border-left: 4px solid #875A7B; }
+        .rule-card h3 { margin-top: 0; color: #875A7B; font-size: 16px; }
+        .rule-card ul { margin: 0; padding-left: 20px; }
+        .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+        .feature-card { background: #F8F5FB; border-radius: 8px; padding: 20px; text-align: center; }
+        .feature-icon { font-size: 32px; margin-bottom: 12px; }
+        .feature-card h3 { margin: 0 0 8px 0; font-size: 14px; color: #875A7B; }
+        .feature-card p { margin: 0; font-size: 13px; color: #666; }
+        .flow { display: flex; align-items: center; justify-content: center; gap: 0; margin: 32px 0; flex-wrap: wrap; }
+        .flow-step { background: #875A7B; color: white; border-radius: 8px; padding: 14px 18px; text-align: center; min-width: 120px; font-size: 13px; font-weight: 600; }
+        .flow-step span { display: block; font-size: 11px; font-weight: 400; opacity: 0.85; margin-top: 4px; }
+        .flow-arrow { font-size: 22px; color: #875A7B; padding: 0 8px; }
+        .flow-step.locked { background: #E74C3C; }
+        .flow-step.unlocked { background: #27AE60; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        th { background: #875A7B; color: white; padding: 12px 16px; text-align: left; }
+        td { padding: 10px 16px; border-bottom: 1px solid #EEE; }
+        tr:nth-child(even) td { background: #FAFAFA; }
+        .check { color: #27AE60; font-weight: bold; }
+        .cross { color: #E74C3C; font-weight: bold; }
+        .code-block { background: #2D2D2D; color: #F8F8F2; border-radius: 6px; padding: 20px; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.6; overflow-x: auto; margin: 16px 0; }
+        .code-comment { color: #75715E; }
+        .code-key { color: #66D9EF; }
+        .code-val { color: #A6E22E; }
+        .note { background: #FFF9E6; border-left: 4px solid #F39C12; border-radius: 4px; padding: 16px 20px; margin: 20px 0; font-size: 14px; color: #7D6608; }
+        .footer { text-align: center; margin-top: 60px; padding-top: 24px; border-top: 1px solid #EEE; color: #999; font-size: 13px; }
+        .footer a { color: #875A7B; text-decoration: none; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+        <h1>⚙️ Dekad Intercompany Rules</h1>
+        <p>A unified module enforcing two intercompany business rules: automatic PO locking when the linked SO is confirmed, and receipt quantity locking to prevent unauthorized changes.</p>
+        <span class="badge">Odoo 18 Enterprise · Inter-Company</span>
+    </div>
+
+    <h2>Business Rules</h2>
+    <div class="rules">
+        <div class="rule-card">
+            <h3>🔒 Rule 1 — PO Lock on SO Confirm</h3>
+            <p>When Company B confirms the intercompany SO generated from Company A's PO:</p>
+            <ul>
+                <li>PO lines become read-only</li>
+                <li>Cancel button is disabled</li>
+                <li>Unlock button is hidden</li>
+                <li>Auto-unlocked if SO is cancelled or reset to Draft</li>
+            </ul>
+        </div>
+        <div class="rule-card">
+            <h3>📦 Rule 2 — Receipt Quantity Lock</h3>
+            <p>When a Receipt is linked to an intercompany PO:</p>
+            <ul>
+                <li>Done quantity on each move line becomes read-only</li>
+                <li>Prevents buying company from changing received quantity</li>
+                <li>Applies after selling company validates the delivery</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>How It Works</h2>
+
+    <h3>PO Lock Flow</h3>
+    <div class="flow">
+        <div class="flow-step">Company A<span>Creates PO</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">Company B<span>SO Auto-Generated</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">Company B<span>Confirms SO</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step locked">PO Locked 🔒<span>Read-only · No Cancel</span></div>
+    </div>
+
+    <h3>Receipt Lock Flow</h3>
+    <div class="flow">
+        <div class="flow-step">Company B<span>Validates Delivery</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">Company A<span>Receipt Auto-Updated</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step locked">Quantity Locked 🔒<span>Read-only</span></div>
+    </div>
+
+    <h2>Behaviour by State</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>SO State (Company B)</th>
+                <th>PO State (Company A)</th>
+                <th>PO Lines Editable</th>
+                <th>Cancel Available</th>
+                <th>Unlock Button</th>
+                <th>Receipt Qty Editable</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Draft / Sent</td>
+                <td>Purchase (Confirmed)</td>
+                <td class="check">✔ Yes</td>
+                <td class="check">✔ Yes</td>
+                <td>—</td>
+                <td class="check">✔ Yes</td>
+            </tr>
+            <tr>
+                <td>Sale (Confirmed)</td>
+                <td>Done (Locked)</td>
+                <td class="cross">✘ No</td>
+                <td class="cross">✘ No</td>
+                <td class="cross">✘ Hidden</td>
+                <td class="cross">✘ No</td>
+            </tr>
+            <tr>
+                <td>Cancelled / Reset to Draft</td>
+                <td>Purchase (Restored)</td>
+                <td class="check">✔ Yes</td>
+                <td class="check">✔ Yes</td>
+                <td>—</td>
+                <td class="check">✔ Yes</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="note">
+        <strong>Note:</strong> POs locked manually by a Purchase Manager are <strong>not affected</strong>. The <code>intercompany_locked</code> field distinguishes intercompany locks from manual locks.
+    </div>
+
+    <h2>Technical Details</h2>
+
+    <h3>New Field</h3>
+    <table>
+        <thead><tr><th>Model</th><th>Field</th><th>Type</th><th>Purpose</th></tr></thead>
+        <tbody>
+            <tr>
+                <td>purchase.order</td>
+                <td>intercompany_locked</td>
+                <td>Boolean</td>
+                <td>Marks POs locked by intercompany rules (vs. manual lock)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Overridden Methods</h3>
+    <table>
+        <thead><tr><th>Model</th><th>Method</th><th>Action</th></tr></thead>
+        <tbody>
+            <tr><td>sale.order</td><td>_action_confirm()</td><td>Locks the source PO after SO confirmation</td></tr>
+            <tr><td>sale.order</td><td>action_cancel()</td><td>Unlocks the source PO after SO cancellation</td></tr>
+            <tr><td>sale.order</td><td>action_draft()</td><td>Unlocks the source PO when SO is reset to Draft</td></tr>
+            <tr><td>stock.move</td><td>_compute_is_quantity_done_editable()</td><td>Makes receipt quantity read-only for intercompany receipts</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Dependencies</h3>
+    <div class="code-block">
+<span class="code-key">'depends'</span>: [
+    <span class="code-val">'purchase'</span>,
+    <span class="code-val">'sale'</span>,
+    <span class="code-val">'purchase_stock'</span>,
+    <span class="code-val">'sale_purchase_inter_company_rules'</span>,
+    <span class="code-val">'sale_purchase_stock_inter_company_rules'</span>,
+],
+    </div>
+
+    <h3>Migration: Lock Existing POs</h3>
+    <p>Run after installing the module to lock POs created before installation:</p>
+    <div class="code-block">
+confirmed_sos = env[<span class="code-val">'sale.order'</span>].search([
+    (<span class="code-val">'state'</span>, <span class="code-val">'='</span>, <span class="code-val">'sale'</span>),
+    (<span class="code-val">'auto_purchase_order_id'</span>, <span class="code-val">'!='</span>, False),
+])
+pos_to_lock = env[<span class="code-val">'purchase.order'</span>]
+<span class="code-key">for</span> so <span class="code-key">in</span> confirmed_sos:
+    po = so.auto_purchase_order_id
+    <span class="code-key">if</span> po.state == <span class="code-val">'purchase'</span>:
+        pos_to_lock |= po
+pos_to_lock.sudo().write({
+    <span class="code-val">'state'</span>: <span class="code-val">'done'</span>,
+    <span class="code-val">'intercompany_locked'</span>: True
+})
+env.cr.commit()
+<span class="code-comment"># Note: Run AFTER upgrading the module</span>
+    </div>
+
+    <div class="footer">
+        <p>Developed by <a href="https://www.dekad.co">Dekad</a> · Version 18.0.1.0.0 · License LGPL-3</p>
+    </div>
+
+</div>
+</body>
+</html>

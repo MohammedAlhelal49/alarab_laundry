@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Server Action to Create Missing Variants -->
+    <record id="action_create_missing_variants_server" model="ir.actions.server">
+        <field name="name">Create Missing Variants</field>
+        <field name="model_id" ref="product.model_product_template"/>
+        <field name="binding_model_id" ref="product.model_product_template"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">
+            for record in records:
+            record.action_create_all_missing_variants()
+        </field>
+    </record>
+
+    <record id="product_template_form_view_inherited" model="ir.ui.view">
+        <field name="name">product.template.product.form.view.inherited</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='categ_id']" position="before">
+                <field name="related_pricelist_price" string="Pricelist price"/>
+            </xpath>
+            <xpath expr="//field[@name='sale_ok']" position="before">
+                 <field name="is_discount"/>
+                  <label for="is_discount" string="Discount Product"/>
+
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_variant_easy_edit_view_inherited" model="ir.ui.view">
+        <field name="name">product.variant.easy.edit.view.inherited</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_variant_easy_edit_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='pricing']" position="after">
+                <group name="additional_pricing" string="Additional_pricing">
+                    <label for="related_pricelist_price" string="Pricelist price"/>
+                    <div class="o_row">
+                        <field name="related_pricelist_price" class="oe_inline" widget="monetary"
+                               options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                    </div>
+                </group>
+
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <record id="product_template_tree_view_inherited" model="ir.ui.view">
+        <field name="name">product.template.tree.view.inherited</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='list_price']" position="after">
+                <field name="related_pricelist_price" string="Pricelist price"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="product_product_tree_view_inherited" model="ir.ui.view">
+        <field name="name">product.product.tree.view.inherited</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='lst_price']" position="after">
+                <field name="related_pricelist_price" string="Pricelist price"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="product_template_kanban_view_inherited" model="ir.ui.view">
+        <field name="name">product.template.kanban.view.inherited</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='list_price']" position="after">
+                <field name="related_pricelist_price" widget="monetary"
+                       options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="product_product_kanban_view_inherited" model="ir.ui.view">
+        <field name="name">product.product.kanban.view.inherited</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='lst_price']" position="after">
+                <field name="related_pricelist_price" widget="monetary"
+                       options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_create_variant_pricelist_server" model="ir.actions.server">
+        <field name="name">Generate variants pricelist</field>
+        <field name="model_id" ref="product.model_product_template"/>
+        <field name="binding_model_id" ref="product.model_product_template"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">
+            for record in records:
+            record.generate_variations_pricelist_rules()
+        </field>
+    </record>
+
+    <record id="view_product_product_form_vendor_code" model="ir.ui.view">
+        <field name="name">product.product.form.vendor.code</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+
+            <!-- Add under Internal Reference -->
+            <xpath expr="//field[@name='default_code']" position="after">
+                <field name="vendor_code"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="product_template_form_view_stock_lock" model="ir.ui.view">
+        <field name="name">product.template.form.inherit.stock.lock</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='variants']//field[@name='attribute_line_ids']" position="before">
+                <div class="alert alert-warning mb-0"
+                     invisible="not has_stock_moves"
+                     role="alert">
+                    <i class="fa fa-lock me-2" title="Locked"/>
+                    <strong>🔒 Attributes &amp; Variants are locked.</strong>
+                    <br/>
+                    <field name="lock_message" readonly="1" nolabel="1"/>
+                </div>
+            </xpath>
+
+            <xpath expr="//page[@name='variants']//field[@name='attribute_line_ids']" position="attributes">
+                <attribute name="readonly">has_stock_moves</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
+

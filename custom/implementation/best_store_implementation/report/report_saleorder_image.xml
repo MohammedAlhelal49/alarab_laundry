@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="sale_order_report_add_image"
+              inherit_id="sale.report_saleorder_document">
+
+        <!-- Set has_images -->
+        <xpath expr="//t[@t-set='lines_to_report']" position="after">
+            <t t-set="has_images" t-value="any(l.product_image for l in lines_to_report)"/>
+        </xpath>
+
+        <!-- ======== TABLE HEADER ======== -->
+
+        <!-- Add line index column to header -->
+        <xpath expr="//th[@name='th_description']" position="before">
+            <th name="th_line_index" class="text-start">#</th>
+        </xpath>
+
+        <!-- Add barcode column to header -->
+        <xpath expr="//th[@name='th_description']" position="after">
+            <th name="th_barcode" class="text-start">Barcode</th>
+        </xpath>
+
+        <!-- Add image column to header -->
+        <xpath expr="//th[@name='th_description']" position="before">
+            <t t-if="has_images">
+                <th name="th_image" class="text-start">Image</th>
+            </t>
+        </xpath>
+
+        <!-- ======== TABLE BODY (ROWS) ======== -->
+
+        <!-- Add line index cell -->
+        <xpath expr="//td[@name='td_name']" position="before">
+            <td name="td_line_index" class="text-start">
+                <span t-out="line.line_index"/>
+            </td>
+        </xpath>
+
+        <!-- Add barcode cell -->
+        <xpath expr="//td[@name='td_name']" position="after">
+            <td name="td_barcode" class="text-start">
+                <span t-out="line.barcode or ''"/>
+            </td>
+        </xpath>
+
+        <!-- Add image cell -->
+        <xpath expr="//td[@name='td_name']" position="before">
+            <t t-if="has_images">
+                <td name="td_product_image" class="text-start">
+                    <t t-if="line.product_image">
+                        <img t-att-src="image_data_uri(line.product_image)"
+                             style="max-width: 80px; max-height: 80px; object-fit: contain;"/>
+                    </t>
+                </td>
+            </t>
+        </xpath>
+
+    </template>
+
+</odoo>

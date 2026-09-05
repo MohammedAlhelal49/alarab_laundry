@@ -1,0 +1,33 @@
+<odoo>
+  <!-- Inherit the Employee Form View to add Assigned Patients tab -->
+  <record id="view_employee_form_extension" model="ir.ui.view">
+    <field name="name">hr.employee.form.patient_extension</field>
+    <field name="model">hr.employee</field>
+    <field name="inherit_id" ref="hr.view_employee_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//page[@name='hr_settings']" position="before">
+            <page string="GPS Location">
+              <group string="Geolocation Details">
+                  <field name="gps_latitude"/>
+                  <field name="gps_longitude"/>
+
+                  <button name="action_get_gps_coordinates"
+                          type="object"
+                          string="Locate Me"
+                          class="btn-primary"
+                          icon="fa-crosshairs"/>
+
+                  <button name="action_open_gps_location"
+                          type="object"
+                          string="View on Maps"
+                          class="btn-secondary"
+                          icon="fa-map-marker"
+                          invisible="not gps_latitude or not gps_longitude"/>
+
+                  <field name="gps_last_updated" readonly="1"/>
+              </group>
+            </page>
+        </xpath>
+    </field>
+  </record>
+</odoo>

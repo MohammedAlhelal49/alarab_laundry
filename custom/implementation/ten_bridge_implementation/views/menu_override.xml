@@ -1,0 +1,13 @@
+<odoo>
+
+    <!-- Hide بيان إيجار -->
+    <record id="dekad_real_estate.menu_contract_report_wizard" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+
+    <!-- Hide Property Contract availability -->
+    <record id="dekad_real_estate.menu_availability" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+
+</odoo>

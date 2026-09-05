@@ -1,0 +1,8 @@
+<odoo>
+    <data>
+        <!-- Hide Customers menu from all users except POS Admin Privileges and system admin -->
+        <record id="point_of_sale.menu_point_of_sale_customer" model="ir.ui.menu">
+            <field name="groups_id" eval="[(4, ref('point_of_sale.group_pos_manager'))]"/>
+        </record>
+    </data>
+</odoo>

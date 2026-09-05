@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+
+    <t t-name="barada_implementation.ReservationListView"
+       t-inherit="web.ListView"
+       t-inherit-mode="primary">
+
+        <xpath expr="//t[@t-component='props.Renderer']" position="before">
+
+            <div class="reservation_dashboard">
+
+                <!-- Booked = Scheduled + Delayed -->
+                <div class="reservation_kpi booked"
+                     t-on-click="() => this.filterReservations('booked')">
+
+                    <div class="reservation_kpi_count">
+                        <t t-esc="dashboard.booked"/>
+                    </div>
+
+                    <div class="reservation_kpi_label">
+                        Booked
+                    </div>
+
+                </div>
+
+                <!-- Arrived -->
+                <div class="reservation_kpi arrived"
+                     t-on-click="() => this.filterReservations('arrived')">
+
+                    <div class="reservation_kpi_count">
+                        <t t-esc="dashboard.arrived"/>
+                    </div>
+
+                    <div class="reservation_kpi_label">
+                        Arrived
+                    </div>
+
+                </div>
+
+                <!-- Cancelled -->
+                <div class="reservation_kpi cancelled"
+                     t-on-click="() => this.filterReservations('cancelled')">
+
+                    <div class="reservation_kpi_count">
+                        <t t-esc="dashboard.cancelled"/>
+                    </div>
+
+                    <div class="reservation_kpi_label">
+                        Cancelled
+                    </div>
+
+                </div>
+
+            </div>
+
+        </xpath>
+
+    </t>
+
+</templates>

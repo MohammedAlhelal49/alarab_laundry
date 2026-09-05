@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_sale_order_form_line_dates" model="ir.ui.view">
+        <field name="name">sale.order.form.line.dates</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Order Line List -->
+            <xpath expr="//page[@name='order_lines']//field[@name='order_line']/list/field[@name='price_unit']"
+                   position="after">
+
+                <field name="start_date" optional="hide"/>
+                <field name="end_date" optional="hide"/>
+
+            </xpath>
+
+
+        </field>
+    </record>
+
+</odoo>

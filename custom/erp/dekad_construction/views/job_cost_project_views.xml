@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- SEARCH VIEW -->
+    <record id="job_cost_project_search" model="ir.ui.view">
+        <field name="name">job.cost.project.search</field>
+        <field name="model">job.cost.project</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="lead_id"/>
+                <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+                <filter name="costing" string="Costing" domain="[('state','=','costing')]"/>
+                <filter name="priced" string="Priced" domain="[('state','=','priced')]"/>
+                <filter name="so_created" string="SO Created" domain="[('state','=','so_created')]"/>
+                <filter name="project_created" string="Project Created" domain="[('state','=','project_created')]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_job_cost_project_form" model="ir.ui.view">
+        <field name="name">job.cost.project.form</field>
+        <field name="model">job.cost.project</field>
+        <field name="arch" type="xml">
+            <form string="Job Cost Project Card">
+                <header>
+                    <button name="action_confirm" string="Confirm" type="object"
+                            invisible="state != 'draft'" class="oe_highlight"/>
+
+                    <button name="action_approve" string="Approve" type="object"
+                            invisible="state != 'costing'" class="oe_highlight"/>
+
+                    <button name="action_create_quotation" string="Create Quotation" type="object"
+                            invisible="state != 'priced' or has_confirmed_so == True or project_type == 'in_house'"
+                            class="oe_highlight"/>
+
+                    <button name="action_return_to_draft" string="Return to Draft" type="object"
+                            invisible="state in ['draft', 'so_created', 'project_created']"/>
+
+                    <button name="action_reset_to_priced"
+                            string="Reset to Priced"
+                            type="object"
+                            class="btn-secondary"
+                            invisible="state not in ['so_created'] or project_type == 'in_house'"/>
+
+                    <button name="action_create_project"
+                            type="object"
+                            string="Create Project"
+                            invisible="project_id != False or (project_type == 'client_contract' and state != 'so_created') or (project_type == 'in_house' and state != 'priced')"
+                            class="oe_highlight"
+                            groups="project.group_project_user"/>
+
+                    <!-- STATUS BAR FOR CLIENT CONTRACTS -->
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,costing,priced,so_created,project_created"
+                           invisible="project_type == 'in_house'"/>
+
+                    <!-- STATUS BAR FOR IN-HOUSE (Skips so_created) -->
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,costing,priced,project_created"
+                           invisible="project_type != 'in_house'"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object"
+                                name="action_open_project"
+                                class="oe_stat_button"
+                                icon="fa-folder-open"
+                                invisible="not project_id">
+                            <field name="project_id" widget="statinfo" string="Project"/>
+                        </button>
+
+                        <button type="object"
+                                name="action_open_quotations"
+                                class="oe_stat_button"
+                                icon="fa-file-text-o"
+                                invisible="quotation_count == 0">
+                            <field name="quotation_count" widget="statinfo" string="Quotations"/>
+                        </button>
+
+                        <button type="object"
+                                name="action_open_confirmed_sale_order"
+                                class="oe_stat_button"
+                                icon="fa-usd"
+                                string="Sales Order"
+                                invisible="has_confirmed_so == False"/>
+                    </div>
+
+                    <div class="oe_title">
+                        <h2 class="text-muted">
+                            <field name="sequence"/>
+                        </h2>
+                        <h1>
+                            <field name="name" placeholder="e.g. Construction Project for Client A"/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group name="customer_details" string="CRM &amp; Customer">
+                            <field name="lead_id"/>
+                            <field name="partner_id" widget="res_partner_many2one" placeholder="Customer Name"/>
+                            <field name="project_type"/>
+                        </group>
+                        <group name="project_management" string="Management &amp; Dates">
+                            <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                            <field name="employee_id" widget="many2one_avatar_user"/>
+                            <field name="creation_date"/>
+                            <field name="lead_deadline"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Cost Summary">
+                            <group>
+                                <group string="Cost Analysis Breakdown">
+                                    <field name="material_cost" widget="monetary" readonly="1"/>
+                                    <field name="equipment_cost" widget="monetary" readonly="1"/>
+                                    <field name="labor_cost" widget="monetary" readonly="1"/>
+                                    <field name="subcontractor_cost" widget="monetary" readonly="1"/>
+                                    <field name="overhead_cost" widget="monetary" readonly="1"/>
+                                    <div class="oe_inline font-weight-bold bg-light p-2 border-top mt-2">
+                                        <field name="base_cost_total" widget="monetary" string="Total Base Cost"
+                                               readonly="1"/>
+                                    </div>
+                                </group>
+                            </group>
+
+                            <separator string="Risk &amp; Margin Markup Pricing"/>
+                            <group>
+                                <group>
+                                    <label for="risk_percent"/>
+                                    <div class="o_row">
+                                        <field name="risk_percent" class="oe_inline"/>
+                                        %
+                                    </div>
+                                    <field name="risk_amount" widget="monetary" readonly="1"/>
+                                </group>
+                                <group>
+                                    <label for="margin_percent"/>
+                                    <div class="o_row">
+                                        <field name="margin_percent" class="oe_inline"/>
+                                        %
+                                    </div>
+                                    <field name="margin_amount" widget="monetary" readonly="1"/>
+                                </group>
+                            </group>
+                            <div class="alert alert-info text-end font-weight-bold h4 m-0" role="alert">
+                                Final Selling Price:
+                                <field name="final_selling_price" widget="monetary" readonly="1"/>
+                            </div>
+                        </page>
+
+                        <page string="Job Cost Sheets">
+                            <field name="job_cost_sheet_ids" readonly="state != 'costing'">
+                                <list>
+                                    <field name="currency_id" column_invisible="True"/>
+                                    <field name="name"/>
+                                    <field name="material_total" sum="Total Materials"/>
+                                    <field name="equipment_total" sum="Total Equipment"/>
+                                    <field name="labor_total" sum="Total Labor"/>
+                                    <field name="overhead_total" sum="Total Overhead"/>
+                                    <field name="final_selling_price" sum="Gross Selling Price"/>
+                                    <field name="state" widget="badge"
+                                           decoration-info="state == 'draft'"
+                                           decoration-warning="state in ['confirmed', 'approved']"
+                                           decoration-success="state == 'done'"/>
+                                </list>
+                            </field>
+
+                            <div invisible="state == 'costing' or id == False"
+                                 class="alert alert-warning text-center mt-2" role="alert">
+                                <strong>Structure Locked:</strong>
+                                Job Cost Sheets can only be added, removed, or modified while the Project state is set
+                                to <strong>Costing</strong>.
+                            </div>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record id="view_job_cost_project_kanban" model="ir.ui.view">
+        <field name="name">job.cost.project.kanban</field>
+        <field name="model">job.cost.project</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" class="o_kanban_small_column o_opportunity_kanban" records_draggable="1"
+                    sample="1">
+                <field name="name"/>
+                <field name="sequence"/>
+                <field name="partner_id"/>
+                <field name="employee_id"/>
+                <field name="base_cost_total"/>
+                <field name="final_selling_price"/>
+                <field name="state"/>
+                <field name="activity_ids"/>
+                <field name="activity_state"/>
+                <field name="currency_id" invisible="1"/>
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record d-flex flex-column justify-content-between p-3 border-1 rounded shadow-sm">
+
+                            <div class="o_kanban_record_top align-items-start mb-2">
+                                <div class="o_kanban_record_headings flex-grow-1">
+                                    <div class="text-muted fw-bold small text-uppercase tracking-wider mb-1">
+                                        <field name="sequence"/>
+                                    </div>
+                                    <strong class="o_kanban_record_title text-primary fs-5 d-block text-wrap text-break mt-0 pt-0">
+                                        <field name="name"/>
+                                    </strong>
+                                </div>
+                                <div class="o_dropdown_kanban dropdown">
+                                    <a class="dropdown-toggle btn" data-bs-toggle="dropdown" href="#" role="button"
+                                       aria-label="Dropdown menu" title="Dropdown menu"/>
+                                    <div class="dropdown-menu" role="menu">
+                                        <a t-if="widget.editable" type="edit" class="dropdown-item">Edit</a>
+                                        <a t-if="widget.deletable" type="delete" class="dropdown-item">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="o_kanban_record_body my-2">
+                                <div t-if="record.partner_id.raw_value" class="text-dark text-truncate mb-1">
+                                    <i class="fa fa-user me-1 text-muted" title="Customer"/>
+                                    <span class="fw-medium">Customer:</span>
+                                    <field name="partner_id"/>
+                                </div>
+
+                                <div t-if="record.employee_id.raw_value" class="text-dark text-truncate mb-3">
+                                    <i class="fa fa-user-circle-o me-1 text-muted" title="Responsible User"/>
+                                    <span class="fw-medium">Responsible:</span>
+                                    <field name="employee_id"/>
+                                </div>
+
+                                <div class="row g-0 pt-2 border-top text-center bg-light rounded-3 py-2">
+                                    <div class="col-6 border-end">
+                                        <div class="text-muted small">Base Cost</div>
+                                        <div class="fw-bold text-danger text-truncate">
+                                            <field name="base_cost_total" widget="monetary"
+                                                   options="{'currency_field': 'currency_id'}"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="text-muted small">Final Price</div>
+                                        <div class="fw-bold text-success text-truncate">
+                                            <field name="final_selling_price" widget="monetary"
+                                                   options="{'currency_field': 'currency_id'}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="o_kanban_record_bottom d-flex align-items-center justify-content-between mt-2 pt-2 border-top">
+                                <div class="oe_kanban_bottom_left d-flex align-items-center">
+                                    <field name="activity_ids" widget="kanban_activity"/>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <span t-if="record.state.raw_value == 'draft'"
+                                          class="badge rounded-pill bg-secondary px-2 py-1 text-uppercase fw-bold fs-mini">
+                                        Draft
+                                    </span>
+                                    <span t-if="record.state.raw_value == 'priced'"
+                                          class="badge rounded-pill bg-info text-white px-2 py-1 text-uppercase fw-bold fs-mini">
+                                        Priced
+                                    </span>
+                                    <span t-if="record.state.raw_value == 'sale_created'"
+                                          class="badge rounded-pill bg-success px-2 py-1 text-uppercase fw-bold fs-mini">
+                                        Ordered
+                                    </span>
+                                    <span t-if="record.state.raw_value == 'cancel'"
+                                          class="badge rounded-pill bg-danger px-2 py-1 text-uppercase fw-bold fs-mini">
+                                        Cancelled
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Action to open the Kanban -->
+    <record id="action_job_cost_project" model="ir.actions.act_window">
+        <field name="name">Job Cost Project</field>
+        <field name="res_model">job.cost.project</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="view_id" ref="view_job_cost_project_kanban"/>
+    </record>
+</odoo>

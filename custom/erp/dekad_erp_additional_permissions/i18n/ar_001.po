@@ -1,0 +1,217 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_erp_additional_permissions
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-10 09:10+0000\n"
+"PO-Revision-Date: 2026-01-10 09:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: ar\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: dekad_erp_additional_permissions
+#: model:ir.module.category,name:dekad_erp_additional_permissions.module_category_accounting_additional_permissions
+msgid "Accounting Additional Permissions"
+msgstr "أذونات إضافية للمحاسبة"
+
+#. module: dekad_erp_additional_permissions
+#: model:res.groups,name:dekad_erp_additional_permissions.group_account_move_cancel
+msgid "Allow Cancelling Accounting Entries"
+msgstr "السماح بإلغاء القيود المحاسبية"
+
+#. module: dekad_erp_additional_permissions
+#: model:res.groups,name:dekad_erp_additional_permissions.group_account_move_delete
+msgid "Allow Deleting Accounting Entries"
+msgstr "السماح بحذف القيود المحاسبية"
+
+#. module: dekad_erp_additional_permissions
+#: model:res.groups,name:dekad_erp_additional_permissions.group_stock_picking_cancel
+msgid "Allow Picking Cancel"
+msgstr "السماح بإلغاء الشحنة المنتقاة"
+
+#. module: dekad_erp_additional_permissions
+#: model:res.groups,name:dekad_erp_additional_permissions.group_stock_picking_delete
+msgid "Allow Picking Delete"
+msgstr "السماح بحذف الشحنة المنتقاة"
+
+#. module: dekad_erp_additional_permissions
+#: model:res.groups,name:dekad_erp_additional_permissions.group_stock_picking_return
+msgid "Allow Picking Return"
+msgstr "السماح بإرجاع الشحنة المنتقاة"
+
+#. module: dekad_erp_additional_permissions
+#: model:res.groups,name:dekad_erp_additional_permissions.group_stock_picking_validate
+msgid "Allow Picking Validation"
+msgstr "السماح بالتحقق من الشحنة المنتقاة"
+
+#. module: dekad_erp_additional_permissions
+#: model:res.groups,name:dekad_erp_additional_permissions.group_account_move_post
+msgid "Allow Posting Accounting Entries"
+msgstr "السماح بترحيل القيود المحاسبية"
+
+#. module: dekad_erp_additional_permissions
+#: model:res.groups,name:dekad_erp_additional_permissions.group_purchase_order_cancel
+msgid "Allow Purchase Order Cancel"
+msgstr "السماح بإلغاء أمر الشراء"
+
+#. module: dekad_erp_additional_permissions
+#: model:res.groups,name:dekad_erp_additional_permissions.group_purchase_order_confirm
+msgid "Allow Purchase Order Confirm"
+msgstr "السماح بتأكيد أمر الشراء"
+
+#. module: dekad_erp_additional_permissions
+#: model:res.groups,name:dekad_erp_additional_permissions.group_purchase_order_delete
+msgid "Allow Purchase Order Delete"
+msgstr "السماح بحذف أمر الشراء"
+
+#. module: dekad_erp_additional_permissions
+#: model:res.groups,name:dekad_erp_additional_permissions.group_account_move_reset_to_draft
+msgid "Allow Reset to Draft"
+msgstr "السماح بإعادة التعيين إلى مسودة"
+
+#. module: dekad_erp_additional_permissions
+#: model:res.groups,name:dekad_erp_additional_permissions.group_sale_order_cancel
+msgid "Allow Sale Order Cancel"
+msgstr "السماح بإلغاء أمر البيع"
+
+#. module: dekad_erp_additional_permissions
+#: model:res.groups,name:dekad_erp_additional_permissions.group_sale_order_confirm
+msgid "Allow Sale Order Confirm"
+msgstr "السماح بتأكيد أمر البيع"
+
+#. module: dekad_erp_additional_permissions
+#: model:res.groups,name:dekad_erp_additional_permissions.group_sale_order_deletion
+msgid "Allow Sale Order Deletion"
+msgstr "السماح بحذف أمر البيع"
+
+#. module: dekad_erp_additional_permissions
+#: model:ir.module.category,name:dekad_erp_additional_permissions.module_category_inventory_additional_permissions
+msgid "Inventory Additional Permissions"
+msgstr "أذونات إضافية للمخزون"
+
+#. module: dekad_erp_additional_permissions
+#: model:ir.model,name:dekad_erp_additional_permissions.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: dekad_erp_additional_permissions
+#: model:ir.module.category,name:dekad_erp_additional_permissions.module_category_purchase_additional_permissions
+msgid "Purchase Additional Permissions"
+msgstr "أذونات إضافية للمشتريات"
+
+#. module: dekad_erp_additional_permissions
+#: model:ir.model,name:dekad_erp_additional_permissions.model_purchase_order
+msgid "Purchase Order"
+msgstr "أمر شراء"
+
+#. module: dekad_erp_additional_permissions
+#: model:ir.model,name:dekad_erp_additional_permissions.model_stock_return_picking
+msgid "Return Picking"
+msgstr "إرجاع الشحنة المنتقاة"
+
+#. module: dekad_erp_additional_permissions
+#: model:ir.module.category,name:dekad_erp_additional_permissions.module_category_sales_additional_permissions
+msgid "Sales Additional Permissions"
+msgstr "أذونات إضافية للمبيعات"
+
+#. module: dekad_erp_additional_permissions
+#: model:ir.model,name:dekad_erp_additional_permissions.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: dekad_erp_additional_permissions
+#: model:ir.model,name:dekad_erp_additional_permissions.model_stock_picking
+msgid "Transfer"
+msgstr "تحويل"
+
+#. module: dekad_erp_additional_permissions
+#. odoo-python
+#: code:addons/dekad_erp_additional_permissions/models/sale_order.py:0
+msgid "You do not have permission to cancel Sale Orders."
+msgstr "ليس لديك إذن لإلغاء أوامر البيع."
+
+#. module: dekad_erp_additional_permissions
+#. odoo-python
+#: code:addons/dekad_erp_additional_permissions/models/account_move.py:0
+msgid "You do not have permission to cancel accounting entries."
+msgstr "ليس لديك إذن لإلغاء القيود المحاسبية."
+
+#. module: dekad_erp_additional_permissions
+#. odoo-python
+#: code:addons/dekad_erp_additional_permissions/models/purchase_order.py:0
+msgid "You do not have permission to cancel purchase orders."
+msgstr "ليس لديك إذن لإلغاء أوامر الشراء."
+
+#. module: dekad_erp_additional_permissions
+#. odoo-python
+#: code:addons/dekad_erp_additional_permissions/models/stock_picking.py:0
+msgid "You do not have permission to cancel."
+msgstr "ليس لديك إذن للإلغاء."
+
+#. module: dekad_erp_additional_permissions
+#. odoo-python
+#: code:addons/dekad_erp_additional_permissions/models/sale_order.py:0
+msgid "You do not have permission to confirm Sale Orders."
+msgstr "ليس لديك إذن لتأكيد أوامر البيع."
+
+#. module: dekad_erp_additional_permissions
+#. odoo-python
+#: code:addons/dekad_erp_additional_permissions/models/purchase_order.py:0
+msgid "You do not have permission to confirm purchase orders."
+msgstr "ليس لديك إذن لتأكيد أوامر الشراء."
+
+#. module: dekad_erp_additional_permissions
+#. odoo-python
+#: code:addons/dekad_erp_additional_permissions/models/sale_order.py:0
+msgid "You do not have permission to delete Sale Orders."
+msgstr "ليس لديك إذن لحذف أوامر البيع."
+
+#. module: dekad_erp_additional_permissions
+#. odoo-python
+#: code:addons/dekad_erp_additional_permissions/models/account_move.py:0
+msgid "You do not have permission to delete accounting entries."
+msgstr "ليس لديك إذن لحذف القيود المحاسبية."
+
+#. module: dekad_erp_additional_permissions
+#. odoo-python
+#: code:addons/dekad_erp_additional_permissions/models/purchase_order.py:0
+msgid "You do not have permission to delete purchase orders."
+msgstr "ليس لديك إذن لحذف أوامر الشراء."
+
+#. module: dekad_erp_additional_permissions
+#. odoo-python
+#: code:addons/dekad_erp_additional_permissions/models/stock_picking.py:0
+msgid "You do not have permission to delete."
+msgstr "ليس لديك إذن للحذف."
+
+#. module: dekad_erp_additional_permissions
+#. odoo-python
+#: code:addons/dekad_erp_additional_permissions/models/account_move.py:0
+msgid "You do not have permission to post accounting entries."
+msgstr "ليس لديك إذن لترحيل القيود المحاسبية."
+
+#. module: dekad_erp_additional_permissions
+#. odoo-python
+#: code:addons/dekad_erp_additional_permissions/models/account_move.py:0
+msgid "You do not have permission to reset to draft."
+msgstr "ليس لديك إذن لإعادة التعيين إلى مسودة."
+
+#. module: dekad_erp_additional_permissions
+#. odoo-python
+#: code:addons/dekad_erp_additional_permissions/models/stock_picking.py:0
+msgid "You do not have permission to return."
+msgstr "ليس لديك إذن للإرجاع."
+
+#. module: dekad_erp_additional_permissions
+#. odoo-python
+#: code:addons/dekad_erp_additional_permissions/models/stock_picking.py:0
+msgid "You do not have permission to validate."
+msgstr "ليس لديك إذن للتحقق."

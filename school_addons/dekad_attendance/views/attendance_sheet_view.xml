@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_de_attendance_sheet_tree" model="ir.ui.view">
+            <field name="name">de.attendance.sheet.liste</field>
+            <field name="model">de.attendance.sheet</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <list string="Attendance Sheet" create="0">
+                    <field name="sequence"/>
+                    <field name="grade_id"/>
+                    <field name="classroom_id"/>
+                    <field name="attendance_date"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_de_attendance_sheet_form" model="ir.ui.view">
+            <field name="name">de.attendance.sheet.form</field>
+            <field name="model">de.attendance.sheet</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Attendance Sheet"  create="1">
+                    <field name="id" invisible="1"/>
+                    <header/>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box"  invisible = "id == False">
+                            <button name="action_show_line" type="object" class="oe_stat_button" icon="fa-calendar">
+                                <field string="Attendees" name="total_student_count" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="grade_id" options="{'no_create': True, 'no_open' :  True}"/>
+                                <field name="classroom_id" readonly="1" options="{'no_create': True, 'no_open' :  True}"/>
+                                <field name="sequence"/>
+                                <field name="attendance_date"/>
+                            </group>
+                            <group>
+
+
+                                <field name="total_student_count"
+                                />
+
+                                <field name="total_present_student_count"
+                                />
+                                <field name="total_absent_student_count"
+                                />
+
+                                <field name="total_leave_student_count"
+                                />
+
+
+                            </group>
+
+                            <separator string="Students"/>
+                            <field name="attendance_line_ids"
+
+
+                            >
+                                <list string="Attendance Line" editable="bottom" delete="0" create="0">
+                                    <field name="student_id" options='{"no_open": True}' readonly="1"
+                                    />
+                                    <field name="present"/>
+                                    <field name="absent"/>
+                                    <field name="leave"/>
+                                    <field name="remark"/>
+                                </list>
+                            </field>
+
+
+                        </group>
+                    </sheet>
+
+
+                        <field name="message_ids" widget="mail_thread"/>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="view_de_attendance_sheet_search" model="ir.ui.view">
+            <field name="name">de.attendance.sheet.search</field>
+            <field name="model">de.attendance.sheet</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Attendance Sheet">
+
+                    <field name="grade_id"/>
+                    <field name="attendance_date"/>
+                    <filter string="Today" name="filter_attendance_today"
+                            domain="[('attendance_date', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter string="Last Week" name="filter_attendance_week"
+                            domain="[('attendance_date', '&gt;=', (context_today()-relativedelta(days=6)).strftime('%Y-%m-%d')),
+                    (   'attendance_date', '&lt;=', context_today().strftime('%Y-%m-%d')    )]"/>
+                    <filter string="Last Month" name="filter_attendance_month"
+                            domain="[('attendance_date', '&gt;=', (context_today()-relativedelta(days=29)).strftime('%Y-%m-%d')),
+                    (   'attendance_date', '&lt;=', context_today().strftime('%Y-%m-%d'))]"/>
+
+                    <group string="Group By...">
+
+                        <filter string="Grade" name="group_by_grade_"
+                                domain="[]" context="{'group_by':'grade_id'}"/>
+                        <filter string="Classroom" name="group_by_classroom"
+                                domain="[]" context="{'group_by':'classroom_id'}"/>
+                        <filter string="Date" name="group_by_attendance_date"
+                                domain="[]" context="{'group_by':'attendance_date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="view_de_attendance_sheet_graph">
+            <field name="name">de.attendance.sheet.graph</field>
+            <field name="model">de.attendance.sheet</field>
+            <field name="arch" type="xml">
+                <graph string="Attendance Sheet" type="bar">
+                    <field name="classroom_id"/>
+                    <field name = "attendance_line_ids" />
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_de_attendance_sheet_view">
+            <field name="name">Daily sheets</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.attendance.sheet</field>
+            <field name="view_mode">list,form</field>
+            <field name="binding_view_types">list,form,graph</field>
+            <field name="search_view_id" ref="view_de_attendance_sheet_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_attendance_sheet_view_tree">
+            <field name="act_window_id" ref="act_open_de_attendance_sheet_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_de_attendance_sheet_tree"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_attendance_sheet_view_form">
+            <field name="act_window_id" ref="act_open_de_attendance_sheet_view"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="20"/>
+            <field name="view_id" ref="view_de_attendance_sheet_form"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_de_attendance_sheet_view_graph">
+            <field name="act_window_id" ref="act_open_de_attendance_sheet_view"/>
+            <field name="view_mode">graph</field>
+            <field name="sequence" eval="30"/>
+            <field name="view_id" ref="view_de_attendance_sheet_graph"/>
+        </record>
+
+    </data>
+</odoo>

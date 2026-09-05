@@ -1,0 +1,69 @@
+<odoo>
+    <!-- Top-level app menu -->
+    <menuitem id="menu_timetable_app"
+              name="Timetable"
+              sequence="10"
+              web_icon="dekad_timetable,static/description/icon.png"/>
+
+    <!-- Subgroup -->
+    <menuitem id="menu_timetable_root"
+              name="Manage Timetables"
+              parent="menu_timetable_app"
+              sequence="10"/>
+
+    <!-- Timetable -->
+    <menuitem id="menu_timetable_main"
+              name="Timetable"
+              parent="menu_timetable_root"
+              action="dekad_timetable.action_de_timetable"
+              sequence="1"/>
+
+    <!-- Periods -->
+    <menuitem id="menu_period_main"
+              name="Periods"
+              parent="menu_timetable_root"
+              action="dekad_timetable.action_de_period"
+              sequence="2"/>
+
+    <!-- Subjects Action -->
+    <record id="action_de_subject" model="ir.actions.act_window">
+        <field name="name">Subjects</field>
+        <field name="res_model">de.subject</field>
+        <field name="view_mode">list,form</field>
+          <field name="context">{}</field>
+    </record>
+
+    <!-- Subjects Menu -->
+    <menuitem id="menu_subject_main"
+              name="Subjects"
+              parent="menu_timetable_root"
+              action="action_de_subject"
+              sequence="3"/>
+
+    <!-- Teachers -->
+    <record id="action_de_teacher" model="ir.actions.act_window">
+        <field name="name">Teachers</field>
+        <field name="res_model">de.teacher</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_teacher_main"
+              name="Teachers"
+              parent="menu_timetable_root"
+              action="action_de_teacher"
+              sequence="4"/>
+
+    <!-- Wizard -->
+    <menuitem id="menu_generate_timetable"
+              name="Generate Timetable"
+              parent="menu_timetable_root"
+              action="action_generate_timetable_wizard"
+              sequence="5"/>
+
+
+    <menuitem id="menu_session_slot_main"
+          name="Session Slots"
+          parent="menu_timetable_root"
+          action="dekad_timetable.action_de_session_slot"
+          sequence="6"/>
+</odoo>

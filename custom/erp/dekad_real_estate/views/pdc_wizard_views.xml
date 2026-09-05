@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sh_pdc_payment_form_view_inherit_order"
+        model="ir.ui.view">
+
+        <field name="name">
+            sh.pdc.payment.form.order
+        </field>
+
+        <field name="model">pdc.wizard</field>
+
+        <field name="inherit_id"
+               ref="sh_pdc.sh_pdc_payment_form_view"/>
+
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='done_date']"
+                   position="after">
+
+                <field name="payment_order"/>
+
+            </xpath>
+
+        </field>
+
+    </record>
+
+
+    <record id="sh_pdc_wizard_form_wizard_inherit_order"
+            model="ir.ui.view">
+
+        <field name="name">
+            sh.pdc.wizard.form.order
+        </field>
+
+        <field name="model">pdc.wizard</field>
+
+        <field name="inherit_id"
+               ref="sh_pdc.sh_pdc_wizard_form_wizard"/>
+
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='cheque_status']"
+                   position="before">
+
+                <field name="payment_order"/>
+
+            </xpath>
+
+        </field>
+
+    </record>
+
+</odoo>

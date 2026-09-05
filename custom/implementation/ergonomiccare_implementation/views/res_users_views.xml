@@ -1,0 +1,16 @@
+<odoo>
+    <record id="view_users_form_inherit_stage_lock" model="ir.ui.view">
+        <field name="name">res.users.form.stage.lock</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//page[@name='access_rights']" position="inside">
+                <group string="CRM">
+                    <field name="can_move_locked_stage"/>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

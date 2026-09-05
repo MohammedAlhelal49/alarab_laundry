@@ -1,0 +1,1072 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_quiz
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-29 07:06+0000\n"
+"PO-Revision-Date: 2025-09-29 07:06+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_quiz
+#: model:ir.actions.act_window,name:dekad_quiz.act_open_de_quiz_question_group_type_view
+msgid " Groups types"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__right_answer
+msgid " Right Answer"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_student__quiz_submission_ids
+msgid " quiz Submissions(s)"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid ""
+"<span class=\"timer-title\">Quiz Time</span>\n"
+"                                <span id=\"quiz_hours\">00</span>\n"
+"                                :  <span id=\"quiz_minutes\">00</span> :\n"
+"                                <span id=\"quiz_seconds\">00</span>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_breadcrumbs
+msgid "<span>/</span>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_show
+msgid "<strong class=\"\">Attachment :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_show
+msgid "<strong class=\"\">Classroom :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_show
+msgid "<strong class=\"\">Correction type :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_show
+msgid "<strong class=\"\">Created at :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "<strong class=\"\">Gained Mark :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_show
+msgid "<strong class=\"\">Mark :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_show
+msgid "<strong class=\"\">Questions number :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "<strong class=\"\">Quiz mark :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "<strong class=\"\">Quiz name :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "<strong class=\"\">Quiz questions number :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_show
+msgid "<strong class=\"\">Quiz time :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "<strong class=\"\">Quiz type :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_show
+msgid "<strong class=\"\">Related subject :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_show
+msgid "<strong class=\"\">State :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "<strong class=\"\">Submission State :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_show
+msgid "<strong class=\"\">Submission before date :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "<strong class=\"\">Submitted at :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_show
+msgid "<strong class=\"\">Teacher :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_show
+msgid "<strong class=\"\">Type :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "<strong class=\"mb-3\">Answers</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "<strong>Correct Answer :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_show
+msgid "<strong>Description :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "<strong>Gained Mark :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_show
+msgid "<strong>Name :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "<strong>Question :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "<strong>Question Mark :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "<strong>State :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "<strong>Student Answer :</strong>"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__message_needaction
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz
+msgid "Actions"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__active
+msgid "Active"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_form
+msgid "Additional info"
+msgstr ""
+
+#. module: dekad_quiz
+#. odoo-python
+#: code:addons/dekad_quiz/controllers/main.py:0
+msgid "All"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__student_ids
+msgid "Allocated To"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question__answer
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_answer__name
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__answer
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form_quick_create
+msgid "Answer"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question__answer_ids
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__answer_ids
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_answer_form_quick_create
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form_quick_create
+msgid "Answers"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_form
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_search
+msgid "Archived"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__file
+msgid "Attachment"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__message_attachment_count
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__attempt_ids
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__attempt_ids
+#: model:ir.ui.menu,name:dekad_quiz.menu_de_quiz_submission_attempt
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form_quick_create
+msgid "Attempts"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields.selection,name:dekad_quiz.selection__de_quiz__correction_type__automatic
+msgid "Automatic"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_form
+msgid "Basic"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.actions.server,name:dekad_quiz.cron_close_quiz_ir_actions_server
+msgid "Change the state of quiz to finish if submission date passes"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__user_boolean
+msgid "Check internal user"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__is_quiz_user
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__is_quiz_user
+msgid "Check quiz user"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__classroom_id
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_search
+msgid "Classroom"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__classroom_student_ids
+msgid "Classroom students"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_form
+msgid "Confirm"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields.selection,name:dekad_quiz.selection__de_quiz__state__confirm
+msgid "Confirmed"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__consider_correct
+msgid "Consider the answer right ?"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields.selection,name:dekad_quiz.selection__de_quiz_submission__state__correcting
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form_quick_create
+msgid "Correcting"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_form
+msgid "Correction"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__correction_type
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_search
+msgid "Correction type"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__create_uid
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question__create_uid
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_answer__create_uid
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group__create_uid
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group_type__create_uid
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__create_uid
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__create_uid
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_attempt__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__create_date
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question__create_date
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_answer__create_date
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group__create_date
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group_type__create_date
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__create_date
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__create_date
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_attempt__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__description
+msgid "Description"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields.selection,name:dekad_quiz.selection__de_quiz_question__type__descriptive
+msgid "Descriptive"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__display_name
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question__display_name
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_answer__display_name
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group__display_name
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group_type__display_name
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__display_name
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__display_name
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_attempt__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields.selection,name:dekad_quiz.selection__de_quiz__state__draft
+#: model:ir.model.fields.selection,name:dekad_quiz.selection__de_quiz_submission__state__draft
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_form
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form_quick_create
+msgid "Draft"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form_quick_create
+msgid "Finish"
+msgstr ""
+
+#. module: dekad_quiz
+#. odoo-python
+#: code:addons/dekad_quiz/controllers/main.py:0
+#: model:ir.model.fields.selection,name:dekad_quiz.selection__de_quiz__state__finish
+#: model:ir.model.fields.selection,name:dekad_quiz.selection__de_quiz_submission__state__finish
+msgid "Finished"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__message_follower_ids
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__message_partner_ids
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__gained_mark
+msgid "Gained mark"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__grade_id
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_search
+msgid "Grade"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_question_group_search
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_question_search
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_search
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_attempt_search
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_search
+msgid "Group By..."
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.actions.act_window,name:dekad_quiz.act_open_de_quiz_question_group_view
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question__group_ids
+#: model:ir.ui.menu,name:dekad_quiz.menu_de_quiz_question_group
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_question_search
+msgid "Groups"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.ui.menu,name:dekad_quiz.menu_de_quiz_question_group_type
+msgid "Groups types"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__has_message
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__hour_limit
+msgid "Hours"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__id
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question__id
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_answer__id
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group__id
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group_type__id
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__id
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__id
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_attempt__id
+msgid "ID"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,help:dekad_quiz.field_de_quiz__message_needaction
+#: model:ir.model.fields,help:dekad_quiz.field_de_quiz_submission__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,help:dekad_quiz.field_de_quiz__message_has_error
+#: model:ir.model.fields,help:dekad_quiz.field_de_quiz__message_has_sms_error
+#: model:ir.model.fields,help:dekad_quiz.field_de_quiz_submission__message_has_error
+#: model:ir.model.fields,help:dekad_quiz.field_de_quiz_submission__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_answer__is_correct
+msgid "Is Correct"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__message_is_follower
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__is_correct
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form_quick_create
+msgid "Is correct"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__write_uid
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question__write_uid
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_answer__write_uid
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group__write_uid
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group_type__write_uid
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__write_uid
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__write_uid
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_attempt__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__write_date
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question__write_date
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_answer__write_date
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group__write_date
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group_type__write_date
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__write_date
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__write_date
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_attempt__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_attempt_search
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_search
+msgid "Last Week"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields.selection,name:dekad_quiz.selection__de_quiz__correction_type__manual
+msgid "Manual"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question__mark
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__mark
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__mark
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "Mark"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__mark
+msgid "Marks"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__message_has_error
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__message_ids
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__minute_limit
+msgid "Minutes"
+msgstr ""
+
+#. module: dekad_quiz
+#. odoo-python
+#: code:addons/dekad_quiz/models/quiz.py:0
+msgid "Minutes cant be equal or grater than 60"
+msgstr ""
+
+#. module: dekad_quiz
+#. odoo-python
+#: code:addons/dekad_quiz/controllers/main.py:0
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__name
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question__name
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group__name
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group_type__name
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_attempt__name
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz
+msgid "Name"
+msgstr ""
+
+#. module: dekad_quiz
+#. odoo-python
+#: code:addons/dekad_quiz/controllers/main.py:0
+msgid "Newest"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__message_needaction_counter
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__message_has_error_counter
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,help:dekad_quiz.field_de_quiz__message_needaction_counter
+#: model:ir.model.fields,help:dekad_quiz.field_de_quiz_submission__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,help:dekad_quiz.field_de_quiz__message_has_error_counter
+#: model:ir.model.fields,help:dekad_quiz.field_de_quiz_submission__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: dekad_quiz
+#. odoo-python
+#: code:addons/dekad_quiz/controllers/main.py:0
+msgid "Oldest"
+msgstr ""
+
+#. module: dekad_quiz
+#. odoo-python
+#: code:addons/dekad_quiz/models/quiz_submission.py:0
+msgid "Parent cant submit student quiz!"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "Please contact the school administrations for more information"
+msgstr ""
+
+#. module: dekad_quiz
+#. odoo-python
+#: code:addons/dekad_quiz/models/quiz_question.py:0
+msgid "Please enter prober mark"
+msgstr ""
+
+#. module: dekad_quiz
+#. odoo-python
+#: code:addons/dekad_quiz/models/quiz.py:0
+msgid "Please enter prober timing values"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_answer__question_id
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__question_id
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_question_form
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_question_search
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_question_tree
+msgid "Question"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__question_type
+msgid "Question Type"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_answer_form_quick_create
+msgid "Question mark"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__answer_ids
+msgid "Question options"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.actions.act_window,name:dekad_quiz.act_open_de_quiz_question_view
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__question_ids
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group__question_ids
+#: model:ir.ui.menu,name:dekad_quiz.menu_de_quiz_question
+#: model:ir.ui.menu,name:dekad_quiz.menu_de_quiz_question_general
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_form
+msgid "Questions"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "Questions Count :"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group_type__group_ids
+msgid "Questions Groups"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__group_ids
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_form
+msgid "Questions groups"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_attempt__quiz_id
+msgid "Quiz"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "Quiz Submission full information"
+msgstr ""
+
+#. module: dekad_quiz
+#. odoo-python
+#: code:addons/dekad_quiz/models/quiz.py:0
+msgid "Quiz must have questions"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_question_answer_form_quick_create
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_answer_form_quick_create
+msgid "Quiz question answer quick create"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_answer__submission_answer_id
+msgid "Quiz submission answer"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "Quiz submission rejected!"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "Quiz submitted successfully!"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.actions.act_window,name:dekad_quiz.act_open_de_quiz_view
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question__quiz_ids
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group__quiz_ids
+#: model:ir.ui.menu,name:dekad_quiz.menu_de_quiz
+#: model:ir.ui.menu,name:dekad_quiz.menu_de_quiz_root
+#: model:res.groups,name:dekad_quiz.group_de_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_breadcrumbs
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_question_search
+msgid "Quizzes"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.actions.act_window,name:dekad_quiz.act_open_de_quiz_submission_view
+msgid "Quizzes Submissions"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.actions.act_window,name:dekad_quiz.act_open_de_quiz_submission_attempt_view
+msgid "Quizzes Submissions attempts"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form_quick_create
+msgid "Reject"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields.selection,name:dekad_quiz.selection__de_quiz_submission__state__reject
+msgid "Rejected"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__message_has_sms_error
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields.selection,name:dekad_quiz.selection__de_quiz_question__type__select_from_multiple
+msgid "Select from multiple"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz
+msgid "Show"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz
+msgid "Show Result"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz
+msgid "Start quiz"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__state
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__state
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_search
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_search
+msgid "State"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model,name:dekad_quiz.model_de_student
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__student_id
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__student_ids
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_attempt__student_id
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_attempt_search
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_search
+msgid "Student"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_answer_form_quick_create
+msgid "Student answer"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_form
+msgid "Students"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__subject_id
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_search
+msgid "Subject"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission_answer__submission_id
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_breadcrumbs
+msgid "Submission"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__submission_date
+msgid "Submission Date"
+msgstr ""
+
+#. module: dekad_quiz
+#. odoo-python
+#: code:addons/dekad_quiz/models/quiz.py:0
+msgid "Submission Date cannot be set before Create Date."
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_search
+msgid "Submission Today"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_search
+msgid "Submission after Week"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__quiz_submission_ids
+#: model:ir.ui.menu,name:dekad_quiz.menu_de_quiz_submission
+#: model:ir.ui.menu,name:dekad_quiz.menu_de_quiz_submission_general
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_form
+msgid "Submissions"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "Submit"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz
+msgid "Submit date"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "Submitted at :"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__teacher_id
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_search
+msgid "Teacher"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__teacher_user_id
+msgid "Teacher User"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid ""
+"Thank you for submitting the quiz , we will show the result after correcting"
+" the submission"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz
+msgid "There are no quiz to display."
+msgstr ""
+
+#. module: dekad_quiz
+#. odoo-python
+#: code:addons/dekad_quiz/models/quiz_question.py:0
+msgid "There must be answers to the Select from multiple question !"
+msgstr ""
+
+#. module: dekad_quiz
+#. odoo-python
+#: code:addons/dekad_quiz/models/quiz_question.py:0
+msgid "There must be one right answer !"
+msgstr ""
+
+#. module: dekad_quiz
+#. odoo-python
+#: code:addons/dekad_quiz/controllers/main.py:0
+msgid "This quiz is not assigned to the specified student."
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_form
+msgid "Timing"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_attempt_search
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_search
+msgid "Today"
+msgstr ""
+
+#. module: dekad_quiz
+#. odoo-python
+#: code:addons/dekad_quiz/controllers/main.py:0
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__type_id
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question__type
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group__type_id
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_list
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_question_group_search
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_question_search
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_search
+msgid "Type"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_question_group__group_ids
+msgid "Type elated groups"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__user_id
+msgid "User"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz__website_message_ids
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,help:dekad_quiz.field_de_quiz__website_message_ids
+#: model:ir.model.fields,help:dekad_quiz.field_de_quiz_submission__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: dekad_quiz
+#. odoo-python
+#: code:addons/dekad_quiz/controllers/main.py:0
+msgid "You don't have permission to access this student's information."
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "Your submission has been rejected because of cheating in the exam"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_submission
+msgid "Your submission has been rejected because of outing the exam"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form_quick_create
+msgid "mark"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_question_group_form
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_question_group_search
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_question_group_tree
+msgid "question group"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_question_group_type_search
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_question_group_type_tree
+msgid "question group type"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model,name:dekad_quiz.model_de_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_quiz_submission__quiz_id
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_form
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_list
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_search
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_attempt_search
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_search
+msgid "quiz"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_graph
+msgid "quiz Graph View"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model,name:dekad_quiz.model_de_quiz_submission
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_search
+msgid "quiz Submission"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model,name:dekad_quiz.model_de_quiz_submission_answer
+msgid "quiz Submission answer"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model,name:dekad_quiz.model_de_quiz_submission_attempt
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_attempt_search
+msgid "quiz Submission attempt"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.student_quiz_show
+msgid "quiz full information"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model,name:dekad_quiz.model_de_quiz_question
+msgid "quiz question"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model,name:dekad_quiz.model_de_quiz_question_answer
+msgid "quiz question answer"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model,name:dekad_quiz.model_de_quiz_question_group
+msgid "quiz question group"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model,name:dekad_quiz.model_de_quiz_question_group_type
+msgid "quiz question group type"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_form_quick_create
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_tree
+msgid "quiz submission"
+msgstr ""
+
+#. module: dekad_quiz
+#: model_terms:ir.ui.view,arch_db:dekad_quiz.view_de_quiz_submission_attempt_tree
+msgid "quiz submission attempt"
+msgstr ""
+
+#. module: dekad_quiz
+#: model:ir.model.fields,field_description:dekad_quiz.field_de_student__quiz_ids
+msgid "quiz(s)"
+msgstr ""

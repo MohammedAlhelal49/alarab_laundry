@@ -1,0 +1,12 @@
+<odoo>
+  <record id="view_category_form_wall_street" model="ir.ui.view">
+    <field name="name">product.category.form.wall.street</field>
+    <field name="model">product.category</field>
+    <field name="inherit_id" ref="product.product_category_form_view"/>
+    <field name="arch" type="xml">
+      <field name="removal_strategy_id" position="after">
+        <field name="code"/>
+      </field>
+    </field>
+  </record>
+</odoo>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- 1. Custom Search View for Sale Order Lines -->
+    <record id="view_sale_order_line_search_custom" model="ir.ui.view">
+        <field name="name">sale.order.line.search.custom</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+            <search string="Search Order Lines">
+                <!-- Standard text searches -->
+                <field name="order_id"/>
+                <field name="order_partner_id" string="Customer"/>
+                <field name="product_id"/>
+                <field name="name" string="Description"/>
+
+                <!-- Filters: Service Types -->
+                <filter string="Tickets" name="filter_type_ticket" domain="[('service_type', '=', 'ticket')]"/>
+                <filter string="Hotels" name="filter_type_hotel" domain="[('service_type', '=', 'hotel')]"/>
+                <filter string="Transportation" name="filter_type_transportation"
+                        domain="[('service_type', '=', 'transportation')]"/>
+                <separator/>
+
+                <!-- Unified "Active Today" Filter (Includes Tickets, Hotels, and Transportation) -->
+                <filter string="Active Today" name="filter_active_today"
+                        domain="[
+                        '|',
+                        '&amp;', ('ticket_x_leave_date', '&lt;=', context_today().strftime('%Y-%m-%d 23:59:59')), ('ticket_x_arrive_date', '&gt;=', context_today().strftime('%Y-%m-%d 00:00:00')),
+                        '|',
+                        '&amp;', ('ticket_y_leave_date', '&lt;=', context_today().strftime('%Y-%m-%d 23:59:59')), ('ticket_y_arrive_date', '&gt;=', context_today().strftime('%Y-%m-%d 00:00:00')),
+                        '|',
+                        '&amp;', ('hotel_check_in_date', '&lt;=', context_today().strftime('%Y-%m-%d 23:59:59')), ('hotel_check_out_date', '&gt;=', context_today().strftime('%Y-%m-%d 00:00:00')),
+                        '&amp;', ('transportation_location_ids.from_datetime', '&lt;=', context_today().strftime('%Y-%m-%d 23:59:59')), ('transportation_location_ids.to_datetime', '&gt;=', context_today().strftime('%Y-%m-%d 00:00:00'))
+                    ]"/>
+                <separator/>
+
+                <!-- Filters: Dates (Utilizing Odoo's native date filter widget) -->
+                <!-- Ticket Dates -->
+
+                <filter string="Departure leave date" name="date_ticket_x_leave" date="ticket_x_leave_date"/>
+                <filter string="Departure arrive date" name="date_ticket_x_arrive" date="ticket_x_arrive_date"/>
+                <separator/>
+                <filter string="Return leave date" name="date_ticket_y_leave" date="ticket_y_leave_date"/>
+                <filter string="Return arrive date" name="date_ticket_y_arrive" date="ticket_y_arrive_date"/>
+                <separator/>
+                <!-- Hotel Dates -->
+                <filter string="Hotel Check-In" name="date_hotel_check_in" date="hotel_check_in_date"/>
+                <filter string="Hotel Check-Out" name="date_hotel_check_out" date="hotel_check_out_date"/>
+
+                <!-- Group By Options -->
+                <group expand="0" string="Group By">
+                    <filter string="Sale Order" name="group_by_order" context="{'group_by': 'order_id'}"/>
+                    <filter string="Service Type" name="group_by_service_type" context="{'group_by': 'service_type'}"/>
+                    <filter string="Customer" name="group_by_customer" context="{'group_by': 'order_partner_id'}"/>
+                    <filter string="Product" name="group_by_product" context="{'group_by': 'product_id'}"/>
+                    <!-- Alternative to 'Group By Today' -> Grouping by the actual dates -->
+                    <separator/>
+                    <filter string="Hotel Check-in Day" name="group_by_hotel_checkin"
+                            context="{'group_by': 'hotel_check_in_date:day'}"/>
+
+                    <filter string="Hotel Check-out Day" name="group_by_hotel_checkout"
+                            context="{'group_by': 'hotel_check_out_date:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- 2. Custom List View -->
+    <record id="view_sale_order_line_list_custom" model="ir.ui.view">
+        <field name="name">sale.order.line.list.custom</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+            <!-- create="0" prevents users from creating orphan lines outside an order -->
+            <list string="Order Lines" create="0">
+                <field name="order_id" widget="many2one"/>
+                <field name="order_partner_id" string="Customer"/>
+                <field name="product_id"/>
+                <field name="name" optional="show"/>
+                <field name="service_type"
+                       widget="badge"
+                       decoration-info="service_type == 'ticket'"
+                       decoration-warning="service_type == 'hotel'"
+                       decoration-success="service_type == 'transportation'"/>
+
+                <!-- Summary fields -->
+                <field name="product_uom_qty" string="Qty"/>
+                <field name="price_subtotal" widget="monetary"/>
+                <field name="currency_id" column_invisible="True"/>
+
+                <!-- Action button linking to your custom modal form view -->
+                <button name="action_open_line_form_view"
+                        type="object"
+                        icon="fa-list"
+                        title="View Detailed Configurations"
+                        string="Details"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- 3. Window Action -->
+    <record id="action_sale_order_lines_list" model="ir.actions.act_window">
+        <field name="name">Order Lines</field>
+        <field name="res_model">sale.order.line</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_sale_order_line_search_custom"/>
+        <field name="view_id" ref="view_sale_order_line_list_custom"/>
+        <field name="context">{'search_default_group_by_service_type': 1}
+        </field> <!-- Optional: Groups by service type by default -->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No order lines found.
+            </p>
+            <p>
+                All your detailed service lines (Tickets, Hotels, Transportation) from your sales orders will appear
+                here.
+            </p>
+        </field>
+    </record>
+
+    <!-- 4. Menu Item -->
+    <!-- parent="sale.sale_order_menu" places it directly under Orders & Quotations -->
+    <menuitem id="menu_sale_order_lines_list"
+              name="Order Lines"
+              parent="sale.sale_order_menu"
+              action="action_sale_order_lines_list"
+              sequence="30"/>
+
+</odoo>

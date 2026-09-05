@@ -1,0 +1,26 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="user_menu_inherited"
+       t-inherit="web.UserMenu"
+       t-inherit-mode="extension">
+
+        <xpath expr="//div[hasclass('o_user_menu')]" position="after">
+            <div class="image-holder">
+
+                <!-- Full logo: icon + company name -->
+                <img
+                    class="dekad-logo-full"
+                    t-att-src="'/dekad_addons_enhancement_brand/static/img/full-logo.webp'"
+                    alt="Dekad"
+                />
+                <!-- Small logo: icon only -->
+                <img
+                    class="dekad-logo-icon"
+                    t-att-src="'/dekad_addons_enhancement_brand/static/img/logo.png'"
+                    alt="Dekad"
+                />
+
+            </div>
+        </xpath>
+
+    </t>
+</templates>

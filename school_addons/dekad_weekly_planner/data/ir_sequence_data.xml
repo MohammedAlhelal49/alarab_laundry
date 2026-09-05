@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Sequence for Teacher Weekly Planner -->
+        <record id="seq_teacher_weekly_planner" model="ir.sequence">
+            <field name="name">Teacher Weekly Planner Sequence</field>
+            <field name="code">teacher.weekly.planner</field>
+            <field name="prefix">TWP/</field>
+            <field name="padding">5</field>
+            <field name="number_increment">1</field>
+            <field name="number_next">1</field>
+            <field name="implementation">standard</field>
+        </record>
+
+    </data>
+</odoo>

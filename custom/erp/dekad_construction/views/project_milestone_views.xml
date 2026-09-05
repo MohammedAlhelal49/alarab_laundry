@@ -1,0 +1,235 @@
+<odoo>
+
+    <record id="view_task_kanban_inherit_progress" model="ir.ui.view">
+        <field name="name">project.task.kanban.inherit.progress</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="arch" type="xml">
+
+            <!-- 1. Ensure the float field data is pulled into the Kanban layout DOM context -->
+            <xpath expr="//templates" position="before">
+                <field name="progress_percent"/>
+            </xpath>
+
+            <!-- 2. Target the card's native tag container to append our progress badge clean and adjacent -->
+            <xpath expr="//field[@name='tag_ids']" position="after">
+                <div class="d-inline-block alignment-badge-wrapper ms-1 mt-1">
+                    <span t-attf-class="badge rounded-pill #{record.progress_percent.raw_value == 100 ? 'text-bg-success' : 'text-bg-info'} d-inline-flex align-items-center gap-1"
+                          title="Task Progress">
+                        <i class="fa fa-tasks me-1"/>
+                        <t t-out="record.progress_percent.value"/>%
+                    </span>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_project_milestone_form_inherit_percent" model="ir.ui.view">
+        <field name="name">project.milestone.form.percent</field>
+        <field name="model">project.milestone</field>
+        <field name="inherit_id" ref="project.project_milestone_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='is_reached']" position="before">
+                <field name="related_task_id"/>
+                <field name="contribution"/>
+                <field name="percent"/>
+                <field name="overall_progress"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="project_milestone_view_tree_inherit_disable" model="ir.ui.view">
+        <field name="name">project.milestone.view.list.inherit.disable</field>
+        <field name="model">project.milestone</field>
+        <field name="inherit_id" ref="project.project_milestone_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="attributes">
+                <attribute name="create">false</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="project_milestone_view_form_inherit_disable" model="ir.ui.view">
+        <field name="name">project.milestone.view.form.inherit.disable</field>
+        <field name="model">project.milestone</field>
+        <field name="inherit_id" ref="project.project_milestone_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="create">false</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_task_form_inherit_progress" model="ir.ui.view">
+        <field name="name">project.task.form.inherit.progress</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+
+            <!-- Planning & progress fields -->
+            <xpath expr="//field[@name='milestone_id']" position="after">
+                <field name="progress_percent"/>
+                <field name="planned_start_date"/>
+                <field name="planned_end_date"/>
+                <field name="planned_duration"/>
+                <field name="estimated_cost_total" readonly="1"/>
+                <field name="actual_cost_total" readonly="1"/>
+                <field name="actual_cost_total_recursive" readonly="1"/>
+
+                <field name="cost_variance"
+                       readonly="1"
+                       decoration-success="cost_variance &lt;= 0"
+                       decoration-danger="cost_variance &gt; 0"/>
+
+            </xpath>
+
+            <!-- Subcontractor tab -->
+            <xpath expr="//notebook" position="inside">
+                <!-- invisible modifier ensures this tab hides if there is no subcontractor -->
+                <page string="Subcontractor" name="subcontractor_info" invisible="not subcontractor_partner_id">
+                    <!-- >>> NEW: Create Bill button, added for retention & billing feature -->
+                    <button name="action_create_subcontractor_bill" type="object"
+                            string="Create Bill" class="oe_highlight me-2"
+                            invisible="not subcontractor_partner_id"/>
+                    <!-- >>> NEW: Bills button, opens the list of bills already generated -->
+                    <button name="action_open_subcontractor_bills" type="object"
+                            string="Bills" icon="fa-list"
+                            invisible="subcontractor_bill_count == 0"/>
+                    <group>
+                        <group string="Subcontractor Details">
+                            <field name="subcontractor_partner_id"/>
+                            <field name="subcontractor_subtotal"/>
+                            <!-- >>> NEW field, added for retention & billing feature -->
+                            <field name="subcontractor_retention_percent"/>
+                            <!-- >>> NEW field, added for cumulative billing tracking -->
+                            <field name="last_billed_progress_percent"/>
+                            <!-- >>> NEW field: the auto-created/reused service product -->
+                            <field name="subcontractor_service_product_id"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
+            <!-- Subtask progress bar -->
+            <xpath expr="//field[@name='child_ids']/list" position="inside">
+                <field name="actual_cost_total" readonly="1" optional="show"/>
+                <field name="progress_percent" widget="progressbar" string="Task Progress"/>
+                <field name="parent_id" column_invisible="True"/>
+            </xpath>
+
+            <xpath expr="//field[@name='child_ids']" position="attributes">
+                <attribute name="context">{
+                    'default_parent_id': id,
+                    'default_project_id': project_id,
+                    'default_planned_start_date': planned_start_date,
+                    'default_planned_duration': planned_duration,
+                    }
+                </attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_task_list_inherit_progress" model="ir.ui.view">
+        <field name="name">project.task.list.progress</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_tree2"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//list/field[@name='stage_id']" position="after">
+                <field name="progress_percent" widget="progressbar" string="Task Progress"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!--record id="view_task_kanban_inherit_progress" model="ir.ui.view">
+        <field name="name">project.task.kanban.progress</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='flex-column']" position="inside">
+                <div class="mt8">
+                    <field name="progress_percent"
+                           widget="progressbar"
+                           options="{'max_value': 100}"
+                           string="Task Progress"/>
+                </div>
+            </xpath>
+        </field>
+    </record-->
+
+    <record id="view_project_task_form_dependencies" model="ir.ui.view">
+        <field name="name">project.task.form.dependencies</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//form/sheet" position="inside">
+                <field name="is_progress_readonly" invisible="1"/>
+            </xpath>
+
+            <xpath expr="//field[@name='progress_percent']" position="attributes">
+                <attribute name="readonly">is_progress_readonly</attribute>
+            </xpath>
+
+            <!-- Insert a new tab inside the notebook -->
+            <xpath expr="//notebook" position="inside">
+
+                <page string="Dependencies">
+
+                    <!-- Predecessors (Editable) -->
+                    <group string="Predecessor Tasks">
+                        <field name="predecessor_dependency_ids" nolabel="1">
+                            <list editable="bottom">
+                                <field name="project_id" column_invisible="True"/>
+
+                                <field name="predecessor_task_id"
+                                       options="{'no_create': True}"
+                                       domain="[('project_id', '=', project_id), ('id', '!=', parent.id)]"/>
+                                <field name="dependency_type"/>
+                                <field name="lag_days"/>
+                            </list>
+                        </field>
+                    </group>
+
+                    <!-- Successors (Read-only) -->
+                    <group string="Successor Tasks">
+                        <field name="successor_dependency_ids" nolabel="1" readonly="1">
+                            <list>
+                                <field name="project_id" column_invisible="True"/>
+
+                                <field name="successor_task_id"/>
+                                <field name="dependency_type"/>
+                                <field name="lag_days"/>
+                            </list>
+                        </field>
+                    </group>
+
+                </page>
+
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="project_project_view_form_inherit_progress_title" model="ir.ui.view">
+        <field name="name">project.project.view.form.inherit.progress.title</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//div[@class='oe_title']" position="before">
+                <div class="mt-1">
+                    <label for="overall_progress" string="Overall Progress: " class="fw-bold"/>
+                    <field name="overall_progress" widget="percentage" class="fw-bold text-success ms-2"/>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

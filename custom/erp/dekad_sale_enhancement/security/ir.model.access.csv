@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_product_inactive,name_product_product_inactive,model_product_product,sales_team.group_sale_manager,1,0,0,0
+
+access_account_payment_sale_user,name_account_payment_sale_user,account.model_account_payment,sales_team.group_sale_salesman,1,1,1,1
+access_account_move_sale_user,name_account_move_sale_user,account.model_account_move,sales_team.group_sale_salesman,1,1,1,1
+access_account_move_line_sale_user,name_account_move_line_sale_user,account.model_account_move_line,sales_team.group_sale_salesman,1,1,1,1
+access_transfer_company_wizard,transfer.company.wizard,model_transfer_company_wizard,base.group_user,1,1,1,1

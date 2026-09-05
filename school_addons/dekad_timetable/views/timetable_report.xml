@@ -1,0 +1,187 @@
+<odoo>
+  <data>
+    <!-- QWeb Template for Timetable Report -->
+    <template id="report_timetable_document">
+      <t t-call="web.html_container">
+        <t t-call="web.external_layout">
+          <t t-foreach="docs" t-as="doc">
+            <div class="page">
+              <!-- Header -->
+              <div class="text-center mb-4">
+                <h2 style="color: #143153; margin-bottom: 20px;">
+                  <strong>School Timetable</strong>
+                </h2>
+              </div>
+
+              <!-- Timetable Information -->
+              <div class="row mb-4">
+                <div class="col-6">
+                  <table class="table table-sm table-borderless">
+                    <tr>
+                      <td style="width: 40%;"><strong>Timetable Name:</strong></td>
+                      <td><span t-field="doc.name"/></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Academic Year:</strong></td>
+                      <td><span t-field="doc.academic_year_id.name"/></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Academic Term:</strong></td>
+                      <td><span t-field="doc.academic_term_id.name"/></td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col-6">
+                  <table class="table table-sm table-borderless">
+                    <tr>
+                      <td style="width: 40%;"><strong>Grade:</strong></td>
+                      <td><span t-field="doc.grade_id.name"/></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Classroom:</strong></td>
+                      <td><span t-field="doc.classroom_id.name"/></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Generated Date:</strong></td>
+                      <td><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Weekly Timetable Table -->
+              <h4 class="mt-4 mb-3">Weekly Schedule</h4>
+              <table class="table table-sm table-bordered" style="width: 100%;">
+               <thead>
+                  <tr style="background-color: #143153;">
+                    <th style="padding: 10px; text-align: center; width: 12%; color: white;">Day</th>
+                    <th style="padding: 10px; text-align: center; width: 15%; color: white;">Period</th>
+                    <th style="padding: 10px; text-align: center; width: 18%; color: white;">Time</th>
+                    <th style="padding: 10px; text-align: center; width: 25%; color: white;">Subject</th>
+                    <th style="padding: 10px; text-align: center; width: 30%; color: white;">Teacher</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Group lines by day of week -->
+                  <t t-set="days_order" t-value="['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']"/>
+                  <t t-set="day_names" t-value="{
+                    'mon': 'Monday',
+                    'tue': 'Tuesday',
+                    'wed': 'Wednesday',
+                    'thu': 'Thursday',
+                    'fri': 'Friday',
+                    'sat': 'Saturday',
+                    'sun': 'Sunday'
+                  }"/>
+
+                  <t t-foreach="days_order" t-as="day_code">
+                    <t t-set="day_lines" t-value="doc.line_ids.filtered(lambda l: l.session_slot_id and l.session_slot_id.day_of_week == day_code).sorted(key=lambda l: l.session_slot_id.period_id.start_time)"/>
+
+                    <t t-if="day_lines">
+                      <t t-foreach="day_lines" t-as="line">
+                        <tr t-att-style="'background-color: #f8f9fa;' if line.is_break else ''">
+                          <!-- Day (show only on first row of each day) -->
+                          <td t-if="line_index == 0" t-att-rowspan="len(day_lines)"
+                              style="padding: 10px; vertical-align: middle; text-align: center; font-weight: bold; background-color: #e9ecef;">
+                            <span t-esc="day_names.get(day_code, day_code)"/>
+                          </td>
+
+                          <!-- Period -->
+                          <td style="padding: 8px; text-align: center;">
+                            <span t-esc="line.session_slot_id.period_id.name if line.session_slot_id and line.session_slot_id.period_id else 'N/A'"/>
+                          </td>
+
+                          <!-- Time -->
+                          <td style="padding: 8px; text-align: center;">
+                            <t t-if="line.session_slot_id and line.session_slot_id.period_id">
+                              <t t-set="start_hours" t-value="int(line.session_slot_id.period_id.start_time)"/>
+                              <t t-set="start_minutes" t-value="int((line.session_slot_id.period_id.start_time - start_hours) * 60)"/>
+                              <t t-set="end_hours" t-value="int(line.session_slot_id.period_id.end_time)"/>
+                              <t t-set="end_minutes" t-value="int((line.session_slot_id.period_id.end_time - end_hours) * 60)"/>
+
+                              <span t-esc="'%02d:%02d - %02d:%02d' % (start_hours, start_minutes, end_hours, end_minutes)"/>
+                            </t>
+                            <t t-elif="not line.is_break">
+                              N/A
+                            </t>
+                          </td>
+
+                          <!-- Subject (show "BREAK" if it's a break period) -->
+                          <td style="padding: 8px; text-align: center;">
+                            <t t-if="line.is_break">
+                              <strong style="color: #6c757d;">☕ BREAK</strong>
+                            </t>
+                            <t t-elif="not line.is_break">
+                              <strong>
+                                <span t-esc="line.subject_id.name if line.subject_id else '-'"/>
+                              </strong>
+                            </t>
+                          </td>
+
+                          <!-- Teacher (empty for breaks) -->
+                          <td style="padding: 8px; text-align: center;">
+                            <t t-if="not line.is_break">
+                              <span t-esc="line.teacher_id.name if line.teacher_id else '-'"/>
+                            </t>
+                            <t t-elif="not line.is_break">
+                              <span style="color: #6c757d;">-</span>
+                            </t>
+                          </td>
+                        </tr>
+                      </t>
+                    </t>
+                  </t>
+
+                  <!-- Show message if no lines -->
+                  <t t-if="not doc.line_ids">
+                    <tr>
+                      <td colspan="5" style="padding: 20px; text-align: center; color: #999;">
+                        No timetable entries found. Please generate timetable lines.
+                      </td>
+                    </tr>
+                  </t>
+                </tbody>
+              </table>
+
+              <!-- Summary Footer -->
+              <div class="row mt-4">
+                <div class="col-12">
+                  <t t-set="teaching_lines" t-value="doc.line_ids.filtered(lambda l: not l.is_break)"/>
+                  <t t-set="break_lines" t-value="doc.line_ids.filtered(lambda l: l.is_break)"/>
+
+                  <p style="font-size: 12px; color: #666;">
+                    <strong>Total Periods:</strong> <span t-esc="len(doc.line_ids)"/>
+                    <span style="margin-left: 20px;">
+                      <strong>Teaching Periods:</strong> <span t-esc="len(teaching_lines)"/>
+                    </span>
+                    <span style="margin-left: 20px;">
+                      <strong>Break Periods:</strong> <span t-esc="len(break_lines)"/>
+                    </span>
+                    <span style="margin-left: 20px;">
+                      <strong>Subjects:</strong> <span t-esc="len(teaching_lines.mapped('subject_id'))"/>
+                    </span>
+                    <span style="margin-left: 20px;">
+                      <strong>Teachers:</strong> <span t-esc="len(teaching_lines.mapped('teacher_id'))"/>
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Page footer with signature area -->
+              <div class="row mt-5" style="page-break-inside: avoid;">
+                <div class="col-6">
+                  <p>_______________________</p>
+                  <p><small>Principal's Signature</small></p>
+                </div>
+                <div class="col-6 text-right">
+                  <p>_______________________</p>
+                  <p><small>Class Teacher's Signature</small></p>
+                </div>
+              </div>
+            </div>
+          </t>
+        </t>
+      </t>
+    </template>
+  </data>
+</odoo>

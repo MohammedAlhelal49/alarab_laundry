@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- document -->
+    <template id="student_health_doc_entry" inherit_id="portal.portal_my_home" priority="120">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-if="student_health_document and student_health_document['show']" t-call="portal.portal_docs_entry">
+                <t t-set="url" t-value="student_health_document['url']"/>
+                <t t-set="title" t-value="'Health Info'"/>
+                <t t-set="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                         class="bi bi-clipboard2-pulse-fill" viewBox="0 0 16 16">
+                        <path d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h6A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5Z"/>
+                        <path d="M4.085 1H3.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1h-.585c.055.156.085.325.085.5V2a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 4 2v-.5c0-.175.03-.344.085-.5ZM9.98 5.356 11.372 10h.128a.5.5 0 0 1 0 1H11a.5.5 0 0 1-.479-.356l-.94-3.135-1.092 5.096a.5.5 0 0 1-.968.039L6.383 8.85l-.936 1.873A.5.5 0 0 1 5 11h-.5a.5.5 0 0 1 0-1h.191l1.362-2.724a.5.5 0 0 1 .926.08l.94 3.135 1.092-5.096a.5.5 0 0 1 .968-.039Z"/>
+                    </svg>
+                </t>
+
+                <t t-set="count">
+                    <span class="document_item_count" t-esc="student_health_document['count']"/>
+                </t>
+                <div class="clearing"/>
+
+            </t>
+        </xpath>
+    </template>
+    <!-- document -->
+
+    <!-- breadcrumb -->
+    <template id="student_health_breadcrumbs" inherit_id="portal.portal_breadcrumbs">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name=='Health'" t-attf-class="breadcrumb-item">
+                <a t-att-href="page_url">Health
+                </a>
+            </li>
+
+            <li t-if="page_name=='Health Show'" t-attf-class="breadcrumb-item">
+                <a t-att-href="list_url">Health data
+                </a>
+                <span>/</span>
+                <a t-att-href="page_url">
+                    <t t-esc="record.name"/>
+                </a>
+            </li>
+        </xpath>
+    </template>
+    <!-- breadcrumb -->
+
+    <!-- list -->
+    <template id="student_health" name="Student Health">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+            </t>
+
+            <div class="card dynamic-website-card-holder">
+
+                <div class="card-body dynamic-website-card">
+                    <div class="row pt-1">
+                        <div class="col-6 col-lg-4 mb-3" t-if="health.blood_group"
+                        >
+                            <h6>Blood group</h6>
+                            <p class="text-muted">
+                                <span t-field="health.blood_group"
+                                />
+                            </p>
+                        </div>
+
+                        <div class="col-6 col-lg-4 mb-3" t-if="health.height"
+                        >
+                            <h6>Height(CM)</h6>
+                            <p class="text-muted">
+                                <span t-field="health.height"
+                                />
+                            </p>
+                        </div>
+
+                        <div class=" col-6 col-lg-4 mb-3" t-if="health.weight"
+                        >
+                            <h6>weight (KG)</h6>
+                            <p class="text-muted">
+                                <span t-field="health.weight"
+                                />
+                            </p>
+                        </div>
+
+
+                        <div class=" col-6 col-lg-4 mb-3"
+                             t-if="health.physical_challenge">
+                            <h6>Physical Disability</h6>
+                            <p class="text-muted">
+                                <span t-field="health.physical_challenge_note"
+                                />
+                            </p>
+                        </div>
+
+                        <div class=" col-6 col-lg-4 mb-3"
+                             t-if="health.major_disease">
+                            <h6>Serious Illness</h6>
+                            <p class="text-muted">
+                                <span t-field="health.major_disease_note"
+                                />
+                            </p>
+                        </div>
+
+                        <div class="col-6 col-lg-4 mb-3"
+                             t-if="health.eye_glasses">
+                            <h6>Vision problems</h6>
+                            <p class="text-muted">
+                                <span t-field="health.eye_glasses_note"
+                                />
+                            </p>
+                        </div>
+
+
+                    </div>
+                    <t t-if="health_records" t-call="portal.portal_table">
+                        <h6>Medical checkups</h6>
+                        <table
+                                class="table "
+                        >
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        Name
+                                    </th>
+
+                                    <th scope="col">
+                                        Create Date
+                                    </th>
+                                    <th scope="col">
+                                        Attachment
+                                    </th>
+                                    <th scope="col">
+                                        Action
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="health_records"
+                                   t-as="checkup">
+                                    <tr>
+
+                                        <td>
+                                            <span t-esc="checkup.name"/>
+
+                                        </td>
+
+
+                                        <td>
+                                            <span t-esc="checkup.create_date"
+                                                  t-options="{'widget':'datetime'}"/>
+                                        </td>
+
+                                        <td>
+                                            <a t-if="checkup.file"
+                                               t-attf-href="/student/checkup/download/#{checkup.id}">
+                                                <i class="fa fa-download table-file-download-icon"
+                                                />
+                                            </a>
+                                        </td>
+
+                                        <td>
+
+                                            <t t-if="parent_student_param">
+                                                <t t-set="show_url"
+                                                   t-value="'/student/health_rec/' + str(checkup.id) + '?parent_student_param=' + str(parent_student_param)"/>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-set="show_url"
+                                                   t-value="'/student/health_rec/' + str(checkup.id)"/>
+                                            </t>
+
+
+                                            <a
+                                                    t-att-href="show_url">
+                                                <button class="btn btn-outline-secondary btn-sm">
+                                                    Show
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+                    <t t-else="">
+                        <div class="alert alert-info" role="alert">
+                            There are no medical checkups to display.
+                        </div>
+                    </t>
+                </div>
+
+            </div>
+        </t>
+    </template>
+    <!-- list -->
+
+    <!-- show -->
+    <template id="student_health_show" name="Health show">
+        <t t-call="portal.portal_layout">
+            <div class="card portal-page-content show-page">
+                <div class="card-body row">
+                    <div class="col-12"
+                    >
+                        <h6>Checkup full information
+                        </h6>
+                    </div>
+
+                    <div class=" col-12 col-md-6"
+                    >
+                        <strong class="">Name :</strong>
+                        <span t-esc="record.name"/>
+                    </div>
+
+
+                    <div class=" col-12 col-md-6 "
+                    >
+                        <strong class="">Create Date :</strong>
+                        <span t-esc="record.create_date" t-options="{'widget':'datetime'}"/>
+                    </div>
+
+                    <div class="  col-12 col-md-6 " t-if="file_name"
+                    >
+
+                        <strong class="">Attachment :</strong>
+                        <span t-esc="file_name"/>
+
+                        <a
+                                t-attf-href="/student/checkup/download/#{record.id}">
+                            <i class="fa fa-download form-file-download-icon"
+                            />
+                        </a>
+
+
+                    </div>
+
+                    <div class="col-12 col-md-6"
+                    >
+                        <strong class="">Recommendation :</strong>
+                        <span t-esc="record.recommendation"/>
+
+                    </div>
+
+                </div>
+            </div>
+        </t>
+
+    </template>
+    <!-- show -->
+
+</odoo>

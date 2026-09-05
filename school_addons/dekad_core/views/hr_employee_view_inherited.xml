@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit HR Employee Form View to add teacher link -->
+        <record id="view_employee_form_inherit_teacher" model="ir.ui.view">
+            <field name="name">hr.employee.form.inherit.teacher</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <!-- Add teacher smart button -->
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_open_teacher" type="object"
+                            class="oe_stat_button" icon="fa-graduation-cap"
+                            invisible="teacher_id == False"
+                            groups="dekad_core.group_de_teacher_manage">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">Teacher</span>
+                        </div>
+                    </button>
+                </xpath>
+
+                <!-- Add teacher field in form -->
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="teacher_id" readonly="1"
+                           invisible="teacher_id == False"
+                           groups="dekad_core.group_de_teacher_manage"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit HR Employee List View to show teacher -->
+        <record id="view_employee_tree_inherit_teacher" model="ir.ui.view">
+            <field name="name">hr.employee.tree.inherit.teacher</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="teacher_id" optional="show"
+                           groups="dekad_core.group_de_teacher_manage"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Add filter in search view -->
+        <record id="view_employee_search_inherit_teacher" model="ir.ui.view">
+            <field name="name">hr.employee.search.inherit.teacher</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='inactive']" position="before">
+                    <separator/>
+                    <filter string="Is Teacher" name="is_teacher"
+                            domain="[('teacher_id', '!=', False)]"/>
+                    <filter string="Not Teacher" name="not_teacher"
+                            domain="[('teacher_id', '=', False)]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

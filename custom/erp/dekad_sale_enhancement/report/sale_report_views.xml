@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sale_report_list" model="ir.ui.view">
+        <field name="name">sale.report.list</field>
+        <field name="model">sale.report</field>
+        <field name="arch" type="xml">
+            <list string="Sales Analysis" create="False" delete="False" edit="False">
+                <field name="user_id" optional="show" widget="many2one_avatar_user"/>
+                <field name="date"/>
+                <field name="order_reference" optional="show"/>
+                <field name="product_id" string="Product" optional="show"/>
+
+                <field name="partner_id"/>
+
+
+                <field name="team_id" optional="hide"/>
+                <field name="company_id" optional="hide"/>
+                <field name="product_uom_qty" string="Quantity" sum="Sum of Quantity"/>
+
+                <field name="state" optional="hide"/>
+                <field name="line_invoice_status" optional="hide"/>
+                <field name="pricelist_id" optional="hide"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="qty_to_deliver" optional="hide"/>
+                <field name="qty_delivered" optional="hide"/>
+                <field name="qty_to_invoice" optional="hide"/>
+                <field name="qty_invoiced" optional="hide"/>
+                <field name="price_unit" widget="monetary" avg="Average"/>
+                <field name="price_total" optional="show" sum="Sum of Total"/>
+                <field name="price_subtotal" optional="hide" sum="Sum of Untaxed Total"/>
+                <field name="amount_to_deliver" optional="hide" sum="Sum of Qty delivered amount"/>
+                <field name="amount_delivered" optional="hide" sum="Sum of Qty to deliver amount"/>
+                <field name="amount_to_invoice" optional="show" sum="Sum of Amount to invoice"/>
+                <field name="amount_invoiced" optional="show" sum="Sum of Amount invoiced"/>
+                <field name="untaxed_amount_to_invoice" string="Quantity" optional="show"/>
+                <field name="untaxed_amount_invoiced" string="Quantity" optional="show"/>
+                <field name="discount" optional="show"/>
+
+
+            </list>
+        </field>
+    </record>
+
+    <record id="sale.action_order_report_all" model="ir.actions.act_window">
+        <field name="name">Sales Analysis</field>
+        <field name="res_model">sale.report</field>
+        <field name="view_mode">list,form,graph,pivot</field>
+        <field name="view_id"></field>  <!-- force empty -->
+        <field name="search_view_id" ref="sale.view_order_product_search"/>
+        <field name="domain">[('state', '!=', 'cancel')]</field>
+        <field name="context">{'search_default_Sales':1,'group_by':[], 'search_default_filter_order_date': 1}</field>
+        <field name="help">This report performs analysis on your quotations and sales orders. Analysis check your sales
+            revenues and sort it by different group criteria (salesman, partner, product, etc.) Use this report to
+            perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the
+            Invoice Analysis report in the Accounting application.
+        </field>
+    </record>
+
+    <record id="sale.action_order_report_salesperson" model="ir.actions.act_window">
+        <field name="name">Sales Analysis By Salespersons</field>
+        <field name="res_model">sale.report</field>
+        <field name="view_mode">list,form,graph,pivot</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('dekad_sale_enhancement.sale_report_list')}),
+                (0, 0, {'view_mode': 'graph', 'view_id': ref('sale.sale_report_graph_bar')})]"/>
+        <field name="search_view_id" ref="sale.view_order_product_search"/>
+        <field name="context">{'search_default_User': 1, 'group_by': 'user_id', 'search_default_filter_order_date': 1}
+        </field>
+        <field name="help">This report performs analysis on your quotations and sales orders. Analysis check your sales
+            revenues and sort it by different group criteria (salesman, partner, product, etc.) Use this report to
+            perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the
+            Invoice Analysis report in the Accounting application.
+        </field>
+    </record>
+
+    <record id="sale.action_order_report_products" model="ir.actions.act_window">
+        <field name="name">Sales Analysis By Products</field>
+        <field name="res_model">sale.report</field>
+        <field name="view_mode">list,form,graph,pivot</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('dekad_sale_enhancement.sale_report_list')}),
+                (0, 0, {'view_mode': 'graph', 'view_id': ref('sale.sale_report_graph_pie')})]"/>
+
+        <field name="search_view_id" ref="sale.view_order_product_search"/>
+        <field name="context">{'search_default_Sales': 1, 'search_default_Product': 1, 'group_by': 'product_id',
+            'search_default_filter_order_date': 1}
+        </field>
+        <field name="help">This report performs analysis on your quotations and sales orders. Analysis check your sales
+            revenues and sort it by different group criteria (salesman, partner, product, etc.) Use this report to
+            perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the
+            Invoice Analysis report in the Accounting application.
+        </field>
+    </record>
+
+    <record id="sale.action_order_report_customers" model="ir.actions.act_window">
+        <field name="name">Sales Analysis By Customers</field>
+        <field name="res_model">sale.report</field>
+        <field name="view_mode">list,form,graph,pivot</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('dekad_sale_enhancement.sale_report_list')}),
+                (0, 0, {'view_mode': 'graph', 'view_id': ref('sale.sale_report_graph_bar')})]"/>
+
+
+        <field name="search_view_id" ref="sale.view_order_product_search"/>
+        <field name="context">{'search_default_Customer': 1, 'group_by': 'partner_id',
+            'search_default_filter_order_date': 1}
+        </field>
+        <field name="help">This report performs analysis on your quotations and sales orders. Analysis check your sales
+            revenues and sort it by different group criteria (salesman, partner, product, etc.) Use this report to
+            perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the
+            Invoice Analysis report in the Accounting application.
+        </field>
+    </record>
+
+    <record id="sale_report_form" model="ir.ui.view">
+        <field name="name">sale.report.form</field>
+        <field name="model">sale.report</field>
+        <field name="arch" type="xml">
+            <form create="False" delete="False" edit="False">
+                <sheet string="Sales Analysis Report">
+                    <group>
+                        <group string="Main info">
+                            <field name="company_id"/>
+                            <field name="team_id"/>
+                            <field name="user_id"/>
+                            <field name="name"/>
+                            <field name="partner_id"/>
+                            <field name="pricelist_id"/>
+                            <field name="date"/>
+                            <field name="order_reference"/>
+                            <field name="categ_id"/>
+                            <field name="product_id"/>
+                            <field name="product_uom"/>
+                            <field name="weight"/>
+                            <field name="discount_amount"/>
+                        </group>
+                        <group string="Products movements">
+                            <field name="product_uom_qty"/>
+                            <field name="qty_to_deliver"/>
+                            <field name="qty_delivered"/>
+                            <field name="qty_to_invoice"/>
+                            <field name="qty_invoiced"/>
+                            <field name="price_unit"/>
+                            <field name="price_total"/>
+                            <field name="price_subtotal"/>
+                            <field name="amount_to_deliver"/>
+                            <field name="amount_delivered"/>
+                            <field name="amount_to_invoice"/>
+                            <field name="amount_invoiced"/>
+                            <field name="untaxed_amount_to_invoice"/>
+                            <field name="untaxed_amount_invoiced"/>
+                            <field name="discount"/>
+                            <field name="name"/>
+                            <field name="is_down_payment" invisible="product_tmpl_id"/>
+
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="paperformat_us_landscape" model="report.paperformat">
+        <field name="name">US Letter Landscape sale</field>
+        <field name="default" eval="False"/>
+        <field name="format">Letter</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">30</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_report_sale_report" model="ir.actions.report">
+        <field name="name">Sale report</field>
+        <field name="model">sale.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dekad_sale_enhancement.sale_report</field>
+        <field name="report_file">dekad_sale_enhancement.sale_report</field>
+        <field name="print_report_name">'Sale Report - %s' % (object.product_id.name)</field>
+        <field name="binding_model_id" ref="sale.model_sale_report"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="dekad_sale_enhancement.paperformat_us_landscape"/>
+    </record>
+
+    <template id="sale_report">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <h3 class="">Sale report</h3>
+                <table class="table table-sm o_main_table table-borderless mt-4">
+                    <thead style="display: table-row-group">
+                        <tr class="text-center">
+                            <th>
+                                <strong>Order</strong>
+                            </th>
+                            <th>
+                                <strong>Date Order</strong>
+                            </th>
+                            <th>
+                                <strong>Product</strong>
+                            </th>
+                            <th>
+                                <strong>Unit price</strong>
+                            </th>
+                            <th>
+                                <strong>Quantity To deliver</strong>
+                            </th>
+                            <th>
+                                <strong>Total</strong>
+                            </th>
+                            <th>
+                                <strong>Customer</strong>
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="docs" t-as="o">
+
+                            <td class="text-center"
+                                t-out="o.order_reference.name">
+                            </td>
+                            <td class="text-center" t-options="{'widget': 'datetime'}"
+                                t-out="o.date">
+                            </td>
+                            <td class="text-center"
+                                t-out="o.product_id.name">
+                            </td>
+
+
+                            <td class="text-center"
+                                t-out="o.price_unit"
+                                t-options="{'widget': 'monetary', 'display_currency': o.currency_id}">
+                            </td>
+
+                            <td class="text-center"
+                                t-out="o.qty_to_deliver">
+                            </td>
+
+                            <td class="text-center"
+                                t-out="o.price_total"
+                                t-options="{'widget': 'monetary', 'display_currency': o.currency_id}">
+                            </td>
+
+                            <td class="text-center"
+                                t-out="o.partner_id.name">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </t>
+        </t>
+
+    </template>
+
+</odoo>
+
+
+
+
+
+

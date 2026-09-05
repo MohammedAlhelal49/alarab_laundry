@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- breadcrumb -->
+    <template id="student_blocked_breadcrumbs" inherit_id="portal.portal_breadcrumbs">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name=='Blocked user'" t-attf-class="breadcrumb-item">
+                <a t-att-href="page_url">Blocked
+                </a>
+            </li>
+        </xpath>
+    </template>
+    <!-- breadcrumb -->
+
+    <template id="blocked_user" name="Blocked user">
+        <t t-call="portal.portal_layout">
+            <div class="card dynamic-website-card-holder">
+                <div class="card-body dynamic-website-card">
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading">Access denied!</h4>
+                        <p>You are blocked to log in to your account from the school management
+                        </p>
+                        <hr/>
+                        <p class="mb-0">Please contact the school administrators for more information
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+</odoo>

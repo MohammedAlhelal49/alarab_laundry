@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Warning list -->
+    <record id="view_product_transfer_warning_list" model="ir.ui.view">
+        <field name="name">product.transfer.warning.list</field>
+        <field name="model">product.transfer.warning</field>
+        <field name="arch" type="xml">
+            <list string="Warnings"
+                  decoration-danger="level == 'blocking'"
+                  decoration-warning="level == 'warning'"
+                  decoration-info="level == 'info'">
+                <field name="level_icon" string=" "/>
+                <field name="level" string="Level" width="80"/>
+                <field name="message" string="Details"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Main Wizard -->
+    <record id="view_product_transfer_wizard_form" model="ir.ui.view">
+        <field name="name">product.transfer.wizard.form</field>
+        <field name="model">product.transfer.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Product Transfer Wizard (ID-based)">
+                <sheet>
+
+                    <!-- ═══ Steps indicator ═══ -->
+                    <div class="o_field_widget mb-3">
+                        <div class="d-flex gap-2 align-items-center">
+                            <span class="badge rounded-pill"
+                                  style="background:#875a7b"
+                                  invisible="state != 'step1'">① Select Products</span>
+                            <span class="badge rounded-pill text-bg-secondary"
+                                  invisible="state == 'step1'">① Select Products</span>
+
+                            <span>→</span>
+
+                            <span class="badge rounded-pill"
+                                  style="background:#875a7b"
+                                  invisible="state != 'step2'">② Review</span>
+                            <span class="badge rounded-pill text-bg-secondary"
+                                  invisible="state == 'step2'">② Review</span>
+
+                            <span>→</span>
+
+                            <span class="badge rounded-pill"
+                                  style="background:#875a7b"
+                                  invisible="state != 'step3'">③ Confirm</span>
+                            <span class="badge rounded-pill text-bg-secondary"
+                                  invisible="state == 'step3'">③ Confirm</span>
+
+                            <span>→</span>
+
+                            <span class="badge rounded-pill"
+                                  style="background:#28a745"
+                                  invisible="state != 'step4'">④ Done</span>
+                            <span class="badge rounded-pill text-bg-secondary"
+                                  invisible="state == 'step4'">④ Done</span>
+                        </div>
+                    </div>
+
+                    <!-- ═══ STEP 1: اختيار المادتين ═══ -->
+                    <group invisible="state != 'step1'">
+                        <group string="Step 1 — Select Products">
+                            <field name="source_product_id"
+                                   string="Source Product (Wrong)"
+                                   options="{'no_create': True}"
+                                   help="The product used by mistake — has moves on it"/>
+                            <field name="target_product_id"
+                                   string="Target Product (Correct / New)"
+                                   options="{'no_create': True}"
+                                   help="The new empty product created as correction"/>
+                        </group>
+                        <group string="Options">
+                            <field name="archive_source"/>
+                        </group>
+                    </group>
+
+                    <!-- ═══ STEP 2: التقرير والتحذيرات ═══ -->
+                    <group invisible="state != 'step2'">
+                        <group string="Step 2 — Moves Found on Source Product">
+                            <group string="Inventory">
+                                <field name="stock_move_done_count"
+                                       string="Stock Moves (done)"/>
+                                <field name="stock_move_draft_count"
+                                       string="Stock Moves (in progress)"/>
+                                <field name="stock_move_line_count"
+                                       string="Stock Move Lines"/>
+                                <field name="stock_quant_count"
+                                       string="Stock Quants (balance)"/>
+                                <field name="stock_lot_count"
+                                       string="Lots / Serial Numbers"/>
+                            </group>
+                            <group string="Accounting">
+                                <field name="account_move_line_count"
+                                       string="Journal Items"/>
+                                <field name="svl_count"
+                                       string="Valuation Layers (SVL)"/>
+                            </group>
+                            <group string="Sales &amp; Purchase">
+                                <field name="sale_line_count"
+                                       string="Sale Order Lines"/>
+                                <field name="purchase_line_count"
+                                       string="Purchase Order Lines"/>
+                            </group>
+                            <group string="POS">
+                                <field name="pos_line_count"
+                                       string="POS Order Lines"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Warnings &amp; Checks">
+                                <div class="alert alert-danger mb-2" role="alert"
+                                     invisible="not has_blocking_warnings">
+                                    <strong>🚫 Blocking issues found!</strong>
+                                    Transfer cannot proceed until these are resolved.
+                                </div>
+                                <div class="alert alert-success mb-2" role="alert"
+                                     invisible="has_blocking_warnings">
+                                    <strong>✅ No blocking issues.</strong>
+                                    You may proceed with the transfer.
+                                </div>
+                                <field name="warning_ids"
+                                       widget="one2many"
+                                       nolabel="1"
+                                       readonly="1"/>
+                            </page>
+                        </notebook>
+                    </group>
+
+                    <!-- ═══ STEP 3: تأكيد ═══ -->
+                    <group invisible="state != 'step3'">
+                        <div class="alert alert-warning" role="alert">
+                            <h5>⚠️ Step 3 — Confirm Transfer</h5>
+                            <p>You are about to transfer <strong>ALL</strong> moves from:</p>
+                            <ul>
+                                <li>
+                                    <strong>Source (Wrong):</strong>
+                                    <field name="source_product_id" readonly="1" nolabel="1"/>
+                                </li>
+                                <li>
+                                    <strong>Target (Correct):</strong>
+                                    <field name="target_product_id" readonly="1" nolabel="1"/>
+                                </li>
+                            </ul>
+                            <p>
+                                This operation uses <strong>direct SQL</strong> and
+                                <strong>cannot be undone</strong>.<br/>
+                                Ensure you have a <strong>database backup</strong> before proceeding.
+                            </p>
+                        </div>
+                    </group>
+
+                    <!-- ═══ STEP 4: النتيجة ═══ -->
+                    <group invisible="state != 'step4'">
+                        <div class="alert alert-success mb-2" role="alert">
+                            <strong>✅ Transfer completed successfully!</strong>
+                        </div>
+                        <field name="result_log"
+                               string="Transfer Log"
+                               nolabel="1"
+                               widget="text"
+                               readonly="1"/>
+                    </group>
+
+                </sheet>
+
+                <!-- ═══ Footer ═══ -->
+                <footer>
+                    <!-- Step 1 -->
+                    <button name="action_analyze"
+                            type="object"
+                            string="Analyze →"
+                            class="btn-primary"
+                            invisible="state != 'step1'"/>
+                    <button string="Cancel"
+                            class="btn-secondary"
+                            special="cancel"
+                            invisible="state != 'step1'"/>
+
+                    <!-- Step 2 -->
+                    <button name="action_proceed"
+                            type="object"
+                            string="Proceed →"
+                            class="btn-primary"
+                            invisible="state != 'step2'"/>
+                    <button name="action_back_to_step1"
+                            type="object"
+                            string="← Back"
+                            class="btn-secondary"
+                            invisible="state != 'step2'"/>
+                    <button string="Cancel"
+                            class="btn-secondary"
+                            special="cancel"
+                            invisible="state != 'step2'"/>
+
+                    <!-- Step 3 -->
+                    <button name="action_transfer"
+                            type="object"
+                            string="✅ Confirm Transfer"
+                            class="btn-danger"
+                            confirm="This will permanently update all records via SQL. Are you absolutely sure?"
+                            invisible="state != 'step3'"/>
+                    <button name="action_back_to_step2"
+                            type="object"
+                            string="← Back"
+                            class="btn-secondary"
+                            invisible="state != 'step3'"/>
+                    <button string="Cancel"
+                            class="btn-secondary"
+                            special="cancel"
+                            invisible="state != 'step3'"/>
+
+                    <!-- Step 4 -->
+                    <button string="Close"
+                            class="btn-primary"
+                            special="cancel"
+                            invisible="state != 'step4'"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_product_transfer_wizard" model="ir.actions.act_window">
+        <field name="name">Product Transfer (ID-based)</field>
+        <field name="res_model">product.transfer.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Menu under Inventory > Configuration -->
+    <menuitem id="menu_product_transfer_ids"
+              name="Product Transfer (ID-based)"
+              parent="stock.menu_stock_config_settings"
+              action="action_product_transfer_wizard"
+              sequence="99"
+              groups="base.group_system"/>
+
+</odoo>

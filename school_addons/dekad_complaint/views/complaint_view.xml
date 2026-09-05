@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_de_complaint_list" model="ir.ui.view">
+        <field name="name">de.complaint.list</field>
+        <field name="model">de.complaint</field>
+        <field name="arch" type="xml">
+            <list string="Complaint">
+                <field name="category_id"/>
+                <field name="subject"/>
+                <field name="created_by"/>
+                <field name="state" widget="label_selection"
+                       options="{'classes': {'draft': 'default', 'action': 'success', 'reject': 'warning'}}"
+                       readonly="1"/>
+                <field name="create_date" optional="hide"/>
+
+                <field name="sequence" optional="hide"/>
+                <field name="teacher_id" optional="hide"/>
+                <field name="student_id" optional="hide"/>
+                <field name="parent_id" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_de_complaint_form" model="ir.ui.view">
+        <field name="name">de.complaint.form</field>
+        <field name="model">de.complaint</field>
+        <field name="arch" type="xml">
+            <form string="complaint" duplicate="0">
+                <field name="state" invisible="1"/>
+                <field name="id" invisible="1"/>
+                <field name="is_complaint_user" invisible="1"/>
+                <header invisible="id == False">
+                    <field name="state" widget="statusbar"/>
+                    <button name="set_confirm" string="Confirm" type="object" invisible="state != 'draft'"
+                            class="oe_highlight"
+                    />
+                    <button name="set_draft" string="Draft" type="object"
+
+                            invisible="state != 'confirm'"
+                    />
+                    <button name="cancel_state" string="Cancel" type="object"
+                            groups="dekad_complaint.group_de_complaint"
+                            invisible="state not in ('action','reject')"
+                    />
+                    <button name="set_reject" string="Reject" type="object"
+                            groups="dekad_complaint.group_de_complaint"
+                            invisible="state != 'confirm'" class="oe_highlight"
+                    />
+                    <button name="set_action" string="Take action" type="object"
+                            groups="dekad_complaint.group_de_complaint"
+                            invisible="state != 'confirm'" class="oe_highlight"
+                    />
+                </header>
+
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="category_id" readonly="state != 'draft'" required="1"/>
+                            <field name="subject" readonly="state != 'draft'"/>
+                            <field name="sequence"/>
+                             <field name="file_name" invisible="1"/>
+                            <field name="file" filename="file_name" readonly="state != 'draft'"/>
+                        </group>
+                        <group>
+                            <field name="created_by" readonly="state != 'draft' or is_complaint_user == False"
+                            />
+                            <field name="parent_id" options="{'no_create': True, 'no_open' : True}"
+                                   required="created_by == 'parent'" invisible="created_by != 'parent'"
+                                   readonlt="state != 'draft'"
+                            />
+
+                            <field name="student_id" options="{'no_create': True , 'no_open' : True}"
+                                   required="created_by == 'student'" invisible="created_by != 'student'"
+                                   readonly="state != 'draft'"
+
+                            />
+
+                            <field name="teacher_id" options="{'no_create': True, 'no_open' : True}"
+                                   required="created_by == 'teacher'" invisible="created_by != 'teacher'"
+                                   readonly="state != 'draft' or is_complaint_user == False"
+                            />
+                            <field name="create_date" readonly="True"
+                                   invisible="create_date == False"/>
+
+                        </group>
+
+                        <separator string="Description"/>
+                        <field name="description" readonly="state != 'draft'"/>
+                        <separator string="Action to take" invisible="state != 'action'"/>
+                        <field name="action" invisible="state != 'action'"/>
+                    </group>
+
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_de_complaint_search" model="ir.ui.view">
+        <field name="name">de.complaint.search</field>
+        <field name="model">de.complaint</field>
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <search string="Complaint">
+                <field name="subject"/>
+                <field name="category_id"/>
+                <field name="created_by"/>
+                <field name="state"/>
+                <filter name="action_taken" string="Action taken" domain="[('state','=','action')]"/>
+                <filter name="rejected" string="Rejected" domain="[('state','=','reject')]"/>
+                <group string="Group By...">
+                    <filter name="group_by_category" string="Category"
+                            domain="[]" context="{'group_by':'category_id'}"/>
+                    <filter name="group_by_created_by" string="Create by"
+                            domain="[]" context="{'group_by':'created_by'}"/>
+                    <filter name="group_by_state" string="State"
+                            domain="[]" context="{'group_by':'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_de_complaint_graph">
+        <field name="name">de.complaint.graph</field>
+        <field name="model">de.complaint</field>
+        <field name="arch" type="xml">
+            <graph string="Complaint" type="bar" stacked="0">
+                <field name="created_by"/>
+                <field name="state"/>
+            </graph>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="act_open_de_complaint_view">
+        <field name="name">Complaints</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">de.complaint</field>
+        <field name="view_mode">list,form,graph</field>
+        <field name="binding_view_types">list,form</field>
+        <field name="search_view_id" ref="view_de_complaint_search"/>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="act_open_de_complaint_view_list">
+        <field name="act_window_id" ref="act_open_de_complaint_view"/>
+        <field name="view_mode">list</field>
+        <field name="sequence" eval="10"/>
+        <field name="view_id" ref="view_de_complaint_list"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="act_open_de_complaint_view_form">
+        <field name="act_window_id" ref="act_open_de_complaint_view"/>
+        <field name="view_mode">form</field>
+        <field name="sequence" eval="20"/>
+        <field name="view_id" ref="view_de_complaint_form"/>
+    </record>
+    <record model="ir.actions.act_window.view" id="act_open_de_complaint_view_graph">
+        <field name="act_window_id" ref="act_open_de_complaint_view"/>
+        <field name="view_mode">graph</field>
+        <field name="sequence" eval="30"/>
+        <field name="view_id" ref="view_de_complaint_graph"/>
+    </record>
+</odoo>
+
+
+

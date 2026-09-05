@@ -1,0 +1,77 @@
+<odoo>
+    <data>
+        <template id="de_attendance_analysis_report">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <div class="text-center">
+                            <h3>
+                                <strong>Student absence Detail</strong>
+                            </h3>
+                        </div>
+                        <br></br>
+                        <div class="row mt24">
+                            <div style="width:50%; margin-left:15px;">
+                                <b>Student Name:</b>
+                                <span t-esc="get_student_name"/>
+                            </div>
+                            <div style="width:50%; margin-left:15px;">
+                                <b>From Date:</b>
+                                <span t-esc="from_date" t-options="{'widget':'date'}"/>
+                                <span style="visibility:hidden;">--</span>
+                                <b>To Date:</b>
+                                <span t-esc="to_date" t-options="{'widget':'date'}"/>
+                            </div>
+                        </div>
+                        <br/>
+                        <table t-if="get_data[0]['total']"  class="table table-bordered">
+                            <thead class="text-center"
+                                   style="background-color:#eeeeee; font-size:14px; font-weight:600;">
+                                <th class="text-center">Date</th>
+                                <th class="text-center">Remark</th>
+                            </thead>
+                            <tbody class="text-center" style="font-size:12px;border-top: 1px solid #dbdbdb !important;">
+                                <t t-foreach="get_data" t-as="obj">
+                                    <tr t-foreach="obj['line']" t-as="l">
+                                        <td class="text-center">
+                                            <span t-esc="l['absent_date']" t-options="{'widget':'date'}"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-esc="l['remark']"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                                <tr t-foreach="get_data" t-as="obj">
+                                    <td class="text-center">
+                                        <b>Total Absence</b>
+                                    </td>
+                                    <td class="text-center">
+                                        <b>
+                                            <span t-esc="obj['total']"/>
+                                        </b>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                              <div t-else="" class="alert alert-secondary" role="alert">
+                                There is no absence days to display
+                            </div>
+
+                    </div>
+                </t>
+            </t>
+        </template>
+
+
+        <record id="act_open_de_attendance_analysis_report_view" model="ir.actions.report">
+            <field name="name">Attendance analysis report</field>
+            <field name="model">de.student</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">dekad_attendance.de_attendance_analysis_report</field>
+            <field name="report_file">dekad_attendance.de_attendance_analysis_report</field>
+        </record>
+    </data>
+</odoo>

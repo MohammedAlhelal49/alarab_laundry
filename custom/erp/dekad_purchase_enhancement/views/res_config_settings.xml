@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_purchase_direct_receipt_invoice" model="ir.ui.view">
+        <field name="name">res.config.settings.purchase.direct.receipt.invoice</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="purchase.res_config_settings_view_form_purchase"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//app//block[@name = 'purchase_setting_container']" position="after">
+                <block title="Direct purchase receipt invoice" name="direct_purchase_receipt_invoice">
+                    <setting
+                            help="Create (draft or validated) delivery and (draft or posted) bill on the purchase order confirmation">
+                        <field name="direct_purchase_receipt_invoice" nolabel="1"/>
+                    </setting>
+
+                    <setting invisible="not direct_purchase_receipt_invoice"
+                    >
+                        <field name="direct_purchase_receipt_delivery_state"
+                               required="direct_purchase_receipt_invoice"/>
+
+                    </setting>
+                    <setting invisible="not direct_purchase_receipt_invoice"
+                    >
+                        <field name="direct_purchase_receipt_invoice_state" required="direct_purchase_receipt_invoice"/>
+
+
+                    </setting>
+
+
+                </block>
+
+            </xpath>
+
+            <xpath expr="//block[@name='matrix_setting_container']"
+                   position="after">
+
+                <block title="Pricing" name="purchase_pricing_setting_container">
+
+                    <!-- Discounts toggle -->
+                    <setting id="purchase_discounts"
+                             documentation="/applications/inventory_and_mrp/purchase/manage_deals/agreements.html"
+                             help="Apply discounts on purchase order lines">
+                        <field name="group_purchase_discount_user"
+                               string="Discounts"/>
+                    </setting>
+
+                    <!-- Optional: expose the discount product so admins can
+                         change the auto-created product without digging into
+                         technical menus.
+                         Only shown when the feature is active. -->
+                    <setting id="purchase_discount_product"
+                             help="Product used to create discount lines on Purchase Orders">
+                        <div invisible="not group_purchase_discount_user">
+                            <label for="purchase_discount_product_id"
+                                   string="Discount Product"/>
+                            <field name="purchase_discount_product_id"
+                                   options="{'no_create': False}"/>
+                        </div>
+                    </setting>
+                    <setting id="purchase_amount_total_words_setting"
+                            string="Total amount of purchase order in letters"
+                            help="Display the total amount of an RFQ or purchase order in letters">
+
+                        <field name="purchase_amount_total_words"/>
+
+                    </setting>
+
+                </block>
+
+            </xpath>
+
+        </field>
+    </record>
+</odoo>
+
+
+
+

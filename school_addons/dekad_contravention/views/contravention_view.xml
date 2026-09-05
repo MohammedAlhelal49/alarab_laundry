@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_de_contravention_list" model="ir.ui.view">
+            <field name="name">de.contravention.list</field>
+            <field name="model">de.contravention</field>
+            <field name="arch" type="xml">
+                <list string="contravention Records">
+                    <field name="grade_id"/>
+                    <field name="category_id"
+                    />
+                    <field name="student_id"
+                    />
+
+
+                    <field name="state" widget="label_selection"
+                           options="{'classes': {'draft': 'default', 'action': 'success'}}"/>
+                    <field name="priority" optional="hide"
+                    />
+
+                    <field name="create_date" optional="hide"
+                    />
+
+                    <field name="penalty_ids" optional="hide"
+                           widget="many2many_tags"/>
+                    <field name="suspend_ids" optional="hide"
+                           widget="many2many_tags"/>
+                    <field name="alert" optional="hide"
+                    />
+                    <field name="state" optional="hide"/>
+                    <field name="sequence" optional="hide"/>
+
+                </list>
+            </field>
+        </record>
+
+        <record id="view_de_contravention_form" model="ir.ui.view">
+            <field name="name">de.contravention.form</field>
+            <field name="model">de.contravention</field>
+            <field name="arch" type="xml">
+                <form string="contravention Records">
+                    <field name="id" invisible="1"/>
+                    <field name="is_alert" invisible="1"/>
+                    <header invisible="id == False">
+                        <field name="state" widget="statusbar"/>
+                        <button name="set_confirm" string="Confirm" type="object"
+                                class="oe_highlight" invisible="state != 'draft'"
+                        />
+                        <button name="set_draft" string="Draft" type="object"
+                                invisible="state != 'confirm'"
+                        />
+                        <button name="set_cancel" invisible="state != 'action'" string="Cancel" type="object"
+                        />
+                        <button name="%(dekad_contravention.act_open_de_contravention_take_action_wizard_view)d"
+                                string="Take Action"
+                                type="action"
+                                invisible="state != 'confirm'" class="oe_highlight"
+
+                        />
+                    </header>
+
+                    <sheet>
+                        <group>
+                            <group>
+
+                                <field name="grade_id" required="1" readonly="state != 'draft'"
+
+                                       options="{'no_create': True, 'no_open': True}"
+                                />
+
+                                <field name="student_id" required="1" readonly="state != 'draft'"
+                                       options="{'no_create': True, 'no_open': True}"
+                                       domain="[('student_grade_ids.grade_id','=',grade_id),('student_grade_ids.state','=','running')]"/>
+                                <field name="category_id" readonly="state != 'draft'"/>
+
+
+                            </group>
+                            <group>
+
+                                <field name="priority" class="mr-3"
+                                       readonly="state != 'draft'"/>
+                                  <field name="file_name" invisible="1"/>
+                                  <field name="file" filename="file_name" readonly="state != 'draft'"/>
+                                  <field name="create_date" readonly="True" invisible="create_date == False"/>
+                                <field name="sequence"/>
+
+
+                            </group>
+
+
+                            <separator string="Details"/>
+                            <field name="details" readonly="state != 'draft'"/>
+
+                            <separator string="Penalties"
+                                       invisible="not suspend_ids and not penalty_ids and is_alert == False "
+                            />
+                            <group invisible="not suspend_ids and  not penalty_ids  and is_alert == False ">
+                                <field name="penalty_ids" readonly="1" invisible="not penalty_ids"
+                                />
+                                <field name="suspend_ids" readonly="1"
+                                       invisible="not suspend_ids"
+                                />
+                                <field name="alert" invisible="state == 'action' or is_alert == False"
+
+                                       readonly="1"/>
+                                <button name="%(dekad_contravention.act_open_de_contravention_change_penalty_wizard_view)d"
+                                        string="Update Penalties"
+                                        type="action"
+                                        invisible="state != 'action'"
+                                        class="btn btn-outline-secondary change-penalty-button"
+
+                                />
+                            </group>
+                        </group>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_de_contravention_search" model="ir.ui.view">
+            <field name="name">de.contravention.search</field>
+            <field name="model">de.contravention</field>
+
+            <field name="arch" type="xml">
+                <search string="Contravention Records">
+                    <field name="student_id"/>
+                    <field name="category_id"/>
+                    <filter name="action_taken" string="Action taken" domain="[('state','=','action')]"/>
+
+                    <group expand="0" string="Group By ...">
+                        <filter string="Grade" name="group_by_grade"
+                                domain="[]" context="{'group_by':'grade_id'}"/>
+                        <filter string="Category" name="group_by_category"
+                                domain="[]" context="{'group_by':'category_id'}"/>
+                        <filter string="Priority" name="group_bt_priority"
+                                domain="[]" context="{'group_by':'priority'}"/>
+                        <filter string="Student" name="group_by_student"
+                                domain="[]" context="{'group_by':'student_id'}"/>
+                        <filter string="Status" name="group_by_state"
+                                domain="[]" context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_de_contravention_graph">
+            <field name="name">de.contravention.graph</field>
+            <field name="model">de.contravention</field>
+            <field name="arch" type="xml">
+                <graph string="Contravention" type="bar">
+                    <field name="category_id"/>
+                    <field name="state"/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_de_contravention_view">
+            <field name="name">Contraventions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.contravention</field>
+            <field name="view_mode">list,form,graph</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="search_view_id" ref="view_de_contravention_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_contravention_view_list">
+            <field name="act_window_id" ref="act_open_de_contravention_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_de_contravention_list"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_contravention_view_form">
+            <field name="act_window_id" ref="act_open_de_contravention_view"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="20"/>
+            <field name="view_id" ref="view_de_contravention_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_contravention_view_graph">
+            <field name="act_window_id" ref="act_open_de_contravention_view"/>
+            <field name="view_mode">graph</field>
+            <field name="sequence" eval="30"/>
+            <field name="view_id" ref="view_de_contravention_graph"/>
+        </record>
+    </data>
+</odoo>

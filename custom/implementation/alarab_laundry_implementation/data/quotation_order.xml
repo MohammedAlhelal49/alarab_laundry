@@ -1,0 +1,54 @@
+<odoo>
+
+    <record id="whatsapp_pos_ready_template"
+            model="whatsapp.template">
+
+        <field name="name">POS Ready Template</field>
+
+        <field name="message">
+
+        مرحبا {{partner_name}}،
+
+        طلبكم رقم ({{pos_order_name}}) جاهز للاستلام.
+
+        Your laundry job ({{pos_order_name}}) is ready
+
+        المبلغ: {{pos_order_amount}}
+        Amount: {{pos_order_amount}}
+
+        شكراً لاختياركم مغسلة بيت العرب الأوتوماتيكي
+
+        Thank you for choosing Bait Al Arab Automatic Laundry
+
+        </field>
+
+    </record>
+
+    <record id="whatsapp_invoice_template_v2"
+            model="whatsapp.template">
+
+        <field name="name">Invoice Template</field>
+
+        <field name="message">مرحباً {{partner_name}},
+
+        نشكر لكم ثقتكم بـ مغسلة بيت العرب الاوتوماتيكي، ويسعدنا خدمتكم دائماً.
+        Thank you for choosing Bait Al Arab Automatic Laundry, we are always happy to serve you.
+
+        📄 تفاصيل الفاتورة | Invoice Details:
+
+        • رقم الفاتورة | Invoice Number: {{invoice_name}}
+
+        • المبلغ المستحق | Amount Due: {{invoice_amount}}
+
+        🔗 رابط الفاتورة | Invoice Link:
+        {{invoice_link}}
+
+        في حال وجود أي استفسار أو ملاحظة، يرجى عدم التردد في التواصل معنا.
+        If you have any questions, please feel free to contact us anytime
+
+        مع خالص الشكر والتقدير
+        Best Regards
+        </field>
+
+    </record>
+</odoo>

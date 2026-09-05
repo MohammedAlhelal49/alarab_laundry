@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Root Menu -->
+    <menuitem id="menu_gmr_root"
+              name="Material Requests"
+              web_icon="dekad_material_request,static/description/icon.png"
+              sequence="50"
+              groups="dekad_material_request.group_gmr_user,dekad_material_request.group_gmr_approver,dekad_material_request.group_gmr_admin"/>
+
+    <!-- User: My Requests -->
+    <menuitem id="menu_gmr_my_requests"
+              name="My Requests"
+              parent="menu_gmr_root"
+              action="action_gmr_request_mine"
+              sequence="10"
+              groups="dekad_material_request.group_gmr_user"/>
+
+    <!-- Approver + Admin: To Approve -->
+    <menuitem id="menu_gmr_to_approve"
+              name="To Approve"
+              parent="menu_gmr_root"
+              action="action_gmr_request_to_approve"
+              sequence="20"
+              groups="dekad_material_request.group_gmr_approver,dekad_material_request.group_gmr_admin"/>
+
+    <!-- Approver + Admin: Approved -->
+    <menuitem id="menu_gmr_approver_approved"
+              name="Approved"
+              parent="menu_gmr_root"
+              action="action_gmr_request_approver_approved"
+              sequence="25"
+              groups="dekad_material_request.group_gmr_approver,dekad_material_request.group_gmr_admin"/>
+
+    <!-- Admin only: Cancelled -->
+    <menuitem id="menu_gmr_all"
+              name="Cancelled"
+              parent="menu_gmr_root"
+              action="action_gmr_request_approved"
+              sequence="60"
+              groups="dekad_material_request.group_gmr_admin"/>
+
+    <!-- Admin only: Settings -->
+    <menuitem id="menu_gmr_settings"
+              name="Settings"
+              parent="menu_gmr_root"
+              action="action_gmr_config_settings"
+              sequence="100"
+              groups="dekad_material_request.group_gmr_admin"/>
+
+</odoo>

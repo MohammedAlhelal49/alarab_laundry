@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="project_update_view_form_inherit_task" model="ir.ui.view">
+        <field name="name">project.update.view.form.inherit.task</field>
+        <field name="model">project.update</field>
+        <field name="inherit_id" ref="project.project_update_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='status']" position="before">
+                <field name="task_id" options="{'no_create': True, 'no_open': True}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='description']" position="replace">
+                <notebook>
+                    <page name="main_update_description" string="Update Description">
+                        <field name="description" placeholder="Write your general project update here..."/>
+                    </page>
+
+                    <page name="task_matrix_page" string="Task Matrix" invisible="not task_id">
+                        <field name="task_progress_html"/>
+                    </page>
+                </notebook>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_job_cost_project_graph" model="ir.ui.view">
+        <field name="name">job.cost.project.graph</field>
+        <field name="model">job.cost.project</field>
+        <field name="arch" type="xml">
+            <graph string="Project Estimations Analysis" type="bar" sample="1">
+                <field name="state"/>
+                <field name="final_selling_price" type="measure"/>
+                <field name="base_cost_total" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_job_cost_project_pivot" model="ir.ui.view">
+        <field name="name">job.cost.project.pivot</field>
+        <field name="model">job.cost.project</field>
+        <field name="arch" type="xml">
+            <pivot string="Cost Estimations Matrix" sample="1">
+                <field name="state" type="row"/>
+                <field name="base_cost_total" type="measure"/>
+                <field name="final_selling_price" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="action_job_cost_project_dashboard" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">job.cost.project</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No estimation metrics available yet!
+            </p>
+        </field>
+    </record>
+</odoo>

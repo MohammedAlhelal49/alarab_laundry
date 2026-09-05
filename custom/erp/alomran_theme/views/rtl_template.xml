@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- RTL Support for Arabic -->
+    <template id="layout_rtl_arabic" inherit_id="website.layout" name="Alomran RTL Arabic" active="True">
+        <!-- This template activates RTL for Arabic language -->
+        <xpath expr="//html" position="attributes">
+            <attribute name="t-attf-dir">#{request.env.lang and request.env.lang.startswith('ar') and 'rtl' or 'ltr'}</attribute>
+            <attribute name="t-attf-lang">#{request.env.lang or 'en'}</attribute>
+        </xpath>
+
+        <xpath expr="//head" position="inside">
+            <!-- Load RTL CSS only for Arabic -->
+            <t t-if="request.env.lang and request.env.lang.startswith('ar')">
+                <link rel="stylesheet" href="/alomran_theme/static/src/css/rtl.css"/>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Alternative: Direct RTL Template -->
+    <template id="rtl_assets" name="RTL Assets">
+        <t t-call="web.assets_common">
+            <t t-if="request.env.lang and request.env.lang.startswith('ar')">
+                <link rel="stylesheet" href="/alomran_theme/static/src/css/rtl.css"/>
+            </t>
+        </t>
+    </template>
+
+    <!-- Footer RTL for Arabic -->
+    <template id="footer_rtl" inherit_id="alomran_theme.layout_rtl" name="Footer RTL Arabic" active="True">
+        <xpath expr="//footer" position="replace">
+            <t t-if="request.env.lang and request.env.lang.startswith('ar')">
+                <!-- Arabic Footer -->
+                <footer class="bg-dark text-white" dir="rtl">
+                    <div class="py-5">
+                        <div class="container">
+                            <div class="row g-4">
+                                <!-- Column 1: معلومات التواصل -->
+                                <div class="col-lg-3 col-md-6">
+                                    <h5 class="fw-bold mb-4">معلومات التواصل</h5>
+                                    <div class="contact-info">
+                                        <p class="mb-3">
+                                            <i class="fa fa-phone ms-2 text-primary"/>
+                                            <a href="tel:+971505829697" class="text-white text-decoration-none hover-primary" dir="ltr">
+                                                +971505829697
+                                            </a>
+                                        </p>
+                                        <p class="mb-3">
+                                            <i class="fa fa-envelope ms-2 text-primary"/>
+                                            <a href="mailto:alomran.td@gmail.com" class="text-white text-decoration-none hover-primary">
+                                                alomran.td@gmail.com
+                                            </a>
+                                        </p>
+                                        <p class="mb-3">
+                                            <i class="fa fa-clock ms-2 text-primary"/>
+                                            السبت - الخميس: 8:00 ص - 8:00 م
+                                        </p>
+                                        <p class="mb-0">
+                                            <i class="fa fa-map-marker-alt ms-2 text-primary"/>
+                                            11 فرعاً في الإمارات
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                                <!-- Column 2: الشعار في المنتصف -->
+                                <div class="col-lg-3 col-md-6 text-center">
+                                    <div class="footer-logo mb-4">
+                                        <img src="/alomran_theme/static/src/img/logo1.png"
+                                             alt="مركز العمران للتدريب والتطوير"
+                                             class="footer-logo-img"
+                                             style="max-width: 200px; height: auto;"/>
+                                    </div>
+
+                                    <h5 class="fw-bold mb-3 text-primary">
+                                        مركز العمران للتدريب والتطوير
+                                    </h5>
+                                    <p class="mb-3 text-white-50">نصنع قادة الغد منذ 2010</p>
+
+                                    <!-- أيقونات التواصل الاجتماعي -->
+                                    <div class="social-icons d-flex gap-3 justify-content-center mb-4">
+                                        <a href="https://www.facebook.com/alomran.td/"
+                                           class="btn btn-outline-light rounded-circle social-btn"
+                                           target="_blank"
+                                           title="فيسبوك">
+                                            <i class="fab fa-facebook-f"/>
+                                        </a>
+                                        <a href="https://www.instagram.com/alomran.td/"
+                                           class="btn btn-outline-light rounded-circle social-btn"
+                                           target="_blank"
+                                           title="انستغرام">
+                                            <i class="fab fa-instagram"/>
+                                        </a>
+                                        <a href="https://www.tiktok.com/@alomran.td"
+                                           class="btn btn-outline-light rounded-circle social-btn"
+                                           target="_blank"
+                                           title="تيك توك">
+                                            <i class="fab fa-tiktok"/>
+                                        </a>
+                                        <a href="https://wa.me/971505829697"
+                                           class="btn btn-outline-light rounded-circle social-btn"
+                                           target="_blank"
+                                           title="واتساب">
+                                            <i class="fab fa-whatsapp"/>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Column 3: دوراتنا -->
+                                <div class="col-lg-3 col-md-6">
+                                    <h5 class="fw-bold mb-4">دوراتنا</h5>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">
+                                            <a href="/teachers" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-check ms-2 text-primary"/>التدريب المهني
+                                            </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/languages" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-check ms-2 text-primary"/>تعلم اللغات
+                                            </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/it-programs" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-check ms-2 text-primary"/>تقنية المعلومات
+                                            </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/courses" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-check ms-2 text-primary"/>إدارة الأعمال
+                                            </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/courses" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-check ms-2 text-primary"/>التسويق الرقمي
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Column 4: روابط سريعة -->
+                                <div class="col-lg-3 col-md-6">
+                                    <h5 class="fw-bold mb-4">روابط سريعة</h5>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">
+                                            <a href="/" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-chevron-left ms-2"/>الرئيسية
+                                            </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/about" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-chevron-left ms-2"/>من نحن
+                                            </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/courses" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-chevron-left ms-2"/>الدورات
+                                            </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/branches" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-chevron-left ms-2"/>الفروع
+                                            </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/contact" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-chevron-left ms-2"/>تواصل معنا
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- حقوق النشر -->
+                            <hr class="my-4 border-secondary"/>
+                            <div class="row align-items-center">
+                                <div class="col-md-6 text-center text-md-end mb-3 mb-md-0">
+                                    <p class="mb-0 text-white-50">
+                                        © 2026 مركز العمران للتدريب والتطوير. جميع الحقوق محفوظة.
+                                    </p>
+                                </div>
+                                <div class="col-md-6 text-center text-md-start">
+                                    <p class="mb-0 text-white-50">
+                                        صُنع بـ <i class="fa fa-heart text-danger"/> في الإمارات العربية المتحدة
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </t>
+            <t t-else="">
+                <!-- English Footer (existing) -->
+                <footer class="bg-dark text-white" dir="ltr">
+                    <div class="py-5">
+                        <div class="container">
+                            <div class="row g-4">
+                                <!-- Column 1: Quick Links -->
+                                <div class="col-lg-3 col-md-6">
+                                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">
+                                            <a href="/" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-chevron-right me-2"/>Home
+                                            </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/about" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-chevron-right me-2"/>About Us
+                                            </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/courses" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-chevron-right me-2"/>Courses
+                                            </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/branches" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-chevron-right me-2"/>Branches
+                                            </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/contact" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-chevron-right me-2"/>Contact Us
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Column 2: Our Courses -->
+                                <div class="col-lg-3 col-md-6">
+                                    <h5 class="fw-bold mb-4">Our Courses</h5>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">
+                                            <a href="/teachers" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-check me-2 text-primary"/>Professional Training
+                                            </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/languages" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-check me-2 text-primary"/>Language Learning
+                                            </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/it-programs" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-check me-2 text-primary"/>Information Technology
+                                            </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/courses" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-check me-2 text-primary"/>Business Administration
+                                            </a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="/courses" class="text-white-50 text-decoration-none hover-primary">
+                                                <i class="fa fa-check me-2 text-primary"/>Digital Marketing
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Column 3: Logo in the center -->
+                                <div class="col-lg-3 col-md-6 text-center">
+                                    <div class="footer-logo mb-4">
+                                        <img src="/alomran_theme/static/src/img/logo1.png"
+                                             alt="Al Omran Training and Development Center"
+                                             class="footer-logo-img"
+                                             style="max-width: 200px; height: auto;"/>
+                                    </div>
+
+                                    <h5 class="fw-bold mb-3 text-primary">
+                                        Al Omran Training &amp; Development Center
+                                    </h5>
+                                    <p class="mb-3 text-white-50">Shaping Tomorrow's Leaders Since 2010</p>
+
+                                    <div class="social-icons d-flex gap-3 justify-content-center mb-4">
+                                        <a href="https://www.facebook.com/alomran.td/"
+                                           class="btn btn-outline-light rounded-circle social-btn"
+                                           target="_blank"
+                                           title="Facebook">
+                                            <i class="fab fa-facebook-f"/>
+                                        </a>
+                                        <a href="https://www.instagram.com/alomran.td/"
+                                           class="btn btn-outline-light rounded-circle social-btn"
+                                           target="_blank"
+                                           title="Instagram">
+                                            <i class="fab fa-instagram"/>
+                                        </a>
+                                        <a href="https://www.tiktok.com/@alomran.td"
+                                           class="btn btn-outline-light rounded-circle social-btn"
+                                           target="_blank"
+                                           title="TikTok">
+                                            <i class="fab fa-tiktok"/>
+                                        </a>
+                                        <a href="https://wa.me/971505829697"
+                                           class="btn btn-outline-light rounded-circle social-btn"
+                                           target="_blank"
+                                           title="WhatsApp">
+                                            <i class="fab fa-whatsapp"/>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Column 4: Contact Information -->
+                                <div class="col-lg-3 col-md-6">
+                                    <h5 class="fw-bold mb-4">Contact Information</h5>
+                                    <div class="contact-info">
+                                        <p class="mb-3">
+                                            <i class="fa fa-phone me-2 text-primary"/>
+                                            <a href="tel:+971505829697" class="text-white text-decoration-none hover-primary" dir="ltr">
+                                                +971505829697
+                                            </a>
+                                        </p>
+                                        <p class="mb-3">
+                                            <i class="fa fa-envelope me-2 text-primary"/>
+                                            <a href="mailto:alomran.td@gmail.com" class="text-white text-decoration-none hover-primary">
+                                                alomran.td@gmail.com
+                                            </a>
+                                        </p>
+                                        <p class="mb-3">
+                                            <i class="fa fa-clock me-2 text-primary"/>
+                                            Sat - Thu: 8:00 AM - 8:00 PM
+                                        </p>
+                                        <p class="mb-0">
+                                            <i class="fa fa-map-marker-alt me-2 text-primary"/>
+                                            11 branches across UAE
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <hr class="my-4 border-secondary"/>
+                            <div class="row align-items-center">
+                                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                                    <p class="mb-0 text-white-50">
+                                        © 2026 Al Omran Training &amp; Development Center. All Rights Reserved.
+                                    </p>
+                                </div>
+                                <div class="col-md-6 text-center text-md-end">
+                                    <p class="mb-0 text-white-50">
+                                        Made with <i class="fa fa-heart text-danger"/> in the United Arab Emirates
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </t>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-inherit="account_reports.AccountReportFilters" t-inherit-mode="extension">
+        <xpath expr="/*" position="inside">
+            <Dropdown menuClass="'account_report_filter account'">
+                <button class="btn btn-secondary">
+                    <i class="fa fa-book me-1"/> Accounts
+                </button>
+
+                <t t-set-slot="content">
+                    <div class="dropdown-item-text gap-3 d-flex flex-column p-3" style="min-width: 300px;">
+                        <label class="fw-bold">Filter by Accounts</label>
+                        <MultiRecordSelector
+                            t-props="getMultiRecordSelectorProps('account.account', 'account_ids')"
+                            placeholder="'Search accounts...'"/>
+                    </div>
+                </t>
+            </Dropdown>
+        </xpath>
+    </t>
+</templates>

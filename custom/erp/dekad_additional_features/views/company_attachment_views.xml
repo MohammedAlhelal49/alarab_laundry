@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Tree View -->
+    <record id="view_company_attachment_tree" model="ir.ui.view">
+        <field name="name">company.attachment.tree</field>
+        <field name="model">company.attachment</field>
+        <field name="arch" type="xml">
+            <list decoration-success="status == 'valid'"
+                  decoration-warning="status == 'expiring'"
+                  decoration-danger="status == 'expired'">
+
+                <field name="name"/>
+                <field name="company_id"/>
+                <field name="upload_filename" string="File"/>
+                <field name="expiry_date"/>
+                <field name="notify_before"/>
+                <field name="status" optional="show"/>
+                <field name="notification_type"/>
+                <field name="user_ids"  widget="many2many_tags"/>
+                <field name="description"  optional="hide"/>
+
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_company_attachment_form" model="ir.ui.view">
+        <field name="name">company.attachment.form</field>
+        <field name="model">company.attachment</field>
+        <field name="arch" type="xml">
+            <form string="Company Attachment">
+
+                <sheet>
+
+                    <group>
+
+                        <group>
+
+                            <field name="company_id"/>
+                            <field name="name"/>
+                            <field name="status" readonly="1"/>
+                            <field name="expiry_date"/>
+                            <field name="notify_before"/>
+                            <field name="notification_type"/>
+
+                        </group>
+
+                        <group>
+
+                            <field name="upload_file"
+                                   filename="upload_filename"/>
+
+                            <field name="upload_filename"
+                                   invisible="1"/>
+
+                            <field name="attachment_id"
+                                   readonly="1"/>
+
+                        </group>
+
+                    </group>
+
+                    <notebook>
+
+                        <page string="Recipients">
+
+                            <group>
+
+                                <field name="user_ids"
+                                       widget="many2many_tags"/>
+
+                                <field name="group_ids"
+                                       widget="many2many_tags"/>
+
+                            </group>
+
+                        </page>
+
+                        <page string="Description">
+
+                            <field name="description"/>
+
+                        </page>
+
+                    </notebook>
+
+                </sheet>
+
+                <chatter/>
+
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_company_attachment" model="ir.actions.act_window">
+        <field name="name">Company Attachments</field>
+        <field name="res_model">company.attachment</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

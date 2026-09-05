@@ -1,0 +1,752 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_contravention
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-28 14:30+0000\n"
+"PO-Revision-Date: 2025-09-28 14:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_contravention
+#: model:ir.actions.report,print_report_name:dekad_contravention.act_open_de_student_contravention_report_view
+msgid "'Student contravention - %s' % (object.name)"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.de_student_contravention_report
+msgid "<b>Student Name:</b>"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.de_student_contravention_report
+msgid "<b>Total contravention</b>"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention_breadcrumbs
+msgid "<span>/</span>"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention_show
+msgid "<strong class=\"\">Alert :</strong>"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention_show
+msgid "<strong class=\"\">Attachment :</strong>"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention_show
+msgid "<strong class=\"\">Category :</strong>"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention_show
+msgid "<strong class=\"\">Created at :</strong>"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention_show
+msgid "<strong class=\"\">Details :</strong>"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention_show
+msgid "<strong class=\"\">Grade :</strong>"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention_show
+msgid "<strong class=\"\">Penalty :</strong>"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention_show
+msgid "<strong class=\"\">Priority :</strong>"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention_show
+msgid "<strong class=\"\">Sequence :</strong>"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention_show
+msgid "<strong class=\"\">State :</strong>"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention_show
+msgid "<strong class=\"\">Suspend from :</strong>"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention_show
+msgid "<strong class=\"\">Suspend to :</strong>"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.de_student_contravention_report
+msgid "<strong>Student Contravention Details</strong>"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields.selection,name:dekad_contravention.selection__de_contravention__state__action
+msgid "Action Taken"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_search
+msgid "Action taken"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention
+msgid "Actions"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__alert
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_change_penalty_wizard__alert
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_take_action_wizard__alert
+msgid "Alert"
+msgstr ""
+
+#. module: dekad_contravention
+#. odoo-python
+#: code:addons/dekad_contravention/controllers/main.py:0
+msgid "All"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__file
+msgid "Attachment"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_change_penalty_wizard_form
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_form
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_take_action_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.actions.act_window,name:dekad_contravention.act_open_de_contravention_category_view
+#: model:ir.ui.menu,name:dekad_contravention.menu_de_contravention_category
+msgid "Categories"
+msgstr ""
+
+#. module: dekad_contravention
+#. odoo-python
+#: code:addons/dekad_contravention/controllers/main.py:0
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__category_id
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.de_student_contravention_report
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_search
+msgid "Category"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.ui.menu,name:dekad_contravention.menu_de_contravention_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_form
+msgid "Confirm"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_change_penalty_wizard__contravention_id
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_take_action_wizard__contravention_id
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_penalty__contravention_id
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_suspend__contravention_id
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_graph
+msgid "Contravention"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_search
+msgid "Contravention Records"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model,name:dekad_contravention.model_de_contravention_category
+msgid "Contravention category"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model,name:dekad_contravention.model_de_contravention_change_penalty_wizard
+msgid "Contravention change penalty wizard"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student__contravention_count
+msgid "Contravention count"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention_show
+msgid "Contravention full information"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model,name:dekad_contravention.model_de_contravention_take_action_wizard
+msgid "Contravention take action wizard"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.actions.act_window,name:dekad_contravention.act_open_de_contravention_view
+#: model:ir.model,name:dekad_contravention.model_de_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student__contravention_ids
+#: model:ir.ui.menu,name:dekad_contravention.menu_de_contravention
+#: model:ir.ui.menu,name:dekad_contravention.menu_de_contravention_root
+#: model:res.groups,name:dekad_contravention.group_de_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention_breadcrumbs
+msgid "Contraventions"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention
+msgid "Created at"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__create_uid
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_category__create_uid
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_change_penalty_wizard__create_uid
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_take_action_wizard__create_uid
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_penalty__create_uid
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_suspend__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__create_date
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_category__create_date
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_change_penalty_wizard__create_date
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_take_action_wizard__create_date
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_penalty__create_date
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_suspend__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__details
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_form
+msgid "Details"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__display_name
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_category__display_name
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_change_penalty_wizard__display_name
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_take_action_wizard__display_name
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_penalty__display_name
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_suspend__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields.selection,name:dekad_contravention.selection__de_contravention__state__draft
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_form
+msgid "Draft"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,help:dekad_contravention.field_de_contravention__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__grade_id
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.de_student_contravention_report
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_search
+msgid "Grade"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_search
+msgid "Group By ..."
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_student_penalty_search
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_student_suspend_search
+msgid "Group By..."
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields.selection,name:dekad_contravention.selection__de_contravention__priority__2
+msgid "High"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__id
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_category__id
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_change_penalty_wizard__id
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_take_action_wizard__id
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_penalty__id
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_suspend__id
+msgid "ID"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,help:dekad_contravention.field_de_contravention__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,help:dekad_contravention.field_de_contravention__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,help:dekad_contravention.field_de_contravention__message_has_error
+#: model:ir.model.fields,help:dekad_contravention.field_de_contravention__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_change_penalty_wizard__is_penalty
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_take_action_wizard__is_penalty
+msgid "Is penalty ?"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_change_penalty_wizard__is_suspend
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_take_action_wizard__is_suspend
+msgid "Is suspended ?"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__write_uid
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_category__write_uid
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_change_penalty_wizard__write_uid
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_take_action_wizard__write_uid
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_penalty__write_uid
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_suspend__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__write_date
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_category__write_date
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_change_penalty_wizard__write_date
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_take_action_wizard__write_date
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_penalty__write_date
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_suspend__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields.selection,name:dekad_contravention.selection__de_contravention__priority__1
+msgid "Low"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields.selection,name:dekad_contravention.selection__de_contravention_category__type__major
+msgid "Major"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields.selection,name:dekad_contravention.selection__de_contravention_category__type__minor
+msgid "Minor"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_category__name
+msgid "Name"
+msgstr ""
+
+#. module: dekad_contravention
+#. odoo-python
+#: code:addons/dekad_contravention/controllers/main.py:0
+msgid "Newest"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,help:dekad_contravention.field_de_contravention__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,help:dekad_contravention.field_de_contravention__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: dekad_contravention
+#. odoo-python
+#: code:addons/dekad_contravention/controllers/main.py:0
+msgid "Oldest"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_form
+msgid "Penalties"
+msgstr ""
+
+#. module: dekad_contravention
+#. odoo-python
+#: code:addons/dekad_contravention/controllers/main.py:0
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__penalty_ids
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.de_student_contravention_report
+msgid "Penalty"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_penalty__penalty
+msgid "Penalty Amount"
+msgstr ""
+
+#. module: dekad_contravention
+#. odoo-python
+#: code:addons/dekad_contravention/controllers/main.py:0
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__priority
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_search
+msgid "Priority"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__is_alert
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_change_penalty_wizard__is_alert
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_take_action_wizard__is_alert
+msgid "Send alert"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention
+msgid "Show"
+msgstr ""
+
+#. module: dekad_contravention
+#. odoo-python
+#: code:addons/dekad_contravention/controllers/main.py:0
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__state
+msgid "State"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_search
+msgid "Status"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,help:dekad_contravention.field_de_contravention__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model,name:dekad_contravention.model_de_student
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__student_id
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_penalty__student_id
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_suspend__student_id
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_search
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_student_penalty_search
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_student_suspend_search
+msgid "Student"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model,name:dekad_contravention.model_de_student_suspend
+msgid "Student Suspends"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.actions.report,name:dekad_contravention.act_open_de_student_contravention_report_view
+msgid "Student contraventions"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model,name:dekad_contravention.model_de_student_penalty
+msgid "Student penalties"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_student_penalty_list
+msgid "Student penalty"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_student_suspend_form
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_student_suspend_list
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_student_suspend_search
+msgid "Student suspend"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.actions.act_window,name:dekad_contravention.act_open_de_student_penalty_view
+#: model:ir.ui.menu,name:dekad_contravention.menu_de_student_penalty
+msgid "Students Penalties"
+msgstr ""
+
+#. module: dekad_contravention
+#. odoo-python
+#: code:addons/dekad_contravention/controllers/main.py:0
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__suspend_ids
+msgid "Suspend"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_suspend__start_date
+msgid "Suspend From"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student_suspend__end_date
+msgid "Suspend To"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.de_student_contravention_report
+msgid "Suspend from"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.de_student_contravention_report
+msgid "Suspend to"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_change_penalty_wizard__start_date
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_take_action_wizard__start_date
+msgid "Suspended From Date"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_change_penalty_wizard__end_date
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_take_action_wizard__end_date
+msgid "Suspended To Date"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.actions.act_window,name:dekad_contravention.act_open_de_student_suspend_view
+#: model:ir.ui.menu,name:dekad_contravention.menu_de_student_suspend
+msgid "Suspended students"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_student__suspend_ids
+msgid "Suspends"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_form
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_take_action_wizard_form
+msgid "Take Action"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.actions.act_window,name:dekad_contravention.act_open_de_contravention_take_action_wizard_view
+msgid "Take action"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.student_contravention
+msgid "There are no Contraventions to display."
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.de_student_contravention_report
+msgid "There is no contraventions to display"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_category__type
+msgid "Type"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,help:dekad_contravention.field_de_contravention__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_form
+msgid "Update Penalties"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_change_penalty_wizard_form
+msgid "Update data"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.actions.act_window,name:dekad_contravention.act_open_de_contravention_change_penalty_wizard_view
+msgid "Update penalties Data"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields.selection,name:dekad_contravention.selection__de_contravention__priority__0
+msgid "Very Low"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,help:dekad_contravention.field_de_contravention__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields.selection,name:dekad_contravention.selection__de_contravention__state__confirm
+msgid "confirmed"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_student_form_contravention_inherited
+msgid "contravention"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_form
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_list
+msgid "contravention Records"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_category_list
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_contravention_category_search
+msgid "contravention category"
+msgstr ""
+
+#. module: dekad_contravention
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_student_penalty_form
+#: model_terms:ir.ui.view,arch_db:dekad_contravention.view_de_student_penalty_search
+msgid "contravention student penalty"
+msgstr ""
+
+#. module: dekad_contravention
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_change_penalty_wizard__penalty
+#: model:ir.model.fields,field_description:dekad_contravention.field_de_contravention_take_action_wizard__penalty
+msgid "penalty Amount"
+msgstr ""

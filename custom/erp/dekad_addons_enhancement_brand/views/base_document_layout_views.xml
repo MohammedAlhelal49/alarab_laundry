@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_base_document_layout_inherited" model="ir.ui.view">
+            <field name="name">Document Layout inherited</field>
+            <field name="model">base.document.layout</field>
+            <field name="inherit_id" ref="web.view_base_document_layout"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='logo']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//footer" position="replace">
+                    <footer>
+                        <button string="Save" class="btn-primary" type="object" name="document_layout_save"
+                                data-hotkey="q"/>
+                        <button special="cancel" data-hotkey="z" string="Cancel"/>
+                        <button string="Reset layout" type="object" name="reset_layout" class="ml-5"
+                                confirm="Are you sure you want to reset the layout?"
+                        />
+                    </footer>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

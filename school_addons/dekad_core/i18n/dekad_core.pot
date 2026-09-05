@@ -1,0 +1,2175 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_core
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-29 07:58+0000\n"
+"PO-Revision-Date: 2025-09-29 07:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_core
+#: model:ir.model,name:dekad_core.model_de_teacher
+msgid " Teacher"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model,name:dekad_core.model_de_specialist
+msgid " Teacher Specialist"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.report,print_report_name:dekad_core.act_open_de_student_idcard_report_view
+msgid "'Student ID Carf - %s' %(object.name)"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.report,print_report_name:dekad_core.act_open_de_teacher_idcard_report_view
+msgid "'Teacher ID Carf - %s' %(object.name)"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_wizard_form
+msgid "<span invisible=\"multi_grade == True\">or</span>"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.teacher_idcard_report
+msgid ""
+"<span style=\"font-weight:600\">\n"
+"                                                                BirthDate :\n"
+"                                                            </span>"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.teacher_idcard_report
+msgid ""
+"<span style=\"font-weight:600\">\n"
+"                                                                Email:\n"
+"                                                            </span>"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.teacher_idcard_report
+msgid ""
+"<span style=\"font-weight:600\">\n"
+"                                                                Mobile :\n"
+"                                                            </span>"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.teacher_idcard_report
+msgid ""
+"<span style=\"font-weight:600\">\n"
+"                                                                Name :\n"
+"                                                            </span>"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.teacher_idcard_report
+msgid ""
+"<span style=\"font-weight:600\">\n"
+"                                                                Specialist :\n"
+"                                                            </span>"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_idcard_report
+msgid ""
+"<span style=\"font-weight:600\">\n"
+"                                                            BirthDate :\n"
+"                                                        </span>"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_idcard_report
+msgid ""
+"<span style=\"font-weight:600\">\n"
+"                                                            Grade :\n"
+"                                                        </span>"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_idcard_report
+msgid ""
+"<span style=\"font-weight:600\">\n"
+"                                                            Mobile:\n"
+"                                                        </span>"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_idcard_report
+msgid ""
+"<span style=\"font-weight:600\">\n"
+"                                                            Name :\n"
+"                                                        </span>"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_form
+msgid "<span>Detailed name</span>"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model,name:dekad_core.model_de_academic_term
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_academic_term_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_academic_term_list
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_academic_term_search
+msgid "Academic Term"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_year__academic_term_ids
+#: model:ir.ui.menu,name:dekad_core.menu_de_academic_term
+msgid "Academic Terms"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model,name:dekad_core.model_de_academic_year
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_term__academic_year_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__academic_year_id
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_academic_term_search
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_academic_year_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_academic_year_list
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_academic_year_search
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_search
+msgid "Academic Year"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.act_window,name:dekad_core.act_open_de_academic_year_view
+msgid "Academic Years"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.ui.menu,name:dekad_core.menu_de_academic_year_root
+msgid "Academic periods"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.constraint,message:dekad_core.constraint_de_academic_term_unique_name
+msgid "Academic term Name should be unique per Academic year!"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_academic_term_form_quick_create
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_academic_term_list_quick_create
+msgid "Academic term quick create"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.act_window,name:dekad_core.act_open_de_academic_term_view
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_academic_year_form
+msgid "Academic terms"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.ui.menu,name:dekad_core.menu_de_academic_year
+msgid "Academic years"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model,name:dekad_core.model_res_groups
+msgid "Access Groups"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__message_needaction
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__message_needaction
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__message_needaction
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__active
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__active
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__active
+msgid "Active"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__active_lang_count
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__active_lang_count
+msgid "Active Lang Count"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__activity_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__activity_exception_decoration
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__activity_state
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__activity_type_icon
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__additional_info
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__additional_info
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+msgid "Additional info"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "Address"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__type
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__type
+msgid "Address Type"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_form
+msgid "Admission"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "Admission date"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__lang
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__lang
+msgid ""
+"All the emails and documents sent to this contact will be translated in this"
+" language."
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_search
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_search
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_search
+msgid "Archived"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_res_users__student_ids
+msgid "Associated Students"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__message_attachment_count
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__message_attachment_count
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__message_attachment_count
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__avatar_1920
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__avatar_1920
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "Avatar"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__avatar_1024
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__avatar_1024
+msgid "Avatar 1024"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__avatar_128
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__avatar_128
+msgid "Avatar 128"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__avatar_256
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__avatar_256
+msgid "Avatar 256"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__avatar_512
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__avatar_512
+msgid "Avatar 512"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__bank_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__bank_ids
+msgid "Banks"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__barcode
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__barcode
+msgid "Barcode"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__birth_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__birth_date
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "Birth Date"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__is_blacklisted
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__is_blacklisted
+msgid "Blacklist"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__mobile_blacklisted
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__mobile_blacklisted
+msgid "Blacklisted Phone Is Mobile"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__phone_blacklisted
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__phone_blacklisted
+msgid "Blacklisted Phone is Phone"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+msgid "Block"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__message_bounce
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__message_bounce
+msgid "Bounce"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.de_student_create_user_wizard_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.de_teacher_create_user_wizard_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__channel_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__channel_ids
+msgid "Channels"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__is_company
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__is_company
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__employee
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__employee
+msgid "Check this box if this contact is an Employee."
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_res_users__child_ids
+msgid "Children Users"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__city
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__city
+msgid "City"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "City of birth"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "Classroom"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.server,name:dekad_core.cron_clear_student_unused_contact_ir_actions_server
+msgid "Clear the students unused contacts"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.server,name:dekad_core.cron_clear_teacher_unused_contact_ir_actions_server
+msgid "Clear the teachers unused contacts"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__color
+msgid "Color"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__color
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__color
+msgid "Color Index"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__commercial_partner_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__commercial_partner_id
+msgid "Commercial Entity"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__company_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__company_id
+msgid "Company"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__company_registry
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__company_registry
+msgid "Company ID"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__company_registry_label
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__company_registry_label
+msgid "Company ID Label"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__company_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__company_name
+msgid "Company Name"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__commercial_company_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__commercial_company_name
+msgid "Company Name Entity"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__company_type
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__company_type
+msgid "Company Type"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__partner_gid
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__partner_gid
+msgid "Company database ID"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__contact_address
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__contact_address
+msgid "Complete Address"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__complete_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__complete_name
+msgid "Complete Name"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.ui.menu,name:dekad_core.menu_de_school_configuration
+#: model:ir.ui.menu,name:dekad_core.menu_de_teacher_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model,name:dekad_core.model_res_partner
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__child_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__partner_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__child_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__partner_id
+msgid "Contact"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+msgid "Contact info"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_form
+msgid "Contact information"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__message_bounce
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__message_bounce
+msgid "Counter of the number of bounced emails for this contact"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.ui.menu,name:dekad_core.menu_de_country
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_religion_list
+msgid "Countries"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.act_window,name:dekad_core.act_open_res_country_group_view
+#: model:ir.ui.menu,name:dekad_core.menu_de_country_group
+msgid "Countries groups"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__country_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__country_id
+msgid "Country"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__country_code
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__country_code
+msgid "Country Code"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_form
+msgid "Country of birth"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.act_window,name:dekad_core.act_open_de_teacher_create_user_wizard_view
+#: model_terms:ir.ui.view,arch_db:dekad_core.de_teacher_create_user_wizard_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_form
+msgid "Create User"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.de_student_create_user_wizard_form
+msgid "Create User for selected Student(s)"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model,name:dekad_core.model_de_student_grade_wizard
+#: model_terms:ir.ui.view,arch_db:dekad_core.de_teacher_create_user_wizard_form
+msgid "Create User for selected Teacher(s)"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.de_teacher_create_user_wizard_form
+msgid "Create Users"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.act_window,name:dekad_core.act_open_de_student_create_user_wizard_view
+#: model_terms:ir.ui.view,arch_db:dekad_core.de_student_create_user_wizard_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+msgid "Create user"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model,name:dekad_core.model_de_teacher_create_user_wizard
+msgid "Create user for selected Teacher(s)"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model,name:dekad_core.model_de_student_create_user_wizard
+msgid "Create user for selected student(s)"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.de_student_create_user_wizard_form
+msgid "Create users"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_term__create_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_year__create_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__create_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_holiday__create_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_religion__create_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_specialist__create_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__create_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_create_user_wizard__create_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__create_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade_wizard__create_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_subject__create_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__create_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher_create_user_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_term__create_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_year__create_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__create_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_holiday__create_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_religion__create_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_specialist__create_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__create_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_create_user_wizard__create_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__create_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade_wizard__create_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_subject__create_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__create_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher_create_user_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_holiday__date
+msgid "Date"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_kanban
+msgid "Delete"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__detailed_name
+msgid "Detailed Name"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__detailed_name
+msgid "Detailed name"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_term__display_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_year__display_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__display_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_holiday__display_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_religion__display_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_specialist__display_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__display_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_create_user_wizard__display_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__display_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade_wizard__display_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_subject__display_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__display_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher_create_user_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_kanban
+msgid "Dropdown menu"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__esis_no
+msgid "ESIS No"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_kanban
+msgid "Edit"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__partner_share
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__partner_share
+msgid ""
+"Either customer (not a user), either shared user. Indicated the current "
+"partner is a customer without access or with a limited access created for "
+"sharing data."
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__email
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__email
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "Email"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__emirate_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__emirate_id
+msgid "Emirate Id"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__emirate_id_expiry_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__emirate_id_expiry_date
+msgid "Emirate Id Expiry Date"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__employee
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__employee
+msgid "Employee"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_term__end_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_year__end_date
+msgid "End Date"
+msgstr ""
+
+#. module: dekad_core
+#. odoo-python
+#: code:addons/dekad_core/models/academic_term.py:0
+#: code:addons/dekad_core/models/academic_year.py:0
+msgid "End Date cant be less than The Start Date."
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_form
+msgid "Fail"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields.selection,name:dekad_core.selection__de_student_grade_wizard__state__fail
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_search
+msgid "Failed"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__family_book_no
+msgid "Family Book No"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "Family book number"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields.selection,name:dekad_core.selection__de_student__gender__female
+#: model:ir.model.fields.selection,name:dekad_core.selection__de_teacher__gender__female
+msgid "Female"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__phone_sanitized
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__phone_sanitized
+msgid ""
+"Field used to store sanitized phone number. Helps speeding up searches and "
+"comparisons."
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_form
+msgid "Finish"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__finish_grade_date
+msgid "Finish Grade Date"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields.selection,name:dekad_core.selection__de_student_grade__state__finish
+#: model:ir.model.fields.selection,name:dekad_core.selection__de_student_grade_wizard__state__finish
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_search
+msgid "Finished"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__first_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__first_name
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_form
+msgid "First Name"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__message_follower_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__message_follower_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__message_follower_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__message_partner_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__message_partner_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__message_partner_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__activity_type_icon
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__email_formatted
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__email_formatted
+msgid "Format email address \"Name <email@domain>\""
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__email_formatted
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__email_formatted
+msgid "Formatted Email"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__address
+msgid "Full Address"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__address
+msgid "Full address"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_form
+msgid "Full name"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__gender
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__gender
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_search
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_search
+msgid "Gender"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_form
+msgid "General"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__partner_latitude
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__partner_latitude
+msgid "Geo Latitude"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__partner_longitude
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__partner_longitude
+msgid "Geo Longitude"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model,name:dekad_core.model_de_grade
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__name
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__grade
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__grade_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_subject__grade_id
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_kanban
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_list
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_search
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_search
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_search
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_subject_search
+msgid "Grade"
+msgstr ""
+
+#. module: dekad_core
+#: model:de.grade,name:dekad_core.de_grade_1
+msgid "Grade 1"
+msgstr ""
+
+#. module: dekad_core
+#: model:de.grade,name:dekad_core.de_grade_2
+msgid "Grade 6"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__student_grade_ids
+msgid "Grade Details"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.constraint,message:dekad_core.constraint_de_grade_name_unique
+msgid "Grade must be unique"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.act_window,name:dekad_core.act_open_de_grade_view
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__grade_ids
+#: model:ir.ui.menu,name:dekad_core.menu_de_grade
+#: model:ir.ui.menu,name:dekad_core.menu_de_grade_root
+#: model:res.groups,name:dekad_core.group_de_grade
+msgid "Grades"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_search
+msgid "Group BY..."
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_subject_search
+msgid "Group By ..."
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_search
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_search
+msgid "Group By..."
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_academic_term_search
+msgid "Group by ..."
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_search
+msgid "Group by..."
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__has_message
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__has_message
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__has_message
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_holiday_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_holiday_list
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_holiday_search
+msgid "Holiday"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_holiday__end_date
+msgid "Holiday End Date"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_holiday__start_date
+msgid "Holiday Start Date"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.constraint,message:dekad_core.constraint_de_holiday_name_unique
+msgid "Holiday name must be unique!"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.act_window,name:dekad_core.act_open_de_holiday_view
+#: model:ir.ui.menu,name:dekad_core.menu_de_holiday
+msgid "Holidays"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_term__id
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_year__id
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__id
+#: model:ir.model.fields,field_description:dekad_core.field_de_holiday__id
+#: model:ir.model.fields,field_description:dekad_core.field_de_religion__id
+#: model:ir.model.fields,field_description:dekad_core.field_de_specialist__id
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__id
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_create_user_wizard__id
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__id
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade_wizard__id
+#: model:ir.model.fields,field_description:dekad_core.field_de_subject__id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher_create_user_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__im_status
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__im_status
+msgid "IM Status"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__activity_exception_icon
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__activity_exception_icon
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_grade__message_needaction
+#: model:ir.model.fields,help:dekad_core.field_de_student__message_needaction
+#: model:ir.model.fields,help:dekad_core.field_de_student_grade__message_needaction
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_grade__message_has_error
+#: model:ir.model.fields,help:dekad_core.field_de_grade__message_has_sms_error
+#: model:ir.model.fields,help:dekad_core.field_de_student__message_has_error
+#: model:ir.model.fields,help:dekad_core.field_de_student__message_has_sms_error
+#: model:ir.model.fields,help:dekad_core.field_de_student_grade__message_has_error
+#: model:ir.model.fields,help:dekad_core.field_de_student_grade__message_has_sms_error
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__message_has_error
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__is_blacklisted
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__is_blacklisted
+msgid ""
+"If the email address is on the blacklist, the contact won't receive mass "
+"mailing anymore, from any list"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__phone_sanitized_blacklisted
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__phone_sanitized_blacklisted
+msgid ""
+"If the sanitized phone number is on the blacklist, the contact won't receive"
+" mass mailing sms anymore, from any list"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__image_1920
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__image_1920
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "Image"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__image_1024
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__image_1024
+msgid "Image 1024"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__image_128
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__image_128
+msgid "Image 128"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__image_256
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__image_256
+msgid "Image 256"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__image_512
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__image_512
+msgid "Image 512"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__mobile_blacklisted
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__mobile_blacklisted
+msgid ""
+"Indicates if a blacklisted sanitized phone number is a mobile number. Helps "
+"distinguish which number is blacklisted             when there is both a "
+"mobile and phone field in a model."
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__phone_blacklisted
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__phone_blacklisted
+msgid ""
+"Indicates if a blacklisted sanitized phone number is a phone number. Helps "
+"distinguish which number is blacklisted             when there is both a "
+"mobile and phone field in a model."
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__industry_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__industry_id
+msgid "Industry"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__contact_address_inline
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__contact_address_inline
+msgid "Inlined Complete Address"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields.selection,name:dekad_core.selection__de_grade__section__intermediate
+msgid "Intermediate"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_res_users__is_blocked
+msgid "Is Blocked"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__message_is_follower
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__message_is_follower
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__message_is_follower
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__is_public
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__is_public
+msgid "Is Public"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__is_student
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__is_student
+#: model:ir.model.fields,field_description:dekad_core.field_res_partner__is_student
+#: model:ir.model.fields,field_description:dekad_core.field_res_users__is_student
+msgid "Is Student"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__is_suspended
+#: model:ir.model.fields,field_description:dekad_core.field_res_users__is_suspended
+msgid "Is Suspended"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__is_teacher
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__is_teacher
+#: model:ir.model.fields,field_description:dekad_core.field_res_partner__is_teacher
+#: model:ir.model.fields,field_description:dekad_core.field_res_users__is_teacher
+msgid "Is Teacher"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__is_company
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__is_company
+msgid "Is a Company"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__is_blocked
+msgid "Is blocked"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__function
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__function
+msgid "Job Position"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields.selection,name:dekad_core.selection__de_grade__section__kindergarten
+msgid "Kindergarten"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__lang
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__lang
+msgid "Language"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_search
+msgid "Last Month"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__last_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__last_name
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_form
+msgid "Last Name"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_term__write_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_year__write_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__write_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_holiday__write_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_religion__write_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_specialist__write_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__write_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_create_user_wizard__write_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__write_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade_wizard__write_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_subject__write_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__write_uid
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher_create_user_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_term__write_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_year__write_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__write_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_holiday__write_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_religion__write_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_specialist__write_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__write_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_create_user_wizard__write_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__write_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade_wizard__write_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_subject__write_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__write_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher_create_user_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_search
+msgid "Last Week"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__last_login
+msgid "Latest Connection"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__login
+msgid "Login"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields.selection,name:dekad_core.selection__de_student__gender__male
+#: model:ir.model.fields.selection,name:dekad_core.selection__de_teacher__gender__male
+msgid "Male"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.module.category,description:dekad_core.module_category_student
+msgid "Manage Students data"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.module.category,description:dekad_core.module_category_school
+msgid "Manage school data"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__message_has_error
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__message_has_error
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__message_has_error
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__message_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__message_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__message_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__middle_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__middle_name
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_form
+msgid "Middle Name"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__mobile
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__mobile
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "Mobile"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade_wizard__multi_grade
+msgid "Multi grade(s)"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__my_activity_date_deadline
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_term__name
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_year__name
+#: model:ir.model.fields,field_description:dekad_core.field_de_holiday__name
+#: model:ir.model.fields,field_description:dekad_core.field_de_religion__name
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__name
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__name
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "Name"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.constraint,message:dekad_core.constraint_de_specialist_unique_name
+msgid "Name must be unique per  teacher specialist!"
+msgstr ""
+
+#. module: dekad_core
+#. odoo-python
+#: code:addons/dekad_core/models/holiday.py:0
+msgid "Name must be unique per holiday"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.constraint,message:dekad_core.constraint_de_academic_year_unique_name
+msgid "Name should be unique per Academic year!"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.constraint,message:dekad_core.constraint_de_religion_unique_name
+msgid "Name should be unique per religion!"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__nationality_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__nationality_id
+#: model:ir.model.fields,field_description:dekad_core.field_res_partner__nationality_id
+#: model:ir.model.fields,field_description:dekad_core.field_res_users__nationality_id
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_search
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_search
+msgid "Nationality"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__country_group_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__country_group_id
+#: model:ir.model.fields,field_description:dekad_core.field_res_partner__country_group_id
+#: model:ir.model.fields,field_description:dekad_core.field_res_users__country_group_id
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_search
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_search
+msgid "Nationality Group"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__activity_date_deadline
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__activity_summary
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__activity_type_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__email_normalized
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__email_normalized
+msgid "Normalized Email"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__comment
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__comment
+msgid "Notes"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__message_needaction_counter
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__message_needaction_counter
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__message_needaction_counter
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__message_has_error_counter
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__message_has_error_counter
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__message_has_error_counter
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_grade__message_needaction_counter
+#: model:ir.model.fields,help:dekad_core.field_de_student__message_needaction_counter
+#: model:ir.model.fields,help:dekad_core.field_de_student_grade__message_needaction_counter
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_grade__message_has_error_counter
+#: model:ir.model.fields,help:dekad_core.field_de_student__message_has_error_counter
+#: model:ir.model.fields,help:dekad_core.field_de_student_grade__message_has_error_counter
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__parent_name
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__parent_name
+msgid "Parent name"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__same_company_registry_partner_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__same_company_registry_partner_id
+msgid "Partner with same Company Registry"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__same_vat_partner_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__same_vat_partner_id
+msgid "Partner with same Tax ID"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_form
+msgid "Personal Information"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_form
+msgid "Personal info"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__phone
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__phone
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "Phone"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__phone_sanitized_blacklisted
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__phone_sanitized_blacklisted
+msgid "Phone Blacklisted"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__phone_mobile_search
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__phone_mobile_search
+msgid "Phone/Mobile"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_wizard_form
+msgid ""
+"Please close\n"
+"                        the wizard and select student grades only from one grade to do this action"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__property_product_pricelist
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__property_product_pricelist
+msgid "Pricelist"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields.selection,name:dekad_core.selection__de_grade__section__primary
+msgid "Primary"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_wizard_form
+msgid "Proceed"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.portal_student_profile_breadcrumbs
+msgid "Profile"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_holiday__is_range
+msgid "Range of days"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__ref
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__ref
+msgid "Reference"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__parent_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__parent_id
+msgid "Related Company"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "Relationship"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__religion_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__religion_id
+#: model:ir.model.fields,field_description:dekad_core.field_res_partner__religion_id
+#: model:ir.model.fields,field_description:dekad_core.field_res_users__religion_id
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_search
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_search
+msgid "Religion"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.ui.menu,name:dekad_core.menu_de_religion
+msgid "Religions"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__activity_user_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields.selection,name:dekad_core.selection__de_student_grade__state__running
+#: model:ir.model.fields.selection,name:dekad_core.selection__de_student_grade_wizard__state__running
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_search
+msgid "Running"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__message_has_sms_error
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__message_has_sms_error
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__message_has_sms_error
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__phone_sanitized
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__phone_sanitized
+msgid "Sanitized Number"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.module.category,name:dekad_core.module_category_school
+#: model:ir.ui.menu,name:dekad_core.menu_de_school_root
+msgid "School"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model,name:dekad_core.model_de_holiday
+msgid "School Holidays"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model,name:dekad_core.model_de_religion
+msgid "School religions"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields.selection,name:dekad_core.selection__de_grade__section__secondary
+msgid "Secondary"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__section
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_search
+msgid "Section"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__self
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__self
+msgid "Self"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__sequence
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__sequence
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__sequence
+#: model:ir.model.fields,field_description:dekad_core.field_res_groups__sequence
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "Sequence"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__partner_share
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__partner_share
+msgid "Share Partner"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__signup_type
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__signup_type
+msgid "Signup Token Type"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__specialist_id
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_search
+msgid "Specialist"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_specialist__name
+msgid "Specialist Name"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_form
+msgid "Specialist and subjects"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.ui.menu,name:dekad_core.menu_de_specialist
+msgid "Specialists"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__specific_property_product_pricelist
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__specific_property_product_pricelist
+msgid "Specific Property Product Pricelist"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__starred_message_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__starred_message_ids
+msgid "Starred Message"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_term__start_date
+#: model:ir.model.fields,field_description:dekad_core.field_de_academic_year__start_date
+msgid "Start Date"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__state_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__state_id
+msgid "State"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__state
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade_wizard__state
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_search
+msgid "Status"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__activity_state
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.act_window,name:dekad_core.act_open_de_student_grade_wizard_view
+msgid "Status change (fail or finish)"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__street
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__street
+msgid "Street"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__street2
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__street2
+msgid "Street2"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model,name:dekad_core.model_de_student
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__student_count
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__student_id
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_search
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_kanban
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_list
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_search
+msgid "Student"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "Student ESIS number"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_list
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_search
+msgid "Student Grade"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.ui.menu,name:dekad_core.menu_de_student_grade
+msgid "Student Grades"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.report,name:dekad_core.act_open_de_student_idcard_report_view
+msgid "Student ID Card"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__student_no
+msgid "Student No"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "Student Number"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_res_users__student_line
+msgid "Student Record"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_res_users__user_line
+msgid "Student Records"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model,name:dekad_core.model_de_student_grade
+msgid "Student grade Details"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_wizard_form
+msgid "Student grade status"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.act_window,name:dekad_core.act_open_de_student_grade_view
+msgid "Student grades"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_idcard_report
+msgid "Student id card"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade_wizard__student_ids
+msgid "Student(s)"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.act_window,name:dekad_core.act_open_de_student_view
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_create_user_wizard__student_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__student_ids
+#: model:ir.module.category,name:dekad_core.module_category_student
+#: model:ir.ui.menu,name:dekad_core.menu_de_student_details
+#: model:ir.ui.menu,name:dekad_core.menu_de_student_root
+#: model:res.groups,name:dekad_core.group_de_student
+#: model_terms:ir.ui.view,arch_db:dekad_core.de_student_create_user_wizard_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_kanban
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_list
+msgid "Students"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_graph
+msgid "Students Charts"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_graph
+msgid "Students by grade"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model,name:dekad_core.model_de_subject
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_subject_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_subject_grade_form_quick_create
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_subject_list
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_subject_search
+msgid "Subject"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__subject_count
+msgid "Subject Count"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_subject__name
+msgid "Subject Name"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.constraint,message:dekad_core.constraint_de_subject_unique_name
+msgid "Subject Name must be unique per grade!"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__subject_ids
+msgid "Subject(s)"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.act_window,name:dekad_core.act_open_de_subject_view
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__subject_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__subject_ids
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_kanban
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_form
+msgid "Subjects"
+msgstr ""
+
+#. module: dekad_core
+#: model:res.groups,name:dekad_core.group_de_back_office_admin
+msgid "Super admin"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__category_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__category_id
+msgid "Tags"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__vat
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__vat
+msgid "Tax ID"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__vat_label
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__vat_label
+msgid "Tax ID Label"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.de_teacher_create_user_wizard_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_kanban
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_list
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_search
+msgid "Teacher"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__teacher_count
+msgid "Teacher Count"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.report,name:dekad_core.act_open_de_teacher_idcard_report_view
+msgid "Teacher ID Card"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.teacher_idcard_report
+msgid "Teacher id card"
+msgstr ""
+
+#. module: dekad_core
+#: model:res.groups,name:dekad_core.group_de_teacher
+msgid "Teacher user"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.act_window,name:dekad_core.act_open_de_teacher_view
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__teacher_ids
+#: model:ir.ui.menu,name:dekad_core.menu_de_teacher_details
+#: model:ir.ui.menu,name:dekad_core.menu_de_teacher_root
+#: model:res.groups,name:dekad_core.group_de_teacher_manage
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_kanban
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_grade_list
+msgid "Teachers"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.act_window,name:dekad_core.act_open_de_specialist_view
+msgid "Teachers Specialists"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__country_code
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__country_code
+msgid ""
+"The ISO country code in two chars. \n"
+"You can use this field for quick search."
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__vat
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__vat
+msgid ""
+"The Tax Identification Number. Values here will be validated based on the "
+"country format. You can use '/' to indicate that the partner is not subject "
+"to tax."
+msgstr ""
+
+#. module: dekad_core
+#. odoo-python
+#: code:addons/dekad_core/models/holiday.py:0
+msgid "The end date must be after the start date"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__company_registry
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__company_registry
+msgid ""
+"The registry number of the company. Use it if it is different from the Tax "
+"ID. It must be unique across all partners of a same country"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid ""
+"There is no Grades to\n"
+"                                                    display!"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid ""
+"There is no parents to\n"
+"                                                    display!"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__email_normalized
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__email_normalized
+msgid ""
+"This field is used to search on email address as the primary email field can"
+" contain more than strictly an email address."
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__property_product_pricelist
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__property_product_pricelist
+msgid ""
+"This pricelist will be used, instead of the default one, for sales to the "
+"current partner"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__tz
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__tz
+msgid "Timezone"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__tz_offset
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__tz_offset
+msgid "Timezone offset"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__title
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__title
+msgid "Title"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_grade_search
+msgid "Today"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__activity_exception_decoration
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+msgid "Unblock"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__barcode
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__barcode
+msgid "Use a barcode to identify this contact."
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__login
+msgid "Used to log into the system"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model,name:dekad_core.model_res_users
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__user_id
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__user_id
+msgid "User"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_res_users__role
+msgid "User Role"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+msgid "User info"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_form
+msgid "User information"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__user_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__user_ids
+msgid "Users"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__visa_info
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__visa_info
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "Visa Info"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_form
+msgid "Visa information"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__website
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__website
+msgid "Website Link"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__website_message_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__website_message_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_student_grade__website_message_ids
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_grade__website_message_ids
+#: model:ir.model.fields,help:dekad_core.field_de_student__website_message_ids
+#: model:ir.model.fields,help:dekad_core.field_de_student_grade__website_message_ids
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,help:dekad_core.field_de_student__tz
+#: model:ir.model.fields,help:dekad_core.field_de_teacher__tz
+msgid ""
+"When printing documents and exporting/importing data, time values are computed according to this timezone.\n"
+"If the timezone is not set, UTC (Coordinated Universal Time) is used.\n"
+"Anywhere else, time values are computed according to the time offset of your web client."
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_student__zip
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher__zip
+msgid "Zip"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields.selection,name:dekad_core.selection__de_student_grade__state__fail
+msgid "failed"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_res_groups__hidden
+msgid "hidden"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.de_student_create_user_wizard_form
+#: model_terms:ir.ui.view,arch_db:dekad_core.de_teacher_create_user_wizard_form
+msgid "or"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "parents"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_profile
+msgid "personal"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.actions.act_window,name:dekad_core.act_open_de_religion_view
+msgid "religions"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_specialist_list
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_specialist_search
+msgid "specialist"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_grade__student_grade_ids
+msgid "student grades"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.student_idcard_report
+#: model_terms:ir.ui.view,arch_db:dekad_core.teacher_idcard_report
+msgid "student image"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.teacher_idcard_report
+msgid "teacher image"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_subject__teacher_ids
+msgid "teacher(s)"
+msgstr ""
+
+#. module: dekad_core
+#: model:ir.model.fields,field_description:dekad_core.field_de_teacher_create_user_wizard__teacher_ids
+msgid "teachers"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_teacher_graph
+msgid "teachers charts"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+msgid ""
+"this\n"
+"                            student is blocked and he cant login to his account"
+msgstr ""
+
+#. module: dekad_core
+#: model_terms:ir.ui.view,arch_db:dekad_core.view_de_student_form
+msgid ""
+"this\n"
+"                            student is suspended depending on contravention and he cant login to his account"
+msgstr ""

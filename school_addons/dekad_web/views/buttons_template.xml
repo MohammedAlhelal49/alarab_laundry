@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- Reusable Student Page Buttons Template with Direct Translation Support -->
+    <template id="student_page_buttons" name="Student Page Navigation Buttons">
+        <div class="alert alert-info d-flex align-items-center mb-3" t-if="parent_student_param">
+            <i class="fa fa-user me-2"></i>
+            <span class="me-auto">
+                <t t-if="page_type == 'submission'">
+                    Viewing submission for: <strong t-esc="student.name"/>
+                </t>
+                <t t-elif="page_type == 'submission_update'">
+                    Updating submission for: <strong t-esc="student.name"/>
+                </t>
+                <t t-elif="page_type == 'achievements'">
+                    Viewing achievements for: <strong t-esc="student.name"/>
+                </t>
+                <t t-else="">
+                    Viewing content for: <strong t-esc="student.name"/>
+                </t>
+            </span>
+            <a t-attf-href="/my/home/#{parent_student_param}"
+               class="btn btn-primary btn-sm">
+                <i class="fa fa-home me-1"></i>
+                Back to Student Dashboard
+            </a>
+        </div>
+    </template>
+
+    <!-- Extended Student Page Buttons with More Options -->
+    <template id="student_page_buttons_extended" name="Extended Student Page Navigation">
+        <div class="alert alert-info d-flex align-items-center mb-3" t-if="parent_student_param">
+            <i class="fa fa-user me-2"></i>
+            <span class="me-auto">
+                <t t-if="page_type == 'assignments'">
+                    Viewing assignments for: <strong t-esc="student.name"/>
+                </t>
+                <t t-elif="page_type == 'assignment'">
+                    Viewing assignment for: <strong t-esc="student.name"/>
+                </t>
+                <t t-elif="page_type == 'activity'">
+                    Viewing activity for: <strong t-esc="student.name"/>
+                </t>
+                <t t-elif="page_type == 'attendance'">
+                    Viewing attendance for: <strong t-esc="student.name"/>
+                </t>
+                <t t-elif="page_type == 'complaint'">
+                    Viewing complaint for: <strong t-esc="student.name"/>
+                </t>
+                <t t-elif="page_type == 'contravention'">
+                    Viewing contravention for: <strong t-esc="student.name"/>
+                </t>
+                <t t-elif="page_type == 'health'">
+                    Viewing health for: <strong t-esc="student.name"/>
+                </t>
+                <t t-elif="page_type == 'leave'">
+                    Viewing leave for: <strong t-esc="student.name"/>
+                </t>
+                <t t-elif="page_type == 'note'">
+                    Viewing note for: <strong t-esc="student.name"/>
+                </t>
+                <t t-else="">
+                    Viewing content for: <strong t-esc="student.name"/>
+                </t>
+            </span>
+            <div class="btn-group" role="group">
+                <a t-attf-href="/my/home/#{parent_student_param}"
+                   class="btn btn-primary btn-sm">
+                    <i class="fa fa-home me-1"></i>
+                   Back to Student Dashboard
+                </a>
+                <a href="/my/students"
+                   class="btn btn-outline-secondary btn-sm">
+                    <i class="fa fa-users me-1"></i>
+                    Back to My Children
+                </a>
+            </div>
+        </div>
+    </template>
+
+
+    <!-- Add to Assignment List - Below Breadcrumb -->
+    <template id="add_buttons_to_assignment_list" inherit_id="dekad_assignment.student_assignment">
+        <xpath expr="//t[@t-call='portal.portal_searchbar']" position="after">
+            <t t-call="dekad_web.student_page_buttons_extended">
+                <t t-set="page_type">assignments</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add to Activity List - Below Breadcrumb -->
+    <template id="add_buttons_to_activity_list" inherit_id="dekad_activity.student_activity">
+        <xpath expr="//t[@t-call='portal.portal_searchbar']" position="after">
+            <t t-call="dekad_web.student_page_buttons_extended">
+                <t t-set="page_type">activity</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add to Attendance List - Below Breadcrumb -->
+    <template id="add_buttons_to_attendance_list" inherit_id="dekad_attendance.student_attendance">
+        <xpath expr="//t[@t-call='portal.portal_searchbar']" position="after">
+            <t t-call="dekad_web.student_page_buttons_extended">
+                <t t-set="page_type">attendance</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add to Complaints List - Below Breadcrumb -->
+    <template id="add_buttons_to_complaint_list" inherit_id="dekad_complaint.student_complaint">
+        <xpath expr="//t[@t-call='portal.portal_searchbar']" position="after">
+            <t t-call="dekad_web.student_page_buttons_extended">
+                <t t-set="page_type">complaint</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add to Contravention List - Below Breadcrumb -->
+    <template id="add_buttons_to_contravention_list" inherit_id="dekad_contravention.student_contravention">
+        <xpath expr="//t[@t-call='portal.portal_searchbar']" position="after">
+            <t t-call="dekad_web.student_page_buttons_extended">
+                <t t-set="page_type">contravention</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add to Health List - Below Breadcrumb -->
+    <template id="add_buttons_to_health_list" inherit_id="dekad_health.student_health">
+        <xpath expr="//t[@t-call='portal.portal_searchbar']" position="after">
+            <t t-call="dekad_web.student_page_buttons_extended">
+                <t t-set="page_type">health</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add to Leave List - Below Breadcrumb -->
+    <template id="add_buttons_to_leave_list" inherit_id="dekad_leave.student_leave">
+        <xpath expr="//t[@t-call='portal.portal_searchbar']" position="after">
+            <t t-call="dekad_web.student_page_buttons_extended">
+                <t t-set="page_type">leave</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add to Note List - Below Breadcrumb -->
+    <template id="add_buttons_to_note_list" inherit_id="dekad_note.student_note">
+        <xpath expr="//t[@t-call='portal.portal_searchbar']" position="after">
+            <t t-call="dekad_web.student_page_buttons_extended">
+                <t t-set="page_type">note</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add to Assignment Show - Below Breadcrumb -->
+    <template id="add_buttons_to_assignment_show" inherit_id="dekad_assignment.student_assignment_show">
+        <xpath expr="//div[hasclass('card')]" position="before">
+            <t t-call="dekad_web.student_page_buttons_extended">
+                <t t-set="page_type">assignment</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add to Complaint Show - Below Breadcrumb -->
+    <template id="add_buttons_to_complaint_show" inherit_id="dekad_complaint.student_complaint_show">
+        <xpath expr="//div[hasclass('card')]" position="before">
+            <t t-call="dekad_web.student_page_buttons_extended">
+                <t t-set="page_type">complaint</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add to contravention Show - Below Breadcrumb -->
+    <template id="add_buttons_to_contravention_show" inherit_id="dekad_contravention.student_contravention_show">
+        <xpath expr="//div[hasclass('card')]" position="before">
+            <t t-call="dekad_web.student_page_buttons_extended">
+                <t t-set="page_type">contravention</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add to Health Show - Below Breadcrumb -->
+    <template id="add_buttons_to_health_show" inherit_id="dekad_health.student_health_show">
+        <xpath expr="//div[hasclass('card')]" position="before">
+            <t t-call="dekad_web.student_page_buttons_extended">
+                <t t-set="page_type">health</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add to Leave Show - Below Breadcrumb -->
+    <template id="add_buttons_to_leave_show" inherit_id="dekad_leave.student_leave_show">
+        <xpath expr="//div[hasclass('card')]" position="before">
+            <t t-call="dekad_web.student_page_buttons_extended">
+                <t t-set="page_type">leave</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add to Note Show - Below Breadcrumb -->
+    <template id="add_buttons_to_note_show" inherit_id="dekad_note.student_note_show">
+        <xpath expr="//div[hasclass('card')]" position="before">
+            <t t-call="dekad_web.student_page_buttons_extended">
+                <t t-set="page_type">note</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add to Assignment Submission - Below Breadcrumb -->
+    <template id="add_buttons_to_assignment_submission" inherit_id="dekad_assignment.student_assignment_submission">
+        <xpath expr="//div[contains(@class,'card')]" position="before">
+            <t t-call="dekad_web.student_page_buttons">
+                <t t-set="page_type">submission</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add to Assignment Submission Update - Below Breadcrumb -->
+    <template id="add_buttons_to_assignment_update" inherit_id="dekad_assignment.student_assignment_submission_update">
+        <xpath expr="//div[hasclass('card')]" position="before">
+            <t t-call="dekad_web.student_page_buttons">
+                <t t-set="page_type">submission_update</t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Add to Achievements -->
+    <template id="add_buttons_to_achievements" inherit_id="dekad_achievement.student_achievement">
+        <xpath expr="//div[hasclass('card')]" position="before">
+            <t t-call="dekad_web.student_page_buttons">
+                <t t-set="page_type">achievements</t>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

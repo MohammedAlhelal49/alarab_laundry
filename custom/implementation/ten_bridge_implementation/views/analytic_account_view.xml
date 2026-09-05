@@ -1,0 +1,43 @@
+<odoo>
+
+    <record id="view_account_analytic_account_form_inherit_tb" model="ir.ui.view">
+        <field name="name">account.analytic.account.form.inherit.tb</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Add after Building -->
+            <xpath expr="//field[@name='property_building_id']" position="after">
+
+                <field name="property_reference"/>
+
+                <field name="unit_reference"/>
+
+                <field name="property_code"/>
+
+                <field name="basin"/>
+
+                <field name="plot_no"/>
+
+                <field name="property_usage_id"/>
+
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_real_estate_form_inherit_tb" model="ir.ui.view">
+        <field name="name">real.estate.buildings.form.inherit.tb</field>
+        <field name="model">real.estate.buildings</field>
+        <field name="inherit_id" ref="dekad_real_estate.view_real_estate_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='number_of_floors']" position="after">
+                <field name="municipality"/>
+                <field name="area"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

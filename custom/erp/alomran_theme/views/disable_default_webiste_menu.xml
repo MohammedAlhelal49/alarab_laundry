@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- حذف عنصر Home من القائمة -->
+    <delete model="website.menu" search="[('name', '=', 'Home'), ('website_id', '!=', False)]"/>
+
+    <!-- حذف عنصر Contact Us من القائمة -->
+    <delete model="website.menu" search="[('name', 'in', ['Contact us', 'Contact Us']), ('website_id', '!=', False)]"/>
+</odoo>

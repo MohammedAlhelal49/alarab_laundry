@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_de_contravention_root"
+              name="Contraventions"
+              sequence="150"
+              web_icon="dekad_contravention,static/description/icon.png"
+              groups="dekad_contravention.group_de_contravention"/>
+
+    <menuitem id="menu_de_contravention"
+              name="Contraventions"
+              parent="menu_de_contravention_root"
+              sequence="10"
+              action="act_open_de_contravention_view"/>
+
+    <menuitem id="menu_de_student_suspend"
+              name="Suspended students"
+              parent="menu_de_contravention_root"
+              sequence="20"
+              action="act_open_de_student_suspend_view"/>
+
+    <menuitem id="menu_de_student_penalty"
+              name="Students Penalties"
+              parent="menu_de_contravention_root"
+              sequence="30"
+              action="act_open_de_student_penalty_view"/>
+
+         <menuitem id="menu_de_contravention_configuration"
+                  name="Configuration"
+                  parent="menu_de_contravention_root"
+                  sequence="40"
+        />
+
+    <menuitem id="menu_de_contravention_category"
+              name="Categories"
+              parent="menu_de_contravention_configuration"
+              sequence="10"
+              action="act_open_de_contravention_category_view"/>
+
+
+</odoo>

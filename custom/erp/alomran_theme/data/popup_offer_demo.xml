@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- DEMO OFFER 1: Buy 2 Get 1 Free -->
+        <record id="popup_offer_buy_2_get_1" model="popup.offer">
+            <field name="name">عرض احجز 2 واحصل على 1 مجاناً - يناير 2026</field>
+            <field name="sequence">10</field>
+            <field name="active" eval="True"/>
+            <field name="offer_type">buy_x_get_y</field>
+            <field name="buy_quantity">2</field>
+            <field name="get_quantity">1</field>
+
+            <field name="title_ar">احجز كورسين واحصل على الثالث مجاناً!</field>
+            <field name="subtitle_ar">وفر 33% من التكلفة الإجمالية</field>
+            <field name="description_ar">سجل في دورتين تدريبيتين بالسعر الكامل واحصل على الدورة الثالثة مجاناً تماماً. عرض محدود لا يفوتك!</field>
+
+            <field name="title_en">Buy 2 Courses Get 1 FREE!</field>
+            <field name="subtitle_en">Save 33% on total cost</field>
+            <field name="description_en">Register for 2 training courses at full price and get the 3rd course completely FREE. Limited time offer!</field>
+
+            <field name="badge_text">عرض لفترة محدودة!</field>
+            <field name="badge_color">#ff6b6b</field>
+
+            <!-- Dates - تواريخ ثابتة بدلاً من Dynamic -->
+            <field name="start_date">2026-01-01 00:00:00</field>
+            <field name="end_date">2026-01-31 23:59:59</field>
+
+            <field name="show_countdown" eval="True"/>
+
+            <field name="terms_ar">ينطبق العرض على الدورات المتاحة فقط. الدورة المجانية يجب أن تكون مساوية أو أقل في السعر من الدورتين المدفوعتين.</field>
+            <field name="terms_en">Offer applies to available courses only. Free course must be equal or lesser value than the two paid courses.</field>
+
+            <field name="delay_seconds">3</field>
+            <field name="cookie_duration">7</field>
+            <field name="exit_intent" eval="False"/>
+        </record>
+
+        <!-- DEMO OFFER 2: 30% Discount -->
+        <record id="popup_offer_discount_30" model="popup.offer">
+            <field name="name">عرض خصم 30% - فبراير 2026</field>
+            <field name="sequence">20</field>
+            <field name="active" eval="False"/>
+            <field name="offer_type">discount_percentage</field>
+            <field name="discount_type">percentage</field>
+            <field name="discount_value">30</field>
+
+            <field name="title_ar">خصم 30% على جميع الدورات!</field>
+            <field name="subtitle_ar">عرض خاص لشهر فبراير</field>
+            <field name="description_ar">احصل على خصم 30% على أي دورة تدريبية تختارها. سارع بالتسجيل!</field>
+
+            <field name="title_en">30% OFF All Courses!</field>
+            <field name="subtitle_en">Special February Offer</field>
+            <field name="description_en">Get 30% discount on any training course you choose. Register now!</field>
+
+            <field name="badge_text">خصم حصري!</field>
+            <field name="badge_color">#10b981</field>
+
+            <field name="start_date">2026-02-01 00:00:00</field>
+            <field name="end_date">2026-02-28 23:59:59</field>
+
+            <field name="show_countdown" eval="True"/>
+
+            <field name="terms_ar">الخصم ساري على جميع الدورات. لا يمكن دمجه مع عروض أخرى.</field>
+            <field name="terms_en">Discount valid on all courses. Cannot be combined with other offers.</field>
+
+            <field name="delay_seconds">5</field>
+            <field name="cookie_duration">3</field>
+            <field name="exit_intent" eval="True"/>
+        </record>
+
+        <!-- DEMO OFFER 3: Free Consultation -->
+        <record id="popup_offer_free_consultation" model="popup.offer">
+            <field name="name">عرض استشارة مجانية - مارس 2026</field>
+            <field name="sequence">30</field>
+            <field name="active" eval="False"/>
+            <field name="offer_type">free_consultation</field>
+
+            <field name="title_ar">استشارة مجانية + خصم 20%</field>
+            <field name="subtitle_ar">احجز استشارتك المجانية الآن</field>
+            <field name="description_ar">احصل على استشارة تدريبية مجانية مع خبرائنا واحصل على خصم 20% على أول دورة!</field>
+
+            <field name="title_en">Free Consultation + 20% OFF</field>
+            <field name="subtitle_en">Book your free consultation now</field>
+            <field name="description_en">Get a free training consultation with our experts and receive 20% off your first course!</field>
+
+            <field name="badge_text">عرض حصري!</field>
+            <field name="badge_color">#3b82f6</field>
+
+            <field name="start_date">2026-03-01 00:00:00</field>
+            <field name="end_date">2026-03-31 23:59:59</field>
+
+            <field name="show_countdown" eval="False"/>
+
+            <field name="terms_ar">الاستشارة مدتها 30 دقيقة. الخصم ساري على التسجيل الأول فقط.</field>
+            <field name="terms_en">Consultation is 30 minutes. Discount valid on first registration only.</field>
+
+            <field name="delay_seconds">4</field>
+            <field name="cookie_duration">5</field>
+            <field name="exit_intent" eval="False"/>
+        </record>
+    </data>
+</odoo>

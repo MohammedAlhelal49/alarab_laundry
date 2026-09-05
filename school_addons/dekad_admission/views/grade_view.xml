@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_de_grade_kanban_admission_inherit" model="ir.ui.view">
+            <field name="name">de.grade.kanban.admission.inherit</field>
+            <field name="model">de.grade</field>
+            <field name="inherit_id" ref="dekad_core.view_de_grade_kanban"/>
+            <field name="priority" eval="12"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='first_column']" position="after">
+                    <div name="forth_column" class="col-12 col-sm-6 mb-2" groups="dekad_admission.group_de_admission">
+                        <a name="action_show_admission" type="object">
+                            <field name="admission_count"/>
+                            Admission
+
+                        </a>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

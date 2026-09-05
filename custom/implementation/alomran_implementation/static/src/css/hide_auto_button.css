@@ -1,0 +1,9 @@
+/* Hide the Auto button completely */
+.o_web_sign_auto_button {
+    display: none !important;
+}
+
+/* Also hide the font style dropdown next to it */
+.o_web_sign_auto_select_style {
+    display: none !important;
+}

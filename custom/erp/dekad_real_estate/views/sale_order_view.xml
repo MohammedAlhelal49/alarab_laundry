@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_payment_form_inherit_readonly" model="ir.ui.view">
+        <field name="name">account.payment.form.inherit.readonly</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <!-- Force payment_type to always readonly -->
+            <field name="payment_type" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </field>
+
+        </field>
+    </record>
+    <record id="sale_order_tree_inherit_not_paid_color" model="ir.ui.view">
+        <field name="name">sale.order.tree.inherit.not.paid.color</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_order']" position="after">
+              <field name = "rent_start_date"></field>
+            </xpath>
+
+             <xpath expr="//field[@name='date_order']" position="replace">
+              <field name = "date_order" optional = "hide"></field>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale_order_kanban_inherit_custom" model="ir.ui.view">
+        <field name="name">sale.order.kanban.inherit.not.paid</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sale_order_kanban"/>
+        <field name="arch" type="xml">
+
+            <!-- Override the Kanban state label colors -->
+            <xpath expr="//footer" position="replace">
+                <footer invisible="context.get('rental_mode') != True" >
+
+                    <div class = "align-items-end">
+
+                        <div class="d-flex flex-wrap gap-1 text-muted text-nowrap">
+                            <field name="name"/>
+                            <field name="rent_start_date"/>
+                            <field name="rent_end_date"/>
+                            <field name="activity_ids" widget="kanban_activity"/>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <field name="rent_state"
+                                   widget="label_selection"
+                                   options="{
+                                       'classes': {
+                                           'booked': 'info',
+                                           'not_paid': 'warning',
+                                           'paid': 'success',
+                                           'cancel': 'danger'
+                                       }
+                                   }"
+                                   class="mt-2"/>
+
+                            <field name="cancel_type"
+                                   widget="label_selection"
+                                   options="{
+                                       'classes': {
+                                           'paid_cancel': 'danger',
+                                           'free_cancel': 'secondary',
+                                           'no_show': 'warning',
+                                           'early_checkout': 'info'
+                                       }
+                                   }"
+                                   class="mt-2"/>
+                            <field name="contract_status"
+                                   widget="label_selection"
+                                   options="{
+                                       'classes': {
+                                           'renewed': 'secondary',
+                                           'churned': 'danger',
+                                           'in_progress': 'success',
+                                       }
+                                   }"
+                                   class="mt-2"/>
+
+                        </div>
+                    </div>
+
+
+                </footer>
+
+            </xpath>
+
+        </field>
+    </record>
+    <record id="view_order_form_renewal_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.renewal.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Technical fields used by the invisible/visible conditions below -->
+            <xpath expr="//header" position="inside">
+                <field name="renewal_parent_id" invisible="1"/>
+                <field name="renewal_child_id" invisible="1"/>
+                <field name="is_closed" invisible="1"/>
+                <field name="contract_status" invisible="1"/>
+            </xpath>
+
+            <!-- Renew button: shown on confirmed contracts that are not
+                 already cancelled and have not been renewed yet. -->
+            <button name="action_cancel" position="before">
+                <button name="action_renew_order" type="object" string="Renew"
+                        class="btn-secondary" data-hotkey="w"
+                        invisible="state != 'sale'"/>
+                <button string="Close" name="action_open_close_wizard" type="object"
+                        class="btn-secondary" data-hotkey="c"
+                        invisible="state != 'sale' or is_closed"/>
+                <button string="Reopen" name="action_reopen_contract" type="object"
+                        data-hotkey="o"
+                        invisible="not is_closed"/>
+            </button>
+
+            <!-- Smart button showing the renewal chain (only if this order
+                 is part of one). -->
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button name="action_open_renewal_chain" type="object"
+                        class="oe_stat_button" icon="fa-repeat"
+                        invisible="not renewal_parent_id and not renewal_child_id">
+                    <field name="renewal_count" widget="statinfo" string="Renewal"/>
+                </button>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_order_tree_renewal_inherit" model="ir.ui.view">
+        <field name="name">sale.order.list.renewal.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <field name="state" position="after">
+                <field name="renewal_status" widget="label_selection"
+                       options="{
+                           'classes': {
+                               'renewal_quotation': 'secondary',
+                               'renewed': 'success',
+                           }
+                       }"/>
+
+
+            </field>
+        </field>
+    </record>
+
+
+    <!-- Inherit the sale.order form and conditionally apply changes using context -->
+    <record id="view_order_form_inherit_custom" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+                    <!-- Change label of partner_id to 'Tenant' -->
+            <field name="partner_id" position="replace">
+                <field name="partner_id" string="Tenant" invisible="context.get('rental_mode') != True"/>
+                <field name="partner_id" string="Customer" invisible="context.get('rental_mode') == True"/>
+            </field>
+
+            <xpath expr="//field[@name='validity_date']" position="attributes">
+                <attribute name="invisible">context.get('rental_mode') == True</attribute>
+            </xpath>
+
+            <!-- Add new fields after partner_id -->
+            <field name="partner_id" position="after">
+                <field name="property_building_id" invisible="context.get('rental_mode') != True"/>
+                <field name="account_analytic_account_id"
+                       domain="[('is_property', '=', True), ('property_building_id', '=', property_building_id), ('offer_type', '=', 'rent')]"
+                       required = "True"
+                       invisible="context.get('rental_mode') != True"/>
+                <field name="municipality_contract_number" invisible="context.get('rental_mode') != True or rental_type not in ['monthly', 'yearly']" />
+<!--                <field name="guarant_partner_id" invisible="context.get('rental_mode') != True"/>-->
+                <field name="cancel_type" invisible="not show_cancel_info" readonly="1" />
+                <field name="cancel_reason" invisible="not show_cancel_info" readonly="1"/>
+                <field name="checkout_date" invisible="not show_cancel_info or cancel_type != 'early_checkout' " readonly="1"/>
+                <field name="close_reason_id" invisible="not is_closed" readonly="1"/>
+                <field name="close_date" invisible="not is_closed" readonly="1"/>
+
+
+            </field>
+
+
+            <!-- Add new field before validity_date -->
+            <field name="validity_date" position="before">
+                <field name = "rent_state" widget = "radio" options="{'horizontal': True}" invisible="context.get('rental_mode') != True"/>
+                <field name="rental_type" required="account_analytic_account_id" invisible="context.get('rental_mode') != True"/>
+                <label for="hour_number" invisible="context.get('rental_mode') != True or rental_type != 'hourly' "/>
+                <div invisible="context.get('rental_mode') != True or rental_type != 'hourly' ">
+                    <field name="hour_number" class="oe_inline me-1 o_input_10ch" widget="float_time"/><span> hours</span>
+                </div>
+                <field name="rent_start_date" widget="datetime" required="account_analytic_account_id" invisible="context.get('rental_mode') != True"/>
+                 <field name="rent_end_date" widget="datetime" required="account_analytic_account_id" invisible="context.get('rental_mode') != True"/>
+                 <field name="number_of_nights" required="account_analytic_account_id" invisible="context.get('rental_mode') != True"/>
+
+            </field>
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="payment_method_ids"
+                       widget="many2many_tags"
+                       readonly="1"/>
+                <field name="payment_info_ids">
+                    <list>
+                        <field name="payment_method_line_id"/>
+                        <field name="amount"/>
+                        <field name="source"/>
+                    </list>
+                </field>
+            </xpath>
+
+            <xpath expr="//button[@id='create_invoice']" position="attributes">
+                <attribute name="invisible">context.get('rental_mode')</attribute>
+            </xpath>
+
+            <xpath expr="//header" position="inside">
+                 <button name="action_open_receipt_voucher"
+                            string="Receipt Voucher"
+                            type="object"
+                            class="btn-primary"
+                            invisible="context.get('rental_mode') != True or rental_type in ('yearly') or rent_state == 'paid' or rent_state == 'not_booked' or rent_state == 'cancel'"/>
+
+
+                <button name="open_cancel_wizard"
+                        string="Cancel"
+                        type="object"
+                        class="btn-secondary"
+                        invisible="context.get('rental_mode') != True or state not in ['draft', 'sent', 'sale'] or not id"/>
+            </xpath>
+
+            <xpath expr="//button[@name='action_cancel']" position="attributes">
+                <attribute name="invisible">context.get('rental_mode')</attribute>
+            </xpath>
+
+            <xpath expr="//button[@id='create_invoice']" position="attributes">
+                <attribute name="invisible">(context.get('rental_mode') and rental_type in ('daily','hourly')) or invoice_status != 'to invoice'</attribute>
+            </xpath>
+
+            <xpath expr="//button[@id='create_invoice_percentage']" position="attributes">
+                <attribute name="invisible">
+                    (context.get('rental_mode') and rental_type in ('daily','hourly')) or invoice_status != 'no' or state != 'sale'
+                </attribute>
+            </xpath>
+
+            <xpath expr="//sheet/div[@name='button_box']" position="inside">
+                <button name="action_open_linked_payment"
+                        type="object"
+                        class="oe_stat_button"
+                        invisible="context.get('rental_mode') != True or not payment_id "
+                        icon="fa-money">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_text">View Payments</span>
+                    </div>
+                </button>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="after">
+                <div class="float-end badge rounded-pill fw-bold text-bg-danger"
+                     invisible="contract_status != 'churned'">Closed</div>
+                <div class="float-end badge rounded-pill fw-bold text-bg-success"
+                     invisible="contract_status != 'in_progress'">In Progress</div>
+                <div class="float-end badge rounded-pill fw-bold text-bg-secondary"
+                     invisible="contract_status != 'renewed'">Renewed</div>
+            </xpath>
+        </field>
+    </record>
+
+
+    <!-- Custom search view for Rental Contracts -->
+    <record id="view_rental_contracts_custom_search" model="ir.ui.view">
+        <field name="name">sale.order.search.rental.contracts</field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="rent_state"  />
+                <field name="payment_method_ids"  />
+                <field name="property_building_id"/>
+                <field name="account_analytic_account_id"/>
+
+                <filter string="My Quotations" name="my_quotation" domain="[('user_id', '=', uid)]"/>
+                <separator/>
+                <filter string="Not Booked" name="not_booked" domain="[('rent_state', '=', 'not_booked')]"/>
+                 <filter string="Booked" name="booked" domain="[('rent_state', '=', 'booked')]"/>
+                <filter string="Not Paid" name="not_paid" domain="[('rent_state', '=', 'not_paid')]"/>
+                <filter string="paid" name="paid" domain="[('rent_state', '=', 'paid')]"/>
+                <filter string="Cancel" name="cancel" domain="[('state', '=', 'cancel')]"/>
+                <separator/>
+                <filter string="Cancel &amp; Refund" name="paid_cancel" domain="[('cancel_type', '=', 'paid_cancel')]"/>
+                <filter string="Cancel without Refund" name="no_show" domain="[('cancel_type', '=', 'no_show')]"/>
+                <filter string="No Response" name="free_cancel" domain="[('cancel_type', '=', 'free_cancel')]"/>
+                <filter string="Early Checkout" name="early_checkout" domain="[('cancel_type', '=', 'early_checkout')]"/>
+                <separator/>
+
+                <filter string="In Progress" name="contract_in_progress" domain="[('contract_status', '=', 'in_progress')]"/>
+                <filter string="Closed" name="contract_churned" domain="[('contract_status', '=', 'churned')]"/>
+                <filter string="Renewed" name="contract_renewed" domain="[('contract_status', '=', 'renewed')]"/>
+
+
+                <filter name="group_by_related_buildings_ids"
+                        string="Running contracts"
+                        context="{'group_by': 'related_buildings_ids'}"
+                        help="Group by Running contracts"/>
+
+                <filter name="group_by_rent_state"
+                        string="Rent state"
+                        context="{'group_by': 'rent_state'}"
+                        />
+
+                <filter name="group_by_property_building_id"
+                    string="Building"
+                    context="{'group_by': 'property_building_id'}"
+                    />
+                <filter name="group_by_account_analytic_account_id"
+                        string="Property"
+                        context="{'group_by': 'account_analytic_account_id'}"
+                        />
+                <separator/>
+                <filter name="group_by_payment_method_ids"
+                        string="Payment method"
+                        context="{'group_by': 'payment_method_ids'}"
+                        />
+                <filter string="Cancellation Type" name="group_cancel_type" context="{'group_by': 'cancel_type'}"/>
+                <separator/>
+
+                <filter string="Rental Start Date"
+                        name="group_by_rent_start_date"
+                        context="{'group_by': 'rent_start_date'}"/>
+
+            </search>
+        </field>
+    </record>
+
+    <record id="view_order_tree_inherit_payment_method" model="ir.ui.view">
+        <field name="name">sale.order.tree.payment.method</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//list" position="inside">
+                <field name="property_building_id" optional="show" />
+                <field name="account_analytic_account_id" optional="show"/>
+                <field name="rent_state"
+                       widget="label_selection"
+                       optional="show"
+                       options="{
+                           'classes': {
+                               'booked': 'info',
+                               'not_paid': 'warning',
+                               'paid': 'success',
+                               'cancel': 'danger'
+                           }
+                       }"
+                       class="mt-2"/>
+                <field name="payment_method_ids" widget="many2many_tags" optional="show"/>
+                <field name="payment_info_tag_ids" widget="many2many_tags" optional="show"/>
+            </xpath>
+
+        </field>
+    </record>
+
+<!--    <record id="realstate_invoice_form_inherit" model="ir.ui.view">-->
+<!--        <field name="name">account.move.form.pdc.button.inherit</field>-->
+<!--        <field name="model">account.move</field>-->
+<!--        <field name="inherit_id" ref="sh_pdc.sh_move_form_inherit"/>-->
+<!--        <field name="arch" type="xml">-->
+
+<!--            <xpath expr="//button[@name='642']" position="attributes">-->
+<!--                <attribute name="invisible">-->
+<!--                    state != 'posted' or move_type not in ('out_invoice','in_invoice')-->
+<!--                </attribute>-->
+<!--            </xpath>-->
+
+<!--        </field>-->
+<!--    </record>-->
+
+    <!-- Action for Rental Contracts with context flag -->
+    <record id="action_rental_contracts" model="ir.actions.act_window">
+        <field name="name">Rental Contracts</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="search_view_id" ref="view_rental_contracts_custom_search"/>
+        <field name="target">current</field>
+        <field name="domain">[('account_analytic_account_id', '!=', False), ('is_rental_contract', '=', True)]</field>
+        <field name="context">{'search_default_group_by_related_buildings_ids': 1, 'rental_mode': True,'default_is_rental_contract': True }</field>
+    </record>
+
+</odoo>
+

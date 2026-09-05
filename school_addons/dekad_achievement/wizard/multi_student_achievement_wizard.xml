@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_de_multi_student_achievement_wizard_form" model="ir.ui.view">
+            <field name="name">de.multi.student.achievement.wizard.form</field>
+            <field name="model">de.multi.student.achievement.wizard</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Multi students achievement">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="achievement_id"/>
+                                <field name="achievement_image" widget="image" class=" oe_avatar role_image mb-3"
+                                      invisible = "achievement_id == False"/>
+                                <field name="achievement_type"
+                                        invisible = "achievement_id == False"/>
+                            </group>
+                            <group>
+                                <field name="user_id"/>
+                                <field name="student_ids" options="{'no_create': True , 'no_open' : True}"
+                                       widget="many2many_tags"
+                                       domain="[('student_grade_ids.state','=','running')]"
+                                />
+                                <field name="reason"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer groups="base.group_user">
+                        <button string="Proceed" type="object" name="do_action" class="oe_highlight"/>
+                        <button special="cancel" string="Close" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="act_open_de_multi_student_achievement_wizard_view">
+            <field name="name">Multi students achievement</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.multi.student.achievement.wizard</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+
+        <record model="ir.actions.act_window.view" id="act_open_de_multi_student_achievement_wizard_view_form">
+            <field name="act_window_id" ref="act_open_de_multi_student_achievement_wizard_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_de_multi_student_achievement_wizard_form"/>
+        </record>
+    </data>
+</odoo>
+
+

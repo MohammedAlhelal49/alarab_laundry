@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- document -->
+    <template id="student_fee_doc_entry" inherit_id="portal.portal_my_home" priority="15">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-if="student_fee_document and student_fee_document['show'] and parent_student_param" t-call="portal.portal_docs_entry">
+                <t t-set="url" t-value="student_fee_document['url']"/>
+                <t t-set="title" t-value="'Fees'"/>
+                <t t-set="icon">
+                    <i class="fa fa-money"/>
+                </t>
+                <t t-set="count">
+                    <span class="document_item_count" t-esc="student_fee_document['count']"/>
+                </t>
+                <div class = "clearing" />
+            </t>
+        </xpath>
+    </template>
+    <!-- document -->
+
+    <!-- breadcrumb -->
+    <template id="student_fee_breadcrumbs" inherit_id="portal.portal_breadcrumbs">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name=='Fees'" t-attf-class="breadcrumb-item">
+                <a t-att-href="page_url">Fees
+                </a>
+            </li>
+        </xpath>
+    </template>
+    <!-- breadcrumb -->
+
+    <!-- list -->
+    <template id="student_fee" name="Student Fees">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+            </t>
+            <div class="card dynamic-website-card-holder">
+
+                <div class="card-body dynamic-website-card">
+                    <t t-if="fee_records" t-call="portal.portal_table">
+                       <thead>
+    <tr>
+        <th>Grade</th>
+        <th>Due date</th>
+        <th>Amount</th>
+        <th>Discount</th>
+        <th>After discount amount</th>
+        <th>Invoice</th>
+    </tr>
+</thead>
+<tbody>
+    <t t-foreach="fee_records" t-as="fee">
+        <tr>
+            <td><span t-esc="fee.grade_id.name"/></td>
+            <td><span t-esc="fee.date" t-options="{'widget':'date'}"/></td>
+            <td><span t-esc="fee.amount"/></td>
+            <td><span t-esc="fee.discount"/></td>
+            <td><span t-esc="fee.after_discount_amount"/></td>
+            <td>
+    <t t-if="fee.invoice_id">
+        <a t-attf-href="/my/invoices/{{fee.invoice_id.id}}{{('?access_token=' + fee.invoice_id.access_token) if fee.invoice_id.access_token else ''}}"
+           class="btn btn-sm btn-primary">
+            View Invoice
+        </a>
+    </t>
+    <t t-else="">
+        <span class="text-muted">No Invoice</span>
+    </t>
+</td>
+        </tr>
+    </t>
+</tbody>
+
+                    </t>
+                    <t t-else="">
+                        <div class="alert alert-info" role="alert">
+                            There are no fees to display.
+                        </div>
+                    </t>
+                </div>
+
+            </div>
+        </t>
+    </template>
+    <!-- list -->
+
+</odoo>

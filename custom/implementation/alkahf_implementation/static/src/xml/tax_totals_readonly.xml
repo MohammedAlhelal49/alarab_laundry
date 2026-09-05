@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="your_module.TaxGroupComponentReadonly"
+       t-inherit="account.TaxGroupComponent"
+       t-inherit-mode="extension">
+
+        <!-- Replace whole editable block -->
+        <xpath expr="//td[@class='o_tax_group']" position="replace">
+
+            <td class="o_tax_group">
+                <span class="o_tax_group_amount_value o_list_monetary">
+                    <t t-out="formatMonetary(props.taxGroup.tax_amount_currency)"/>
+                </span>
+            </td>
+
+        </xpath>
+
+    </t>
+
+</templates>

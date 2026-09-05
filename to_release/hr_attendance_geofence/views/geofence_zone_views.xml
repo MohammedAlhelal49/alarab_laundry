@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- =============================== -->
+    <!-- Actions                         -->
+    <!-- =============================== -->
+    <record id="action_geofence_zone" model="ir.actions.act_window">
+        <field name="name">Geofence Zones</field>
+        <field name="res_model">hr.attendance.geofence.zone</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first geofence zone
+            </p>
+            <p>
+                Define geographic zones where employees can check-in and check-out.
+                Each zone has a center point (latitude/longitude) and a radius in meters.
+            </p>
+        </field>
+    </record>
+
+    <!-- Action for the employee stat button -->
+    <record id="action_geofence_zone_employees" model="ir.actions.act_window">
+        <field name="name">Employees</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('geofence_zone_ids', 'in', active_id)]</field>
+    </record>
+
+    <!-- =============================== -->
+    <!-- Geofence Zone Form View         -->
+    <!-- =============================== -->
+    <record id="hr_attendance_geofence_zone_view_form" model="ir.ui.view">
+        <field name="name">hr.attendance.geofence.zone.form</field>
+        <field name="model">hr.attendance.geofence.zone</field>
+        <field name="arch" type="xml">
+            <form string="Geofence Zone">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(hr_attendance_geofence.action_geofence_zone_employees)d"
+                                type="action"
+                                class="oe_stat_button"
+                                icon="fa-users">
+                            <field name="employee_count" widget="statinfo" string="Employees"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="e.g., Main Office"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Location">
+                            <field name="latitude" string="Latitude"/>
+                            <field name="longitude" string="Longitude"/>
+                            <field name="radius" string="Radius (meters)"/>
+                            <field name="address" string="Address"/>
+                        </group>
+                        <group string="Settings">
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Assigned Employees" name="employees">
+                            <field name="employee_ids" widget="many2many_tags"
+                                   options="{'color_field': 'color'}"
+                                   placeholder="Add employees..."/>
+                            <div class="text-muted mt-2">
+                                <i class="fa fa-info-circle"/> Employees listed here will be allowed to check-in/check-out from this zone.
+                            </div>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- =============================== -->
+    <!-- Geofence Zone Tree/List View    -->
+    <!-- =============================== -->
+    <record id="hr_attendance_geofence_zone_view_tree" model="ir.ui.view">
+        <field name="name">hr.attendance.geofence.zone.tree</field>
+        <field name="model">hr.attendance.geofence.zone</field>
+        <field name="arch" type="xml">
+            <list string="Geofence Zones">
+                <field name="name"/>
+                <field name="address"/>
+                <field name="latitude"/>
+                <field name="longitude"/>
+                <field name="radius" string="Radius (m)"/>
+                <field name="employee_count" string="Employees"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- =============================== -->
+    <!-- Geofence Zone Search View       -->
+    <!-- =============================== -->
+    <record id="hr_attendance_geofence_zone_view_search" model="ir.ui.view">
+        <field name="name">hr.attendance.geofence.zone.search</field>
+        <field name="model">hr.attendance.geofence.zone</field>
+        <field name="arch" type="xml">
+            <search string="Search Geofence Zones">
+                <field name="name"/>
+                <field name="address"/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                <separator/>
+                <group>
+                    <filter string="Company" name="group_by_company" context="{'group_by': 'company_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- =============================== -->
+    <!-- Menu Items                      -->
+    <!-- =============================== -->
+    <menuitem id="menu_geofence_zone" name="Geofence Zones" parent="hr_attendance.menu_hr_attendance_settings" action="action_geofence_zone" sequence="20" groups="hr_attendance.group_hr_attendance_manager"/>
+
+</odoo>

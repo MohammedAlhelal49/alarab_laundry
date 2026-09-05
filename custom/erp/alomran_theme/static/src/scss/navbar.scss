@@ -1,0 +1,244 @@
+// ============================================================
+// FLOATING CALL BUTTONS (SIMPLE VERSION) - LTR English
+// ============================================================
+
+.o_floating_actions {
+    position: fixed;
+    bottom: 30px;
+    right: 30px; // Changed from left to right for LTR
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.o_floating_btn {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+
+    i {
+        transition: transform 0.3s ease;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+        color: white;
+
+        i {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        .o_btn_tooltip {
+            opacity: 1;
+            transform: translateX(10px); // Changed direction for LTR
+            visibility: visible;
+        }
+    }
+}
+
+// WhatsApp Button
+.o_whatsapp_btn {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+
+    &:hover {
+        background: linear-gradient(135deg, #128c7e 0%, #075e54 100%);
+    }
+}
+
+// Call Button
+.o_call_btn {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+
+    &:hover {
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    }
+}
+
+// Tooltip - Positioned for LTR
+.o_btn_tooltip {
+    position: absolute;
+    right: 70px; // Changed from left to right for LTR
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(0);
+    transition: all 0.3s ease;
+    pointer-events: none;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 100%; // Changed from right to left for LTR
+        top: 50%;
+        transform: translateY(-50%);
+        border: 6px solid transparent;
+        border-right-color: rgba(0, 0, 0, 0.85); // Changed from left to right
+    }
+}
+
+// Pulse Animation
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+    }
+}
+
+// Mobile Responsive
+@media (max-width: 768px) {
+    .o_floating_actions {
+        bottom: 20px;
+        right: 20px; // Changed from left for LTR
+    }
+
+    .o_floating_btn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.5rem;
+    }
+
+    .o_btn_tooltip {
+        display: none; // Hide Tooltip on mobile
+    }
+}
+
+// ============================================================
+// COURSE CARD HOVER EFFECT
+// ============================================================
+
+.course-card {
+    transition: all 0.3s ease;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+
+        .btn-primary {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(26, 84, 144, 0.4);
+        }
+
+        .course-header {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.course-header {
+    transition: transform 0.3s ease;
+}
+
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+// ============================================================
+// NAVBAR LOGO STYLES
+// ============================================================
+
+.navbar-brand {
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.navbar-logo {
+    height: 50px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+
+    // Add subtle shadow
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+
+    // Responsive
+    @media (max-width: 992px) {
+        height: 45px;
+        max-width: 150px;
+    }
+
+    @media (max-width: 576px) {
+        height: 40px;
+        max-width: 120px;
+    }
+}
+
+.brand-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: inherit;
+    transition: color 0.3s ease;
+    margin-left: 0.5rem; // Added for LTR spacing
+
+    // Hide on mobile
+    @media (max-width: 768px) {
+        display: none !important;
+    }
+}
+
+// Navbar with logo adjustments
+#mainNavbar {
+    .navbar-brand {
+        padding: 0.5rem 0;
+
+        &:hover {
+            .brand-text {
+                color: var(--primary-color, #1a5490);
+            }
+        }
+    }
+}
+
+// If navbar is scrolled (with background)
+#mainNavbar.scrolled {
+    .navbar-logo {
+        height: 45px;
+
+        @media (max-width: 992px) {
+            height: 40px;
+        }
+    }
+}
+
+a.btn_cta[href="/contactus"] {
+    display: none !important;
+}
+
+a.btn_cta[href="/en/contactus"] {
+    display: none !important;
+}
+a.btn_cta[href="/ar/contactus"] {
+    display: none !important;
+}
+
+/* Logo size in Header */
+.navbar .navbar-logo img {
+    height: 10px;
+    width: 10px;
+}

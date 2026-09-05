@@ -1,0 +1,21 @@
+<!-- attendance_location/views/hr_employee_views.xml -->
+<odoo>
+  <!-- Inherit the Employee Form View to add Assigned Patients tab -->
+  <record id="view_employee_form_extension" model="ir.ui.view">
+    <field name="name">hr.employee.form.patient_extension</field>
+    <field name="model">hr.employee</field>
+    <field name="inherit_id" ref="hr.view_employee_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//sheet/notebook" position="inside">
+        <!-- New Tab: Assigned Patients -->
+        <page string="Patients">
+          <group>
+            <field name="patient_ids"
+                   widget="many2many_tags"
+                   placeholder="No patients assigned yet."/>
+          </group>
+        </page>
+      </xpath>
+    </field>
+  </record>
+</odoo>

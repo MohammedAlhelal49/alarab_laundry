@@ -1,0 +1,54 @@
+<odoo>
+
+    <record id="view_activity_logger_kpi_wizard"
+            model="ir.ui.view">
+
+        <field name="name">activity.logger.kpi.wizard.form</field>
+        <field name="model">activity.logger.kpi.wizard</field>
+        <field name="arch" type="xml">
+
+            <form string="User KPI Report">
+
+                <group>
+
+                    <field name="user_id"/>
+
+                    <field name="date_from"
+                               widget="daterange"
+                               options="{'end_date_field': 'date_to'}"
+                               />
+                    <field name="date_to" invisible="1"/>
+
+
+                </group>
+
+                <footer>
+
+                    <button
+                        name="action_show_report"
+                        type="object"
+                        string="Generate Report"
+                        class="btn-primary"/>
+
+                    <button
+                        string="Cancel"
+                        special="cancel"/>
+
+                </footer>
+
+            </form>
+
+        </field>
+
+    </record>
+
+    <record id="action_activity_logger_kpi_wizard"
+            model="ir.actions.act_window">
+        <field name="name">User KPI Report</field>
+        <field name="res_model">activity.logger.kpi.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+
+    </record>
+
+</odoo>

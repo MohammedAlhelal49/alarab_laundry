@@ -1,0 +1,78 @@
+div.dropdown-menu{
+a[href="https://www.odoo.com/documentation/18.0"],
+a[href="https://www.odoo.com/buy"],
+span[data-menu="account"]{
+    display: none !important;
+}
+    }
+.o_burger_menu .o_user_menu_mobile {
+a[href="https://www.odoo.com/documentation/18.0"],
+a[href="https://www.odoo.com/buy"],a:nth-of-type(4),span[data-menu="account"]
+{
+    display: none !important;
+}
+
+}
+// handle the user role
+.user-role {
+opacity : .7;
+font-weight: bold;
+color: #515151 !important;
+font-size: 14px !important;
+margin-bottom: 10px;
+display: inline-block;
+i {
+margin-right : 5px !important;
+}
+}
+
+.o_menu_systray {
+    .image-holder {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 150px !important;
+        background: white;
+        border-bottom: 1px solid #dddddd;
+
+        .dekad-logo-full {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .dekad-logo-icon {
+            display: none;
+            max-height: 32px;
+            width: auto;
+        }
+    }
+}
+
+/* Small screen */
+@media (max-width: 778px) {
+    .o_menu_systray {
+        .image-holder {
+            width: 45px !important;
+
+            .dekad-logo-full {
+                display: none;
+            }
+
+            .dekad-logo-icon {
+                display: block;
+            }
+        }
+    }
+}
+
+// Company switcher Confirm button
+.o_switch_company_menu_buttons {
+    .btn-primary {
+        color: white !important;
+    }
+}
+
+ .o-bus-ConnectionAlert-failure {
+     display : none !important;
+     }

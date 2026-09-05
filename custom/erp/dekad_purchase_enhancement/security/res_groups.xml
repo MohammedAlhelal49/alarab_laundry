@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Sub-category under Inventory -->
+    <record id="module_category_inventory_discount" model="ir.module.category">
+        <field name="name">Discount</field>
+        <field name="parent_id" ref="base.module_category_inventory"/>
+        <field name="sequence">51</field>
+    </record>
+
+    <!-- Hidden technical group -->
+    <record id="group_discount_per_po_line" model="res.groups">
+        <field name="name">Show Discount on Purchase Orders</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <!-- Visible permission under Inventory > Discount -->
+    <record id="group_purchase_discount_user" model="res.groups">
+        <field name="name">Can Apply Discounts on Purchase Orders</field>
+        <field name="category_id" ref="module_category_inventory_discount"/>
+        <field name="implied_ids"
+               eval="[(4, ref('group_discount_per_po_line'))]"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+        <template id="report_invoice_document_mostar" inherit_id="account.report_invoice_document">
+            <xpath expr="//div[contains(@class, 'invoice_main')]" position="inside">
+                <div class="text-left w-100 my-3" style = "margin-top: 100px !important">
+                         <img src="/mostar_implementation/static/src/img/invoice.png"
+                         style="width: 150px !important; display: inline-block;"/>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>
+
+

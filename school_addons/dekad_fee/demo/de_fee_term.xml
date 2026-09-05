@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Product Categories -->
+        <record id="de_fee_element_product_category" model="product.category">
+            <field name="name">Fees elements</field>
+        </record>
+
+        <!-- Products -->
+        <record id="de_fee_element_product_1" model="product.product">
+            <field name="name">Admission fee</field>
+            <field name="type">service</field>
+            <field name="categ_id" ref="dekad_fee.de_fee_element_product_category"/>
+            <field name="uom_id" ref="uom.product_uom_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_unit"/>
+            <field name="lst_price">1</field>
+        </record>
+        <record id="de_fee_element_product_2" model="product.product">
+            <field name="name">Student card</field>
+            <field name="type">service</field>
+            <field name="categ_id" ref="dekad_fee.de_fee_element_product_category"/>
+            <field name="uom_id" ref="uom.product_uom_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_unit"/>
+            <field name="lst_price">1</field>
+        </record>
+        <record id="de_fee_element_product_3" model="product.product">
+            <field name="name">Classroom Supplies</field>
+            <field name="type">service</field>
+            <field name="categ_id" ref="dekad_fee.de_fee_element_product_category"/>
+            <field name="uom_id" ref="uom.product_uom_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_unit"/>
+            <field name="lst_price">1</field>
+        </record>
+
+        <!-- Fee Elements -->
+        <record id="de_fee_element_1" model="de.fee.element">
+            <field name="product_id" ref="dekad_fee.de_fee_element_product_1"/>
+            <field name="value">80.00</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="de_fee_element_2" model="de.fee.element">
+            <field name="product_id" ref="dekad_fee.de_fee_element_product_2"/>
+            <field name="value">20.00</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="de_fee_element_3" model="de.fee.element">
+            <field name="product_id" ref="dekad_fee.de_fee_element_product_3"/>
+            <field name="value">100.00</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="de_fee_element_4" model="de.fee.element">
+            <field name="product_id" ref="dekad_fee.de_fee_element_product_1"/>
+            <field name="value">100.00</field>
+            <field name="sequence">10</field>
+        </record>
+
+
+        <!-- Fee Terms -->
+        <record id="de_fee_term_1" model="de.fee.term">
+            <field name="name">Grade 1 fees terms</field>
+            <field name="type">fixed_date</field>
+            <field name="description">Fees terms of the grade 1 divided into dates</field>
+        </record>
+        <record id="de_fee_term_2" model="de.fee.term">
+            <field name="name">Grade 6 fees terms</field>
+            <field name="type">fixed_days</field>
+            <field name="description">Fees terms of the grade 6 divided into days</field>
+        </record>
+
+        <!-- Fee Term Lines -->
+        <record id="de_fee_term_line_1" model="de.fee.term.line">
+            <field name="fee_term_id" eval="de_fee_term_2"/>
+            <field name="name">Term 1</field>
+            <field name="value">80.00</field>
+            <field name="due_days">10</field>
+            <field name="sequence">10</field>
+            <field name="fee_element_ids" eval="[(6, 0, [ref('de_fee_element_1'), ref('de_fee_element_2')])]"/>
+        </record>
+        <record id="de_fee_term_line_2" model="de.fee.term.line">
+            <field name="fee_term_id" eval="de_fee_term_2"/>
+            <field name="name">Term 2</field>
+            <field name="value">20.00</field>
+            <field name="due_days">20</field>
+            <field name="sequence">20</field>
+            <field name="fee_element_ids" eval="[(6, 0, [ref('de_fee_element_3')])]"/>
+        </record>
+
+        <record id="de_fee_term_line_3" model="de.fee.term.line">
+            <field name="fee_term_id" eval="de_fee_term_1"/>
+            <field name="name">Full term</field>
+            <field name="value">100.00</field>
+             <field name="due_date" eval='(DateTime.today() + relativedelta(days=15))'/>
+            <field name="sequence">10</field>
+            <field name="fee_element_ids" eval="[(6, 0, [ref('de_fee_element_4')])]"/>
+        </record>
+    </data>
+</odoo>

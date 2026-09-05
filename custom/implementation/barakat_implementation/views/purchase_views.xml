@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_confirm_purchase_wizard_form" model="ir.ui.view">
+        <field name="name">confirm.purchase.wizard.form</field>
+        <field name="model">confirm.purchase.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Confirm Purchase Order">
+                <group>
+                    <div class="alert alert-info">
+                        This is the default vendor. Do you want to change it before confirming?
+                    </div>
+                    <field name="vendor_id"/>
+                </group>
+                <footer>
+                    <button name="confirm_purchase_order"
+                            type="object"
+                            string="Confirm"
+                            class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="purchase_order_form_inherited" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherited.barakat</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Replace all confirm buttons with group restrictions -->
+            <xpath expr="//button[@id='draft_confirm']" position="replace">
+                <!-- Only visible to managers -->
+                <button name="button_confirm"
+                        id="draft_confirm"
+                        type="object"
+                        string="Confirm Order"
+                        context="{'validate_analytic': True}"
+                        invisible="state != 'draft'"
+                        class="oe_highlight"
+                        groups="purchase.group_purchase_manager"
+                        data-hotkey="q"/>
+            </xpath>
+
+            <xpath expr="//button[@id='bid_confirm']" position="replace">
+                <!-- Only visible to managers -->
+                <button name="button_confirm"
+                        id="bid_confirm"
+                        type="object"
+                        string="Confirm Order"
+                        context="{'validate_analytic': True}"
+                        invisible="state != 'sent'"
+                        class="oe_highlight"
+                        groups="purchase.group_purchase_manager"
+                        data-hotkey="q"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_open_confirm_purchase_wizard" model="ir.actions.act_window">
+        <field name="name">Confirm Purchase</field>
+        <field name="res_model">confirm.purchase.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>
+
+
+

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="paperformat_commitment_no_margin" model="report.paperformat">
+        <field name="name">Commitment No Margin</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">10</field>
+        <field name="margin_right">10</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_report_sale_commitment" model="ir.actions.report">
+        <field name="name">Customized Commitment &amp; Declaration</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">alkahf_implementation.report_sale_commitment_document</field>
+        <field name="report_file">alkahf_implementation.report_sale_commitment_document</field>
+        <field name="print_report_name">'Commitment Declaration - ' + object.name</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="alkahf_implementation.paperformat_commitment_no_margin"/>
+
+    </record>
+
+
+
+<!--    <record id="action_report_trading_sale_order" model="ir.actions.report">-->
+<!--        <field name="name">Trading Sale Order</field>-->
+<!--        <field name="model">sale.order</field>-->
+<!--        <field name="report_type">qweb-pdf</field>-->
+<!--        <field name="report_name">alkahf_implementation.report_trading_sale_order_document</field>-->
+<!--        <field name="report_file">alkahf_implementation.report_trading_sale_order_document</field>-->
+<!--        <field name="binding_model_id" ref="sale.model_sale_order"/>-->
+<!--        <field name="binding_type">report</field>-->
+<!--        <field name="paperformat_id" ref="alkahf_implementation.paperformat_realestate"/>-->
+<!--    </record>-->
+
+    <!-- ── Report Action ──────────────────────────────────────────────────── -->
+<!--    <record id="action_report_rent_receipt" model="ir.actions.report">-->
+<!--        <field name="name">Rent Payment Receipt / استلام دفعات إيجار</field>-->
+<!--        <field name="model">account.move</field>-->
+<!--        <field name="report_type">qweb-pdf</field>-->
+<!--        <field name="report_name">alkahf_implementation.report_rent_receipt_template</field>-->
+<!--        <field name="report_file">alkahf_implementation.report_rent_receipt_template</field>-->
+<!--        <field name="print_report_name">'Rent Receipt - %s' % (object.name)</field>-->
+<!--        <field name="binding_model_id" ref="account.model_account_move"/>-->
+<!--        <field name="binding_type">report</field>-->
+<!--        <field name="paperformat_id" ref="alkahf_implementation.paperformat_commitment_no_margin"/>-->
+
+<!--    </record>-->
+
+
+
+</odoo>

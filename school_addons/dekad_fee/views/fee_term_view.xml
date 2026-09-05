@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="product_product_form_view_fee_quick_create" model="ir.ui.view">
+            <field name="name">product.product.form.view.fee.quick.create</field>
+            <field name="model">product.product</field>
+            <field name="arch" type="xml">
+                <form string="Product product fee quick create" duplicate="0">
+                    <sheet name="product_form">
+                        <field name="product_variant_count" invisible="1"/>
+                        <field name="is_product_variant" invisible="1"/>
+                        <field name="attribute_line_ids" invisible="1"/>
+                        <field name="type" invisible="1"/>
+                        <field name="company_id" invisible="1"/>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                                invisible="active  == True"/>
+                        <field name="id" invisible="True"/>
+                        <field name="image_1920" widget="image" class="oe_avatar"
+                               options="{'preview_image': 'image_128'}"/>
+                        <div class="oe_title">
+                            <label for="name" string="Product Name"/>
+                            <h1>
+                                <div class="d-flex">
+                                    <field class="text-break" name="name" placeholder="e.g. Cheese Burger"/>
+                                </div>
+                            </h1>
+                        </div>
+                        <notebook>
+                            <page string="Main" name="main">
+                                <group>
+
+                                    <field name="active" invisible="1"/>
+                                    <field name="type" invisible="1"/>
+
+                                    <field name="categ_id" string="Product Category"/>
+                                    <field name="product_tag_ids" widget="many2many_tags"
+                                           options="{'color_field': 'color'}"/>
+
+                                </group>
+                                <group string="Internal Notes">
+                                    <field colspan="2" name="description" nolabel="1"
+                                           placeholder="This note is only for internal purposes."/>
+                                </group>
+                            </page>
+
+                        </notebook>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="view_de_fee_term_list" model="ir.ui.view">
+            <field name="name">de.fee.term.list</field>
+            <field name="model">de.fee.term</field>
+            <field name="type">list</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <list string="Fee Term">
+                    <field name="name"/>
+                    <field name="type"/>
+                    <field name="fee_term_line_count"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_de_fee_term_form" model="ir.ui.view">
+            <field name="name">de.fee.term.form</field>
+            <field name="model">de.fee.term</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Fee Term">
+                    <header/>
+                    <sheet>
+                        <field name="active" invisible="1"/>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                                invisible="active  == True"/>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="active"/>
+                            </group>
+                            <group>
+                                <field name="type" required="1"/>
+                                <field name="description"/>
+                            </group>
+                            <separator string="Terms"/>
+                            <field name="fee_term_line_ids">
+                                <list>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="due_days" column_invisible="parent.type != 'fixed_days'"
+                                           required="parent.type == 'fixed_days'"
+                                    />
+                                    <field name="due_date"
+                                           column_invisible="parent.type != 'fixed_date'"
+                                           required="parent.type == 'fixed_date'"/>
+                                    <field name="value" required="1"/>
+                                </list>
+                                <form string="Fees Term Line">
+                                    <group>
+                                        <field name="name"/>
+                                        <field name="due_days"
+                                               invisible="parent.type != 'fixed_days'"
+                                               required="parent.type == 'fixed_days'"/>
+                                        <field name="due_date"
+                                               invisible="parent.type != 'fixed_date'"
+                                               required="parent.type == 'fixed_date'"/>
+
+                                        <field name="value" required="1"/>
+
+                                        <field name="fee_element_ids">
+                                            <list string="Information" editable="bottom">
+                                                <field name="sequence" widget="handle"/>
+                                                <field name="product_id" context="{'default_detailed_type': 'service',
+                                                'form_view_ref':'dekad_fee.product_product_form_view_fee_quick_create'
+                                                }"
+                                                       domain="[('type' , '=' , 'service')]"
+                                                />
+                                                <field name="value"/>
+                                            </list>
+                                        </field>
+
+
+                                    </group>
+                                </form>
+                            </field>
+                        </group>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_de_fee_term_search" model="ir.ui.view">
+            <field name="name">de.fee.term.search</field>
+            <field name="model">de.fee.term</field>
+            <field name="type">search</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Fee Term">
+                    <field name="name" select="True"/>
+                    <filter string="Archived" name="inactive"
+                            domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_de_fee_term_view">
+            <field name="name">Fees Terms</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.fee.term</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="view_mode">list,form</field>
+            <field name="search_view_id" ref="view_de_fee_term_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_fee_term_view_form">
+            <field name="act_window_id" ref="act_open_de_fee_term_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_de_fee_term_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_fee_term_view_list">
+            <field name="act_window_id" ref="act_open_de_fee_term_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="view_de_fee_term_list"/>
+        </record>
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ============================================================
+         REUSABLE SIGNATURE SECTION
+         ============================================================ -->
+    <template id="report_signature_section"
+              name="Report Signature Section">
+        <div t-if="company and company.show_report_signature"
+             class="mt-5 o_dekad_report_signature"
+             style="
+                background-color:#fff !important;
+                padding:15px;
+                page-break-inside:avoid;
+             ">
+            <table style="
+                width:100%;
+                margin-top:50px;
+                background-color:#fff !important;
+                border-top:2px solid #fff;
+                border-bottom:2px solid #fff;
+                border-left:0;
+                border-right:0;
+             ">
+                <tr>
+                    <td style="
+                        width:50%;
+                        text-align:center;
+                        background-color:#fff !important;
+                        border:0;
+                    ">
+                        <strong>
+                            <span>Company Signature</span>
+                            <span dir="rtl" style="margin-left:20px;">توقيع الشركة</span>
+                        </strong>
+                        <br/>
+                        <br/>
+                        <br/>
+                        _______________________
+                    </td>
+                    <!-- CUSTOMER SIGNATURE -->
+                    <td style="
+                        width:50%;
+                        text-align:center;
+                        background-color:#fff !important;
+                        border:0;
+                    ">
+                        <strong>
+                            <span>Customer Signature</span>
+                            <span dir="rtl" style="margin-left:20px;">توقيع العميل</span>
+                        </strong>
+                        <br/>
+                        <br/>
+                        <br/>
+                        _______________________
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </template>
+    <!-- ============================================================
+         STRIPED
+         Same location as your Photon implementation
+         ============================================================ -->
+    <template id="signature_external_layout_striped"
+              inherit_id="web.external_layout_striped">
+        <xpath expr="//div[contains(@t-attf-class, 'article o_report_layout_striped')]"
+               position="inside">
+            <t t-call="dekad_additional_features.report_signature_section"/>
+        </xpath>
+    </template>
+    <!-- ============================================================
+         BOXED
+         ============================================================ -->
+    <template id="signature_external_layout_boxed"
+              inherit_id="web.external_layout_boxed">
+        <xpath expr="//div[contains(@t-attf-class, 'article o_report_layout_boxed')]"
+               position="inside">
+            <t t-call="dekad_additional_features.report_signature_section"/>
+        </xpath>
+    </template>
+    <!-- ============================================================
+         BOLD
+         ============================================================ -->
+    <template id="signature_external_layout_bold"
+              inherit_id="web.external_layout_bold">
+        <xpath expr="//div[contains(@t-attf-class, 'article o_report_layout_bold')]"
+               position="inside">
+            <t t-call="dekad_additional_features.report_signature_section"/>
+        </xpath>
+    </template>
+    <!-- ============================================================
+         STANDARD / LIGHT
+         ============================================================ -->
+    <template id="signature_external_layout_standard"
+              inherit_id="web.external_layout_standard">
+        <xpath expr="//div[contains(@t-attf-class, 'article o_report_layout_standard')]"
+               position="inside">
+            <t t-call="dekad_additional_features.report_signature_section"/>
+        </xpath>
+    </template>
+    <!-- ============================================================
+         FOLDER
+         ============================================================ -->
+    <template id="signature_external_layout_folder"
+              inherit_id="web.external_layout_folder">
+        <xpath expr="//div[contains(@t-attf-class, 'article o_report_layout_folder')]"
+               position="inside">
+            <t t-call="dekad_additional_features.report_signature_section"/>
+        </xpath>
+    </template>
+    <!-- ============================================================
+         WAVE
+         ============================================================ -->
+    <template id="signature_external_layout_wave"
+              inherit_id="web.external_layout_wave">
+        <xpath expr="//div[contains(@t-attf-class, 'article o_report_layout_wave')]"
+               position="inside">
+            <t t-call="dekad_additional_features.report_signature_section"/>
+        </xpath>
+    </template>
+    <!-- ============================================================
+         BUBBLE
+         ============================================================ -->
+    <template id="signature_external_layout_bubble"
+              inherit_id="web.external_layout_bubble">
+        <xpath expr="//div[contains(@t-attf-class, 'article o_report_layout_bubble')]"
+               position="inside">
+            <t t-call="dekad_additional_features.report_signature_section"/>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Action لعرض طلبات المبادرة فقط -->
+    <record id="action_initiative_leads" model="ir.actions.act_window">
+        <field name="name">طلبات مبادرة المرأة الإماراتية</field>
+        <field name="res_model">crm.lead</field>
+        <field name="view_mode">list,form,kanban</field>
+        <field name="domain">[('tag_ids.name', '=', 'مبادرة المرأة الإماراتية')]</field>
+        <field name="context">{'default_type': 'lead'}</field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem
+        id="menu_initiative_leads"
+        name="طلبات المبادرة"
+        action="action_initiative_leads"
+        parent="crm.crm_menu_root"
+        sequence="20"/>
+</odoo>

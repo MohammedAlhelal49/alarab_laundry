@@ -1,0 +1,171 @@
+<odoo>
+
+  <record id="view_account_analytic_account_form_real_estate" model="ir.ui.view">
+    <field name="name">account.analytic.account.form.inherit.real.estate</field>
+    <field name="model">account.analytic.account</field>
+    <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+    <field name="arch" type="xml">
+
+        <xpath expr="//div[@name='button_box']" position="inside">
+            <button type="object"
+                    name="action_open_property_rental_events"
+                    class="oe_stat_button"
+                    context="{'search_default_property_id': id}"
+                    domain="[('property_id', '=', id)]"
+                    invisible="not show_rental_event_button"
+                    icon="fa-calendar">
+                <div class="o_form_field o_stat_info">
+                    <span class="o_stat_value">
+                        <field name="rental_event_count" widget="statinfo"/>
+                    </span>
+                </div>
+            </button>
+        </xpath>
+
+      <xpath expr="//field[@name='partner_id']" position="attributes">
+        <attribute name="invisible">context.get('property_mode') == True</attribute>
+      </xpath>
+
+      <!-- Hide code -->
+      <xpath expr="//field[@name='code']" position="attributes">
+        <attribute name="invisible">context.get('property_mode') == True</attribute>
+      </xpath>
+
+      <!-- Hide company_id -->
+        <xpath expr="//group[@name='main']//field[@name='company_id']" position="attributes">
+            <attribute name="invisible">context.get('property_mode') == True</attribute>
+        </xpath>
+
+      <!-- Hide currency_id -->
+      <xpath expr="//field[@name='currency_id']" position="attributes">
+        <attribute name="invisible">context.get('property_mode') == True</attribute>
+      </xpath>
+        <xpath expr="//field[@name='plan_id']" position="attributes">
+            <attribute name="invisible">context.get('property_mode') == True</attribute>
+        </xpath>
+
+
+
+      <!-- Remove the default oe_title layout -->
+        <xpath expr="//div[@class='oe_title']" position="attributes">
+            <attribute name="invisible">context.get('property_mode') == True</attribute>
+        </xpath>
+        <!-- Replace the form title and inject custom content -->
+      <xpath expr="//sheet" position="inside" invisible="context.get('property_mode') != True">
+
+<!--        <div class="oe_button_box" name="button_box">-->
+<!--            <button class="oe_stat_button" type="object" name="action_view_invoice" icon="fa-pencil-square-o" invisible="invoice_count == 0">-->
+<!--                <field string="Invoices" name="invoice_count" widget="statinfo"/>-->
+<!--            </button>-->
+<!--            <button class="oe_stat_button" type="object" name="action_view_vendor_bill" icon="fa-file-text-o" invisible="vendor_bill_count == 0">-->
+<!--                <field string="Vendor Bills" name="vendor_bill_count" widget="statinfo"/>-->
+<!--            </button>-->
+<!--            <button class="oe_stat_button" type="object" name="subscriptions_action" icon="fa-book" invisible="subscription_count == 0">-->
+<!--                <field string="Rental Contracts" name="subscription_count" widget="statinfo"/>-->
+<!--            </button>-->
+<!--        </div>-->
+
+        <!-- Property Image and Title -->
+        <field name="property_image" widget="image" class="oe_avatar ml-3 mr-3" invisible="context.get('property_mode') != True" options="{'size': [0, 180]}"/>
+        <xpath expr="//sheet" position="inside">
+            <widget name="web_ribbon"
+                title="SOLD"
+                bg_color="bg-danger"
+                text_color="text-white"
+                invisible="not is_property_sold"/>
+
+            <div class="oe_title" invisible="context.get('property_mode') != True">
+                <label for="name" string="Property"/>
+                <h1>
+                    <field name="name" class="oe_inline" readonly="is_property_sold" placeholder="e.g. Apartment Oxford Street"/>
+                </h1>
+            </div>
+        </xpath>
+
+
+        <!-- Property Details -->
+        <group invisible="context.get('property_mode') != True" >
+          <group >
+              <field name="is_property_sold" invisible="1"/>
+              <field name="offer_type" widget = "radio"  options="{'horizontal': True}" invisible="not show_offer_type" readonly="is_property_sold"/>
+              <field name="rental_contract_ids_m2m" widget="many2many_tags" readonly="1" options="{'no_create': True}"/>
+              <field name="product_ids" widget="many2many_tags" required="is_property" readonly="is_property_sold"/>
+            <field name="property_building_id" required="is_property" readonly="is_property_sold"/>
+            <field name="floor_no" readonly="is_property_sold"/>
+            <field name="property_address" required="is_property" readonly="is_property_sold"/>
+              <field name="invoice_status" readonly="is_property_sold"/>
+
+
+          </group>
+          <group>
+            <field name="currency_id" groups="base.group_multi_currency"/>
+              <field name="plan_id" readonly="is_property_sold"/>
+              <field name="property_type" required="is_property" readonly="is_property_sold" />
+              <label for="apartment_area" readonly="is_property_sold" string="Apartment Area"/>
+                <div>
+                    <field name="apartment_area" style="width: 6rem;"/>
+                    <span style="margin: 0 0.5rem;">sqm</span>
+                </div>
+              <field name="apartment_orientation_ids" widget="many2many_tags" readonly="is_property_sold"/>
+              <field name="bedroom_no" readonly="is_property_sold"/>
+              <field name="bathroom_no" readonly="is_property_sold" />
+              <field name="furnished" readonly="is_property_sold" />
+<!--            <field name="is_published" readonly="is_property_sold" />-->
+
+          </group>
+        </group>
+
+        <!-- Notebook Tabs -->
+        <notebook invisible="context.get('property_mode') != True">
+          <page string="Description">
+            <field name="website_description" placeholder="Describe your property here"/>
+          </page>
+          <page string="Gallery">
+            <field name="property_attachment_image_ids" widget="many2many_binary" options="{'accepted_file_extensions': 'image/*'}" string="Add Images"/>
+          </page>
+          <page string="Documents">
+            <field name="property_attachment_doc_ids" widget="many2many_binary"/>
+          </page>
+          <page string="Meter Readings">
+            <field name="property_meter_reading_ids" context="{'default_account_analytic_account_id': id}">
+              <list editable="bottom">
+                <field name="meter_id" required="1"/>
+                <field name="date"/>
+                <field name="quantity"/>
+                <field name="usage" optional="show"/>
+                <field name="description" optional="show"/>
+                <field name="invoice_id" optional="hide"/>
+              </list>
+            </field>
+          </page>
+
+          <page string="Rental Events" invisible="offer_type == 'sale'">
+            <field name="rental_event_ids" context="{'default_property_id': id}">
+                <list editable="bottom">
+                    <field name="start_date" readonly="1"/>
+                    <field name="end_date" readonly="1"/>
+                    <field name="cost"/>
+                    <field name="description"/>
+                </list>
+            </field>
+          </page>
+
+        </notebook>
+
+      </xpath>
+
+      <!-- Header Button -->
+    <xpath expr="//sheet" position="before">
+      <header>
+        <button name="action_create_invoice"
+                type="object"
+                string="Create Invoice"
+                class="btn-primary"
+                invisible="not rental_contract_id or invoice_status != 'to_invoice'"/>
+      </header>
+    </xpath>
+
+
+    </field>
+  </record>
+</odoo>

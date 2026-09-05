@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem id="menu_de_admission_root" name="Admissions"
+                  sequence="90"
+                  web_icon="dekad_admission,static/description/icon.png"
+                  groups="dekad_admission.group_de_admission"
+        />
+
+        <menuitem id="menu_de_admission" name="Admissions"
+                  sequence="10"
+                  parent="menu_de_admission_root"
+                  action="act_open_de_admission_view"/>
+        <menuitem id="menu_de_multi_admission_wizard" name="Multi students admission"
+                  sequence="20"
+                  parent="menu_de_admission_root"
+                  action="act_open_de_multi_admission_wizard_view"/>
+
+
+        <menuitem id="menu_de_admission_analysis_wizard" name="Admission Report"
+                  sequence="30"
+                  parent="menu_de_admission_root"
+                  action="act_open_de_admission_analysis_wizard_view"/>
+
+    </data>
+</odoo>

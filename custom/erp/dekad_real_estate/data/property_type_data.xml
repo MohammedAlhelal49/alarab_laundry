@@ -1,0 +1,13 @@
+<odoo>
+    <record id="property_type_1_bedroom" model="property.type">
+        <field name="name">1 Bedroom</field>
+    </record>
+
+    <record id="property_type_2_bedrooms" model="property.type">
+        <field name="name">2 Bedrooms</field>
+    </record>
+
+    <record id="property_type_3_bedrooms" model="property.type">
+        <field name="name">3 Bedrooms</field>
+    </record>
+</odoo>

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ========================================================= -->
+    <!-- LIGHT / STANDARD                                          -->
+    <!-- ========================================================= -->
+
+    <template id="external_layout_standard_header_image"
+              inherit_id="web.external_layout_standard">
+
+        <!-- ORIGINAL HEADER -->
+        <xpath expr="//div[starts-with(@t-attf-class, 'header o_company_')]"
+               position="attributes">
+            <attribute name="t-if">not company.header_image</attribute>
+        </xpath>
+
+        <!-- CUSTOM HEADER -->
+        <xpath expr="//div[starts-with(@t-attf-class, 'header o_company_')]"
+               position="before">
+            <div t-if="company.header_image"
+                 t-attf-class="header o_company_#{company.id}_layout">
+                <img t-att-src="image_data_uri(company.header_image)"
+                     style="width: 100%; height: auto; display: block;"
+                     alt="Header"/>
+            </div>
+        </xpath>
+
+
+        <!-- ORIGINAL FOOTER -->
+        <xpath expr="//div[starts-with(@t-attf-class, 'footer o_company_')]"
+               position="attributes">
+            <attribute name="t-if">not company.footer_image</attribute>
+        </xpath>
+
+        <!-- CUSTOM FOOTER -->
+        <xpath expr="//div[starts-with(@t-attf-class, 'footer o_company_')]"
+               position="before">
+            <div t-if="company.footer_image"
+                 t-attf-class="footer o_company_#{company.id}_layout {{report_type != 'pdf' and 'mt-auto'}}">
+                <img t-att-src="image_data_uri(company.footer_image)"
+                     style="width: 100%; height: auto; display: block;"
+                     alt="Footer"/>
+            </div>
+        </xpath>
+
+    </template>
+
+
+    <!-- ========================================================= -->
+    <!-- BOXED                                                     -->
+    <!-- ========================================================= -->
+
+    <template id="external_layout_boxed_header_image"
+              inherit_id="web.external_layout_boxed">
+
+        <xpath expr="//div[starts-with(@t-attf-class, 'header o_company_')]"
+               position="attributes">
+            <attribute name="t-if">not company.header_image</attribute>
+        </xpath>
+
+        <xpath expr="//div[starts-with(@t-attf-class, 'header o_company_')]"
+               position="before">
+            <div t-if="company.header_image"
+                 t-attf-class="header o_company_#{company.id}_layout">
+                <img t-att-src="image_data_uri(company.header_image)"
+                     style="width: 100%; height: auto; display: block;"
+                     alt="Header"/>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[starts-with(@t-attf-class, 'footer o_company_')]"
+               position="attributes">
+            <attribute name="t-if">not company.footer_image</attribute>
+        </xpath>
+
+        <xpath expr="//div[starts-with(@t-attf-class, 'footer o_company_')]"
+               position="before">
+            <div t-if="company.footer_image"
+                 t-attf-class="footer o_company_#{company.id}_layout {{report_type != 'pdf' and 'mt-auto'}}">
+                <img t-att-src="image_data_uri(company.footer_image)"
+                     style="width: 100%; height: auto; display: block;"
+                     alt="Footer"/>
+            </div>
+        </xpath>
+
+    </template>
+
+
+    <!-- ========================================================= -->
+    <!-- BOLD                                                      -->
+    <!-- ========================================================= -->
+
+    <template id="external_layout_bold_header_image"
+              inherit_id="web.external_layout_bold">
+
+        <xpath expr="//div[starts-with(@t-attf-class, 'header o_company_')]"
+               position="attributes">
+            <attribute name="t-if">not company.header_image</attribute>
+        </xpath>
+
+        <xpath expr="//div[starts-with(@t-attf-class, 'header o_company_')]"
+               position="before">
+            <div t-if="company.header_image"
+                 t-attf-class="header o_company_#{company.id}_layout">
+                <img t-att-src="image_data_uri(company.header_image)"
+                     style="width: 100%; height: auto; display: block;"
+                     alt="Header"/>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[starts-with(@t-attf-class, 'footer o_company_')]"
+               position="attributes">
+            <attribute name="t-if">not company.footer_image</attribute>
+        </xpath>
+
+        <xpath expr="//div[starts-with(@t-attf-class, 'footer o_company_')]"
+               position="before">
+            <div t-if="company.footer_image"
+                 t-attf-class="footer o_company_#{company.id}_layout {{report_type != 'pdf' and 'mt-auto'}}">
+                <img t-att-src="image_data_uri(company.footer_image)"
+                     style="width: 100%; height: auto; display: block;"
+                     alt="Footer"/>
+            </div>
+        </xpath>
+
+    </template>
+
+
+    <!-- ========================================================= -->
+    <!-- STRIPED                                                   -->
+    <!-- Note: Striped has company class before "header"           -->
+    <!-- ========================================================= -->
+
+    <template id="external_layout_striped_header_image"
+              inherit_id="web.external_layout_striped">
+
+        <xpath expr="//div[contains(@t-attf-class, 'header') and contains(@t-attf-class, 'o_company_')]"
+               position="attributes">
+            <attribute name="t-if">not company.header_image</attribute>
+        </xpath>
+
+        <xpath expr="//div[contains(@t-attf-class, 'header') and contains(@t-attf-class, 'o_company_')]"
+               position="before">
+            <div t-if="company.header_image"
+                 t-attf-class="o_company_#{company.id}_layout header">
+                <img t-att-src="image_data_uri(company.header_image)"
+                     style="width: 100%; height: auto; display: block;"
+                     alt="Header"/>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[contains(@t-attf-class, 'footer') and contains(@t-attf-class, 'o_company_')]"
+               position="attributes">
+            <attribute name="t-if">not company.footer_image</attribute>
+        </xpath>
+
+        <xpath expr="//div[contains(@t-attf-class, 'footer') and contains(@t-attf-class, 'o_company_')]"
+               position="before">
+            <div t-if="company.footer_image"
+                 t-attf-class="footer o_company_#{company.id}_layout {{report_type != 'pdf' and 'mt-auto'}}">
+                <img t-att-src="image_data_uri(company.footer_image)"
+                     style="width: 100%; height: auto; display: block;"
+                     alt="Footer"/>
+            </div>
+        </xpath>
+
+    </template>
+
+
+    <!-- ========================================================= -->
+    <!-- FOLDER                                                    -->
+    <!-- ========================================================= -->
+
+    <template id="external_layout_folder_header_image"
+              inherit_id="web.external_layout_folder">
+
+        <xpath expr="//div[contains(@t-attf-class, 'header') and contains(@t-attf-class, 'o_company_')]"
+               position="attributes">
+            <attribute name="t-if">not company.header_image</attribute>
+        </xpath>
+
+        <xpath expr="//div[contains(@t-attf-class, 'header') and contains(@t-attf-class, 'o_company_')]"
+               position="before">
+            <div t-if="company.header_image"
+                 t-attf-class="header o_company_#{company.id}_layout">
+                <img t-att-src="image_data_uri(company.header_image)"
+                     style="width: 100%; height: auto; display: block;"
+                     alt="Header"/>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[contains(@t-attf-class, 'footer') and contains(@t-attf-class, 'o_company_')]"
+               position="attributes">
+            <attribute name="t-if">not company.footer_image</attribute>
+        </xpath>
+
+        <xpath expr="//div[contains(@t-attf-class, 'footer') and contains(@t-attf-class, 'o_company_')]"
+               position="before">
+            <div t-if="company.footer_image"
+                 t-attf-class="footer o_company_#{company.id}_layout {{report_type != 'pdf' and 'mt-auto'}}">
+                <img t-att-src="image_data_uri(company.footer_image)"
+                     style="width: 100%; height: auto; display: block;"
+                     alt="Footer"/>
+            </div>
+        </xpath>
+
+    </template>
+
+
+    <!-- ========================================================= -->
+    <!-- WAVE                                                      -->
+    <!-- ========================================================= -->
+
+    <template id="external_layout_wave_header_image"
+              inherit_id="web.external_layout_wave">
+
+        <xpath expr="//div[contains(@t-attf-class, 'header') and contains(@t-attf-class, 'o_company_')]"
+               position="attributes">
+            <attribute name="t-if">not company.header_image</attribute>
+        </xpath>
+
+        <xpath expr="//div[contains(@t-attf-class, 'header') and contains(@t-attf-class, 'o_company_')]"
+               position="before">
+            <div t-if="company.header_image"
+                 t-attf-class="header o_company_#{company.id}_layout">
+                <img t-att-src="image_data_uri(company.header_image)"
+                     style="width: 100%; height: auto; display: block;"
+                     alt="Header"/>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[contains(@t-attf-class, 'footer') and contains(@t-attf-class, 'o_company_')]"
+               position="attributes">
+            <attribute name="t-if">not company.footer_image</attribute>
+        </xpath>
+
+        <xpath expr="//div[contains(@t-attf-class, 'footer') and contains(@t-attf-class, 'o_company_')]"
+               position="before">
+            <div t-if="company.footer_image"
+                 t-attf-class="footer o_company_#{company.id}_layout {{report_type != 'pdf' and 'mt-auto'}}">
+                <img t-att-src="image_data_uri(company.footer_image)"
+                     style="width: 100%; height: auto; display: block;"
+                     alt="Footer"/>
+            </div>
+        </xpath>
+
+    </template>
+
+
+    <!-- ========================================================= -->
+    <!-- BUBBLE                                                    -->
+    <!-- ========================================================= -->
+
+    <template id="external_layout_bubble_header_image"
+              inherit_id="web.external_layout_bubble">
+
+        <xpath expr="//div[contains(@t-attf-class, 'header') and contains(@t-attf-class, 'o_company_')]"
+               position="attributes">
+            <attribute name="t-if">not company.header_image</attribute>
+        </xpath>
+
+        <xpath expr="//div[contains(@t-attf-class, 'header') and contains(@t-attf-class, 'o_company_')]"
+               position="before">
+            <div t-if="company.header_image"
+                 t-attf-class="header o_company_#{company.id}_layout">
+                <img t-att-src="image_data_uri(company.header_image)"
+                     style="width: 100%; height: auto; display: block;"
+                     alt="Header"/>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[contains(@t-attf-class, 'footer') and contains(@t-attf-class, 'o_company_')]"
+               position="attributes">
+            <attribute name="t-if">not company.footer_image</attribute>
+        </xpath>
+
+        <xpath expr="//div[contains(@t-attf-class, 'footer') and contains(@t-attf-class, 'o_company_')]"
+               position="before">
+            <div t-if="company.footer_image"
+                 t-attf-class="footer o_company_#{company.id}_layout {{report_type != 'pdf' and 'mt-auto'}}">
+                <img t-att-src="image_data_uri(company.footer_image)"
+                     style="width: 100%; height: auto; display: block;"
+                     alt="Footer"/>
+            </div>
+        </xpath>
+
+    </template>
+
+    <!-- ========================================================= -->
+    <!-- BILINGUAL / ARABIC - ENGLISH                              -->
+    <!-- ========================================================= -->
+
+    <template id="external_layout_bilingual_header_image"
+              inherit_id="external_layout_bilingual">
+
+        <!-- ORIGINAL BILINGUAL HEADER -->
+        <xpath expr="//div[contains(@t-attf-class, 'header') and contains(@t-attf-class, 'o_bilingual_report_header')]"
+               position="attributes">
+            <attribute name="t-if">not company.header_image</attribute>
+        </xpath>
+
+        <!-- CUSTOM HEADER IMAGE -->
+        <xpath expr="//div[contains(@t-attf-class, 'header') and contains(@t-attf-class, 'o_bilingual_report_header')]"
+               position="before">
+            <div t-if="company.header_image"
+                 t-attf-class="header o_company_#{company.id}_layout">
+                <img t-att-src="image_data_uri(company.header_image)"
+                     style="width: 100%; height: auto; display: block;"
+                     alt="Header"/>
+            </div>
+        </xpath>
+
+        <!-- ORIGINAL BILINGUAL FOOTER -->
+        <xpath expr="//div[contains(@t-attf-class, 'footer') and contains(@t-attf-class, 'o_bilingual_report_footer')]"
+               position="attributes">
+            <attribute name="t-if">not company.footer_image</attribute>
+        </xpath>
+
+        <!-- CUSTOM FOOTER IMAGE -->
+        <xpath expr="//div[contains(@t-attf-class, 'footer') and contains(@t-attf-class, 'o_bilingual_report_footer')]"
+               position="before">
+            <div t-if="company.footer_image"
+                 t-attf-class="footer o_company_#{company.id}_layout {{report_type != 'pdf' and 'mt-auto'}}">
+                <img t-att-src="image_data_uri(company.footer_image)"
+                     style="width: 100%; height: auto; display: block;"
+                     alt="Footer"/>
+            </div>
+        </xpath>
+
+    </template>
+
+</odoo>

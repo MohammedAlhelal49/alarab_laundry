@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="paperformat_tb_rental_summary" model="report.paperformat">
+        <field name="name">Ten Bridge - Rental Summary No Margin</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">4</field>
+        <field name="margin_bottom">4</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_report_tb_rental_contract_summary" model="ir.actions.report">
+        <field name="name">Rental Contract Registration Summary</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ten_bridge_implementation.report_tb_rental_contract_summary_document</field>
+        <field name="report_file">ten_bridge_implementation.report_tb_rental_contract_summary_document</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="ten_bridge_implementation.paperformat_tb_rental_summary"/>
+    </record>
+
+    <template id="report_tb_rental_contract_summary_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.basic_layout">
+                    <div class="page" style="font-family: Arial, sans-serif; direction: rtl; font-size: 12px;">
+
+                        <!-- ============ HEADER ============ -->
+                        <table style="width:100%; border-collapse:collapse; border:2px solid #000; margin-bottom:0;">
+                            <tr>
+                                <td colspan="5" style="border:1px solid #000; text-align:center; padding:8px; font-weight:bold; font-size:18pt;">
+                                    <span t-esc="doc.company_id.name or 'INTERNATIONAL CONTINENTAL REAL ESTATE'"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px 8px; width:15%; text-align:center;">
+                                    <strong>التاريخ:</strong>
+                                    <span t-esc="(doc.create_date and doc.create_date.date()) or ''"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px; width:15%; text-align:center; color:red; font-weight:bold;">
+                                    تجديد
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px; width:45%; text-align:center; font-weight:bold; font-size:14pt;">
+                                    ملخص تسجيل عقد ايجار
+                                </td>
+
+                                <td style="border:1px solid #000; padding:4px 8px; width:15%; text-align:center;">
+                                    <span t-esc="doc.name"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px; width:10%; text-align:center;">
+                                    <strong>.No</strong>
+                                </td>
+
+                            </tr>
+                        </table>
+
+                        <table style="width:100%; border-collapse:collapse; margin-top:0;">
+                            <tr style="background-color:#e9ecef;">
+                                <td colspan="4" style="border:1px solid #000; padding:4px 8px; text-align:center; font-weight:bold;">
+                                    تفاصيل الموقع
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px 8px; text-align:center; width:25%;">البلدية</td>
+                                <td style="border:1px solid #000; padding:4px 8px; text-align:center; width:25%;">
+                                    <span t-esc="doc.account_analytic_account_id.property_building_id.municipality or ''"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px; text-align:center; width:25%;">المنطقة</td>
+                                <td style="border:1px solid #000; padding:4px 8px; text-align:center; width:25%;">
+                                    <span t-esc="doc.account_analytic_account_id.property_building_id.area or ''"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px 8px; text-align:center;">الحوض</td>
+                                <td style="border:1px solid #000; padding:4px 8px; text-align:center;">
+                                    <span t-esc="doc.account_analytic_account_id.basin or ''"/>
+
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px; text-align:center;">القطعة</td>
+                                <td style="border:1px solid #000; padding:4px 8px; text-align:center;">
+                                    <span t-esc="doc.account_analytic_account_id.plot_no or ''"/>
+
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- ============ PROPERTY DETAILS ============ -->
+                        <table style="width:100%; border-collapse:collapse;">
+                            <tr style="background-color:#e9ecef;">
+                                <td colspan="2" style="border:1px solid #000; padding:4px 8px; text-align:center; font-weight:bold;">
+                                    تفاصيل العقار
+                                </td>
+                            </tr>
+                            <tr>
+                               <td style="border:1px solid #000; padding:4px 8px; width:50%;">
+                                    <strong>رقم تعريف العقار:</strong>
+                                    <span t-esc="doc.account_analytic_account_id.property_reference or ''"/>
+                                </td>
+
+                                <td style="border:1px solid #000; padding:4px 8px; width:50%;">
+                                    <strong>استخدام العقار:</strong>
+                                    <span t-esc="doc.account_analytic_account_id.property_usage_id.name or ''"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>رقم تعريف الوحدة:</strong>
+                                    <span t-esc="doc.account_analytic_account_id.unit_reference or ''"/>
+
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>نوع الوحدة:</strong>
+                                    <span t-esc="doc.account_analytic_account_id.property_type or ''"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>الرمز العقاري:</strong>
+                                    <span t-esc="doc.account_analytic_account_id.property_code or ''"/>
+
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>اسم الوحدة:</strong>
+                                    <span t-esc="doc.account_analytic_account_id.name or ''"/>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>رقم العقد السابق (إن وجد):</strong>
+                                    <span t-esc="doc.previous_contract_name or ''"/>
+
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>مساحة الوحدة:</strong>
+                                    <span t-esc="doc.account_analytic_account_id.apartment_area or ''"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- ============ TENANT DETAILS ============ -->
+                        <table style="width:100%; border-collapse:collapse;">
+                            <tr style="background-color:#e9ecef;">
+                                <td colspan="2" style="border:1px solid #000; padding:4px 8px; text-align:center; font-weight:bold;">
+                                    تفاصيل المستأجر
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>اسم المستأجر - بالعربي:</strong>
+                                    <span t-esc="doc.partner_id.name_ar or ''"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>اسم المخول:</strong>
+                                    <span t-esc="doc.partner_id.child_ids.filtered(lambda c: c.type == 'contact')[:1].name or ''"/>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>اسم المستأجر - بالإنجليزي:</strong>
+                                    <span t-esc="doc.partner_id.name or ''"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>رقم هوية المخول:</strong>
+                                    <span t-esc="doc.partner_id.child_ids.filtered(lambda c: c.type == 'contact')[:1].id_number or ''"/>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>رقم الرخصة:</strong>
+                                    <span t-esc="doc.partner_id.trade_license or ''"/>
+
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>الايميل:</strong>
+                                    <span t-esc="doc.partner_id.email or ''"/>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>رقم هوية المالك:</strong>
+                                    <span t-esc="doc.partner_id.id_number or ''"/>
+
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>رقم التواصل:</strong>
+                                    <span t-esc="doc.partner_id.mobile or doc.partner_id.phone or ''"/>
+
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- ============ CONTRACT DETAILS ============ -->
+                        <table style="width:100%; border-collapse:collapse;">
+                            <tr style="background-color:#e9ecef;">
+                                <td colspan="6" style="border:1px solid #000; padding:4px 8px; text-align:center; font-weight:bold;">
+                                    تفاصيل العقد
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px 8px; width:18%;">
+                                    <strong>قيمة الإيجار المتفق عليها:</strong>
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px; width:14%; text-align:center;">
+                                    <span t-field="doc.amount_total"
+                                          t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                </td>
+                                <td colspan="4" style="border:1px solid #000; padding:4px 8px; text-align:center;">
+                                    <span t-esc="doc.get_tb_amount_in_words()"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>مدة العقد:</strong>
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px; text-align:center;">
+                                    <span t-esc="doc.get_tb_rental_duration_label()"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>من تاريخ:</strong>
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px; text-align:center;">
+                                    <span t-esc="doc.rent_start_date or ''"/>
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px;">
+                                    <strong>الى تاريخ:</strong>
+                                </td>
+                                <td style="border:1px solid #000; padding:4px 8px; text-align:center;">
+                                    <span t-esc="doc.rent_end_date or ''"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- ============ RENT PAYMENT SCHEDULE ============ -->
+                         <h5 style="margin:8px 0 4px 0; text-align:center; background-color:#e9ecef; padding:4px; border:1px solid #000;">دفعات الإيجار</h5>
+                        <t t-set="rent_payments" t-value="doc.get_tb_rent_payment_lines()"/>
+                        <t t-set="row_counter" t-value="0"/>
+                        <table style="width:100%; border-collapse:collapse; font-size:11px; margin-bottom:8px;">
+                            <thead>
+                                <tr style="background-color:#f8f9fa;">
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">م</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">قيمة الإيجار</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">تاريخ الاستحقاق</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">نقدا / شيك</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">رقم الشيك / السند</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">اسم البنك</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">ملاحظات - اسم صاحب الشيك</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="rent_payments" t-as="pay">
+                                    <t t-set="row_counter" t-value="row_counter + 1"/>
+                                    <tr>
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            <t t-esc="row_counter"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            <t t-esc="'{:,.2f}'.format(pay['amount'])"/>
+                                            &#160;
+                                            <t t-esc="pay['currency']"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            <t t-if="pay['date']">
+                                                <t t-esc="pay['date'].strftime('%Y-%m-%d')"/>
+                                            </t>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            <t t-if="pay['type'] == 'payment'">نقداً</t>
+                                            <t t-else="">شيك</t>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            <t t-esc="pay['check_number']"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            <t t-esc="pay['bank']"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:4px;">
+                                            <t t-esc="pay['name']"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                                <t t-if="not rent_payments">
+                                    <tr>
+                                        <td colspan="7" style="border:1px solid #000; padding:6px; text-align:center;">
+                                            لا توجد دفعات مسجلة لهذا العقد
+                                        </td>
+                                    </tr>
+                                </t>
+                                <tr style="background-color:#f8f9fa; font-weight:bold;">
+                                    <td colspan="6" style="border:1px solid #000; padding:4px; text-align:left;">قيمة الإيجار الإجمالية</td>
+                                    <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                        <span t-field="doc.amount_total"
+                                              t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h5 style="margin:8px 0 4px 0; text-align:center; background-color:#e9ecef; padding:4px; border:1px solid #000;">التأمينات</h5>
+                        <t t-set="warranty_payments" t-value="doc.get_tb_warranty_payment_lines()"/>
+                        <t t-set="row_counter_w" t-value="0"/>
+                        <table style="width:100%; border-collapse:collapse; font-size:11px; margin-bottom:8px;">
+                            <thead>
+                                <tr style="background-color:#f8f9fa;">
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">م</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">قيمة التأمين</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">تاريخ الاستحقاق</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">نقدا / شيك</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">رقم الشيك / السند</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">اسم البنك</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">ملاحظات - اسم صاحب الشيك</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="warranty_payments" t-as="pay">
+                                    <t t-set="row_counter_w" t-value="row_counter_w + 1"/>
+                                    <tr>
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            <t t-esc="row_counter_w"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            <t t-esc="'{:,.2f}'.format(pay['amount'])"/>
+                                            &#160;<t t-esc="pay['currency']"/>
+                                        </td>fg
+                                         <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            <span t-esc="pay.due_date or ''"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">شيك</td>
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            <t t-esc="pay['check_number']"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            <t t-esc="pay['bank']"/>
+                                        </td>
+                                        <td style="border:1px solid #000; padding:4px;">
+                                            <t t-esc="pay['name']"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                                <t t-if="not warranty_payments">
+                                    <tr>
+                                        <td colspan="7" style="border:1px solid #000; padding:6px; text-align:center;">
+                                            لا توجد تأمينات مسجلة لهذا العقد
+                                        </td>
+                                    </tr>
+                                </t>
+                                <tr style="background-color:#f8f9fa; font-weight:bold;">
+                                    <td colspan="6" style="border:1px solid #000; padding:4px; text-align:left;">قيمة التأمين الإجمالية</td>
+                                    <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                        <t t-esc="'{:,.2f}'.format(sum(p['amount'] for p in warranty_payments))"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- ============ OTHER FEES ============ -->
+                        <!-- NOTE: dekad_real_estate has no "other fees" model yet,
+                             so this block is kept static, matching the original layout. -->
+                        <h5 style="margin:8px 0 4px 0; text-align:center; background-color:#e9ecef; padding:4px; border:1px solid #000;">رسوم اخرى</h5>
+                        <t t-set="other_charges" t-value="doc.other_charge_ids"/>
+                        <t t-set="row_counter_o" t-value="0"/>
+                        <table style="width:100%; border-collapse:collapse; font-size:11px; margin-bottom:8px;">
+                            <thead>
+                                <tr style="background-color:#f8f9fa;">
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">م</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">قيمة الرسم</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">تاريخ الاستحقاق</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">نقدا / شيك</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">رقم الشيك / السند</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">اسم البنك</th>
+                                    <th style="border:1px solid #000; padding:4px; text-align:center;">ملاحظات - اسم صاحب الشيك</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <t t-foreach="other_charges" t-as="charge">
+                                    <t t-set="row_counter_o" t-value="row_counter_o + 1"/>
+
+                                    <tr>
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            <t t-esc="row_counter_o"/>
+                                        </td>
+
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            <span t-field="charge.amount"
+                                                  t-options="{'widget': 'monetary', 'display_currency': charge.currency_id}"/>
+                                        </td>
+
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            <span t-esc="charge.due_date or ''"/>
+                                        </td>
+
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            <t t-esc="charge.payment_method_line_id.name or ''"/>
+                                        </td>
+
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            نقدا
+                                        </td>
+
+                                        <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                            <t t-esc="charge.journal_id.name or ''"/>
+                                        </td>
+
+                                        <td style="border:1px solid #000; padding:4px;">
+                                            <t t-esc="charge.remarks or ''"/>
+                                        </td>
+                                    </tr>
+
+                                </t>
+
+                                <t t-if="not other_charges">
+                                    <tr>
+                                        <td colspan="7" style="border:1px solid #000; padding:6px; text-align:center;">
+                                            لا توجد رسوم أخرى
+                                        </td>
+                                    </tr>
+                                </t>
+
+                                <tr style="background-color:#f8f9fa; font-weight:bold;">
+                                    <td colspan="6"
+                                        style="border:1px solid #000; padding:4px; text-align:left;">
+                                        قيمة الرسوم الإجمالية
+                                    </td>
+
+                                    <td style="border:1px solid #000; padding:4px; text-align:center;">
+                                        <span t-esc="'{:,.2f}'.format(sum(other_charges.mapped('amount')))"/>
+                                        <t t-esc="doc.currency_id.name"/>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                         <!-- ============ DISCOUNTS ============ -->
+                       <table style="width:100%; border-collapse:collapse; margin-bottom:0;">
+                            <tr>
+                                <td style="border:1px solid #000; border-bottom:0.5px solid #999;border-left:0.5px solid #999;  padding:4px 8px; width:25%; text-align:right; font-weight:bold; background-color:#e9ecef;">
+                                    الخصومات (إن وجد)
+                                </td>
+                                <td style="border:1px solid #000; text-align:center; border-bottom:0.5px solid #999;border-right:0.5px solid #999; height:28px; width:75%;">
+                                     <span t-esc="doc.discount_total"
+                                           t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                                <td style="border:1px solid #000;text-align:center; border-top:0.5px solid #999; height:22px;">
+                                    <span t-esc="doc.get_tb_discount_amount_in_words()"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"
+                                    style="border:1px solid #000;text-align:center; border-top:0.5px solid #999; height:22px;">
+                                    <span t-esc="doc.get_tb_discount_amount_in_words()"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- ============ STAFF COMMENT ============ -->
+                        <table style="width:100%; border-collapse:collapse; margin-bottom:0;">
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px 8px; width:25%; text-align:right; font-weight:bold; background-color:#e9ecef;">
+                                    تعليق الموظف المختص
+                                </td>
+                                <td style="border:1px solid #000;border-bottom:0.5px solid #999; height:28px; width:75%;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #000;padding:4px 8px; text-align:right;background-color:#e9ecef;height:40px;">
+                                    توقيع الموظف المختص
+                                </td>
+                                <td style="border:1px solid #000;border-top:0.5px solid #999; height:40px;"></td>
+                            </tr>
+                        </table>
+
+                        <!-- ============ MANAGER REMARKS ============ -->
+                        <table style="width:100%; border-collapse:collapse; margin-bottom:8px;">
+                            <tr>
+                                <td style="border:1px solid #000; padding:4px 8px; width:25%; text-align:right;background-color:#e9ecef; font-weight:bold; color:red;">
+                                    ملاحظات او توجيهات مدير<br/>ادارة العقارات
+                                </td>
+                                <td style="border:1px solid #000; height:40px; width:75%;"></td>
+                            </tr>
+                        </table>
+
+                        <!-- ============ ATTACHMENTS CHECKLIST ============ -->
+                        <t t-set="attachments" t-value="[
+                            'بيان تفصيل المستأجر',
+                            'عقد الايجار الموثق السابق',
+                            'رخصة تجارية',
+                            'هوية وجواز سفر المالك',
+                            'وكالة خاصة اعتماد توقيع',
+                            'هوية وجواز سفر واقامة المستأجر',
+                            'هوية وجواز سفر واقامة صاحب الشيكات',
+                            'رسالة تخفيض القيمة الايجارية',
+                            'سندات قبض الشيكات والنقدي',
+                            'صورة من شيك الضمان',
+                            'صورة من شيك الضمان'
+                        ]"/>
+
+                        <t t-set="right_list" t-value="attachments[:6]"/>
+                        <t t-set="left_list" t-value="attachments[6:]"/>
+
+                        <div style="page-break-inside: avoid; break-inside: avoid;">
+
+                            <table style="width:100%; border-collapse:collapse; margin-bottom:8px; direction:rtl;">
+
+                                <tr>
+                                    <td style="border:1px solid #000; border-bottom:0.5px solid #999;">
+                                    </td>
+                                    <td colspan="4"
+                                        style="border:1px solid #000;
+                                               text-align:center;
+                                               font-weight:bold;
+                                               background:#e9ecef;">
+                                        المرفقات لتسجيل عقد الايجار
+                                    </td>
+                                </tr>
+
+                                <t t-foreach="range(6)" t-as="i">
+
+                                    <tr>
+                                        <!-- Approval column (RIGHT SIDE) -->
+                                        <t t-if="i == 0">
+                                            <td rowspan="6"
+                                                style="border:1px solid #000;
+                                                       width:24%;
+                                                       text-align:center;
+                                                       vertical-align:top;
+                                                       border-top:0.5px solid #999;
+                                                       font-weight:bold;">
+                                                اعتماد مدير إدارة العقارات
+                                            </td>
+                                        </t>
+
+                                        <!-- Right list (1-6) -->
+                                        <td style="border:1px solid #000;padding:4px 8px;width:34%;">
+                                            <t t-if="i &lt; len(right_list)">
+                                                <t t-esc="(i + 1)"/>.
+                                                <t t-esc="right_list[i]"/>
+                                            </t>
+                                        </td>
+
+                                        <!-- Left list (7-11) -->
+                                        <td style="border:1px solid #000;padding:4px 8px;width:42%;">
+                                            <t t-if="i &lt; len(left_list)">
+                                                <t t-esc="(i + 7)"/>.
+                                                <t t-esc="left_list[i]"/>
+                                            </t>
+                                        </td>
+
+                                    </tr>
+
+                                </t>
+
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

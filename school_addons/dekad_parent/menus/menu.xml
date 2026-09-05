@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem id="menu_de_parent_root" name="Parents"
+                  sequence="80"
+                  web_icon="dekad_parent,static/description/icon.png"
+                  groups="dekad_parent.group_de_parent"
+        />
+        <menuitem id="menu_de_parent"
+                  name="Parents"
+                  parent="menu_de_parent_root"
+                  sequence="10"
+                  action="act_open_de_parent_view"
+        />
+        <menuitem id="menu_de_parent_configuration"
+                  name="Configuration"
+                  parent="menu_de_parent_root"
+                  sequence="20"/>
+        <menuitem id="menu_de_parent_relationship"
+                  name="Relations with student "
+                  parent="menu_de_parent_configuration"
+                  sequence="10"
+                  action="act_open_de_parent_relationship_view"/>
+
+
+    </data>
+</odoo>

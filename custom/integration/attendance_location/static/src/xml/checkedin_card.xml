@@ -1,0 +1,23 @@
+<templates id="attendance_location.checkin_card" xml:space="preserve">
+  <t t-name="attendance_location.CheckInPatientCard" owl="1">
+    <t t-if="props.login_employee.attendance_state == 'checked_in' and props.login_employee.patient_name">
+      <div class="col-md-2 col-sm-6 oh-payslip">
+        <div class="oh-card" style="background-color:#ffcb9a;">
+          <div class="oh-card-body">
+            <div class="stat-widget-one">
+              <div class="stat-icon" style="background:#ff7f50;">
+                <i class="fa fa-stethoscope"/>
+              </div>
+              <div class="stat-content">
+                <div class="stat-text">Checked-in Patient</div>
+                <div class="stat-digit">
+                  <t t-esc="props.login_employee.patient_name"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </t>
+  </t>
+</templates>

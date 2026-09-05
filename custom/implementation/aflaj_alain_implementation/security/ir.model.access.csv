@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_farm_type_internal_user,name_farm_type_internal_user,aflaj_alain_implementation.model_farm_type,base.group_user,1,0,0,0
+access_farm_type_system_user,name_farm_type_system_user,aflaj_alain_implementation.model_farm_type,base.group_system,1,1,1,1
+access_care_period_input_stock_manager,name_care_period_input_stock_manager,aflaj_alain_implementation.model_care_period_input,stock.group_stock_manager,1,1,1,1
+access_production_period_input_stock_manager,name_production_period_input_stock_manager,aflaj_alain_implementation.model_production_period_input,stock.group_stock_manager,1,1,1,1
+
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="report_invoice_document_bilingual_before_line_name"
+                  inherit_id="account.report_invoice_document">
+            <xpath expr="//t[@t-if=&quot;line.display_type == 'product'&quot;]//td[@name='account_invoice_line_name']"
+                   position="replace">
+                <td name="account_invoice_line_name">
+                    <!-- Check if Arabic language is installed -->
+                    <t t-set="ar_lang_installed" t-value="o._get_ar_lang_installed()"/>
+
+                    <!-- Safely get Arabic product name only if ar_001 is available -->
+                    <t t-if="ar_lang_installed">
+                        <t t-set="ar_name"
+                           t-value="(line.product_id and line.product_id.with_context(lang='ar_001').display_name) or ''"/>
+                    </t>
+                    <t t-else="">
+                        <t t-set="ar_name" t-value="''"/>
+                    </t>
+
+                    <!-- Compare Arabic and English names -->
+                    <t t-set="ar_same_name" t-value="ar_name == line.name"/>
+
+                    <!-- Display bilingual name only if different -->
+                    <t t-if="ar_name and not ar_same_name">
+                        <span t-if="line.name" t-field="line.name" t-options="{'widget': 'text'}"/> /
+                        <span t-out="ar_name"/>
+                    </t>
+                    <t t-else="">
+                        <span t-if="line.name" t-field="line.name" t-options="{'widget': 'text'}"/>
+                    </t>
+                </td>
+            </xpath>
+
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="de_assignment_type_1" model="de.assignment.type">
+            <field name="name">Project</field>
+        </record>
+
+        <record id="de_assignment_type_2" model="de.assignment.type">
+            <field name="name">Homework</field>
+        </record>
+
+
+        <record id="de_assignment_1" model="de.assignment">
+            <field name="assignment_type" ref="de_assignment_type_2"/>
+            <field name="classroom_id" ref="dekad_classroom.de_classroom_1"/>
+            <field name="teacher_id" ref="dekad_core.de_teacher_1"/>
+            <field name="subject_id" ref="dekad_core.de_subject_1"/>
+            <field name="student_ids" eval="[(6, 0, [ref('dekad_core.de_student_1')])]"/>
+            <field name="submission_date"
+                   eval="(DateTime.now() + relativedelta(days=10)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="mark">100</field>
+            <field name="description">Full description of the assignment</field>
+        </record>
+
+
+        <record id="de_assignment_2" model="de.assignment">
+            <field name="assignment_type" ref="de_assignment_type_2"/>
+            <field name="classroom_id" ref="dekad_classroom.de_classroom_4"/>
+            <field name="teacher_id" ref="dekad_core.de_teacher_2"/>
+            <field name="subject_id" ref="dekad_core.de_subject_2"/>
+            <field name="student_ids" eval="[(6, 0, [ref('dekad_core.de_student_2')])]"/>
+            <field name="submission_date"
+                   eval="(DateTime.now() + relativedelta(days=20)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="mark">100</field>
+            <field name="description">Full description of the assignment</field>
+        </record>
+
+        <function model="de.assignment" name="set_confirm" eval="[(ref('de_assignment_1'), ref('de_assignment_2'))]"/>
+
+
+        <record id="de_assignment_submission_1" model="de.assignment.submission">
+            <field name="assignment_id" ref="de_assignment_1"/>
+            <field name="student_id" ref="dekad_core.de_student_1"/>
+            <field name="description">Full assignment submission</field>
+        </record>
+
+        <record id="de_assignment_submission_2" model="de.assignment.submission">
+            <field name="assignment_id" ref="de_assignment_2"/>
+            <field name="student_id" ref="dekad_core.de_student_2"/>
+            <field name="description">Full assignment submission</field>
+        </record>
+
+        <function model="de.assignment" name="correct_submission" eval="[(ref('de_assignment_1'), ref('de_assignment_2'))]"/>
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="product_invoice_discount" model="product.product">
+        <field name="name">Discount</field>
+        <field name="type">service</field>
+        <field name="invoice_policy">order</field>
+        <field name="can_be_expensed">False</field>
+        <field name="active">False</field>
+    </record>
+</odoo>

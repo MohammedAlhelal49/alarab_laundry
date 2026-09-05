@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="menu_required_fields"
+        name="Dynamic Field Rules"
+        parent="base.menu_administration"
+        action="required_field_action"
+        sequence="1"
+        groups="dekad_additional_features.group_required_field_manager"/>
+
+</odoo>

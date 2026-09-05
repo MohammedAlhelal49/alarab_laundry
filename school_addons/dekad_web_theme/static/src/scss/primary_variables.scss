@@ -1,0 +1,77 @@
+//------------------------------------------------------------------------------
+// Presets - English School Theme
+//------------------------------------------------------------------------------
+
+$o-website-values-palettes: (
+    (
+        // Font - Professional English fonts
+        'font':                             'Poppins',
+        'headings-font':                    'Poppins',
+        'navbar-font':                      'Poppins',
+        'buttons-font':                     'Poppins',
+    ),
+);
+
+//------------------------------------------------------------------------------
+// Colors - School Theme
+//------------------------------------------------------------------------------
+
+$o-color-palettes: map-merge($o-color-palettes,
+    (
+         'base-1': (
+           'o-color-1': #1e88e5,  // Primary Blue - Professional and trustworthy
+           'o-color-2': #1565c0,  // Secondary Blue - Darker shade
+           'o-color-3': #f8f9fa,  // Light Gray - Background
+           'o-color-4': #ffffff,  // White
+           'o-color-5': #192335,  // Dark - Text
+
+           'o-cc1-text':                       #6b7385,
+           'o-cc1-headings':                   #192335,
+           'o-cc1-btn-primary':                'o-color-1',
+           'o-cc1-btn-secondary':              'o-color-2',
+           'o-cc1-link':                       #1e88e5,
+
+           'footer' : 1,
+           'copyright': 3,
+        ),
+    )
+);
+
+// Font configurations
+$o-theme-font-configs: (
+    'Poppins': (
+        'family': ('Poppins', sans-serif),
+        'url': 'Poppins:300,300i,400,400i,500,500i,600,600i,700,700i',
+    ),
+    'Roboto': (
+        'family': ('Roboto', sans-serif),
+        'url': 'Roboto:300,300i,400,400i,700,700i',
+    ),
+    'Open Sans': (
+        'family': ('Open Sans', sans-serif),
+        'url': 'Open+Sans:300,300i,400,400i,700,700i',
+    ),
+    'Source Sans Pro': (
+        'family': ('Source Sans Pro', sans-serif),
+        'url': 'Source+Sans+Pro:300,300i,400,400i,700,700i',
+    ),
+    'Raleway': (
+        'family': ('Raleway', sans-serif),
+        'url': 'Raleway:300,300i,400,400i,700,700i',
+    ),
+    'Inter': (
+        'family': ('Inter', sans-serif),
+        'url': 'Inter:300,300i,400,400i,600,600i,800,800i',
+    ),
+);
+
+// Responsive breakpoints
+$smlg-device: 'only screen and (max-width: 1199px)';
+$lgtolp-device: 'only screen and (min-width: 1200px)';
+$extra-device: 'only screen and (min-width: 1600px) and (max-width: 1919px)';
+$laptop-device: 'only screen and (min-width: 1200px) and (max-width: 1599px)';
+$lg-layout: 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$md-layout: 'only screen and (min-width: 768px) and (max-width: 991px)';
+$sm-layout: 'only screen and (max-width: 767px)';
+$large-mobile: 'only screen and (max-width: 575px)';
+$small-mobile: 'only screen and (max-width: 479px)';

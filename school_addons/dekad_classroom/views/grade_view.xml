@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_de_grade_form_classroom_inherited" model="ir.ui.view">
+            <field name="name">de.garde.form.classroom.inherited</field>
+            <field name="model">de.grade</field>
+            <field name="inherit_id" ref="dekad_core.view_de_grade_form"/>
+            <field name="priority" eval="3"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_show_classroom" type="object" class="oe_stat_button" icon="fa-file-text"
+                            groups="dekad_classroom.group_de_classroom">
+                        <field string="Classroom" name="classroom_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+
+                <xpath expr="//page[@name='admission']//group" position="inside">
+                    <field name="max_student_count" invisible="id == False"
+                           groups="dekad_classroom.group_de_classroom"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

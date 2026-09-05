@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_form_inherited" model="ir.ui.view">
+        <field name="name">view.picking.form.inherited</field>
+        <field name="model">stock.picking</field>
+        <field name="priority" eval="8"/>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='move_ids_without_package']//list//field[@name='location_id']"
+                   position="attributes">
+                <attribute name="column_invisible">parent.picking_type_code=='incoming'</attribute>
+                <attribute name="domain">[('id', 'in', allowed_location_ids)]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='move_ids_without_package']//list//field[@name='location_id']"
+                   position="after">
+                <field name="allowed_location_ids" column_invisible="True"/>
+            </xpath>
+            <xpath expr="//field[@name='move_ids_without_package']//list//field[@name='location_dest_id']"
+                   position="attributes">
+                <attribute name="column_invisible">parent.picking_type_code=='outgoing'</attribute>
+            </xpath>
+            <xpath expr="//field[@name='move_ids_without_package']//list//field[@name='quantity']" position="after">
+                <field name="analytic_account_id" readonly="state in ('done', 'cancel')" optional="hide"/>
+                <field name="unit_cost" optional="hide"/>
+                <field name="cost_amount" widget="monetary" optional="hide" sum="Total Cost amount"/>
+                <field name="currency_id" column_invisible="True"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

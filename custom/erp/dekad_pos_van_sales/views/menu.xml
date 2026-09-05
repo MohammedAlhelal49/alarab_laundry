@@ -1,0 +1,34 @@
+<odoo>
+    <!-- Define Actions First -->
+    <record id="action_assign_van" model="ir.actions.act_window">
+        <field name="name">Assign Van to Customers</field>
+        <field name="res_model">van.assignment</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_van_assignment_report" model="ir.actions.act_window">
+        <field name="name">Van Assignment Report</field>
+        <field name="res_model">van.assignment</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'create': False}</field>
+    </record>
+
+    <!-- Define Main Menus -->
+    <menuitem id="van_assignment_main_menu" name="Van Sales" sequence="50" web_icon="marketing_card,static/description/icon.png"/>
+
+    <!-- Configuration menu: Visible only to admin (group_system) -->
+    <menuitem id="van_assignment_config_menu" name="Configuration"
+              parent="van_assignment_main_menu" sequence="40"
+              groups="base.group_system"/>
+
+    <menuitem id="van_assignment_assign_menu" name="Assign Van to Customers"
+              parent="van_assignment_config_menu" action="action_assign_van" sequence="20"
+              groups="base.group_system"/>
+
+    <!-- Report Menu: Accessible to all -->
+    <menuitem id="van_assignment_report_menu" name="Reports"
+              parent="van_assignment_main_menu" sequence="10"/>
+
+    <menuitem id="van_assignment_report_submenu" name="Van Assignment Report"
+              parent="van_assignment_report_menu" action="action_van_assignment_report" sequence="30"/>
+</odoo>

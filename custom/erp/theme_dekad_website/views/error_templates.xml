@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="custom_500_page_content" name="500 Content">
+        <div class="vh-100 d-flex align-items-center justify-content-center"
+             style="background-color: #f8f9fa; min-height: 100vh;">
+            <div class="container text-center" style="font-family: sans-serif; padding-top: 10%;">
+                <h1 class="display-1 fw-bold text-danger mb-3" style="font-size: 6rem;">500</h1>
+                <h2 class="mb-4" style="color: #333;">Internal Server Error</h2>
+                <p class="text-muted mb-2" style="color: #6c757d;">
+                    Oops! Something went wrong on our end. Our technical team has been notified.
+                </p>
+                <p class="text-muted mb-4" style="color: #6c757d;">
+                    Please try again later or contact support if the issue persists.
+                </p>
+                <a href="/" class="btn btn-primary btn-lg"
+                   style="padding: 12px 24px; background: #0d6efd; color: white; text-decoration: none; border-radius: 6px; display: inline-block; margin-top: 20px;">
+                    Return to Homepage
+                </a>
+            </div>
+        </div>
+    </template>
+
+    <template id="custom_500_page_v2" name="Production 500 Page">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty vh-100 d-flex align-items-center justify-content-center">
+                <div class="container text-center">
+                    <h1 class="display-1 fw-bold text-danger mb-3" style="font-size: 6rem;">500</h1>
+                    <h2 class="mb-4" style="color: #333;">Internal Server Error</h2>
+                    <p class="text-muted mb-2">
+                        Oops! Something went wrong on our end. Our technical team has been notified.
+                    </p>
+                    <p class="text-muted mb-4">
+                        Please try again later or contact support if the issue persists.
+                    </p>
+                    <a href="/" class="btn btn-primary btn-lg">Return to Homepage</a>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="custom_404_page" inherit_id="http_routing.404">
+        <xpath expr="//div[@id='wrap']" position="replace">
+            <div id="wrap" class="oe_structure oe_empty vh-100 d-flex align-items-center justify-content-center">
+                <div class="container text-center">
+                    <h1 class="display-1 fw-bold text-muted mb-3">404</h1>
+                    <h2 class="mb-4">Page Not Found</h2>
+                    <p class="text-muted mb-4">
+                        The page you are looking for might have been removed, had its name changed, or is temporarily
+                        unavailable.
+                    </p>
+                    <a href="/" class="btn btn-primary btn-lg">Return to Homepage</a>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

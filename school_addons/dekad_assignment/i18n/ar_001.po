@@ -1,0 +1,801 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_assignment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-28 12:02+0000\n"
+"PO-Revision-Date: 2025-09-28 12:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_student__assignment_submission_ids
+msgid " Assignment Submissions(s)"
+msgstr " تسليمات الواجب (الواجبات)"
+
+#. module: dekad_assignment
+#: model:ir.model,name:dekad_assignment.model_de_teacher
+msgid " Teacher"
+msgstr " المعلم"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission_update
+msgid ""
+"<span class=\"btn btn-outline-info btn-sm ml-2 file-update-"
+"trigger\">Change</span>"
+msgstr "<span class=\"btn btn-outline-info btn-sm ml-2 file-update-trigger\">تغيير</span>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+msgid "<span class=\"clear-icon\">Clear</span>"
+msgstr "<span class=\"clear-icon\">مسح</span>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission_update
+msgid ""
+"<span class=\"file-size-alert\">Attachment size must be less than 2mb</span>"
+msgstr "<span class=\"file-size-alert\">يجب أن يكون حجم المرفق أقل من 2 ميجابايت</span>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission_update
+msgid "<span class=\"important-field-asterisk\">*</span>"
+msgstr "<span class=\"important-field-asterisk\">*</span>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_breadcrumbs
+msgid "<span>/</span>"
+msgstr "<span>/</span>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_show
+msgid "<strong class=\"\">Assignment type :</strong>"
+msgstr "<strong class=\"\">نوع الواجب :</strong>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_show
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+msgid "<strong class=\"\">Attachment :</strong>"
+msgstr "<strong class=\"\">المرفق :</strong>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_show
+msgid "<strong class=\"\">Classroom :</strong>"
+msgstr "<strong class=\"\">الفصل الدراسي :</strong>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_show
+msgid "<strong class=\"\">Created At :</strong>"
+msgstr "<strong class=\"\">تاريخ الإنشاء :</strong>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_show
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+msgid "<strong class=\"\">Mark :</strong>"
+msgstr "<strong class=\"\">الدرجة :</strong>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_show
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+msgid "<strong class=\"\">State :</strong>"
+msgstr "<strong class=\"\">الحالة :</strong>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_show
+msgid "<strong class=\"\">Submission date :</strong>"
+msgstr "<strong class=\"\">تاريخ التسليم :</strong>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+msgid "<strong class=\"\">Submitted at :</strong>"
+msgstr "<strong class=\"\">تم التسليم في :</strong>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_show
+msgid "<strong class=\"\">Teacher :</strong>"
+msgstr "<strong class=\"\">المعلم :</strong>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+msgid "<strong>Actions :</strong>"
+msgstr "<strong>الإجراءات :</strong>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+msgid "<strong>Correction Note :</strong>"
+msgstr "<strong>ملاحظة التصحيح :</strong>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_show
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+msgid "<strong>Description :</strong>"
+msgstr "<strong>الوصف :</strong>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_show
+msgid "<strong>Name :</strong>"
+msgstr "<strong>الاسم :</strong>"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_form_quick_create
+msgid "Accept"
+msgstr "قبول"
+
+#. module: dekad_assignment
+#: model:ir.model.fields.selection,name:dekad_assignment.selection__de_assignment_submission__state__accept
+msgid "Accepted"
+msgstr "مقبول"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__message_needaction
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment
+msgid "Actions"
+msgstr "الإجراءات"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: dekad_assignment
+#. odoo-python
+#: code:addons/dekad_assignment/controllers/main.py:0
+msgid "All"
+msgstr "الكل"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__student_ids
+msgid "Allocated To"
+msgstr "مخصص لـ"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_form
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: dekad_assignment
+#: model:ir.model,name:dekad_assignment.model_de_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__assignment_id
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_form
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_search
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_search
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_tree
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_grade_form_assignment_inherited
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_student_form_assignment_inherited
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_teacher_form_assignment_inherited
+msgid "Assignment"
+msgstr "الواجب"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_grade__assignment_count
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_student__assignment_count
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_teacher__assignment_count
+msgid "Assignment Count"
+msgstr "عدد الواجبات"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_graph
+msgid "Assignment Graph View"
+msgstr "عرض بياني للواجبات"
+
+#. module: dekad_assignment
+#: model:ir.model,name:dekad_assignment.model_de_assignment_submission
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_search
+msgid "Assignment Submission"
+msgstr "تسليم الواجب"
+
+#. module: dekad_assignment
+#: model:ir.model,name:dekad_assignment.model_de_assignment_type
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__assignment_type
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_search
+msgid "Assignment Type"
+msgstr "نوع الواجب"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_show
+msgid "Assignment full information"
+msgstr "معلومات الواجب الكاملة"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_form_quick_create
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_tree
+msgid "Assignment submission"
+msgstr "تسليم الواجب"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_type_search
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_type_tree
+msgid "Assignment type"
+msgstr "نوع الواجب"
+
+#. module: dekad_assignment
+#: model:ir.actions.act_window,name:dekad_assignment.act_open_de_assignment_type_view
+msgid "Assignment types"
+msgstr "أنواع الواجبات"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_classroom__assignment_ids
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_grade__assignment_ids
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_student__assignment_ids
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_subject__assignment_ids
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_teacher__assignment_ids
+msgid "Assignment(s)"
+msgstr "الواجب (الواجبات)"
+
+#. module: dekad_assignment
+#: model:ir.actions.act_window,name:dekad_assignment.act_open_de_assignment_view
+#: model:ir.ui.menu,name:dekad_assignment.menu_de_assignment
+#: model:ir.ui.menu,name:dekad_assignment.menu_de_assignment_root
+#: model:res.groups,name:dekad_assignment.group_de_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_breadcrumbs
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_grade_kanban_assignment_inherited
+msgid "Assignments"
+msgstr "الواجبات"
+
+#. module: dekad_assignment
+#: model:ir.actions.act_window,name:dekad_assignment.act_open_de_assignment_submission_view
+msgid "Assignments Submissions"
+msgstr "تسليمات الواجبات"
+
+#. module: dekad_assignment
+#: model:ir.ui.menu,name:dekad_assignment.menu_de_assignment_type
+msgid "Assignments Types"
+msgstr "أنواع الواجبات"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__file
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission_update
+msgid "Attachment"
+msgstr "المرفق"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__message_attachment_count
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_form
+msgid "Basic Information"
+msgstr "المعلومات الأساسية"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_form_quick_create
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: dekad_assignment
+#: model:ir.actions.server,name:dekad_assignment.cron_close_assignment_ir_actions_server
+msgid "Change the state of assignment to finish if submission date passes"
+msgstr "تغيير حالة الواجب إلى منتهي إذا انقضى تاريخ التسليم"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__is_assignment_user
+msgid "Check assignment user"
+msgstr "التحقق من مستخدم الواجب"
+
+#. module: dekad_assignment
+#: model:ir.model,name:dekad_assignment.model_de_classroom
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__classroom_id
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_search
+msgid "Classroom"
+msgstr "الفصل الدراسي"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__classroom_student_ids
+msgid "Classroom students"
+msgstr "طلاب الفصل"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission_update
+msgid "Clear"
+msgstr "مسح"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: dekad_assignment
+#: model:ir.ui.menu,name:dekad_assignment.menu_de_assignment_configuration
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_form
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_form_quick_create
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: dekad_assignment
+#: model:ir.model.fields.selection,name:dekad_assignment.selection__de_assignment__state__confirm
+#: model:ir.model.fields.selection,name:dekad_assignment.selection__de_assignment_submission__state__confirm
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__notice
+msgid "Correction Note"
+msgstr "ملاحظة التصحيح"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_form_quick_create
+msgid "Correction notice"
+msgstr "ملاحظة التصحيح"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+msgid "Create"
+msgstr "إنشاء"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__create_uid
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__create_uid
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_type__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__create_date
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__create_date
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_type__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+msgid "Delete"
+msgstr "حذف"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__description
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__description
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission_update
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_form
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_form_quick_create
+msgid "Description"
+msgstr "الوصف"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__display_name
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__display_name
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_type__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dekad_assignment
+#: model:ir.model.fields.selection,name:dekad_assignment.selection__de_assignment__state__draft
+#: model:ir.model.fields.selection,name:dekad_assignment.selection__de_assignment_submission__state__draft
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_form
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_form_quick_create
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: dekad_assignment
+#. odoo-python
+#: code:addons/dekad_assignment/controllers/main.py:0
+#: model:ir.model.fields.selection,name:dekad_assignment.selection__de_assignment__state__finish
+msgid "Finished"
+msgstr "منتهي"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__message_follower_ids
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__message_partner_ids
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (شركاء)"
+
+#. module: dekad_assignment
+#: model:ir.model,name:dekad_assignment.model_de_grade
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__grade_id
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_search
+msgid "Grade"
+msgstr "الصف"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_search
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_search
+msgid "Group By..."
+msgstr "تجميع حسب..."
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__has_message
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__id
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__id
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_type__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,help:dekad_assignment.field_de_assignment__message_needaction
+#: model:ir.model.fields,help:dekad_assignment.field_de_assignment_submission__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فهناك رسائل جديدة تحتاج إلى انتباهك."
+
+#. module: dekad_assignment
+#: model:ir.model.fields,help:dekad_assignment.field_de_assignment__message_has_error
+#: model:ir.model.fields,help:dekad_assignment.field_de_assignment__message_has_sms_error
+#: model:ir.model.fields,help:dekad_assignment.field_de_assignment_submission__message_has_error
+#: model:ir.model.fields,help:dekad_assignment.field_de_assignment_submission__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فهناك بعض الرسائل بها خطأ في التسليم."
+
+#. module: dekad_assignment
+#. odoo-python
+#: code:addons/dekad_assignment/models/assignment_submission.py:0
+msgid ""
+"Invalid Action!\n"
+" Parent can not             create Assignment Submissions!"
+msgstr ""
+"إجراء غير صالح!\n"
+" لا يمكن لولي الأمر إنشاء تسليمات الواجبات!"
+
+#. module: dekad_assignment
+#. odoo-python
+#: code:addons/dekad_assignment/models/assignment_submission.py:0
+msgid ""
+"Invalid Action!\n"
+" Parent can not edit             Assignment Submissions!"
+msgstr ""
+"إجراء غير صالح!\n"
+" لا يمكن لولي الأمر تعديل تسليمات الواجبات!"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__message_is_follower
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__write_uid
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__write_uid
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_type__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__write_date
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__write_date
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_type__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_search
+msgid "Last Week"
+msgstr "الأسبوع الماضي"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__mark
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__mark
+msgid "Mark"
+msgstr "الدرجة"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__message_has_error
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__message_ids
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: dekad_assignment
+#. odoo-python
+#: code:addons/dekad_assignment/controllers/main.py:0
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__name
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_type__name
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment
+msgid "Name"
+msgstr "الاسم"
+
+#. module: dekad_assignment
+#. odoo-python
+#: code:addons/dekad_assignment/controllers/main.py:0
+msgid "Newest"
+msgstr "الأحدث"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__message_needaction_counter
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__message_has_error_counter
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,help:dekad_assignment.field_de_assignment__message_needaction_counter
+#: model:ir.model.fields,help:dekad_assignment.field_de_assignment_submission__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,help:dekad_assignment.field_de_assignment__message_has_error_counter
+#: model:ir.model.fields,help:dekad_assignment.field_de_assignment_submission__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل ذات خطأ في التسليم"
+
+#. module: dekad_assignment
+#. odoo-python
+#: code:addons/dekad_assignment/controllers/main.py:0
+msgid "Oldest"
+msgstr "الأقدم"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_form
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_form_quick_create
+msgid "Reject"
+msgstr "رفض"
+
+#. module: dekad_assignment
+#: model:ir.model.fields.selection,name:dekad_assignment.selection__de_assignment_submission__state__reject
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__message_has_sms_error
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسالة القصيرة"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment
+msgid "Show"
+msgstr "عرض"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__state
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__state
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_search
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_search
+msgid "State"
+msgstr "الحالة"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment
+msgid "Status"
+msgstr "الحالة"
+
+#. module: dekad_assignment
+#: model:ir.model,name:dekad_assignment.model_de_student
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__student_id
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__student_ids
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_submission_search
+msgid "Student"
+msgstr "الطالب"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_form
+msgid "Students"
+msgstr "الطلاب"
+
+#. module: dekad_assignment
+#: model:ir.model,name:dekad_assignment.model_de_subject
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__subject_id
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_search
+msgid "Subject"
+msgstr "المادة الدراسية"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_breadcrumbs
+msgid "Submission"
+msgstr "التسليم"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__submission_date
+msgid "Submission Date"
+msgstr "تاريخ التسليم"
+
+#. module: dekad_assignment
+#. odoo-python
+#: code:addons/dekad_assignment/models/assignment.py:0
+msgid "Submission Date cannot be set before Create Date."
+msgstr "لا يمكن تعيين تاريخ التسليم قبل تاريخ الإنشاء."
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_search
+msgid "Submission Today"
+msgstr "تسليم اليوم"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_breadcrumbs
+msgid "Submission Update"
+msgstr "تحديث التسليم"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_search
+msgid "Submission after Week"
+msgstr "تسليم بعد الأسبوع"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+msgid "Submission full information"
+msgstr "معلومات التسليم الكاملة"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__assignment_submission_ids
+#: model:ir.ui.menu,name:dekad_assignment.menu_de_assignment_submission
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_form
+msgid "Submissions"
+msgstr "التسليمات"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment
+msgid "Submitted"
+msgstr "تم التسليم"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__submitted_at
+msgid "Submitted At"
+msgstr "تم التسليم في"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__submitted_file
+msgid "Submitted File"
+msgstr "الملف المُسلم"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment
+msgid "Submitted On"
+msgstr "تم التسليم في"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__teacher_id
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_search
+msgid "Teacher"
+msgstr "المعلم"
+
+#. module: dekad_assignment
+#. odoo-python
+#: code:addons/dekad_assignment/controllers/main.py:0
+msgid "Teachers"
+msgstr "المعلمون"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment
+msgid "There are currently no Assignments for your student."
+msgstr "لا توجد واجبات لطالبك حاليًا."
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_form
+msgid "This assignment is archived"
+msgstr "هذا الواجب مؤرشف"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_form
+msgid "This assignment is in draft state"
+msgstr "هذا الواجب في حالة مسودة"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_form
+msgid "This assignment is in finish state"
+msgstr "هذا الواجب في حالة منتهي"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_form
+msgid "This assignment is in running state"
+msgstr "هذا الواجب في حالة قيد التنفيذ"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment
+msgid "Title"
+msgstr "العنوان"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment
+msgid "Type"
+msgstr "النوع"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+msgid "Update"
+msgstr "تحديث"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,help:dekad_assignment.field_de_assignment_submission__student_ids
+msgid "Used to set domain in student field"
+msgstr "يستخدم لتعيين النطاق في حقل الطالب"
+
+#. module: dekad_assignment
+#: model:res.groups,name:dekad_assignment.group_de_assignment_user
+msgid "User"
+msgstr "المستخدم"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.view_de_assignment_form
+msgid "Validate"
+msgstr "تحقق"
+
+#. module: dekad_assignment
+#. odoo-python
+#: code:addons/dekad_assignment/controllers/main.py:0
+msgid "Waiting"
+msgstr "بانتظار التصحيح"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment__website_message_ids
+#: model:ir.model.fields,field_description:dekad_assignment.field_de_assignment_submission__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: dekad_assignment
+#: model:ir.model.fields,help:dekad_assignment.field_de_assignment__website_message_ids
+#: model:ir.model.fields,help:dekad_assignment.field_de_assignment_submission__website_message_ids
+msgid "Website communication history"
+msgstr "سجل التواصل على الموقع"
+
+#. module: dekad_assignment
+#. odoo-python
+#: code:addons/dekad_assignment/models/assignment_submission.py:0
+msgid "You can not create submission for this assignment!"
+msgstr "لا يمكنك إنشاء تسليم لهذا الواجب!"
+
+#. module: dekad_assignment
+#. odoo-python
+#: code:addons/dekad_assignment/models/assignment_submission.py:0
+msgid "You can not edit submission for this assignment!"
+msgstr "لا يمكنك تعديل تسليم هذا الواجب!"
+
+#. module: dekad_assignment
+#. odoo-python
+#: code:addons/dekad_assignment/models/assignment_submission.py:0
+msgid "You can not update mark for this submission!"
+msgstr "لا يمكنك تحديث درجة هذا التسليم!"
+
+#. module: dekad_assignment
+#. odoo-python
+#: code:addons/dekad_assignment/models/assignment_submission.py:0
+msgid "You cannot delete a record that is not in draft state."
+msgstr "لا يمكنك حذف سجل ليس في حالة مسودة."
+
+#. module: dekad_assignment
+#. odoo-python
+#: code:addons/dekad_assignment/models/assignment.py:0
+msgid "You cannot delete a record which is not in draft or cancel state"
+msgstr "لا يمكنك حذف سجل ليس في حالة مسودة أو ملغى"
+
+#. module: dekad_assignment
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission
+#: model_terms:ir.ui.view,arch_db:dekad_assignment.student_assignment_submission_update
+msgid "or"
+msgstr "أو"

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="de_admission_analysis_wizard_form">
+            <field name="name">de.admission.analysis.wizard.form</field>
+            <field name="model">de.admission.analysis.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Admission Analysis">
+                    <group>
+                        <field name="grade_id"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                    <footer groups="base.group_user">
+                        <button name="print_report" type="object"
+                                string="Print" class="oe_highlight"/>
+                        <button string="Cancel" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="act_open_de_admission_analysis_wizard_view">
+            <field name="name">Admission analysis</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.admission.analysis.wizard</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_id" ref="de_admission_analysis_wizard_form"/>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

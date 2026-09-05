@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_partner_form_file_number" model="ir.ui.view">
+        <field name="name">res.partner.form.file.number</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='function']" position="attributes">
+                <attribute name="string">File Number</attribute>
+            </xpath>
+
+        </field>
+    </record>
+    <record id="crm_lead_view_form_custom" model="ir.ui.view">
+        <field name="name">crm.lead.form.custom</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+
+            <!-- ============================================================
+                 HIDE: Email
+                 - one in the Opportunity contact group (group_name="opportunity_partner")
+                 - one in the Lead contact group (field id="email_from_group_lead_info")
+                 Hiding both so the field disappears regardless of record type.
+                 ============================================================ -->
+            <xpath expr="//group[@name='opportunity_partner']//label[@for='email_from']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//group[@name='opportunity_partner']//div[field[@name='email_from']]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//label[@for='email_from_group_lead_info']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//div[field[@id='email_from_group_lead_info']]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!-- ============================================================
+                 HIDE: Expected Revenue + Probability block
+                 ============================================================ -->
+            <xpath expr="//div[hasclass('oe_title')]/h2" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!-- ============================================================
+                  HIDE: Expected Closing
+                 ============================================================ -->
+            <xpath expr="//label[@for='date_deadline']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//div[hasclass('o_lead_opportunity_form_inline_fields')]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!-- ============================================================
+                 MOVE: Mobile, Source, Campaign, Referred By
+                 Add them directly below the Phone
+                 ============================================================ -->
+            <xpath expr="//group[@name='opportunity_partner']//div[field[@name='phone']]" position="after">
+                <label for="mobile" class="oe_inline"/>
+                <div class="o_row o_row_readonly">
+                    <button name="phone_action_blacklist_remove" class="fa fa-ban text-danger"
+                        title="This phone number is blacklisted for SMS Marketing. Click to unblacklist."
+                        type="object" context="{'default_phone': mobile}" groups="base.group_user"
+                        invisible="not mobile_blacklisted"/>
+                    <field name="mobile" widget="phone"/>
+                </div>
+                <field name="source_id"/>
+                <field name="campaign_id" options="{'create_name_field': 'title'}"/>
+                <field name="referred"/>
+            </xpath>
+
+            <!-- ... remove them from the "Extra Information" tab . -->
+            <xpath expr="//page[@name='lead']//label[@for='mobile_page_lead']" position="replace"/>
+            <xpath expr="//page[@name='lead']//div[field[@id='mobile_page_lead']]" position="replace"/>
+
+            <xpath expr="//page[@name='lead']//field[@name='campaign_id']" position="replace"/>
+            <xpath expr="//page[@name='lead']//field[@name='source_id']" position="replace"/>
+            <xpath expr="//page[@name='lead']//field[@name='referred']" position="replace"/>
+
+        </field>
+    </record>
+
+    <record id="crm_lead_list_inherit_reservation" model="ir.ui.view">
+        <field name="name">crm.lead.list.inherit.reservation</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="reservation_ids"
+                       string="Reservations"
+                       widget="many2many_tags"
+                       optional="show"/>
+            </xpath>
+
+        </field>
+    </record>
+    <record id="crm_lead_search_inherit_reservation" model="ir.ui.view">
+        <field name="name">crm.lead.search.inherit.reservation</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//search/field[@name='name']" position="after">
+                <field name="reservation_ids"
+                       string="Reservation"
+                       filter_domain="[('reservation_ids.name', 'ilike', self)]"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

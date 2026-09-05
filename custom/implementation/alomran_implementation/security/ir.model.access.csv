@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_schedule_day_user,schedule.day user,model_schedule_day,,1,0,0,0
+access_course_duration_units_user,access.course.duration.units.user,model_course_duration_units,,1,0,0,0
+access_transfer_company_wizard,transfer.company.wizard,model_transfer_company_wizard,base.group_user,1,1,1,1

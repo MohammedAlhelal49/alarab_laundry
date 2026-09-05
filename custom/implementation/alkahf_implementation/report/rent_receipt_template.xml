@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="report_rent_receipt_template">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.basic_layout">
+                <div class="page" style="font-family: 'Arial', sans-serif; direction: rtl; text-align: right;">
+
+                    <!-- Company Header -->
+                    <div style="text-align: center; line-height: 3; margin-bottom: 20px; margin-top: 20px; border-bottom: 2px solid #000; padding-bottom: 12px;">
+                        <h2 style="margin: 0; font-size: 18pt; font-weight: bold;">
+                            شركة الكهف للمقاولات و الصيانة العامة ذ م م
+                        </h2>
+                        <h3 style="margin: 4px 0; font-size: 14pt; font-weight: bold; letter-spacing: 1px; direction: ltr;">
+                            ALKAHAF GEN. CONT. AND MAINT. CO. L.L.C.
+                        </h3>
+                        <p style="margin: 4px 0; font-size: 10pt;">
+                            تليفون : 0553599937 &#160;&#160; فاكس : 037217272 &#160;&#160; ص.ب : 20736 – العين
+                        </p>
+                    </div>
+
+                    <!-- Report Title -->
+                    <div style="text-align: center; margin-bottom: 20px;margin-top: 20px;">
+                        <h2 style="text-decoration: underline; font-size: 16pt; margin: 0;">
+                            إستلام دفعات إيجار
+                        </h2>
+                    </div>
+
+                    <!-- Date -->
+                    <div style="margin-bottom: 14px;">
+                        <strong style="font-size: 11pt;">
+                            <span style="text-decoration: underline;">التاريخ :</span>
+                            &#160;
+                            <t t-esc="(o.invoice_date or o.date).strftime('%Y / %m / %d')"/>
+                        </strong>
+                    </div>
+
+                    <!-- Tenant Info -->
+                    <div style="margin-bottom: 14px; font-size: 11pt; line-height: 2;">
+                        <p style="margin: 4px 0;">
+                            <strong>إستلمنا من السادة :</strong>
+                                سوبريم تريدنج كومبني – شركة الشخص الواحد ذ م م
+                                 رخصة تجارية رقم :
+                                 CN-2988640
+                        </p>
+                        <p style="margin: 4px 0;">
+                            <strong>عنها :</strong>
+                            <t t-if="o.partner_id.name">
+                                &#160;<t t-esc="o.partner_id.name"/>
+                            </t>
+                            <t t-if="o.partner_id.id_number">
+                                &#160; هوية رقم :
+                                &#160;<t t-esc="o.partner_id.id_number"/>
+                            </t>
+                            <t t-if="o.partner_id.phone or o.partner_id.mobile">
+                                &#160;&#160; تليفون رقم :
+                                &#160;<t t-esc="o.partner_id.phone or o.partner_id.mobile"/>
+                            </t>
+                        </p>
+                        <p style="margin: 4px 0;">
+                            دفعات الإيجار التالية نقدا و شيكات علي ( بنك الإمارات دبي الوطني ) :–
+                        </p>
+                    </div>
+
+                    <!-- Payment Table - built from invoice's real payments -->
+                    <t t-set="payments" t-value="o.get_rent_receipt_payments()"/>
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 10.5pt;">
+                        <thead>
+                            <tr style="background-color: #f0f0f0;">
+                                <th style="border: 1px solid #000; padding: 6px 10px; text-align: center; width: 8%;">م</th>
+                                <th style="border: 1px solid #000; padding: 6px 10px; text-align: center; width: 25%;">رقم الدفعة</th>
+                                <th style="border: 1px solid #000; padding: 6px 10px; text-align: center; width: 25%;">المبلغ</th>
+                                <th style="border: 1px solid #000; padding: 6px 10px; text-align: center; width: 22%;">رقم الشيك</th>
+                                <th style="border: 1px solid #000; padding: 6px 10px; text-align: center; width: 20%;">التاريخ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="payments" t-as="pay" >
+                                <tr>
+                                    <td style="border: 1px solid #000; padding: 6px 10px; text-align: center;">
+                                        <t t-esc="pay_index + 1"/>
+                                    </td>
+                                    <!-- رقم الدفعة -->
+                                    <td style="border: 1px solid #000; padding: 6px 10px; text-align: center;">
+                                        <t t-esc="pay['name']"/>
+                                    </td>
+
+                                    <!-- المبلغ -->
+                                    <td style="border: 1px solid #000; padding: 6px 10px; text-align: center;">
+                                        <t t-esc="'{:,.2f}'.format(pay['amount'])"/>
+                                        &#160;
+                                        <t t-esc="pay['currency']"/>
+                                    </td>
+
+                                    <!-- رقم الشيك -->
+                                    <td style="border: 1px solid #000; padding: 6px 10px; text-align: center;">
+                                        <t t-esc="pay['check_number']"/>
+                                    </td>
+
+                                    <!-- التاريخ -->
+                                    <td style="border: 1px solid #000; padding: 6px 10px; text-align: center;">
+                                        <t t-if="pay['date']">
+                                            <t t-esc="pay['date'].strftime('%Y/%m/%d')"/>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </t>
+                            <t t-if="not payments">
+                                <tr>
+                                    <td colspan="5"
+                                        style="border: 1px solid #000; padding: 10px; text-align: center; color: #888;">
+                                        لا توجد دفعات مسجلة لهذه الفاتورة
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                        <!-- Total row -->
+                        <tfoot t-if="payments">
+                            <tr style="font-weight: bold; background-color: #f9f9f9;">
+
+                                <!-- Empty index column -->
+                                <td style="border: 1px solid #000; padding: 6px 10px;"></td>
+
+                                <!-- Label in second column -->
+                                <td style="border: 1px solid #000; padding: 6px 10px; text-align: center;">
+                                    الإجمالي
+                                </td>
+
+                                <!-- Total amount -->
+                                <td style="border: 1px solid #000; padding: 6px 10px; text-align: center;">
+                                    <t t-esc="'{:,.2f}'.format(sum(pay['amount'] for pay in payments))"/>
+                                    &#160;
+                                    <t t-esc="o.company_currency_id.name"/>
+                                </td>
+
+                                <!-- Remaining columns -->
+                                <td colspan="2" style="border: 1px solid #000;"/>
+
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <!-- Body Text -->
+                    <div style="font-size: 10.5pt; line-height: 3; margin-bottom: 20px; text-align: justify;">
+                        <p style="margin: 0;">
+                              و ذلك عن سداد دفعات الإيجار السنوي المستحقة على مستأجر
+                            <strong><t t-esc="o.sale_order_id.account_analytic_account_id.name or 'المستأجر'"/></strong>
+                            سوبريم تريدنج كومبني شركة الشخص الواحد ذ م م حيث أن قيمة عقد الايجار المجدد رقم
+                            (<t t-esc="o.sale_order_id.name"/>)
+                            هي مبلغ و قدره
+                            <strong>(<t t-esc="'{:,.2f}'.format(sum(pay['amount'] for pay in payments))"/> درهم)</strong>
+                            لا غير و مدته من ....... إلى ...... في
+                            بناية
+                                <strong>
+                                    <span t-esc="o.sale_order_id.property_building_id.name"/>
+                                </strong>
+                                -
+                                <span t-esc="o.sale_order_id.account_analytic_account_id.property_address"/>
+                            المالك :
+                             <strong><t t-esc="o.company_id.name"/></strong>
+
+                        </p>
+                        <t >
+                            <div style="margin-bottom: 30px;margin-top: 15px; border: 1px solid #000; padding: 10px; text-align: center;">
+                                <strong>* يمنع إستخدام سلندرات الغاز داخل البناية .</strong>
+                            </div>
+                        </t>
+                    </div>
+
+                    <!-- Signatures -->
+                    <div style="margin-top: 50px;">
+                        <table style="width: 100%; font-size: 11pt;">
+                            <tr>
+                                <td style="width: 50%; text-align: center; vertical-align: top;">
+                                    <p style="margin: 0; font-weight: bold;">توقيع و ختم المؤجر</p>
+                                    <br/><br/>
+                                    <p style="border-top: 1px dotted #000; padding-top: 4px; width: 80%; margin: auto;">
+                                    </p>
+                                    <br/>
+                                </td>
+                                <td style="width: 50%; text-align: center; vertical-align: top;">
+                                    <p style="margin: 0; font-weight: bold;">توقيع و ختم المستأجر</p>
+                                    <br/><br/>
+                                    <p style="border-top: 1px dotted #000; padding-top: 4px; width: 80%; margin: auto;">
+                                    </p>
+                                    <br/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </t>
+        </t>
+    </t>
+</template>
+</odoo>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="custom_pos_receipt.ReceiptHeader" t-inherit="point_of_sale.ReceiptHeader" t-inherit-mode="extension">
+        <!-- Remove original header (inside pos-receipt-contact) -->
+        <xpath expr="//div[@class='pos-receipt-contact']/div[@t-if='props.data.header']" position="replace"/>
+
+        <!-- Insert the same header before the contact block -->
+        <xpath expr="//div[@class='pos-receipt-contact']" position="before">
+          <div class="pos-receipt-contact text-center">
+            <div t-if="props.data.header" style="white-space:pre-line" t-esc="props.data.header"/>
+          </div>
+        </xpath>
+
+        <!--         Add invoice number just before TRN-->
+        <xpath expr="//t[@t-esc=&quot;props.data.company.country_id?.vat_label || 'Tax ID'&quot;]" position="before">
+            <t t-if="props.data.invoice_number">
+
+
+
+                    <div lang="ar"
+                         style="font-family: 'Cairo', sans-serif !important;
+                  font-size: 13px !important; letter-spacing: 0.2px !important; font-weight: 500 !important;"> فاتورة ضريبية</div>
+
+                <div class="mb-2">
+                        <h4 style="margin: 0;">TAX INVOICE
+                        <t t-esc="props.data.invoice_number"/></h4>
+                    </div>
+
+                        <div class = "mb-1" t-esc="props.data.current_datetime"/>
+
+
+                <div lang="ar"
+                     style="font-family: 'Cairo', sans-serif !important;
+                  font-size: 13px !important; letter-spacing: 0.2px !important; font-weight: 500 !important;">رقم الضريبة</div>
+
+
+            </t>
+        </xpath>
+
+        <!--         Customer details section-->
+        <xpath expr="//div[@t-if='props.data.cashier']" position="before">
+
+
+
+            <t t-if="props.data.partner">
+
+                    <div>--------------------------------</div>
+                <div>
+                        <strong>Customer : </strong>
+                    <t t-esc="props.data.partner.name"/>
+                    </div>
+
+                <div t-if="props.data.partner.street or props.data.partner.city or props.data.partner.zip or props.data.partner.state or props.data.partner.country">
+                        <strong>Plate Number : </strong>
+                    <t t-if="props.data.partner.street"><t t-esc="props.data.partner.street" /> </t>
+                    <t t-if="props.data.partner.zip"><t t-esc="props.data.partner.zip" /> </t>
+                    <t t-if="props.data.partner.city"><t t-esc="props.data.partner.city" /> </t>
+                    <t t-if="props.data.partner.state"><t t-esc="props.data.partner.state" /> </t>
+                    <t t-if="props.data.partner.country"><t t-esc="props.data.partner.country" /></t>
+                    </div>
+
+                <!-- Contact line -->
+                <div t-if="props.data.partner.phone or props.data.partner.mobile or props.data.partner.email">
+                        <strong>Contact : </strong>
+                    <t t-if="props.data.partner.phone"> <t t-esc="props.data.partner.phone"/> </t>
+                    <t t-if="props.data.partner.mobile">| <t t-esc="props.data.partner.mobile"/> </t>
+                    <t t-if="props.data.partner.email">| <t t-esc="props.data.partner.email"/></t>
+                    </div>
+
+                </t>
+        </xpath>
+        <xpath expr="//h1[contains(@class, 'tracking-number')]" position="replace">
+                <!-- Empty block to remove -->
+        </xpath>
+
+        <!-- Remove the smaller tracking number (non-bigTrackingNumber) -->
+        <xpath expr="//span[contains(@class, 'tracking-number')]" position="replace">
+                <!-- Empty block to remove -->
+        </xpath>
+
+    </t>
+
+    <t t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
+
+        <!-- Change 'Untaxed Amount' to 'Total Amount before Tax' -->
+        <xpath expr="//t[@t-foreach='taxTotals.subtotals']//span[@t-out='subtotal.name']" position="replace">
+            <t t-if="subtotal.name === 'Untaxed Amount'">
+                <div>
+                  <div lang="ar"
+                       style="font-family: 'Cairo', sans-serif !important; font-size: 13px !important; letter-spacing: 0.2px !important; font-weight: 500 !important;">
+  الإجمالي قبل الضريبة
+</div>
+                    <div style="font-size: 14px !important; letter-spacing : 0,2px !important"> Amount before VAT</div>
+                </div>
+            </t>
+            <t t-else="">
+                <span class="fw-bolder" t-out="subtotal.name"/>
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-foreach='taxTotals.subtotals']//div[@t-foreach='subtotal.tax_groups']" position="before">
+                           <div lang="ar"
+                                style="font-family: 'Cairo', sans-serif !important; font-size: 13px !important; letter-spacing: 0.2px !important; font-weight: 500 !important;">
+  إجمالي الضريبة
+</div>
+        </xpath>
+
+        <!-- Change 'TOTAL' label to 'Total Amount After TAX' -->
+        <xpath expr="//div[contains(@class, 'receipt-total')]/t[@t-out='props.data.label_total']" position="replace">
+
+                                       <div lang="ar"
+                                            style="font-family: 'Cairo', sans-serif !important; font-size: 13px !important; letter-spacing: 0.2px !important; font-weight: 500 !important;">
+  الإجمالي بعد الضريبة
+</div>
+
+
+            <span style="font-size: 13px;"> Amount After VAT</span>
+        </xpath>
+
+
+        <xpath expr="//div[contains(@class, 'before-footer')]"
+               position="after">
+               <div class="text-center" style="margin-top : 15px !important;">Terms and conditions</div>
+
+            <div lang="ar"
+                 style="font-family: 'Cairo', sans-serif !important;
+                  font-size: 13px !important; letter-spacing: 0.2px !important; font-weight: 500 !important;">
+    الادارة غير مسئولة عن اي تغير في اللون او انكماش و في حالة تلف او فقدان اي قطعة. التعوبض محدد ب 5 مرات قيمة
+            تنظيفها
+</div>
+
+
+            <div>  The management is not responsible for any change in color or shrink. In case of damage or loss of article
+            the compensation is limited to 5 time of cleaning charges.</div>
+
+
+
+
+        </xpath>
+
+        <!-- Hide the entire "Powered by Odoo" block -->
+        <xpath expr="//div[contains(@class, 'pos-receipt-order-data')][p[text()='Powered by Odoo']]"
+               position="attributes">
+            <attribute name="style">display:none;</attribute>
+        </xpath>
+
+    </t>
+
+</templates>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+        <template id="journal_entry_template_report_view_inherit_serial"
+                  inherit_id="bi_print_journal_entries.journal_entry_template_report_view">
+
+            <!-- Add Serial Number row -->
+            <xpath expr="//table[1]/tbody/tr[1]"
+                   position="after">
+
+                <tr>
+                    <td>
+                        <strong>Serial Number :</strong>
+                    </td>
+
+                    <td>
+                        <span t-field="o.serial_number"/>
+                    </td>
+
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            </xpath>
+
+        </template>
+        <template id="report_pdc_payment_document_inherit_serial"
+              inherit_id="sh_pdc.report_pdc_payment_document">
+
+                    <!-- Add Serial Number row -->
+            <xpath expr="//div[hasclass('page')]" position="inside">
+
+                <t t-set="journal_entry"
+                   t-value="doc.env['account.move'].search([('pdc_id','=',doc.id)], limit=1)"/>
+
+                <div class="row"
+                     style="border: 1px solid #e5e5e5; padding: 10px;">
+
+                    <div class="col-4">
+                        <strong>Serial Number</strong>
+                        : <span t-esc="journal_entry.serial_number"/>
+                    </div>
+
+                </div>
+
+            </xpath>
+        </template>
+    </data>
+</odoo>

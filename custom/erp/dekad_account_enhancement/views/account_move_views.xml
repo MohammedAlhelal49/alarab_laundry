@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.actions.server" id="action_move_force_draft">
+        <field name="name">Force Reset to Draft</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="state">code</field>
+        <field name="binding_view_types">form,list</field>
+        <field name="code">
+            if records:
+            records.button_force_draft()
+        </field>
+    </record>
+
+    <record model="ir.actions.server" id="account_move_cancel">
+        <field name="name">Cancel</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="state">code</field>
+        <field name="binding_view_types">list</field>
+        <field name="code">
+            records.button_cancel()
+        </field>
+    </record>
+    <record model="ir.actions.server" id="account_move_reset_to_draft">
+        <field name="name">Reset to draft</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="state">code</field>
+        <field name="binding_view_types">list</field>
+        <field name="code">
+            records.button_draft()
+        </field>
+    </record>
+    <record model="ir.actions.server" id="account_payment_reset_to_draft">
+        <field name="name">Reset to draft</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="account.model_account_payment"/>
+        <field name="binding_model_id" ref="account.model_account_payment"/>
+        <field name="state">code</field>
+        <field name="binding_view_types">list</field>
+        <field name="code">
+            records.action_draft()
+        </field>
+    </record>
+    <record model="ir.actions.server" id="account_payment_cancel">
+        <field name="name">Cancel</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="account.model_account_payment"/>
+        <field name="binding_model_id" ref="account.model_account_payment"/>
+        <field name="state">code</field>
+        <field name="binding_view_types">list</field>
+        <field name="code">
+            records.action_cancel()
+        </field>
+    </record>
+
+
+    <record id="view_account_form_inherited" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.enhancement</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.view_account_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_ids']" position="after">
+                <field name="prevent_negative_balance"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_move_form_inherit_stock_flag" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.stock.flag</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <!--
+                Discount button — RIGHT side, above Untaxed Amount / Total.
+                Injected inside the colspan="4" group that wraps oe_subtotal_footer,
+                before the oe_subtotal_footer group itself.
+            -->
+            <xpath expr="//page[@name='invoice_tab']//group[hasclass('oe_invoice_lines_tab')]//group[@colspan='4']/group[hasclass('oe_subtotal_footer')]"
+                   position="before">
+                <div class="d-flex justify-content-end mb-2"
+                     groups="dekad_account_enhancement.group_discount_per_invoice_line">
+                    <button name="action_open_discount_wizard"
+                            string="Discount"
+                            type="object"
+                            class="btn btn-secondary"
+                            invisible="state != 'draft' or move_type not in ('out_invoice', 'in_invoice')"/>
+                </div>
+            </xpath>
+
+            <!-- Disc.% column — visible to users with per-line discount group -->
+            <xpath expr="//field[@name='invoice_line_ids']/list/field[@name='discount']" position="attributes">
+                <attribute name="optional">show</attribute>
+                <attribute name="groups">dekad_account_enhancement.group_discount_per_invoice_line</attribute>
+            </xpath>
+            <xpath expr="//field[@name='ref']" position="after">
+                <field name="force_draft_used"
+                       readonly="1"
+                       invisible="not force_draft_used"/>
+            </xpath>
+            <xpath expr="//button[@name='action_post']" position="after">
+                <button name="action_confirm_and_return"
+                        string="Confirm &amp; Return Delivery"
+                        type="object"
+                        class="btn-primary"
+                        invisible="not show_confirm_return_button or not id or state != 'draft' or move_type != 'out_refund' or not invoice_origin"/>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+
+                <button name="action_view_returns"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-undo"
+                        invisible="return_picking_count == 0">
+
+                    <div class="o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="return_picking_count"/>
+                        </span>
+                        <span class="o_stat_text">
+                            Returns
+                        </span>
+                    </div>
+
+                </button>
+            </xpath>
+
+
+        </field>
+    </record>
+
+    <record id="view_move_form_inherit_limit" model="ir.ui.view">
+        <field name="name">account.move.form.limit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='line_ids']/list" position="attributes">
+                <attribute name="limit">999</attribute>
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']/list" position="attributes">
+                <attribute name="limit">999</attribute>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>
+
+
+

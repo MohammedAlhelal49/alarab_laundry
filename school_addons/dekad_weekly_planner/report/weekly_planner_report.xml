@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Report Action -->
+    <record id="action_report_weekly_planner" model="ir.actions.report">
+        <field name="name">Weekly Timetable</field>
+        <field name="model">teacher.weekly.planner</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dekad_weekly_planner.report_weekly_planner_document</field>
+        <field name="report_file">dekad_weekly_planner.report_weekly_planner_document</field>
+        <field name="binding_model_id" ref="model_teacher_weekly_planner"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="base.paperformat_euro"/>
+    </record>
+
+</odoo>

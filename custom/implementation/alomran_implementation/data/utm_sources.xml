@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Custom UTM Sources (Marketing Source dropdown) -->
+    <record model="utm.source" id="utm_source_hot_call">
+        <field name="name">Hot Call</field>
+    </record>
+
+    <record model="utm.source" id="utm_source_instagram">
+        <field name="name">Instagram</field>
+    </record>
+
+    <record model="utm.source" id="utm_source_tiktok">
+        <field name="name">Tiktok</field>
+    </record>
+
+    <record model="utm.source" id="utm_source_referral">
+        <field name="name">Referral</field>
+    </record>
+
+    <record model="utm.source" id="utm_source_personal_data">
+        <field name="name">Personal Data</field>
+    </record>
+
+    <record model="utm.source" id="utm_source_cold_call">
+        <field name="name">Cold Call</field>
+    </record>
+
+    <record model="utm.source" id="utm_source_walk_in">
+        <field name="name">Walk In</field>
+    </record>
+
+</odoo>

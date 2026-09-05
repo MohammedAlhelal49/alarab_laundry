@@ -1,0 +1,675 @@
+/* ============================================
+   Student Profile Page - Modern Styles
+   ============================================ */
+
+/* === Color Variables === */
+:root {
+    --profile-primary: #667eea;
+    --profile-primary-dark: #764ba2;
+    --profile-success: #56ab2f;
+    --profile-success-light: #a8e063;
+    --profile-info: #0093e9;
+    --profile-warning: #f093fb;
+    --profile-danger: #fa709a;
+    --profile-text-dark: #1e293b;
+    --profile-text-light: #64748b;
+    --profile-bg-light: #f8fafc;
+    --profile-border: #e2e8f0;
+}
+
+/* === Profile Page Container === */
+.profile-page {
+    padding: 2rem 0;
+    gap: 1.5rem;
+}
+
+/* === Sidebar Navigation Card === */
+.profile-page .card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    background: white;
+}
+
+/* === Navigation Pills === */
+.student-profile-navs {
+    padding: 1.5rem;
+    gap: 0.75rem;
+}
+
+.student-profile-navs .nav-link {
+    color: var(--profile-text-dark);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: capitalize;
+    position: relative;
+    overflow: hidden;
+}
+
+.student-profile-navs .nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--profile-primary), var(--profile-primary-dark));
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.student-profile-navs .nav-link:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    transform: translateX(5px);
+    border-color: var(--profile-primary);
+}
+
+.student-profile-navs .nav-link.active {
+    background: linear-gradient(135deg, var(--profile-primary), var(--profile-primary-dark));
+    color: white;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    transform: translateX(10px);
+}
+
+.student-profile-navs .nav-link.active::before {
+    transform: scaleY(1);
+}
+
+/* === Profile Tab Content === */
+.profile-tab-content {
+    padding: 0;
+}
+
+.profile-tab-content .tab-pane {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === Student Profile Card === */
+.student-profile {
+    padding: 2.5rem;
+}
+
+.student-profile .card {
+    border: 1px solid var(--profile-border);
+}
+
+.student-profile .card-text {
+    padding: 0;
+}
+
+/* === Profile Header === */
+.header-holder {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 3px solid var(--profile-border);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+    padding: 2rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+}
+
+.image-holder {
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.image-holder img {
+    width: 120px !important;
+    height: 120px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+}
+
+.image-holder:hover img {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 20px 45px rgba(102, 126, 234, 0.4);
+}
+
+/* Sequence Number Badge - Below Image with 80px Size */
+.image-holder > div {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #fa709a, #fee140);
+    color: #1e293b;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 2rem;
+    box-shadow: 0 8px 25px rgba(250, 112, 154, 0.5);
+    border: 4px solid white;
+    z-index: 10;
+    animation: pulse 2s infinite;
+    flex-direction: column;
+}
+
+/* Optional: Add label above number */
+.image-holder > div::before {
+    content: '#';
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: -0.25rem;
+    opacity: 0.7;
+}
+
+/* Remove the label if you don't want it:
+.image-holder > div::before {
+    display: none;
+}
+*/
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(250, 112, 154, 0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 12px 35px rgba(250, 112, 154, 0.7);
+    }
+}
+
+/* Alternative Style Options for Sequence Badge:
+   Uncomment one of these if you want different colors */
+
+/* Option 1: Blue Badge
+.image-holder > div {
+    background: linear-gradient(135deg, #0093e9, #80d0c7);
+    color: white;
+}
+*/
+
+/* Option 2: Green Badge
+.image-holder > div {
+    background: linear-gradient(135deg, #56ab2f, #a8e063);
+    color: white;
+}
+*/
+
+/* Option 3: Purple Badge (Original)
+.image-holder > div {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+*/
+
+/* Option 4: Red Badge with White Text
+.image-holder > div {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+*/
+
+/* Option 5: Circular Badge (Change border-radius)
+.image-holder > div {
+    border-radius: 50%;
+}
+*/
+
+.name-holder h6 {
+    color: var(--profile-text-dark);
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 0.5rem 0;
+    background: linear-gradient(135deg, var(--profile-primary), var(--profile-primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.name-holder p {
+    color: var(--profile-text-light);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* === Profile Information Grid === */
+.student-profile .row.pt-1 {
+    margin: 0;
+    gap: 1.25rem;
+    row-gap: 1.25rem;
+}
+
+.student-profile .row.pt-1 > div {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, white 0%, var(--profile-bg-light) 100%);
+    border-radius: 12px;
+    border: 1px solid var(--profile-border);
+    margin-bottom: 0;
+    transition: all 0.3s ease;
+}
+
+.student-profile .row.pt-1 > div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: var(--profile-primary);
+    background: white;
+}
+
+.student-profile h6 {
+    color: var(--profile-primary);
+    font-weight: 800;
+    font-size: 0.813rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+}
+
+.student-profile p.text-muted {
+    color: var(--profile-text-dark) !important;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* === Horizontal Rule === */
+.student-profile hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--profile-border), transparent);
+    margin: 2rem 0;
+}
+
+/* === Tables Styling === */
+.dynamic-website-card-holder table {
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0 0.75rem;
+}
+
+.dynamic-website-card-holder thead {
+    position: relative;
+}
+
+.dynamic-website-card-holder thead th {
+    background: linear-gradient(135deg, var(--profile-primary), var(--profile-primary-dark));
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.813rem;
+    letter-spacing: 1px;
+    padding: 1.25rem 1.5rem;
+    border: none;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+.dynamic-website-card-holder thead th:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+.dynamic-website-card-holder thead th:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+.dynamic-website-card-holder tbody tr {
+    background: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.dynamic-website-card-holder tbody tr:hover {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.1);
+    transform: scale(1.01);
+}
+
+.dynamic-website-card-holder tbody td {
+    padding: 1.25rem 1.5rem;
+    vertical-align: middle;
+    border: none;
+    color: var(--profile-text-dark);
+    font-weight: 600;
+    font-size: 0.938rem;
+}
+
+.dynamic-website-card-holder tbody tr td:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+.dynamic-website-card-holder tbody tr td:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+/* === Parent Image in Table === */
+.dynamic-website-card-holder tbody td img {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--profile-primary);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+    transition: all 0.3s ease;
+}
+
+.dynamic-website-card-holder tbody td img:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* === Badges in Tables === */
+.badges-holder {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.badge.draft-badge {
+    background: linear-gradient(135deg, var(--profile-info), #80d0c7) !important;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    font-size: 0.813rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(0, 147, 233, 0.2);
+}
+
+.badge.bg-success {
+    background: linear-gradient(135deg, var(--profile-success), var(--profile-success-light)) !important;
+    color: white !important;
+    padding: 0.625rem 1.25rem;
+    font-weight: 700;
+    font-size: 0.813rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(86, 171, 47, 0.3);
+}
+
+.badge.bg-warning {
+    background: linear-gradient(135deg, var(--profile-warning), #f5576c) !important;
+    color: white !important;
+    padding: 0.625rem 1.25rem;
+    font-weight: 700;
+    font-size: 0.813rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(240, 147, 251, 0.3);
+}
+
+/* === Alert Styling === */
+.dynamic-website-card .alert-info {
+    background: linear-gradient(135deg, rgba(0, 147, 233, 0.1), rgba(128, 208, 199, 0.1));
+    color: #0369a1;
+    border: 2px solid rgba(0, 147, 233, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.125rem;
+}
+
+/* === Card Body Padding === */
+.dynamic-website-card-holder .card-body {
+    padding: 2.5rem;
+}
+
+/* === Border Radius Fix === */
+.border-radius-non {
+    border-radius: 20px !important;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    .profile-page {
+        padding: 1rem 0;
+        gap: 1rem;
+    }
+
+    .header-holder {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .name-holder h6 {
+        font-size: 1.5rem;
+    }
+
+    .image-holder img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .image-holder > div {
+        width: 70px;
+        height: 70px;
+        font-size: 1.75rem;
+    }
+
+    .student-profile {
+        padding: 1.5rem;
+    }
+
+    .student-profile .row.pt-1 {
+        gap: 1rem;
+        row-gap: 1rem;
+    }
+
+    .student-profile .row.pt-1 > div {
+        padding: 1rem;
+        margin-bottom: 0;
+    }
+
+    .student-profile-navs {
+        padding: 1rem;
+    }
+
+    .student-profile-navs .nav-link {
+        padding: 0.75rem 1rem;
+        font-size: 0.938rem;
+    }
+
+    .dynamic-website-card-holder .card-body {
+        padding: 1.5rem;
+    }
+
+    .dynamic-website-card-holder thead th,
+    .dynamic-website-card-holder tbody td {
+        padding: 1rem;
+        font-size: 0.875rem;
+    }
+
+    .dynamic-website-card-holder tbody td img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    /* Make table scrollable on mobile */
+    .dynamic-website-card-holder {
+        overflow-x: auto;
+    }
+
+    .dynamic-website-card-holder table {
+        min-width: 600px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-holder {
+        padding: 1rem;
+    }
+
+    .name-holder h6 {
+        font-size: 1.25rem;
+    }
+
+    .student-profile h6 {
+        font-size: 0.75rem;
+    }
+
+    .student-profile p.text-muted {
+        font-size: 0.938rem;
+    }
+
+    .image-holder > div {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+/* === Animations === */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.student-profile-navs .nav-link {
+    animation: slideIn 0.4s ease-out backwards;
+}
+
+.student-profile-navs .nav-link:nth-child(1) { animation-delay: 0.1s; }
+.student-profile-navs .nav-link:nth-child(2) { animation-delay: 0.2s; }
+.student-profile-navs .nav-link:nth-child(3) { animation-delay: 0.3s; }
+
+/* === Smooth Transitions === */
+.student-profile .row.pt-1 > div {
+    animation: fadeIn 0.5s ease-out backwards;
+}
+
+.student-profile .row.pt-1 > div:nth-child(1) { animation-delay: 0.05s; }
+.student-profile .row.pt-1 > div:nth-child(2) { animation-delay: 0.1s; }
+.student-profile .row.pt-1 > div:nth-child(3) { animation-delay: 0.15s; }
+.student-profile .row.pt-1 > div:nth-child(4) { animation-delay: 0.2s; }
+.student-profile .row.pt-1 > div:nth-child(5) { animation-delay: 0.25s; }
+.student-profile .row.pt-1 > div:nth-child(6) { animation-delay: 0.3s; }
+
+/* === Table Row Animation === */
+.dynamic-website-card-holder tbody tr {
+    animation: fadeIn 0.5s ease-out backwards;
+}
+
+.dynamic-website-card-holder tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.dynamic-website-card-holder tbody tr:nth-child(2) { animation-delay: 0.15s; }
+.dynamic-website-card-holder tbody tr:nth-child(3) { animation-delay: 0.2s; }
+.dynamic-website-card-holder tbody tr:nth-child(4) { animation-delay: 0.25s; }
+.dynamic-website-card-holder tbody tr:nth-child(5) { animation-delay: 0.3s; }
+
+/* === Focus States for Accessibility === */
+.student-profile-navs .nav-link:focus {
+    outline: 3px solid rgba(102, 126, 234, 0.5);
+    outline-offset: 3px;
+}
+
+/* === Print Styles === */
+@media print {
+    .profile-page {
+        display: block;
+    }
+
+    .student-profile-navs {
+        display: none;
+    }
+
+    .tab-content .tab-pane {
+        display: block !important;
+        opacity: 1 !important;
+        page-break-inside: avoid;
+    }
+
+    .dynamic-website-card-holder,
+    .student-profile .card {
+        box-shadow: none;
+        border: 1px solid var(--profile-border);
+    }
+
+    .header-holder {
+        page-break-inside: avoid;
+    }
+}
+
+/* === Loading States === */
+.student-profile.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* === Empty State === */
+.dynamic-website-card-holder tbody:empty::after {
+    content: 'No data available';
+    display: table-row;
+    text-align: center;
+    padding: 2rem;
+    color: var(--profile-text-light);
+    font-weight: 600;
+}
+
+/* === Hover Glow Effect === */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+    }
+    50% {
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+}
+
+.student-profile-navs .nav-link.active {
+    animation: glow 2s infinite;
+}
+
+/* === Scrollbar Styling === */
+.dynamic-website-card-holder::-webkit-scrollbar {
+    height: 8px;
+}
+
+.dynamic-website-card-holder::-webkit-scrollbar-track {
+    background: var(--profile-bg-light);
+    border-radius: 10px;
+}
+
+.dynamic-website-card-holder::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, var(--profile-primary), var(--profile-primary-dark));
+    border-radius: 10px;
+}
+
+.dynamic-website-card-holder::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, var(--profile-primary-dark), var(--profile-primary));
+}
+
+/* === Selection Styling === */
+::selection {
+    background: rgba(102, 126, 234, 0.3);
+    color: var(--profile-text-dark);
+}
+
+/* === Accessibility - Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

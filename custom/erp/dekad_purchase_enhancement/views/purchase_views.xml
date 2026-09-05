@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_order_form_inherited" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherited</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']//list//field[@name='qty_invoiced']" position="after">
+                <field name="amount_received" optional="hide" widget="monetary"
+                       column_invisible="parent.state not in ('purchase', 'done')"
+                />
+                <field name="amount_to_invoice" optional="hide" widget="monetary"
+                       column_invisible="parent.state not in ('purchase', 'done')"
+                />
+                <field name="amount_invoiced" optional="hide" widget="monetary"
+                       column_invisible="parent.state not in ('purchase', 'done')"
+                />
+            </xpath>
+              <!-- Make Disc.% column visible by default -->
+            <xpath expr="//field[@name='order_line']//list//field[@name='discount']"
+                   position="attributes">
+                <attribute name="optional">show</attribute>
+                <attribute name="groups">dekad_purchase_enhancement.group_purchase_discount_user</attribute>
+            </xpath>
+
+            <!--
+                Discount button on the RIGHT, above Untaxed Amount / Total.
+                Target the oe_subtotal_footer group and inject the button before it.
+            -->
+            <xpath expr="//page[@name='products']//group[@class='oe_subtotal_footer']"
+                   position="before">
+                <div class="text-end mb-2"
+                     groups="dekad_purchase_enhancement.group_purchase_discount_user">
+                    <button string="Discount"
+                            name="action_open_discount_wizard"
+                            type="object"
+                            class="btn btn-secondary"
+                            invisible="state in ('done', 'cancel')"/>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <record id="view_purchase_order_line_form_inherit_vat" model="ir.ui.view">
+        <field name="name">purchase.order.line.form.vat</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/list//field[@name='taxes_id']" position="after">
+                <field name="price_unit_vat" optional="show"/>
+            </xpath>
+
+            <xpath expr="//list/field[1]" position="before">
+                 <field name="line_index" string="#" readonly="1" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
+
+

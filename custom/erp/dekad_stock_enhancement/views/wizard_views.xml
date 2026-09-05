@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_dekad_stock_picking_cancel" model="ir.ui.view">
+        <field name="name">dekad.picking.cancel.wizard.form</field>
+        <field name="model">dekad.picking.cancel.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Cancel/Draft Options">
+                <group>
+                    <field name="picking_ids" readonly="1" nolabel="1" widget="many2many_tags"/>
+                    <field name="option" required="1"/>
+                </group>
+                <footer>
+                    <button string="Apply" type="object" name="action_apply" class="btn-primary"/>
+                    <button string="Close" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_dekad_stock_picking_cancel" model="ir.actions.act_window">
+        <field name="name">Cancel/Draft Wizard</field>
+        <field name="res_model">dekad.picking.cancel.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="view_dekad_stock_picking_cancel"/>
+    </record>
+</odoo>

@@ -1,0 +1,13 @@
+<odoo>
+  <record id="action_dekad_profit_loss_dashboard" model="ir.actions.client">
+    <field name="name">Profit &amp; Loss Dashboard</field>
+    <field name="tag">dekad_invoice_product_profit_dashboard_action</field>
+  </record>
+
+  <menuitem id="menu_dekad_profit_loss_dashboard_root"
+        name="Profit &amp; Loss Dashboard"
+        action="action_dekad_profit_loss_dashboard"
+        parent="menu_account_profit_reports"
+        groups="group_profit_loss_dashboard_user"
+        sequence="5"/>
+</odoo>

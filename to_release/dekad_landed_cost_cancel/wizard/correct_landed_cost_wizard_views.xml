@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_correct_landed_cost_wizard_form" model="ir.ui.view">
+        <field name="name">correct.landed.cost.wizard.form</field>
+        <field name="model">correct.landed.cost.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Correct Landed Cost">
+                <sheet>
+
+                    <div class="alert alert-info" role="alert">
+                        <strong>No sales detected — correction will be fully applied to inventory.</strong>
+                    </div>
+
+                    <group string="Landed Cost">
+                        <field name="landed_cost_id" readonly="1"/>
+                        <field name="current_amount" readonly="1"/>
+                    </group>
+
+                    <group string="Correction">
+                        <field name="correct_amount"/>
+                        <field name="diff_amount" readonly="1"/>
+                        <field name="split_method"/>
+                    </group>
+
+                </sheet>
+                <footer>
+                    <button name="action_confirm"
+                            type="object"
+                            string="Apply Correction"
+                            class="btn-primary"/>
+                    <button string="Cancel"
+                            class="btn-secondary"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

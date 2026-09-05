@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="paperformat_tb_invoice_document" model="report.paperformat">
+        <field name="name">Ten Bridge - Property Management Invoice</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">53</field>
+        <field name="margin_bottom">13</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">50</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_report_tb_pm_invoice" model="ir.actions.report">
+        <field name="name">Ten Bridge Invoice</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ten_bridge_implementation.report_tb_pm_invoice_document</field>
+        <field name="report_file">ten_bridge_implementation.report_tb_pm_invoice_document</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="ten_bridge_implementation.paperformat_tb_invoice_document"/>
+    </record>
+
+    <template id="report_tb_pm_invoice_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="page" style="font-family: 'DejaVu Sans', sans-serif; font-size:11px; color:#222; padding:20px 24px 70px 24px;">
+                        <!-- ══ HEADER ══ -->
+                        <div class="header" style="padding:12px 24px 10px 24px; background:#fff;">
+                            <table style="width:100%; border-collapse:collapse;">
+                                <tr>
+                                    <td style="vertical-align:top; width:60%;">
+                                        <t t-if="o.company_id.logo">
+                                            <img t-att-src="image_data_uri(o.company_id.logo)"
+                                                 style="max-height:55px; max-width:130px; margin-bottom:6px; display:block;"/>
+                                        </t>
+
+                                        <div style="font-size:14pt; font-weight:bold; color:#111; line-height:1.25;">
+                                            <span t-esc="o.company_id.name"/>
+                                        </div>
+
+                                        <!-- Address -->
+                                        <div t-if="o.company_id.street or o.company_id.street2 or o.company_id.city or o.company_id.state_id or o.company_id.country_id"
+                                             style="font-size:9pt; color:#444; margin-top:2px; line-height:1.4;">
+                                            <t t-if="o.company_id.street">
+                                                <span t-esc="o.company_id.street"/>
+                                            </t>
+                                            <t t-if="o.company_id.street2">
+                                                <t t-if="o.company_id.street">, </t>
+                                                <span t-esc="o.company_id.street2"/>
+                                            </t>
+                                            <t t-if="o.company_id.city">
+                                                <t t-if="o.company_id.street or o.company_id.street2">, </t>
+                                                <span t-esc="o.company_id.city"/>
+                                            </t>
+                                            <t t-if="o.company_id.state_id">
+                                                <t t-if="o.company_id.street or o.company_id.street2 or o.company_id.city">, </t>
+                                                <span t-esc="o.company_id.state_id.name"/>
+                                            </t>
+                                            <t t-if="o.company_id.country_id">
+                                                <t t-if="o.company_id.street or o.company_id.street2 or o.company_id.city or o.company_id.state_id">, </t>
+                                                <span t-esc="o.company_id.country_id.name"/>
+                                            </t>
+                                        </div>
+
+                                        <div style="font-size:9pt; color:#444; margin-top:4px; line-height:1.8;">
+                                            <!-- Phone / Mobile -->
+                                            <t t-if="o.company_id.phone or o.company_id.mobile">
+                                                <span style="direction:ltr; unicode-bidi:embed;">
+                                                    <t t-if="o.company_id.phone">
+                                                        <span t-esc="o.company_id.phone"/>
+                                                    </t>
+                                                    <t t-if="o.company_id.phone and o.company_id.mobile">
+                                                        /
+                                                    </t>
+                                                    <t t-if="o.company_id.mobile">
+                                                        <span t-esc="o.company_id.mobile"/>
+                                                    </t>
+                                                </span>
+                                                <br/>
+                                            </t>
+
+                                            <t t-if="o.company_id.email">
+                                                <span t-esc="o.company_id.email"/><br/>
+                                            </t>
+
+                                            <t t-if="o.company_id.vat">
+                                                TRN: <span t-esc="o.company_id.vat"/>
+                                            </t>
+                                        </div>
+                                    </td>
+                                    <td style="vertical-align:top; width:40%; text-align:right;">
+                                        <div style="font-size:17pt; font-weight:bold; color:#1a1a2e; letter-spacing:1px; line-height:1;">
+                                            TAX INVOICE
+                                        </div>
+                                        <div style="font-size:10pt; color:#555; margin-top:4px;">
+                                            <span t-esc="o.name"/>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- ══ DATES ══ -->
+                        <table style="width:100%; border-collapse:collapse; margin-bottom:16px;">
+                            <tr>
+                                <!-- Left -->
+                                <td style="width:33%; vertical-align:top; text-align:left;">
+                                    <div style="font-size:10pt; color:#888; margin-bottom:2px;">Invoice Date</div>
+                                    <div style="font-size:9pt; font-weight:bold;">
+                                        <span t-field="o.invoice_date"/>
+                                    </div>
+                                </td>
+
+                                <!-- Center -->
+                                <td style="width:33%; vertical-align:top; text-align:left;">
+                                    <t t-if="o.invoice_date_due">
+                                        <div style="font-size:10pt; color:#888; margin-bottom:2px;">Due Date</div>
+                                        <div style="font-size:9pt; font-weight:bold;">
+                                            <span t-field="o.invoice_date_due"/>
+                                        </div>
+                                    </t>
+                                </td>
+
+                                <!-- Empty right column -->
+                                <td style="width:34%;"></td>
+                            </tr>
+                        </table>
+                        <br/>
+
+                        <!-- ══ BILL TO ══ -->
+                        <table style="width:100%; border-collapse:collapse; margin-bottom:14px;">
+                            <tr>
+                                <td style="vertical-align:top; width:55%;">
+                                    <div style="font-size:8pt; color:#888; font-style:italic; margin-bottom:3px;">Invoice to:</div>
+                                    <div style="font-size:10pt; font-weight:bold; margin-bottom:3px;">
+                                        <span t-esc="o.partner_id.name"/>
+                                    </div>
+                                    <div style="font-size:9pt; color:#444; line-height:1.7;">
+                                        <!-- Street -->
+                                        <t t-if="o.partner_id.street or o.partner_id.street2">
+                                            <t t-if="o.partner_id.street">
+                                                <span t-esc="o.partner_id.street"/>
+                                            </t>
+                                            <t t-if="o.partner_id.street2">
+                                                <t t-if="o.partner_id.street">, </t>
+                                                <span t-esc="o.partner_id.street2"/>
+                                            </t>
+                                            <br/>
+                                        </t>
+
+                                        <!-- State, City, Country -->
+                                        <t t-if="o.partner_id.state_id or o.partner_id.city or o.partner_id.country_id">
+                                            <t t-if="o.partner_id.state_id">
+                                                <span t-esc="o.partner_id.state_id.name"/>
+                                            </t>
+                                            <t t-if="o.partner_id.city">
+                                                <t t-if="o.partner_id.state_id">, </t>
+                                                <span t-esc="o.partner_id.city"/>
+                                            </t>
+                                            <t t-if="o.partner_id.country_id">
+                                                <t t-if="o.partner_id.state_id or o.partner_id.city">, </t>
+                                                <span t-esc="o.partner_id.country_id.name"/>
+                                            </t>
+                                            <br/>
+                                        </t>
+
+                                        <!-- Phone / Mobile -->
+                                        <t t-if="o.partner_id.phone or o.partner_id.mobile">
+                                            <span style="direction:ltr; unicode-bidi:embed;">
+                                                <t t-if="o.partner_id.phone">
+                                                    <span t-esc="o.partner_id.phone"/>
+                                                </t>
+                                                <t t-if="o.partner_id.phone and o.partner_id.mobile">
+                                                    /
+                                                </t>
+                                                <t t-if="o.partner_id.mobile">
+                                                    <span t-esc="o.partner_id.mobile"/>
+                                                </t>
+                                            </span>
+                                            <br/>
+                                        </t>
+
+                                        <!-- TRN -->
+                                        <t t-if="o.partner_id.vat">
+                                            TRN: <span t-esc="o.partner_id.vat"/>
+                                        </t>
+
+                                    </div>
+                                </td>
+                                <td style="vertical-align:top; width:45%; text-align:right;"></td>
+                            </tr>
+                        </table>
+
+                        <!-- ══ PAYMENT METHOD ══ -->
+                        <div style="margin-bottom:10px; font-size:10pt;"
+                             t-if="o._get_reconciled_payments()">
+                            <strong>Payment Method:</strong>
+                            <t t-foreach="o._get_reconciled_payments()" t-as="payment">
+                                <span t-esc="payment.payment_method_line_id.name"/>
+                                <t t-if="payment.journal_id">
+                                    (<span t-esc="payment.journal_id.name"/>)
+                                </t>
+                                <t t-if="not payment_last">, </t>
+                            </t>
+                        </div>
+
+                        <!-- ══ LINES TABLE ══ -->
+                        <table style="width:100%; border-collapse:collapse; margin-bottom:6px; font-size:10pt;">
+                            <thead>
+                                <tr style="border-bottom:2px solid #333;">
+                                    <th style="padding:6px 8px 6px 0; text-align:left; width:42%; font-weight:bold;">Description</th>
+                                    <th style="padding:6px 8px; text-align:center; width:10%; font-weight:bold;">Quantity</th>
+                                    <th style="padding:6px 8px; text-align:right; width:16%; font-weight:bold;">Unit Price</th>
+                                    <th style="padding:6px 8px; text-align:right; width:14%; font-weight:bold;">VAT (5%)</th>
+                                    <th style="padding:6px 0 6px 8px; text-align:right; width:18%; font-weight:bold;">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')" t-as="line">
+                                    <tr style="border-bottom:1px solid #e0e0e0;">
+                                        <td style="padding:8px 8px 8px 0; vertical-align:top;">
+                                            <span t-field="line.name" t-options="{'widget': 'text'}"/>
+                                        </td>
+                                        <td style="padding:8px; text-align:center; vertical-align:top;">
+                                            <span t-field="line.quantity"/>
+                                        </td>
+                                        <td style="padding:8px; text-align:right; vertical-align:top; white-space:nowrap;">
+                                            <span t-esc="'{:,.2f}'.format(line.price_unit)"/>
+                                            <span t-esc="o.currency_id.name"/>
+                                        </td>
+                                        <td style="padding:8px; text-align:right; vertical-align:top; white-space:nowrap;">
+                                            <span t-esc="'{:,.2f}'.format(line.price_total - line.price_subtotal)"/>
+                                            <span t-esc="o.currency_id.name"/>
+                                        </td>
+                                        <td style="padding:8px 0 8px 8px; text-align:right; vertical-align:top; white-space:nowrap;">
+                                            <span t-esc="'{:,.2f}'.format(line.price_total)"/>
+                                            <span t-esc="o.currency_id.name"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <!-- ══ TOTALS + NOTES ══ -->
+                        <table style="width:100%; border-collapse:collapse; margin-bottom:20px;">
+                            <tr>
+                                <!-- Notes on left -->
+                                <td style="width:50%; vertical-align:bottom; padding-right:20px;">
+
+                                    <t t-if="o.narration">
+                                        <div style="font-size:9pt; font-weight:bold; margin-bottom:4px;">
+                                            Notes:
+                                        </div>
+                                        <div style="font-size:9pt; color:#444; line-height:1.6;">
+                                            <span t-field="o.narration"/>
+                                        </div>
+                                    </t>
+
+                                </td>
+                                <!-- Totals on right -->
+                                <td style="width:25%; vertical-align:top; padding-top:10px;">
+                                    <table style="width:100%; border-collapse:collapse; font-size:10pt;">
+                                        <tr>
+                                            <td style="color:#555; text-align:left;">Untaxed Amount</td>
+                                            <td style="padding:5px 0; text-align:right; white-space:nowrap; width:40%;">
+                                                <span t-esc="'{:,.2f}'.format(o.amount_untaxed)"/>
+                                                <span t-esc="o.currency_id.name"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:#555; text-align:left;">Taxes (VAT 5%)</td>
+                                            <td style="padding:5px 0; text-align:right; white-space:nowrap;">
+                                                <span t-esc="'{:,.2f}'.format(o.amount_tax)"/>
+                                                <span t-esc="o.currency_id.name"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="padding:6px 0;">
+                                                <div style="border-top:2px solid #333;"></div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="font-weight:bold; text-align:left;">
+                                                Total
+                                            </td>
+                                            <td style="font-weight:bold; text-align:right; white-space:nowrap;">
+                                                <span t-esc="'{:,.2f}'.format(o.amount_total)"/>
+                                                <span t-esc="o.currency_id.name"/>
+                                            </td>
+                                        </tr>
+
+                                        <t t-if="o.amount_residual > 0">
+                                            <tr>
+                                                <td style="color:#555; text-align:left;">
+                                                    Amount Due
+                                                </td>
+                                                <td style="padding:5px 0; text-align:right; white-space:nowrap;">
+                                                    <span t-esc="'{:,.2f}'.format(o.amount_residual)"/>
+                                                    <span t-esc="o.currency_id.name"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- ══ SIGNATURE SECTION ══ -->
+                        <table style="width:100%; border-collapse:collapse; margin-bottom:20px;margin-top: 80px;">
+                            <tr>
+                                <!-- Company signature -->
+                                <td style="width:50%; vertical-align:top; padding-right:20px;">
+                                    <div style="font-size:10pt; font-weight:bold; border-bottom:1px solid #333; padding-bottom:4px; margin-bottom:10px;">
+                                        <span t-esc="o.company_id.name"/>
+                                    </div>
+                                    <div style="font-size:8pt; color:#555; line-height:2.0;">
+                                        <br/>
+                                        Authorized Signature<br/>
+                                        Company Stamp<br/>
+                                        Approved By:<span style="display:inline-block; border-bottom:1px solid #555; width:120px; margin-bottom:-2px;"></span>
+                                    </div>
+                                </td>
+                                <!-- Customer signature -->
+                                <td style="width:50%; vertical-align:top; padding-left:20px;">
+                                    <div style="font-size:10pt; font-weight:bold; border-bottom:1px solid #333; padding-bottom:4px; margin-bottom:10px;">
+                                        <span t-esc="o.partner_id.name"/>
+                                    </div>
+                                    <div style="font-size:8pt; color:#555; line-height:2.0;">
+                                        <br/>
+                                        Authorized Signature<br/>
+                                        Company Stamp<br/>
+                                        Approved By: <span style="display:inline-block; border-bottom:1px solid #555; width:120px; margin-bottom:-2px;"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- Row 2: Finance Manager (left only) -->
+                        <table style="width:100%; border-collapse:collapse; margin-bottom:24px;">
+                            <tr>
+                                <td style="width:50%; vertical-align:top; padding-right:20px;">
+                                    <br/>
+                                    <div style="font-size:10pt; font-weight:bold; border-bottom:1px solid #333; padding-bottom:4px; margin-bottom:10px;">
+                                        Finance Manager
+                                    </div>
+                                    <div style="font-size:8pt; color:#555; line-height:2.0;">
+                                        Authorized Signature<br/>
+                                        Company Stamp<br/>
+                                        Approved By: <span style="display:inline-block; border-bottom:1px solid #555; width:120px; margin-bottom:-2px;"></span>
+                                    </div>
+                                </td>
+                                <td style="width:50%;"></td>
+                            </tr>
+                        </table>
+
+                        <!-- ══ FOOTER ══ -->
+                        <div class="footer" style="border-top:1px solid #ccc; padding-top:8px; text-align:center; font-size:8pt; color:#777; line-height:1.6;">
+
+                            <span t-esc="o.company_id.name"/>
+
+                            <t t-if="o.company_id.city or o.company_id.country_id">
+                                |
+                                <t t-if="o.company_id.city">
+                                    <span t-esc="o.company_id.city"/>
+                                </t>
+                                <t t-if="o.company_id.country_id">
+                                    <t t-if="o.company_id.city">, </t>
+                                    <span t-esc="o.company_id.country_id.name"/>
+                                </t>
+                            </t>
+
+                            <t t-if="o.company_id.phone or o.company_id.mobile">
+                                |
+                                <span style="direction:ltr; unicode-bidi:embed;">
+                                    <t t-if="o.company_id.phone">
+                                        <span t-esc="o.company_id.phone"/>
+                                    </t>
+                                    <t t-if="o.company_id.phone and o.company_id.mobile">
+                                        /
+                                    </t>
+                                    <t t-if="o.company_id.mobile">
+                                        <span t-esc="o.company_id.mobile"/>
+                                    </t>
+                                </span>
+                            </t>
+
+                            <t t-if="o.company_id.email">
+                                | <span t-esc="o.company_id.email"/>
+                            </t>
+
+                            <t t-if="o.company_id.vat">
+                                | TRN: <span t-esc="o.company_id.vat"/>
+                            </t>
+
+                        </div>
+
+                    </div>
+                </t>
+
+            </t>
+        </t>
+    </template>
+
+</odoo>

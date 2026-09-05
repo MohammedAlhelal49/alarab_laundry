@@ -1,0 +1,34 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gmr_request_user,gmr.request user,model_gmr_request,dekad_material_request.group_gmr_user,1,1,1,1
+access_gmr_request_approver,gmr.request approver,model_gmr_request,dekad_material_request.group_gmr_approver,1,1,0,0
+access_gmr_request_admin,gmr.request admin,model_gmr_request,dekad_material_request.group_gmr_admin,1,1,0,0
+access_gmr_request_line_user,gmr.request.line user,model_gmr_request_line,dekad_material_request.group_gmr_user,1,1,1,1
+access_gmr_request_line_approver,gmr.request.line approver,model_gmr_request_line,dekad_material_request.group_gmr_approver,1,1,0,0
+access_gmr_request_line_admin,gmr.request.line admin,model_gmr_request_line,dekad_material_request.group_gmr_admin,1,1,1,1
+access_gmr_create_po_wizard_admin,gmr.create.po.wizard admin,model_gmr_create_po_wizard,dekad_material_request.group_gmr_admin,1,1,1,1
+access_gmr_create_po_wizard_line_admin,gmr.create.po.wizard.line admin,model_gmr_create_po_wizard_line,dekad_material_request.group_gmr_admin,1,1,1,1
+access_gmr_add_products_wizard_user,gmr.add.products.wizard user,model_gmr_add_products_wizard,dekad_material_request.group_gmr_user,1,1,1,1
+access_gmr_add_products_wizard_admin,gmr.add.products.wizard admin,model_gmr_add_products_wizard,dekad_material_request.group_gmr_admin,1,1,1,1
+access_gmr_add_products_wizard_line_user,gmr.add.products.wizard.line user,model_gmr_add_products_wizard_line,dekad_material_request.group_gmr_user,1,1,1,1
+access_gmr_add_products_wizard_line_admin,gmr.add.products.wizard.line admin,model_gmr_add_products_wizard_line,dekad_material_request.group_gmr_admin,1,1,1,1
+access_analytic_account_gmr_user,account.analytic.account gmr user,analytic.model_account_analytic_account,dekad_material_request.group_gmr_user,1,0,0,0
+access_analytic_account_gmr_approver,account.analytic.account gmr approver,analytic.model_account_analytic_account,dekad_material_request.group_gmr_approver,1,0,0,0
+access_analytic_account_gmr_admin,account.analytic.account gmr admin,analytic.model_account_analytic_account,dekad_material_request.group_gmr_admin,1,0,0,0
+access_product_product_gmr_user,product.product gmr user,product.model_product_product,dekad_material_request.group_gmr_user,1,0,0,0
+access_product_product_gmr_approver,product.product gmr approver,product.model_product_product,dekad_material_request.group_gmr_approver,1,0,0,0
+access_product_product_gmr_admin,product.product gmr admin,product.model_product_product,dekad_material_request.group_gmr_admin,1,0,0,0
+access_product_category_gmr_user,product.category gmr user,product.model_product_category,dekad_material_request.group_gmr_user,1,0,0,0
+access_uom_uom_gmr_user,uom.uom gmr user,uom.model_uom_uom,dekad_material_request.group_gmr_user,1,0,0,0
+access_uom_uom_gmr_approver,uom.uom gmr approver,uom.model_uom_uom,dekad_material_request.group_gmr_approver,1,0,0,0
+access_uom_uom_gmr_admin,uom.uom gmr admin,uom.model_uom_uom,dekad_material_request.group_gmr_admin,1,0,0,0
+access_res_users_gmr_user,res.users gmr user,base.model_res_users,dekad_material_request.group_gmr_user,1,0,0,0
+access_res_users_gmr_admin,res.users gmr admin,base.model_res_users,dekad_material_request.group_gmr_admin,1,0,0,0
+access_res_partner_gmr_admin,res.partner gmr admin,base.model_res_partner,dekad_material_request.group_gmr_admin,1,0,0,0
+access_mail_activity_gmr_approver,mail.activity gmr approver,mail.model_mail_activity,dekad_material_request.group_gmr_approver,1,1,1,1
+access_mail_activity_gmr_admin,mail.activity gmr admin,mail.model_mail_activity,dekad_material_request.group_gmr_admin,1,1,1,1
+access_project_project_gmr_user,project.project gmr user,project.model_project_project,dekad_material_request.group_gmr_user,1,0,0,0
+access_project_project_gmr_approver,project.project gmr approver,project.model_project_project,dekad_material_request.group_gmr_approver,1,0,0,0
+access_project_project_gmr_admin,project.project gmr admin,project.model_project_project,dekad_material_request.group_gmr_admin,1,0,0,0
+access_project_task_gmr_user,project.task gmr user,project.model_project_task,dekad_material_request.group_gmr_user,1,0,0,0
+access_project_task_gmr_approver,project.task gmr approver,project.model_project_task,dekad_material_request.group_gmr_approver,1,0,0,0
+access_project_task_gmr_admin,project.task gmr admin,project.model_project_task,dekad_material_request.group_gmr_admin,1,0,0,0

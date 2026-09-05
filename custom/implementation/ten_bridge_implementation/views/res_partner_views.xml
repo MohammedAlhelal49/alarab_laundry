@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_view_form_license" model="ir.ui.view">
+        <field name="name">res.partner.view.form.license</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//div[@class='oe_title mb24']/h1" position="after">
+                <div class="mt-2">
+                    <field name="name_ar" placeholder="الاسم بالعربية"/>
+                </div>
+            </xpath>
+
+            <xpath expr="//field[@name='child_ids']/form//field[@name='mobile']" position="after">
+                <field name="id_number" invisible="type != 'contact'"/>
+            </xpath>
+
+
+            <field name="category_id" position="after">
+                <field
+                    name="trade_license"/>
+                <field
+                    name="trade_name"/>
+            </field>
+            <field name="id_number" position="after">
+                <field
+                    name="po_box"/>
+                <field
+                    name="fax"/>
+            </field>
+        </field>
+    </record>
+</odoo>

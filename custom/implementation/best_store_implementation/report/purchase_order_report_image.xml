@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="purchase_order_report_add_image"
+              inherit_id="dekad_purchase_enhancement.purchase_order_report_index">
+
+        <!-- Set has_images before table -->
+        <xpath expr="//table[contains(@class,'o_main_table')]" position="before">
+            <t t-set="has_images" t-value="any(l.product_image for l in o.order_line)"/>
+        </xpath>
+
+        <!-- Barcode Header -->
+        <xpath expr="//th[@name='th_description']" position="after">
+            <th class="text-start">
+                <strong>Barcode</strong>
+            </th>
+        </xpath>
+
+        <!-- Image Header -->
+        <xpath expr="//th[@name='th_description']" position="before">
+            <th t-if="has_images" class="text-start">
+                <strong>Image</strong>
+            </th>
+        </xpath>
+
+        <!-- Image Cell -->
+        <xpath expr="//td[span[@t-field='line.name']]" position="before">
+            <td t-if="has_images" class="text-start">
+                <t t-if="line.product_image">
+                    <img t-att-src="image_data_uri(line.product_image)"
+                         style="max-width:80px; max-height:80px; object-fit:contain;"/>
+                </t>
+            </td>
+        </xpath>
+
+        <!-- Barcode Cell -->
+        <xpath expr="//td[span[@t-field='line.name']]" position="after">
+            <td class="text-start">
+                <span t-out="line.barcode or ''"/>
+            </td>
+        </xpath>
+
+    </template>
+</odoo>

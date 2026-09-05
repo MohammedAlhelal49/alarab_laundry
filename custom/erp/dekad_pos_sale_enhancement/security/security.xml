@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--
+            Group: POS Cash Control Bypass
+            Users in this group can always see the Cash Control section
+            in the Close POS Session popup, even when 'Hide Cash Control'
+            is enabled on the POS configuration.
+        -->
+        <record id="group_pos_cash_control_bypass" model="res.groups">
+            <field name="name">POS Cash Control Bypass</field>
+            <field name="category_id" ref="base.module_category_point_of_sale"/>
+            <field name="comment">
+                Users with this group will always see the Cash Control section
+                when closing a POS session, regardless of the "Hide Cash Control"
+                setting on the POS configuration.
+            </field>
+        </record>
+    </data>
+</odoo>

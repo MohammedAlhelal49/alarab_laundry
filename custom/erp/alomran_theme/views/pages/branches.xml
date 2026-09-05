@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="branches_template" name="Branches">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <!-- Hero Header -->
+                <section class="hero-premium branches-hero">
+                    <!-- Background with overlay -->
+                    <div class="hero-bg-overlay">
+                        <div class="hero-bg-image" style="background-image: url('/alomran_theme/static/src/img/hero-bg.jpg');"></div>
+                        <div class="hero-gradient-overlay"></div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row align-items-center min-vh-100 py-5">
+                            <div class="col-lg-10 mx-auto text-center" data-aos="fade-up" data-aos-delay="100">
+                                <!-- Trust Badge -->
+                                <div class="trust-badge mb-4">
+                                    <span class="badge-icon">
+                                        <i class="fa fa-map-marker-alt"></i>
+                                    </span>
+                                    <span class="badge-text">
+                                        <strong>11</strong> Branches Across UAE
+                                    </span>
+                                </div>
+
+                                <!-- Main Headline -->
+                                <h1 class="display-1 fw-black mb-4 text-white" t-if="not (request.env.lang and request.env.lang.startswith('ar'))">
+                                    <span class="text-gradient"> Our Branches</span>
+                                </h1>
+
+                                <!-- SEO: H1 عربي - يظهر فقط للزائر العربي -->
+                                <h1 class="display-1 fw-black mb-4 text-white" t-if="request.env.lang and request.env.lang.startswith('ar')">
+                                    <span class="text-gradient">فروعنا في العين والإمارات</span>
+                                </h1>
+
+                                <!-- Subheading -->
+                                <p class="lead text-light mb-3">
+                                    We are always close to you wherever you are in the Emirates
+                                </p>
+
+                                <!-- SEO: فقرة عربية عن فرع العين - تظهر فقط للزائر العربي -->
+                                <p class="lead text-light mb-5" t-if="request.env.lang and request.env.lang.startswith('ar')">
+                                    مركز العمران للتدريب والتطوير في العين يضم أفضل معهد لغة انجليزية في العين، مع دورات انجليزي في العين على يد نخبة من المدربين المعتمدين.
+                                </p>
+
+                                <!-- Location Stats -->
+                                <div class="quick-stats mt-5">
+                                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                                        <div class="glass-badge">
+                                            <i class="fa fa-building me-2 text-warning"></i>
+                                            <span>Al Ain - 5 Branches</span>
+                                        </div>
+                                        <div class="glass-badge">
+                                            <i class="fa fa-building me-2 text-warning"></i>
+                                            <span>Abu Dhabi - 2 Branches</span>
+                                        </div>
+                                        <div class="glass-badge">
+                                            <i class="fa fa-building me-2 text-warning"></i>
+                                            <span>Dubai - 2 Branches</span>
+                                        </div>
+                                        <div class="glass-badge">
+                                            <i class="fa fa-building me-2 text-warning"></i>
+                                            <span>Sharjah - 1 Branch</span>
+                                        </div>
+                                        <div class="glass-badge">
+                                            <i class="fa fa-building me-2 text-warning"></i>
+                                            <span>RAK - 1 Branch</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scroll Indicator -->
+                    <div class="scroll-indicator">
+                        <a href="#branches-list" class="scroll-link">
+                            <i class="fa fa-chevron-down"></i>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Branches Grid - Simplified Cards -->
+                <section class="py-5" id="branches-list">
+                    <div class="container">
+                        <div class="text-center mb-5">
+                            <span class="badge mb-3">Our Locations</span>
+                            <h2 class="display-5 fw-bold mb-3" t-if="not (request.env.lang and request.env.lang.startswith('ar'))">Choose the Nearest Branch</h2>
+
+                            <!-- SEO: H2 عربي - يظهر فقط للزائر العربي -->
+                            <h2 class="display-5 fw-bold mb-3" t-if="request.env.lang and request.env.lang.startswith('ar')">معهد العمران في العين والإمارات</h2>
+                            <p class="lead text-muted">Click on a branch to view details</p>
+                        </div>
+
+                        <div class="row g-4">
+                            <!-- Loop through branches from controller -->
+                            <t t-foreach="branches" t-as="branch">
+                                <div class="col-lg-4 col-md-6">
+                                    <a t-attf-href="/branch/{{branch['slug']}}" class="branch-card-link">
+                                        <div class="branch-card-simple">
+                                            <div class="branch-card-icon">
+                                                <i class="fa fa-map-marker-alt"></i>
+                                            </div>
+                                            <h4 class="branch-card-title" t-esc="branch['name']"/>
+                                            <span t-attf-class="badge {{branch['badge_class']}}" t-esc="branch['city']"/>
+                                            <div class="branch-card-arrow">
+                                                <i class="fa fa-arrow-left"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cities Map -->
+                <section class="py-5 bg-light">
+                    <div class="container">
+                        <div class="text-center mb-5">
+                            <span class="badge mb-3">Emirates We Serve</span>
+                            <h2 class="display-5 fw-bold mb-3">Geographic Distribution</h2>
+                        </div>
+
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="modern-card text-center h-100">
+                                    <i class="fa fa-map-pin fa-4x text-primary mb-3 card-icon"/>
+                                    <h4 class="fw-bold">Al Ain</h4>
+                                    <p class="text-muted mb-0">5 branches</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="modern-card text-center h-100">
+                                    <i class="fa fa-map-pin fa-4x text-primary mb-3 card-icon"/>
+                                    <h4 class="fw-bold">Abu Dhabi</h4>
+                                    <p class="text-muted mb-0">2 branches</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="modern-card text-center h-100">
+                                    <i class="fa fa-map-pin fa-4x text-primary mb-3 card-icon"/>
+                                    <h4 class="fw-bold">Dubai</h4>
+                                    <p class="text-muted mb-0">2 branches</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="modern-card text-center h-100">
+                                    <i class="fa fa-map-pin fa-4x text-primary mb-3 card-icon"/>
+                                    <h4 class="fw-bold">Ras Al Khaimah</h4>
+                                    <p class="text-muted mb-0">1 branch</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA -->
+                <section class="hero-section py-5">
+                    <div class="container text-center hero-content">
+                        <h2 class="display-4 fw-bold mb-4" style="color: white;">Have a Question?</h2>
+                        <p class="lead mb-5" style="color: white; opacity: 0.95;">
+                            Our team is ready to answer all your questions
+                        </p>
+                        <a href="/contact" class="btn btn-light btn-lg px-5 py-3 animate-glow">
+                            <i class="fa fa-envelope me-2"/>
+                            Send Your Inquiry
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

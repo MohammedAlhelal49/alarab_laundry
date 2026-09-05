@@ -1,0 +1,84 @@
+<odoo>
+    <template id="report_delivery_document_inherit_patient_info" inherit_id="stock.report_delivery_document">
+
+        <!-- Patient Info: below picking number -->
+        <xpath expr="//div[@class='page']/h2" position="after">
+            <div style="line-height: 1.5; font-size: 90%;">
+                <t t-if="o.patient_id">
+                    <div><strong>Patient Name:</strong> <t t-esc="o.patient_id.name"/></div>
+                    <div t-if="o.patient_code"><strong>Code:</strong> <t t-esc="o.patient_code"/></div>
+                    <div t-if="o.theqa_no"><strong>Card Number:</strong> <t t-esc="o.theqa_no"/></div>
+                    <div t-if="o.mrn"><strong>MR No. :</strong> <t t-esc="o.mrn"/></div>
+                    <div t-if="o.claim_number">
+                        <strong>Claim No. :</strong>
+                        <t t-esc="o.claim_number"/>
+                    </div>
+                    <div t-if="o.lpo_authorization_type == 'lpo' and o.lpo_number"
+                         style="margin-bottom: 15px;">
+                        <strong>LPO No. :</strong>
+                        <t t-esc="o.lpo_number"/>
+                    </div>
+
+                    <div t-if="o.lpo_authorization_type == 'authorization' and o.authorization_number"
+                         style="margin-bottom: 15px;">
+                        <strong>Authorization No. :</strong>
+                        <t t-esc="o.authorization_number"/>
+                    </div>
+
+                </t>
+            </div>
+        </xpath>
+        <!-- Replace the document title -->
+        <xpath expr="//h2/span[@t-field='o.name']" position="replace">
+            <span>
+                Delivery Note
+                <span t-field="o.name"/>
+            </span>
+        </xpath>
+
+          <!-- Replace the whole info row with our custom layout -->
+        <xpath expr="//div[@id='informations']" position="replace">
+            <div id="informations" class="row mb-2">
+                <!-- Order -->
+                <div class="col" t-if="o.origin">
+                    <strong style="color: #9EAC3C;">Order</strong>
+                    <div t-field="o.origin"/>
+                </div>
+
+                <!-- Shipping Date -->
+                <div class="col" t-if="o.state">
+                    <strong style="color: #9EAC3C;">Delivery Date</strong>
+                    <div t-if="o.state == 'done'" t-field="o.date_done"/>
+                    <div t-else="" t-field="o.scheduled_date"/>
+                </div>
+
+                <!-- Manufacturer -->
+                <div class="col" t-if="o.manufacturer">
+                    <strong style="color: #9EAC3C;">Manufacturer</strong>
+                    <div t-field="o.manufacturer"/>
+                </div>
+
+                <!-- Warranty -->
+                <div class="col" t-if="o.warranty_value">
+                    <strong style="color: #9EAC3C;">Warranty</strong>
+                    <div>
+                        <t t-esc="o.warranty_value"/>
+                        <t t-if="o.warranty_unit">
+                            <t t-esc="dict(o.fields_get(allfields=['warranty_unit'])['warranty_unit']['selection'])[o.warranty_unit]"/>
+                        </t>
+                    </div>
+                </div>
+
+                <!-- Delivery Duration -->
+                <div class="col" t-if="o.delivery_duration_display">
+                    <strong style="color: #9EAC3C;">Delivery Duration</strong>
+                    <div t-field="o.delivery_duration_display"/>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@name='signature']//p[@t-field='o.partner_id.name']" position="replace">
+            <p t-if="o.patient_id.name" t-field="o.patient_id.name"/>
+        </xpath>
+
+    </template>
+</odoo>

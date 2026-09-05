@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="it_programs_page" name="IT Training Programs">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <!-- Hero Section -->
+                <section class="hero-section py-5" style="min-height: 60vh; display: flex; align-items: center;">
+                    <div class="container text-center hero-content">
+                        <div class="animate-scale">
+                            <span class="badge bg-primary text-white mb-3" style="font-size: 1rem; padding: 0.75rem 1.5rem;">
+                                <i class="fa fa-laptop-code me-2"></i>
+                                Information Technology
+                            </span>
+                            <h1 class="display-3 fw-bold mb-3" style="color: white;">IT Training Programs</h1>
+                            <p class="lead mb-4" style="color: white; opacity: 0.95; font-size: 1.3rem;">
+                                Programming | Networking | Cybersecurity | AI | Accredited Certificates
+                            </p>
+                            <div class="glass-card d-inline-block">
+                                <p class="mb-0" style="font-size: 1.1rem ; color: white;">
+                                    <i class="fa fa-code me-2"></i>
+                                    9 Specialized Technical Programs
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Program Description -->
+                <section class="py-5 bg-light">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 mb-4 mb-lg-0">
+                                <span class="badge bg-primary mb-3">About the Program</span>
+                                <h2 class="display-5 fw-bold mb-4">Start Your Tech Career</h2>
+                                <p class="lead text-muted mb-4">
+                                    We offer comprehensive training programs in the latest technologies and in-demand fields in the tech job market.
+                                </p>
+                                <div class="d-flex gap-4 mb-4">
+                                    <div>
+                                        <h4 class="fw-bold text-primary mb-1">160</h4>
+                                        <small class="text-muted">Training Hours</small>
+                                    </div>
+                                    <div>
+                                        <h4 class="fw-bold text-primary mb-1">9</h4>
+                                        <small class="text-muted">Specialized Programs</small>
+                                    </div>
+                                    <div>
+                                        <h4 class="fw-bold text-primary mb-1">Accredited</h4>
+                                        <small class="text-muted">Internationally &amp; Locally</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="modern-card p-4">
+                                    <h5 class="fw-bold mb-3">
+                                        <i class="fa fa-check-circle text-primary me-2"></i>
+                                        IT Program Features
+                                    </h5>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                            <i class="fa fa-check text-primary me-2"></i>
+                                            <strong>Practical application</strong> on real projects
+                                        </li>
+                                        <li class="mb-3">
+                                            <i class="fa fa-check text-primary me-2"></i>
+                                            <strong>Professional trainers</strong> with practical experience
+                                        </li>
+                                        <li class="mb-3">
+                                            <i class="fa fa-check text-primary me-2"></i>
+                                            <strong>Recognized certificates</strong> in the job market
+                                        </li>
+                                        <li class="mb-3">
+                                            <i class="fa fa-check text-primary me-2"></i>
+                                            <strong>Equipped labs</strong> with latest technologies
+                                        </li>
+                                        <li class="mb-3">
+                                            <i class="fa fa-check text-primary me-2"></i>
+                                            <strong>Continuous support</strong> after graduation
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- IT Programs Grid -->
+                <section class="py-5">
+                    <div class="container">
+                        <div class="text-center mb-5">
+                            <span class="badge bg-primary mb-3">Available Programs</span>
+                            <h2 class="display-5 fw-bold mb-3">Choose Your Tech Field</h2>
+                            <p class="lead text-muted">9 training programs in the most important tech fields</p>
+                        </div>
+
+                        <div class="row g-4">
+                            <!-- Programming -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="course-card h-70">
+                                    <div class="course-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                        <i class="fa fa-code"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <span class="badge bg-primary mb-3">Most Requested</span>
+                                        <h5 class="fw-bold mb-3">Programming Training Program</h5>
+                                        <button class="btn btn-primary w-100 btn-register" data-course="Programming Training Program">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Networking -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="course-card h-70">
+                                    <div class="course-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                                        <i class="fa fa-network-wired"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <span class="badge bg-danger mb-3">In Demand</span>
+                                        <h5 class="fw-bold mb-3">Computer Networking Training Program</h5>
+                                        <button class="btn btn-primary w-100 btn-register" data-course="Computer Networking Training Program">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- AI -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="course-card h-70">
+                                    <div class="course-header" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                        <i class="fa fa-brain"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <span class="badge bg-warning text-dark mb-3">Future</span>
+                                        <h5 class="fw-bold mb-3">Artificial Intelligence Training Program</h5>
+                                        <button class="btn btn-primary w-100 btn-register" data-course="Artificial Intelligence Training Program">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cybersecurity -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="course-card h-70">
+                                    <div class="course-header" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                                        <i class="fa fa-shield-alt"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <span class="badge bg-danger mb-3">Critical</span>
+                                        <h5 class="fw-bold mb-3">Cybersecurity Training Program</h5>
+                                        <button class="btn btn-primary w-100 btn-register" data-course="Cybersecurity Training Program">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Advanced Excel -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="course-card h-70">
+                                    <div class="course-header" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                                        <i class="fa fa-table"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <span class="badge bg-success mb-3">Professional</span>
+                                        <h5 class="fw-bold mb-3">Advanced Excel Training Program</h5>
+                                        <button class="btn btn-primary w-100 btn-register" data-course="Advanced Excel Training Program">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ICDL -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="course-card h-70">
+                                    <div class="course-header" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                                        <i class="fa fa-certificate"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <span class="badge bg-info mb-3">Internationally Accredited</span>
+                                        <h5 class="fw-bold mb-3">ICDL - International Computer Driving License</h5>
+                                        <button class="btn btn-primary w-100 btn-register" data-course="ICDL - International Computer Driving License">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Robotics -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="course-card h-70">
+                                    <div class="course-header" style="background: linear-gradient(135deg, #fa8bff 0%, #2bd2ff 100%);">
+                                        <i class="fa fa-robot"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <span class="badge bg-primary mb-3">Innovative</span>
+                                        <h5 class="fw-bold mb-3">Robotics Training Program</h5>
+                                        <button class="btn btn-primary w-100 btn-register" data-course="Robotics Training Program">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Computer Applications -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="course-card h-70">
+                                    <div class="course-header" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+                                        <i class="fa fa-desktop"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <span class="badge bg-success mb-3">Essential</span>
+                                        <h5 class="fw-bold mb-3">Computer Applications Training Program</h5>
+                                        <button class="btn btn-primary w-100 btn-register" data-course="Computer Applications Training Program">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Digital Transformation -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="course-card h-70">
+                                    <div class="course-header" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                                        <i class="fa fa-cloud"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <span class="badge bg-warning text-dark mb-3">Modern</span>
+                                        <h5 class="fw-bold mb-3">Digital Transformation &amp; File Management</h5>
+                                        <button class="btn btn-primary w-100 btn-register" data-course="Digital Transformation and File Management">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Registration Modal -->
+                <div class="modal fade" id="registrationModal" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content" style="border-radius: 20px; border: none;">
+                            <div class="modal-header" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 20px 20px 0 0;">
+                                <h5 class="modal-title">
+                                    <i class="fa fa-laptop-code me-2"></i>
+                                    Technical Program Registration
+                                </h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body p-4">
+                                <div id="registrationForm">
+                                    <div class="text-center mb-4">
+                                        <h6 class="fw-bold mb-2" id="modalCourseName"></h6>
+                                    </div>
+
+                                    <form id="courseRegistrationForm">
+                                        <input type="hidden" id="courseName" name="course_name"/>
+                                        <input type="hidden" id="coursePrice" name="course_price"/>
+
+                                        <div class="mb-3">
+                                            <label class="form-label fw-semibold">
+                                                <i class="fa fa-user text-primary me-2"></i>
+                                                Full Name <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text"
+                                                   class="form-control form-control-lg"
+                                                   id="studentName"
+                                                   name="name"
+                                                   required=""
+                                                   placeholder="Enter your full name"
+                                                   style="border-radius: 12px;"/>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label fw-semibold">
+                                                <i class="fa fa-phone text-primary me-2"></i>
+                                                Phone Number <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="tel"
+                                                   class="form-control form-control-lg"
+                                                   id="studentPhone"
+                                                   name="phone"
+                                                   required=""
+                                                   placeholder="05XXXXXXXX"
+                                                   pattern="[0-9]{10}"
+                                                   style="border-radius: 12px;"/>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <label class="form-label fw-semibold">
+                                                <i class="fa fa-envelope text-primary me-2"></i>
+                                                Email (Optional)
+                                            </label>
+                                            <input type="email"
+                                                   class="form-control form-control-lg"
+                                                   id="studentEmail"
+                                                   name="email"
+                                                   placeholder="example@email.com"
+                                                   style="border-radius: 12px;"/>
+                                        </div>
+
+                                        <button type="submit"
+                                                class="btn btn-lg w-100"
+                                                id="submitRegistration"
+                                                style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 12px; border: none;">
+                                            <i class="fa fa-paper-plane me-2"></i>
+                                            Submit Request
+                                        </button>
+                                    </form>
+                                </div>
+
+                                <!-- Success Message -->
+                                <div id="registrationSuccess" style="display: none;" class="text-center">
+                                    <div class="mb-4">
+                                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                                            <i class="fa fa-check" style="font-size: 2.5rem; color: white;"></i>
+                                        </div>
+                                    </div>
+                                    <h4 class="fw-bold mb-3">Request Submitted Successfully! 🎉</h4>
+                                    <p class="mb-4">
+                                        Thank you! Our team will contact you within <strong>24 hours</strong> to confirm registration.
+                                    </p>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <section class="hero-section py-5">
+                    <div class="container text-center hero-content">
+                        <h2 class="display-4 fw-bold mb-4" style="color: white;">Have a Question?</h2>
+                        <p class="lead mb-5" style="color: white; opacity: 0.95;">
+                            Our team is ready to help you choose the right program for your tech career
+                        </p>
+                        <div class="d-flex gap-3 justify-content-center flex-wrap">
+                            <a href="tel:+971505829697" class="btn btn-light btn-lg px-5">
+                                <i class="fa fa-phone me-2"></i>
+                                Call Us
+                            </a>
+                            <a href="https://wa.me/971505829697" target="_blank" class="btn btn-success btn-lg px-5">
+                                <i class="fab fa-whatsapp me-2"></i>
+                                WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

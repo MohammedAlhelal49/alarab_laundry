@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="de_admission_fee_product_category" model="product.category">
+            <field name="name">Admission fees</field>
+        </record>
+        <record id="de_admission_fee_product_1" model="product.product">
+            <field name="name">Grade 1 admission fee</field>
+            <field name="type">service</field>
+            <field name="categ_id" ref="de_admission_fee_product_category"/>
+            <field name="uom_id" ref="uom.product_uom_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_unit"/>
+            <field name="lst_price">6000</field>
+        </record>
+
+        <record id="de_admission_fee_product_2" model="product.product">
+            <field name="name">Grade 6 admission fee</field>
+            <field name="type">service</field>
+            <field name="categ_id" ref="de_admission_fee_product_category"/>
+            <field name="uom_id" ref="uom.product_uom_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_unit"/>
+            <field name="lst_price">10000</field>
+        </record>
+        <record id="dekad_core.de_grade_1" model="de.grade">
+            <field name="fee_term_id" ref="de_fee_term_1"/>
+            <field name="product_id" ref="de_admission_fee_product_1"/>
+        </record>
+        <record id="dekad_core.de_grade_2" model="de.grade">
+            <field name="fee_term_id" ref="de_fee_term_2"/>
+            <field name="product_id" ref="de_admission_fee_product_2"/>
+        </record>
+    </data>
+</odoo>

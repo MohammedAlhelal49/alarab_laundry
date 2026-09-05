@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================ -->
+    <!-- Appears in the "⚙ Actions" menu on the Products list/form     -->
+    <!-- (both, thanks to binding_view_types). Lets the user manually  -->
+    <!-- re-trigger the company_visibility_ids seeding step (normally  -->
+    <!-- only run automatically by post_init_hook, which only fires on -->
+    <!-- module Install - not Upgrade), without needing shell access.  -->
+    <!-- ============================================================ -->
+    <record id="action_seed_company_visibility_ids" model="ir.actions.server">
+        <field name="name">Sync Company Visibility (from legacy field)</field>
+        <field name="model_id" ref="product.model_product_template"/>
+        <field name="binding_model_id" ref="product.model_product_template"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">action = model.action_seed_company_visibility_ids()</field>
+    </record>
+
+</odoo>

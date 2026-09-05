@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_de_contravention_change_penalty_wizard_form" model="ir.ui.view">
+        <field name="name">de.contravention.change.penalty.wizard.form</field>
+        <field name="model">de.contravention.change.penalty.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="is_alert" invisible="1"/>
+                        <field name="alert" required="is_alert == True" invisible="is_alert != True"
+                        />
+                        <field name="is_penalty" invisible="1"/>
+                        <field name="penalty" required="is_penalty == True" invisible="is_penalty != True"
+                        />
+                        <field name="is_suspend" invisible="1"/>
+                        <field name="start_date" required="is_suspend == True" invisible="is_suspend != True"
+                        />
+                        <field name="end_date" required="is_suspend == True" invisible="is_suspend != True"
+                        />
+                    </group>
+                    <footer>
+                        <button name="change_penalty" string="Update data" class="btn-primary"
+                                data-hotkey="v" type="object"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="act_open_de_contravention_change_penalty_wizard_view">
+        <field name="name">Update penalties Data</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">de.contravention.change.penalty.wizard</field>
+        <field name="binding_model_id" ref="model_de_contravention"/>
+        <field name="binding_view_types">""</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="act_open_de_contravention_change_penalty_wizard_view_form">
+        <field name="act_window_id" ref="act_open_de_contravention_change_penalty_wizard_view"/>
+        <field name="sequence" eval="10"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_de_contravention_change_penalty_wizard_form"/>
+    </record>
+
+
+</odoo>

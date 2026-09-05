@@ -1,0 +1,155 @@
+<style>
+    .dic-wrap {
+        font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+        color: #4c4c4c;
+        line-height: 1.6;
+        max-width: 980px;
+        margin: 0 auto;
+    }
+    .dic-section {
+        padding: 48px 24px;
+    }
+    .dic-section.dic-dark {
+        background-color: #f5f5f5;
+        border-radius: 4px;
+    }
+    .dic-title {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 600;
+        color: #2c2c2c;
+        margin: 0 0 8px;
+    }
+    .dic-subtitle {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        color: #875A7B;
+        margin: 0 0 32px;
+    }
+    .dic-h2 {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        color: #2c2c2c;
+        margin: 0 0 24px;
+    }
+    .dic-p {
+        font-size: 15px;
+        margin: 0 0 16px;
+    }
+    .dic-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-top: 24px;
+    }
+    .dic-card {
+        flex: 1 1 calc(50% - 12px);
+        min-width: 260px;
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        padding: 20px 24px;
+    }
+    .dic-card h4 {
+        margin: 0 0 8px;
+        font-size: 16px;
+        color: #875A7B;
+    }
+    .dic-card p {
+        margin: 0;
+        font-size: 14px;
+    }
+    .dic-steps {
+        font-size: 15px;
+        padding-left: 24px;
+        margin: 0 0 16px;
+    }
+    .dic-steps li {
+        margin-bottom: 10px;
+    }
+    .dic-note {
+        background: #fff8e1;
+        border-left: 4px solid #f0ad4e;
+        padding: 12px 16px;
+        font-size: 14px;
+        border-radius: 4px;
+    }
+</style>
+
+<div class="dic-wrap">
+
+    <div class="dic-section">
+        <h2 class="dic-title">Dekad Inventory Cost</h2>
+        <p class="dic-subtitle">Set product cost directly from the Physical Inventory screen</p>
+    </div>
+
+    <div class="dic-section dic-dark">
+        <h2 class="dic-h2">What does it do?</h2>
+        <p class="dic-p">
+            This module adds a <strong>Cost</strong> column to the
+            <strong>Physical Inventory</strong> screen, right next to the
+            counted quantity. Enter the new cost while you count your
+            stock, click <strong>Apply</strong>, and the product's Cost is
+            updated automatically &mdash; the same way it would be if you
+            edited it on the product form, with full support for
+            Average Cost (AVCO) valuation and accounting entries.
+        </p>
+        <p class="dic-p">
+            Once this module is installed, the Cost field on the product
+            form becomes <strong>read-only</strong>: all cost updates go
+            through Physical Inventory, so there is always a single,
+            consistent place to update product costs.
+        </p>
+    </div>
+
+    <div class="dic-section">
+        <h2 class="dic-h2">Key Features</h2>
+        <div class="dic-grid">
+            <div class="dic-card">
+                <h4>Cost column</h4>
+                <p>A new editable <strong>Cost</strong> column appears right
+                   after Counted Quantity on the Physical Inventory list.</p>
+            </div>
+            <div class="dic-card">
+                <h4>Total column</h4>
+                <p>A new <strong>Total</strong> column shows On Hand Quantity
+                   &times; Cost, with a sum row at the bottom of the list for
+                   a quick overview.</p>
+            </div>
+            <div class="dic-card">
+                <h4>Single source of truth</h4>
+                <p>The Cost field on the product form becomes read-only.
+                   Cost changes can only be made from Physical Inventory.</p>
+            </div>
+            <div class="dic-card">
+                <h4>AVCO compatible</h4>
+                <p>Stock valuation layers and accounting journal entries are
+                   generated automatically and correctly, exactly as Odoo
+                   does when you change the cost from the product form.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="dic-section dic-dark">
+        <h2 class="dic-h2">How To Use</h2>
+        <ol class="dic-steps">
+            <li>Open <strong>Inventory &gt; Operations &gt; Physical Inventory</strong>.</li>
+            <li>Enter the counted quantity as usual.</li>
+            <li>Enter the new cost in the <strong>Cost</strong> column.</li>
+            <li>Click <strong>Apply</strong> (or <strong>Apply All</strong>).</li>
+            <li>The product's Cost is updated automatically. You can
+                verify it on the product form (read-only) or under
+                <strong>Inventory &gt; Reporting &gt; Valuation</strong>.</li>
+        </ol>
+        <div class="dic-note">
+            <strong>Note:</strong> if the same product appears on
+            several inventory lines (different locations or lots) with
+            different cost values, Odoo will block the Apply with a
+            clear warning until all lines for that product share the
+            same cost.
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,38 @@
+<odoo>
+    <record id="mail_template_document_expiry" model="mail.template">
+        <field name="name">Document Expiry Notification</field>
+        <field name="model_id" ref="hr.model_hr_employee"/>
+
+        <field name="subject">
+            {{ ctx.get('doc_type') }} Expiry - {{ object.name }}
+        </field>
+
+        <field name="email_from">
+            {{ user.email or '' }}
+        </field>
+
+        <field name="body_html">
+            <![CDATA[
+            <div>
+                <p>Hello,</p>
+
+                <p>
+                    The <strong><t t-esc="ctx.get('doc_type')"/></strong>
+                    of employee <strong><t t-esc="object.name"/></strong>
+                    is about to expire.
+                </p>
+
+                <p>
+                    <strong>Expiry Date:</strong>
+                    <t t-esc="format_date(ctx.get('expiry_date'))"/>
+                </p>
+
+                <p>
+                    Please take the necessary action before the expiry date.
+                </p>
+            </div>
+            ]]>
+        </field>
+
+    </record>
+</odoo>

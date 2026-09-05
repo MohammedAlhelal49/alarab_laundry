@@ -1,0 +1,115 @@
+<odoo>
+
+    <template id="report_payment_receipt_document_inherit"
+              inherit_id="account.report_payment_receipt_document">
+
+        <!-- Insert before the closing page div -->
+        <xpath expr="//div[@class='page']" position="inside">
+
+            <!-- ══ SIGNATURE SECTION ══ -->
+            <table style="width:100%; border-collapse:collapse; margin-top:80px; margin-bottom:20px;">
+                <tr>
+                    <!-- Company signature -->
+                    <td style="width:50%; vertical-align:top; padding-right:20px;border-top:2px solid #fff;border-bottom:2px solid #fff; background-color:#fff !important;">
+                        <div style="font-size:10pt; font-weight:bold; border-bottom:1px solid #333; padding-bottom:4px; margin-bottom:10px;">
+                            <span t-esc="o.company_id.name"/>
+                        </div>
+                        <div style="font-size:8pt; color:#555; line-height:2.0;">
+                            <br/>
+                            Authorized Signature<br/>
+                            Company Stamp<br/>
+                            Approved By:
+                            <span style="display:inline-block; border-bottom:1px solid #555; width:120px;"></span>
+                        </div>
+                    </td>
+
+                    <!-- Customer signature -->
+                    <td style="width:50%; vertical-align:top; padding-left:20px;border-top:2px solid #fff;border-bottom:2px solid #fff; background-color:#fff !important;">
+                        <div style="font-size:10pt; font-weight:bold; border-bottom:1px solid #333; padding-bottom:4px; margin-bottom:10px;">
+                            <t t-if="o.partner_id and o.partner_id.name">
+                                <span t-esc="o.partner_id.name"/>
+                            </t>
+                            <t t-else="">
+                                Customer Signature
+                            </t>
+                        </div>
+                        <div style="font-size:8pt; color:#555; line-height:2.0;">
+                            <br/>
+                            Authorized Signature<br/>
+                            Company Stamp<br/>
+                            Approved By:
+                            <span style="display:inline-block; border-bottom:1px solid #555; width:120px;"></span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Finance Manager -->
+            <table style="width:50%; border-collapse:collapse; margin-bottom:24px;">
+                <tr>
+                    <td style="width:50%; vertical-align:top; padding-right:20px;border-top:2px solid #fff;border-bottom:2px solid #fff; background-color:#fff !important;">
+                        <br/>
+                        <div style="font-size:10pt; font-weight:bold; border-bottom:1px solid #333; padding-bottom:4px; margin-bottom:10px;">
+                            Finance Manager
+                        </div>
+                        <div style="font-size:8pt; color:#555; line-height:2.0;">
+                            Authorized Signature<br/>
+                            Company Stamp<br/>
+                            Approved By:
+                            <span style="display:inline-block; border-bottom:1px solid #555; width:120px;"></span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </xpath>
+
+        <xpath expr="//div[@class='mb-4 mt-3']" position="replace">
+
+            <table class="table table-bordered mb-5 mt-5">
+                <thead>
+                    <tr>
+                        <th>Payment Date</th>
+                        <th>
+                            <t t-if="o.partner_type == 'customer'">
+                                Customer Name
+                            </t>
+                            <t t-else="">
+                                Vendor Name
+                            </t>
+                        </th>
+                        <th>Payment Amount</th>
+                        <th>Payment Method</th>
+                        <th>Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span t-field="o.date"/>
+                        </td>
+
+                        <td>
+                            <span t-field="o.partner_id"/>
+                        </td>
+
+                        <td>
+                            <span t-field="o.amount"
+                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                        </td>
+
+                        <td>
+                            <span t-field="o.payment_method_id.name"/>
+                        </td>
+
+                        <td>
+                            <span t-field="o.memo"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </xpath>
+
+    </template>
+</odoo>

@@ -1,0 +1,36 @@
+<odoo>
+    <!-- Moves the "Backfill Historical Invoice Costs" wizard out of the
+         Profitability Analysis menu (where it looked like just another
+         report) and into Accounting/Invoicing Settings as a maintenance
+         action, since it's a one-off data-write tool rather than
+         something used day to day.
+
+         Added as an extra <setting> inside the existing "Customer
+         Invoices" block (id="invoicing_settings") of account's own
+         settings inheritance, rather than creating a new block - keeps
+         the visual style consistent with the rest of the page.
+
+         No explicit group restriction needed here: the whole <app
+         name="account"> node this block lives inside already carries
+         groups="account.group_account_manager" in account's own view,
+         so this setting is only visible to Accounting Managers by
+         inheritance. That also matches the group already enforced on
+         the wizard's own ir.model.access record. -->
+    <record id="res_config_settings_view_form_inherit_dekad_backfill" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.dekad.backfill</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='invoicing_settings']" position="inside">
+                <setting id="dekad_backfill_historical_costs"
+                         string="Backfill Historical Invoice Costs"
+                         help="Populate the frozen unit cost on historic invoice lines that don't have one yet">
+                    <button name="%(dekad_invoice_product_profit.action_backfill_current_cost_wizard)d"
+                            type="action"
+                            string="Run Backfill Wizard"
+                            class="btn-secondary"/>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

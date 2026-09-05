@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_analytical_item" model="ir.actions.report">
+        <field name="name">Analytical Item Report</field>
+        <field name="model">analytical.item.print.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dekad_analytic_report.analytical_item_report</field>
+        <field name="print_report_name">'Analytical Items Report'</field>
+        <field name="paperformat_id" ref="base.paperformat_us"/>
+        <field name="binding_model_id" ref="model_analytical_item_print_wizard"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="analytical_item_report">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+
+                    <!-- HEADER -->
+                    <div style="text-align:center; margin-bottom:20px;">
+                        <h2 style="margin:0; font-size:18px;">
+                            Analytic Items Report
+                        </h2>
+                        <p style="color:#666; font-size:11px; margin:4px 0 0 0;">
+                            Grouped by: <strong><t t-esc="group_by_label"/></strong>
+                            &amp;nbsp;|&amp;nbsp;
+                            Company: <strong><t t-esc="company.name"/></strong>
+                        </p>
+                    </div>
+
+                    <!-- SUMMARY TABLE (always shown) — mirrors collapsed UI -->
+                    <table style="width:100%; border-collapse:collapse; font-size:11px;">
+                        <thead>
+                            <tr style="background-color:#875A7B; color:#fff;">
+                                <th style="padding:5px 8px; text-align:left;">Group</th>
+                                <th style="padding:5px 8px; text-align:right; width:90px;">Quantity</th>
+                                <th style="padding:5px 8px; text-align:right; width:110px;">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="grouped_data" t-as="group">
+                                <tr style="border-bottom:1px solid #e8e8e8;">
+                                    <td style="padding:4px 8px; font-weight:bold;">
+                                        <t t-esc="group['label']"/>
+                                    </td>
+                                    <td style="padding:4px 8px; text-align:right;">
+                                        <t t-esc="'%.2f' % group['subtotal_quantity']"/>
+                                    </td>
+                                    <td style="padding:4px 8px; text-align:right;">
+                                        <t t-esc="'%.2f' % group['subtotal_amount']"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                        <!-- Grand Total row -->
+                        <tfoot>
+                            <tr style="
+                                background-color:#f2f2f2;
+                                font-weight:bold;
+                                font-size:12px;
+                                border-top:2px solid #875A7B;
+                            ">
+                                <td style="padding:6px 8px;">Grand Total</td>
+                                <td style="padding:6px 8px; text-align:right;">
+                                    <t t-esc="'%.2f' % grand_qty"/>
+                                </td>
+                                <td style="padding:6px 8px; text-align:right;">
+                                    <t t-esc="'%.2f' % grand_amt"/>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <!-- DETAIL LINES — only if show_lines is checked -->
+                    <t t-if="show_lines">
+                        <t t-foreach="grouped_data" t-as="group">
+
+                            <!-- Group header -->
+                            <div style="
+                                background-color:#e8e8e8;
+                                border-left:4px solid #875A7B;
+                                padding:5px 8px;
+                                margin-top:16px;
+                                font-weight:bold;
+                                font-size:12px;
+                            ">
+                                <t t-esc="group['label']"/>
+                            </div>
+
+                            <!-- Lines table -->
+                            <table style="width:100%; border-collapse:collapse; font-size:10px; margin-bottom:4px;">
+                                <thead>
+                                    <tr style="background-color:#f5f5f5; border-bottom:1px solid #ccc;">
+                                        <th style="padding:3px 6px; text-align:left; width:75px;">Date</th>
+                                        <th style="padding:3px 6px; text-align:left;">Description</th>
+                                        <th style="padding:3px 6px; text-align:left; width:120px;">Analytic Account</th>
+                                        <th style="padding:3px 6px; text-align:left; width:90px;">Partner</th>
+                                        <th style="padding:3px 6px; text-align:left; width:90px;">Product</th>
+                                        <th style="padding:3px 6px; text-align:left; width:90px;">Employee</th>
+                                        <th style="padding:3px 6px; text-align:right; width:70px;">Qty</th>
+                                        <th style="padding:3px 6px; text-align:right; width:90px;">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="group['lines']" t-as="line">
+                                        <tr style="border-bottom:1px solid #f0f0f0;">
+                                            <td style="padding:3px 6px;"><t t-esc="line.date"/></td>
+                                            <td style="padding:3px 6px;"><t t-esc="line.name or ''"/></td>
+                                            <td style="padding:3px 6px;"><t t-esc="line.account_id.name or ''"/></td>
+                                            <td style="padding:3px 6px;"><t t-esc="line.partner_id.name or ''"/></td>
+                                            <td style="padding:3px 6px;"><t t-esc="line.product_id.name or ''"/></td>
+                                            <td style="padding:3px 6px;"><t t-if="'employee_id' in line._fields and line.employee_id">
+                                                <t t-esc="line.employee_id.name"/>
+                                            </t></td>
+                                            <td style="padding:3px 6px; text-align:right;"><t t-esc="'%.2f' % line.unit_amount"/></td>
+                                            <td style="padding:3px 6px; text-align:right;"><t t-esc="'%.2f' % line.amount"/></td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                                <tfoot>
+                                    <tr style="background-color:#f9f9f9; font-weight:bold; border-top:1px solid #ccc;">
+                                        <td colspan="6" style="padding:4px 6px; text-align:right;">Subtotal</td>
+                                        <td style="padding:4px 6px; text-align:right;"><t t-esc="'%.2f' % group['subtotal_quantity']"/></td>
+                                        <td style="padding:4px 6px; text-align:right;"><t t-esc="'%.2f' % group['subtotal_amount']"/></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </t>
+                    </t>
+
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

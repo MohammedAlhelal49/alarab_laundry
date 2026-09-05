@@ -1,0 +1,100 @@
+<!-- attendance_location/views/patient_views.xml -->
+<odoo>
+
+  <!-- List View for Patients -->
+  <record id="view_hr_attendance_location_patient_list" model="ir.ui.view">
+    <field name="name">hr_attendance_location.patient.list</field>
+    <field name="model">attendance_location.patient</field>
+    <field name="arch" type="xml">
+      <list string="Patients">
+        <field name="partner_id"/>
+        <field name="phone"/>
+        <field name="email"/>
+        <field name="assigned_employee_count"/>
+        <field name="is_assigned"/>
+      </list>
+    </field>
+  </record>
+
+  <!-- Form View for Patient Record -->
+  <record id="view_hr_attendance_location_patient_form" model="ir.ui.view">
+    <field name="name">attendance_location.patient.form</field>
+    <field name="model">attendance_location.patient</field>
+    <field name="arch" type="xml">
+      <form string="Patient">
+        <sheet>
+          <notebook>
+
+            <!-- General Information Tab -->
+            <page string="General">
+              <group colspan="2">
+                <group string="Basic Information">
+                  <field name="partner_id"/>
+                  <field name="phone"/>
+                  <field name="email"/>
+                </group>
+                <group string="Address">
+                  <field name="street"/>
+                  <field name="city"/>
+                </group>
+              </group>
+
+              <group string="GPS Coordinates" colspan="2">
+                <group>
+                  <field name="gps_latitude"/>
+                  <field name="gps_longitude"/>
+                </group>
+              </group>
+
+              <group string="Assignment Info" colspan="2">
+                <group>
+                  <field name="assigned_employee_count" readonly="1"/>
+                  <field name="is_assigned" readonly="1"/>
+                </group>
+                <group>
+                  <field name="assigned_employee_ids" widget="many2many_tags" readonly="1"/>
+                </group>
+              </group>
+            </page>
+
+            <!-- Medical History Tab -->
+            <page string="Details">
+              <field name="medical_note_history_ids">
+                <list editable="bottom">
+                  <field name="title"/>
+                  <field name="note_text"/>
+                  <field name="attachment" widget="binary"/>
+                </list>
+              </field>
+            </page>
+
+          </notebook>
+        </sheet>
+
+        <!-- Chatter Section (Odoo 18) -->
+        <chatter/>
+      </form>
+    </field>
+  </record>
+
+  <!-- Window Action for Patient Records -->
+  <record id="action_attendance_location_patient" model="ir.actions.act_window">
+    <field name="name">Patients</field>
+    <field name="res_model">attendance_location.patient</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">
+        Create your first patient
+      </p>
+    </field>
+  </record>
+
+  <!-- Menu Item Under HR -->
+  <menuitem
+    id="menu_attendance_location_patient"
+    name="Patients"
+    parent="hr.menu_hr_root"
+    action="action_attendance_location_patient"
+    sequence="10"/>
+
+</odoo>

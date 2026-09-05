@@ -1,0 +1,40 @@
+<odoo>
+
+    <record id="view_activity_logger_kpi_tree"
+            model="ir.ui.view">
+
+        <field name="name">activity.logger.kpi.tree</field>
+        <field name="model">activity.logger.kpi</field>
+        <field name="arch" type="xml">
+
+            <list
+                create="0"
+                edit="0"
+                delete="0">
+
+                <field name="date"/>
+
+                <field name="user_id" optional="hide" />
+
+                <field name="create_count" optional="show" width="150" sum="Total Created"/>
+
+                <field name="write_count" optional="show" width="150" sum="Total Updated"/>
+
+                <field name="delete_count" optional="show" width="150" sum="Total Deleted"/>
+
+                <field name="total_transactions" optional="show" width="150" sum="Grand Total"/>
+
+                <field name="first_activity" optional="show"/>
+
+                <field name="last_activity" optional="show"/>
+
+                <field name="working_hours" optional="show"/>
+
+            </list>
+
+        </field>
+
+    </record>
+
+
+</odoo>

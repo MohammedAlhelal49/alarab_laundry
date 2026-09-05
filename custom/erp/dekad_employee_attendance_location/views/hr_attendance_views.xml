@@ -1,0 +1,101 @@
+<odoo>
+
+      <record id="view_attendance_tree_inherit_distance" model="ir.ui.view">
+        <field name="name">hr.attendance.tree.distance</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+
+            <!-- Add red row -->
+<!--            <xpath expr="//list" position="attributes">-->
+<!--                <attribute name="decoration-danger">is_distance_exceeded</attribute>-->
+<!--            </xpath>-->
+
+            <!-- Show distances -->
+
+        <xpath expr="//field[@name='worked_hours']" position="after">
+            <field name="checkin_distance_m"
+                   decoration-danger="is_checkin_exceeded"/>
+
+            <field name="checkout_distance_m"
+                   decoration-danger="is_checkout_exceeded"/>
+        </xpath>
+
+        </field>
+    </record>
+
+  <record id="view_attendance_search_inherit_distance" model="ir.ui.view">
+      <field name="name">hr.attendance.search.distance</field>
+      <field name="model">hr.attendance</field>
+      <field name="inherit_id" ref="hr_attendance.hr_attendance_view_filter"/>
+      <field name="arch" type="xml">
+
+          <xpath expr="//search" position="inside">
+              <filter name="distance_exceeded"
+                      string="Distance Exceeded"
+                      domain="[('is_distance_exceeded', '=', True)]"/>
+          </xpath>
+
+      </field>
+  </record>
+
+  <!-- Inherit the form view of hr.attendance and add patient and location fields -->
+  <record id="view_attendance_location_hr_attendance" model="ir.ui.view">
+    <field name="name">hr.attendance.form.attendance_location</field>
+    <field name="model">hr.attendance</field>
+    <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//sheet" position="replace">
+        <sheet>
+
+          <group>
+            <group>
+              <field name="employee_id"/>
+            </group>
+          </group>
+
+          <!-- Check-in Information -->
+          <group>
+            <group string="Check-in">
+              <field name="check_in"/>
+              <field name="in_ip"/>
+              <field name="in_localisation"/>
+              <field name="in_latitude" string="Latitude"/>
+              <field name="in_longitude" string="Longitude"/>
+              <field name="checkin_distance_m" string="Distance (m)"/>
+              <button name="action_open_checkin_map"
+                      type="object"
+                      string="View on Map"
+                      icon="fa-map-marker"/>
+            </group>
+
+            <!-- Check-out Information -->
+            <group string="Check-out">
+              <field name="check_out"/>
+              <field name="out_ip"/>
+              <field name="out_localisation"/>
+              <field name="out_latitude" string="Latitude"/>
+              <field name="out_longitude" string="Longitude"/>
+              <field name="checkout_distance_m" string="Distance (m)"/>
+              <button name="action_open_checkout_map"
+                      type="object"
+                      string="View on Map"
+                      icon="fa-map-marker"/>
+            </group>
+          </group>
+
+          <!-- employee Stored Location -->
+          <group string="Employee Location" colspan="2">
+            <field name="employee_latitude" string="Latitude"/>
+            <field name="employee_longitude" string="Longitude"/>
+            <button name="action_open_employee_map"
+                    type="object"
+                    string="View on Map"
+                    icon="fa-map-marker"/>
+          </group>
+
+        </sheet>
+      </xpath>
+    </field>
+  </record>
+</odoo>

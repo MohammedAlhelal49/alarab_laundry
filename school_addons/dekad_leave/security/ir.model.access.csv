@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_de_leave_type_leave,name_de_leave_type_leave,model_de_leave_type,group_de_leave,1,1,1,1
+access_de_leave_type_group_portal,name_de_leave_type_group_portal,model_de_leave_type,base.group_portal,1,0,0,0
+
+access_de_student_leave,name_de_student_leave,dekad_core.model_de_student,group_de_leave,1,0,0,0
+access_de_parent_leave,name_de_parent_leave,dekad_parent.model_de_parent,group_de_leave,1,0,0,0
+access_de_leave_leave,name_de_leave_leave,model_de_leave,group_de_leave,1,1,1,1
+access_de_leave_group_student,name_de_leave_group_student,model_de_leave,dekad_core.group_de_student,1,0,0,1
+access_de_leave_group_portal,name_de_leave_group_portal,model_de_leave,base.group_portal,1,1,1,1
+
+

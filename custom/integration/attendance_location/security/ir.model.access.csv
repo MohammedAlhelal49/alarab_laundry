@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_attendance_location_patient_selection,attendance.location.patient.selection,model_attendance_location_patient_selection,base.group_user,1,1,1,1
+access_attloc_patient,model_attendance_location_patient,model_attendance_location_patient,base.group_user,1,1,1,1
+access_medical_note_history,access.medical.note.history,model_attendance_location_medical_note_history,base.group_user,1,1,1,0

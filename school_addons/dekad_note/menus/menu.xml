@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_de_note_root"
+              name="Notes"
+              sequence="155"
+              web_icon="dekad_note,static/description/icon.png"/>
+    <menuitem id="menu_de_note"
+              name="Notes"
+              parent="menu_de_note_root"
+              sequence="10"
+              action="act_open_de_note_view"/>
+    <menuitem id="menu_de_note_group"
+              name="Groups"
+              parent="menu_de_note_root"
+              sequence="20"
+              action="act_open_de_note_group_view"/>
+</odoo>
+

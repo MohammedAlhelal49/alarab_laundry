@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_de_quiz_root" name="Quizzes" sequence="100"
+                  web_icon="dekad_quiz,static/description/icon.png"
+                  groups = "dekad_quiz.group_de_quiz,dekad_core.group_de_teacher"
+
+        >
+
+
+            <menuitem id="menu_de_quiz" name="Quizzes"
+                      sequence="10"
+                      action="act_open_de_quiz_view"
+
+            />
+
+            <menuitem id="menu_de_quiz_submission_general" name="Submissions"
+                      sequence="20"
+
+            >
+
+
+                <menuitem id="menu_de_quiz_submission" name="Submissions"
+                          sequence="10"
+                          action="act_open_de_quiz_submission_view"
+                />
+
+                <menuitem id="menu_de_quiz_submission_attempt" name="Attempts"
+                          sequence="20"
+                          action="act_open_de_quiz_submission_attempt_view"
+                />
+
+            </menuitem>
+
+            <menuitem id="menu_de_quiz_question_general" name="Questions"
+                      sequence="30"
+
+            >
+
+                <menuitem id="menu_de_quiz_question_group_type" name="Groups types"
+                          sequence="10"
+                          action="act_open_de_quiz_question_group_type_view"
+                />
+
+                <menuitem id="menu_de_quiz_question_group" name="Groups"
+                          sequence="20"
+                          action="act_open_de_quiz_question_group_view"
+                />
+
+                <menuitem id="menu_de_quiz_question" name="Questions"
+                          sequence="30"
+                          action="act_open_de_quiz_question_view"
+                />
+            </menuitem>
+        </menuitem>
+
+
+    </data>
+</odoo>

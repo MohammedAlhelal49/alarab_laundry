@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="de_student_leave_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <div class="text-center">
+                                <h3>
+                                    <strong>Student time off Details</strong>
+                                </h3>
+                            </div>
+                            <br></br>
+                            <div class="row mt24">
+                                <div style=" margin-left:15px;">
+                                    <b>Student Name:</b>
+                                    <span t-esc="o.name"/>
+                                </div>
+
+                            </div>
+                            <br/>
+                            <table t-if="len(o.leave_ids)" class="table table-bordered">
+                                <thead class="text-center"
+                                       style="background-color:#eeeeee; font-size:14px; font-weight:600;">
+                                    <th class="text-center">Start date</th>
+                                    <th class="text-center">Duration</th>
+                                    <th class="text-center">Leave type</th>
+                                    <th class="text-center">State</th>
+
+                                </thead>
+                                <tbody class="text-center"
+                                       style="font-size:12px;border-top: 1px solid #dbdbdb !important;">
+                                    <t t-foreach="o.leave_ids" t-as="leave">
+                                        <tr>
+                                            <td class="text-center">
+                                                <span t-esc="leave.start_date" t-options="{'widget':'date'}"/>
+                                            </td>
+                                            <td class="text-center">
+                                                <span t-esc="leave.duration"/>
+                                            </td>
+                                            <td class="text-center">
+                                                <span t-esc="leave.leave_type.name"/>
+                                            </td>
+
+                                            <td class="text-center">
+                                                <span t-esc="leave.state"/>
+                                            </td>
+
+                                        </tr>
+                                    </t>
+                                    <tr>
+                                        <td class="text-center">
+                                            <b>Total time off</b>
+                                        </td>
+                                        <td class="text-center">
+                                            <b>
+                                                <span t-esc="len(o.leave_ids)"/>
+                                            </b>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div t-else="" class="alert alert-secondary" role="alert">
+                                There is no time off to display
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="act_open_de_student_leave_report_view" model="ir.actions.report">
+            <field name="name">Student time off</field>
+            <field name="model">de.student</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">dekad_leave.de_student_leave_report</field>
+            <field name="report_file">dekad_leave.de_student_leave_report</field>
+            <field name="print_report_name">'Student time off - %s' % (object.name)</field>
+            <field name="binding_model_id" ref="dekad_core.model_de_student"/>
+            <field name="binding_type">report</field>
+            <field name="binding_view_types">form</field>
+        </record>
+
+    </data>
+</odoo>

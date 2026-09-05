@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+
+    <t t-name="dekad_gl_project_filter.FilterProject">
+        <t t-if="hasProjectFilter">
+
+            <!-- Project dropdown -->
+            <div id="dekad_filter_project" class="d-flex align-items-center gap-1">
+                <Dropdown>
+                    <button
+                        class="btn btn-secondary"
+                        t-att-class="{ 'active': controller.options.filter_project_id }"
+                    >
+                        <i class="fa fa-building-o me-1"/>
+                        <t t-out="selectedProjectLabel"/>
+                    </button>
+                    <t t-set-slot="content">
+                        <t t-if="glFilterState.projects.length === 0">
+                            <div class="px-3 py-2 text-muted fst-italic">No projects found</div>
+                        </t>
+                        <t t-foreach="glFilterState.projects" t-as="project" t-key="project.id">
+                            <DropdownItem
+                                class="{ 'selected': controller.options.filter_project_id === project.id }"
+                                onSelected="() => this.selectProject(project.id)"
+                            >
+                                <t t-out="project.name"/>
+                            </DropdownItem>
+                        </t>
+                    </t>
+                </Dropdown>
+
+                <t t-if="controller.options.filter_project_id">
+                    <button
+                        class="btn btn-secondary btn-sm"
+                        title="Clear project filter"
+                        t-on-click="() => this.selectProject(false)"
+                    >
+                        <i class="fa fa-times"/>
+                    </button>
+                </t>
+            </div>
+
+            <!-- Tasks dropdown — only when project is selected -->
+            <t t-if="projectIsSelected">
+                <t t-set="pid" t-value="controller.options.filter_project_id"/>
+                <t t-set="taskTree" t-value="glFilterState.tasks[pid]"/>
+                <div id="dekad_filter_tasks" class="d-flex align-items-center gap-1">
+                    <Dropdown>
+                        <button
+                            class="btn btn-secondary"
+                            t-att-class="{ 'active': controller.options.filter_task_ids and controller.options.filter_task_ids.length > 0 }"
+                        >
+                            <i class="fa fa-tasks me-1"/>
+                            <t t-out="selectedTasksLabel"/>
+                        </button>
+                        <t t-set-slot="content">
+
+                            <t t-if="glFilterState.tasksLoading or taskTree === undefined">
+                                <div class="px-3 py-2 text-muted fst-italic">
+                                    <i class="fa fa-spinner fa-spin me-1"/>Loading…
+                                </div>
+                            </t>
+                            <t t-elif="taskTree.length === 0">
+                                <div class="px-3 py-2 text-muted fst-italic">No tasks found</div>
+                            </t>
+                            <t t-else="">
+                                <t t-foreach="taskTree" t-as="task" t-key="task.id">
+                                    <t t-set="fullySelected"   t-value="_isParentFullySelected(pid, task.id)"/>
+                                    <t t-set="partialSelected" t-value="_isParentPartiallySelected(pid, task.id)"/>
+
+                                    <!-- Parent task row -->
+                                    <DropdownItem
+                                        class="{
+                                            'selected': fullySelected,
+                                            'o_partially_selected': partialSelected
+                                        }"
+                                        onSelected="() => this.toggleParentTask(pid, task.id)"
+                                        closingMode="'none'"
+                                    >
+                                        <i class="fa me-2"
+                                           t-att-class="{
+                                               'fa-check-square-o': fullySelected,
+                                               'fa-minus-square-o': partialSelected,
+                                               'fa-square-o': !fullySelected and !partialSelected
+                                           }"
+                                        />
+                                        <strong><t t-out="task.name"/></strong>
+                                    </DropdownItem>
+
+                                    <!-- Sub-task rows (indented) -->
+                                    <t t-foreach="task.subtasks" t-as="subtask" t-key="subtask.id">
+                                        <t t-set="subSelected" t-value="(controller.options.filter_task_ids or []).includes(subtask.id)"/>
+                                        <DropdownItem
+                                            class="{ 'selected': subSelected }"
+                                            onSelected="() => this.toggleTask(subtask.id)"
+                                            closingMode="'none'"
+                                        >
+                                            <span style="padding-left: 1.5rem;">
+                                                <i class="fa me-2"
+                                                   t-att-class="{
+                                                       'fa-check-square-o': subSelected,
+                                                       'fa-square-o': !subSelected
+                                                   }"
+                                                />
+                                                <t t-out="subtask.name"/>
+                                            </span>
+                                        </DropdownItem>
+                                    </t>
+                                </t>
+                            </t>
+
+                        </t>
+                    </Dropdown>
+
+                    <t t-if="controller.options.filter_task_ids and controller.options.filter_task_ids.length > 0">
+                        <button
+                            class="btn btn-secondary btn-sm"
+                            title="Clear task filter"
+                            t-on-click="() => this.clearTasks()"
+                        >
+                            <i class="fa fa-times"/>
+                        </button>
+                    </t>
+                </div>
+            </t>
+
+        </t>
+    </t>
+
+    <!-- Inject into GL filter bar -->
+    <t t-name="account_reports.AccountReportFiltersCustomizable"
+       t-inherit="account_reports.AccountReportFiltersCustomizable"
+       t-inherit-mode="extension">
+        <xpath expr="//div[@id='filter_rounding_unit']" position="before">
+            <t t-call="dekad_gl_project_filter.FilterProject"/>
+        </xpath>
+    </t>
+
+</templates>

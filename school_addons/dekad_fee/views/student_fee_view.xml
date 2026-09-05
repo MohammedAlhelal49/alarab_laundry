@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_de_student_fee_list" model="ir.ui.view">
+            <field name="name">de.student.fee.list</field>
+            <field name="model">de.student.fee</field>
+            <field name="arch" type="xml">
+                <list string="Student Fee" create="false" delete="false">
+                    <field name="grade_id"/>
+                    <field name="state"/>
+                    <field name="student_id"/>
+                    <field name="amount" widget="monetary" sum="Total"
+                    />
+                    <field name="discount" on_change="1"/>
+                    <field name="after_discount_amount" readonly="1" sum="Total"
+                           string="After Discount Amo"/>
+                    <field name="date"/>
+                    <button string="Create Invoice" invisible="state != 'draft'" type="object" name="create_invoice"
+                    />
+                    <button string="View Invoice" invisible="state != 'invoice'"
+                            type="object" name="action_show_invoice"/>
+                </list>
+            </field>
+        </record>
+
+
+        <record id="view_de_student_fee_search" model="ir.ui.view">
+            <field name="name">de.student.fee.search</field>
+            <field name="model">de.student.fee</field>
+            <field name="arch" type="xml">
+                <search string="Student fee">
+                    <group expand="0" string="Group By...">
+                        <filter name="group_by_grade"
+                                string="Grade" domain="[]"
+                                context="{'group_by':'grade_id'}"/>
+                        <filter name="group_by_student"
+                                string="Student" domain="[]"
+                                context="{'group_by':'student_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_de_student_fee_view">
+            <field name="name">Student fees</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.student.fee</field>
+            <field name="view_mode">list</field>
+            <field name="binding_view_types">list</field>
+            <field name="search_view_id" ref="view_de_student_fee_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+
+        <record model="ir.actions.act_window.view" id="act_open_de_student_fee_view_list">
+            <field name="act_window_id" ref="act_open_de_student_fee_view"/>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="view_de_student_fee_list"/>
+        </record>
+
+
+    </data>
+</odoo>

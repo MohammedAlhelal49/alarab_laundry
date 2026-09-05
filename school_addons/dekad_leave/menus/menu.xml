@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_de_leave_root" name="Leaves" sequence="120"
+                  web_icon="dekad_leave,static/description/icon.png"
+                  groups="dekad_leave.group_de_leave"
+        />
+
+        <menuitem id="menu_de_leave" name="Leaves"
+                  parent="menu_de_leave_root" sequence="10"
+                  action="act_open_de_leave_view"
+        />
+
+        <menuitem id="menu_de_leave_configuration"
+                  name="Configuration"
+                  parent="menu_de_leave_root"
+                  sequence="20"
+        />
+
+
+        <menuitem id="menu_de_leave_type" name="Types"
+                  parent="menu_de_leave_configuration" sequence="10"
+                  action="act_open_de_leave_type_view"
+        />
+
+    </data>
+</odoo>

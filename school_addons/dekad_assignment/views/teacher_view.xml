@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_de_teacher_form_assignment_inherited" model="ir.ui.view">
+            <field name="name">de.teacher.form.assignment.inherited</field>
+            <field name="model">de.teacher</field>
+            <field name="inherit_id" ref="dekad_core.view_de_teacher_form"/>
+            <field name="priority" eval="12"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_show_assignment" type="object" class="oe_stat_button" icon="fa-pencil-square-o"
+                            groups="dekad_assignment.group_de_assignment">
+                        <field string="Assignment" name="assignment_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

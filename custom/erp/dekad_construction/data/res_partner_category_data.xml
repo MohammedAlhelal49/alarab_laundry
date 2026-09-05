@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="tag_subcontractor_category" model="res.partner.category">
+        <field name="name">Subcontractor</field>
+        <field name="color" eval="4"/>
+    </record>
+</odoo>

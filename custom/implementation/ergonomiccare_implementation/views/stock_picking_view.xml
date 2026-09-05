@@ -1,0 +1,65 @@
+<odoo>
+    <record id="view_stock_picking_tree_inherit_patient" model="ir.ui.view">
+        <field name="name">stock.picking.tree.inherit.patient</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.vpicktree"/>
+        <field name="arch" type="xml">
+            <!-- Insert Patient Name after Partner -->
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="patient_id" optional="show" string="Patient Name"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_picking_form_inherit_patient_fields" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit.patient.fields</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='origin']" position="after">
+                      <!-- LPO Field -->
+                <field name="lpo_number"
+                       invisible="lpo_authorization_type != 'lpo'"
+                />
+
+                <!-- Authorization Field -->
+                <field name="authorization_number"
+                       invisible="lpo_authorization_type != 'authorization'"
+                />
+                <field name="claim_number"/>
+            </xpath>
+
+            <xpath expr="//field[@name='picking_type_id']" position="after">
+                <field name="patient_id"/>
+                <field name="mrn"/>
+                <field name="patient_code"/>
+                <field name="theqa_no"/>
+                <field name="manufacturer"/>
+                <label for="warranty_value" string="Warranty"/>
+                <div>
+                    <field name="warranty_value" style="width: 4rem;"/>
+                    <field name="warranty_unit" class="oe_inline"/>
+                </div>
+
+
+                <!-- Delivery Duration -->
+                <label for="delivery_duration_from" string="Delivery Duration"/>
+                <div>
+                    <field name="delivery_duration_from" style="width: 4rem;"/>
+                    <span style="margin: 0 0.5rem;">to</span>
+                    <field name="delivery_duration_to" style="width: 4rem;"/>
+                    <field name="delivery_duration_unit" class="oe_inline"/>
+                </div>
+
+            </xpath>
+
+            <xpath expr="//notebook" position="inside">
+                <page string="Attachments">
+                    <field name="attachment_ids"
+                           widget="many2many_binary"/>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

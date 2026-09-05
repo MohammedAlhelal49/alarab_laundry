@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem id="menu_de_fee_root"
+                  name="Fees"
+                  sequence="30"
+                  parent="dekad_core.menu_de_school_root"
+                  groups="dekad_fee.group_de_fee"
+        />
+        <menuitem id="menu_de_fee_term"
+                  name="Fees Terms"
+                  parent="menu_de_fee_root"
+                  sequence="10"
+                  action="act_open_de_fee_term_view"
+        />
+        <menuitem id="menu_de_student_fee"
+                  name="Student Fees"
+                  parent="menu_de_fee_root"
+                  sequence="20"
+                  action="act_open_de_student_fee_view"/>
+
+    </data>
+</odoo>

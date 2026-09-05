@@ -1,0 +1,84 @@
+<odoo>
+
+    <record id="view_account_move_line_report_list"
+            model="ir.ui.view">
+        <field name="name">account.move.line.report.list</field>
+        <field name="model">account.move.line.report</field>
+        <field name="arch" type="xml">
+            <list string="Journal Items Report"
+                  create="false"
+                  edit="false"
+                  delete="false">
+
+                <!-- Core Accounting Fields -->
+                <field name="date"/>
+                <field name="move_id"/>
+                <field name="journal_id"/>
+                <field name="account_id"/>
+
+                <!-- Business Dimensions -->
+                <field name="partner_id" optional="show"/>
+                <field name="project_id" optional="show"/>
+                <field name="task_id" optional="show"/>
+                <!--field name="analytic_account_id" optional="show"/-->
+
+                <!-- Monetary Fields -->
+                <field name="debit" sum="Total Debit"/>
+                <field name="credit" sum="Total Credit"/>
+                <field name="balance" sum="Total Balance"/>
+
+                <!-- Multi Currency -->
+                <field name="amount_currency"
+                       sum="Total Amount Currency"
+                       optional="hide"/>
+                <field name="currency_id" optional="hide"/>
+                <field name="company_currency_id" optional="hide"/>
+
+                <!-- Move Metadata -->
+                <field name="move_name" optional="hide"/>
+                <field name="move_type" optional="hide"/>
+                <field name="ref" optional="hide"/>
+
+                <!-- Taxes -->
+                <field name="tax_line_id" optional="hide"/>
+
+            </list>
+        </field>
+    </record>
+
+    <record id="view_account_move_line_report_pivot"
+            model="ir.ui.view">
+        <field name="name">account.move.line.report.pivot</field>
+        <field name="model">account.move.line.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Journal Items Analysis">
+                <field name="date" type="row"/>
+                <field name="journal_id" type="row"/>
+                <field name="account_id" type="row"/>
+                <field name="debit" type="measure"/>
+                <field name="credit" type="measure"/>
+                <field name="balance" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_account_move_line_report_graph"
+            model="ir.ui.view">
+        <field name="name">account.move.line.report.graph</field>
+        <field name="model">account.move.line.report</field>
+        <field name="arch" type="xml">
+            <graph string="Journal Items Graph" type="bar">
+                <field name="date" type="row"/>
+                <field name="balance" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_account_move_line_report"
+            model="ir.actions.act_window">
+        <field name="name">Journal Items Reporting</field>
+        <field name="res_model">account.move.line.report</field>
+        <field name="view_mode">list,pivot,graph</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="custom_sale_report_signature_block" inherit_id="sale.report_saleorder_document">
+    <xpath expr="//div[@name='signature']" position="replace"/>
+
+    <xpath expr="//div[@class='page']/div[@class='oe_structure'][last()]" position="after">
+       <div style="font-size: 13px; padding: 20px 40px 10px 40px;">
+            <!-- Signatures in same row -->
+            <div style="width: 100%;float: right; direction: rtl; font-size: 13px; margin-bottom: 10px;">
+                <div style="width: 45%; margin-bottom: 30px; margin-top: 30px;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="text-align: left; line-height: 0.1; font-weight: bold;">
+                            Applicant's Name &amp; Date
+                        </div>
+                        <div style="text-align: right; line-height: 1.0; font-weight: bold;">
+                            اسم مقدم الطلب
+                        </div>
+                    </div>
+
+                    <!-- Bottom row: Rectangle with signature info -->
+                    <div style="margin-top: 5px; background-color: #f2f2f2; padding: 10px; font-weight: bold;">
+                        <span t-field="doc.signed_by"/> -
+                        <span t-field="doc.signed_on" t-options='{"widget": "date"}'/>
+                    </div>
+                </div>
+                <div style="width: 45%; float: right;">
+
+
+                    <!-- Bilingual Header -->
+                    <div style="display: flex; justify-content: space-between; direction: ltr; margin-bottom: 2px;">
+                        <div style="font-weight: bold; line-height: 0.1; text-align: left;">
+                            Applicant's Signature
+                        </div>
+                        <div style="font-weight: bold; line-height: 1.0; text-align: right; direction: rtl;">
+                            توقيع مقدم الطلب
+                        </div>
+                    </div>
+
+
+                    <!-- Signature Box -->
+                    <div style="background-color: #f2f2f2; padding: 10px; min-height: 80px;">
+                        <t t-if="doc.signature">
+                            <img t-att-src="'data:image/png;base64,%s' % doc.signature.decode('utf-8')" style="max-height: 80px; max-width: 100%;"/>
+                        </t>
+                        <t t-else="">
+                            <span style="font-weight: bold;">No signature</span>
+                        </t>
+                    </div>
+                </div>
+
+                <div style="width: 45%; float: left;">
+                    <!-- Bilingual Header -->
+                    <div style="display: flex; justify-content: space-between; direction: ltr; margin-bottom: 2px;">
+                        <div style="font-weight: bold; line-height: 0.1; text-align: left;">
+                            Management Signature
+                        </div>
+                        <div style="font-weight: bold; line-height: 1.0; text-align: right; direction: rtl;">
+                            توقيع الادارة
+                        </div>
+                    </div>
+
+                    <!-- Signature Box -->
+                    <div style="background-color: #f2f2f2; padding: 10px; min-height: 80px;">
+                        <t t-if="doc.admin_signature">
+                            <img t-att-src="'data:image/png;base64,%s' % doc.admin_signature.decode('utf-8')" style="max-height: 80px; max-width: 100%;"/>
+                        </t>
+                        <t t-else="">
+                            <span style="font-weight: bold;">No signature</span>
+                        </t>
+                    </div>
+                </div>
+
+                <div style="clear: both;"/>
+            </div>
+       </div>
+
+    </xpath>
+
+  </template>
+</odoo>

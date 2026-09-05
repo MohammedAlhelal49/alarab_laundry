@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_de_quiz_question_group_tree" model="ir.ui.view">
+            <field name="name">de.quiz.question.group.list</field>
+            <field name="model">de.quiz.question.group</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <list string="question group">
+                    <field name="type_id"/>
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+
+
+        <record id="view_de_quiz_question_group_form" model="ir.ui.view">
+            <field name="name">de.quiz.question.group.form</field>
+            <field name="model">de.quiz.question.group</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="question group">
+                    <field name="group_ids" invisible="1"/>
+                    <sheet>
+                        <group>
+                            <field name="type_id"
+                            />
+                            <field name="name"
+                            />
+                            <field name="question_ids"
+                                   domain="[ '|', ('group_ids', '=', False), '&amp;', ('group_ids', '!=', False), ('group_ids', 'in', group_ids) ]"
+                            >
+                                <list>
+                                    <field name="type"/>
+                                    <field name="name"/>
+                                    <field name="mark"/>
+                                </list>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_de_quiz_question_group_search" model="ir.ui.view">
+            <field name="name">de.quiz.question.group.question.search</field>
+            <field name="model">de.quiz.question.group</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="question group">
+                    <field name="name"/>
+                    <field name="type_id"/>
+                    <group string="Group By...">
+                        <filter string="Type" domain="[]" name="group_by_type"
+                                context="{'group_by':'type_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="act_open_de_quiz_question_group_view">
+            <field name="name">Groups</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.quiz.question.group</field>
+            <field name="view_mode">list,form</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="search_view_id" ref="view_de_quiz_question_group_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_quiz_question_group_view_tree">
+            <field name="act_window_id" ref="act_open_de_quiz_question_group_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_de_quiz_question_group_tree"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_quiz_question_group_view_form">
+            <field name="act_window_id" ref="act_open_de_quiz_question_group_view"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="20"/>
+            <field name="view_id" ref="view_de_quiz_question_group_form"/>
+        </record>
+
+
+    </data>
+</odoo>

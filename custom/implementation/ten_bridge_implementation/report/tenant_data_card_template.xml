@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_tb_tenant_card_landscape" model="report.paperformat">
+        <field name="name">Ten Bridge - Tenant Card Landscape</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">4</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_report_tb_tenant_data_card" model="ir.actions.report">
+        <field name="name">Tenant Data Card - بطاقة بيانات المستأجر</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ten_bridge_implementation.report_tb_tenant_data_card_document</field>
+        <field name="report_file">ten_bridge_implementation.report_tb_tenant_data_card_document</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="ten_bridge_implementation.paperformat_tb_tenant_card_landscape"/>
+    </record>
+
+    <template id="report_tb_tenant_data_card_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.basic_layout">
+                    <div class="page" style="
+                        font-family: Arial, sans-serif;
+                        direction: rtl;
+                        font-size: 11px;
+                        border: 2px solid #000;
+                        padding: 0;
+                    ">
+
+                    <!-- ══════════════ HEADER ══════════════ -->
+                    <table style="width:100%; border-collapse:collapse; border-bottom:2px solid #000;">
+                        <tr>
+                            <!-- Logo cell -->
+                            <td style="width:20%; padding:8px; vertical-align:middle; text-align:center; border-left:1px solid #000;">
+                                <t t-if="doc.company_id.logo">
+                                    <img t-att-src="'data:image/png;base64,' + doc.company_id.logo.decode('utf-8')"
+                                         style="max-height:70px; max-width:110px;"/>
+                                </t>
+                            </td>
+                            <!-- Company name cell -->
+                            <td style="width:80%; padding:8px 16px; vertical-align:middle; text-align:center;">
+                                <div style="font-size:20pt; font-weight:bold; color:#1a3a6b; direction:rtl; margin-bottom:4px;">
+                                    <span t-esc="doc.company_id.name"/>
+                                </div>
+                                <div style="font-size:13pt; font-weight:bold; color:#1a3a6b; direction:ltr; letter-spacing:1px;">
+                                    <span t-esc="doc.company_id.name_ar"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- ══════════════ TITLE BAR ══════════════ -->
+                    <table style="width:100%; border-collapse:collapse; border-bottom:1px solid #000;">
+                        <tr>
+                            <td style="
+                                background-color:#c8864a;
+                                color:#fff;
+                                font-weight:bold;
+                                font-size:13pt;
+                                padding:6px 16px;
+                                text-align:right;
+                                width:50%;
+                                border-left:1px solid #000;
+                            ">
+                                بطاقة بيانات المستأجر
+                            </td>
+                            <td style="
+                                background-color:#c8864a;
+                                color:#fff;
+                                font-weight:bold;
+                                font-size:13pt;
+                                padding:6px 16px;
+                                text-align:left;
+                                width:50%;
+                                direction:ltr;
+                            ">
+                                The Tenant A Data Card
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- ══════════════ MAIN FIELDS (1–11) ══════════════ -->
+                    <!-- Each row: [num] [Arabic label] [value dotted] [English label] -->
+                    <t t-set="FIELD_STYLE" t-value="'border:1px solid #000; padding:4px 6px;'"/>
+
+                    <table style="width:100%; border-collapse:collapse;">
+
+                        <!-- 1 -->
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; width:5%; font-weight:bold;">1</td>
+                            <td style="border:1px solid #000; padding:4px 6px; width:25%; text-align:right; white-space:nowrap;">
+                                ( الشقة ـ الميزان ـ المخزن ـ الشيبرة ـ المحل .... )
+                            </td>
+                            <td style="border:1px solid #000; padding:4px 6px; width:35%;text-align:center;">
+                                <span t-esc="doc.account_analytic_account_id.name or ''"/>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px 6px; width:35%; direction:ltr; text-align:left; font-style:italic; color:#333;">
+                                Apartment - Mezan -Warehouse - hangar- shop No:-
+                            </td>
+                        </tr>
+
+                        <!-- 2 -->
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; font-weight:bold;">2</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:right;">الاسم التجاري</td>
+                            <td style="border:1px solid #000; padding:4px 6px;text-align:center;">
+                                <span t-esc="doc.partner_id.trade_name or ''"/>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">Trade Name</td>
+                        </tr>
+
+                        <!-- 3 -->
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; font-weight:bold;">3</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:right;">رقم الرخصة التجارية</td>
+                            <td style="border:1px solid #000; padding:4px 6px;text-align:center;">
+                                <span t-esc="doc.partner_id.trade_license or ''"/>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">Number trade license</td>
+                        </tr>
+
+                        <!-- 4 -->
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; font-weight:bold;">4</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:right;">اسم المستأجر</td>
+                            <td style="border:1px solid #000; padding:4px 6px;text-align:center;">
+                                <span t-esc="doc.partner_id.name or ''"/>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">Tenant name</td>
+                        </tr>
+
+                        <!-- 5 -->
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; font-weight:bold;">5</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:right;">رقم الهوية</td>
+                            <td style="border:1px solid #000; padding:4px 6px;text-align:center;">
+                                <span t-esc="doc.partner_id.id_number or ''"/>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">ID Number</td>
+                        </tr>
+
+                        <!-- 6 -->
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; font-weight:bold;">6</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:right;">رقم صندوق البريد</td>
+                            <td style="border:1px solid #000; padding:4px 6px;text-align:center;">
+                                <span t-esc="doc.partner_id.po_box or ''"/>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">P.O. Box</td>
+                        </tr>
+
+                        <!-- 7 -->
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; font-weight:bold;">7</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:right;">رقم الهاتف (العمل)</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; direction:ltr; unicode-bidi:embed;">
+                                <span t-esc="doc.partner_id.phone or ''"/>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">Phone work</td>
+                        </tr>
+
+                        <!-- 8 -->
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; font-weight:bold;">8</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:right;">رقم الفاكس</td>
+                            <td style="border:1px solid #000; padding:4px 6px;text-align:center;direction:ltr; unicode-bidi:embed;">
+                                <span t-esc="doc.partner_id.fax or ''"/>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">Fax number</td>
+                        </tr>
+
+                        <!-- 9 -->
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; font-weight:bold;">9</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:right;">رقم الهاتف المتحرك</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center;direction:ltr; unicode-bidi:embed;">
+                                <span t-esc="doc.partner_id.mobile or ''"/>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">Mobile number</td>
+                        </tr>
+
+                        <!-- 10 -->
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; font-weight:bold;">10</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:right;">الرقم الضريبي</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center;">
+                                <span t-esc="doc.partner_id.vat or ''"/>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">TRN</td>
+                        </tr>
+
+                        <!-- 11 -->
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; font-weight:bold;">11</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:right;">البريد الالكتروني</td>
+                            <td style="border:1px solid #000; padding:4px 6px;text-align:center;">
+                                <span t-esc="doc.partner_id.email or ''"/>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">Email</td>
+                        </tr>
+                    </table>
+
+                    <!-- ══════════════ HOLIDAY ADDRESS SECTION ══════════════ -->
+                    <t t-set="contact" t-value="doc.partner_id.child_ids.filtered(lambda c: c.type == 'other')[:1]"/>
+                    <table style="width:100%; border-collapse:collapse;">
+                        <tr>
+                            <td colspan="4" style="
+                                background-color:#c8864a;
+                                color:#fff;
+                                font-weight:bold;
+                                font-size:12pt;
+                                padding:6px 16px;
+                                border:1px solid #000;
+                            ">
+                                <span style="float:right;">العنوان اثناء الاجازات السنوية</span>
+                                <span style="float:left; direction:ltr;">Address during the holidays</span>
+                                <div style="clear:both;"></div>
+                            </td>
+                        </tr>
+
+                        <!-- 1 -->
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; width:5%; font-weight:bold;">1</td>
+                            <td style="border:1px solid #000; padding:4px 6px; width:25%; text-align:right;">رقم الهاتف (المنزل )</td>
+                            <td style="border:1px solid #000; padding:4px 6px; width:35%;text-align:center;direction:ltr; unicode-bidi:embed;">
+                                <span t-esc="contact.phone or ''"/>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">Phone home</td>
+                        </tr>
+
+                        <!-- 2 -->
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; font-weight:bold;">2</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:right;">رقم الهاتف المتحرك</td>
+                            <td style="border:1px solid #000; padding:4px 6px;text-align:center;direction:ltr; unicode-bidi:embed;"><span t-esc="contact.mobile or ''"/></td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">Mobile number</td>
+                        </tr>
+
+                        <!-- 3 -->
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; font-weight:bold;">3</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:right;">يرجى ذكر رمز الدولة والمنطقة</td>
+                            <td style="border:1px solid #000; padding:4px 6px;text-align:center;">
+                                <span t-esc="contact.country_id.name or ''"/>
+
+                                <t t-if="contact.country_id.phone_code">
+                                    (<span t-esc="'+' + str(contact.country_id.phone_code)"/>)
+                                </t>
+
+                                <t t-if="contact.state_id">
+                                    -
+                                    <span t-esc="contact.state_id.name"/>
+                                </t>
+
+                                <t t-if="contact.city">
+                                    -
+                                    <span t-esc="contact.city"/>
+                                </t>
+
+                            </td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">No. or area code and the state</td>
+                        </tr>
+
+                        <!-- 4 -->
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; font-weight:bold;">4</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:right;">البريد الالكتروني</td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center;"><span t-esc="contact.email or ''"/></td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">Email</td>
+                        </tr>
+                    </table>
+
+                    <!-- ══════════════ DIFFERENT ADDRESS NOTE ══════════════ -->
+                    <table style="width:100%; border-collapse:collapse;">
+                        <tr>
+                            <td colspan="4"
+                                style="padding:0;
+                                       border:1px solid #000;
+                                       background:#c8864a;">
+
+                                <table style="width:100%; border-collapse:collapse;">
+                                    <tr>
+                                        <td style="
+                                            width:40%;
+                                            border:none;
+                                            color:#fff;
+                                            font-weight:bold;
+                                            font-size:11pt;
+                                            direction:rtl;
+                                            text-align:right;
+                                            padding:6px 12px;
+                                            white-space:nowrap;">
+                                            ( في حالة استخدامكم لعنوان مغاير للعنوان السابق )
+                                        </td>
+
+                                        <td style="
+                                            width:60%;
+                                            border:none;
+                                            color:#fff;
+                                            font-weight:bold;
+                                            font-size:11pt;
+                                            direction:ltr;
+                                            text-align:left;
+                                            padding:6px 12px;
+                                            white-space:nowrap;">
+                                            If you use a different address of the previous Address
+                                        </td>
+
+                                    </tr>
+                                </table>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #000; padding:5px 12px; text-align:center; font-weight:bold; direction:ltr; background-color:#f5f5f5; font-size:10pt;">
+                                Such data are an integral part of the lease contract and I pledge that all information listed above true and correct
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- ══════════════ SIGNATURE SECTION ══════════════ -->
+                    <table style="width:100%; border-collapse:collapse;">
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center; width:5%;"></td>
+                            <td style="border:1px solid #000; padding:4px 6px; width:25%; text-align:right;">المستأجر / المستفيد</td>
+                            <td style="border:1px solid #000; padding:4px 6px; width:35%;text-align:center;"><span t-esc="doc.partner_id.name or ''"/></td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">The tenant / the beneficiary</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center;"></td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:right;">التوقيع</td>
+                            <td style="border:1px solid #000; padding:4px 6px;text-align:center;">
+                                <t t-if="doc.signature">
+                                    <img t-att-src="image_data_uri(doc.signature)"
+                                         style="max-height:45px; max-width:160px;"/>
+                                </t>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">The signature</td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:center;"></td>
+                            <td style="border:1px solid #000; padding:4px 6px; text-align:right;">التاريخ</td>
+                            <td style="border:1px solid #000; padding:4px 6px;text-align:center;">
+                                <span t-esc="(doc.create_date and doc.create_date.date()) or ''"/>
+                            </td>
+                            <td style="border:1px solid #000; padding:4px 6px; direction:ltr; text-align:left; font-style:italic; color:#333;">Date</td>
+                        </tr>
+                    </table>
+
+                    <!-- ══════════════ FOOTER NOTES ══════════════ -->
+                    <table style="width:100%; border-collapse:collapse;">
+                        <tr>
+                            <td style="
+                                border:1px solid #000;
+                                padding:5px 12px;
+                                text-align:center;
+                                background-color:#c8864a;
+                                color:#fff;
+                                font-weight:bold;
+                                font-size:10pt;
+                            ">
+                                تعتبر هذه البيانات جزءاً لا يتجزأ من عقد الايجار وأتعهد بان كافة المعلومات المذكورة اعلاه صحيحه وعلى مسئوليتي .
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="
+                                border:1px solid #000;
+                                padding:5px 12px;
+                                text-align:center;
+                                color:red;
+                                font-weight:bold;
+                                font-size:10pt;
+                                direction:ltr;
+                            ">
+                                <span style="float:right; direction:rtl;">ترفق صورة من الاوراق المطلوبه للتوثيق</span>
+                                <span style="float:left; direction:ltr;">Attach a copy of the the papers required for the documentation&#160;&#160;<strong>TEN BRIDGE</strong></span>
+                                <div style="clear:both;"></div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,34 @@
+<odoo>
+    <!-- Server Action to cancel orders -->
+    <record id="action_cancel_pos_order" model="ir.actions.server">
+        <field name="name">Force Cancel order</field>
+        <field name="model_id" ref="point_of_sale.model_pos_order"/>
+        <field name="binding_model_id" ref="point_of_sale.model_pos_order"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">
+            for record in records:
+            record.action_cancel_order()
+        </field>
+        <field name="groups_id" eval="[Command.link(ref('point_of_sale.group_pos_manager'))]"/>
+    </record>
+
+     <record id="view_pos_order_form_correction" model="ir.ui.view">
+        <field name="name">pos.order.form.correction</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <header position="inside">
+                <!-- Correct Order button: visible in paid, done, invoiced -->
+                <button name="action_correct_order"
+                        string="Correct Order"
+                        type="object"
+                        class="btn-primary"
+                        invisible="state in ('draft', 'paid')"
+                        groups="point_of_sale.group_pos_manager"
+                />
+            </header>
+        </field>
+    </record>
+
+</odoo>

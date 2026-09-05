@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_de_student_achievement_kanban" model="ir.ui.view">
+            <field name="name">de.student.achievement.kanban</field>
+            <field name="model">de.student.achievement</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban" group_edit="false" group_delete="false" quick_create="false"
+                        records_draggable="false" groups_draggable="false">
+                    <field name="id"/>
+                    <field name="image"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click o_res_partner_kanban">
+                                <div class="o_kanban_image">
+                                    <t t-if="record.image.value">
+                                        <img t-att-src="kanban_image('de.student.achievement', 'image', record.id.raw_value)"
+                                             alt="Achievement"/>
+                                    </t>
+                                    <t t-if="!record.image.value">
+                                        <img
+                                                src="/dekad_achievement/static/img/achievement.jpg"
+                                                alt="Achievement"/>
+                                    </t>
+                                </div>
+
+                                <div class="oe_kanban_details">
+                                    <h4>
+                                        <field name="name"/>
+                                    </h4>
+                                    <ul>
+                                        <li>
+                                            <strong>
+                                                <field name="type_id"/>
+                                            </strong>
+                                        </li>
+                                        <li>
+                                            <field name="description"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record id="view_de_student_achievement_list" model="ir.ui.view">
+            <field name="name">de.student.achievement.list</field>
+            <field name="model">de.student.achievement</field>
+            <field name="arch" type="xml">
+                <list string="Achievement">
+                    <field name="name"/>
+                    <field name="type_id"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_de_student_achievement_form" model="ir.ui.view">
+            <field name="name">de.student.achievement.form</field>
+            <field name="model">de.student.achievement</field>
+            <field name="arch" type="xml">
+                <form string="Achievement">
+                    <sheet>
+                        <group>
+                            <field name="image" widget="image" class=" oe_avatar role_image mb-3"/>
+                            <field name="name"/>
+                            <field name="type_id"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="act_open_de_student_achievement_view" model="ir.actions.act_window">
+            <field name="name">Students Achievements</field>
+            <field name="res_model">de.student.achievement</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_student_achievement_view_kanban">
+            <field name="act_window_id" ref="act_open_de_student_achievement_view"/>
+            <field name="view_mode">kanban</field>
+            <field name="sequence" eval="5"/>
+            <field name="view_id" ref="view_de_student_achievement_kanban"/>
+        </record>
+
+
+        <record model="ir.actions.act_window.view" id="act_open_de_student_achievement_view_list">
+            <field name="act_window_id" ref="act_open_de_student_achievement_view"/>
+            <field name="view_mode">list</field>
+            <field name="sequence" eval="10"/>
+            <field name="view_id" ref="view_de_student_achievement_list"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_student_achievement_view_form">
+            <field name="act_window_id" ref="act_open_de_student_achievement_view"/>
+            <field name="view_mode">form</field>
+            <field name="sequence" eval="20"/>
+            <field name="view_id" ref="view_de_student_achievement_form"/>
+        </record>
+
+    </data>
+</odoo>

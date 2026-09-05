@@ -1,0 +1,391 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dekad_sale_commission_salepersons
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-10 09:20+0000\n"
+"PO-Revision-Date: 2026-01-10 09:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.constraint,message:dekad_sale_commission_salepersons.constraint_sale_commission_payment_method_line_deduction_uniq_pml
+msgid "A rule for this Payment Method Line already exists."
+msgstr "يوجد قاعدة بالفعل لخط طريقة الدفع هذه."
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__achieved
+msgid "Achieved"
+msgstr "المتحقق"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_payment_method_line_deduction__active
+#: model_terms:ir.ui.view,arch_db:dekad_sale_commission_salepersons.view_scpml_search
+msgid "Active"
+msgstr "نشط"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_report__invoice_additional_salespersons_companies
+msgid "Additional Salesperon's Branch"
+msgstr "فرع مندوب المبيعات الإضافي"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__invoice_additional_salespersons_companies
+msgid "Additional Salesperson's Branch"
+msgstr "فرع مندوب المبيعات الإضافي"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_account_bank_statement_line__additional_invoice_user_id
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_account_move__additional_invoice_user_id
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_order__additional_user_id
+msgid "Additional Salespersons"
+msgstr "مندوبو المبيعات الإضافيون"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,help:dekad_sale_commission_salepersons.field_account_bank_statement_line__additional_invoice_user_id
+#: model:ir.model.fields,help:dekad_sale_commission_salepersons.field_account_move__additional_invoice_user_id
+msgid "Additional salespersons copied from the related sale order."
+msgstr "مندوبو المبيعات الإضافيون الذين تم نسخهم من أمر البيع المرتبط."
+
+#. module: dekad_sale_commission_salepersons
+#: model_terms:ir.ui.view,arch_db:dekad_sale_commission_salepersons.sale_achievement_report_view_search_inherit_related_group
+msgid "Approval"
+msgstr "الموافقة"
+
+#. module: dekad_sale_commission_salepersons
+#: model_terms:ir.ui.view,arch_db:dekad_sale_commission_salepersons.sale_achievement_report_view_list_inherit
+msgid "Approve"
+msgstr "الموافقة"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_report__is_approved
+#: model_terms:ir.ui.view,arch_db:dekad_sale_commission_salepersons.sale_achievement_report_view_list_inherit
+#: model_terms:ir.ui.view,arch_db:dekad_sale_commission_salepersons.sale_achievement_report_view_search_inherit_related_group
+msgid "Approved"
+msgstr "تمت الموافقة"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_approval__approved_by
+msgid "Approved By"
+msgstr "تمت الموافقة بواسطة"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_approval__approved_date
+msgid "Approved Date"
+msgstr "تاريخ الموافقة"
+
+#. module: dekad_sale_commission_salepersons
+#: model_terms:ir.ui.view,arch_db:dekad_sale_commission_salepersons.view_scpml_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,help:dekad_sale_commission_salepersons.field_sale_commission_payment_method_line_deduction__payment_method_line_id
+msgid ""
+"Choose the Payment Method Line (name) linked to the selected journal. Only "
+"incoming methods are shown."
+msgstr "اختر خط طريقة الدفع (الاسم) المرتبط باليومية المحددة. يتم عرض طرق الدخل فقط."
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_report__invoice_additional_salespersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__invoice_additional_salespersons
+msgid "Co-Sales Person"
+msgstr "مندوب المبيعات المشارك"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model,name:dekad_sale_commission_salepersons.model_sale_commission_payment_method_line_deduction
+msgid "Commission Deduction by Payment Method Line (Journal)"
+msgstr "خصم العمولة حسب خط طريقة الدفع (اليومية)"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__plan_id
+msgid "Commission Plan"
+msgstr "خطة العمولة"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_approval__create_uid
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__create_uid
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_payment_method_line_deduction__create_uid
+msgid "Created by"
+msgstr "تم الإنشاء بواسطة"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_approval__create_date
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__create_date
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_payment_method_line_deduction__create_date
+msgid "Created on"
+msgstr "تم الإنشاء في"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_report__invoice_partner_display_name
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__invoice_partner_display_name
+msgid "Customer"
+msgstr "العميل"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_report__invoice_name
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__invoice_name
+#: model_terms:ir.ui.view,arch_db:dekad_sale_commission_salepersons.sale_achievement_report_view_search_inherit_related_group
+msgid "Customer Invoice"
+msgstr "فاتورة العميل"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_payment_method_line_deduction__deduction_percent
+msgid "Deduction %"
+msgstr "نسبة الخصم %"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.constraint,message:dekad_sale_commission_salepersons.constraint_sale_commission_payment_method_line_deduction_check_percent_range
+msgid "Deduction % must be between 0 and 100."
+msgstr "يجب أن تكون نسبة الخصم بين 0 و 100."
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_approval__display_name
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__display_name
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_payment_method_line_deduction__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,help:dekad_sale_commission_salepersons.field_sale_order__additional_user_id
+msgid "Extra salespeople responsible for this order. Manually assignable."
+msgstr "مندوبو مبيعات إضافيون مسؤولون عن هذا الطلب. قابل للتخصيص يدوياً."
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model,name:dekad_sale_commission_salepersons.model_sale_commission_achievement_snapshot
+msgid "Frozen copy of approved commission report"
+msgstr "نسخة مجمدة من تقرير العمولة المعتمد"
+
+#. module: dekad_sale_commission_salepersons
+#: model_terms:ir.ui.view,arch_db:dekad_sale_commission_salepersons.sale_achievement_report_view_search_inherit_related_group
+#: model_terms:ir.ui.view,arch_db:dekad_sale_commission_salepersons.view_scpml_search
+msgid "Group By"
+msgstr "التجميع حسب"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_approval__id
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__id
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_payment_method_line_deduction__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_report__invoice_amount_signed
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__invoice_amount_signed
+msgid "Invoice Total"
+msgstr "إجمالي الفاتورة"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__is_approved
+msgid "Is Approved"
+msgstr "تمت الموافقة عليه"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_payment_method_line_deduction__journal_id
+#: model_terms:ir.ui.view,arch_db:dekad_sale_commission_salepersons.view_scpml_search
+msgid "Journal"
+msgstr "اليومية"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model,name:dekad_sale_commission_salepersons.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_approval__write_uid
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__write_uid
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_payment_method_line_deduction__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_approval__write_date
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__write_date
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_payment_method_line_deduction__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_payment_method_line_deduction__method_code
+msgid "Method Code"
+msgstr "رمز الطريقة"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_report__net_paid
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__net_paid
+msgid "Net Paid"
+msgstr "الصافي المدفوع"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_report__net_paid_after_split
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__net_paid_after_split
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_report__net_paid_after_split
+msgid "Net Paid (After Split)"
+msgstr "الصافي المدفوع (بعد التقسيم)"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,help:dekad_sale_commission_salepersons.field_sale_commission_achievement_report__net_paid_after_split
+msgid ""
+"Net Paid divided equally among all salespersons on the invoice (primary + "
+"additional)."
+msgstr "الصافي المدفوع مقسوم بالتساوي بين جميع مندوبي المبيعات على الفاتورة (الرئيسي + الإضافيون)."
+
+#. module: dekad_sale_commission_salepersons
+#: model_terms:ir.ui.view,arch_db:dekad_sale_commission_salepersons.sale_achievement_report_view_search_inherit_related_group
+msgid "Not Approved"
+msgstr "غير معتمد"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_payment_method_line_deduction__note
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: dekad_sale_commission_salepersons
+#. odoo-python
+#: code:addons/dekad_sale_commission_salepersons/models/payment_method_deduction.py:0
+msgid "Only incoming payment methods are allowed."
+msgstr "يُسمح فقط بطرق الدفع الواردة."
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_report__invoice_paid_amount
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__invoice_paid_amount
+msgid "Paid Amount"
+msgstr "المبلغ المدفوع"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_payment_method_line_deduction__payment_method_id
+msgid "Payment Method"
+msgstr "طريقة الدفع"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.actions.act_window,name:dekad_sale_commission_salepersons.action_scpml
+#: model:ir.ui.menu,name:dekad_sale_commission_salepersons.menu_scpml
+msgid "Payment Method Deductions"
+msgstr "خصومات طريقة الدفع"
+
+#. module: dekad_sale_commission_salepersons
+#: model_terms:ir.ui.view,arch_db:dekad_sale_commission_salepersons.view_scpml_search
+#: model_terms:ir.ui.view,arch_db:dekad_sale_commission_salepersons.view_scpml_tree
+msgid "Payment Method Line Deductions"
+msgstr "خصومات خط طريقة الدفع"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_payment_method_line_deduction__payment_method_line_id
+#: model_terms:ir.ui.view,arch_db:dekad_sale_commission_salepersons.view_scpml_search
+#: model_terms:ir.ui.view,arch_db:dekad_sale_commission_salepersons.view_scpml_tree
+msgid "Payment Method Name"
+msgstr "اسم طريقة الدفع"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__target_id
+msgid "Period"
+msgstr "الفترة"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_approval__report_related_res_model
+msgid "Related Model"
+msgstr "النموذج المرتبط"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_approval__report_related_res_id
+msgid "Related Record ID"
+msgstr "معرّف السجل المرتبط"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__related_res_id
+msgid "Related Res"
+msgstr "المرجع المرتبط"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__related_res_model
+msgid "Related Res Model"
+msgstr "نموذج المرجع المرتبط"
+
+#. module: dekad_sale_commission_salepersons
+#: model_terms:ir.ui.view,arch_db:dekad_sale_commission_salepersons.sale_achievement_report_view_list_inherit
+msgid "Remove Approval"
+msgstr "إزالة الموافقة"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model,name:dekad_sale_commission_salepersons.model_sale_commission_achievement_report
+msgid "Sales Achievement Report"
+msgstr "تقرير إنجازات المبيعات"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model,name:dekad_sale_commission_salepersons.model_sale_commission_report
+msgid "Sales Commission Report"
+msgstr "تقرير عمولة المبيعات"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model,name:dekad_sale_commission_salepersons.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__user_id
+msgid "Sales Person"
+msgstr "مندوب المبيعات"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__team_id
+msgid "Sales Team"
+msgstr "فريق المبيعات"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,help:dekad_sale_commission_salepersons.field_sale_commission_payment_method_line_deduction__journal_id
+msgid "Select the journal first to filter the payment method names below."
+msgstr "حدد اليومية أولاً لتصفية أسماء طرق الدفع أدناه."
+
+#. module: dekad_sale_commission_salepersons
+#. odoo-python
+#: code:addons/dekad_sale_commission_salepersons/models/payment_method_deduction.py:0
+msgid ""
+"Selected Payment Method Name belongs to journal '%s', which doesn't match "
+"the chosen journal '%s'."
+msgstr "اسم طريقة الدفع المحددة ينتمي إلى اليومية '%s'، والتي لا تتطابق مع اليومية المختارة '%s'."
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,help:dekad_sale_commission_salepersons.field_sale_commission_report__net_paid_after_split
+msgid ""
+"Sum of net paid amounts after being split across invoice salespersons "
+"(primary + additional) within the target period."
+msgstr "مجموع المبالغ المدفوعة الصافية بعد تقسيمها بين مندوبي مبيعات الفاتورة (الرئيسي + الإضافيون) ضمن الفترة المستهدفة."
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_report__tax_deduction
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__tax_deduction
+msgid "Tax Deduction"
+msgstr "الخصم الضريبي"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_report__third_party_deduction
+#: model:ir.model.fields,field_description:dekad_sale_commission_salepersons.field_sale_commission_achievement_snapshot__third_party_deduction
+msgid "Third-Party Deduction"
+msgstr "خصم الطرف الثالث"
+
+#. module: dekad_sale_commission_salepersons
+#: model:ir.model,name:dekad_sale_commission_salepersons.model_sale_commission_achievement_approval
+msgid "Track Approvals of Commission Report"
+msgstr "تتبع موافقات تقرير العمولة"

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- OPTION 1: Weekly Planner as submenu under Timetable App -->
+    <!-- This creates a separate section in the Timetable menu -->
+    <menuitem id="menu_weekly_planner_section"
+              name="Teacher Planning"
+              parent="dekad_timetable.menu_timetable_app"
+              sequence="20"/>
+
+    <!-- My Weekly Planner (Teacher Self-View) -->
+    <menuitem id="menu_teacher_weekly_planner_my"
+              name="My Weekly Planner"
+              parent="menu_weekly_planner_section"
+              action="action_teacher_weekly_planner_my"
+              groups="group_weekly_planner_user"
+              sequence="10"/>
+
+    <!-- All Weekly Planners (Manager View) -->
+    <menuitem id="menu_teacher_weekly_planner_all"
+              name="All Weekly Planners"
+              parent="menu_weekly_planner_section"
+              action="action_teacher_weekly_planner"
+              groups="group_weekly_planner_manager"
+              sequence="20"/>
+
+    <!-- Planning Activities (Manager View) -->
+    <menuitem id="menu_teacher_weekly_planner_lines"
+              name="Planning Activities"
+              parent="menu_weekly_planner_section"
+              action="action_teacher_weekly_planner_line"
+              groups="group_weekly_planner_manager"
+              sequence="30"/>
+
+</odoo>

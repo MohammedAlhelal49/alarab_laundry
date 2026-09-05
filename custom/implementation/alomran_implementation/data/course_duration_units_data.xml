@@ -1,0 +1,14 @@
+<odoo>
+    <record id="duration_unit_hours_v3" model="course.duration.units">
+        <field name="name">Hours</field>
+    </record>
+    <record id="duration_unit_levels_v3" model="course.duration.units">
+        <field name="name">Levels</field>
+    </record>
+    <record id="duration_unit_months_v3" model="course.duration.units">
+        <field name="name">Months</field>
+    </record>
+    <record id="duration_unit_semester_v3" model="course.duration.units">
+        <field name="name">Semester</field>
+    </record>
+</odoo>

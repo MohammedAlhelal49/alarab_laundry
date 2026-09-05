@@ -1,0 +1,291 @@
+// handle the login page designing
+.oe_login_form {
+  max-width: 300px;
+  position: relative;
+  margin: 50px auto;
+  background: white !important;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #e4e4e4;
+}
+
+
+
+// form .password-toggle-icon-holder {
+//   position: relative;
+//   .password-toggle-icon {
+//     position: absolute;
+//     bottom: 12px;
+//     right: 10px;
+//     cursor: pointer;
+//   }
+// }
+
+// handle the change password page
+.oe_reset_password_form {
+  max-width: 300px;
+  position: relative;
+  margin: 50px auto;
+  background: white !important;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #e4e4e4;
+  .form-control {
+    min-height: calc(1.5em + 0.5rem + 10px) !important;
+  }
+  button.btn-secondary {
+    background: #8b607d !important;
+    border-color: #8b607d !important;
+  }
+}
+
+// handle the change profile information page
+.o_portal_details {
+  margin-right: 15px;
+  .col-lg-8 {
+    margin: 15px;
+    background: white !important;
+    border-radius: 5px;
+    border: 1px solid #e4e4e4;
+
+    button {
+      float: none !important;
+      margin-top: 20px !important;
+    }
+  }
+}
+
+// change the main designing
+#wrapwrap > main {
+  background: #f0f0f0 !important;
+}
+
+
+table {
+  border: 1px solid #dddddd;
+  font-size: 12px;
+
+  thead {
+    background: whitesmoke !important;
+
+  }
+  tbody {
+    color: rgba(26, 26, 26, 0.7) !important;
+    font-size: 14px !important;
+     vertical-align : middle !important;
+  }
+}
+
+.table-responsive {
+  border: none !important;
+}
+h3 {
+  font-size: 1.1rem !important;
+}
+
+.card {
+  padding: 15px !important;
+  position: relative;
+  word-wrap: break-word;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.float-right {
+  float: right !important;
+}
+.clearing {
+  clear: both !important;
+}
+.contact-designing {
+  color: #4a4a4a !important;
+  padding-top: 10px;
+}
+
+// handle the customer document
+.o_portal_docs {
+  a.list-group-item {
+      font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #4e4e4e !important;
+    display: block !important;
+    i {
+      margin-right: 5px;
+      color: #3c3c3c !important;
+      font-size: 20px !important;
+    }
+    svg {
+      margin-right: 3px !important;
+    }
+  }
+  .o_portal_doc_spinner {
+    display: none !important;
+  }
+
+  .first-document-lefter {
+  margin-left : 3px !important;
+  }
+}
+.o_portal_docs a[title="Quotations"],
+.o_portal_docs a[title="Sales Orders"],
+.o_portal_docs a[title="Requests for Quotation"],
+.o_portal_docs a[title="Purchase Orders"] {
+  display: none !important;
+}
+
+
+
+.o_portal_wrap address div[itemprop="address"] > div .fa + span,
+.o_portal_wrap address div[itemprop="address"] > div .fa + div {
+  color: #5b5b5b !important;
+}
+
+.dynamic-website-card-holder {
+  padding: 0px !important;
+  margin: 0px !important;
+  overflow: auto !important;
+
+  .dynamic-website-card {
+    min-width: 750px !important;
+    .table-responsive {
+    @media(max-width:991px) {
+              position: relative;
+    left: -5px;
+    }
+
+    }
+
+  }
+}
+
+.badges-holder {
+  max-width: 200px;
+}
+.draft-badge {
+  color: gray !important;
+  border: 1px solid #ccc !important;
+  margin-bottom: 3px;
+}
+.badge-pill {
+  padding: 5px 10px;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+.badge-light {
+  background-color: #e8e6e6 !important;
+  margin-bottom: 5px !important;
+}
+.list-group-item .text-bg-secondary {
+  float: right !important;
+  width: 25px !important;
+  height: 25px !important;
+}
+.document_item_count {
+  margin-top: 2px;
+  font-size: 12px !important;
+  display: inline-block !important;
+}
+.table-file-download-icon,
+.form-file-download-icon,
+.update-form-file-download-icon {
+  cursor: pointer;
+  margin-top: 10px;
+  display: block;
+  font-size: 20px !important;
+}
+
+.form-file-download-icon,
+.update-form-file-download-icon {
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 0px;
+}
+
+.update-form-file-download-icon {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+// handle the space between the breadcrumb and the
+.container .mb32 {
+  margin-bottom: 20px !important;
+}
+
+// hide the sidebar after handling the profile
+.o_my_sidebar {
+  display: none !important;
+}
+
+// handle the menu item desinging
+.dropdown-menu .dropdown-item {
+  font-size: 14px;
+}
+
+// handle the navigation and the search designing
+.navbar-collapse {
+  @media (max-width: 991px) {
+    .ms-lg-2 {
+      margin-top: 10px !important;
+    }
+  }
+}
+
+/*=== the portal website animate class  ===*/
+.animate {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/*=== main page holder fade in ===*/
+@-webkit-keyframes customfadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes customfadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes customfadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  /* make things invisible upon start */
+  -webkit-animation: customfadeIn ease-in 1;
+  /* call our keyframe named customfadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation: customfadeIn ease-in 1;
+  animation: customfadeIn ease-in 1;
+  -webkit-animation-fill-mode: forwards;
+  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+.fade-in {
+  -webkit-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}

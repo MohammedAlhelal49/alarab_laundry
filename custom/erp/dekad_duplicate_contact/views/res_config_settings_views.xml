@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit_duplicate_contact" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.duplicate.contact</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="crm.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//setting[field[@name='crm_use_auto_assignment']]" position="after">
+                <setting string="Duplicate Phone/Mobile Policy"
+                         help="Choose whether to allow duplicate phone/mobile numbers with a warning, or block them completely.">
+                    <field name="duplicate_contact_policy" widget="radio"/>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,85 @@
+<odoo>
+    <record id="view_crm_stage_form_inherit_lock" model="ir.ui.view">
+        <field name="name">crm.stage.form.lock</field>
+        <field name="model">crm.stage</field>
+        <field name="inherit_id" ref="crm.crm_stage_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='fold']" position="after">
+                <field name="lock_stage" groups="base.group_system"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_crm_lead_form_inherit_patient_and_operational_info" model="ir.ui.view">
+        <field name="name">crm.lead.form.inherit.patient.and.operational.info</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Patient Information">
+                    <group>
+                        <!-- Patient Details -->
+                        <group string="Patient Details">
+                            <field name="patient_id"/>
+                            <field name="mrn"/>
+                            <field name="theqa_no"/>
+                            <field name="product_line"/>
+                            <field name="medical_report" invisible="1"/>
+                            <field name="medical_report_file" invisible="medical_report != 'available'"/>
+                            <field name="medical_report_file_name" invisible="1"/>
+                            <field name="product_ids" invisible="1" widget="many2many_tags"/>
+                            <field name="product_description" invisible="1"  nolabel="1" placeholder="Add notes or details about the selected products..."/>
+                        </group>
+
+                        <!-- Authorization -->
+                        <group string="Approval Information">
+                            <field name="approval_no"/>
+                            <field name="approval_date"/>
+                            <field name="authorization_expiry_date"/>
+                        </group>
+
+                    </group>
+                    <group>
+                        <!-- Order & Delivery -->
+                        <group string="Order &amp; Delivery">
+                            <field name="order_date"/>
+                            <field name="expected_delivery_date"/>
+                        </group>
+                    </group>
+
+
+                </page>
+            </xpath>
+
+            <xpath expr="//sheet/group" position="after">
+                <group col="2">
+                    <!-- Operational Information -->
+                    <group string="Operational Information">
+                        <field name="consulting_clinical"/>
+                        <field name="measurement"/>
+                        <field name="measurement_file"  filename="measurement_file_name" invisible="not measurement"/>
+                        <field name="hospital_appointment"/>
+                        <field name="casting_appointment"/>
+                        <field name="daman_approval"/>
+                    </group>
+
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="crm_quick_create_add_patient" model="ir.ui.view">
+        <field name="name">crm.lead.quick.create.add.patient</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.quick_create_opportunity_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="patient_id"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

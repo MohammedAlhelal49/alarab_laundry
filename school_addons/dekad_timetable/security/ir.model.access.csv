@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_de_timetable,access.de.timetable,model_de_timetable,base.group_user,1,1,1,1
+access_de_timetable_line,access.de.timetable.line,model_de_timetable_line,base.group_user,1,1,1,1
+access_de_session_slot,access.de.session.slot,model_de_session_slot,base.group_user,1,1,1,1
+access_de_period,access.de.period,model_de_period,base.group_user,1,1,1,1
+access_generate_timetable_wizard,access.generate.timetable.wizard,model_generate_timetable_wizard,base.group_user,1,1,1,1
+
+access_de_timetable_portal,de.timetable.portal,model_de_timetable,base.group_portal,1,0,0,0
+access_de_timetable_line_portal,de.timetable.line.portal,model_de_timetable_line,base.group_portal,1,0,0,0
+access_de_period_portal,de.period.portal,model_de_period,base.group_portal,1,0,0,0
+access_de_session_slot_portal,de.session.slot.portal,model_de_session_slot,base.group_portal,1,0,0,0

@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- document -->
+    <template id="student_note_doc_entry" inherit_id="portal.portal_my_home" priority="110">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-if="student_note_document and student_note_document['show']"
+               t-call="portal.portal_docs_entry">
+                <t t-set="url" t-value="student_note_document['url']"/>
+                <t t-set="title" t-value="'Notes'"/>
+                <t t-set="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                         class="bi bi-sticky" viewBox="0 0 16 16">
+                        <path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v11A1.5 1.5 0 0 0 2.5 15h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 15 8.586V2.5A1.5 1.5 0 0 0 13.5 1h-11zM2 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5V8H9.5A1.5 1.5 0 0 0 8 9.5V14H2.5a.5.5 0 0 1-.5-.5v-11zm7 11.293V9.5a.5.5 0 0 1 .5-.5h4.293L9 13.793z"/>
+                    </svg>
+                </t>
+                <t t-set="count">
+                    <span class="document_item_count" t-esc="student_note_document['count']"/>
+                </t>
+                <div class="clearing"/>
+            </t>
+        </xpath>
+    </template>
+    <!-- document -->
+
+    <!-- breadcrumb -->
+    <template id="student_note_breadcrumbs" inherit_id="portal.portal_breadcrumbs">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+
+            <li t-if="page_name=='Notes'" t-attf-class="breadcrumb-item">
+                <a t-att-href="page_url">Notes
+                </a>
+            </li>
+
+            <li t-if="page_name=='Note Show'" t-attf-class="breadcrumb-item">
+                <a t-att-href="list_url">Notes
+                </a>
+                <span>/</span>
+                <a t-att-href="page_url">
+                    <t t-esc="record.display_name"/>
+                </a>
+            </li>
+        </xpath>
+    </template>
+    <!-- breadcrumb -->
+
+
+    <!-- list -->
+    <template id="student_note" name="Notes">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+            </t>
+
+            <div class="card dynamic-website-card-holder">
+
+                <div class="card-body">
+                    <div class="dynamic-website-card" t-if="note_records">
+
+                        <t t-call="portal.portal_table">
+                            <table
+                                    class="table mt-3"
+                            >
+                                <thead>
+                                    <tr>
+
+
+                                        <th scope="col">
+                                            Name
+                                        </th>
+
+                                        <th scope="col">
+                                            priority
+                                        </th>
+                                        <th scope="col">
+                                            Sequence
+                                        </th>
+
+
+                                        <th scope="col">
+                                            Created at
+                                        </th>
+                                        <th scope="col">
+                                            Actions
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="note_records"
+                                       t-as="note">
+                                        <tr>
+                                            <td>
+                                                <span t-esc="note.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-if="note.priority == '0'" t-esc="'Very low'"/>
+                                                <span t-if="note.priority == '1'" t-esc="'Low'"/>
+                                                <span t-if="note.priority == '2'" t-esc="'High'"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="note.sequence"/>
+                                            </td>
+
+
+                                            <td>
+                                                <span t-esc="note.create_date" t-options="{'widget':'datetime'}"/>
+                                            </td>
+
+
+                                            <td class="website-actions-td">
+
+                                                <t t-if="parent_student_param">
+
+
+                                                    <t t-set="show_url"
+                                                       t-value="'/student/note/' + str(note.id) + '?parent_student_param=' + str(parent_student_param)"/>
+
+                                                </t>
+                                                <t t-else="">
+
+                                                    <t t-set="show_url"
+                                                       t-value="'/student/note/' + str(note.id)"/>
+
+                                                </t>
+
+                                                <a
+                                                        t-att-href="show_url">
+                                                    <button class="btn btn-outline-secondary btn-sm">
+                                                        Show
+                                                    </button>
+                                                </a>
+
+
+                                            </td>
+
+
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </t>
+
+                    </div>
+                    <t t-else="">
+
+                        <div class=" mt-3 alert alert-info" role="alert">
+                            There are no Notes to display.
+                        </div>
+                    </t>
+                </div>
+
+            </div>
+        </t>
+    </template>
+    <!-- list -->
+
+    <!-- show -->
+    <template id="student_note_show" name="Note show">
+        <t t-call="portal.portal_layout">
+            <div class="card portal-page-content show-page">
+                <div class="card-body row">
+                    <div class="col-12"
+                    >
+
+                        <h5>Note full information
+                        </h5>
+                    </div>
+                    <div class="col-12 col-md-6"
+                    >
+
+                        <strong class="">Name :</strong>
+                        <span t-esc="record.name"/>
+
+
+                    </div>
+
+
+                    <div class="col-12 col-md-6"
+                    >
+                        <strong class="">Priority :</strong>
+                        <span t-if="record.priority == '0'" t-esc="'Very low'"/>
+                        <span t-if="record.priority == '1'" t-esc="'Low'"/>
+                        <span t-if="record.priority == '2'" t-esc="'High'"/>
+                    </div>
+                    <div class="col-12 col-md-6"
+                    >
+                        <strong class="">Sequence :</strong>
+                        <span t-esc="record.sequence"/>
+                    </div>
+
+
+                    <div class="col-12 col-md-6"
+                    >
+                        <strong class="">Created at :</strong>
+                        <span t-esc="record.create_date" t-options="{'widget':'datetime'}"/>
+                    </div>
+
+                    <div class="col-12 col-md-6" t-if="file_name"
+                    >
+
+                        <strong class="">Attachment :</strong>
+                        <span t-esc="file_name"/>
+
+                        <!-- FIXED: Pass parent_student_param to download URL -->
+                        <t t-if="parent_student_param">
+                            <a t-attf-href="/student/note/download/#{record.id}?parent_student_param=#{parent_student_param}">
+                                <i class="fa fa-download form-file-download-icon"/>
+                            </a>
+                        </t>
+                        <t t-else="">
+                            <a t-attf-href="/student/note/download/#{record.id}">
+                                <i class="fa fa-download form-file-download-icon"/>
+                            </a>
+                        </t>
+
+
+                    </div>
+
+                    <div class="col-12"
+                    >
+                        <strong>Description :</strong>
+                        <span t-esc="record.description"/>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </t>
+
+    </template>
+    <!-- show -->
+</odoo>

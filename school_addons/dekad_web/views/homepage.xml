@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="homepage" inherit_id="website.homepage" name="Private School Homepage" priority="99">
+        <xpath expr="." position="replace">
+            <t t-call="website.layout">
+                <!-- Add dir attribute based on language -->
+                <t t-set="direction" t-value="'rtl' if request.env.context.get('lang') in ['ar_001', 'ar', 'he_IL', 'he'] else 'ltr'"/>
+
+                <div id="wrap" class="oe_structure oe_empty limit-min homepage theme_web_dekad" t-att-dir="direction">
+
+                    <!-- Hero/Banner Section -->
+                    <section class="banner o_colored_level oe_img_bg o_bg_img_center pt-5">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6 col-md-12 pb88 text-center text-lg-start mb-4 mb-lg-0 o_colored_level o_animate o_anim_flip_in_x o_visible">
+                                    <div class="banner-content text-md-start">
+                                        <div class="bg-white d-inline-block mb-3 px-3 py-2 rounded-2 shadow-lg" id="reb">
+                                          <b class="me-2">🎓</b>Excellence in Education
+                                        </div>
+                                        <h1 class="main-title">
+                                            <span class="o_animated_text o_animate o_anim_zoom_in o_visible text-white">
+                                                Building Bright Futures Through Quality Education
+                                            </span>
+                                        </h1>
+                                        <p class="fs-5 text-muted">
+                                            <span class="o_animated_text o_animate o_anim_zoom_in o_visible text-300">
+                                                A distinguished private school providing modern educational environment and advanced curriculum to build an aware and excellent generation
+                                            </span>
+                                        </p>
+                                        <div class="d-contents mt-5 text-center">
+                                            <button class="head-button btn btn-lg">
+                                                Enroll Now
+                                            </button>
+                                            <a href="#about" class="btn btn-outline-light btn-lg ms-2">
+                                                Learn More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 text-center">
+                                    <div class="align-items-center banner-img d-flex">
+                                        <img src="/them_web_dekad/static/src/img/banner/student-img.png" alt="School Students" class="img-main img-fluid" loading="lazy"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- About School Section -->
+                    <section class="o_colored_level py-5" id="about">
+                        <div class="container">
+                            <div class="row mb-3 title">
+                                <div class="col-12 o_colored_level o_animate o_anim_bounce_in o_visible">
+                                    <div class="py-3 section-title text-center">
+                                        <span class="bg-primary-opacity subtitle">
+                                            About Us
+                                        </span>
+                                        <h2 class="fw-bold py-3">
+                                            <span class="o_animated_text o_animate o_anim_fade_in o_visible">
+                                                Leading School in Quality Education
+                                            </span>
+                                        </h2>
+                                        <p class="text-muted px-md-5">
+                                            We are a specialized private school providing excellent education from kindergarten through high school,
+                                            combining modern curricula with core values to build well-rounded students
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                                    <div class="text-center stat-box hover h-100">
+                                        <div class="stat-icon mx-auto mb-3">
+                                            <i class="fa fa-users fa-2x text-primary"/>
+                                        </div>
+                                        <div class="stat-number counter-number text-primary">500</div>
+                                        <div class="stat-text">Students</div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                                    <div class="text-center stat-box hover h-100">
+                                        <div class="stat-icon mx-auto mb-3">
+                                            <i class="fa fa-graduation-cap fa-2x text-primary"/>
+                                        </div>
+                                        <div class="stat-number counter-number text-primary">50</div>
+                                        <div class="stat-text">Teachers</div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                                    <div class="text-center stat-box hover h-100">
+                                        <div class="stat-icon mx-auto mb-3">
+                                            <i class="fa fa-book fa-2x text-primary"/>
+                                        </div>
+                                        <div class="stat-number counter-number text-primary">15</div>
+                                        <div class="stat-text">Years of Excellence</div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                                    <div class="text-center stat-box hover h-100">
+                                        <div class="stat-icon mx-auto mb-3">
+                                            <i class="fa fa-trophy fa-2x text-primary"/>
+                                        </div>
+                                        <div class="stat-number counter-number text-primary">98</div>
+                                        <div class="stat-text">% Success Rate</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Educational Stages Section -->
+                    <section class="o_colored_level py-5 bg-light">
+                        <div class="container">
+                            <div class="row mb-3 title">
+                                <div class="col-12">
+                                    <div class="py-3 section-title text-center">
+                                        <span class="bg-primary-opacity subtitle">
+                                            Educational Programs
+                                        </span>
+                                        <h2 class="fw-bold py-3">
+                                            <span class="o_animated_text o_animate o_anim_fade_in o_visible">
+                                                Comprehensive Education for All Levels
+                                            </span>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                    <div class="main_card p-4 rounded-3 shadow hover h-100 bg-white">
+                                        <div class="inner_card text-center">
+                                            <div class="d-flex icon_card justify-content-center p-4">
+                                                <i class="fa fa-child fa-4x text-primary"/>
+                                            </div>
+                                            <div class="content_card">
+                                                <h4 class="fw-bolder mb-3">Kindergarten</h4>
+                                                <p class="text-muted">
+                                                    Ages 3-5 years - Developing basic skills, language, and social abilities in a stimulating and safe environment
+                                                </p>
+                                                <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                    <div class="main_card p-4 rounded-3 shadow hover h-100 bg-white">
+                                        <div class="inner_card text-center">
+                                            <div class="d-flex icon_card justify-content-center p-4">
+                                                <i class="fa fa-book fa-4x text-primary"/>
+                                            </div>
+                                            <div class="content_card">
+                                                <h4 class="fw-bolder mb-3">Elementary School</h4>
+                                                <p class="text-muted">
+                                                    Grades 1-6 - Building strong academic foundation and developing critical thinking skills
+                                                </p>
+                                                <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                    <div class="main_card p-4 rounded-3 shadow hover h-100 bg-white">
+                                        <div class="inner_card text-center">
+                                            <div class="d-flex icon_card justify-content-center p-4">
+                                                <i class="fa fa-graduation-cap fa-4x text-primary"/>
+                                            </div>
+                                            <div class="content_card">
+                                                <h4 class="fw-bolder mb-3">Middle School</h4>
+                                                <p class="text-muted">
+                                                    Grades 7-9 - Developing academic skills and preparing for high school education
+                                                </p>
+                                                <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Features Section -->
+                    <section class="o_colored_level py-5">
+                        <div class="container">
+                            <div class="row mb-3 title">
+                                <div class="col-12">
+                                    <div class="py-3 section-title text-center">
+                                        <span class="bg-primary-opacity subtitle">
+                                            Our Advantages
+                                        </span>
+                                        <h2 class="fw-bold py-3">
+                                            <span class="o_animated_text o_animate o_anim_fade_in o_visible">
+                                                Why Choose Our School?
+                                            </span>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                                    <div class="text-center p-4">
+                                        <div class="mb-3">
+                                            <i class="fa fa-certificate fa-3x text-primary"/>
+                                        </div>
+                                        <h5 class="fw-bold">Qualified Teachers</h5>
+                                        <p class="text-muted">
+                                            Specialized and highly experienced teaching staff
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                                    <div class="text-center p-4">
+                                        <div class="mb-3">
+                                            <i class="fa fa-laptop fa-3x text-primary"/>
+                                        </div>
+                                        <h5 class="fw-bold">Modern Technology</h5>
+                                        <p class="text-muted">
+                                            Smart classrooms equipped with latest educational tools
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                                    <div class="text-center p-4">
+                                        <div class="mb-3">
+                                            <i class="fa fa-futbol-o fa-3x text-primary"/>
+                                        </div>
+                                        <h5 class="fw-bold">Diverse Activities</h5>
+                                        <p class="text-muted">
+                                            Comprehensive sports, arts, and cultural programs
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                                    <div class="text-center p-4">
+                                        <div class="mb-3">
+                                            <i class="fa fa-shield fa-3x text-primary"/>
+                                        </div>
+                                        <h5 class="fw-bold">Safe Environment</h5>
+                                        <p class="text-muted">
+                                            Advanced security system and continuous monitoring
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                                    <div class="text-center p-4">
+                                        <div class="mb-3">
+                                            <i class="fa fa-language fa-3x text-primary"/>
+                                        </div>
+                                        <h5 class="fw-bold">Multiple Languages</h5>
+                                        <p class="text-muted">
+                                            Focus on English and additional languages
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                                    <div class="text-center p-4">
+                                        <div class="mb-3">
+                                            <i class="fa fa-bus fa-3x text-primary"/>
+                                        </div>
+                                        <h5 class="fw-bold">Safe Transportation</h5>
+                                        <p class="text-muted">
+                                            Comfortable and reliable school bus service
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                                    <div class="text-center p-4">
+                                        <div class="mb-3">
+                                            <i class="fa fa-cutlery fa-3x text-primary"/>
+                                        </div>
+                                        <h5 class="fw-bold">Healthy Nutrition</h5>
+                                        <p class="text-muted">
+                                            Nutritious and balanced meals prepared with care
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                                    <div class="text-center p-4">
+                                        <div class="mb-3">
+                                            <i class="fa fa-stethoscope fa-3x text-primary"/>
+                                        </div>
+                                        <h5 class="fw-bold">Healthcare</h5>
+                                        <p class="text-muted">
+                                            Equipped clinic and regular health monitoring
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Facilities Section -->
+                    <section class="o_colored_level py-5 bg-light">
+                        <div class="container">
+                            <div class="row mb-3 title">
+                                <div class="col-12">
+                                    <div class="py-3 section-title text-center">
+                                        <span class="bg-primary-opacity subtitle">
+                                            Facilities
+                                        </span>
+                                        <h2 class="fw-bold py-3">
+                                            <span class="o_animated_text o_animate o_anim_fade_in o_visible">
+                                                Tour Our Campus
+                                            </span>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 mb-4">
+                                    <div class="hover rounded-3 overflow-hidden">
+                                        <img src="/theme_web_dekad/static/src/img/banner/blog-card-01.jpg" class="w-100" alt="Classrooms" loading="lazy"/>
+                                        <div class="p-3 bg-white">
+                                            <h5 class="fw-bold">Modern Classrooms</h5>
+                                            <p class="text-muted mb-0">Spacious classrooms equipped with latest technology</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="hover rounded-3 overflow-hidden">
+                                        <img src="/theme_web_dekad/static/src/img/banner/blog-card-02.jpg" class="w-100" alt="Laboratories" loading="lazy"/>
+                                        <div class="p-3 bg-white">
+                                            <h5 class="fw-bold">Science Labs</h5>
+                                            <p class="text-muted mb-0">Advanced science and computer laboratories</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="hover rounded-3 overflow-hidden">
+                                        <img src="/theme_web_dekad/static/src/img/banner/blog-card-03.jpg" class="w-100" alt="Sports Facilities" loading="lazy"/>
+                                        <div class="p-3 bg-white">
+                                            <h5 class="fw-bold">Sports Facilities</h5>
+                                            <p class="text-muted mb-0">Indoor and outdoor sports fields and activities</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- News Section -->
+                    <section class="o_colored_level py-5">
+                        <div class="container">
+                            <div class="row mb-3 title">
+                                <div class="col-12">
+                                    <div class="py-3 section-title text-center">
+                                        <span class="bg-primary-opacity subtitle">
+                                            News &amp; Events
+                                        </span>
+                                        <h2 class="fw-bold py-3">
+                                            <span class="o_animated_text o_animate o_anim_fade_in o_visible">
+                                                Latest Updates
+                                            </span>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="blog-hover bg-white rounded-3 overflow-hidden h-100">
+                                        <img src="/theme_web_dekad/static/src/img/banner/blog-card-01.jpg" class="w-100" alt="News" loading="lazy"/>
+                                        <div class="p-4">
+                                            <span class="text-primary small">October 15, 2025</span>
+                                            <h5 class="fw-bold my-3">New Science Lab Opening</h5>
+                                            <p class="text-muted">We opened our new science lab equipped with the latest equipment and devices...</p>
+                                            <a href="#" class="blog-btn text-primary">Read More <i class="fa fa-arrow-right"/></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="blog-hover bg-white rounded-3 overflow-hidden h-100">
+                                        <img src="/theme_web_dekad/static/src/img/banner/blog-card-02.jpg" class="w-100" alt="News" loading="lazy"/>
+                                        <div class="p-4">
+                                            <span class="text-primary small">October 10, 2025</span>
+                                            <h5 class="fw-bold my-3">Students Win National Competition</h5>
+                                            <p class="text-muted">Our students achieved first place in the national science competition...</p>
+                                            <a href="#" class="blog-btn text-primary">Read More <i class="fa fa-arrow-right"/></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="blog-hover bg-white rounded-3 overflow-hidden h-100">
+                                        <img src="/theme_web_dekad/static/src/img/banner/blog-card-03.jpg" class="w-100" alt="News" loading="lazy"/>
+                                        <div class="p-4">
+                                            <span class="text-primary small">October 5, 2025</span>
+                                            <h5 class="fw-bold my-3">Registration Open for New Year</h5>
+                                            <p class="text-muted">Registration is now open for all grade levels for the upcoming academic year...</p>
+                                            <a href="#" class="blog-btn text-primary">Read More <i class="fa fa-arrow-right"/></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Newsletter Section -->
+                    <section class="py-5 counter-section o_colored_level" id="subscribe">
+                        <div class="container">
+                            <div class="row text-center mb-4">
+                                <div class="col-12">
+                                    <div class="section-title pt-5">
+                                        <span class="subtitle" style="background: #ffffff21;color: #ffffff;">
+                                            Stay Connected
+                                        </span>
+                                        <h2 class="text-white fw-bold py-4">
+                                            Subscribe to Our Newsletter
+                                        </h2>
+                                        <p class="mt-3 text-white">
+                                            Get the latest news, events, and updates from our school
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 col-md-10 o_colored_level o_animate o_anim_zoom_in o_visible">
+                                    <div class="text-center py-3">
+                                        <div class="s_newsletter_subscribe_form s_newsletter_list js_subscribe" data-list-id="1">
+                                            <div class="js_subscribed_wrap d-none">
+                                                <p class="h4-fs text-white text-center">
+                                                    <i class="fa fa-check-circle-o"/> Thank you for subscribing!
+                                                </p>
+                                            </div>
+                                            <div class="d-flex js_subscribe_wrap justify-content-center">
+                                                <div class="input-group">
+                                                    <input type="email" name="email" class="js_subscribe_value form-control" placeholder="your.email@example.com"/>
+                                                    <a role="button" href="#" class="align-items-center justify-content-center btn btn-fill-success d-flex js_subscribe_btn o_submit small-btn text-white">
+                                                        Subscribe
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center text-white mb-4 mt-4">
+                                We are committed to your privacy
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Contact CTA Section -->
+                    <section class="py-5 bg-light">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-8 mb-3 mb-lg-0">
+                                    <h3 class="fw-bold mb-2">Have Questions?</h3>
+                                    <p class="text-muted mb-0">Our team is ready to answer all your questions and inquiries</p>
+                                </div>
+                                <div class="col-lg-4 text-lg-end">
+                                    <a href="#" class="btn btn-primary btn-lg">
+                                        <i class="fa fa-phone me-2"/>Contact Us
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

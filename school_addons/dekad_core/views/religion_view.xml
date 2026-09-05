@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_de_religion_list" model="ir.ui.view">
+            <field name="name">de.religion.list</field>
+            <field name="model">de.religion</field>
+            <field name="type">list</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <list string="Countries" editable="bottom">
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_de_religion_view">
+            <field name="name">religions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">de.religion</field>
+            <field name="view_mode">list</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_de_religion_list_view">
+            <field name="act_window_id" ref="act_open_de_religion_view"/>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="view_de_religion_list"/>
+
+        </record>
+    </data>
+</odoo>

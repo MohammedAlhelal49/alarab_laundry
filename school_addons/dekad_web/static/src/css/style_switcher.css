@@ -1,0 +1,434 @@
+/* ============================================
+   Style Switcher - Button and Themes
+   ============================================ */
+
+/* === Style Switcher Button === */
+.style-switcher-btn {
+    position: relative;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    font-size: 0.938rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    overflow: hidden;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.style-switcher-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.style-switcher-btn:hover::before {
+    left: 100%;
+}
+
+.style-switcher-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+    color: white;
+}
+
+.style-switcher-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+}
+
+.style-switcher-btn i {
+    font-size: 1.125rem;
+    transition: transform 0.3s ease;
+}
+
+.style-switcher-btn:hover i {
+    transform: rotate(180deg);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .style-switcher-btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+        margin-left: 0.5rem;
+    }
+
+    .style-switcher-btn .btn-text {
+        display: none;
+    }
+
+    .style-switcher-btn {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        padding: 0;
+        justify-content: center;
+    }
+}
+
+/* === Style Transition Animation === */
+body.style-transitioning {
+    transition: opacity 0.3s ease;
+}
+
+body.style-transitioning * {
+    transition: all 0.3s ease !important;
+}
+
+/* === Simple Notification === */
+.style-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(86, 171, 47, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    z-index: 99999;
+    opacity: 0;
+    transform: translateX(400px);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.style-notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.style-notification i {
+    font-size: 1.5rem;
+}
+
+/* ============================================
+   STYLE THEME 2 - Alternative Modern Theme
+   ============================================ */
+
+body.style-theme-2 {
+    --primary-color: #ff6b6b;
+    --primary-dark: #ee5a6f;
+    --primary-light: #ff8787;
+    --success-color: #4ecdc4;
+    --success-light: #95e1d3;
+    --info-color: #45b7d1;
+    --warning-color: #f9ca24;
+    --danger-color: #ff6348;
+    --text-dark: #2d3436;
+    --text-light: #636e72;
+    --bg-light: #f8f9fa;
+    --border-color: #dfe6e9;
+}
+
+/* === Profile Header - Theme 2 === */
+body.style-theme-2 .profile-header-card::before {
+    background: linear-gradient(90deg, #ff6b6b, #ee5a6f);
+}
+
+body.style-theme-2 .profile-avatar.student-avatar {
+    background: linear-gradient(135deg, #4ecdc4, #95e1d3);
+}
+
+body.style-theme-2 .profile-avatar.parent-avatar {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+}
+
+body.style-theme-2 .profile-name {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* === Dashboard Cards - Theme 2 === */
+body.style-theme-2 .dashboard-card::before {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.03), rgba(238, 90, 111, 0.03));
+}
+
+body.style-theme-2 .dashboard-card:hover {
+    border-color: #ff6b6b;
+    box-shadow: 0 20px 40px rgba(255, 107, 107, 0.15);
+}
+
+body.style-theme-2 .card-icon-wrapper.primary {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+}
+
+body.style-theme-2 .card-icon-wrapper.success {
+    background: linear-gradient(135deg, #4ecdc4, #95e1d3);
+}
+
+body.style-theme-2 .card-icon-wrapper.info {
+    background: linear-gradient(135deg, #45b7d1, #6dd5ed);
+}
+
+body.style-theme-2 .card-icon-wrapper.warning {
+    background: linear-gradient(135deg, #f9ca24, #f6e58d);
+}
+
+body.style-theme-2 .card-icon-wrapper.danger {
+    background: linear-gradient(135deg, #ff6348, #ff7979);
+}
+
+/* === Contact Info - Theme 2 === */
+body.style-theme-2 .contact-icon {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+}
+
+body.style-theme-2 .contact-info-item:hover {
+    border-color: #ff6b6b;
+}
+
+body.style-theme-2 .contact-value:hover {
+    color: #ff6b6b;
+}
+
+/* === Student Info Alert - Theme 2 === */
+body.style-theme-2 .student-info-alert {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(238, 90, 111, 0.1));
+    border-left-color: #ff6b6b;
+}
+
+body.style-theme-2 .student-info-alert i,
+body.style-theme-2 .student-info-content span {
+    color: #ff6b6b;
+}
+
+/* === Buttons - Theme 2 === */
+body.style-theme-2 .btn-primary {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+}
+
+body.style-theme-2 .btn-primary:hover {
+    box-shadow: 0 12px 30px rgba(255, 107, 107, 0.4);
+}
+
+body.style-theme-2 .btn-outline-secondary:hover {
+    background: #ff6b6b;
+    border-color: #ff6b6b;
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.25);
+}
+
+/* === Parent Students Cards - Theme 2 === */
+body.style-theme-2 .parent-students-card::before {
+    background: linear-gradient(90deg, #ff6b6b, #ee5a6f);
+}
+
+body.style-theme-2 .parent-students-card:hover {
+    box-shadow: 0 20px 50px rgba(255, 107, 107, 0.2);
+}
+
+body.style-theme-2 .parent-students-card h6 {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.style-theme-2 .parent-students-card img {
+    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.3);
+}
+
+body.style-theme-2 .parent-students-card:hover img {
+    box-shadow: 0 20px 50px rgba(255, 107, 107, 0.5);
+}
+
+body.style-theme-2 .parent-students-card .btn-primary {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+}
+
+body.style-theme-2 .parent-students-card .btn-primary:hover {
+    box-shadow: 0 12px 30px rgba(255, 107, 107, 0.4);
+}
+
+body.style-theme-2 .student-content > div:hover {
+    border-color: #ff6b6b;
+}
+
+body.style-theme-2 .student-content i {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+}
+
+body.style-theme-2 .portal-page-content strong {
+    color: #ff6b6b;
+}
+
+body.style-theme-2 .portal-page-content .row > div:hover {
+    border-color: #ff6b6b;
+}
+
+/* === Achievement Cards - Theme 2 === */
+body.style-theme-2 .achievement-title {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.style-theme-2 .achievement-cards-holder .card:hover {
+    box-shadow: 0 20px 50px rgba(255, 107, 107, 0.3);
+    border-color: #ff6b6b;
+}
+
+body.style-theme-2 .achievement-cards-holder img {
+    border-color: #ff6b6b;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+}
+
+body.style-theme-2 .achievement-cards-holder .card:hover img {
+    box-shadow: 0 12px 35px rgba(255, 107, 107, 0.6);
+    border-color: #ff8787;
+}
+
+body.style-theme-2 .achievement-description .block {
+    border-left-color: #ff6b6b;
+}
+
+body.style-theme-2 .achievement-description .block strong {
+    color: #ff6b6b;
+}
+
+/* === Table Styling - Theme 2 === */
+body.style-theme-2 .table thead th {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+}
+
+body.style-theme-2 .table tbody tr:hover {
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.1);
+}
+
+/* === Form Controls - Theme 2 === */
+body.style-theme-2 .form-control:focus {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.1);
+}
+
+body.style-theme-2 .col-form-label {
+    color: #ff6b6b;
+}
+
+/* === Section Titles - Theme 2 === */
+body.style-theme-2 .section-title i {
+    color: #ff6b6b;
+}
+
+body.style-theme-2 h5::after {
+    background: linear-gradient(90deg, #ff6b6b, #ee5a6f);
+}
+
+/* === Scrollbar - Theme 2 === */
+body.style-theme-2 ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+}
+
+body.style-theme-2 ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ee5a6f, #ff6b6b);
+}
+
+/* === Focus States - Theme 2 === */
+body.style-theme-2 *:focus-visible {
+    outline-color: rgba(255, 107, 107, 0.5);
+}
+
+/* === Badge - Theme 2 === */
+body.style-theme-2 .card-badge.primary {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+}
+
+body.style-theme-2 .badge.bg-info {
+    background: linear-gradient(135deg, #45b7d1, #6dd5ed);
+}
+
+body.style-theme-2 .badge.bg-success {
+    background: linear-gradient(135deg, #4ecdc4, #95e1d3);
+}
+
+/* === Download Icons - Theme 2 === */
+body.style-theme-2 .fa-download,
+body.style-theme-2 .form-file-download-icon,
+body.style-theme-2 .update-form-file-download-icon {
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.1);
+}
+
+body.style-theme-2 .fa-download:hover,
+body.style-theme-2 .form-file-download-icon:hover,
+body.style-theme-2 .update-form-file-download-icon:hover {
+    background: #ff6b6b;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+/* === Breadcrumb - Theme 2 === */
+body.style-theme-2 .breadcrumb-item a {
+    color: #ff6b6b;
+}
+
+body.style-theme-2 .breadcrumb-item a:hover {
+    background: rgba(255, 107, 107, 0.1);
+    color: #ee5a6f;
+}
+
+/* === Document Count - Theme 2 === */
+body.style-theme-2 .document_item_count {
+    color: #ff6b6b;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(238, 90, 111, 0.1));
+}
+
+/* === Alert - Theme 2 === */
+body.style-theme-2 .alert-info {
+    background: linear-gradient(135deg, rgba(69, 183, 209, 0.1), rgba(109, 213, 237, 0.1));
+    border-left-color: #45b7d1;
+}
+
+body.style-theme-2 .alert-success {
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(149, 225, 211, 0.1));
+    border-left-color: #4ecdc4;
+}
+
+/* === File Field - Theme 2 === */
+body.style-theme-2 .file-field-container input[type="file"],
+body.style-theme-2 .update-file-holder input[type="file"] {
+    border-color: #ff6b6b;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.05), rgba(238, 90, 111, 0.05));
+}
+
+body.style-theme-2 .file-field-container input[type="file"]:hover,
+body.style-theme-2 .update-file-holder input[type="file"]:hover {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(238, 90, 111, 0.1));
+    border-color: #ff8787;
+}
+
+/* === Selection - Theme 2 === */
+body.style-theme-2 ::selection {
+    background: rgba(255, 107, 107, 0.3);
+}
+
+/* === Smooth Theme Transition === */
+body.style-theme-1,
+body.style-theme-2 {
+    transition: background-color 0.3s ease;
+}
+
+body.style-theme-1 *,
+body.style-theme-2 * {
+    transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}

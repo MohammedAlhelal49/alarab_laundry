@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_geofence_zone_manager,hr.attendance.geofence.zone.manager,model_hr_attendance_geofence_zone,hr_attendance.group_hr_attendance_manager,1,1,1,1
+
+access_geofence_zone_officer,hr.attendance.geofence.zone.officer,model_hr_attendance_geofence_zone,hr_attendance.group_hr_attendance_officer,1,1,0,0
+access_geofence_zone_own_reader,hr.attendance.geofence.zone.own_reader,model_hr_attendance_geofence_zone,hr_attendance.group_hr_attendance_own_reader,1,0,0,0

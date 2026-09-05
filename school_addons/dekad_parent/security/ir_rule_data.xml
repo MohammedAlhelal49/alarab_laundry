@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="group_de_parent" model="res.groups">
+            <field name="name">Parents</field>
+            <field name="category_id" ref="dekad_core.module_category_school"/>
+            <field name="implied_ids"
+                   eval="[(4,ref('base.group_erp_manager'))]"/>
+            <field name="sequence">60</field>
+        </record>
+
+        <record id="dekad_core.group_de_back_office_admin" model="res.groups">
+            <field name="implied_ids"
+                   eval="[(4,ref('group_de_parent'))]"/>
+        </record>
+        <record model="ir.rule" id="portal_de_parent_rule">
+            <field name="name">portal parent rule</field>
+            <field name="model_id" ref="model_de_parent"/>
+            <field name="groups" eval="[(4,ref('base.group_portal'))]"/>
+            <field name="domain_force">['|',('user_id','=',user.id),('user_id','in',user.child_ids.ids)]</field>
+        </record>
+
+    </data>
+</odoo>

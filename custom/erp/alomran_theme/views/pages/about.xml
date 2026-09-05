@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="about_template" name="About Page">
+        <t t-call="website.layout">
+            <div id="wrap" class="about-page">
+
+                <!-- Hero Header -->
+                <section class="hero-premium about-hero">
+                    <!-- Background with overlay -->
+                    <div class="hero-bg-overlay">
+                        <div class="hero-bg-image" style="background-image: url('/alomran_theme/static/src/img/hero-bg.jpg');"></div>
+                        <div class="hero-gradient-overlay"></div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row align-items-center min-vh-100 py-5">
+                            <div class="col-lg-10 mx-auto text-center" data-aos="fade-up" data-aos-delay="100">
+                                <!-- Trust Badge -->
+                                <div class="trust-badge mb-4">
+                                    <span class="badge-icon">
+                                        <i class="fa fa-award"></i>
+                                    </span>
+                                    <span class="badge-text">
+                                        Certified Training Center Since <strong>2010</strong>
+                                    </span>
+                                </div>
+
+                                <!-- Main Headline -->
+                                <h1 class="display-1 fw-black mb-4 text-white">
+                                    <span class="text-gradient">Al Omran</span>
+                                    <br/>
+                                    Training &amp; Development Center
+                                </h1>
+
+                                <!-- Subheading -->
+                                <p class="lead text-light mb-5">
+                                    Shaping Tomorrow's Leaders Through Excellence in Training
+                                </p>
+
+                                <!-- Quick Stats -->
+                                <div class="quick-stats mt-5">
+                                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                                        <div class="glass-badge">
+                                            <i class="fa fa-award me-2 text-warning"></i>
+                                            <span>Accredited Center</span>
+                                        </div>
+                                        <div class="glass-badge">
+                                            <i class="fa fa-users me-2 text-warning"></i>
+                                            <span>50,000+ Trainees</span>
+                                        </div>
+                                        <div class="glass-badge">
+                                            <i class="fa fa-building me-2 text-warning"></i>
+                                            <span>25 Government Entities</span>
+                                        </div>
+                                        <div class="glass-badge">
+                                            <i class="fa fa-map-marker-alt me-2 text-warning"></i>
+                                            <span>11 Branches in UAE</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scroll Indicator -->
+                    <div class="scroll-indicator">
+                        <a href="#about-story" class="scroll-link">
+                            <i class="fa fa-chevron-down"></i>
+                        </a>
+                    </div>
+                </section>
+                <!-- About Story -->
+                <section class="about-story-section">
+                    <div class="container">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6">
+                                <div class="about-image-frame">
+                                    <img src="/alomran_theme/static/src/img/Logo_Mockup_3.png"
+                                         class="img-fluid"
+                                         loading="lazy"
+                                         alt="Al Omran Training and Development Center"/>
+                                    <div class="experience-badge">
+                                        <div class="badge-content">
+                                            <span class="years">14+</span>
+                                            <span class="text">Years of Experience</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="ps-lg-4">
+                                    <span class="section-label">
+                                        <i class="fa fa-history me-2"></i>Our Story
+                                    </span>
+                                    <h2 class="section-title">Who We Are</h2>
+                                    <p class="section-subtitle">
+                                        Leaders in Shaping Tomorrow's Leaders
+                                    </p>
+                                    <div class="about-description">
+                                        <p>
+                                            Al Omran Training and Development Center is one of the leading centers in the United Arab Emirates in providing specialized and diverse training programs. The center aims to develop human competencies through high-quality professional courses in management, technology, languages, human development, and professional courses.
+                                        </p>
+                                        <p>
+                                            The center is distinguished by an experienced training team, locally and internationally recognized programs, and a modern educational environment that supports practical and theoretical development, making it an ideal choice for individuals, government entities, and companies seeking excellence and sustainable growth.
+                                        </p>
+                                    </div>
+
+<!--                                    <div class="about-stats">-->
+<!--                                        <div class="row g-4">-->
+<!--                                            <div class="col-6 col-sm-3">-->
+<!--                                                <div class="stat-box">-->
+<!--                                                    <div class="stat-number">14+</div>-->
+<!--                                                    <div class="stat-label">Years of Experience</div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <div class="col-6 col-sm-3">-->
+<!--                                                <div class="stat-box">-->
+<!--                                                    <div class="stat-number">11</div>-->
+<!--                                                    <div class="stat-label">Branches</div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <div class="col-6 col-sm-3">-->
+<!--                                                <div class="stat-box">-->
+<!--                                                    <div class="stat-number">250+</div>-->
+<!--                                                    <div class="stat-label">Certified Trainers</div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <div class="col-6 col-sm-3">-->
+<!--                                                <div class="stat-box">-->
+<!--                                                    <div class="stat-number">10K+</div>-->
+<!--                                                    <div class="stat-label">Successful Trainees</div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Vision & Mission -->
+                <section class="vision-mission-section">
+                    <div class="container">
+                        <div class="text-center section-header">
+                            <span class="section-label">
+                                <i class="fa fa-bullseye me-2"></i>Vision &amp; Mission
+                            </span>
+                            <h2 class="section-title">Towards a Better Future</h2>
+                            <p class="section-subtitle">The Foundation Upon Which We Build Our Success</p>
+                        </div>
+
+                        <div class="row g-5">
+                            <!-- Vision -->
+                            <div class="col-lg-6">
+                                <div class="vision-mission-card vision-card">
+                                    <div class="card-icon-wrapper">
+                                        <div class="icon-circle">
+                                            <i class="fa fa-eye fa-3x"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-tag">
+                                        <span class="tag-text">Vision</span>
+                                    </div>
+                                    <h3 class="card-title">Our Vision</h3>
+                                    <div class="card-content">
+                                        <p>
+                                            At Al Omran Training and Development Center, we aspire to be a beacon of excellence in developing human competencies in the UAE, through innovative and accredited training programs that meet the needs of individuals and institutions, contributing to building a knowledge-based society capable of meeting future challenges.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Mission -->
+                            <div class="col-lg-6">
+                                <div class="vision-mission-card mission-card">
+                                    <div class="card-icon-wrapper">
+                                        <div class="icon-circle">
+                                            <i class="fa fa-bullseye fa-3x"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-tag">
+                                        <span class="tag-text">Mission</span>
+                                    </div>
+                                    <h3 class="card-title">Our Mission</h3>
+                                    <div class="card-content">
+                                        <p>
+                                            At Al Omran Training and Development Center, we are committed to providing high-quality training solutions that meet the aspirations of individuals, government and private entities, through elite certified experts and trainers, using the latest educational methods and techniques, enhancing trainees' competencies and helping achieve their professional and developmental goals.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Goals -->
+                <section class="goals-section">
+                    <div class="container">
+                        <div class="text-center section-header">
+                            <span class="section-label">
+                                <i class="fa fa-flag me-2"></i>Our Goal
+                            </span>
+                            <h2 class="section-title">Our Strategic Goals</h2>
+                            <p class="section-subtitle">The Path to Excellence and Leadership</p>
+                        </div>
+
+                        <div class="goals-card">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4 text-center mb-5 mb-lg-0">
+                                    <div class="goals-icon-wrapper">
+                                        <div class="icon-circle-lg">
+                                            <i class="fa fa-trophy fa-4x"></i>
+                                        </div>
+                                        <div class="mt-4">
+                                            <h4 class="goals-heading">Our Goals</h4>
+                                            <p class="goals-subheading">Strategic Objectives</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-8">
+                                    <div class="goals-content">
+                                        <p>
+                                            Al Omran Training and Development Center aims to enable individuals and institutions to achieve their full potential, through comprehensive training programs that contribute to skill development, efficiency enhancement, and strengthening competitive ability in the local and regional job market.
+                                        </p>
+                                    </div>
+
+                                    <div class="goals-list">
+                                        <div class="row g-4">
+                                            <div class="col-md-6">
+                                                <div class="goal-item">
+                                                    <div class="goal-icon">
+                                                        <i class="fa fa-check-circle fa-2x"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h5>Continuous Development</h5>
+                                                        <p>Advanced programs meeting market requirements</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="goal-item">
+                                                    <div class="goal-icon">
+                                                        <i class="fa fa-check-circle fa-2x"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h5>High Quality</h5>
+                                                        <p>International training standards</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="goal-item">
+                                                    <div class="goal-icon">
+                                                        <i class="fa fa-check-circle fa-2x"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h5>Professional Empowerment</h5>
+                                                        <p>Building competencies capable of competition</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="goal-item">
+                                                    <div class="goal-icon">
+                                                        <i class="fa fa-check-circle fa-2x"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h5>Innovation &amp; Development</h5>
+                                                        <p>Using latest educational technologies</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Values -->
+                <section class="values-section">
+                    <div class="container">
+                        <div class="text-center section-header">
+                            <span class="section-label">
+                                <i class="fa fa-star me-2"></i>Our Values
+                            </span>
+                            <h2 class="section-title">The Values That Guide Our Work</h2>
+                            <p class="section-subtitle">Principles We Commit to at Every Step</p>
+                        </div>
+
+                        <div class="row g-4">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="value-card">
+                                    <div class="value-icon">
+                                        <div class="icon-circle-md">
+                                            <i class="fa fa-shield-alt fa-2x"></i>
+                                        </div>
+                                    </div>
+                                    <h4>Quality &amp; Excellence</h4>
+                                    <p>
+                                        We are committed to the highest quality standards in all our training programs and services
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="value-card">
+                                    <div class="value-icon">
+                                        <div class="icon-circle-md">
+                                            <i class="fa fa-hands-helping fa-2x"></i>
+                                        </div>
+                                    </div>
+                                    <h4>Continuous Development</h4>
+                                    <p>
+                                        We believe in continuous learning and development to achieve growth and innovation
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="value-card">
+                                    <div class="value-icon">
+                                        <div class="icon-circle-md">
+                                            <i class="fa fa-users fa-2x"></i>
+                                        </div>
+                                    </div>
+                                    <h4>Teamwork</h4>
+                                    <p>
+                                        We work as one team to achieve our shared goals and our trainees' success
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6">
+                                <div class="value-card">
+                                    <div class="value-icon">
+                                        <div class="icon-circle-md">
+                                            <i class="fa fa-handshake fa-2x"></i>
+                                        </div>
+                                    </div>
+                                    <h4>Integrity &amp; Transparency</h4>
+                                    <p>
+                                        We operate with complete transparency and commit to the highest professional integrity standards
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Final CTA -->
+                <section class="cta-section">
+                    <!-- Background Pattern -->
+                    <div class="cta-pattern"></div>
+
+                    <div class="container position-relative z-3">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8 mb-5 mb-lg-0">
+                                <h2 class="cta-title">
+                                    Start Your Journey With Us Today
+                                </h2>
+                                <p class="cta-text">
+                                    Join thousands of successful trainees who chose Al Omran Center to achieve their professional dreams
+                                </p>
+                            </div>
+                            <div class="col-lg-4 text-lg-end">
+                                <div class="cta-buttons">
+                                    <a href="/courses" class="btn btn-primary">
+                                        <i class="fa fa-book-open me-2"></i>
+                                        Explore Courses
+                                    </a>
+                                    <a href="/contact" class="btn btn-outline-light">
+                                        <i class="fa fa-phone me-2"></i>
+                                        Contact Us
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>account_secondary_currency_report — Technical Documentation</title>
+<style>
+:root {
+  --text-primary: #1a1a18;
+  --text-secondary: #5f5e5a;
+  --text-muted: #888780;
+  --text-accent: #185fa5;
+  --text-success: #0f6e56;
+  --text-pro: #534ab7;
+  --text-warning: #854f0b;
+  --surface-0: #f1efe8;
+  --surface-1: #f8f7f4;
+  --surface-2: #ffffff;
+  --border: rgba(0,0,0,0.10);
+  --border-accent: #85b7eb;
+  --border-warning: #fac775;
+  --bg-accent: #e6f1fb;
+  --bg-success: #eaf3de;
+  --bg-pro: #eeedfe;
+  --bg-warning: #faeeda;
+  --radius: 8px;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); background: var(--surface-0); color: var(--text-primary); padding: 2rem; font-size: 15px; line-height: 1.6; }
+.page { max-width: 900px; margin: 0 auto; background: var(--surface-2); border-radius: 12px; border: 0.5px solid var(--border); padding: 2.5rem; }
+.badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 4px; letter-spacing: .3px; }
+.badge-new { background: var(--bg-success); color: var(--text-success); }
+.badge-gl { background: var(--bg-accent); color: var(--text-accent); }
+.header { border-bottom: 0.5px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 2rem; }
+.module-title { font-size: 24px; font-weight: 500; margin: .4rem 0; }
+.module-meta { font-size: 13px; color: var(--text-secondary); display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: .75rem; }
+.section { margin-bottom: 2.5rem; }
+.section-title { font-size: 16px; font-weight: 500; margin-bottom: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.feature-card { background: var(--surface-1); border: 0.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; }
+.feature-card h3 { font-size: 14px; font-weight: 500; margin-bottom: .4rem; }
+.feature-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+.tree { background: var(--surface-1); border: 0.5px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; font-family: var(--font-mono); font-size: 12.5px; line-height: 2; color: var(--text-secondary); }
+.tree .name { color: var(--text-primary); font-weight: 500; }
+.tree .cmt { color: var(--text-muted); font-style: italic; }
+.option-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.option-table th { text-align: left; padding: .6rem .8rem; font-weight: 500; font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .5px; border-bottom: 0.5px solid var(--border); }
+.option-table td { padding: .65rem .8rem; border-bottom: 0.5px solid var(--border); vertical-align: top; line-height: 1.5; }
+.option-table tr:last-child td { border-bottom: none; }
+.key { font-family: var(--font-mono); font-size: 12px; color: var(--text-accent); background: var(--bg-accent); padding: 2px 6px; border-radius: 4px; white-space: nowrap; }
+.code-block { background: var(--surface-1); border: 0.5px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.8; overflow-x: auto; color: var(--text-secondary); }
+.kw { color: var(--text-accent); }
+.fn { color: var(--text-pro); }
+.str { color: var(--text-success); }
+.cmt { color: var(--text-muted); }
+.flow { display: flex; align-items: stretch; gap: 6px; flex-wrap: wrap; margin: 1rem 0; }
+.flow-step { background: var(--surface-1); border: 0.5px solid var(--border); border-radius: 8px; padding: .75rem 1rem; font-size: 13px; flex: 1; min-width: 130px; }
+.flow-step .step-label { font-size: 11px; color: var(--text-muted); margin-bottom: 3px; font-weight: 500; text-transform: uppercase; letter-spacing: .4px; }
+.flow-step .step-name { font-weight: 500; font-size: 13px; margin-bottom: 2px; }
+.flow-step .step-desc { font-size: 12px; color: var(--text-secondary); }
+.flow-arrow { display: flex; align-items: center; color: var(--text-muted); font-size: 16px; }
+.note { background: var(--bg-accent); border: 0.5px solid var(--border-accent); border-radius: 8px; padding: .85rem 1rem; font-size: 13px; line-height: 1.6; margin-top: 10px; }
+.warn { background: var(--bg-warning); border: 0.5px solid var(--border-warning); border-radius: 8px; padding: .85rem 1rem; font-size: 13px; line-height: 1.6; margin-bottom: 8px; }
+.perf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+.perf-card { background: var(--surface-1); border: 0.5px solid var(--border); border-radius: 8px; padding: .85rem 1rem; }
+.perf-card .pnum { font-size: 20px; font-weight: 500; color: var(--text-success); margin-bottom: 2px; }
+.perf-card .pdesc { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+.class-card { background: var(--surface-1); border: 0.5px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 10px; }
+.class-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-top: .4rem; }
+.step-card { background: var(--surface-1); border: 0.5px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 8px; font-size: 13px; line-height: 1.8; }
+.step-card strong { font-weight: 500; display: block; margin-bottom: 2px; }
+.step-card span { color: var(--text-secondary); }
+.tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: .5rem; }
+.tag { font-size: 11px; padding: 3px 8px; border-radius: 4px; background: var(--surface-1); border: 0.5px solid var(--border); color: var(--text-secondary); }
+code { font-family: var(--font-mono); font-size: 12px; color: var(--text-accent); background: var(--bg-accent); padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="header">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:.5rem">
+    <span class="badge badge-gl">account_reports</span>
+    <span class="badge badge-new">v18.0.1.2.0</span>
+  </div>
+  <div class="module-title">account_secondary_currency_report</div>
+  <div style="font-size:14px;color:var(--text-secondary);margin-top:.4rem;line-height:1.6">
+    Secondary currency filter · Analytic Account column · Group by Analytic Account for General Ledger
+  </div>
+  <div class="module-meta">
+    <span>Author: Dekad</span>
+    <span>License: LGPL-3</span>
+    <span>Odoo 18 Enterprise</span>
+    <span>Depends: account_reports · analytic · account</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Features</div>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:.5rem">
+        <h3>Secondary Currency Filter</h3>
+        <span class="badge badge-gl" style="font-size:10px">All reports</span>
+      </div>
+      <p>Displays debit/credit/balance in any configured currency. Journal items in the selected currency use <code>amount_currency</code>; others keep company currency. Rounding unit labels (kUSD, MUSD…) update automatically.</p>
+    </div>
+    <div class="feature-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:.5rem">
+        <h3>Show Analytic Account</h3>
+        <span class="badge badge-new" style="font-size:10px">General Ledger</span>
+      </div>
+      <p>Adds an optional Analytic Account column to each AML line. Toggled via Options → Show Analytic Account. Works independently of the secondary currency filter.</p>
+    </div>
+    <div class="feature-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:.5rem">
+        <h3>Group by Analytic Account</h3>
+        <span class="badge badge-new" style="font-size:10px">General Ledger</span>
+      </div>
+      <p>Restructures the report into a 3-level tree: Analytic Account → Account → AML lines. Lines with no analytic appear last under "∅ No Analytic Account". Toggled via Options → Group by Analytic Account.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Module structure</div>
+  <div class="tree">
+    <span class="name">account_secondary_currency_report/</span><br>
+    &nbsp;&nbsp;├── <span class="name">models/</span><br>
+    &nbsp;&nbsp;│&nbsp;&nbsp; ├── <span class="name">account_move_line.py</span> &nbsp;<span class="cmt">← analytic_account_id stored field</span><br>
+    &nbsp;&nbsp;│&nbsp;&nbsp; └── <span class="name">account_report.py</span> &nbsp;&nbsp;&nbsp;<span class="cmt">← all logic (3 classes)</span><br>
+    &nbsp;&nbsp;├── <span class="name">data/</span><br>
+    &nbsp;&nbsp;│&nbsp;&nbsp; └── <span class="name">account_report_data.xml</span> &nbsp;<span class="cmt">← Analytic Account column record</span><br>
+    &nbsp;&nbsp;├── <span class="name">views/</span><br>
+    &nbsp;&nbsp;│&nbsp;&nbsp; └── <span class="name">account_report_views.xml</span> &nbsp;<span class="cmt">← Secondary Currency field on report form</span><br>
+    &nbsp;&nbsp;└── <span class="name">static/src/components/</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── <span class="name">filter_secondary_currency.js/xml</span> &nbsp;<span class="cmt">← currency dropdown + hide zero</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── <span class="name">filters_patch.js</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cmt">← makes Options button visible</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── <span class="name">analytic_account_filters.xml</span> &nbsp;<span class="cmt">← 2 items in Options dropdown</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="name">warnings/warnings.xml</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cmt">← multi-rate warning banner</span><br>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Python classes</div>
+  <div class="class-card">
+    <span class="key">account.report</span> &nbsp; <span style="font-size:12px;color:var(--text-muted)">AccountReport</span>
+    <p>Adds <code>filter_secondary_currency</code> boolean field. Handles <code>_init_options_secondary_currency</code>, rounding unit logic, LATERAL rate SQL helpers, and <code>_build_column_dict</code> override for currency-aware formatting.</p>
+  </div>
+  <div class="class-card">
+    <span class="key" style="color:var(--text-pro);background:var(--bg-pro)">account.general.ledger.report.handler</span> &nbsp; <span style="font-size:12px;color:var(--text-muted)">AccountGeneralLedgerReportHandler</span>
+    <p>Core of the module. Overrides <code>_custom_options_initializer</code> (manages both analytic options), <code>_dynamic_lines_generator</code> (group-by routing), <code>_get_query_amls</code> (wraps super as subquery, adds analytic join + optional LATERAL rate join), and <code>_get_initial_balance_values</code> (full override for historical rate conversion).</p>
+  </div>
+  <div class="class-card">
+    <span class="key" style="color:var(--text-success);background:var(--bg-success)">account.partner.ledger.report.handler</span> &nbsp; <span style="font-size:12px;color:var(--text-muted)">PartnerLedgerCustomHandlerHideZero</span>
+    <p>Extends Partner Ledger with a Hide Zero Balance toggle. Overrides <code>_build_partner_lines</code> to filter partners whose balance is zero.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Options reference</div>
+  <table class="option-table">
+    <thead>
+      <tr><th>Option key</th><th>Type</th><th>Default</th><th>Scope</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="key">secondary_currency_id</span></td>
+        <td style="font-size:12px;color:var(--text-secondary)">int | False</td>
+        <td style="font-size:12px;color:var(--text-muted)">False</td>
+        <td><span class="badge badge-gl" style="font-size:10px">All reports</span></td>
+        <td>ID of the secondary currency. When set, values are converted via per-line historical exchange rates using a LATERAL SQL join.</td>
+      </tr>
+      <tr>
+        <td><span class="key">hide_zero_balance</span></td>
+        <td style="font-size:12px;color:var(--text-secondary)">bool</td>
+        <td style="font-size:12px;color:var(--text-muted)">False</td>
+        <td><span class="badge badge-gl" style="font-size:10px">All reports</span></td>
+        <td>Hides accounts / partners whose net balance is zero in the selected period.</td>
+      </tr>
+      <tr>
+        <td><span class="key">show_analytic_account</span></td>
+        <td style="font-size:12px;color:var(--text-secondary)">bool</td>
+        <td style="font-size:12px;color:var(--text-muted)">False</td>
+        <td><span class="badge badge-new" style="font-size:10px">General Ledger</span></td>
+        <td>Adds an "Analytic Account" column to each AML line. Column is filtered from <code>options['columns']</code> when disabled.</td>
+      </tr>
+      <tr>
+        <td><span class="key">group_by_analytic</span></td>
+        <td style="font-size:12px;color:var(--text-secondary)">bool</td>
+        <td style="font-size:12px;color:var(--text-muted)">False</td>
+        <td><span class="badge badge-new" style="font-size:10px">General Ledger</span></td>
+        <td>Restructures the report as Analytic → Account → AML. Lines with no analytic appear under "∅ No Analytic Account". When off, <code>super()</code> is called unchanged.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-title">Group by Analytic — expand chain</div>
+  <div class="flow">
+    <div class="flow-step">
+      <div class="step-label">Step 1</div>
+      <div class="step-name">_dynamic_lines_generator</div>
+      <div class="step-desc">Fires <code>_query_analytic_totals</code> (1 SQL query). Builds level-1 title lines.</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="step-label">Step 2 — on expand</div>
+      <div class="step-name">…_analytic_gl</div>
+      <div class="step-desc">Injects <code>forced_domain</code>, calls <code>_query_values</code>. Builds level-2 account lines.</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="step-label">Step 3 — on expand</div>
+      <div class="step-name">…_analytic_account_gl</div>
+      <div class="step-desc">Thin wrapper: re-injects <code>forced_domain</code>, delegates to Odoo's standard handler.</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="step-label">Step 4 — Odoo core</div>
+      <div class="step-name">…_general_ledger</div>
+      <div class="step-desc">Standard AML lines, initial balance, load-more — all unchanged.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Performance design</div>
+  <div class="perf-grid">
+    <div class="perf-card"><div class="pnum">1</div><div class="pdesc">SQL query for analytic totals — single UNION ALL across all column groups</div></div>
+    <div class="perf-card"><div class="pnum">0</div><div class="pdesc">Extra joins at top level — <code>analytic_account_id</code> is a stored field, no runtime join</div></div>
+    <div class="perf-card"><div class="pnum">Lazy</div><div class="pdesc">Account and AML lines load on expand only — no eager loading</div></div>
+    <div class="perf-card"><div class="pnum">Safe</div><div class="pdesc">When <code>group_by_analytic</code> is off, <code>super()</code> is called directly — zero overhead</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">account_move_line extension</div>
+  <div class="code-block">
+<span class="cmt"># models/account_move_line.py</span>
+<span class="kw">class</span> <span class="fn">AccountMoveLine</span>(models.Model):
+    _inherit = <span class="str">'account.move.line'</span>
+
+    analytic_account_id = fields.Many2one(
+        <span class="str">'account.analytic.account'</span>,
+        compute=<span class="str">'_compute_analytic_account_id'</span>,
+        store=<span class="str">True</span>,     <span class="cmt"># stored → indexed, no runtime join</span>
+    )
+
+    <span class="kw">@api.depends</span>(<span class="str">'analytic_distribution'</span>)
+    <span class="kw">def</span> <span class="fn">_compute_analytic_account_id</span>(self):
+        <span class="cmt"># Resolves the first key from analytic_distribution JSON</span>
+        <span class="cmt"># {"5": 100.0}  →  analytic_account_id = 5</span>
+  </div>
+  <div class="note">
+    Only the first analytic account from <code>analytic_distribution</code> is stored. Lines with no distribution store <code>False</code> and appear under "∅ No Analytic Account".
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Installation</div>
+  <div class="step-card"><strong>1. Copy module to addons path</strong><span>Place <code>account_secondary_currency_report/</code> alongside your other custom addons.</span></div>
+  <div class="step-card"><strong>2. Update apps list and install</strong><span>Settings → Apps → Update Apps List → search "account_secondary_currency_report" → Install.</span></div>
+  <div class="step-card"><strong>3. Upgrade (not restart) when updating</strong><span>The <code>account.report.column</code> record for Analytic Account is created on install/upgrade. A server restart alone won't create it.</span></div>
+  <div class="step-card"><strong>4. Enable Analytic Accounting</strong><span>Accounting → Configuration → Settings → ✅ Analytic Accounting.</span></div>
+</div>
+
+<div class="section">
+  <div class="section-title">Known constraints</div>
+  <div class="warn"><strong>Group by Analytic is General Ledger only.</strong> Trial Balance and Partner Ledger aggregate at account/partner level — the option key is not injected on those reports.</div>
+  <div class="warn"><strong>Multi-analytic distribution.</strong> When a line has multiple analytic accounts (e.g. <code>{"5": 60, "8": 40}</code>), only the first key is stored. The line appears under one analytic group only.</div>
+  <div class="warn"><strong>Historical data requires recompute.</strong> Lines posted before installation have <code>analytic_account_id = NULL</code>. Run <code>env['account.move.line'].search([('analytic_distribution','!=',False)])._compute_analytic_account_id()</code> from Odoo shell to backfill.</div>
+</div>
+
+<div class="section">
+  <div class="section-title">Compatibility</div>
+  <div class="tag-row">
+    <span class="tag">Odoo 18 Enterprise</span>
+    <span class="tag">account_reports (Enterprise)</span>
+    <span class="tag">analytic</span>
+    <span class="tag">account</span>
+    <span class="tag">Python 3.10+</span>
+    <span class="tag">PostgreSQL 14+</span>
+  </div>
+  <div class="note" style="margin-top:12px">Compatible with <code>dekad_gl_company_groupby</code> — the two modules override different methods and do not conflict.</div>
+</div>
+
+</div>
+</body>
+</html>

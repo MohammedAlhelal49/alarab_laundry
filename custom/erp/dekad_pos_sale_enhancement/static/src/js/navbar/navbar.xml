@@ -1,0 +1,9 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="dekad_pos_sale_enhancement.Navbar" t-inherit="point_of_sale.Navbar"
+       t-inherit-mode="extension">
+        <xpath expr="//img[hasclass('pos-logo')]"
+               position="replace">
+                <img class="pos-logo pos-logo mw-100" height="42" t-on-click="() => debug.toggleWidget()" src="/dekad_branding_enhancement/static/img/logo.png" alt="Logo" />
+        </xpath>
+    </t>
+</templates>

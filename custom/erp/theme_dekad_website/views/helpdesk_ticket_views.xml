@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="helpdesk_ticket_view_form_inherit_dekad" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.view.form.inherit.dekad</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
+        <field name="arch" type="xml">
+
+            <!--xpath expr="//header//button[@name='action_convert_ticket_to_lead_or_opportunity']" position="attributes">
+                <attribute name="invisible">dekad_lead_id != False</attribute>
+                <attribute name="class">oe_highlight</attribute>
+            </xpath-->
+
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button class="oe_stat_button" type="object" name="action_convert_ticket_to_lead_or_opportunity"
+                        icon="fa-star" invisible="dekad_lead_id == False">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">Linked Lead</span>
+                    </div>
+                </button>
+            </xpath>
+
+            <xpath expr="//notebook" position="inside">
+                <page name="dekad_website_info" string="Website Request Details">
+                    <group>
+                        <group string="Contact Info">
+                            <field name="dekad_contact_name"/>
+                            <field name="dekad_company_name"/>
+                            <field name="dekad_email"/>
+                            <field name="dekad_phone"/>
+                        </group>
+                        <group string="Request Details">
+                            <field name="dekad_request_type"/>
+                            <field name="dekad_industry"/>
+                            <field name="dekad_employees"/>
+                            <field name="dekad_demo_date"/>
+                            <field name="dekad_lead_id" invisible="1"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

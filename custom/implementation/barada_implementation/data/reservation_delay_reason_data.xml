@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="delay_reason_traffic" model="crm.reservation.delay.reason">
+        <field name="name">Traffic</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="delay_reason_transportation" model="crm.reservation.delay.reason">
+        <field name="name">Transportation Issue</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="delay_reason_patient_requested" model="crm.reservation.delay.reason">
+        <field name="name">Patient Requested Later Time</field>
+        <field name="sequence">30</field>
+    </record>
+
+    <record id="delay_reason_patient_called" model="crm.reservation.delay.reason">
+        <field name="name">Patient Called to Inform Delay</field>
+        <field name="sequence">40</field>
+    </record>
+
+    <record id="delay_reason_work_commitment" model="crm.reservation.delay.reason">
+        <field name="name">Work Commitment</field>
+        <field name="sequence">50</field>
+    </record>
+
+    <record id="delay_reason_family_emergency" model="crm.reservation.delay.reason">
+        <field name="name">Family Emergency</field>
+        <field name="sequence">60</field>
+    </record>
+
+    <record id="delay_reason_weather" model="crm.reservation.delay.reason">
+        <field name="name">Weather Conditions</field>
+        <field name="sequence">70</field>
+    </record>
+
+    <record id="delay_reason_parking" model="crm.reservation.delay.reason">
+        <field name="name">Parking Issue</field>
+        <field name="sequence">80</field>
+    </record>
+
+    <record id="delay_reason_wrong_time" model="crm.reservation.delay.reason">
+        <field name="name">Misunderstood Appointment Time</field>
+        <field name="sequence">90</field>
+    </record>
+
+    <record id="delay_reason_personal" model="crm.reservation.delay.reason">
+        <field name="name">Personal Reason</field>
+        <field name="sequence">100</field>
+    </record>
+
+    <record id="delay_reason_other" model="crm.reservation.delay.reason">
+        <field name="name">Other</field>
+        <field name="sequence">999</field>
+    </record>
+
+</odoo>
