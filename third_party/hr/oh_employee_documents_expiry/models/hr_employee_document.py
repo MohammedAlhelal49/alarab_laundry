@@ -33,27 +33,27 @@ class HrEmployeeDocument(models.Model):
 
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char(string='Document Number', required=True, copy=False,
+    name = fields.Char(string='Document Number', required=True, copy=False,tracking=True,
                        help='You can give your Document number.')
     description = fields.Text(string='Description', copy=False,
                               help="Description of the documents.")
-    expiry_date = fields.Date(string='Expiry Date', copy=False,
+    expiry_date = fields.Date(string='Expiry Date', copy=False,tracking=True,
                               help="Expiry date of the documents.")
     employee_ref_id = fields.Many2one('hr.employee', invisible=1,
-                                      copy=False,
+                                      copy=False,tracking=True,
                                       help='Specify the employee name.')
     doc_attachment_ids = fields.Many2many('ir.attachment',
                                           'doc_attach_rel',
                                           'doc_id', 'attach_id3',
-                                          string="Attachment",
+                                          string="Attachment",tracking=True,
                                           help='You can attach the copy of your'
                                                ' document', copy=False)
-    issue_date = fields.Date(string='Issue Date', default=fields.datetime.now(),
+    issue_date = fields.Date(string='Issue Date',required=True,tracking=True,
                              help="Date of issued", copy=False)
-    document_type_id = fields.Many2one('document.type',
+    document_type_id = fields.Many2one('document.type',tracking=True,
                                        string="Document Type",
                                        help="Type of the document.")
-    before_days = fields.Integer(string="Days",
+    before_days = fields.Integer(string="Days",tracking=True,
                                  help="How many number of days before to get "
                                       "the notification email.")
     notification_type = fields.Selection([
@@ -61,14 +61,14 @@ class HrEmployeeDocument(models.Model):
         ('multi', 'Notification before few days'),
         ('everyday', 'Everyday till expiry date'),
         ('everyday_after', 'Notification on and after expiry')
-    ], string='Notification Type',
+    ], string='Notification Type',tracking=True,
         help="Select type of the documents expiry notification.")
 
     notify_type = fields.Selection([
         ('email', 'Email'),
         ('activity', 'Activity'),
         ('both', 'Both'),
-    ], string='Notify Via', default='email', required=True,
+    ], string='Notify Via', default='email', required=True,tracking=True,
         help="Email: sends a reminder email to the document's employee "
              "(current behavior, unchanged).\n"
              "Activity: creates an Odoo Activity assigned to each user "
@@ -77,7 +77,7 @@ class HrEmployeeDocument(models.Model):
 
     notify_user_ids = fields.Many2many(
         'res.users', 'hr_employee_document_notify_user_rel',
-        'document_id', 'user_id', string='Users to Notify',
+        'document_id', 'user_id', string='Users to Notify',tracking=True,
         help="Users who will get an Activity reminder. Required when "
              "'Notify Via' is set to Activity or Both.")
 
@@ -278,9 +278,6 @@ class HrEmployeeDocument(models.Model):
         today = fields.Date.context_today(self)
 
         for vals in vals_list:
-            # ---------------------------------
-            # Document state
-            # ---------------------------------
             expiry_date = vals.get('expiry_date')
 
             if expiry_date:
@@ -294,27 +291,42 @@ class HrEmployeeDocument(models.Model):
             else:
                 vals['state'] = 'in_progress'
 
-            # ---------------------------------
-            # Default users to notify
-            # ---------------------------------
             if vals.get('employee_ref_id') and 'notify_user_ids' not in vals:
                 employee = self.env['hr.employee'].browse(
                     vals['employee_ref_id']
                 )
 
                 users = (
-                        employee.parent_id.user_id |
-                        employee.coach_id.user_id |
-                        employee.pro_id.user_id
+                        employee.parent_id.user_id
+                        | employee.coach_id.user_id
+                        | employee.pro_id.user_id
                 )
 
                 if users:
                     vals['notify_user_ids'] = [(6, 0, users.ids)]
 
-        return super().create(vals_list)
+        records = super().create(vals_list)
+
+        # Post uploaded files to chatter
+        for record in records:
+            if record.doc_attachment_ids:
+                record._post_new_attachments_to_chatter(
+                    record.doc_attachment_ids.ids
+                )
+
+        return records
 
 
     def write(self, vals):
+        # Remember attachments before the write
+        old_attachments = {
+            record.id: record.doc_attachment_ids.ids
+            for record in self
+        }
+
+        # ---------------------------------
+        # Update state from expiry date
+        # ---------------------------------
         if 'expiry_date' in vals:
             today = fields.Date.context_today(self)
             expiry_date = vals.get('expiry_date')
@@ -330,7 +342,24 @@ class HrEmployeeDocument(models.Model):
             else:
                 vals['state'] = 'in_progress'
 
-        return super().write(vals)
+        result = super().write(vals)
+
+        # ---------------------------------
+        # Post new attachments to chatter
+        # ---------------------------------
+        if 'doc_attachment_ids' in vals:
+            for record in self:
+                old_ids = set(old_attachments.get(record.id, []))
+                current_ids = set(record.doc_attachment_ids.ids)
+
+                new_attachment_ids = current_ids - old_ids
+
+                if new_attachment_ids:
+                    record._post_new_attachments_to_chatter(
+                        list(new_attachment_ids)
+                    )
+
+        return result
 
 
     @api.constrains('notify_type', 'notify_user_ids')
@@ -425,6 +454,32 @@ class HrEmployeeDocument(models.Model):
                 'user_id': user.id,
                 'date_deadline': self.expiry_date or fields.Date.today(),
             })
+
+    def _post_new_attachments_to_chatter(self, attachment_ids):
+        """Post newly uploaded document attachments in the chatter."""
+        if not attachment_ids:
+            return
+
+        attachments = self.env['ir.attachment'].browse(
+            attachment_ids
+        ).exists()
+
+        if not attachments:
+            return
+
+        file_names = attachments.mapped('name')
+
+        if len(file_names) == 1:
+            body = _("Attachment added: %s") % file_names[0]
+        else:
+            body = _("Attachments added: %s") % ", ".join(file_names)
+
+        self.message_post(
+            body=body,
+            attachment_ids=attachments.ids,
+        )
+        
+
 
     # @api.constrains('expiry_date')
     # def _check_expiry_date(self):

@@ -5,5 +5,4 @@ from . import account_move
 from . import account_account
 from . import product_product
 from . import res_partner
-
-
+from . import res_users

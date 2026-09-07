@@ -24,11 +24,5 @@
             <field name="category_id" ref="module_category_purchase_additional_permissions"/>
         </record>
 
-
-        <record id="base.group_user" model="res.groups">
-            <field name="implied_ids" eval="[(4, ref('dekad_erp_additional_permissions.group_purchase_order_confirm')),
-                                              (4, ref('dekad_erp_additional_permissions.group_purchase_order_cancel')),
-                                              (4, ref('dekad_erp_additional_permissions.group_purchase_order_delete'))]"/>
-        </record>
     </data>
 </odoo>

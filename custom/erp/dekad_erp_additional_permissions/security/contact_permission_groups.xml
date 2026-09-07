@@ -30,14 +30,6 @@
                    ref="dekad_erp_additional_permissions.module_category_contact_permissions"/>
         </record>
 
-        <!-- Give all Contact permissions to all Internal Users -->
-        <record id="base.group_user" model="res.groups">
-            <field name="implied_ids" eval="[
-                (4, ref('dekad_erp_additional_permissions.group_contact_update')),
-                (4, ref('dekad_erp_additional_permissions.group_contact_create')),
-                (4, ref('dekad_erp_additional_permissions.group_contact_delete'))
-            ]"/>
-        </record>
 
     </data>
 </odoo>

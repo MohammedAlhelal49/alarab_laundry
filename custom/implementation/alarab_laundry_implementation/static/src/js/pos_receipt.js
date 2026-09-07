@@ -21,8 +21,8 @@ patch(PosStore.prototype, {
             partner: partner ? {
                 name: partner.name,
                 street: partner.street,
-            //     city: partner.city,
-            //     zip: partner.zip,
+                city: partner.city,
+                zip: partner.zip,
                 state: partner.state_id?.[1],
                 country: partner.country_id?.[1],
                 phone: partner.phone,

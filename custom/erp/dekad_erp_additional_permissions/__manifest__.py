@@ -22,5 +22,5 @@ This module enhances security and control over key operational actions in Odoo:
     ],
     'installable': True,
     'application': False,
-    'post_init_hook': 'assign_sale_order_groups',
+    'post_init_hook': 'assign_default_permission_groups',
 }

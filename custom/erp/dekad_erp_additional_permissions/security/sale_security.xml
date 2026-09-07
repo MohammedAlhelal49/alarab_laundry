@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data>
+    <data noupdate="1">
         <record model="ir.module.category" id="module_category_sales_additional_permissions">
             <field name="name">Sales Additional Permissions</field>
             <field name="sequence">12</field>
@@ -24,11 +24,6 @@
             <field name="category_id" ref="module_category_sales_additional_permissions"/>
         </record>
 
-        <record id="base.group_user" model="res.groups">
-            <field name="implied_ids" eval="[(4, ref('dekad_erp_additional_permissions.group_sale_order_deletion')),
-                                              (4, ref('dekad_erp_additional_permissions.group_sale_order_cancel')),
-                                              (4, ref('dekad_erp_additional_permissions.group_sale_order_confirm'))]"/>
-        </record>
 
     </data>
 </odoo>

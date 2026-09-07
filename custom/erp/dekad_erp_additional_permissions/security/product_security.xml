@@ -22,11 +22,5 @@
                    ref="dekad_erp_additional_permissions.module_category_product_additional_permissions"/>
         </record>
 
-        <!-- Assign both groups to system admins by default -->
-        <record id="base.group_user" model="res.groups">
-            <field name="implied_ids"
-                   eval="[ (4, ref('dekad_erp_additional_permissions.group_product_product_delete')),(4, ref('dekad_erp_additional_permissions.group_product_product_create')) ]"/>
-        </record>
-
     </data>
 </odoo>

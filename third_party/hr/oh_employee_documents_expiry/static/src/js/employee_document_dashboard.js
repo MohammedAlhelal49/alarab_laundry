@@ -17,6 +17,9 @@ export class EmployeeDocumentListController extends ListController {
             total: 0,
             nearExpiration: 0,
             expired: 0,
+
+            // Default = 15 days
+            nearExpirationDays: 15,
         });
 
         onWillStart(async () => {
@@ -36,14 +39,26 @@ export class EmployeeDocumentListController extends ListController {
     }
 
     /**
-     * Date domains used by dashboard.
-     *
-     * Expired:
-     *      remaining_days <= 0
-     *      expiry_date <= today
-     *
-     * Near expiration:
-     *      remaining_days 1 -> 15
+     * Label displayed inside Near Expiration card.
+     */
+    get nearExpirationLabel() {
+        const days = this.dashboard.nearExpirationDays;
+
+        if (days === 30) {
+            return "Within 1 Month";
+        }
+        if (days === 90) {
+            return "Within 3 Months";
+        }
+        if (days === 180) {
+            return "Within 6 Months";
+        }
+
+        return "Within 15 Days";
+    }
+
+    /**
+     * Dashboard date domains.
      */
     getDateDomains() {
         const today = new Date();
@@ -51,15 +66,15 @@ export class EmployeeDocumentListController extends ListController {
         const tomorrow = new Date(today);
         tomorrow.setDate(tomorrow.getDate() + 1);
 
-        const fifteenDaysLater = new Date(today);
-        fifteenDaysLater.setDate(
-            fifteenDaysLater.getDate() + 15
+        const expirationLimit = new Date(today);
+        expirationLimit.setDate(
+            expirationLimit.getDate() +
+            this.dashboard.nearExpirationDays
         );
 
         const todayStr = this.formatDate(today);
         const tomorrowStr = this.formatDate(tomorrow);
-        const fifteenDaysLaterStr =
-            this.formatDate(fifteenDaysLater);
+        const expirationLimitStr = this.formatDate(expirationLimit);
 
         return {
             expired: [
@@ -69,31 +84,59 @@ export class EmployeeDocumentListController extends ListController {
 
             nearExpiration: [
                 ["expiry_date", ">=", tomorrowStr],
-                ["expiry_date", "<=", fifteenDaysLaterStr],
+                ["expiry_date", "<=", expirationLimitStr],
             ],
         };
     }
 
     /**
-     * Get the domain of the action that opened this list.
-     *
-     * Example when opened from employee:
-     *
-     * [
-     *     ["employee_ref_id", "=", 123]
-     * ]
-     *
-     * When opened from Documents menu it will normally be [].
+     * Get action/list base domain.
      */
     getBaseDomain() {
         return this.props.domain || [];
     }
 
+    async setNearExpirationDays(days, ev) {
+        if (ev) {
+            ev.stopPropagation();
+        }
+
+        // Change selected period immediately
+        this.dashboard.nearExpirationDays = days;
+
+        // Reload KPI count for the selected period
+        await this.loadNearExpirationCount();
+
+        // Apply the selected period to the list as well
+        await this.filterDocuments("near_expiration");
+    }
+
+
+    async loadNearExpirationCount() {
+        const model = "hr.employee.document";
+
+        const baseDomain = this.getBaseDomain();
+        const domains = this.getDateDomains();
+
+        // Remember which period this RPC belongs to.
+        const requestedDays = this.dashboard.nearExpirationDays;
+
+        const count = await this.orm.searchCount(
+            model,
+            [
+                ...baseDomain,
+                ...domains.nearExpiration,
+            ]
+        );
+
+        // Do not let an old RPC overwrite a newer selection.
+        if (requestedDays === this.dashboard.nearExpirationDays) {
+            this.dashboard.nearExpiration = count;
+        }
+    }
+
     /**
      * Load dashboard counts.
-     *
-     * IMPORTANT:
-     * Every count includes the action/list base domain.
      */
     async loadDocumentCounts() {
         const model = "hr.employee.document";
@@ -101,17 +144,13 @@ export class EmployeeDocumentListController extends ListController {
         const baseDomain = this.getBaseDomain();
         const domains = this.getDateDomains();
 
-        // -----------------------------------------------------
-        // Total Documents
-        // -----------------------------------------------------
+        // Total
         this.dashboard.total = await this.orm.searchCount(
             model,
             baseDomain
         );
 
-        // -----------------------------------------------------
         // Near Expiration
-        // -----------------------------------------------------
         this.dashboard.nearExpiration =
             await this.orm.searchCount(
                 model,
@@ -121,9 +160,7 @@ export class EmployeeDocumentListController extends ListController {
                 ]
             );
 
-        // -----------------------------------------------------
         // Expired
-        // -----------------------------------------------------
         this.dashboard.expired =
             await this.orm.searchCount(
                 model,
@@ -140,8 +177,6 @@ export class EmployeeDocumentListController extends ListController {
     async filterDocuments(type) {
         await this.env.searchModel.clearQuery();
 
-        // Documents = remove dashboard filter.
-        // The action/base domain remains active.
         if (type === "all") {
             return;
         }
@@ -153,7 +188,7 @@ export class EmployeeDocumentListController extends ListController {
 
         if (type === "near_expiration") {
             domain = domains.nearExpiration;
-            description = "Near Expiration";
+            description = this.nearExpirationLabel;
         } else if (type === "expired") {
             domain = domains.expired;
             description = "Expired";

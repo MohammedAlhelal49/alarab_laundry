@@ -33,7 +33,6 @@
 
                     </div>
 
-
                     <!-- ================================================== -->
                     <!-- Near Expiration                                    -->
                     <!-- ================================================== -->
@@ -49,7 +48,36 @@
                         </div>
 
                         <div class="employee_document_kpi_subtitle">
-                            Within 15 Days
+                            <t t-esc="nearExpirationLabel"/>
+                        </div>
+
+                        <!-- Duration selector -->
+                        <div class="employee_document_duration_selector">
+
+                            <button type="button"
+                                    t-att-class="dashboard.nearExpirationDays === 15 ? 'active' : ''"
+                                    t-on-click="(ev) => this.setNearExpirationDays(15, ev)">
+                                15D
+                            </button>
+
+                            <button type="button"
+                                    t-att-class="dashboard.nearExpirationDays === 30 ? 'active' : ''"
+                                    t-on-click="(ev) => this.setNearExpirationDays(30, ev)">
+                                1M
+                            </button>
+
+                            <button type="button"
+                                    t-att-class="dashboard.nearExpirationDays === 90 ? 'active' : ''"
+                                    t-on-click="(ev) => this.setNearExpirationDays(90, ev)">
+                                3M
+                            </button>
+
+                            <button type="button"
+                                    t-att-class="dashboard.nearExpirationDays === 180 ? 'active' : ''"
+                                    t-on-click="(ev) => this.setNearExpirationDays(180, ev)">
+                                6M
+                            </button>
+
                         </div>
 
                     </div>

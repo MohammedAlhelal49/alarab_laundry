@@ -32,12 +32,6 @@
         </record>
 
 
-        <record id="base.group_user" model="res.groups">
-            <field name="implied_ids" eval="[(4, ref('dekad_erp_additional_permissions.group_account_move_post')),
-                                              (4, ref('dekad_erp_additional_permissions.group_account_move_cancel')),
-                                              (4, ref('dekad_erp_additional_permissions.group_account_move_delete')),  (4, ref('dekad_erp_additional_permissions.group_account_move_reset_to_draft'))]"/>
-        </record>
-
                 <!-- Category -->
         <record model="ir.module.category" id="module_category_chart_of_account_permissions">
             <field name="name">Chart of Account Additional Permissions</field>
@@ -58,13 +52,6 @@
             <field name="category_id" ref="dekad_erp_additional_permissions.module_category_chart_of_account_permissions"/>
         </record>
 
-        <!-- Assign both groups to system admins by default -->
-        <record id="base.group_user" model="res.groups">
-            <field name="implied_ids" eval="[
-                (4, ref('dekad_erp_additional_permissions.group_account_account_delete')),
-                   (4, ref('dekad_erp_additional_permissions.group_account_account_create'))
-            ]"/>
-        </record>
 
         <!-- ====================================================== -->
         <!-- PAYMENT PERMISSIONS CATEGORY -->
@@ -105,18 +92,5 @@
                    ref="dekad_erp_additional_permissions.module_category_account_payment_permissions"/>
         </record>
 
-
-        <!-- ====================================================== -->
-        <!-- GIVE TO ADMIN -->
-        <!-- ====================================================== -->
-
-        <record id="base.group_user" model="res.groups">
-            <field name="implied_ids" eval="[
-                (4, ref('dekad_erp_additional_permissions.group_account_payment_confirm')),
-                (4, ref('dekad_erp_additional_permissions.group_account_payment_cancel')),
-                (4, ref('dekad_erp_additional_permissions.group_account_payment_delete')),
-                (4, ref('dekad_erp_additional_permissions.group_account_payment_draft'))
-            ]"/>
-        </record>
     </data>
 </odoo>

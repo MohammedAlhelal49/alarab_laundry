@@ -31,11 +31,5 @@
             <field name="category_id" ref="module_category_inventory_additional_permissions"/>
         </record>
 
-
-        <record id="base.group_user" model="res.groups">
-            <field name="implied_ids" eval="[(4, ref('dekad_erp_additional_permissions.group_stock_picking_delete')),
-                                              (4, ref('dekad_erp_additional_permissions.group_stock_picking_cancel')),
-                                              (4, ref('dekad_erp_additional_permissions.group_stock_picking_validate')),  (4, ref('dekad_erp_additional_permissions.group_stock_picking_return'))]"/>
-        </record>
     </data>
 </odoo>
